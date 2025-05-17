@@ -1,0 +1,1958 @@
+{
+  "metadata": {
+    "project_name": "llmstruct-testf",
+    "description": "Utility for generating structured JSON for codebases",
+    "version": "2025-05-17T19:12:57.951538Z",
+    "instructions": [
+      "Follow best practices, warn if instructions conflict with them",
+      "Preserve functionality, ensure idempotency",
+      "Use attached struct.json for context and navigation",
+      "Request missing modules or functions if needed",
+      "Regenerate JSON for significant changes, track via Git and artifacts",
+      "Use internal comments for descriptions, append brief summary"
+    ],
+    "goals": [
+      "Создать универсальный JSON-формат для описания структуры кода (модули",
+      "функции",
+      "классы",
+      "вызовы",
+      "метаданные)",
+      "Обеспечить расширяемость формата для разных языков и типов сущностей",
+      "Разработать модульный",
+      "плагинный парсер для добавления поддержки новых языков",
+      "Сделать формат открытым и хорошо документированным (RFC-стиль)",
+      "Интегрировать формат с LLM",
+      "используя прогон проекта через себя (генерация JSON-структуры + прикрепление её к запросам)",
+      "чтобы повысить качество помощи и автоматизации."
+    ],
+    "stats": {
+      "modules_count": 16,
+      "functions_count": 22,
+      "classes_count": 6,
+      "call_edges_count": 631
+    }
+  },
+  "toc": [
+    {
+      "module_id": "12f9b01b",
+      "path": "generate_llmstruct.py",
+      "category": "cli",
+      "functions": 11,
+      "classes": 1,
+      "summary": "Generate JSON for workspace based on user instructions template."
+    },
+    {
+      "module_id": "6cb5cc82",
+      "path": "filter_llmstruct_json.py",
+      "category": "cli",
+      "functions": 4,
+      "classes": 0,
+      "summary": ""
+    },
+    {
+      "module_id": "40bbbc63",
+      "path": "examples/examples_python_project_utils.py",
+      "category": "utils",
+      "functions": 2,
+      "classes": 0,
+      "summary": "Utility functions for the sample project."
+    },
+    {
+      "module_id": "d65c40d6",
+      "path": "examples/examples_python_project_main.py",
+      "category": "core",
+      "functions": 1,
+      "classes": 1,
+      "summary": "Main module for the sample project."
+    },
+    {
+      "module_id": "454d4f2e",
+      "path": "src/llmstruct/__main__.py",
+      "category": "core",
+      "functions": 0,
+      "classes": 0,
+      "summary": ""
+    },
+    {
+      "module_id": "9787951a",
+      "path": "src/llmstruct/self_run.py",
+      "category": "other",
+      "functions": 2,
+      "classes": 0,
+      "summary": ""
+    },
+    {
+      "module_id": "0967a420",
+      "path": "src/llmstruct/___init__.py",
+      "category": "other",
+      "functions": 0,
+      "classes": 0,
+      "summary": "LLMStruct: A tool for generating JSON-based code structures for LLM integration."
+    },
+    {
+      "module_id": "fe407129",
+      "path": "src/llmstruct/cli.py",
+      "category": "cli",
+      "functions": 1,
+      "classes": 0,
+      "summary": ""
+    },
+    {
+      "module_id": "b0a535a9",
+      "path": "src/llmstruct/parsers/javascript_parser.py",
+      "category": "other",
+      "functions": 0,
+      "classes": 1,
+      "summary": ""
+    },
+    {
+      "module_id": "15841b19",
+      "path": "src/llmstruct/parsers/python_parser.py",
+      "category": "other",
+      "functions": 0,
+      "classes": 2,
+      "summary": ""
+    },
+    {
+      "module_id": "1246cb55",
+      "path": "src/llmstruct/parsers/___init__.py",
+      "category": "other",
+      "functions": 0,
+      "classes": 0,
+      "summary": "Language-specific parsers for extracting code structure data for LLMStruct JSON."
+    },
+    {
+      "module_id": "cc0c0038",
+      "path": "src/llmstruct/templates/___init__.py",
+      "category": "other",
+      "functions": 0,
+      "classes": 0,
+      "summary": "Templates for LLM prompts used in LLMStruct integration."
+    },
+    {
+      "module_id": "7cafcb40",
+      "path": "src/llmstruct/validators/___init__.py",
+      "category": "other",
+      "functions": 0,
+      "classes": 0,
+      "summary": "Validation modules for ensuring LLMStruct JSON complies with the schema."
+    },
+    {
+      "module_id": "8e412124",
+      "path": "src/llmstruct/validators/json_validator.py",
+      "category": "other",
+      "functions": 1,
+      "classes": 0,
+      "summary": ""
+    },
+    {
+      "module_id": "420b2e2d",
+      "path": "src/llmstruct/generators/json_generator.py",
+      "category": "other",
+      "functions": 0,
+      "classes": 1,
+      "summary": ""
+    },
+    {
+      "module_id": "ea83648f",
+      "path": "src/llmstruct/generators/___init__.py",
+      "category": "other",
+      "functions": 0,
+      "classes": 0,
+      "summary": "Generator modules for creating LLMStruct JSON outputs from parsed code data."
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "12f9b01b",
+      "path": "generate_llmstruct.py",
+      "category": "cli",
+      "module_doc": "Generate JSON for workspace based on user instructions template.\n\nCreates structure:\n- metadata with description, instructions, and version\n- toc with module summaries and categories\n- modules with detailed function/class info, comments, call graphs, and categories",
+      "file_metadata": {
+        "size_bytes": 15484,
+        "last_modified": "2025-05-17T21:34:54.304634Z",
+        "line_count": 369
+      },
+      "dependencies": [
+        "argparse",
+        "ast",
+        "datetime",
+        "fnmatch",
+        "hashlib",
+        "json",
+        "logging",
+        "os",
+        "subprocess",
+        "tempfile",
+        "tokenize",
+        "typing"
+      ],
+      "functions": [
+        {
+          "function_id": "f1",
+          "name": "load_goals",
+          "signature": "load_goals(goals_file)",
+          "doc": "Load goals from file or interactive editor.",
+          "internal_comments": [],
+          "module_calls": [
+            "line.startswith",
+            "line.strip",
+            "logging.error",
+            "os.unlink",
+            "subprocess.run",
+            "temp.flush",
+            "temp.write",
+            "tempfile.NamedTemporaryFile"
+          ]
+        },
+        {
+          "function_id": "f2",
+          "name": "file_hash",
+          "signature": "file_hash(filepath)",
+          "doc": "Compute SHA-256 hash of file contents.",
+          "internal_comments": [],
+          "module_calls": [
+            "f.read",
+            "hashlib.sha256",
+            "line.startswith",
+            "line.strip",
+            "logging.error",
+            "os.unlink",
+            "subprocess.run",
+            "temp.flush",
+            "temp.write",
+            "tempfile.NamedTemporaryFile"
+          ]
+        },
+        {
+          "function_id": "f3",
+          "name": "extract_comments",
+          "signature": "extract_comments(filepath)",
+          "doc": "Extract single-line and multi-line comments using tokenize.",
+          "internal_comments": [],
+          "module_calls": [
+            "comments.append",
+            "f.read",
+            "hashlib.sha256",
+            "line.startswith",
+            "line.strip",
+            "logging.error",
+            "os.unlink",
+            "subprocess.run",
+            "temp.flush",
+            "temp.write",
+            "tempfile.NamedTemporaryFile",
+            "tokenize.tokenize"
+          ]
+        },
+        {
+          "function_id": "f4",
+          "name": "compute_file_metadata",
+          "signature": "compute_file_metadata(filepath, include_hashes)",
+          "doc": "Compute file size, last modified time, line count, and optional hash.",
+          "internal_comments": [],
+          "module_calls": [
+            "comments.append",
+            "f.read",
+            "hashlib.sha256",
+            "line.startswith",
+            "line.strip",
+            "logging.error",
+            "os.stat",
+            "os.unlink",
+            "subprocess.run",
+            "temp.flush",
+            "temp.write",
+            "tempfile.NamedTemporaryFile",
+            "tokenize.tokenize"
+          ]
+        },
+        {
+          "function_id": "f5",
+          "name": "infer_category",
+          "signature": "infer_category(path, dependencies)",
+          "doc": "Infer module category based on path and dependencies.",
+          "internal_comments": [],
+          "module_calls": [
+            "comments.append",
+            "f.read",
+            "hashlib.sha256",
+            "line.startswith",
+            "line.strip",
+            "logging.error",
+            "os.stat",
+            "os.unlink",
+            "path.lower",
+            "subprocess.run",
+            "temp.flush",
+            "temp.write",
+            "tempfile.NamedTemporaryFile",
+            "tokenize.tokenize"
+          ]
+        },
+        {
+          "function_id": "f6",
+          "name": "get_signature",
+          "signature": "get_signature(func_node)",
+          "doc": "Generate function signature.",
+          "internal_comments": [],
+          "module_calls": [
+            "comments.append",
+            "f.read",
+            "hashlib.sha256",
+            "line.startswith",
+            "line.strip",
+            "logging.error",
+            "os.stat",
+            "os.unlink",
+            "path.lower",
+            "subprocess.run",
+            "temp.flush",
+            "temp.write",
+            "tempfile.NamedTemporaryFile",
+            "tokenize.tokenize"
+          ]
+        },
+        {
+          "function_id": "f7",
+          "name": "extract_dependencies",
+          "signature": "extract_dependencies(tree)",
+          "doc": "Extract module-level imports.",
+          "internal_comments": [],
+          "module_calls": [
+            "ast.walk",
+            "comments.append",
+            "dependencies.add",
+            "dependencies.update",
+            "f.read",
+            "hashlib.sha256",
+            "line.startswith",
+            "line.strip",
+            "logging.error",
+            "os.stat",
+            "os.unlink",
+            "path.lower",
+            "self.generic_visit",
+            "subprocess.run",
+            "temp.flush",
+            "temp.write",
+            "tempfile.NamedTemporaryFile",
+            "tokenize.tokenize"
+          ]
+        },
+        {
+          "function_id": "f8",
+          "name": "analyze_module",
+          "signature": "analyze_module(filepath, root_dir, include_ranges, include_hashes)",
+          "doc": "Analyze a Python module in a single pass.",
+          "internal_comments": [],
+          "module_calls": [
+            "ast.get_docstring",
+            "ast.parse",
+            "ast.walk",
+            "classes.append",
+            "comments.append",
+            "dependencies.add",
+            "dependencies.update",
+            "f.read",
+            "functions.append",
+            "hashlib.sha256",
+            "line.startswith",
+            "line.strip",
+            "logging.error",
+            "methods.append",
+            "os.stat",
+            "os.unlink",
+            "path.lower",
+            "self.generic_visit",
+            "source.splitlines",
+            "subprocess.run",
+            "temp.flush",
+            "temp.write",
+            "tempfile.NamedTemporaryFile",
+            "tokenize.tokenize",
+            "visitor.visit"
+          ]
+        },
+        {
+          "function_id": "f9",
+          "name": "build_toc_and_modules",
+          "signature": "build_toc_and_modules(root_dir, include_patterns, exclude_patterns, include_ranges, include_hashes)",
+          "doc": "Build TOC and modules with filtering.",
+          "internal_comments": [],
+          "module_calls": [
+            "ast.get_docstring",
+            "ast.parse",
+            "ast.walk",
+            "classes.append",
+            "comments.append",
+            "dependencies.add",
+            "dependencies.update",
+            "dirpath.split",
+            "exclude_patterns.extend",
+            "f.read",
+            "fnmatch.fnmatch",
+            "functions.append",
+            "hashlib.sha256",
+            "line.startswith",
+            "line.strip",
+            "logging.error",
+            "methods.append",
+            "modules.append",
+            "os.stat",
+            "os.unlink",
+            "os.walk",
+            "path.lower",
+            "self.generic_visit",
+            "source.splitlines",
+            "subprocess.run",
+            "temp.flush",
+            "temp.write",
+            "tempfile.NamedTemporaryFile",
+            "toc.append",
+            "tokenize.tokenize",
+            "visitor.visit"
+          ]
+        },
+        {
+          "function_id": "f10",
+          "name": "generate_json",
+          "signature": "generate_json(root_dir, include_patterns, exclude_patterns, include_ranges, include_hashes, goals_file)",
+          "doc": "Generate JSON structure for project.",
+          "internal_comments": [],
+          "module_calls": [
+            "ast.get_docstring",
+            "ast.parse",
+            "ast.walk",
+            "classes.append",
+            "comments.append",
+            "dependencies.add",
+            "dependencies.update",
+            "dirpath.split",
+            "exclude_patterns.extend",
+            "f.read",
+            "fnmatch.fnmatch",
+            "functions.append",
+            "hashlib.sha256",
+            "line.startswith",
+            "line.strip",
+            "logging.error",
+            "methods.append",
+            "modules.append",
+            "os.stat",
+            "os.unlink",
+            "os.walk",
+            "path.lower",
+            "self.generic_visit",
+            "source.splitlines",
+            "subprocess.run",
+            "temp.flush",
+            "temp.write",
+            "tempfile.NamedTemporaryFile",
+            "toc.append",
+            "tokenize.tokenize",
+            "visitor.visit"
+          ]
+        },
+        {
+          "function_id": "f11",
+          "name": "main",
+          "signature": "main()",
+          "doc": null,
+          "internal_comments": [],
+          "module_calls": [
+            "argparse",
+            "argparse.ArgumentParser",
+            "ast.get_docstring",
+            "ast.parse",
+            "ast.walk",
+            "classes.append",
+            "comments.append",
+            "dependencies.add",
+            "dependencies.update",
+            "dirpath.split",
+            "exclude_patterns.extend",
+            "f.read",
+            "fnmatch.fnmatch",
+            "functions.append",
+            "hashlib.sha256",
+            "json.dump",
+            "line.startswith",
+            "line.strip",
+            "logging.error",
+            "logging.info",
+            "methods.append",
+            "modules.append",
+            "os.stat",
+            "os.unlink",
+            "os.walk",
+            "parser.add_argument",
+            "parser.parse_args",
+            "path.lower",
+            "self.generic_visit",
+            "source.splitlines",
+            "subprocess.run",
+            "temp.flush",
+            "temp.write",
+            "tempfile.NamedTemporaryFile",
+            "toc.append",
+            "tokenize.tokenize",
+            "visitor.visit"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "class_id": "c1",
+          "name": "CallVisitor",
+          "doc": "Extract function calls and module dependencies.",
+          "internal_comments": [],
+          "methods": [
+            {
+              "method_id": "m1",
+              "name": "visit_Call",
+              "signature": "visit_Call(self, node)",
+              "doc": null,
+              "internal_comments": [],
+              "module_calls": [
+                "comments.append",
+                "f.read",
+                "hashlib.sha256",
+                "line.startswith",
+                "line.strip",
+                "logging.error",
+                "os.stat",
+                "os.unlink",
+                "path.lower",
+                "self.generic_visit",
+                "subprocess.run",
+                "temp.flush",
+                "temp.write",
+                "tempfile.NamedTemporaryFile",
+                "tokenize.tokenize"
+              ]
+            },
+            {
+              "method_id": "m2",
+              "name": "visit_Import",
+              "signature": "visit_Import(self, node)",
+              "doc": null,
+              "internal_comments": [],
+              "module_calls": [
+                "comments.append",
+                "f.read",
+                "hashlib.sha256",
+                "line.startswith",
+                "line.strip",
+                "logging.error",
+                "os.stat",
+                "os.unlink",
+                "path.lower",
+                "self.generic_visit",
+                "subprocess.run",
+                "temp.flush",
+                "temp.write",
+                "tempfile.NamedTemporaryFile",
+                "tokenize.tokenize"
+              ]
+            },
+            {
+              "method_id": "m3",
+              "name": "visit_ImportFrom",
+              "signature": "visit_ImportFrom(self, node)",
+              "doc": null,
+              "internal_comments": [],
+              "module_calls": [
+                "comments.append",
+                "f.read",
+                "hashlib.sha256",
+                "line.startswith",
+                "line.strip",
+                "logging.error",
+                "os.stat",
+                "os.unlink",
+                "path.lower",
+                "self.generic_visit",
+                "subprocess.run",
+                "temp.flush",
+                "temp.write",
+                "tempfile.NamedTemporaryFile",
+                "tokenize.tokenize"
+              ]
+            }
+          ]
+        }
+      ],
+      "callgraph": {
+        "load_goals": [
+          "NamedTemporaryFile",
+          "error",
+          "flush",
+          "get",
+          "join",
+          "open",
+          "run",
+          "startswith",
+          "strip",
+          "unlink",
+          "write"
+        ],
+        "file_hash": [
+          "NamedTemporaryFile",
+          "error",
+          "flush",
+          "get",
+          "hexdigest",
+          "join",
+          "open",
+          "read",
+          "run",
+          "sha256",
+          "startswith",
+          "strip",
+          "unlink",
+          "write"
+        ],
+        "extract_comments": [
+          "NamedTemporaryFile",
+          "append",
+          "error",
+          "flush",
+          "get",
+          "hexdigest",
+          "join",
+          "open",
+          "read",
+          "run",
+          "sha256",
+          "startswith",
+          "strip",
+          "tokenize",
+          "unlink",
+          "write"
+        ],
+        "compute_file_metadata": [
+          "NamedTemporaryFile",
+          "append",
+          "error",
+          "file_hash",
+          "flush",
+          "fromtimestamp",
+          "get",
+          "hexdigest",
+          "isoformat",
+          "join",
+          "open",
+          "read",
+          "run",
+          "sha256",
+          "startswith",
+          "stat",
+          "strip",
+          "sum",
+          "tokenize",
+          "unlink",
+          "write"
+        ],
+        "infer_category": [
+          "NamedTemporaryFile",
+          "any",
+          "append",
+          "error",
+          "file_hash",
+          "flush",
+          "fromtimestamp",
+          "get",
+          "hexdigest",
+          "isoformat",
+          "join",
+          "lower",
+          "open",
+          "read",
+          "run",
+          "sha256",
+          "startswith",
+          "stat",
+          "strip",
+          "sum",
+          "tokenize",
+          "unlink",
+          "write"
+        ],
+        "get_signature": [
+          "NamedTemporaryFile",
+          "any",
+          "append",
+          "error",
+          "file_hash",
+          "flush",
+          "fromtimestamp",
+          "get",
+          "hexdigest",
+          "isoformat",
+          "join",
+          "lower",
+          "open",
+          "read",
+          "run",
+          "sha256",
+          "startswith",
+          "stat",
+          "strip",
+          "sum",
+          "tokenize",
+          "unlink",
+          "write"
+        ],
+        "visit_Call": [
+          "NamedTemporaryFile",
+          "add",
+          "any",
+          "append",
+          "error",
+          "file_hash",
+          "flush",
+          "fromtimestamp",
+          "generic_visit",
+          "get",
+          "hexdigest",
+          "isinstance",
+          "isoformat",
+          "join",
+          "lower",
+          "open",
+          "read",
+          "run",
+          "sha256",
+          "startswith",
+          "stat",
+          "strip",
+          "sum",
+          "tokenize",
+          "unlink",
+          "write"
+        ],
+        "visit_Import": [
+          "NamedTemporaryFile",
+          "add",
+          "any",
+          "append",
+          "error",
+          "file_hash",
+          "flush",
+          "fromtimestamp",
+          "generic_visit",
+          "get",
+          "hexdigest",
+          "isinstance",
+          "isoformat",
+          "join",
+          "lower",
+          "open",
+          "read",
+          "run",
+          "sha256",
+          "startswith",
+          "stat",
+          "strip",
+          "sum",
+          "tokenize",
+          "unlink",
+          "write"
+        ],
+        "visit_ImportFrom": [
+          "NamedTemporaryFile",
+          "add",
+          "any",
+          "append",
+          "error",
+          "file_hash",
+          "flush",
+          "fromtimestamp",
+          "generic_visit",
+          "get",
+          "hexdigest",
+          "isinstance",
+          "isoformat",
+          "join",
+          "lower",
+          "open",
+          "read",
+          "run",
+          "sha256",
+          "startswith",
+          "stat",
+          "strip",
+          "sum",
+          "tokenize",
+          "unlink",
+          "write"
+        ],
+        "extract_dependencies": [
+          "NamedTemporaryFile",
+          "add",
+          "any",
+          "append",
+          "error",
+          "file_hash",
+          "flush",
+          "fromtimestamp",
+          "generic_visit",
+          "get",
+          "hexdigest",
+          "isinstance",
+          "isoformat",
+          "join",
+          "lower",
+          "open",
+          "read",
+          "run",
+          "set",
+          "sha256",
+          "sorted",
+          "startswith",
+          "stat",
+          "strip",
+          "sum",
+          "tokenize",
+          "unlink",
+          "update",
+          "walk",
+          "write"
+        ],
+        "analyze_module": [
+          "CallVisitor",
+          "NamedTemporaryFile",
+          "add",
+          "any",
+          "append",
+          "compute_file_metadata",
+          "encode",
+          "error",
+          "extract_comments",
+          "extract_dependencies",
+          "file_hash",
+          "flush",
+          "fromtimestamp",
+          "generic_visit",
+          "get",
+          "get_docstring",
+          "get_signature",
+          "getattr",
+          "hexdigest",
+          "infer_category",
+          "isinstance",
+          "isoformat",
+          "join",
+          "lower",
+          "open",
+          "parse",
+          "read",
+          "relpath",
+          "replace",
+          "run",
+          "set",
+          "sha256",
+          "sorted",
+          "splitlines",
+          "startswith",
+          "stat",
+          "str",
+          "strip",
+          "sum",
+          "tokenize",
+          "unlink",
+          "update",
+          "visit",
+          "walk",
+          "write"
+        ],
+        "build_toc_and_modules": [
+          "CallVisitor",
+          "NamedTemporaryFile",
+          "add",
+          "analyze_module",
+          "any",
+          "append",
+          "compute_file_metadata",
+          "encode",
+          "error",
+          "extend",
+          "extract_comments",
+          "extract_dependencies",
+          "file_hash",
+          "flush",
+          "fnmatch",
+          "fromtimestamp",
+          "generic_visit",
+          "get",
+          "get_docstring",
+          "get_signature",
+          "getattr",
+          "hexdigest",
+          "infer_category",
+          "isinstance",
+          "isoformat",
+          "join",
+          "len",
+          "load_gitignore",
+          "lower",
+          "open",
+          "parse",
+          "read",
+          "relpath",
+          "replace",
+          "run",
+          "set",
+          "sha256",
+          "sorted",
+          "split",
+          "splitlines",
+          "startswith",
+          "stat",
+          "str",
+          "strip",
+          "sum",
+          "tokenize",
+          "unlink",
+          "update",
+          "values",
+          "visit",
+          "walk",
+          "write"
+        ],
+        "generate_json": [
+          "CallVisitor",
+          "NamedTemporaryFile",
+          "abspath",
+          "add",
+          "analyze_module",
+          "any",
+          "append",
+          "basename",
+          "build_toc_and_modules",
+          "compute_file_metadata",
+          "encode",
+          "error",
+          "extend",
+          "extract_comments",
+          "extract_dependencies",
+          "file_hash",
+          "flush",
+          "fnmatch",
+          "fromtimestamp",
+          "generic_visit",
+          "get",
+          "get_docstring",
+          "get_signature",
+          "getattr",
+          "hexdigest",
+          "infer_category",
+          "isinstance",
+          "isoformat",
+          "join",
+          "len",
+          "load_gitignore",
+          "load_goals",
+          "lower",
+          "open",
+          "parse",
+          "read",
+          "relpath",
+          "replace",
+          "run",
+          "set",
+          "sha256",
+          "sorted",
+          "split",
+          "splitlines",
+          "startswith",
+          "stat",
+          "str",
+          "strip",
+          "sum",
+          "tokenize",
+          "unlink",
+          "update",
+          "utcnow",
+          "values",
+          "visit",
+          "walk",
+          "write"
+        ],
+        "main": [
+          "ArgumentParser",
+          "CallVisitor",
+          "NamedTemporaryFile",
+          "abspath",
+          "add",
+          "add_argument",
+          "analyze_module",
+          "any",
+          "append",
+          "basename",
+          "build_toc_and_modules",
+          "compute_file_metadata",
+          "dump",
+          "encode",
+          "error",
+          "extend",
+          "extract_comments",
+          "extract_dependencies",
+          "file_hash",
+          "flush",
+          "fnmatch",
+          "fromtimestamp",
+          "generate_json",
+          "generic_visit",
+          "get",
+          "get_docstring",
+          "get_signature",
+          "getattr",
+          "hexdigest",
+          "infer_category",
+          "info",
+          "isinstance",
+          "isoformat",
+          "join",
+          "len",
+          "load_gitignore",
+          "load_goals",
+          "lower",
+          "open",
+          "parse",
+          "parse_args",
+          "read",
+          "relpath",
+          "replace",
+          "run",
+          "set",
+          "sha256",
+          "sorted",
+          "split",
+          "splitlines",
+          "startswith",
+          "stat",
+          "str",
+          "strip",
+          "sum",
+          "tokenize",
+          "unlink",
+          "update",
+          "utcnow",
+          "values",
+          "visit",
+          "walk",
+          "write"
+        ]
+      }
+    },
+    {
+      "module_id": "6cb5cc82",
+      "path": "filter_llmstruct_json.py",
+      "category": "cli",
+      "module_doc": null,
+      "file_metadata": {
+        "size_bytes": 4133,
+        "last_modified": "2025-05-17T21:34:54.304634Z",
+        "line_count": 103
+      },
+      "dependencies": [
+        "argparse",
+        "fnmatch",
+        "json",
+        "logging",
+        "os",
+        "pathlib"
+      ],
+      "functions": [
+        {
+          "function_id": "f1",
+          "name": "load_gitignore",
+          "signature": "load_gitignore(gitignore_path)",
+          "doc": "Load and normalize .gitignore patterns.",
+          "internal_comments": [
+            "# Normalize slashes, remove trailing /"
+          ],
+          "module_calls": [
+            "line.replace",
+            "line.startswith",
+            "line.strip",
+            "patterns.append"
+          ]
+        },
+        {
+          "function_id": "f2",
+          "name": "is_path_excluded",
+          "signature": "is_path_excluded(module_path, patterns)",
+          "doc": "Check if module_path matches any pattern or is a subpath.",
+          "internal_comments": [
+            "# Normalize to forward slashes",
+            "# Handle ** for recursive paths",
+            "# Check if path matches pattern or is a subpath",
+            "# Check if path starts with pattern (e.g., venv/ matches venv/lib/...)"
+          ],
+          "module_calls": [
+            "fnmatch.fnmatch",
+            "line.replace",
+            "line.startswith",
+            "line.strip",
+            "module_path.startswith",
+            "pattern.replace",
+            "patterns.append"
+          ]
+        },
+        {
+          "function_id": "f3",
+          "name": "filter_json",
+          "signature": "filter_json(data, gitignore_patterns, include_tests)",
+          "doc": "Filter struct.json to exclude .gitignore paths and optionally tests.",
+          "internal_comments": [
+            "# Check if module path matches .gitignore or test patterns",
+            "# Keep essential fields",
+            "# Reintroduced",
+            "# Optional"
+          ],
+          "module_calls": [
+            "data.get",
+            "fnmatch.fnmatch",
+            "line.replace",
+            "line.startswith",
+            "line.strip",
+            "logging.debug",
+            "module.get",
+            "module_path.startswith",
+            "pattern.replace",
+            "patterns.append"
+          ]
+        },
+        {
+          "function_id": "f4",
+          "name": "main",
+          "signature": "main()",
+          "doc": null,
+          "internal_comments": [],
+          "module_calls": [
+            "argparse.ArgumentParser",
+            "data.get",
+            "fnmatch.fnmatch",
+            "json.dump",
+            "json.load",
+            "line.replace",
+            "line.startswith",
+            "line.strip",
+            "logging.basicConfig",
+            "logging.debug",
+            "logging.error",
+            "logging.info",
+            "module.get",
+            "module_path.startswith",
+            "parser.add_argument",
+            "parser.parse_args",
+            "pattern.replace",
+            "patterns.append"
+          ]
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "load_gitignore": [
+          "append",
+          "exists",
+          "open",
+          "replace",
+          "rstrip",
+          "startswith",
+          "strip"
+        ],
+        "is_path_excluded": [
+          "Path",
+          "append",
+          "as_posix",
+          "exists",
+          "fnmatch",
+          "open",
+          "replace",
+          "rstrip",
+          "startswith",
+          "strip"
+        ],
+        "filter_json": [
+          "Path",
+          "append",
+          "as_posix",
+          "debug",
+          "exists",
+          "fnmatch",
+          "get",
+          "is_path_excluded",
+          "len",
+          "open",
+          "replace",
+          "rstrip",
+          "startswith",
+          "strip"
+        ],
+        "main": [
+          "ArgumentParser",
+          "Path",
+          "add_argument",
+          "append",
+          "as_posix",
+          "basicConfig",
+          "debug",
+          "dump",
+          "error",
+          "exists",
+          "filter_json",
+          "fnmatch",
+          "get",
+          "info",
+          "is_path_excluded",
+          "len",
+          "load",
+          "load_gitignore",
+          "open",
+          "parse_args",
+          "replace",
+          "rstrip",
+          "startswith",
+          "str",
+          "strip"
+        ]
+      }
+    },
+    {
+      "module_id": "40bbbc63",
+      "path": "examples/examples_python_project_utils.py",
+      "category": "utils",
+      "module_doc": "Utility functions for the sample project.",
+      "file_metadata": {
+        "size_bytes": 212,
+        "last_modified": "2025-05-17T21:34:54.304634Z",
+        "line_count": 11
+      },
+      "dependencies": [
+        "logging"
+      ],
+      "functions": [
+        {
+          "function_id": "f1",
+          "name": "helper",
+          "signature": "helper()",
+          "doc": "Help the main function.",
+          "internal_comments": [],
+          "module_calls": []
+        },
+        {
+          "function_id": "f2",
+          "name": "log",
+          "signature": "log(message)",
+          "doc": "Log a message.",
+          "internal_comments": [],
+          "module_calls": [
+            "logging.info"
+          ]
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "helper": [
+          "log"
+        ],
+        "log": [
+          "info",
+          "log"
+        ]
+      }
+    },
+    {
+      "module_id": "d65c40d6",
+      "path": "examples/examples_python_project_main.py",
+      "category": "core",
+      "module_doc": "Main module for the sample project.",
+      "file_metadata": {
+        "size_bytes": 308,
+        "last_modified": "2025-05-17T21:34:54.304634Z",
+        "line_count": 17
+      },
+      "dependencies": [
+        "utils"
+      ],
+      "functions": [
+        {
+          "function_id": "f1",
+          "name": "main",
+          "signature": "main()",
+          "doc": "Run the program.",
+          "internal_comments": [],
+          "module_calls": [
+            "utils.helper"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "class_id": "c1",
+          "name": "App",
+          "doc": "Application class.",
+          "internal_comments": [],
+          "methods": [
+            {
+              "method_id": "m1",
+              "name": "run",
+              "signature": "run(self)",
+              "doc": "Execute the app.",
+              "internal_comments": [],
+              "module_calls": [
+                "utils.helper",
+                "utils.log"
+              ]
+            }
+          ]
+        }
+      ],
+      "callgraph": {
+        "main": [
+          "helper",
+          "print"
+        ],
+        "run": [
+          "helper",
+          "log",
+          "print"
+        ]
+      }
+    },
+    {
+      "module_id": "454d4f2e",
+      "path": "src/llmstruct/__main__.py",
+      "category": "core",
+      "module_doc": null,
+      "file_metadata": {
+        "size_bytes": 69,
+        "last_modified": "2025-05-17T21:34:54.304634Z",
+        "line_count": 4
+      },
+      "dependencies": [
+        "llmstruct.cli"
+      ],
+      "functions": [],
+      "classes": [],
+      "callgraph": {}
+    },
+    {
+      "module_id": "9787951a",
+      "path": "src/llmstruct/self_run.py",
+      "category": "other",
+      "module_doc": null,
+      "file_metadata": {
+        "size_bytes": 1556,
+        "last_modified": "2025-05-17T21:34:54.304634Z",
+        "line_count": 37
+      },
+      "dependencies": [
+        "json",
+        "re",
+        "typing"
+      ],
+      "functions": [
+        {
+          "function_id": "f1",
+          "name": "filter_json",
+          "signature": "filter_json(struct, query)",
+          "doc": "Filter JSON to include only modules/functions relevant to the query.",
+          "internal_comments": [],
+          "module_calls": [
+            "k.lower",
+            "module.get",
+            "query.lower",
+            "re.findall"
+          ]
+        },
+        {
+          "function_id": "f2",
+          "name": "attach_to_llm_request",
+          "signature": "attach_to_llm_request(json_path, prompt)",
+          "doc": "Attach filtered JSON structure to LLM prompt.",
+          "internal_comments": [],
+          "module_calls": [
+            "json.dumps",
+            "json.load",
+            "k.lower",
+            "module.get",
+            "query.lower",
+            "re.findall"
+          ]
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "filter_json": [
+          "append",
+          "findall",
+          "get",
+          "items",
+          "lower"
+        ],
+        "attach_to_llm_request": [
+          "append",
+          "dumps",
+          "filter_json",
+          "findall",
+          "get",
+          "items",
+          "load",
+          "lower",
+          "open"
+        ]
+      }
+    },
+    {
+      "module_id": "0967a420",
+      "path": "src/llmstruct/___init__.py",
+      "category": "other",
+      "module_doc": "LLMStruct: A tool for generating JSON-based code structures for LLM integration.\n\nThis package provides modular parsers, generators, and validators to create and validate\nJSON representations of code projects, supporting automation and context-aware LLM assistance.",
+      "file_metadata": {
+        "size_bytes": 405,
+        "last_modified": "2025-05-17T21:34:54.304634Z",
+        "line_count": 16
+      },
+      "dependencies": [],
+      "functions": [],
+      "classes": [],
+      "callgraph": {}
+    },
+    {
+      "module_id": "fe407129",
+      "path": "src/llmstruct/cli.py",
+      "category": "cli",
+      "module_doc": null,
+      "file_metadata": {
+        "size_bytes": 3117,
+        "last_modified": "2025-05-17T21:34:54.304634Z",
+        "line_count": 68
+      },
+      "dependencies": [
+        "argparse",
+        "json",
+        "llmstruct.generators.json_generator",
+        "llmstruct.parsers.javascript_parser",
+        "llmstruct.parsers.python_parser",
+        "os",
+        "typing"
+      ],
+      "functions": [
+        {
+          "function_id": "f1",
+          "name": "main",
+          "signature": "main()",
+          "doc": null,
+          "internal_comments": [
+            "# Iterate over files",
+            "# Parse goals and tasks",
+            "# Build metadata"
+          ],
+          "module_calls": [
+            "argparse.ArgumentParser",
+            "file.endswith",
+            "g.strip",
+            "generator.generate",
+            "json.dump",
+            "json.load",
+            "m.get",
+            "modules.append",
+            "os.walk",
+            "parser.add_argument",
+            "parser.parse_args",
+            "parser.parse_module",
+            "t.strip"
+          ]
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "main": [
+          "ArgumentParser",
+          "JSONGenerator",
+          "JavaScriptParser",
+          "PythonParser",
+          "add_argument",
+          "append",
+          "basename",
+          "dump",
+          "endswith",
+          "generate",
+          "get",
+          "isfile",
+          "join",
+          "len",
+          "load",
+          "open",
+          "parse_args",
+          "parse_module",
+          "split",
+          "strip",
+          "sum",
+          "walk"
+        ]
+      }
+    },
+    {
+      "module_id": "b0a535a9",
+      "path": "src/llmstruct/parsers/javascript_parser.py",
+      "category": "other",
+      "module_doc": null,
+      "file_metadata": {
+        "size_bytes": 3601,
+        "last_modified": "2025-05-17T21:34:54.304634Z",
+        "line_count": 89
+      },
+      "dependencies": [
+        "datetime",
+        "esprima",
+        "hashlib",
+        "os",
+        "typing"
+      ],
+      "functions": [],
+      "classes": [
+        {
+          "class_id": "c1",
+          "name": "JavaScriptParser",
+          "doc": null,
+          "internal_comments": [
+            "# Simplified; extend with infer_category logic",
+            "# Extract from ImportDeclaration nodes",
+            "# Extract from node.body",
+            "# Add ClassDeclaration handling similarly"
+          ],
+          "methods": [
+            {
+              "method_id": "m1",
+              "name": "file_hash",
+              "signature": "file_hash(self, filepath)",
+              "doc": null,
+              "internal_comments": [],
+              "module_calls": [
+                "f.read",
+                "hashlib.sha256"
+              ]
+            },
+            {
+              "method_id": "m2",
+              "name": "compute_file_metadata",
+              "signature": "compute_file_metadata(self, filepath, include_hashes)",
+              "doc": null,
+              "internal_comments": [],
+              "module_calls": [
+                "f.read",
+                "hashlib.sha256",
+                "os.stat",
+                "self.file_hash"
+              ]
+            },
+            {
+              "method_id": "m3",
+              "name": "parse_module",
+              "signature": "parse_module(self, filepath, root_dir, include_ranges, include_hashes)",
+              "doc": null,
+              "internal_comments": [
+                "# Simplified; extend with infer_category logic",
+                "# Extract from ImportDeclaration nodes",
+                "# Extract from node.body",
+                "# Add ClassDeclaration handling similarly"
+              ],
+              "module_calls": [
+                "esprima.parseModule",
+                "f.read",
+                "functions.append",
+                "hashlib.sha256",
+                "os.stat",
+                "self.compute_file_metadata",
+                "self.file_hash"
+              ]
+            }
+          ]
+        }
+      ],
+      "callgraph": {
+        "file_hash": [
+          "hexdigest",
+          "open",
+          "read",
+          "sha256"
+        ],
+        "compute_file_metadata": [
+          "file_hash",
+          "fromtimestamp",
+          "hexdigest",
+          "isoformat",
+          "open",
+          "read",
+          "sha256",
+          "stat",
+          "sum"
+        ],
+        "parse_module": [
+          "append",
+          "compute_file_metadata",
+          "extract_signature",
+          "file_hash",
+          "fromtimestamp",
+          "hasattr",
+          "hexdigest",
+          "isoformat",
+          "join",
+          "next",
+          "open",
+          "parseModule",
+          "read",
+          "relpath",
+          "replace",
+          "sha256",
+          "startswith",
+          "stat",
+          "str",
+          "strip",
+          "sum"
+        ]
+      }
+    },
+    {
+      "module_id": "15841b19",
+      "path": "src/llmstruct/parsers/python_parser.py",
+      "category": "other",
+      "module_doc": null,
+      "file_metadata": {
+        "size_bytes": 5848,
+        "last_modified": "2025-05-17T21:34:54.304634Z",
+        "line_count": 139
+      },
+      "dependencies": [
+        "ast",
+        "datetime",
+        "hashlib",
+        "os",
+        "typing"
+      ],
+      "functions": [],
+      "classes": [
+        {
+          "class_id": "c1",
+          "name": "CallVisitor",
+          "doc": null,
+          "internal_comments": [
+            "# List of (name, is_qualified) tuples",
+            "# Local call, e.g., \"main\"",
+            "# Qualified call, e.g., \"utils.helper\""
+          ],
+          "methods": [
+            {
+              "method_id": "m1",
+              "name": "visit_Call",
+              "signature": "visit_Call(self, node)",
+              "doc": null,
+              "internal_comments": [
+                "# Local call, e.g., \"main\"",
+                "# Qualified call, e.g., \"utils.helper\""
+              ],
+              "module_calls": [
+                "self.generic_visit"
+              ]
+            }
+          ]
+        },
+        {
+          "class_id": "c2",
+          "name": "PythonParser",
+          "doc": null,
+          "internal_comments": [
+            "# Simplified; extend with infer_category",
+            "# Extract dependencies",
+            "# Extract functions and classes"
+          ],
+          "methods": [
+            {
+              "method_id": "m1",
+              "name": "file_hash",
+              "signature": "file_hash(self, filepath)",
+              "doc": null,
+              "internal_comments": [],
+              "module_calls": [
+                "f.read",
+                "hashlib.sha256",
+                "self.generic_visit"
+              ]
+            },
+            {
+              "method_id": "m2",
+              "name": "compute_file_metadata",
+              "signature": "compute_file_metadata(self, filepath, include_hashes)",
+              "doc": null,
+              "internal_comments": [],
+              "module_calls": [
+                "f.read",
+                "hashlib.sha256",
+                "os.stat",
+                "self.file_hash",
+                "self.generic_visit"
+              ]
+            },
+            {
+              "method_id": "m3",
+              "name": "parse_module",
+              "signature": "parse_module(self, filepath, root_dir, include_ranges, include_hashes)",
+              "doc": null,
+              "internal_comments": [
+                "# Simplified; extend with infer_category",
+                "# Extract dependencies",
+                "# Extract functions and classes"
+              ],
+              "module_calls": [
+                "ast.get_docstring",
+                "ast.parse",
+                "ast.walk",
+                "call.split",
+                "classes.append",
+                "dependencies.append",
+                "dependencies.extend",
+                "f.read",
+                "functions.append",
+                "hashlib.sha256",
+                "methods.append",
+                "os.stat",
+                "self.compute_file_metadata",
+                "self.file_hash",
+                "self.generic_visit",
+                "visitor.visit"
+              ]
+            }
+          ]
+        }
+      ],
+      "callgraph": {
+        "visit_Call": [
+          "append",
+          "generic_visit",
+          "isinstance"
+        ],
+        "file_hash": [
+          "append",
+          "generic_visit",
+          "hexdigest",
+          "isinstance",
+          "open",
+          "read",
+          "sha256"
+        ],
+        "compute_file_metadata": [
+          "append",
+          "file_hash",
+          "fromtimestamp",
+          "generic_visit",
+          "hexdigest",
+          "isinstance",
+          "isoformat",
+          "open",
+          "read",
+          "sha256",
+          "stat",
+          "sum"
+        ],
+        "parse_module": [
+          "CallVisitor",
+          "append",
+          "compute_file_metadata",
+          "extend",
+          "file_hash",
+          "fromtimestamp",
+          "generic_visit",
+          "get_docstring",
+          "hexdigest",
+          "isinstance",
+          "isoformat",
+          "join",
+          "list",
+          "open",
+          "parse",
+          "read",
+          "relpath",
+          "replace",
+          "set",
+          "sha256",
+          "sorted",
+          "split",
+          "startswith",
+          "stat",
+          "str",
+          "sum",
+          "visit",
+          "walk"
+        ]
+      }
+    },
+    {
+      "module_id": "1246cb55",
+      "path": "src/llmstruct/parsers/___init__.py",
+      "category": "other",
+      "module_doc": "Language-specific parsers for extracting code structure data for LLMStruct JSON.",
+      "file_metadata": {
+        "size_bytes": 223,
+        "last_modified": "2025-05-17T21:34:54.304634Z",
+        "line_count": 6
+      },
+      "dependencies": [
+        "javascript_parser",
+        "python_parser"
+      ],
+      "functions": [],
+      "classes": [],
+      "callgraph": {}
+    },
+    {
+      "module_id": "cc0c0038",
+      "path": "src/llmstruct/templates/___init__.py",
+      "category": "other",
+      "module_doc": "Templates for LLM prompts used in LLMStruct integration.",
+      "file_metadata": {
+        "size_bytes": 76,
+        "last_modified": "2025-05-17T21:34:54.304634Z",
+        "line_count": 3
+      },
+      "dependencies": [],
+      "functions": [],
+      "classes": [],
+      "callgraph": {}
+    },
+    {
+      "module_id": "7cafcb40",
+      "path": "src/llmstruct/validators/___init__.py",
+      "category": "other",
+      "module_doc": "Validation modules for ensuring LLMStruct JSON complies with the schema.",
+      "file_metadata": {
+        "size_bytes": 164,
+        "last_modified": "2025-05-17T21:34:54.304634Z",
+        "line_count": 5
+      },
+      "dependencies": [
+        "json_validator"
+      ],
+      "functions": [],
+      "classes": [],
+      "callgraph": {}
+    },
+    {
+      "module_id": "8e412124",
+      "path": "src/llmstruct/validators/json_validator.py",
+      "category": "other",
+      "module_doc": null,
+      "file_metadata": {
+        "size_bytes": 827,
+        "last_modified": "2025-05-17T21:34:54.304634Z",
+        "line_count": 25
+      },
+      "dependencies": [
+        "json",
+        "jsonschema",
+        "sys"
+      ],
+      "functions": [
+        {
+          "function_id": "f1",
+          "name": "validate_struct_json",
+          "signature": "validate_struct_json(json_path, schema_path)",
+          "doc": null,
+          "internal_comments": [],
+          "module_calls": [
+            "json.load"
+          ]
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "validate_struct_json": [
+          "load",
+          "open",
+          "print",
+          "str",
+          "validate"
+        ]
+      }
+    },
+    {
+      "module_id": "420b2e2d",
+      "path": "src/llmstruct/generators/json_generator.py",
+      "category": "other",
+      "module_doc": null,
+      "file_metadata": {
+        "size_bytes": 1628,
+        "last_modified": "2025-05-17T21:34:54.304634Z",
+        "line_count": 41
+      },
+      "dependencies": [
+        "datetime",
+        "typing"
+      ],
+      "functions": [],
+      "classes": [
+        {
+          "class_id": "c1",
+          "name": "JSONGenerator",
+          "doc": null,
+          "internal_comments": [
+            "# Ensure metadata has required fields"
+          ],
+          "methods": [
+            {
+              "method_id": "m1",
+              "name": "generate",
+              "signature": "generate(self, modules, metadata)",
+              "doc": "Generate LLMStruct JSON from parsed module data and metadata.",
+              "internal_comments": [
+                "# Ensure metadata has required fields"
+              ],
+              "module_calls": [
+                "m.get",
+                "metadata.setdefault",
+                "metadata_defaults.items",
+                "module.get",
+                "toc.append"
+              ]
+            }
+          ]
+        }
+      ],
+      "callgraph": {
+        "generate": [
+          "append",
+          "get",
+          "isoformat",
+          "items",
+          "len",
+          "now",
+          "setdefault",
+          "split",
+          "sum"
+        ]
+      }
+    },
+    {
+      "module_id": "ea83648f",
+      "path": "src/llmstruct/generators/___init__.py",
+      "category": "other",
+      "module_doc": "Generator modules for creating LLMStruct JSON outputs from parsed code data.",
+      "file_metadata": {
+        "size_bytes": 154,
+        "last_modified": "2025-05-17T21:34:54.304634Z",
+        "line_count": 5
+      },
+      "dependencies": [
+        "json_generator"
+      ],
+      "functions": [],
+      "classes": [],
+      "callgraph": {}
+    }
+  ]
+}
