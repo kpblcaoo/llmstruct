@@ -1,139 +1,130 @@
 import ast
-import os
 import hashlib
-import datetime
-from typing import Dict, Any, List
+import logging
+import os
+from pathlib import Path
+from typing import Dict, Any, Optional, List, Set
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
+def infer_category(file_path: str) -> str:
+    """Infer module category based on its path."""
+    path = Path(file_path)
+    if path.name.startswith('test_') or 'tests' in path.parts:
+        return 'test'
+    if path.name in ('__init__.py', '__main__.py') or path.parent.name == 'cli':
+        return 'cli'
+    return 'core'
 
 class CallVisitor(ast.NodeVisitor):
+    """AST visitor to collect function calls and dependencies."""
     def __init__(self):
-        self.calls = []  # List of (name, is_qualified) tuples
+        self.calls: Dict[str, Set[str]] = {}
+        self.dependencies: Set[str] = set()
+        self.current_function: Optional[str] = None
 
-    def visit_Call(self, node):
-        if isinstance(node.func, ast.Name):
-            self.calls.append((node.func.id, False))  # Local call, e.g., "main"
-        elif isinstance(node.func, ast.Attribute) and isinstance(node.func.value, ast.Name):
-            call_name = f"{node.func.value.id}.{node.func.attr}"
-            self.calls.append((call_name, True))  # Qualified call, e.g., "utils.helper"
+    def visit_Import(self, node: ast.Import) -> None:
+        """Capture import statements."""
+        for alias in node.names:
+            self.dependencies.add(alias.name)
         self.generic_visit(node)
 
-class PythonParser:
-    def __init__(self):
-        self.dependencies = set()
-        self.functions = []
-        self.classes = []
-        self.callgraph = {}
+    def visit_ImportFrom(self, node: ast.ImportFrom) -> None:
+        """Capture from-import statements."""
+        if node.module:
+            self.dependencies.add(node.module)
+        for alias in node.names:
+            self.dependencies.add(alias.name)
+        self.generic_visit(node)
 
-    def file_hash(self, filepath: str) -> str:
-        try:
-            with open(filepath, "rb") as f:
-                return hashlib.sha256(f.read()).hexdigest()
-        except OSError:
-            return ""
+    def visit_FunctionDef(self, node: ast.FunctionDef) -> None:
+        """Track function definitions and their calls."""
+        self.current_function = node.name
+        self.calls[node.name] = set()
+        self.generic_visit(node)
+        self.current_function = None
 
-    def compute_file_metadata(self, filepath: str, include_hashes: bool) -> Dict[str, Any]:
-        try:
-            stat = os.stat(filepath)
-            with open(filepath, "r", encoding="utf-8") as f:
-                line_count = sum(1 for _ in f)
-            metadata = {
-                "size_bytes": stat.st_size,
-                "last_modified": datetime.datetime.fromtimestamp(stat.st_mtime).isoformat() + "Z",
-                "line_count": line_count
-            }
-            if include_hashes:
-                metadata["hash"] = self.file_hash(filepath)
-            return metadata
-        except OSError:
-            return {}
+    def visit_AsyncFunctionDef(self, node: ast.AsyncFunctionDef) -> None:
+        """Track async function definitions and their calls."""
+        self.current_function = node.name
+        self.calls[node.name] = set()
+        self.generic_visit(node)
+        self.current_function = None
 
-    def parse_module(self, filepath: str, root_dir: str, include_ranges: bool, include_hashes: bool) -> Dict[str, Any]:
-        try:
-            with open(filepath, "r", encoding="utf-8") as f:
-                source = f.read()
-            tree = ast.parse(source)
-        except Exception as e:
-            return {"path": os.path.relpath(filepath, root_dir).replace(os.sep, "/"), "error": str(e)}
+    def visit_Call(self, node: ast.Call) -> None:
+        """Capture function calls."""
+        if self.current_function:
+            if isinstance(node.func, ast.Name):
+                self.calls[self.current_function].add(node.func.id)
+            elif isinstance(node.func, ast.Attribute):
+                if isinstance(node.func.value, ast.Name):
+                    self.calls[self.current_function].add(f"{node.func.value.id}.{node.func.attr}")
+        self.generic_visit(node)
 
-        module_doc = ast.get_docstring(tree)
-        file_metadata = self.compute_file_metadata(filepath, include_hashes)
-        category = "core"  # Simplified; extend with infer_category
-        dependencies = []
-        functions = []
-        classes = []
-        callgraph = {}
+def compute_file_hash(file_path: str) -> str:
+    """Compute SHA-256 hash of file content."""
+    try:
+        with open(file_path, 'rb') as f:
+            return hashlib.sha256(f.read()).hexdigest()
+    except Exception as e:
+        logging.error(f"Failed to compute hash for {file_path}: {e}")
+        return ""
 
-        # Extract dependencies
-        for node in ast.walk(tree):
-            if isinstance(node, ast.Import):
-                dependencies.extend(alias.name for alias in node.names)
-            elif isinstance(node, ast.ImportFrom):
-                if node.module:
-                    dependencies.append(node.module)
+def analyze_module(file_path: str, root_dir: str, include_ranges: bool, include_hashes: bool) -> Optional[Dict[str, Any]]:
+    """Analyze Python module and return structured data."""
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            source = f.read()
+        tree = ast.parse(source, filename=file_path)
+    except Exception as e:
+        logging.error(f"Failed to parse {file_path}: {e}")
+        return None
 
-        # Extract functions and classes
-        for node in tree.body:
-            if isinstance(node, ast.FunctionDef) and not node.name.startswith("_"):
-                doc = ast.get_docstring(node)
-                signature = f"{node.name}({', '.join(arg.arg for arg in node.args.args)})"
-                visitor = CallVisitor()
-                visitor.visit(node)
-                module_calls = [call for call, is_qualified in visitor.calls if is_qualified]
-                callgraph[node.name] = [
-                    call.split(".")[1] for call, is_qualified in visitor.calls
-                    if is_qualified and "." in call
-                ]
-                func_data = {
-                    "name": node.name,
-                    "signature": signature,
-                    "doc": doc,
-                    "internal_comments": [],
-                    "module_calls": module_calls
+    visitor = CallVisitor()
+    visitor.visit(tree)
+
+    module_id = str(Path(file_path).relative_to(root_dir)).replace(os.sep, '.').rsplit('.py', 1)[0]
+    module_doc = ast.get_docstring(tree) or ""
+    functions = []
+    classes = []
+
+    for node in ast.walk(tree):
+        if isinstance(node, ast.FunctionDef) or isinstance(node, ast.AsyncFunctionDef):
+            docstring = ast.get_docstring(node) or ""
+            functions.append({
+                "name": node.name,
+                "docstring": docstring,
+                "line_range": [node.lineno, node.end_lineno] if include_ranges else None,
+                "parameters": [arg.arg for arg in node.args.args],
+                "decorators": [ast.unparse(dec) for dec in node.decorator_list]
+            })
+        elif isinstance(node, ast.ClassDef):
+            docstring = ast.get_docstring(node) or ""
+            methods = [
+                {
+                    "name": n.name,
+                    "docstring": ast.get_docstring(n) or "",
+                    "line_range": [n.lineno, n.end_lineno] if include_ranges else None,
+                    "parameters": [arg.arg for arg in n.args.args]
                 }
-                if include_ranges:
-                    func_data["range"] = {"start": node.lineno, "end": node.end_lineno}
-                functions.append(func_data)
-            elif isinstance(node, ast.ClassDef) and not node.name.startswith("_"):
-                doc = ast.get_docstring(node)
-                methods = []
-                for n in node.body:
-                    if isinstance(n, ast.FunctionDef):
-                        method_doc = ast.get_docstring(n)
-                        signature = f"{n.name}({', '.join(arg.arg for arg in n.args.args)})"
-                        visitor = CallVisitor()
-                        visitor.visit(n)
-                        method_calls = [call for call, is_qualified in visitor.calls if is_qualified]
-                        callgraph[n.name] = [
-                            call.split(".")[1] for call, is_qualified in visitor.calls
-                            if is_qualified and "." in call
-                        ]
-                        method_data = {
-                            "name": n.name,
-                            "signature": signature,
-                            "doc": method_doc,
-                            "internal_comments": [],
-                            "module_calls": method_calls
-                        }
-                        if include_ranges:
-                            method_data["range"] = {"start": n.lineno, "end": n.end_lineno}
-                        methods.append(method_data)
-                class_data = {
-                    "name": node.name,
-                    "doc": doc,
-                    "internal_comments": [],
-                    "methods": methods
-                }
-                if include_ranges:
-                    class_data["range"] = {"start": node.lineno, "end": node.end_lineno}
-                classes.append(class_data)
+                for n in node.body if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))
+            ]
+            classes.append({
+                "name": node.name,
+                "docstring": docstring,
+                "line_range": [node.lineno, node.end_lineno] if include_ranges else None,
+                "methods": methods,
+                "bases": [ast.unparse(base) for base in node.bases]
+            })
 
-        return {
-            "path": os.path.relpath(filepath, root_dir).replace(os.sep, "/"),
-            "language": "python",
-            "category": category,
-            "module_doc": module_doc,
-            "file_metadata": file_metadata,
-            "dependencies": sorted(list(set(dependencies))),
-            "functions": functions,
-            "classes": classes,
-            "callgraph": callgraph
-        }
+    return {
+        "module_id": module_id,
+        "path": str(Path(file_path).relative_to(root_dir)),
+        "category": infer_category(file_path),
+        "module_doc": module_doc,
+        "functions": functions,
+        "classes": classes,
+        "callgraph": {k: list(v) for k, v in visitor.calls.items()},
+        "dependencies": sorted([d for d in visitor.dependencies if d is not None]),
+        "hash": compute_file_hash(file_path) if include_hashes else None
+    }
