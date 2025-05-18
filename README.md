@@ -50,7 +50,7 @@ LLMstruct welcomes contributions in all languages. English is the primary langua
 
 ## Contributing
 
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on code, documentation, and pull requests. For Russian documentation, see [docs/ru/README.md](docs/ru/README.md) and [docs/ru/CONTRIBUTING.md](docs/ru/CONTRIBUTING.md).
+Contributions are welcome! See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines on code, documentation, and pull requests. For Russian documentation, see [docs/ru/README.md](docs/ru/README.md) and [docs/ru/CONTRIBUTING.md](docs/ru/CONTRIBUTING.md).
 
 ## License
 
