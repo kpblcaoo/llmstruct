@@ -1,0 +1,30 @@
+{
+  "context": {
+    "summary": "Example project for llmstruct",
+    "files": ["src/main.py"]
+  },
+  "instructions": {
+    "base": [
+      "Parse code to JSON, preserve structure",
+      "Log errors in 'errors' field",
+      "Ensure idempotence: same code = same JSON"
+    ],
+    "custom": [
+      "Optimize Python functions for <50 lines",
+      "Add docstrings to all functions"
+    ]
+  },
+  "tasks": [
+    {
+      "id": "TSK-006",
+      "status": "open",
+      "assignee": "@kpblcaoo",
+      "description": "Enhance parser.py"
+    }
+  ],
+  "errors": [],
+  "metrics": {
+    "tokens": 500,
+    "vram": 3.2
+  }
+}
