@@ -5,7 +5,8 @@
 ## Быстрый старт
 1. **Установка**:
    ```bash
-   pip install llmstruct
+      cd llmstruct/
+      pip install -e .
    ```
 2. **Парсинг кода**:
    ```bash
