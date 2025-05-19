@@ -12,4 +12,4 @@ COPY . .
 RUN pip install .
 
 ENTRYPOINT ["python", "-m", "llmstruct"]
-CMD ["."] 
+CMD [] 
