@@ -1,28 +1,27 @@
 # llmstruct Best Practices
 
-Best practices for using `llmstruct` to ensure clean code and reliable `struct.json` output.
+**Status**: Draft  
+**Version**: 0.1.0  
+**Last Updated**: 2025-05-18T23:00:27.888546Z  
+**Author**: Mikhail Stepanov ([kpblcaoo](https://github.com/kpblcaoo), kpblcaoo@gmail.com)
 
-## Code Style
-- **Format Code**: Use `flake8` for Python, `eslint` for JS.
-  ```bash
-  flake8 src/
-  ```
-- **Avoid Dynamic Imports**: They confuse parsers (TSK-006).
-- **Small Functions**: Max 50 lines for LLM context (G5).
+## 1. Introduction
 
-## Project Structure
-- Keep `src/` clean: Avoid nested folders >3 levels.
-- Use `llmstruct.toml` for custom instructions (TSK-024).
+This document outlines best practices for contributing to llmstruct, ensuring consistency, quality, and collaboration. It aligns with the project's goals (TSK-008, TSK-017).
 
-## Testing
-- Add tests for idempotence:
-  ```bash
-  pytest src/tests/test_parser.py
-  ```
-- Check `struct.json` errors after parsing.
+## 2. Code Contribution
 
-## Tips
-- Run `llmstruct parse` before commits to catch issues.
-- Use Telegram `/fix` for quick LLM suggestions (TSK-023).
+- **Style**: Follow PEP 8 for Python, use type hints, and verify with `mypy`.
+- **Structure**: Add parsers to `src/llmstruct/parsers/` (e.g., `go_parser.py`).
+- **Testing**: Add tests to `tests/` (e.g., `test_python_parser.py`). Aim for >80% coverage (`pytest --cov=src`).
 
-See [integration.md](#integration.md) for CI/CD setup.
+## 3. Documentation Contribution
+
+- **Format**: Update `docs/llmstruct_format.md` for JSON changes (TSK-008).
+- **Localization**: Add translations to `docs/<lang>/` (e.g., `docs/ru/llmstruct_format.md`).
+- **Other**: Update `docs/project_structure.md` for structural changes.
+
+## 4. Pull Requests
+
+- Create PRs to `main` with clear descriptions (TSK-011).
+- Ensure tests pass (`pytest`, `mypy`) and get one approval (e.g., @kpblcaoo).

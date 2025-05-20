@@ -6,13 +6,14 @@ Technical ideas for `llmstruct` v0.2.0–v0.3.0, focusing on `struct.json`, LLM 
 - **Context Simplification**: Minimize LLM context via `struct.json` (`context: {summary: "проект делает X", files: ["src/main.py"]}`). Cache context in `parser.py` to reduce token usage (G5).
 - **Idempotence**: Ensure parsers (TSK-006, TSK-012) produce consistent `struct.json` for same code. Add tests (TSK-012).
 - **Ease of Use**: Target UX like “дружище, сделай код хорошо” in v0.3.0 (TSK-021, voice input via Grok API, Telegram `/fix`).
+- **CI/CD Automation**: Automate PR parsing and task creation in CI/CD pipelines (TSK-012, GitHub Actions, GitLab).
 
 ## Code Parsing
 - **Standalone Parser (TSK-006, TSK-007)**: Enhance `parser.py` for Python/JS, generate `struct.json` for simple projects (~10 files, TSK-016). Log errors (`errors: [{file: "app.js", line: 42, reason: "invalid syntax"}]`).
   - Why: Demo for Habr (TSK-017), pet projects (“pip install llmstruct, llmstruct parse”).
   - How: Error logging in `parser.py`, `cli.py` (`llmstruct parse --input src/`). Effort: ~5–7h.
   - Impact: Usability for v0.2.0, G1, G5.
-- **CI/CD Module (TSK-012)**: Module `llmstruct` for GitHub/GitLab CI/CD, parsing PRs, updating `struct.json`. Report errors via Issues.
+- **CI/CD Module (TSK-012)**: Module `llmstruct` for GitHub/GitLab CI/CD, parsing PRs, updating `struct.json`, and integrating with DevOps tools (Grafana, MLflow, TSK-015). Report errors via Issues.
   - Why: Stable for large projects (~100+ files, TSK-016). Controlled parsing.
   - How: PyPI package, Action (`.github/workflows/parse.yml`), Issue creation (`gh issue create`). Docs: `integration.md`, `best_practices.md` (TSK-010). Effort: ~15–20h.
   - Impact: Scales to v0.3.0, G5.

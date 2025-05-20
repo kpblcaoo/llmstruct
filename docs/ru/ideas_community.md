@@ -3,7 +3,7 @@
 Идеи для роста комьюнити `llmstruct` (TSK-017, Issue #9). Фокус: `struct.json`, догфудинг, LLM (Qwen, чат-бот, API Anthropic/Grok). Цели: G4 (прозрачность), G5 (оптимизация LLM). Команда: @kpblcaoo, @momai, @ivan-ib. Тренды (май 2025): Посты о LLM на Habr (~5–15k просмотров), Telegram-боты для dev tools (~500–10k юзеров).
 
 ## Продвижение
-- **Посты на Habr (TSK-017)**: “llmstruct: Альфа! JSON + LLM для разработки” через 2–4 недели. Подчеркнуть `struct.json`, Qwen, GPL-3.0, глобальное видение.
+- **Посты на Habr (TSK-017)**: “llmstruct: Альфа! JSON + LLM для CI/CD и автоматизации Dev” через 2–4 недели. Подчеркнуть `struct.json`, Qwen, GPL-3.0, CI/CD (TSK-012), интеграции DevOps (Grafana, TSK-015).
   - CTA: “Присоединяйся к Issues, пробуй альфу! См. [onboarding.md](#onboarding.md).”
   - Эффект: ~5–20 контрибьюторов (Habr: ~10k просмотров, ниша GPL-3.0).
 - **Reddit (TSK-017)**: Пост в r/opensource, r/programming: “llmstruct alpha: JSON-driven dev, Qwen coming!” Ссылка на GitHub, туториал.

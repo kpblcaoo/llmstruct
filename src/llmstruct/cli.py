@@ -1,4 +1,5 @@
 import argparse
+import asyncio
 import json
 import logging
 import os
@@ -7,7 +8,8 @@ from typing import List, Optional
 
 import toml
 
-from .generators.json_generator import generate_json
+from llmstruct import LLMClient
+from llmstruct.generators.json_generator import generate_json
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
@@ -34,19 +36,8 @@ def load_config(root_dir: str) -> dict:
             logging.error(f"Failed to read llmstruct.toml: {e}")
     return {}
 
-def main():
-    """Command-line interface for LLMstruct."""
-    parser = argparse.ArgumentParser(description="Generate structured JSON for codebases")
-    parser.add_argument('root_dir', help="Root directory of the project")
-    parser.add_argument('-o', '--output', default='struct.json', help="Output JSON file")
-    parser.add_argument('--language', choices=['python', 'javascript'], help="Programming language")
-    parser.add_argument('--include', action='append', help="Include patterns (e.g., '*.py')")
-    parser.add_argument('--exclude', action='append', help="Exclude patterns (e.g., 'tests/*')")
-    parser.add_argument('--include-ranges', action='store_true', help="Include line ranges for functions/classes")
-    parser.add_argument('--include-hashes', action='store_true', help="Include file hashes")
-    parser.add_argument('--goals', nargs='*', help="Custom project goals")
-    args = parser.parse_args()
-
+def parse(args: argparse.Namespace):
+    """Parse codebase and generate struct.json."""
     root_dir = os.path.abspath(args.root_dir)
     config = load_config(root_dir)
     
@@ -76,12 +67,99 @@ def main():
             goals=goals,
             exclude_dirs=exclude_dirs
         )
-        with open(args.output, 'w', encoding='utf-8') as f:
+        with Path(args.output).open('w', encoding='utf-8') as f:
             json.dump(struct_data, f, indent=2)
         logging.info(f"Generated {args.output}")
     except Exception as e:
         logging.error(f"Failed to generate JSON: {e}")
         raise
+
+async def query(args: argparse.Namespace):
+    """Query LLMs with prompt and context."""
+    if not Path(args.context).exists():
+        logging.error(f"Context file {args.context} does not exist")
+        return
+    client = LLMClient()
+    result = await client.query(
+        prompt=args.prompt,
+        context_path=args.context,
+        mode=args.mode,
+        model=args.model,
+        artifact_ids=args.artifact_ids
+    )
+    if result:
+        with Path(args.output).open("w", encoding="utf-8") as f:
+            json.dump({"prompt": args.prompt, "response": result}, f, indent=2)
+        logging.info(f"Generated {args.output}")
+    else:
+        logging.error("Query failed")
+
+def context(args: argparse.Namespace):
+    """Generate context.json from input JSON."""
+    logging.warning("Context command not implemented yet (TSK-091)")
+
+def dogfood(args: argparse.Namespace):
+    """Run dogfooding analysis."""
+    logging.warning("Dogfood command not implemented yet (TSK-095)")
+
+def review(args: argparse.Namespace):
+    """Review codebase with LLM."""
+    logging.warning("Review command not implemented yet (TSK-096)")
+
+def main():
+    """Command-line interface for LLMstruct."""
+    parser = argparse.ArgumentParser(description="Generate structured JSON for codebases and query LLMs")
+    subparsers = parser.add_subparsers(dest="command", required=True, help="Available commands")
+
+    # Parse command
+    parse_parser = subparsers.add_parser("parse", help="Parse codebase and generate struct.json")
+    parse_parser.add_argument("root_dir", help="Root directory of the project")
+    parse_parser.add_argument("-o", "--output", default="struct.json", help="Output JSON file")
+    parse_parser.add_argument("--language", choices=["python", "javascript"], help="Programming language")
+    parse_parser.add_argument("--include", action="append", help="Include patterns (e.g., '*.py')")
+    parse_parser.add_argument("--exclude", action="append", help="Exclude patterns (e.g., 'tests/*')")
+    parse_parser.add_argument("--include-ranges", action="store_true", help="Include line ranges for functions/classes")
+    parse_parser.add_argument("--include-hashes", action="store_true", help="Include file hashes")
+    parse_parser.add_argument("--goals", nargs="*", help="Custom project goals")
+
+    # Query command
+    query_parser = subparsers.add_parser("query", help="Query LLMs with prompt and context")
+    query_parser.add_argument("--prompt", required=True, help="Prompt for LLM")
+    query_parser.add_argument("--context", default="context.json", help="Context JSON file")
+    query_parser.add_argument("--mode", choices=["grok", "anthropic", "ollama", "hybrid"], default="hybrid", help="LLM mode")
+    query_parser.add_argument("--model", help="Ollama model (e.g., mixtral, llama3)")
+    query_parser.add_argument("--artifact-ids", nargs="*", default=[], help="Artifact IDs to include in context")
+    query_parser.add_argument("--output", default="llm_response.json", help="Output JSON file for LLM response")
+
+    # Context command
+    context_parser = subparsers.add_parser("context", help="Generate context.json from input JSON")
+    context_parser.add_argument("--input", default="struct.json", help="Input JSON file")
+    context_parser.add_argument("--output", default="context.json", help="Output context JSON file")
+    context_parser.add_argument("--priority", action="append", default=["src/llmstruct/"], help="Priority directories/files")
+
+    # Dogfood command
+    dogfood_parser = subparsers.add_parser("dogfood", help="Run dogfooding analysis")
+    dogfood_parser.add_argument("--input", default="src/llmstruct/", help="Input directory")
+    dogfood_parser.add_argument("--output", default="dogfood_report.json", help="Output report JSON")
+
+    # Review command
+    review_parser = subparsers.add_parser("review", help="Review codebase with LLM")
+    review_parser.add_argument("--input", default="src/llmstruct/", help="Input directory")
+    review_parser.add_argument("--mode", choices=["grok", "anthropic", "ollama", "hybrid"], default="hybrid", help="LLM mode")
+    review_parser.add_argument("--output", default="review_report.json", help="Output report JSON")
+
+    args = parser.parse_args()
+
+    if args.command == "parse":
+        parse(args)
+    elif args.command == "query":
+        asyncio.run(query(args))
+    elif args.command == "context":
+        context(args)
+    elif args.command == "dogfood":
+        dogfood(args)
+    elif args.command == "review":
+        review(args)
 
 if __name__ == "__main__":
     main()

@@ -2,7 +2,7 @@
   "metadata": {
     "project_name": "llmstruct",
     "description": "Utility for generating structured JSON for codebases",
-    "version": "2025-05-18T00:21:58.954371Z",
+    "version": "2025-05-19T17:17:02.514663Z",
     "authors": [
       {
         "name": "Mikhail Stepanov",
@@ -28,10 +28,10 @@
       ]
     },
     "stats": {
-      "modules_count": 14,
-      "functions_count": 27,
+      "modules_count": 15,
+      "functions_count": 30,
       "classes_count": 3,
-      "call_edges_count": 90
+      "call_edges_count": 108
     },
     "folder_structure": [
       {
@@ -47,11 +47,31 @@
         "type": "directory"
       },
       {
+        "path": "collector.py",
+        "type": "file"
+      },
+      {
         "path": "docs",
         "type": "directory"
       },
       {
+        "path": "docs/examples",
+        "type": "directory"
+      },
+      {
+        "path": "docs/internal",
+        "type": "directory"
+      },
+      {
+        "path": "docs/internal/ru",
+        "type": "directory"
+      },
+      {
         "path": "docs/ru",
+        "type": "directory"
+      },
+      {
+        "path": "docs/ru/examples",
         "type": "directory"
       },
       {
@@ -65,6 +85,10 @@
       {
         "path": "examples/python_project_utils.py",
         "type": "file"
+      },
+      {
+        "path": "internal",
+        "type": "directory"
       },
       {
         "path": "schemas",
@@ -149,10 +173,22 @@
       {
         "path": "tests",
         "type": "directory"
+      },
+      {
+        "path": "tmp",
+        "type": "directory"
       }
     ]
   },
   "toc": [
+    {
+      "module_id": "collector",
+      "path": "collector.py",
+      "category": "core",
+      "functions": 3,
+      "classes": 0,
+      "summary": ""
+    },
     {
       "module_id": "examples.python_project_utils",
       "path": "examples/python_project_utils.py",
@@ -268,6 +304,81 @@
   ],
   "modules": [
     {
+      "module_id": "collector",
+      "path": "collector.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "load_gitignore",
+          "docstring": "",
+          "line_range": [
+            10,
+            14
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "is_text_file",
+          "docstring": "Check if file is likely a text file based on extension.",
+          "line_range": [
+            16,
+            19
+          ],
+          "parameters": [
+            "file_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "collect_project",
+          "docstring": "",
+          "line_range": [
+            21,
+            44
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "load_gitignore": [
+          "gitignore_path.exists",
+          "Path",
+          "gitignore_parser.parse_gitignore"
+        ],
+        "is_text_file": [],
+        "collect_project": [
+          "file_path.is_file",
+          "any",
+          "logger.error",
+          "json.dump",
+          "doc_files.items",
+          "logger.info",
+          "logger.warning",
+          "open",
+          "load_gitignore",
+          "is_text_file",
+          "len",
+          "str",
+          "root_dir.rglob",
+          "gitignore",
+          "f.read",
+          "Path"
+        ]
+      },
+      "dependencies": [
+        "Path",
+        "gitignore_parser",
+        "json",
+        "logging",
+        "pathlib"
+      ],
+      "hash": null
+    },
+    {
       "module_id": "examples.python_project_utils",
       "path": "examples/python_project_utils.py",
       "category": "core",
@@ -365,8 +476,8 @@
       ],
       "callgraph": {
         "main": [
-          "utils.helper",
-          "print"
+          "print",
+          "utils.helper"
         ],
         "run": [
           "utils.log"
@@ -438,15 +549,15 @@
       "classes": [],
       "callgraph": {
         "filter_json": [
+          "re.findall",
           "module.get",
           "k.lower",
-          "query.lower",
-          "re.findall"
+          "query.lower"
         ],
         "attach_to_llm_request": [
-          "filter_json",
-          "open",
           "json.load",
+          "open",
+          "filter_json",
           "json.dumps"
         ]
       },
@@ -503,33 +614,33 @@
       "classes": [],
       "callgraph": {
         "load_gitignore": [
-          "line.startswith",
-          "Path",
-          "gitignore_path.exists",
           "gitignore_path.open",
+          "gitignore_path.exists",
+          "line.startswith",
+          "logging.error",
           "line.strip",
-          "logging.error"
+          "Path"
         ],
         "load_config": [
-          "config_path.open",
-          "config_path.exists",
-          "Path",
           "logging.error",
-          "toml.load"
+          "config_path.exists",
+          "toml.load",
+          "Path",
+          "config_path.open"
         ],
         "main": [
-          "logging.warning",
           "json.dump",
-          "load_config",
-          "parser.add_argument",
           "parser.parse_args",
           "config.get",
-          "open",
-          "logging.error",
-          "generate_json",
           "argparse.ArgumentParser",
+          "parser.add_argument",
+          "logging.error",
+          "load_config",
+          "open",
+          "load_gitignore",
           "logging.info",
-          "load_gitignore"
+          "logging.warning",
+          "generate_json"
         ]
       },
       "dependencies": [
@@ -712,17 +823,17 @@
           "f.read"
         ],
         "compute_file_metadata": [
-          "os.stat",
           "open",
+          "os.stat",
           "self.file_hash",
           "sum"
         ],
         "parse_module": [
-          "str",
           "self.compute_file_metadata",
-          "f.read",
           "open",
-          "esprima.parseModule"
+          "esprima.parseModule",
+          "str",
+          "f.read"
         ],
         "extract_signature": [
           "hasattr"
@@ -981,24 +1092,24 @@
           "logging.error"
         ],
         "analyze_module": [
-          "list",
-          "classes.append",
-          "ast.walk",
-          "str",
-          "compute_file_hash",
-          "ast.unparse",
-          "Path",
           "isinstance",
-          "ast.get_docstring",
-          "f.read",
-          "open",
-          "CallVisitor",
-          "visitor.visit",
-          "logging.error",
+          "list",
+          "ast.parse",
           "infer_category",
-          "sorted",
+          "CallVisitor",
+          "classes.append",
+          "visitor.visit",
+          "ast.walk",
+          "ast.unparse",
+          "logging.error",
+          "compute_file_hash",
+          "open",
+          "ast.get_docstring",
           "functions.append",
-          "ast.parse"
+          "sorted",
+          "str",
+          "f.read",
+          "Path"
         ]
       },
       "dependencies": [
@@ -1065,11 +1176,11 @@
       "classes": [],
       "callgraph": {
         "validate_struct_json": [
-          "json.load",
-          "str",
-          "validate",
           "open",
-          "print"
+          "print",
+          "str",
+          "json.load",
+          "validate"
         ]
       },
       "dependencies": [
@@ -1144,39 +1255,39 @@
       "classes": [],
       "callgraph": {
         "get_folder_structure": [
-          "str",
-          "any",
           "file_path.match",
-          "set",
-          "Path",
-          "p.endswith",
+          "any",
           "file_path.relative_to",
+          "str",
+          "p.endswith",
+          "set",
+          "structure.append",
           "sorted",
           "p.rstrip",
           "os.walk",
-          "structure.append"
+          "Path"
         ],
         "build_toc_and_modules": [
           "any",
-          "str",
-          "analyze_module",
-          "set",
-          "Path",
+          "modules.append",
           "p.endswith",
-          "p.rstrip",
-          "len",
-          "toc.append",
+          "set",
+          "analyze_module",
           "f.match",
-          "modules.append"
+          "len",
+          "p.rstrip",
+          "str",
+          "toc.append",
+          "Path"
         ],
         "generate_json": [
           "list",
           "set",
-          "Path",
-          "sum",
-          "len",
           "get_folder_structure",
-          "build_toc_and_modules"
+          "build_toc_and_modules",
+          "len",
+          "sum",
+          "Path"
         ]
       },
       "dependencies": [

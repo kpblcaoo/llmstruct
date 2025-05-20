@@ -1,8 +1,12 @@
 # llmstruct Internal Setup
 
-Setup guide for `llmstruct` team (@kpblcaoo, @momai, @ivan-ib). Focus: Local development, Qwen, VPS.
+**Status**: Draft  
+**Version**: 0.1.0  
+**Last Updated**: 2025-05-18T23:00:27.888546Z  
+**Author**: Mikhail Stepanov ([kpblcaoo](https://github.com/kpblcaoo), kpblcaoo@gmail.com)
 
-## Local Setup
+## 1. Local Setup
+
 1. **Clone Repo**:
    ```bash
    git clone https://github.com/kpblcaoo/llmstruct.git
@@ -12,26 +16,22 @@ Setup guide for `llmstruct` team (@kpblcaoo, @momai, @ivan-ib). Focus: Local dev
    ```bash
    pip install -r requirements.txt
    ```
-3. **Run Qwen-1.5B** (3060Ti, TSK-016):
+3. **Run Qwen-1.5B** (TSK-016):
    ```bash
    python src/llmstruct/cli.py --model qwen-1.5b --spec struct.json
    ```
-   - Optimize VRAM: Use quantization (LoRA, TSK-016).
-4. **Test Parser**:
-   ```bash
-   python src/llmstruct/parser.py --input src/ --output struct.json
-   pytest src/tests/test_parser.py
-   ```
 
-## VPS Setup (TSK-018)
-- **Deploy**: Use Nginx (@momai, TSK-014).
+## 2. VPS Setup (TSK-018)
+
+- **Deploy**: Use Nginx (TSK-014).
 - **Run Qwen-7B** (v0.3.0):
    ```bash
    docker run -v ./struct.json:/app/struct.json llmstruct:qwen-7b
    ```
-- **Monitor**: Grafana for metrics (TSK-015, @momai).
+- **Monitor**: Grafana for metrics (TSK-015).
 
-## Notes
-- Check API limits (Anthropic, Grok, TSK-014).
+## 3. Notes
+
+- Check API limits (TSK-014).
 - Use `internal/roadmap.md` for priorities.
-- Ping @kpblcaoo for 1–2h onboarding call (TSK-019).
+- Ping @kpblcaoo for onboarding (TSK-019).

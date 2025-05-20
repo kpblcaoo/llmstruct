@@ -44,5 +44,6 @@ llmstruct parse --input src/ --output struct.json
 ## Продвинутое
 - Используй Telegram-бот (`/tasks`, `/fix`) для обновлений в реальном времени (TSK-023).
 - Разверни UI для управления задачами (TSK-021, v0.3.0).
+- Интеграция с DevOps-инструментами: Grafana для метрик (TSK-015), MLflow для логов LLM.
 
 Смотри [onboarding.md](#onboarding.md), чтобы начать контрибьютить!
