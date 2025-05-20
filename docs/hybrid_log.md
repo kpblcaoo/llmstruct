@@ -89,3 +89,48 @@
 2025-05-20 04:58:38,987 - INFO - Querying in anthropic mode with prompt: Summarize struct.json
 2025-05-20 04:58:39,201 - ERROR - Anthropic API error: 403
 2025-05-20 04:58:39,201 - ERROR - Query failed
+2025-05-20 12:53:49,872 - INFO - Querying in grok mode with prompt: Summarize struct.json
+2025-05-20 12:53:50,170 - ERROR - Grok API error: 403
+2025-05-20 12:53:50,170 - ERROR - Query failed
+2025-05-20 13:05:31,072 - INFO - Querying in grok mode with prompt: Summarize struct.json
+2025-05-20 13:05:31,181 - ERROR - Grok API error: 403
+2025-05-20 13:05:31,182 - ERROR - Query failed
+2025-05-20 13:07:53,082 - INFO - Querying in grok mode with prompt: Summarize struct.json
+2025-05-20 13:07:53,218 - ERROR - Grok API error: 403
+2025-05-20 13:07:53,219 - ERROR - Query failed
+2025-05-20 13:10:50,427 - INFO - Querying in grok mode with prompt: Summarize struct.json
+2025-05-20 13:10:50,528 - ERROR - Grok API error: 403
+2025-05-20 13:10:50,529 - ERROR - Query failed
+2025-05-20 14:57:58,215 - INFO - Querying in grok mode with prompt: Summarize struct.json
+2025-05-20 14:57:58,351 - ERROR - Grok API error: 403
+2025-05-20 14:57:58,352 - ERROR - Query failed
+2025-05-20 15:00:24,055 - INFO - Generated struct.json
+2025-05-20 15:14:43,015 - INFO - Querying in grok mode with prompt: Summarize struct.json
+2025-05-20 15:14:43,137 - ERROR - Grok API error: 403
+2025-05-20 15:14:43,137 - ERROR - Query failed
+2025-05-20 15:20:11,783 - INFO - Querying in grok mode with prompt: Summarize struct.json
+2025-05-20 15:20:11,889 - ERROR - Grok API error: 403
+2025-05-20 15:20:11,890 - ERROR - Query failed
+2025-05-20 15:24:27,333 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-20 15:24:27,333 - INFO - Querying in grok mode with prompt: Summarize struct.json
+2025-05-20 15:24:27,458 - ERROR - Grok API error: 403
+2025-05-20 15:24:27,459 - ERROR - Query failed
+2025-05-20 15:30:47,260 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-20 15:30:47,260 - INFO - Querying in grok mode with prompt: Summarize struct.json
+2025-05-20 15:30:47,404 - ERROR - Grok API error: 403
+2025-05-20 15:30:47,405 - ERROR - Query failed
+2025-05-20 15:31:47,037 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-20 15:31:47,037 - INFO - Querying in grok mode with prompt: Summarize struct.json
+2025-05-20 15:31:47,146 - ERROR - Grok API error: 403
+2025-05-20 15:31:47,147 - ERROR - Query failed
+2025-05-20 15:34:21,902 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-20 15:34:21,902 - INFO - Querying in grok mode with prompt: Summarize struct.json
+2025-05-20 15:34:22,032 - ERROR - Grok API error: 403
+2025-05-20 15:34:22,033 - ERROR - Query failed
+2025-05-20 15:38:03,627 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-20 15:38:03,628 - INFO - Querying in grok mode with prompt: Summarize struct.json
+2025-05-20 15:38:03,631 - WARNING - Attempt 1 failed: [Errno 104] Connection reset by peer
+2025-05-20 15:38:04,634 - WARNING - Attempt 2 failed: [Errno 104] Connection reset by peer
+2025-05-20 15:38:05,638 - WARNING - Attempt 3 failed: [Errno 104] Connection reset by peer
+2025-05-20 15:38:05,638 - ERROR - All retries failed
+2025-05-20 15:38:05,638 - ERROR - Query failed

@@ -1,0 +1,27 @@
+{
+  "version": "0.1.0",
+  "status": "Draft",
+  "author": "@kpblcaoo",
+  "date": "2025-05-20",
+  "license": "GPL-3.0",
+  "artifacts": [
+    {
+      "path": "data/struct.json",
+      "version": "0.1.0",
+      "sha256": "a1b2c3d4...",
+      "issue": "#123"
+    },
+    {
+      "path": "data/ideas.json",
+      "version": "0.3.6",
+      "sha256": "e5f6a7b8...",
+      "issue": "#124"
+    },
+    {
+      "path": "data/tasks.json",
+      "version": "0.3.2",
+      "sha256": "i9j0k1l2...",
+      "issue": "#125"
+    }
+  ]
+}
