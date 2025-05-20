@@ -1,0 +1,14 @@
+You are an expert code assistant. Below is a filtered excerpt of my project's structure in LLMStruct JSON format, containing only the most relevant information for your response. Focus exclusively on the provided JSON fields and ignore irrelevant details.
+
+Project Structure Excerpt:
+{{FILTERED_STRUCT_JSON}}
+
+Question: {{USER_QUESTION}}
+
+Instructions:
+1. Use the JSON excerpt to answer the question precisely.
+2. Reference specific fields (e.g., `modules.functions.name`, `callgraph`) when relevant.
+3. Avoid summarizing or analyzing unrelated JSON sections.
+4. Provide concise code examples or explanations, prioritizing clarity.
+
+Answer:

@@ -1,0 +1,22 @@
+[goals]
+goals = [
+    "Create universal JSON format for codebase structure (modules, functions, classes, calls, metadata)",
+    "Ensure extensibility for new languages and entity types",
+    "Develop modular, plugin-based parsers for new languages",
+    "Maintain an open, RFC-style documented format",
+    "Integrate with LLMs by generating and attaching JSON structure to queries"
+]
+
+[cli]
+language = "python"
+include_patterns = ["*.py"]
+exclude_patterns = ["tests/*", "venv/*", "__pycache__/*"]
+include_ranges = true
+include_hashes = false
+use_gitignore = true
+exclude_dirs = ["venv", "__pycache__", ".git", ".pytest_cache", "build", "dist"]
+
+[api]
+ollama_host = "http://192.168.88.50:11434"
+model = "mixtral"
+retry_count = 3

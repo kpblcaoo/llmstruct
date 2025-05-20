@@ -1,0 +1,94 @@
+{
+  "tasks": [
+    {
+      "task_id": "TASK-001",
+      "description": "Improve error handling in _query_ollama to display user-friendly messages for 404 errors, e.g., 'Model not found. Check available models with ollama list'",
+      "status": "planned",
+      "priority": "high",
+      "due_date": "2025-06-03",
+      "related_idea": "G5",
+      "extension": "EXT-004"
+    },
+    {
+      "task_id": "TASK-002",
+      "description": "Investigate and resolve tokenizer warning 'special_eos_id is not in special_eog_ids' for Mistral-7B-Instruct-v0.3",
+      "status": "planned",
+      "priority": "medium",
+      "due_date": "2025-06-10",
+      "related_idea": "G5",
+      "extension": "EXT-005"
+    },
+    {
+      "task_id": "TASK-001",
+      "description": "Improve error handling in _query_ollama to display user-friendly messages for 404 errors, e.g., 'Model not found. Check available models with ollama list'",
+      "status": "planned",
+      "priority": "high",
+      "due_date": "2025-06-03",
+      "related_idea": "G5",
+      "extension": "EXT-004"
+    },
+    {
+      "task_id": "TASK-002",
+      "description": "Investigate and resolve tokenizer warning 'special_eos_id is not in special_eog_ids' for Mistral-7B-Instruct-v0.3",
+      "status": "planned",
+      "priority": "medium",
+      "due_date": "2025-06-10",
+      "related_idea": "G5",
+      "extension": "EXT-005"
+    },
+    {
+      "task_id": "TASK-001",
+      "description": "Improve error handling in _query_ollama to display user-friendly messages for 404 errors, e.g., 'Model not found. Check available models with ollama list'",
+      "status": "planned",
+      "priority": "high",
+      "due_date": "2025-06-03",
+      "related_idea": "G5",
+      "extension": "EXT-004"
+    },
+    {
+      "task_id": "TASK-002",
+      "description": "Investigate and resolve tokenizer warning 'special_eos_id is not in special_eog_ids' for Mistral-7B-Instruct-v0.3",
+      "status": "planned",
+      "priority": "medium",
+      "due_date": "2025-06-10",
+      "related_idea": "G5",
+      "extension": "EXT-005"
+    },
+    {
+      "task_id": "TASK-001",
+      "description": "Improve error handling in _query_ollama to display user-friendly messages for 404 errors, e.g., 'Model not found. Check available models with ollama list'",
+      "status": "planned",
+      "priority": "high",
+      "due_date": "2025-06-03",
+      "related_idea": "G5",
+      "extension": "EXT-004"
+    },
+    {
+      "task_id": "TASK-002",
+      "description": "Investigate and resolve tokenizer warning 'special_eos_id is not in special_eog_ids' for Mistral-7B-Instruct-v0.3",
+      "status": "planned",
+      "priority": "medium",
+      "due_date": "2025-06-10",
+      "related_idea": "G5",
+      "extension": "EXT-005"
+    },
+    {
+      "task_id": "TASK-001",
+      "description": "Improve error handling in _query_ollama to display user-friendly messages for 404 errors, e.g., 'Model not found. Check available models with ollama list'",
+      "status": "planned",
+      "priority": "high",
+      "due_date": "2025-06-03",
+      "related_idea": "G5",
+      "extension": "EXT-004"
+    },
+    {
+      "task_id": "TASK-002",
+      "description": "Investigate and resolve tokenizer warning 'special_eos_id is not in special_eog_ids' for Mistral-7B-Instruct-v0.3",
+      "status": "planned",
+      "priority": "medium",
+      "due_date": "2025-06-10",
+      "related_idea": "G5",
+      "extension": "EXT-005"
+    }
+  ]
+}
