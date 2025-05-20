@@ -1,0 +1,68 @@
+{
+  "version": "1.0.0-alpha",
+  "status": "Experimental",
+  "author": "@kpblcaoo",
+  "date": "2025-05-20",
+  "license": "GPL-3.0",
+  "lifecycle": {
+    "stages": [
+      {
+        "name": "Ideation",
+        "description": "Generate and prioritize ideas (IDEA-054, IDEA-085).",
+        "metrics": ["concept_score", "weight"],
+        "artifacts": ["ideas.json"]
+      },
+      {
+        "name": "Planning",
+        "description": "Define tasks and dependencies (IDEA-080).",
+        "metrics": ["priority", "estimated_effort"],
+        "artifacts": ["tasks.json"]
+      },
+      {
+        "name": "Development",
+        "description": "Implement features via CLI and LLM (IDEA-084).",
+        "metrics": ["complexity", "impact"],
+        "artifacts": ["struct.json", "context.json"]
+      },
+      {
+        "name": "Deployment",
+        "description": "Automate CI/CD and monitoring (IDEA-079).",
+        "metrics": ["adoption", "speed"],
+        "artifacts": ["Dockerfile", "ci.yml"]
+      }
+    ],
+    "graph": {
+      "nodes": ["ideas", "tasks", "artifacts"],
+      "edges": [
+        {"from": "ideas", "to": "tasks", "field": "related_idea"},
+        {"from": "tasks", "to": "artifacts", "field": "artifacts"},
+        {"from": "artifacts", "to": "ideas", "field": "complements"}
+      ]
+    }
+  },
+  "automation": {
+    "smart_workflow": "LLM-driven analysis for JSON updates (IDEA-082).",
+    "hybrid_mode": "Local and external LLMs for accuracy (IDEA-084).",
+    "dynamic_fields": "Auto-update fields via LLM (IDEA-085).",
+    "cli_commands": [
+      "llmstruct smart-workflow --analyze",
+      "llmstruct hybrid --local ollama --external grok",
+      "llmstruct update --fields status,concept_score"
+    ]
+  },
+  "goals": {
+    "G1": "Universal JSON for seamless lifecycle integration.",
+    "G4": "Transparency via graph-based logging and sync.",
+    "G5": "LLM-driven automation for dynamic workflows.",
+    "G6": "End-to-end lifecycle with real-time updates."
+  },
+  "dynamic_state": {
+    "current_tasks": {"source": "tasks.json", "updated": "2025-05-20T12:29:00Z"},
+    "current_artifacts": {"source": "project_context.json", "updated": "2025-05-20T12:29:00Z"},
+    "metrics": {
+      "concept_score": {"min": 0.65, "max": 0.85, "source": "ideas.json"},
+      "adoption": {"min": 0.3, "max": 0.5, "source": "ideas.json"}
+    }
+  },
+  "last_updated": "2025-05-20T12:29:00Z"
+}

@@ -51,3 +51,7 @@ tmp/
 *.env
 .env
 secrets/
+
+#Project specific
+
+llm_response.json

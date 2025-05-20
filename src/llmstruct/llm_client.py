@@ -1,118 +1,162 @@
-import aiohttp
+import asyncio
 import json
 import logging
 import os
 from pathlib import Path
-import requests
-from typing import Dict, Optional
-from dotenv import load_dotenv
-import toml
+from typing import List, Optional
+from urllib.parse import urljoin
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+import aiohttp
+import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler("docs/hybrid_log.md", encoding="utf-8"),
+        logging.StreamHandler()
+    ]
+)
 
 class LLMClient:
-    """Client for Grok, Anthropic, and Ollama APIs."""
-    def __init__(self, config_path: str = "llmstruct.toml"):
-        load_dotenv()
-        self.config = self._load_config(config_path)
-        self.grok_api_key = os.getenv("GROK_API_KEY", self.config.get("api", {}).get("grok_api_key"))
-        self.anthropic_api_key = os.getenv("ANTHROPIC_API_KEY", self.config.get("api", {}).get("anthropic_api_key"))
-        self.ollama_host = self.config.get("api", {}).get("ollama_host", "http://localhost:11434")
-        self.model = self.config.get("api", {}).get("model", "mixtral")
-        self.retry_count = self.config.get("api", {}).get("retry_count", 3)
+    def __init__(self, ollama_host: str = None):
+        """Initialize LLMClient with optional Ollama host."""
+        self.grok_api_key = os.getenv("GROK_API_KEY")
+        self.anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
+        self.ollama_host = ollama_host or os.getenv("OLLAMA_HOST", "http://localhost:11434")
+        self.retry_count = int(os.getenv("RETRY_COUNT", 3))
 
-    def _load_config(self, config_path: str) -> Dict:
-        """Load llmstruct.toml or return empty dict."""
-        config_path = Path(config_path)
-        if config_path.exists():
+    async def query(
+        self,
+        prompt: str,
+        context_path: str = None,
+        mode: str = "hybrid",
+        model: Optional[str] = None,
+        artifact_ids: Optional[List[str]] = None
+    ) -> Optional[str]:
+        """Query LLMs with prompt, context, and optional model."""
+        logging.info(f"Querying in {mode} mode with prompt: {prompt}")
+
+        # Load context from file if provided
+        context = {}
+        if context_path and Path(context_path).exists():
             try:
-                with config_path.open("r", encoding="utf-8") as f:
-                    return toml.load(f)
+                with Path(context_path).open('r', encoding='utf-8') as f:
+                    context = json.load(f)
             except Exception as e:
-                logging.error(f"Failed to load {config_path}: {e}")
-        return {}
+                logging.error(f"Failed to load context from {context_path}: {e}")
+                return None
 
-    async def _request_grok(self, prompt: str, context: Dict) -> Optional[str]:
-        """Async request to Grok API."""
-        headers = {"Authorization": f"Bearer {self.grok_api_key}", "Content-Type": "application/json"}
-        payload = {"model": "grok-3", "prompt": prompt, "context": context}
-        async with aiohttp.ClientSession() as session:
-            for _ in range(self.retry_count):
-                try:
-                    async with session.post("https://api.x.ai/v1/chat", headers=headers, json=payload) as resp:
-                        if resp.status == 200:
-                            return await resp.text()
-                        logging.warning(f"Grok API error: {resp.status}")
-                except Exception as e:
-                    logging.error(f"Grok API failed: {e}")
-        return None
+        # Handle artifact_ids
+        artifact_context = ""
+        if artifact_ids:
+            artifact_context = f"Artifacts included: {', '.join(artifact_ids)}"
 
-    async def _request_anthropic(self, prompt: str, context: Dict) -> Optional[str]:
-        """Async request to Anthropic API."""
-        headers = {"x-api-key": self.anthropic_api_key, "Content-Type": "application/json"}
-        payload = {"model": "claude-3-opus-20240229", "prompt": prompt, "max_tokens": 1000, "context": context}
-        async with aiohttp.ClientSession() as session:
-            for _ in range(self.retry_count):
-                try:
-                    async with session.post("https://api.anthropic.com/v1/complete", headers=headers, json=payload) as resp:
-                        if resp.status == 200:
-                            return await resp.text()
-                        logging.warning(f"Anthropic API error: {resp.status}")
-                except Exception as e:
-                    logging.error(f"Anthropic API failed: {e}")
-        return None
+        # Combine prompt with context
+        full_prompt = f"{prompt}\n\nContext:\n{json.dumps(context, indent=2)}\n{artifact_context}".strip()
 
-    def _request_ollama(self, prompt: str, context: Dict) -> Optional[str]:
-        """Sync request to local/remote Ollama."""
-        payload = {"model": self.model, "prompt": prompt, "context": context}
-        for _ in range(self.retry_count):
+        # Select query method based on mode
+        for attempt in range(self.retry_count):
             try:
-                resp = requests.post(f"{self.ollama_host}/api/generate", json=payload, timeout=30)
-                if resp.status_code == 200:
-                    return resp.text
-                logging.warning(f"Ollama error: {resp.status_code}")
+                if mode == "grok":
+                    return await self._query_grok(full_prompt)
+                elif mode == "anthropic":
+                    return await self._query_anthropic(full_prompt)
+                elif mode == "ollama":
+                    return await self._query_ollama(full_prompt, model or "mixtral")
+                elif mode == "hybrid":
+                    return await self._query_hybrid(full_prompt, model)
+                else:
+                    logging.error(f"Unsupported mode: {mode}")
+                    return None
             except Exception as e:
-                logging.error(f"Ollama failed: {e}")
-        return None
+                logging.warning(f"Attempt {attempt + 1} failed: {e}")
+                if attempt == self.retry_count - 1:
+                    logging.error("All retries failed")
+                    return None
+                await asyncio.sleep(1)
 
-    async def query(self, prompt: str, context_path: str = "context.json", mode: str = "hybrid") -> Optional[str]:
-        """Query LLMs based on mode (grok, anthropic, ollama, hybrid)."""
-        context = self._load_context(context_path)
-        if mode == "hybrid":
-            # Try local Ollama first, fall back to external
-            result = self._request_ollama(prompt, context)
-            if result:
-                return result
-            logging.info("Falling back to external LLM in hybrid mode")
-            result = await self._request_grok(prompt, context) or await self._request_anthropic(prompt, context)
-        elif mode == "grok":
-            result = await self._request_grok(prompt, context)
-        elif mode == "anthropic":
-            result = await self._request_anthropic(prompt, context)
-        elif mode == "ollama":
-            result = self._request_ollama(prompt, context)
-        else:
-            logging.error(f"Invalid mode: {mode}")
+    async def _query_grok(self, prompt: str) -> Optional[str]:
+        """Query Grok API."""
+        if not self.grok_api_key:
+            logging.error("GROK_API_KEY not set")
             return None
-        if not result:
-            logging.error("All LLM requests failed")
-        return result
+        url = "https://api.x.ai/v1/chat/completions"
+        headers = {
+            "Authorization": f"Bearer {self.grok_api_key}",
+            "Content-Type": "application/json"
+        }
+        data = {
+            "model": "grok-3",
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": 4096
+        }
+        async with aiohttp.ClientSession() as session:
+            async with session.post(url, headers=headers, json=data) as response:
+                if response.status == 200:
+                    result = await response.json()
+                    logging.info("Grok query successful")
+                    return result.get("choices", [{}])[0].get("message", {}).get("content", "")
+                else:
+                    logging.error(f"Grok API error: {response.status}")
+                    return None
 
-    def _load_context(self, context_path: str) -> Dict:
-        """Load context from JSON file."""
-        context_path = Path(context_path)
-        if context_path.exists():
-            try:
-                with context_path.open("r", encoding="utf-8") as f:
-                    return json.load(f)
-            except Exception as e:
-                logging.error(f"Failed to load {context_path}: {e}")
-        return {}
+    async def _query_anthropic(self, prompt: str) -> Optional[str]:
+        """Query Anthropic API."""
+        if not self.anthropic_api_key:
+            logging.error("ANTHROPIC_API_KEY not set")
+            return None
+        url = "https://api.anthropic.com/v1/messages"
+        headers = {
+            "x-api-key": self.anthropic_api_key,
+            "anthropic-version": "2023-06-01",
+            "Content-Type": "application/json"
+        }
+        data = {
+            "model": "claude-3-opus-20240229",
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": 4096
+        }
+        async with aiohttp.ClientSession() as session:
+            async with session.post(url, headers=headers, json=data) as response:
+                if response.status == 200:
+                    result = await response.json()
+                    logging.info("Anthropic query successful")
+                    return result.get("content", [{}])[0].get("text", "")
+                else:
+                    logging.error(f"Anthropic API error: {response.status}")
+                    return None
 
-if __name__ == "__main__":
-    import asyncio
-    client = LLMClient()
-    prompt = "Analyze struct.json for llmstruct project."
-    result = asyncio.run(client.query(prompt, mode="hybrid"))
-    if result:
-        print(result)
+    async def _query_ollama(self, prompt: str, model: str) -> Optional[str]:
+        """Query Ollama API with specified model."""
+        url = f"{self.ollama_host.rstrip('/')}/api/generate"
+        data = {
+            "model": model,
+            "prompt": prompt,
+            "stream": False
+        }
+        async with aiohttp.ClientSession() as session:
+            logging.debug(f"Sending request to Ollama: url={url}, data={data}")
+            async with session.post(url, json=data) as response:
+                if response.status == 200:
+                    result = await response.json()
+                    logging.info(f"Ollama query successful with model {model}")
+                    return result.get("response", "")
+                else:
+                    logging.error(f"Ollama API error: {response.status}")
+                    return None
+
+    async def _query_hybrid(self, prompt: str, model: Optional[str] = None) -> Optional[str]:
+        """Query multiple LLMs and combine results."""
+        tasks = [
+            self._query_grok(prompt),
+            self._query_anthropic(prompt),
+            self._query_ollama(prompt, model or "mixtral")
+        ]
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+        valid_results = [r for r in results if r and not isinstance(r, Exception)]
+        logging.info(f"Hybrid query completed with {len(valid_results)} valid responses")
+        return "\n".join(valid_results) if valid_results else None

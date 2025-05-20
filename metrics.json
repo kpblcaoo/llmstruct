@@ -1,0 +1,18 @@
+{
+  "total_duration_s": 4.35,
+  "prompt_eval_duration_s": 0.16,
+  "eval_duration_s": 0.54,
+  "total_request_time_s": 148,
+  "token_generation_speed": 90.74074074074073,
+  "prompt_token_count": 10,
+  "response_token_count": 49,
+  "word_count": 169,
+  "char_count": 1167,
+  "goals_mentioned": 5,
+  "extensions_mentioned": 3,
+  "files_mentioned": 2,
+  "model_buffer_size_mib": 3922.02,
+  "kv_cache_size_mib": 512.0,
+  "compute_buffer_size_mib": 296.01,
+  "timestamp": "2025-05-20T01:48:29.902124Z"
+}

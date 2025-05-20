@@ -15,3 +15,8 @@ include_ranges = true
 include_hashes = false
 use_gitignore = true
 exclude_dirs = ["venv", "__pycache__", ".git", ".pytest_cache", "build", "dist"]
+
+[api]
+ollama_host = "http://192.168.88.50:11434"
+model = "mixtral"
+retry_count = 3
