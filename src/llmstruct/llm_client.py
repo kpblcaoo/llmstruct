@@ -25,6 +25,7 @@ class LLMClient:
     def __init__(self, ollama_host: str = None):
         """Initialize LLMClient with optional Ollama host."""
         self.grok_api_key = os.getenv("GROK_API_KEY")
+        logging.info(f"Grok API key: {self.grok_api_key}")
         self.anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
         self.ollama_host = ollama_host or os.getenv("OLLAMA_HOST", "http://localhost:11434")
         self.retry_count = int(os.getenv("RETRY_COUNT", 3))
