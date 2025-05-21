@@ -1,3 +1,4 @@
+from .llm_client import LLMClient
 """LLMStruct: A tool for generating JSON-based code structures for LLM integration.
 
 This package provides modular parsers, generators, and validators to create and validate

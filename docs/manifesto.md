@@ -1,13 +1,14 @@
 # llmstruct Manifesto
 
-**Mission**: Create a dev tool that simplifies development through universal JSON and LLMs. `struct.json` is your partner, preserving context, saving resources, and improving code quality. Our goal: enable every developer to say, “Buddy, make the code great!”
+**Mission**: Create a tool for developers and DevOps that simplifies and automates development through universal JSON and LLMs. `struct.json` is your partner, preserving context, automating CI/CD, and improving code. Our goal: enable everyone to say, “Buddy, make code and processes great!”
 
 **Principles**:  
 - **Dogfooding**: We build `llmstruct` using `llmstruct`, proving its power.  
 - **Transparency**: Tasks, ideas, metrics in `struct.json`, Issues, RFCs. Fully open under GPL-3.0.  
-- **Idempotence**: Same code, same result. Reliable for LLMs and developers.  
-- **Ease of Use**: From CLI to UI, from `/fix` in Telegram to voice commands—development as a dialogue.  
+- **Idempotence**: Same code, same result. Reliable for LLMs, CI, and developers.  
+- **Automation**: From code parsing to Issues and metrics in Grafana—less routine, more coding.  
+- **Integration**: Works with CI/CD (GitHub Actions, GitLab), DevOps (Grafana, MLflow), and IDEs (Continue).  
 
-**Vision**: `struct.json` as the standard for code, tasks, and context. LLMs as your smart assistant, not a black box.  
+**Vision**: `struct.json` as the standard for code, tasks, and processes. LLMs and CI as your smart assistants, not black boxes.  
 
-Join us to redefine development with JSON, AI, and open-source drive! [Get started](#onboarding.md).
+Join us to redefine development and DevOps with JSON, AI, and open-source drive! [Get started](#onboarding.md).

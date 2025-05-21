@@ -1,0 +1,30 @@
+{
+  "version": "0.1.0",
+  "status": "Draft",
+  "author": "@kpblcaoo",
+  "date": "2025-05-20",
+  "license": "GPL-3.0",
+  "documents": [
+    {
+      "id": "doc_readme",
+      "path": "README.md",
+      "title": "Project Overview",
+      "description": "Main project documentation",
+      "last_updated": "2025-05-20"
+    },
+    {
+      "id": "doc_index",
+      "path": "docs/index.md",
+      "title": "Index File Guide",
+      "description": "Guide for index.json usage",
+      "last_updated": "2025-05-20"
+    },
+    {
+      "id": "doc_weights",
+      "path": "docs/weights.md",
+      "title": "Weights Configuration",
+      "description": "Guide for weights.json",
+      "last_updated": "2025-05-20"
+    }
+  ]
+}

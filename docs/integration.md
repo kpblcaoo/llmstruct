@@ -44,5 +44,6 @@ For GitHub/GitLab:
 ## Advanced
 - Use Telegram bot (`/tasks`, `/fix`) for real-time updates (TSK-023).
 - Deploy UI for task management (TSK-021, v0.3.0).
+- Integrate with DevOps tools: Grafana for metrics (TSK-015), MLflow for LLM logging.
 
 See [onboarding.md](#onboarding.md) to start contributing!

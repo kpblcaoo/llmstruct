@@ -6,13 +6,14 @@
 - **Упрощение контекста**: Минимизировать контекст LLM через `struct.json` (`context: {summary: "проект делает X", files: ["src/main.py"]}`). Кэшировать контекст в `parser.py` для экономии токенов (G5).
 - **Идемпотентность**: Парсеры (TSK-006, TSK-012) дают одинаковый `struct.json` для одного кода. Добавить тесты (TSK-012).
 - **Удобство**: UX уровня “дружище, сделай код крутым” в v0.3.0 (TSK-021, голосовой ввод через Grok API, Telegram `/fix`).
+- **Автоматизация CI/CD**: Автоматизация парсинга PR и создания задач в CI/CD пайплайнах (TSK-012, GitHub Actions, GitLab).
 
 ## Парсинг кода
 - **Автономный парсер (TSK-006, TSK-007)**: Улучшить `parser.py` для Python/JS, генерировать `struct.json` для малых проектов (~10 файлов, TSK-016). Логировать ошибки (`errors: [{file: "app.js", line: 42, reason: "неверный синтаксис"}]`).
   - Зачем: Демо для Habr (TSK-017), pet-проекты (“pip install llmstruct, llmstruct parse”).
   - Как: Логирование ошибок в `parser.py`, `cli.py` (`llmstruct parse --input src/`). Усилия: ~5–7ч.
   - Эффект: Удобство для v0.2.0, G1, G5.
-- **Модуль CI/CD (TSK-012)**: Модуль `llmstruct` для CI/CD GitHub/GitLab, парсинг PR, обновление `struct.json`. Ошибки в Issues.
+- **Модуль CI/CD (TSK-012)**: Модуль `llmstruct` для CI/CD GitHub/GitLab, парсинг PR, обновление `struct.json`, интеграция с DevOps-инструментами (Grafana, MLflow, TSK-015). Ошибки в Issues.
   - Зачем: Стабильность для больших проектов (~100+ файлов, TSK-016). Контролируемый парсинг.
   - Как: Пакет PyPI, Action (`.github/workflows/parse.yml`), создание Issues (`gh issue create`). Доки: `integration.md`, `best_practices.md` (TSK-010). Усилия: ~15–20ч.
   - Эффект: Масштабирование в v0.3.0, G5.

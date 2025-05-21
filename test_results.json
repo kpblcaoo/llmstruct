@@ -1,0 +1,126 @@
+{
+  "with_llmstruct": [
+    {
+      "response_time": 1.0090415780432522,
+      "status_code": 404,
+      "tokens_in": 2235,
+      "tokens_out": 0,
+      "text": "",
+      "system_metrics": {
+        "cpu_percent": 4.6,
+        "memory_mb": 2175.3125
+      },
+      "accuracy": 0.0
+    },
+    {
+      "response_time": 1.0079155800049193,
+      "status_code": 404,
+      "tokens_in": 2235,
+      "tokens_out": 0,
+      "text": "",
+      "system_metrics": {
+        "cpu_percent": 2.0,
+        "memory_mb": 2178.6875
+      },
+      "accuracy": 0.0
+    },
+    {
+      "response_time": 1.0074862660258077,
+      "status_code": 404,
+      "tokens_in": 2235,
+      "tokens_out": 0,
+      "text": "",
+      "system_metrics": {
+        "cpu_percent": 7.1,
+        "memory_mb": 2173.46875
+      },
+      "accuracy": 0.0
+    },
+    {
+      "response_time": 1.0068883030326106,
+      "status_code": 404,
+      "tokens_in": 2235,
+      "tokens_out": 0,
+      "text": "",
+      "system_metrics": {
+        "cpu_percent": 3.5,
+        "memory_mb": 2173.515625
+      },
+      "accuracy": 0.0
+    },
+    {
+      "response_time": 1.0075756720034406,
+      "status_code": 404,
+      "tokens_in": 2235,
+      "tokens_out": 0,
+      "text": "",
+      "system_metrics": {
+        "cpu_percent": 2.3,
+        "memory_mb": 2174.75
+      },
+      "accuracy": 0.0
+    }
+  ],
+  "without_llmstruct": [
+    {
+      "response_time": 1.547823702043388,
+      "status_code": 404,
+      "tokens_in": 2187076,
+      "tokens_out": 0,
+      "text": "",
+      "system_metrics": {
+        "cpu_percent": 3.5,
+        "memory_mb": 2348.0
+      },
+      "accuracy": 0.0
+    },
+    {
+      "response_time": 1.482211303024087,
+      "status_code": 404,
+      "tokens_in": 2187076,
+      "tokens_out": 0,
+      "text": "",
+      "system_metrics": {
+        "cpu_percent": 5.2,
+        "memory_mb": 2361.546875
+      },
+      "accuracy": 0.0
+    },
+    {
+      "response_time": 1.4587971239816397,
+      "status_code": 404,
+      "tokens_in": 2187076,
+      "tokens_out": 0,
+      "text": "",
+      "system_metrics": {
+        "cpu_percent": 2.8,
+        "memory_mb": 2357.53125
+      },
+      "accuracy": 0.0
+    },
+    {
+      "response_time": 1.4868470350047573,
+      "status_code": 404,
+      "tokens_in": 2187076,
+      "tokens_out": 0,
+      "text": "",
+      "system_metrics": {
+        "cpu_percent": 5.2,
+        "memory_mb": 2360.625
+      },
+      "accuracy": 0.0
+    },
+    {
+      "response_time": 1.4542986319866031,
+      "status_code": 404,
+      "tokens_in": 2187076,
+      "tokens_out": 0,
+      "text": "",
+      "system_metrics": {
+        "cpu_percent": 2.8,
+        "memory_mb": 2356.59375
+      },
+      "accuracy": 0.0
+    }
+  ]
+}

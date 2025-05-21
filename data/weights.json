@@ -1,0 +1,18 @@
+{
+  "version": "0.1.0",
+  "status": "Draft",
+  "author": "@kpblcaoo",
+  "date": "2025-05-20",
+  "license": "GPL-3.0",
+  "weights": {
+    "tasks": {
+      "TSK-006": 0.9,
+      "TSK-108": 0.8,
+      "TSK-109": 0.7
+    },
+    "ideas": {
+      "IDEA-120": 0.8,
+      "IDEA-121": 0.7
+    }
+  }
+}

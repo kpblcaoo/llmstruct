@@ -1,0 +1,45 @@
+{
+  "version": "0.1.2",
+  "status": "Draft",
+  "author": "@kpblcaoo",
+  "date": "2025-05-20",
+  "license": "GPL-3.0",
+  "artifacts": [
+    {
+      "path": "data/struct.json",
+      "version": "0.1.0",
+      "sha256": "a1b2c3d4...",
+      "issue": "#123"
+    },
+    {
+      "path": "data/ideas.json",
+      "version": "0.3.8",
+      "sha256": "TBD",
+      "issue": "#124"
+    },
+    {
+      "path": "data/tasks.json",
+      "version": "0.3.4",
+      "sha256": "TBD",
+      "issue": "#125"
+    },
+    {
+      "path": "data/weights.json",
+      "version": "0.1.0",
+      "sha256": "TBD",
+      "issue": "#126"
+    },
+    {
+      "path": "data/docs.json",
+      "version": "0.1.0",
+      "sha256": "TBD",
+      "issue": "#127"
+    },
+    {
+      "path": "data/ideas_low_priority.json",
+      "version": "0.1.0",
+      "sha256": "TBD",
+      "issue": "#128"
+    }
+  ]
+}
