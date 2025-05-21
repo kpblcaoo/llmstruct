@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "status": "Draft",
+  "author": "@kpblcaoo",
+  "date": "2025-05-21",
+  "license": "GPL-3.0",
+  "artifact_id": "d6e7f8a9-b0c1-42d3-e4f5-a6b7c8d9e0f1",
+  "summary": "Documentation files for llmstruct",
+  "tags": ["docs"],
+  "docs": [
+    {
+      "path": "docs/llmstruct_format.md",
+      "title": "LLMstruct JSON Format Specification",
+      "version": "0.2.0",
+      "status": "Draft",
+      "author": "@kpblcaoo",
+      "issue": "#141",
+      "artifact_id": "e7f8a9b0-c1d2-43e4-f5a6-b7c8d9e0f1a2"
+    },
+    {
+      "path": "docs/llm_instructions.md",
+      "title": "LLMstruct Instructions for LLM",
+      "version": "0.1.0",
+      "status": "Proposed",
+      "author": "@kpblcaoo",
+      "issue": "#137",
+      "artifact_id": "f8a9b0c1-d2e3-44f5-a6b7-c8d9e0f1a2b3"
+    }
+  ]
+}
