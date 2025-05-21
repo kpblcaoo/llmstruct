@@ -10,7 +10,12 @@ import aiohttp
 import requests
 from dotenv import load_dotenv
 
-load_dotenv()
+from dotenv import load_dotenv
+try:
+    if not load_dotenv():
+        logging.warning("No .env file found or failed to parse .env")
+except Exception as e:
+    logging.error(f"Failed to parse .env file: {e}")
 
 logging.basicConfig(
     level=logging.INFO,

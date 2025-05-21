@@ -142,3 +142,7 @@
 2025-05-21 17:41:25,182 - INFO - Querying in grok mode with prompt: Summarize struct.json
 2025-05-21 17:41:31,181 - INFO - Grok query successful
 2025-05-21 17:41:31,183 - INFO - Generated llm_response.json
+2025-05-21 18:00:30,034 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-21 18:00:30,034 - INFO - Querying in grok mode with prompt: Summarize struct.json
+2025-05-21 18:00:41,200 - INFO - Grok query successful
+2025-05-21 18:00:41,201 - INFO - Generated llm_response.json
