@@ -1,3 +1,10 @@
+# json_generator.py
+# Copyright (C) 2025 Mikhail Stepanov
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
 import datetime
 import json
 import logging
@@ -11,22 +18,25 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 
 def get_folder_structure(root_dir: str, gitignore_patterns: Optional[List[str]], include_patterns: Optional[List[str]], exclude_patterns: Optional[List[str]], exclude_dirs: Optional[List[str]]) -> List[Dict[str, str]]:
     """Capture directory and file structure, respecting .gitignore and patterns."""
+    logging.info(f"Generating folder structure for {root_dir}")
     structure = []
     root_path = Path(root_dir).resolve()
     default_exclude_dirs = {'venv', '__pycache__', '.git', '.pytest_cache', 'build', 'dist'}
     exclude_dirs_set = set(exclude_dirs or []) | default_exclude_dirs
     
     gitignore_patterns = gitignore_patterns or []
-    # Normalize gitignore patterns to handle directories
     normalized_gitignore = [p.rstrip('/') + '/*' if p.endswith('/') else p for p in gitignore_patterns]
+    logging.debug(f"Gitignore patterns: {normalized_gitignore}")
     
-    for dir_path, dirnames, filenames in os.walk(root_dir):
+    for dir_path, dirnames, filenames in os.walk(root_dir, topdown=True):
+        logging.debug(f"Processing directory: {dir_path}")
         rel_dir = str(Path(dir_path).relative_to(root_path))
         if rel_dir == '.':
             rel_dir = ''
         
         # Skip excluded directories
         if any(Path(dir_path).match(p) for p in normalized_gitignore) or any(d in exclude_dirs_set for d in Path(dir_path).parts):
+            logging.debug(f"Skipping excluded directory: {dir_path}")
             dirnames[:] = []
             continue
         
@@ -37,8 +47,9 @@ def get_folder_structure(root_dir: str, gitignore_patterns: Optional[List[str]],
         for fname in sorted(filenames):
             file_path = Path(dir_path) / fname
             if any(file_path.match(p) for p in (include_patterns or ['*.py']) if not any(file_path.match(ep) for ep in (exclude_patterns or []) + normalized_gitignore)):
-                structure.append({"path": str(file_path.relative_to(root_path)), "type": "file"})
+                structure.append({"path": str(file_path.relative_to(root_path)).replace('\\', '/'), "type": "file"})
     
+    logging.info(f"Found {len(structure)} items in {root_dir}")
     return sorted(structure, key=lambda x: x['path'])
 
 def build_toc_and_modules(root_dir: str, include_patterns: Optional[List[str]], exclude_patterns: Optional[List[str]], gitignore_patterns: Optional[List[str]], include_ranges: bool, include_hashes: bool, exclude_dirs: Optional[List[str]]) -> tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
