@@ -1,0 +1,58 @@
+# Python virtual environments
+venv/
+.venv/
+env/
+
+# Python bytecode and caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Build and distribution artifacts
+build/
+dist/
+*.egg-info/
+*.whl
+
+# Testing caches
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Temporary files
+*.bak
+*.swp
+*~
+.DS_Store
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Dependency management
+poetry.lock  # Optional: include if committing lock file
+.pdm.toml
+.pipenv
+
+# Generated JSON outputs (optional)
+filtered_struct.json
+struct.json  # Remove if version-controlling JSONs
+
+# Logs and temporary data
+*.log
+logs/
+tmp/
+
+# Exclude sensitive or local config
+*.env
+.env
+secrets/
+
+#Project specific
+
+llm_response.json
+tree_collector.py
