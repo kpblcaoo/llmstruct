@@ -1,0 +1,83 @@
+{
+  "version": "0.2.0",
+  "status": "Draft",
+  "author": "@kpblcaoo",
+  "date": "2025-05-21",
+  "license": "GPL-3.0",
+  "artifact_id": "b6c7d8e9-f0a1-42b3-c4d5-e6f7a8b9c0d1",
+  "summary": "Schema for llmstruct JSON",
+  "tags": ["schema"],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["metadata", "toc", "modules", "folder_structure"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["project_name", "version", "authors", "stats", "artifact_id", "summary"],
+      "properties": {
+        "project_name": {"type": "string"},
+        "version": {"type": "string"},
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "github", "email"],
+            "properties": {
+              "name": {"type": "string"},
+              "github": {"type": "string"},
+              "email": {"type": "string", "format": "email"}
+            }
+          }
+        },
+        "stats": {
+          "type": "object",
+          "required": ["modules_count", "functions_count"],
+          "properties": {
+            "modules_count": {"type": "integer"},
+            "functions_count": {"type": "integer"}
+          }
+        },
+        "artifact_id": {"type": "string", "format": "uuid"},
+        "summary": {"type": "string"},
+        "tags": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "toc": {"type": "array", "items": {"type": "string"}},
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "path", "artifact_id"],
+        "properties": {
+          "name": {"type": "string"},
+          "path": {"type": "string"},
+          "artifact_id": {"type": "string", "format": "uuid"},
+          "functions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "signature"],
+              "properties": {
+                "name": {"type": "string"},
+                "signature": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "folder_structure": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "type", "artifact_id"],
+        "properties": {
+          "path": {"type": "string"},
+          "type": {"type": "string", "enum": ["directory", "file"]},
+          "artifact_id": {"type": "string", "format": "uuid"},
+          "metadata": {"type": "object"}
+        }
+      }
+    }
+  }
+}
