@@ -9,13 +9,13 @@ import json
 import logging
 from pathlib import Path
 from typing import Dict, Any, List
-from .json_selector import filter_json
+from .json_selector import filter_json, select_json
+from .cache import JSONCache
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 def filter_struct(struct: Dict[str, Any], prompt: str) -> Dict[str, Any]:
     """Filter struct.json or init.json based on prompt keywords."""
-    # Handle init.json structure
     if "guide" in struct:
         filtered = {
             "metadata": struct.get("metadata", {"project_name": "llmstruct", "version": struct.get("version", "0.0.0")}),
@@ -25,7 +25,6 @@ def filter_struct(struct: Dict[str, Any], prompt: str) -> Dict[str, Any]:
         if "cli" in keywords:
             filtered["principles"] = filter_json(struct, "name", "Transparency")
         return filtered
-    # Handle struct.json structure
     filtered = {"metadata": struct.get("metadata", {"project_name": "unknown", "description": "", "version": "0.0.0"}), "modules": []}
     keywords = prompt.lower().split()
     
@@ -35,24 +34,37 @@ def filter_struct(struct: Dict[str, Any], prompt: str) -> Dict[str, Any]:
     
     return filtered
 
-def attach_to_llm_request(context_path: str, prompt: str) -> str:
-    """Attach filtered JSON to LLM prompt."""
+def attach_to_llm_request(context_path: str, prompt: str, cache: Optional[JSONCache] = None) -> str:
+    """Attach filtered JSON to LLM prompt, using cache if available."""
     try:
         context_file = Path(context_path)
         if not context_file.exists():
             logging.error(f"Context file not found: {context_path}")
             return prompt
         
-        with open(context_file, "r", encoding="utf-8") as f:
-            struct = json.load(f)
+        # Check cache first
+        if cache:
+            metadata = cache.get_metadata(context_file.name)
+            if metadata and "cli" in prompt.lower():
+                struct = cache.get_full_json(context_file.name)
+                if struct:
+                    logging.info(f"Loaded {context_path} from cache")
+                else:
+                    struct = select_json(context_path, "category", "cli", partial=True)
+            else:
+                struct = select_json(context_path, "category", "cli", partial=True)
+        else:
+            struct = select_json(context_path, "category", "cli", partial=True)
         
         filtered_struct = filter_struct(struct, prompt)
-        # Use json_selector for CLI-related data
         selected_data = filter_json(struct, "category", "cli") if "cli" in prompt.lower() else []
         context = {
             "struct": filtered_struct,
             "selected": selected_data
         }
+        # Cache result if cache is enabled
+        if cache and context_file.exists():
+            cache.cache_json(context_path, context_file.name, summary=prompt[:50], tags=["cli"])
         return f"{prompt}\n\nContext:\n{json.dumps(context, indent=2)}"
     except json.JSONDecodeError as e:
         logging.error(f"Invalid JSON in {context_path}: {e}")

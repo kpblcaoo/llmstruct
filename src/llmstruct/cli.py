@@ -19,6 +19,7 @@ import toml
 from llmstruct import LLMClient
 from llmstruct.generators.json_generator import generate_json, get_folder_structure
 from llmstruct.self_run import attach_to_llm_request
+from llmstruct.cache import JSONCache
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
@@ -39,7 +40,7 @@ def load_config(root_dir: str) -> dict:
     config_path = Path(root_dir) / 'llmstruct.toml'
     if config_path.exists():
         try:
-            with config_path.open('r', encoding='utf-8') as f:
+            with config_pathオープン('r', encoding='utf-8') as f:
                 return toml.load(f)
         except Exception as e:
             logging.error(f"Failed to read llmstruct.toml: {e}")
@@ -84,6 +85,7 @@ def parse_files_from_response(response: str) -> List[tuple[str, str]]:
 async def interactive(args: argparse.Namespace):
     """Run interactive CLI with LLM, supporting file/folder viewing and writing."""
     client = LLMClient()
+    cache = JSONCache() if args.use_cache else None
     root_dir = os.path.abspath(args.root_dir)
     context_path = args.context
     if not Path(context_path).exists():
@@ -94,6 +96,8 @@ async def interactive(args: argparse.Namespace):
     while True:
         user_input = input("Prompt> ").strip()
         if user_input.lower() == 'exit':
+            if cache:
+                cache.close()
             break
         elif user_input.lower().startswith('view '):
             path = user_input[5:].strip()
@@ -130,17 +134,15 @@ async def interactive(args: argparse.Namespace):
             continue
         else:
             prompt = user_input
-            # Check for scan/view or write keywords
             scan_match = re.search(r'(?:scan|view|analyze)\s+(\S+)', prompt, re.IGNORECASE)
             write_match = re.search(r'(?:write|generate|create)\s+(?:to\s+)?(\S+)', prompt, re.IGNORECASE)
             scan_path = scan_match.group(1) if scan_match else None
             write_filename = write_match.group(1) if write_match else None
-            write_dir = '/tmp'  # Default to /tmp; override if specified
+            write_dir = '/tmp'
             if write_filename and '/' in write_filename:
                 write_dir, write_filename = os.path.split(write_filename)
                 write_dir = os.path.join(root_dir, write_dir) if not write_dir.startswith('/') else write_dir
 
-            # Handle scan/view
             scan_result = None
             if scan_path:
                 full_path = os.path.join(root_dir, scan_path)
@@ -168,8 +170,7 @@ async def interactive(args: argparse.Namespace):
                 else:
                     print(f"Path {full_path} does not exist")
 
-            # Prepare prompt with scan result
-            prompt_with_context = attach_to_llm_request(context_path, prompt + (f"\n\nScanned data:\n{scan_result}" if scan_result else ""))
+            prompt_with_context = attach_to_llm_request(context_path, prompt + (f"\n\nScanned data:\n{scan_result}" if scan_result else ""), cache=cache)
             try:
                 result = await client.query(
                     prompt=prompt_with_context,
@@ -180,7 +181,6 @@ async def interactive(args: argparse.Namespace):
                 )
                 if result:
                     print(f"LLM Response:\n{result}")
-                    # Handle writes
                     files_to_write = parse_files_from_response(result)
                     if write_filename:
                         files_to_write.append((write_filename, result))
@@ -227,6 +227,11 @@ def parse(args: argparse.Namespace):
         with Path(args.output).open('w', encoding='utf-8') as f:
             json.dump(struct_data, f, indent=2)
         logging.info(f"Generated {args.output}")
+        # Cache the generated JSON
+        if args.use_cache:
+            cache = JSONCache()
+            cache.cache_json(args.output, args.output, summary="Generated struct.json", tags=["struct"])
+            cache.close()
     except Exception as e:
         logging.error(f"Failed to generate JSON: {e}")
         raise
@@ -236,6 +241,7 @@ async def query(args: argparse.Namespace):
     if not Path(args.context).exists():
         logging.error(f"Context file {args.context} does not exist")
         return
+    cache = JSONCache() if args.use_cache else None
     client = LLMClient()
     result = await client.query(
         prompt=args.prompt,
@@ -250,6 +256,8 @@ async def query(args: argparse.Namespace):
         logging.info(f"Generated {args.output}")
     else:
         logging.error("Query failed")
+    if cache:
+        cache.close()
 
 def context(args: argparse.Namespace):
     """Generate context.json from input JSON."""
@@ -268,7 +276,6 @@ def main():
     parser = argparse.ArgumentParser(description="Generate structured JSON for codebases and query LLMs")
     subparsers = parser.add_subparsers(dest="command", required=True, help="Available commands")
 
-    # Parse command
     parse_parser = subparsers.add_parser("parse", help="Parse codebase and generate struct.json")
     parse_parser.add_argument("root_dir", help="Root directory of the project")
     parse_parser.add_argument("-o", "--output", default="struct.json", help="Output JSON file")
@@ -278,8 +285,8 @@ def main():
     parse_parser.add_argument("--include-ranges", action="store_true", help="Include line ranges for functions/classes")
     parse_parser.add_argument("--include-hashes", action="store_true", help="Include file hashes")
     parse_parser.add_argument("--goals", nargs="*", help="Custom project goals")
+    parse_parser.add_argument("--use-cache", action="store_true", help="Cache generated JSON")
 
-    # Query command
     query_parser = subparsers.add_parser("query", help="Query LLMs with prompt and context")
     query_parser.add_argument("--prompt", required=True, help="Prompt for LLM")
     query_parser.add_argument("--context", default="struct.json", help="Context JSON file")
@@ -287,27 +294,25 @@ def main():
     query_parser.add_argument("--model", help="Ollama model (e.g., mixtral, llama3)")
     query_parser.add_argument("--artifact-ids", nargs="*", default=[], help="Artifact IDs to include in context")
     query_parser.add_argument("--output", default="llm_response.json", help="Output JSON file for LLM response")
+    query_parser.add_argument("--use-cache", action="store_true", help="Use JSON cache")
 
-    # Interactive command
     interactive_parser = subparsers.add_parser("interactive", help="Run interactive CLI with LLM")
     interactive_parser.add_argument("root_dir", help="Root directory of the project")
     interactive_parser.add_argument("--context", default="struct.json", help="Context JSON file")
     interactive_parser.add_argument("--mode", choices=["grok", "anthropic", "ollama", "hybrid"], default="hybrid", help="LLM mode")
     interactive_parser.add_argument("--model", help="Ollama model (e.g., mixtral, llama3)")
     interactive_parser.add_argument("--artifact-ids", nargs="*", default=[], help="Artifact IDs to include in context")
+    interactive_parser.add_argument("--use-cache", action="store_true", help="Use JSON cache")
 
-    # Context command
     context_parser = subparsers.add_parser("context", help="Generate context.json from input JSON")
     context_parser.add_argument("--input", default="struct.json", help="Input JSON file")
     context_parser.add_argument("--output", default="context.json", help="Output context JSON file")
     context_parser.add_argument("--priority", action="append", default=["src/llmstruct/"], help="Priority directories/files")
 
-    # Dogfood command
     dogfood_parser = subparsers.add_parser("dogfood", help="Run dogfooding analysis")
     dogfood_parser.add_argument("--input", default="src/llmstruct/", help="Input directory")
     dogfood_parser.add_argument("--output", default="dogfood_report.json", help="Output report JSON")
 
-    # Review command
     review_parser = subparsers.add_parser("review", help="Review codebase with LLM")
     review_parser.add_argument("--input", default="src/llmstruct/", help="Input directory")
     review_parser.add_argument("--mode", choices=["grok", "anthropic", "ollama", "hybrid"], default="hybrid", help="LLM mode")
