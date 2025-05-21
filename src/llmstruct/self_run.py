@@ -8,7 +8,7 @@
 import json
 import logging
 from pathlib import Path
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 from .json_selector import filter_json, select_json
 from .cache import JSONCache
 

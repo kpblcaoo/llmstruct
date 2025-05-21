@@ -2,7 +2,7 @@
   "metadata": {
     "project_name": "llmstruct",
     "description": "Utility for generating structured JSON for codebases",
-    "version": "2025-05-21T21:09:58.047952Z",
+    "version": "2025-05-21T23:09:56.152142Z",
     "authors": [
       {
         "name": "Mikhail Stepanov",
@@ -18,22 +18,14 @@
       "Regenerate JSON for significant changes, track via Git and artifacts",
       "Use internal comments for descriptions, append brief summary"
     ],
-    "goals": {
-      "goals": [
-        "Create universal JSON format for codebase structure (modules, functions, classes, calls, metadata)",
-        "Ensure extensibility for new languages and entity types",
-        "Develop modular, plugin-based parsers for new languages",
-        "Maintain an open, RFC-style documented format",
-        "Integrate with LLMs by generating and attaching JSON structure to queries"
-      ]
-    },
+    "goals": [],
     "stats": {
-      "modules_count": 20,
-      "functions_count": 69,
-      "classes_count": 5,
-      "call_edges_count": 273
+      "modules_count": 23,
+      "functions_count": 80,
+      "classes_count": 6,
+      "call_edges_count": 310
     },
-    "artifact_id": "00cb3cc0-16ab-4fbc-929e-ea29d8e64b76",
+    "artifact_id": "29a67280-2ca2-478f-8845-3f93ed45c0a4",
     "summary": "Structured JSON for llmstruct codebase",
     "tags": [
       "codebase",
@@ -43,277 +35,277 @@
       {
         "path": ".",
         "type": "directory",
-        "artifact_id": "6a6f6f07-08da-46ff-9e9f-44620ad88b6f",
+        "artifact_id": "28caa1b8-3a67-434a-82ff-a0e936e3eb8c",
         "metadata": {}
       },
       {
         "path": ".github",
         "type": "directory",
-        "artifact_id": "f3aa12c7-3add-4cbf-b530-edf8d5aece71",
+        "artifact_id": "a435a75a-e490-442c-bb41-63d1e9c4c3ef",
         "metadata": {}
       },
       {
         "path": ".github/workflows",
         "type": "directory",
-        "artifact_id": "8442cb87-f51b-4cc3-ae71-23a329e6f7c8",
+        "artifact_id": "4930c05a-28ce-49cb-98a1-4e8e24db4908",
         "metadata": {}
       },
       {
         "path": "collector.py",
         "type": "file",
-        "artifact_id": "921f1704-ac82-49f0-b5de-e789c1132790",
+        "artifact_id": "5ed4219c-b3f6-45fb-9058-388fff98cfe2",
         "metadata": {}
       },
       {
         "path": "data",
         "type": "directory",
-        "artifact_id": "e8a94d20-4a12-4305-b5a5-a4365b260fd3",
+        "artifact_id": "38cb75e3-287f-4bda-ab7e-957b2f345a9c",
         "metadata": {}
       },
       {
         "path": "data.old",
         "type": "directory",
-        "artifact_id": "20b99faa-91e0-4437-8dc1-81c9f6a01076",
+        "artifact_id": "4803cb98-d942-4296-8b7b-47c4762153af",
         "metadata": {}
       },
       {
         "path": "docs",
         "type": "directory",
-        "artifact_id": "3a5a3748-3c37-4088-83ec-9a074462b8cb",
+        "artifact_id": "6486907d-7cc9-4b3b-b924-9c3d6037b5dd",
         "metadata": {}
       },
       {
         "path": "docs/examples",
         "type": "directory",
-        "artifact_id": "86e657bf-9abf-43dd-a2dc-143ed5535db6",
+        "artifact_id": "c83822bd-c3ea-4726-b5a2-f0fced6072ce",
         "metadata": {}
       },
       {
         "path": "docs/internal",
         "type": "directory",
-        "artifact_id": "39caa5b7-adc8-4f9f-8dd7-eb37ee7750f2",
+        "artifact_id": "e518203a-8ef7-43ba-80ac-fcb2fa93d7c1",
         "metadata": {}
       },
       {
         "path": "docs/internal/ru",
         "type": "directory",
-        "artifact_id": "88cd653b-5811-4315-b30f-fd0e8816185c",
+        "artifact_id": "07bea95d-e71b-4a0f-a854-b103e863613f",
         "metadata": {}
       },
       {
         "path": "docs/ru",
         "type": "directory",
-        "artifact_id": "8ab9be6c-081f-4112-8cdf-f5a16479652c",
+        "artifact_id": "d07fc81e-ea73-44cd-b24f-97f7427e3b41",
         "metadata": {}
       },
       {
         "path": "docs/ru/examples",
         "type": "directory",
-        "artifact_id": "4c958c19-c27e-4c6f-89ad-76117de6946d",
+        "artifact_id": "ffcd99b0-55be-4c08-b8d2-074fa7081c55",
         "metadata": {}
       },
       {
         "path": "examples",
         "type": "directory",
-        "artifact_id": "69c8e9f1-c469-4b16-bf23-95fac3ecb0c7",
+        "artifact_id": "dee6dfce-7582-4b9b-bf96-39b00e3398e2",
         "metadata": {}
       },
       {
         "path": "examples/python_project_main.py",
         "type": "file",
-        "artifact_id": "3685bce8-d8ec-426d-b30e-5e26bb18d7a8",
+        "artifact_id": "844431c2-0f25-42e5-8f82-c6dce7074afb",
         "metadata": {}
       },
       {
         "path": "examples/python_project_utils.py",
         "type": "file",
-        "artifact_id": "e7bd6a1e-1556-498d-b9ea-60ae3ac68609",
+        "artifact_id": "71712bf1-f9f0-45d4-82e8-25214f47c4f8",
         "metadata": {}
       },
       {
         "path": "internal",
         "type": "directory",
-        "artifact_id": "285b112a-f94c-4c5e-b36d-4426226d7b9d",
-        "metadata": {}
-      },
-      {
-        "path": "llmstruct_project",
-        "type": "directory",
-        "artifact_id": "25857949-942c-48f9-b701-cd5321ac1260",
-        "metadata": {}
-      },
-      {
-        "path": "llmstruct_project/docs",
-        "type": "directory",
-        "artifact_id": "d558ccb0-0a8b-411d-8234-3a4173a2baf6",
-        "metadata": {}
-      },
-      {
-        "path": "llmstruct_project/scripts",
-        "type": "directory",
-        "artifact_id": "e26b8b87-f229-49f7-ae8d-df526881d932",
+        "artifact_id": "d4165df0-5e03-43f8-9dd8-8ff9baa6e03f",
         "metadata": {}
       },
       {
         "path": "schemas",
         "type": "directory",
-        "artifact_id": "71b3f9fc-785f-48be-8733-7f666581b625",
+        "artifact_id": "10955cca-dd8d-41f4-af12-684e69b6f34f",
         "metadata": {}
       },
       {
         "path": "src",
         "type": "directory",
-        "artifact_id": "ba4dfeea-baa3-4886-9488-5246960a3132",
+        "artifact_id": "a484d5e9-d98c-4acc-86b8-7210fb4578b7",
         "metadata": {}
       },
       {
         "path": "src/llmstruct",
         "type": "directory",
-        "artifact_id": "d9c685c5-396d-422b-93b1-577379909abe",
+        "artifact_id": "77468000-3208-49c4-898d-36a10fd4823b",
         "metadata": {}
       },
       {
         "path": "src/llmstruct.egg-info",
         "type": "directory",
-        "artifact_id": "422ffada-b8ed-413a-ac6e-b844054b185f",
+        "artifact_id": "d9ac2482-bb40-416a-b68b-1e384e3cc3c6",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/__init__.py",
         "type": "file",
-        "artifact_id": "29090500-b78d-40a3-a9e2-afe17903b0ee",
+        "artifact_id": "1bc8d319-d6e6-43c8-8153-18596947db8d",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/__main__.py",
         "type": "file",
-        "artifact_id": "2d3a660e-bc41-4574-a64a-226092c50d4a",
+        "artifact_id": "edd4566e-27c0-4254-8333-273441af4b38",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/cache.py",
+        "type": "file",
+        "artifact_id": "a41cc6ef-c6d4-4ab1-afcf-aee7d70eba64",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/cli.py",
         "type": "file",
-        "artifact_id": "ac9829dc-6a22-46b2-9a33-f59e1278a3f7",
+        "artifact_id": "d363a4d1-fa4e-4078-bd2a-e857a3e3c1ab",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/generators",
         "type": "directory",
-        "artifact_id": "20236131-0008-4fb1-a18e-f729a7671c7b",
+        "artifact_id": "0975ec65-c2c4-4a04-8af6-50b6f36891bd",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/generators/__init__.py",
         "type": "file",
-        "artifact_id": "7758f241-108b-4d7c-92d2-1b9a9e7c4a56",
+        "artifact_id": "0b476341-0835-4488-86e3-98909759d851",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/generators/json_generator.py",
         "type": "file",
-        "artifact_id": "fa18fe03-b755-4df9-bb2d-0c14a7a614e5",
+        "artifact_id": "e54b73eb-c9cc-4521-bcff-ee2e9dc8abd1",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/grok.py",
         "type": "file",
-        "artifact_id": "e5aecb5e-de10-4c7d-8c67-f46352a09b8f",
+        "artifact_id": "af351e1a-675e-40ed-8a00-39f801c41a91",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/json_selector.py",
         "type": "file",
-        "artifact_id": "a0d17c69-fd2b-454f-b5d7-53c95af4f6f1",
+        "artifact_id": "4e7a5b5c-a213-4c78-a68e-969cc18eb2f7",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/llm_client.py",
         "type": "file",
-        "artifact_id": "435db694-d016-4e1f-a9ca-279e616c650c",
+        "artifact_id": "3415e996-7318-47f2-9b35-95d7dd574039",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/parsers",
         "type": "directory",
-        "artifact_id": "c59182f4-54d0-440d-81dc-1e4249686fd5",
+        "artifact_id": "e35ed66c-26bb-464e-9d38-5cf8b241ec10",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/parsers/__init__.py",
         "type": "file",
-        "artifact_id": "eff02b9d-c3f5-43c7-93f4-90a3ef1a4fe8",
+        "artifact_id": "d345f404-c9fa-445c-900a-4834432675fa",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/parsers/javascript_parser.py",
         "type": "file",
-        "artifact_id": "701a0cd9-4c91-4ac9-8e7a-6a3ac17e5557",
+        "artifact_id": "99256690-07bd-4d13-8921-ba49bb508d29",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/parsers/python_parser.py",
         "type": "file",
-        "artifact_id": "461285ca-926e-404e-9fbe-4af71fd4a66a",
+        "artifact_id": "4984455a-69bb-4e63-9505-b8842cf4cec3",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/self_run.py",
         "type": "file",
-        "artifact_id": "a7fa7635-ff6c-4bc5-8cfc-d2b880cef759",
+        "artifact_id": "7cb7007f-63fc-4d9f-a531-289ce7994a71",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/templates",
         "type": "directory",
-        "artifact_id": "e599e77b-9b21-4dd0-a7f8-c6473acf5990",
+        "artifact_id": "6a969f13-4273-4dcb-abc5-91409738f07a",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/templates/__init__.py",
         "type": "file",
-        "artifact_id": "b0ed2d47-40b5-41f8-850b-13e7728ba9af",
+        "artifact_id": "b4035123-9b92-483a-944b-03e66227c602",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/validators",
         "type": "directory",
-        "artifact_id": "b43a6df9-b6a3-4b25-abba-23ab5ff1f103",
+        "artifact_id": "4b17c7a2-d50b-4070-a6d6-b1c4b7643a4c",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/validators/__init__.py",
         "type": "file",
-        "artifact_id": "28fc4132-cef8-4762-ac44-0309748e3968",
+        "artifact_id": "329f9fb7-c6b6-4f07-9f47-bc8daf09caf8",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/validators/json_validator.py",
         "type": "file",
-        "artifact_id": "345b0c7b-c319-445a-96ad-425f9640b746",
+        "artifact_id": "5a36ed23-3940-488e-b228-c14dc9d88b11",
         "metadata": {}
       },
       {
         "path": "test_efficiency.py",
         "type": "file",
-        "artifact_id": "af8692d0-4fe8-4cb4-8f3f-396492e7177a",
+        "artifact_id": "05067715-77a3-4a5e-8259-2e7607731e8d",
         "metadata": {}
       },
       {
         "path": "tests",
         "type": "directory",
-        "artifact_id": "002bf409-e64b-4be7-8444-82cd6cabb00e",
+        "artifact_id": "82f3f874-30b3-46ff-a269-0b64d43c6a93",
+        "metadata": {}
+      },
+      {
+        "path": "tests/__init__.py",
+        "type": "file",
+        "artifact_id": "ac2891b0-4015-422e-a089-42e3a4506250",
+        "metadata": {}
+      },
+      {
+        "path": "tests/test_self_run.py",
+        "type": "file",
+        "artifact_id": "cc0bd200-3d42-4699-b9a3-9dacfdf82e05",
         "metadata": {}
       },
       {
         "path": "tmp",
         "type": "directory",
-        "artifact_id": "161d3546-cb9d-46ec-ba57-a89ebebfd442",
+        "artifact_id": "fb17aea6-447e-438d-9484-60858e0fe237",
         "metadata": {}
       },
       {
         "path": "verify_llm_response.py",
         "type": "file",
-        "artifact_id": "28f1b430-0449-4e3a-b875-3675213bf061",
+        "artifact_id": "b64a7120-9446-40af-82da-351f433df011",
         "metadata": {}
       }
     ]
@@ -326,7 +318,7 @@
       "functions": 12,
       "classes": 0,
       "summary": "",
-      "artifact_id": "6240cd64-8bd7-48ff-900b-b557e5ec9fd3"
+      "artifact_id": "2d044c3b-57cf-4140-b54f-327d4c0f9443"
     },
     {
       "module_id": "collector",
@@ -335,7 +327,7 @@
       "functions": 3,
       "classes": 0,
       "summary": "",
-      "artifact_id": "e010d577-5b76-43fd-8d19-78d8173d66a8"
+      "artifact_id": "7dcf8e9d-36cd-4bdd-b0c3-a5ca5e35d359"
     },
     {
       "module_id": "verify_llm_response",
@@ -344,7 +336,7 @@
       "functions": 6,
       "classes": 0,
       "summary": "",
-      "artifact_id": "325e726c-0e43-408a-aea0-3c7e9daeab9a"
+      "artifact_id": "46e172a0-f208-4cfb-899c-c8328d76a31d"
     },
     {
       "module_id": "examples.python_project_utils",
@@ -353,7 +345,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "Utility functions for the sample project.",
-      "artifact_id": "5ecb7bff-00ac-4259-8fc6-cf28543bd696"
+      "artifact_id": "6d5c6b49-ee5b-464e-898b-68cedae7c2f8"
     },
     {
       "module_id": "examples.python_project_main",
@@ -362,7 +354,7 @@
       "functions": 2,
       "classes": 1,
       "summary": "Main module for the sample project.",
-      "artifact_id": "5e3c9122-4d14-44c1-ab57-08cff5f73f23"
+      "artifact_id": "0d43dc09-281f-4e5b-af4c-7f030c42f0f0"
     },
     {
       "module_id": "src.llmstruct.grok",
@@ -371,7 +363,7 @@
       "functions": 3,
       "classes": 1,
       "summary": "",
-      "artifact_id": "7ef3d6f2-254b-47bc-9e4f-13302363ab2b"
+      "artifact_id": "5aeefb5a-29ca-438b-877e-6aacf6e141c8"
     },
     {
       "module_id": "src.llmstruct.__init__",
@@ -380,7 +372,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "",
-      "artifact_id": "3411e4ea-6015-4ea8-b3f5-0beb5395e5f2"
+      "artifact_id": "a9e8b744-1c7a-4f16-9a9c-740b3fe4823e"
     },
     {
       "module_id": "src.llmstruct.__main__",
@@ -389,7 +381,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "",
-      "artifact_id": "33a48d8f-f693-4000-942d-ceb3f912287c"
+      "artifact_id": "f934efc8-7f84-4fc6-8f08-00388dffe10e"
     },
     {
       "module_id": "src.llmstruct.llm_client",
@@ -398,7 +390,16 @@
       "functions": 6,
       "classes": 1,
       "summary": "",
-      "artifact_id": "8c252ac2-3993-419d-b43a-8c7c0ac17b55"
+      "artifact_id": "eae52692-aa95-434a-b536-55dcc9b675a1"
+    },
+    {
+      "module_id": "src.llmstruct.cache",
+      "path": "src/llmstruct/cache.py",
+      "category": "core",
+      "functions": 6,
+      "classes": 1,
+      "summary": "",
+      "artifact_id": "14cfe3a6-209e-4b3f-949f-652c88c42e78"
     },
     {
       "module_id": "src.llmstruct.self_run",
@@ -407,7 +408,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "",
-      "artifact_id": "ed732046-645d-4af2-ab86-b6f44334c295"
+      "artifact_id": "74d9ed29-539b-45ab-bef6-d057fbcebde4"
     },
     {
       "module_id": "src.llmstruct.json_selector",
@@ -416,7 +417,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "",
-      "artifact_id": "d71f7b5c-df37-4dfb-b092-c554eec168d3"
+      "artifact_id": "e8de98cf-80f4-453f-9f2d-6a6446fddd18"
     },
     {
       "module_id": "src.llmstruct.cli",
@@ -425,7 +426,7 @@
       "functions": 12,
       "classes": 0,
       "summary": "",
-      "artifact_id": "cc44ab1e-8ead-4d94-bf3a-57916dbd27dc"
+      "artifact_id": "96bed95f-e2e5-4d58-8e41-5a8d4407830d"
     },
     {
       "module_id": "src.llmstruct.parsers.__init__",
@@ -434,7 +435,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "Language-specific parsers for extracting code structure data for LLMStruct JSON.",
-      "artifact_id": "23a88b42-4fa8-44c1-93ad-a043374a015c"
+      "artifact_id": "182a8ac0-dc90-47a9-96ce-28ee3655cf2b"
     },
     {
       "module_id": "src.llmstruct.parsers.javascript_parser",
@@ -443,7 +444,7 @@
       "functions": 5,
       "classes": 1,
       "summary": "",
-      "artifact_id": "93d1d979-5229-4909-9d39-410f9f848e02"
+      "artifact_id": "9f5ef397-90e2-48eb-a928-619d1516f204"
     },
     {
       "module_id": "src.llmstruct.parsers.python_parser",
@@ -452,7 +453,7 @@
       "functions": 9,
       "classes": 1,
       "summary": "",
-      "artifact_id": "768ed316-2202-45bf-980c-1e6ae7f6b12e"
+      "artifact_id": "1eb1a0ce-869a-4b5a-98cd-575418c1c21c"
     },
     {
       "module_id": "src.llmstruct.templates.__init__",
@@ -461,7 +462,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "Templates for LLM prompts used in LLMStruct integration.",
-      "artifact_id": "f7ddb37d-4050-48f6-ba8a-1c73c589c10d"
+      "artifact_id": "4daffe0e-328d-4ddf-b9c8-4f11cc111df1"
     },
     {
       "module_id": "src.llmstruct.validators.__init__",
@@ -470,7 +471,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "Validation modules for ensuring LLMStruct JSON complies with the schema.",
-      "artifact_id": "b24bf997-19ae-4bfa-a80b-497fbe445741"
+      "artifact_id": "f1e11392-7325-4439-ba4c-8e984353fad2"
     },
     {
       "module_id": "src.llmstruct.validators.json_validator",
@@ -479,7 +480,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "",
-      "artifact_id": "f0c1f41a-defe-452d-9ea1-fda2eb79ac55"
+      "artifact_id": "fbdd40a6-4fdb-483c-b115-80592882de8f"
     },
     {
       "module_id": "src.llmstruct.generators.json_generator",
@@ -488,7 +489,7 @@
       "functions": 3,
       "classes": 0,
       "summary": "",
-      "artifact_id": "7234be2b-2462-4bfa-8855-276c0ab3a809"
+      "artifact_id": "30dea2b8-a899-45b6-916f-c17543e949c7"
     },
     {
       "module_id": "src.llmstruct.generators.__init__",
@@ -497,7 +498,25 @@
       "functions": 0,
       "classes": 0,
       "summary": "Generator modules for creating LLMStruct JSON outputs from parsed code data.",
-      "artifact_id": "069790e5-25c9-4726-83a4-bda167b226ca"
+      "artifact_id": "5bb19d31-3796-4fa1-badc-3b18f437b0dd"
+    },
+    {
+      "module_id": "tests.test_self_run",
+      "path": "tests/test_self_run.py",
+      "category": "test",
+      "functions": 5,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "71c2b7b0-5bfa-4836-aea1-9f5a96170c34"
+    },
+    {
+      "module_id": "tests.__init__",
+      "path": "tests/__init__.py",
+      "category": "test",
+      "functions": 0,
+      "classes": 0,
+      "summary": "Test suite for LLMStruct, covering parsers, generators, validators, and integration.",
+      "artifact_id": "20ddafb2-6faa-4f4a-9cb3-80340374b855"
     }
   ],
   "modules": [
@@ -510,20 +529,14 @@
         {
           "name": "get_system_metrics",
           "docstring": "",
-          "line_range": [
-            14,
-            18
-          ],
+          "line_range": null,
           "parameters": [],
           "decorators": []
         },
         {
           "name": "is_local_address",
           "docstring": "",
-          "line_range": [
-            20,
-            26
-          ],
+          "line_range": null,
           "parameters": [
             "url"
           ],
@@ -532,10 +545,7 @@
         {
           "name": "setup_proxy",
           "docstring": "",
-          "line_range": [
-            28,
-            31
-          ],
+          "line_range": null,
           "parameters": [
             "proxy_url"
           ],
@@ -544,10 +554,7 @@
         {
           "name": "check_ollama",
           "docstring": "",
-          "line_range": [
-            33,
-            38
-          ],
+          "line_range": null,
           "parameters": [
             "api_url"
           ],
@@ -556,10 +563,7 @@
         {
           "name": "optimize_prompt",
           "docstring": "",
-          "line_range": [
-            40,
-            45
-          ],
+          "line_range": null,
           "parameters": [
             "struct_data",
             "max_tokens"
@@ -569,10 +573,7 @@
         {
           "name": "run_llm_request",
           "docstring": "",
-          "line_range": [
-            47,
-            71
-          ],
+          "line_range": null,
           "parameters": [
             "api_url",
             "payload",
@@ -583,20 +584,14 @@
         {
           "name": "check_llmstruct_cli",
           "docstring": "",
-          "line_range": [
-            73,
-            74
-          ],
+          "line_range": null,
           "parameters": [],
           "decorators": []
         },
         {
           "name": "test_with_llmstruct",
           "docstring": "",
-          "line_range": [
-            76,
-            102
-          ],
+          "line_range": null,
           "parameters": [
             "api_url",
             "project_path",
@@ -608,10 +603,7 @@
         {
           "name": "test_without_llmstruct",
           "docstring": "",
-          "line_range": [
-            104,
-            111
-          ],
+          "line_range": null,
           "parameters": [
             "api_url",
             "project_path",
@@ -622,10 +614,7 @@
         {
           "name": "test_with_grok",
           "docstring": "",
-          "line_range": [
-            113,
-            135
-          ],
+          "line_range": null,
           "parameters": [
             "api_key",
             "project_path",
@@ -637,10 +626,7 @@
         {
           "name": "evaluate_accuracy",
           "docstring": "",
-          "line_range": [
-            137,
-            139
-          ],
+          "line_range": null,
           "parameters": [
             "response_text",
             "expected"
@@ -650,10 +636,7 @@
         {
           "name": "main",
           "docstring": "",
-          "line_range": [
-            141,
-            188
-          ],
+          "line_range": null,
           "parameters": [],
           "decorators": []
         }
@@ -672,25 +655,25 @@
           "os.getenv"
         ],
         "check_ollama": [
-          "api_url.replace",
-          "str",
           "requests.get",
-          "response.json"
+          "response.json",
+          "api_url.replace",
+          "str"
         ],
         "optimize_prompt": [
-          "print",
           "len",
-          "struct_data.split"
+          "struct_data.split",
+          "print"
         ],
         "run_llm_request": [
-          "response.raise_for_status",
           "session.post",
-          "time.perf_counter",
           "requests.Session",
           "type",
-          "response.json",
           "is_local_address",
+          "response.raise_for_status",
           "get_system_metrics",
+          "time.perf_counter",
+          "response.json",
           "print",
           "len"
         ],
@@ -698,56 +681,56 @@
           "shutil.which"
         ],
         "test_with_llmstruct": [
-          "optimize_prompt",
-          "str",
-          "FileNotFoundError",
+          "f.read",
           "check_llmstruct_cli",
           "target_path.exists",
-          "open",
-          "f.read",
-          "json.dump",
+          "optimize_prompt",
           "run_llm_request",
+          "Path",
+          "json.dump",
+          "FileNotFoundError",
+          "open",
           "subprocess.run",
-          "Path"
+          "str"
         ],
         "test_without_llmstruct": [
           "optimize_prompt",
-          "open",
-          "f.read",
           "run_llm_request",
-          "Path"
+          "Path",
+          "open",
+          "f.read"
         ],
         "test_with_grok": [
-          "optimize_prompt",
-          "FileNotFoundError",
-          "target_path.exists",
-          "open",
           "f.read",
-          "json.dump",
+          "target_path.exists",
+          "optimize_prompt",
           "Path",
-          "test_grok"
+          "json.dump",
+          "test_grok",
+          "open",
+          "FileNotFoundError"
         ],
         "evaluate_accuracy": [
+          "len",
           "sum",
-          "response_text.lower",
-          "len"
+          "response_text.lower"
         ],
         "main": [
-          "test_with_grok",
-          "check_ollama",
-          "range",
-          "evaluate_accuracy",
-          "str",
-          "argparse.ArgumentParser",
-          "check_llmstruct_cli",
-          "test_without_llmstruct",
-          "open",
-          "parser.parse_args",
           "setup_proxy",
-          "json.dump",
+          "parser.parse_args",
+          "argparse.ArgumentParser",
+          "parser.add_argument",
+          "check_llmstruct_cli",
           "test_with_llmstruct",
+          "evaluate_accuracy",
+          "test_with_grok",
+          "json.dump",
+          "test_without_llmstruct",
           "print",
-          "parser.add_argument"
+          "range",
+          "open",
+          "check_ollama",
+          "str"
         ]
       },
       "dependencies": [
@@ -768,7 +751,7 @@
         "urlparse"
       ],
       "hash": null,
-      "artifact_id": "6240cd64-8bd7-48ff-900b-b557e5ec9fd3"
+      "artifact_id": "2d044c3b-57cf-4140-b54f-327d4c0f9443"
     },
     {
       "module_id": "collector",
@@ -779,20 +762,14 @@
         {
           "name": "load_gitignore",
           "docstring": "",
-          "line_range": [
-            10,
-            14
-          ],
+          "line_range": null,
           "parameters": [],
           "decorators": []
         },
         {
           "name": "is_text_file",
           "docstring": "Check if file is likely a text file based on extension.",
-          "line_range": [
-            16,
-            19
-          ],
+          "line_range": null,
           "parameters": [
             "file_path"
           ],
@@ -801,10 +778,7 @@
         {
           "name": "collect_project",
           "docstring": "",
-          "line_range": [
-            21,
-            44
-          ],
+          "line_range": null,
           "parameters": [],
           "decorators": []
         }
@@ -818,22 +792,22 @@
         ],
         "is_text_file": [],
         "collect_project": [
-          "gitignore",
-          "doc_files.items",
           "root_dir.rglob",
-          "file_path.is_file",
-          "str",
-          "logger.error",
-          "load_gitignore",
-          "open",
-          "is_text_file",
-          "f.read",
-          "any",
+          "doc_files.items",
+          "len",
+          "gitignore",
           "logger.warning",
-          "json.dump",
-          "logger.info",
           "Path",
-          "len"
+          "file_path.is_file",
+          "is_text_file",
+          "json.dump",
+          "load_gitignore",
+          "logger.error",
+          "any",
+          "open",
+          "f.read",
+          "logger.info",
+          "str"
         ]
       },
       "dependencies": [
@@ -844,7 +818,7 @@
         "pathlib"
       ],
       "hash": null,
-      "artifact_id": "e010d577-5b76-43fd-8d19-78d8173d66a8"
+      "artifact_id": "7dcf8e9d-36cd-4bdd-b0c3-a5ca5e35d359"
     },
     {
       "module_id": "verify_llm_response",
@@ -855,10 +829,7 @@
         {
           "name": "load_json_file",
           "docstring": "Load a JSON file and return its contents.",
-          "line_range": [
-            12,
-            22
-          ],
+          "line_range": null,
           "parameters": [
             "file_path"
           ],
@@ -867,10 +838,7 @@
         {
           "name": "verify_response_with_struct",
           "docstring": "Verify llm_response.json against struct.json.",
-          "line_range": [
-            24,
-            58
-          ],
+          "line_range": null,
           "parameters": [
             "response_text",
             "struct_data"
@@ -880,10 +848,7 @@
         {
           "name": "verify_response_without_struct",
           "docstring": "Verify llm_response.json based on LLMstruct principles.",
-          "line_range": [
-            60,
-            90
-          ],
+          "line_range": null,
           "parameters": [
             "response_text"
           ],
@@ -892,10 +857,7 @@
         {
           "name": "generate_metrics",
           "docstring": "Generate metrics for the response per EXT-004.",
-          "line_range": [
-            92,
-            120
-          ],
+          "line_range": null,
           "parameters": [
             "response_data",
             "server_log"
@@ -905,10 +867,7 @@
         {
           "name": "update_tasks_json",
           "docstring": "Append a new task to tasks.json.",
-          "line_range": [
-            122,
-            129
-          ],
+          "line_range": null,
           "parameters": [
             "tasks_file",
             "new_task"
@@ -918,10 +877,7 @@
         {
           "name": "main",
           "docstring": "",
-          "line_range": [
-            131,
-            193
-          ],
+          "line_range": null,
           "parameters": [],
           "decorators": []
         }
@@ -934,53 +890,53 @@
           "json.load"
         ],
         "verify_response_with_struct": [
-          "set",
-          "expected_goals.issubset",
-          "logging.info",
-          "struct_data.get",
-          "re.findall",
-          "expected_files.issubset",
           "e.startswith",
           "logging.error",
-          "expected_extensions.issubset"
+          "expected_goals.issubset",
+          "expected_files.issubset",
+          "set",
+          "expected_extensions.issubset",
+          "logging.info",
+          "re.findall",
+          "struct_data.get"
         ],
         "verify_response_without_struct": [
+          "logging.error",
+          "expected_goals.issubset",
+          "expected_files.issubset",
           "set",
+          "expected_extensions.issubset",
+          "logging.info",
           "response_text.lower",
           "principle.lower",
-          "expected_goals.issubset",
-          "logging.info",
-          "re.findall",
-          "expected_files.issubset",
-          "logging.error",
-          "expected_extensions.issubset"
+          "re.findall"
         ],
         "generate_metrics": [
-          "response_text.split",
           "re.findall",
+          "len",
           "datetime.utcnow",
           "server_log.get",
-          "len"
+          "response_text.split"
         ],
         "update_tasks_json": [
+          "tasks.get",
           "logging.info",
-          "open",
-          "load_json_file",
           "json.dump",
-          "tasks.get"
+          "load_json_file",
+          "open"
         ],
         "main": [
           "generate_metrics",
-          "verify_response_with_struct",
-          "verify_response_without_struct",
-          "logging.info",
-          "argparse.ArgumentParser",
-          "open",
-          "load_json_file",
           "parser.parse_args",
+          "argparse.ArgumentParser",
+          "parser.add_argument",
+          "logging.info",
+          "verify_response_without_struct",
           "json.dump",
+          "load_json_file",
           "update_tasks_json",
-          "parser.add_argument"
+          "open",
+          "verify_response_with_struct"
         ]
       },
       "dependencies": [
@@ -996,7 +952,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "325e726c-0e43-408a-aea0-3c7e9daeab9a"
+      "artifact_id": "46e172a0-f208-4cfb-899c-c8328d76a31d"
     },
     {
       "module_id": "examples.python_project_utils",
@@ -1007,20 +963,14 @@
         {
           "name": "helper",
           "docstring": "Help the main function.",
-          "line_range": [
-            5,
-            7
-          ],
+          "line_range": null,
           "parameters": [],
           "decorators": []
         },
         {
           "name": "log",
           "docstring": "Log a message.",
-          "line_range": [
-            9,
-            11
-          ],
+          "line_range": null,
           "parameters": [
             "message"
           ],
@@ -1040,7 +990,7 @@
         "logging"
       ],
       "hash": null,
-      "artifact_id": "5ecb7bff-00ac-4259-8fc6-cf28543bd696"
+      "artifact_id": "6d5c6b49-ee5b-464e-898b-68cedae7c2f8"
     },
     {
       "module_id": "examples.python_project_main",
@@ -1051,20 +1001,14 @@
         {
           "name": "main",
           "docstring": "Run the program.",
-          "line_range": [
-            5,
-            8
-          ],
+          "line_range": null,
           "parameters": [],
           "decorators": []
         },
         {
           "name": "run",
           "docstring": "Execute the app.",
-          "line_range": [
-            12,
-            14
-          ],
+          "line_range": null,
           "parameters": [
             "self"
           ],
@@ -1075,18 +1019,12 @@
         {
           "name": "App",
           "docstring": "Application class.",
-          "line_range": [
-            10,
-            14
-          ],
+          "line_range": null,
           "methods": [
             {
               "name": "run",
               "docstring": "Execute the app.",
-              "line_range": [
-                12,
-                14
-              ],
+              "line_range": null,
               "parameters": [
                 "self"
               ]
@@ -1097,8 +1035,8 @@
       ],
       "callgraph": {
         "main": [
-          "print",
-          "utils.helper"
+          "utils.helper",
+          "print"
         ],
         "run": [
           "utils.log"
@@ -1108,7 +1046,7 @@
         "utils"
       ],
       "hash": null,
-      "artifact_id": "5e3c9122-4d14-44c1-ab57-08cff5f73f23"
+      "artifact_id": "0d43dc09-281f-4e5b-af4c-7f030c42f0f0"
     },
     {
       "module_id": "src.llmstruct.grok",
@@ -1119,10 +1057,7 @@
         {
           "name": "test_grok",
           "docstring": "",
-          "line_range": [
-            22,
-            28
-          ],
+          "line_range": null,
           "parameters": [
             "api_key",
             "prompt",
@@ -1133,10 +1068,7 @@
         {
           "name": "__init__",
           "docstring": "",
-          "line_range": [
-            5,
-            10
-          ],
+          "line_range": null,
           "parameters": [
             "self",
             "api_key",
@@ -1147,10 +1079,7 @@
         {
           "name": "generate",
           "docstring": "",
-          "line_range": [
-            12,
-            20
-          ],
+          "line_range": null,
           "parameters": [
             "self",
             "prompt",
@@ -1163,18 +1092,12 @@
         {
           "name": "GrokClient",
           "docstring": "",
-          "line_range": [
-            4,
-            20
-          ],
+          "line_range": null,
           "methods": [
             {
               "name": "__init__",
               "docstring": "",
-              "line_range": [
-                5,
-                10
-              ],
+              "line_range": null,
               "parameters": [
                 "self",
                 "api_key",
@@ -1184,10 +1107,7 @@
             {
               "name": "generate",
               "docstring": "",
-              "line_range": [
-                12,
-                20
-              ],
+              "line_range": null,
               "parameters": [
                 "self",
                 "prompt",
@@ -1203,10 +1123,10 @@
           "requests.Session"
         ],
         "generate": [
-          "response.raise_for_status",
-          "prompt.split",
+          "len",
           "response.json",
-          "len"
+          "prompt.split",
+          "response.raise_for_status"
         ],
         "test_grok": [
           "GrokClient",
@@ -1219,7 +1139,7 @@
         "requests"
       ],
       "hash": null,
-      "artifact_id": "7ef3d6f2-254b-47bc-9e4f-13302363ab2b"
+      "artifact_id": "5aeefb5a-29ca-438b-877e-6aacf6e141c8"
     },
     {
       "module_id": "src.llmstruct.__init__",
@@ -1234,7 +1154,7 @@
         "llm_client"
       ],
       "hash": null,
-      "artifact_id": "3411e4ea-6015-4ea8-b3f5-0beb5395e5f2"
+      "artifact_id": "a9e8b744-1c7a-4f16-9a9c-740b3fe4823e"
     },
     {
       "module_id": "src.llmstruct.__main__",
@@ -1251,7 +1171,7 @@
         "main"
       ],
       "hash": null,
-      "artifact_id": "33a48d8f-f693-4000-942d-ceb3f912287c"
+      "artifact_id": "f934efc8-7f84-4fc6-8f08-00388dffe10e"
     },
     {
       "module_id": "src.llmstruct.llm_client",
@@ -1262,10 +1182,7 @@
         {
           "name": "__init__",
           "docstring": "Initialize LLMClient with optional Ollama host.",
-          "line_range": [
-            30,
-            36
-          ],
+          "line_range": null,
           "parameters": [
             "self",
             "ollama_host"
@@ -1275,10 +1192,7 @@
         {
           "name": "query",
           "docstring": "Query LLMs with prompt, context, and optional model.",
-          "line_range": [
-            38,
-            86
-          ],
+          "line_range": null,
           "parameters": [
             "self",
             "prompt",
@@ -1292,10 +1206,7 @@
         {
           "name": "_query_grok",
           "docstring": "Query Grok API.",
-          "line_range": [
-            88,
-            111
-          ],
+          "line_range": null,
           "parameters": [
             "self",
             "prompt"
@@ -1305,10 +1216,7 @@
         {
           "name": "_query_anthropic",
           "docstring": "Query Anthropic API.",
-          "line_range": [
-            113,
-            137
-          ],
+          "line_range": null,
           "parameters": [
             "self",
             "prompt"
@@ -1318,10 +1226,7 @@
         {
           "name": "_query_ollama",
           "docstring": "Query Ollama API with specified model.",
-          "line_range": [
-            139,
-            156
-          ],
+          "line_range": null,
           "parameters": [
             "self",
             "prompt",
@@ -1332,10 +1237,7 @@
         {
           "name": "_query_hybrid",
           "docstring": "Query multiple LLMs and combine results.",
-          "line_range": [
-            158,
-            168
-          ],
+          "line_range": null,
           "parameters": [
             "self",
             "prompt",
@@ -1348,18 +1250,12 @@
         {
           "name": "LLMClient",
           "docstring": "",
-          "line_range": [
-            29,
-            168
-          ],
+          "line_range": null,
           "methods": [
             {
               "name": "__init__",
               "docstring": "Initialize LLMClient with optional Ollama host.",
-              "line_range": [
-                30,
-                36
-              ],
+              "line_range": null,
               "parameters": [
                 "self",
                 "ollama_host"
@@ -1368,10 +1264,7 @@
             {
               "name": "query",
               "docstring": "Query LLMs with prompt, context, and optional model.",
-              "line_range": [
-                38,
-                86
-              ],
+              "line_range": null,
               "parameters": [
                 "self",
                 "prompt",
@@ -1384,10 +1277,7 @@
             {
               "name": "_query_grok",
               "docstring": "Query Grok API.",
-              "line_range": [
-                88,
-                111
-              ],
+              "line_range": null,
               "parameters": [
                 "self",
                 "prompt"
@@ -1396,10 +1286,7 @@
             {
               "name": "_query_anthropic",
               "docstring": "Query Anthropic API.",
-              "line_range": [
-                113,
-                137
-              ],
+              "line_range": null,
               "parameters": [
                 "self",
                 "prompt"
@@ -1408,10 +1295,7 @@
             {
               "name": "_query_ollama",
               "docstring": "Query Ollama API with specified model.",
-              "line_range": [
-                139,
-                156
-              ],
+              "line_range": null,
               "parameters": [
                 "self",
                 "prompt",
@@ -1421,10 +1305,7 @@
             {
               "name": "_query_hybrid",
               "docstring": "Query multiple LLMs and combine results.",
-              "line_range": [
-                158,
-                168
-              ],
+              "line_range": null,
               "parameters": [
                 "self",
                 "prompt",
@@ -1442,50 +1323,50 @@
           "int"
         ],
         "query": [
-          "range",
-          "json.dumps",
-          "logging.warning",
-          "logging.info",
+          "logging.error",
           "json.load",
-          "self._query_hybrid",
-          "self._query_ollama",
-          "self._query_anthropic",
+          "json.dumps",
+          "logging.info",
           "asyncio.sleep",
           "Path",
-          "self._query_grok",
-          "logging.error"
+          "logging.warning",
+          "self._query_anthropic",
+          "self._query_ollama",
+          "self._query_hybrid",
+          "range",
+          "self._query_grok"
         ],
         "_query_grok": [
           "session.post",
+          "logging.error",
           "logging.info",
-          "response.json",
-          "result.get",
           "aiohttp.ClientSession",
-          "logging.error"
+          "result.get",
+          "response.json"
         ],
         "_query_anthropic": [
           "session.post",
+          "logging.error",
           "logging.info",
-          "response.json",
-          "result.get",
           "aiohttp.ClientSession",
-          "logging.error"
+          "result.get",
+          "response.json"
         ],
         "_query_ollama": [
           "session.post",
+          "logging.error",
           "logging.info",
-          "response.json",
-          "result.get",
           "logging.debug",
           "aiohttp.ClientSession",
-          "logging.error"
+          "result.get",
+          "response.json"
         ],
         "_query_hybrid": [
-          "asyncio.gather",
           "isinstance",
+          "asyncio.gather",
           "logging.info",
-          "self._query_ollama",
           "self._query_anthropic",
+          "self._query_ollama",
           "len",
           "self._query_grok"
         ]
@@ -1508,7 +1389,186 @@
         "urllib.parse"
       ],
       "hash": null,
-      "artifact_id": "8c252ac2-3993-419d-b43a-8c7c0ac17b55"
+      "artifact_id": "eae52692-aa95-434a-b536-55dcc9b675a1"
+    },
+    {
+      "module_id": "src.llmstruct.cache",
+      "path": "src/llmstruct/cache.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "__init__",
+          "docstring": "Initialize SQLite cache for JSON files.",
+          "line_range": null,
+          "parameters": [
+            "self",
+            "db_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "create_tables",
+          "docstring": "Create tables for metadata and file paths.",
+          "line_range": null,
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "cache_json",
+          "docstring": "Cache JSON metadata and store full file path.",
+          "line_range": null,
+          "parameters": [
+            "self",
+            "json_path",
+            "artifact_id",
+            "summary",
+            "tags"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_metadata",
+          "docstring": "Retrieve metadata by artifact_id.",
+          "line_range": null,
+          "parameters": [
+            "self",
+            "artifact_id"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_full_json",
+          "docstring": "Load full JSON by artifact_id.",
+          "line_range": null,
+          "parameters": [
+            "self",
+            "artifact_id"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "close",
+          "docstring": "Close database connection.",
+          "line_range": null,
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "JSONCache",
+          "docstring": "",
+          "line_range": null,
+          "methods": [
+            {
+              "name": "__init__",
+              "docstring": "Initialize SQLite cache for JSON files.",
+              "line_range": null,
+              "parameters": [
+                "self",
+                "db_path"
+              ]
+            },
+            {
+              "name": "create_tables",
+              "docstring": "Create tables for metadata and file paths.",
+              "line_range": null,
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "cache_json",
+              "docstring": "Cache JSON metadata and store full file path.",
+              "line_range": null,
+              "parameters": [
+                "self",
+                "json_path",
+                "artifact_id",
+                "summary",
+                "tags"
+              ]
+            },
+            {
+              "name": "get_metadata",
+              "docstring": "Retrieve metadata by artifact_id.",
+              "line_range": null,
+              "parameters": [
+                "self",
+                "artifact_id"
+              ]
+            },
+            {
+              "name": "get_full_json",
+              "docstring": "Load full JSON by artifact_id.",
+              "line_range": null,
+              "parameters": [
+                "self",
+                "artifact_id"
+              ]
+            },
+            {
+              "name": "close",
+              "docstring": "Close database connection.",
+              "line_range": null,
+              "parameters": [
+                "self"
+              ]
+            }
+          ],
+          "bases": []
+        }
+      ],
+      "callgraph": {
+        "__init__": [
+          "sqlite3.connect",
+          "self.create_tables"
+        ],
+        "create_tables": [],
+        "cache_json": [
+          "json_file.exists",
+          "logging.error",
+          "json.dumps",
+          "logging.info",
+          "Path",
+          "hashlib.sha256",
+          "open",
+          "f.read",
+          "content.encode",
+          "str"
+        ],
+        "get_metadata": [
+          "json.loads",
+          "cursor.fetchone"
+        ],
+        "get_full_json": [
+          "open",
+          "logging.error",
+          "json.load",
+          "cursor.fetchone"
+        ],
+        "close": []
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "List",
+        "Optional",
+        "Path",
+        "hashlib",
+        "json",
+        "logging",
+        "pathlib",
+        "sqlite3",
+        "typing"
+      ],
+      "hash": null,
+      "artifact_id": "14cfe3a6-209e-4b3f-949f-652c88c42e78"
     },
     {
       "module_id": "src.llmstruct.self_run",
@@ -1519,10 +1579,7 @@
         {
           "name": "filter_struct",
           "docstring": "Filter struct.json or init.json based on prompt keywords.",
-          "line_range": [
-            16,
-            36
-          ],
+          "line_range": null,
           "parameters": [
             "struct",
             "prompt"
@@ -1531,14 +1588,12 @@
         },
         {
           "name": "attach_to_llm_request",
-          "docstring": "Attach filtered JSON to LLM prompt.",
-          "line_range": [
-            38,
-            62
-          ],
+          "docstring": "Attach filtered JSON to LLM prompt, using cache if available.",
+          "line_range": null,
           "parameters": [
             "context_path",
-            "prompt"
+            "prompt",
+            "cache"
           ],
           "decorators": []
         }
@@ -1546,38 +1601,45 @@
       "classes": [],
       "callgraph": {
         "filter_struct": [
-          "module.get",
-          "prompt.lower",
-          "struct.get",
           "filter_json",
-          "any"
+          "module.get",
+          "any",
+          "prompt.lower",
+          "struct.get"
         ],
         "attach_to_llm_request": [
-          "filter_struct",
-          "prompt.lower",
-          "json.dumps",
-          "context_file.exists",
-          "open",
-          "json.load",
           "filter_json",
+          "cache.get_metadata",
+          "logging.error",
+          "select_json",
+          "filter_struct",
+          "json.dumps",
+          "logging.info",
           "Path",
-          "logging.error"
+          "cache.get_full_json",
+          "context_file.exists",
+          "prompt.lower",
+          "cache.cache_json"
         ]
       },
       "dependencies": [
         "Any",
         "Dict",
+        "JSONCache",
         "List",
+        "Optional",
         "Path",
+        "cache",
         "filter_json",
         "json",
         "json_selector",
         "logging",
         "pathlib",
+        "select_json",
         "typing"
       ],
       "hash": null,
-      "artifact_id": "ed732046-645d-4af2-ab86-b6f44334c295"
+      "artifact_id": "74d9ed29-539b-45ab-bef6-d057fbcebde4"
     },
     {
       "module_id": "src.llmstruct.json_selector",
@@ -1588,10 +1650,7 @@
         {
           "name": "filter_json",
           "docstring": "Filter JSON data by key-value pair and select fields.",
-          "line_range": [
-            16,
-            28
-          ],
+          "line_range": null,
           "parameters": [
             "data",
             "filter_key",
@@ -1602,16 +1661,14 @@
         },
         {
           "name": "select_json",
-          "docstring": "Load and filter JSON file.",
-          "line_range": [
-            30,
-            47
-          ],
+          "docstring": "Load and filter JSON file, optionally parsing partially.",
+          "line_range": null,
           "parameters": [
             "json_path",
             "filter_key",
             "filter_value",
-            "fields"
+            "fields",
+            "partial"
           ],
           "decorators": []
         }
@@ -1619,18 +1676,24 @@
       "classes": [],
       "callgraph": {
         "filter_json": [
-          "filtered.append",
           "isinstance",
           "item.get",
+          "filtered.append",
           "data.get"
         ],
         "select_json": [
-          "Path",
-          "open",
-          "json.load",
           "filter_json",
           "json_file.exists",
-          "logging.error"
+          "logging.error",
+          "filtered.append",
+          "json.load",
+          "Path",
+          "f.seek",
+          "prefix.startswith",
+          "ijson.parse",
+          "open",
+          "path.append",
+          "current_item.get"
         ]
       },
       "dependencies": [
@@ -1640,13 +1703,14 @@
         "Optional",
         "Path",
         "argparse",
+        "ijson",
         "json",
         "logging",
         "pathlib",
         "typing"
       ],
       "hash": null,
-      "artifact_id": "d71f7b5c-df37-4dfb-b092-c554eec168d3"
+      "artifact_id": "e8de98cf-80f4-453f-9f2d-6a6446fddd18"
     },
     {
       "module_id": "src.llmstruct.cli",
@@ -1657,10 +1721,7 @@
         {
           "name": "load_gitignore",
           "docstring": "Load and normalize patterns from .gitignore.",
-          "line_range": [
-            25,
-            35
-          ],
+          "line_range": null,
           "parameters": [
             "root_dir"
           ],
@@ -1669,10 +1730,7 @@
         {
           "name": "load_config",
           "docstring": "Load settings from llmstruct.toml or return empty dict.",
-          "line_range": [
-            37,
-            46
-          ],
+          "line_range": null,
           "parameters": [
             "root_dir"
           ],
@@ -1681,10 +1739,7 @@
         {
           "name": "read_file_content",
           "docstring": "Read content of a file if it exists and is a text file.",
-          "line_range": [
-            48,
-            57
-          ],
+          "line_range": null,
           "parameters": [
             "file_path"
           ],
@@ -1693,10 +1748,7 @@
         {
           "name": "write_to_file",
           "docstring": "Write content to a file in base_dir (default /tmp) and return the path.",
-          "line_range": [
-            59,
-            73
-          ],
+          "line_range": null,
           "parameters": [
             "content",
             "filename",
@@ -1707,10 +1759,7 @@
         {
           "name": "parse_files_from_response",
           "docstring": "Extract filenames and content from LLM response (e.g., ```filename\ncontent```).",
-          "line_range": [
-            75,
-            82
-          ],
+          "line_range": null,
           "parameters": [
             "response"
           ],
@@ -1719,10 +1768,7 @@
         {
           "name": "interactive",
           "docstring": "Run interactive CLI with LLM, supporting file/folder viewing and writing.",
-          "line_range": [
-            84,
-            195
-          ],
+          "line_range": null,
           "parameters": [
             "args"
           ],
@@ -1731,10 +1777,7 @@
         {
           "name": "parse",
           "docstring": "Parse codebase and generate struct.json.",
-          "line_range": [
-            197,
-            232
-          ],
+          "line_range": null,
           "parameters": [
             "args"
           ],
@@ -1743,10 +1786,7 @@
         {
           "name": "query",
           "docstring": "Query LLMs with prompt and context.",
-          "line_range": [
-            234,
-            252
-          ],
+          "line_range": null,
           "parameters": [
             "args"
           ],
@@ -1755,10 +1795,7 @@
         {
           "name": "context",
           "docstring": "Generate context.json from input JSON.",
-          "line_range": [
-            254,
-            256
-          ],
+          "line_range": null,
           "parameters": [
             "args"
           ],
@@ -1767,10 +1804,7 @@
         {
           "name": "dogfood",
           "docstring": "Run dogfooding analysis.",
-          "line_range": [
-            258,
-            260
-          ],
+          "line_range": null,
           "parameters": [
             "args"
           ],
@@ -1779,10 +1813,7 @@
         {
           "name": "review",
           "docstring": "Review codebase with LLM.",
-          "line_range": [
-            262,
-            264
-          ],
+          "line_range": null,
           "parameters": [
             "args"
           ],
@@ -1791,10 +1822,7 @@
         {
           "name": "main",
           "docstring": "Command-line interface for LLMstruct.",
-          "line_range": [
-            266,
-            329
-          ],
+          "line_range": null,
           "parameters": [],
           "decorators": []
         }
@@ -1803,86 +1831,93 @@
       "callgraph": {
         "load_gitignore": [
           "logging.error",
-          "line.startswith",
-          "line.strip",
           "gitignore_path.exists",
           "Path",
-          "gitignore_path.open"
+          "line.strip",
+          "gitignore_path.open",
+          "line.startswith"
         ],
         "load_config": [
-          "toml.load",
           "logging.error",
           "config_path.exists",
           "Path",
-          "config_path.open"
+          "toml.load",
+          "config_path\u30aa\u30fc\u30d7\u30f3"
         ],
         "read_file_content": [
+          "logging.error",
           "path.is_file",
           "path.open",
-          "f.read",
           "Path",
-          "logging.error"
+          "f.read"
         ],
         "write_to_file": [
-          "f.write",
+          "logging.error",
           "base_path.mkdir",
-          "file_path.exists",
-          "logging.warning",
-          "str",
           "logging.info",
-          "file_path.open",
           "Path",
-          "logging.error"
+          "logging.warning",
+          "f.write",
+          "file_path.open",
+          "file_path.exists",
+          "str"
         ],
         "parse_files_from_response": [
-          "re.findall",
           "files.append",
+          "re.findall",
           "filename.strip",
           "content.strip"
         ],
         "interactive": [
-          "user_input.lower",
-          "read_file_content",
-          "load_gitignore",
-          "Path",
-          "logging.error",
-          "os.listdir",
-          "json.dumps",
-          "client.query",
           "re.search",
-          "logging.warning",
-          "get_folder_structure",
-          "write_dir.startswith",
+          "write_to_file",
+          "Path",
+          "user_input.lower",
+          "load_gitignore",
           "parse",
+          "cache.close",
+          "scan_match.group",
+          "logging.error",
+          "attach_to_llm_request",
           "files_to_write.append",
           "parse_files_from_response",
-          "print",
-          "scan_match.group",
-          "write_to_file",
-          "input",
-          "sorted",
-          "attach_to_llm_request",
+          "get_folder_structure",
+          "write_match.group",
           "LLMClient",
-          "write_match.group"
+          "json.dumps",
+          "write_dir.startswith",
+          "sorted",
+          "logging.warning",
+          "client.query",
+          "JSONCache",
+          "input",
+          "read_file_content",
+          "os.listdir",
+          "print"
         ],
         "parse": [
-          "generate_json",
-          "logging.warning",
+          "logging.error",
+          "JSONCache",
           "logging.info",
-          "load_gitignore",
-          "load_config",
-          "config.get",
-          "json.dump",
           "Path",
-          "logging.error"
+          "logging.warning",
+          "json.dump",
+          "config.get",
+          "load_config",
+          "load_gitignore",
+          "cache.close",
+          "generate_json",
+          "cache.cache_json"
         ],
         "query": [
-          "logging.info",
-          "client.query",
           "LLMClient",
-          "json.dump",
+          "logging.error",
+          "logging.info",
           "Path",
-          "logging.error"
+          "client.query",
+          "json.dump",
+          "cache.close",
+          "JSONCache"
         ],
         "context": [
           "logging.warning"
@@ -1894,26 +1929,27 @@
           "logging.warning"
         ],
         "main": [
-          "dogfood",
-          "interactive_parser.add_argument",
-          "parse_parser.add_argument",
-          "parser.add_subparsers",
           "asyncio.run",
-          "interactive",
           "review",
+          "interactive",
+          "dogfood",
+          "context",
           "argparse.ArgumentParser",
           "parser.parse_args",
-          "query_parser.add_argument",
-          "parse",
-          "query",
-          "context_parser.add_argument",
-          "subparsers.add_parser",
-          "context",
           "dogfood_parser.add_argument",
-          "review_parser.add_argument"
+          "review_parser.add_argument",
+          "query_parser.add_argument",
+          "query",
+          "subparsers.add_parser",
+          "context_parser.add_argument",
+          "parser.add_subparsers",
+          "parse",
+          "interactive_parser.add_argument",
+          "parse_parser.add_argument"
         ]
       },
       "dependencies": [
+        "JSONCache",
         "LLMClient",
         "List",
         "Optional",
@@ -1925,6 +1961,7 @@
         "get_folder_structure",
         "json",
         "llmstruct",
+        "llmstruct.cache",
         "llmstruct.generators.json_generator",
         "llmstruct.self_run",
         "logging",
@@ -1936,7 +1973,7 @@
         "uuid"
       ],
       "hash": null,
-      "artifact_id": "cc44ab1e-8ead-4d94-bf3a-57916dbd27dc"
+      "artifact_id": "96bed95f-e2e5-4d58-8e41-5a8d4407830d"
     },
     {
       "module_id": "src.llmstruct.parsers.__init__",
@@ -1953,7 +1990,7 @@
         "python_parser"
       ],
       "hash": null,
-      "artifact_id": "23a88b42-4fa8-44c1-93ad-a043374a015c"
+      "artifact_id": "182a8ac0-dc90-47a9-96ce-28ee3655cf2b"
     },
     {
       "module_id": "src.llmstruct.parsers.javascript_parser",
@@ -1964,10 +2001,7 @@
         {
           "name": "__init__",
           "docstring": "",
-          "line_range": [
-            8,
-            12
-          ],
+          "line_range": null,
           "parameters": [
             "self"
           ],
@@ -1976,10 +2010,7 @@
         {
           "name": "file_hash",
           "docstring": "",
-          "line_range": [
-            14,
-            19
-          ],
+          "line_range": null,
           "parameters": [
             "self",
             "filepath"
@@ -1989,10 +2020,7 @@
         {
           "name": "compute_file_metadata",
           "docstring": "",
-          "line_range": [
-            21,
-            35
-          ],
+          "line_range": null,
           "parameters": [
             "self",
             "filepath",
@@ -2003,10 +2031,7 @@
         {
           "name": "parse_module",
           "docstring": "",
-          "line_range": [
-            37,
-            89
-          ],
+          "line_range": null,
           "parameters": [
             "self",
             "filepath",
@@ -2019,10 +2044,7 @@
         {
           "name": "extract_signature",
           "docstring": "",
-          "line_range": [
-            61,
-            63
-          ],
+          "line_range": null,
           "parameters": [
             "node"
           ],
@@ -2033,18 +2055,12 @@
         {
           "name": "JavaScriptParser",
           "docstring": "",
-          "line_range": [
-            7,
-            89
-          ],
+          "line_range": null,
           "methods": [
             {
               "name": "__init__",
               "docstring": "",
-              "line_range": [
-                8,
-                12
-              ],
+              "line_range": null,
               "parameters": [
                 "self"
               ]
@@ -2052,10 +2068,7 @@
             {
               "name": "file_hash",
               "docstring": "",
-              "line_range": [
-                14,
-                19
-              ],
+              "line_range": null,
               "parameters": [
                 "self",
                 "filepath"
@@ -2064,10 +2077,7 @@
             {
               "name": "compute_file_metadata",
               "docstring": "",
-              "line_range": [
-                21,
-                35
-              ],
+              "line_range": null,
               "parameters": [
                 "self",
                 "filepath",
@@ -2077,10 +2087,7 @@
             {
               "name": "parse_module",
               "docstring": "",
-              "line_range": [
-                37,
-                89
-              ],
+              "line_range": null,
               "parameters": [
                 "self",
                 "filepath",
@@ -2098,22 +2105,22 @@
           "set"
         ],
         "file_hash": [
-          "hashlib.sha256",
+          "open",
           "f.read",
-          "open"
+          "hashlib.sha256"
         ],
         "compute_file_metadata": [
-          "sum",
-          "self.file_hash",
+          "open",
           "os.stat",
-          "open"
+          "self.file_hash",
+          "sum"
         ],
         "parse_module": [
-          "esprima.parseModule",
           "self.compute_file_metadata",
-          "str",
           "open",
-          "f.read"
+          "f.read",
+          "esprima.parseModule",
+          "str"
         ],
         "extract_signature": [
           "hasattr"
@@ -2130,7 +2137,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "93d1d979-5229-4909-9d39-410f9f848e02"
+      "artifact_id": "9f5ef397-90e2-48eb-a928-619d1516f204"
     },
     {
       "module_id": "src.llmstruct.parsers.python_parser",
@@ -2141,10 +2148,7 @@
         {
           "name": "infer_category",
           "docstring": "Infer module category based on its path.",
-          "line_range": [
-            10,
-            17
-          ],
+          "line_range": null,
           "parameters": [
             "file_path"
           ],
@@ -2153,10 +2157,7 @@
         {
           "name": "compute_file_hash",
           "docstring": "Compute SHA-256 hash of file content.",
-          "line_range": [
-            64,
-            71
-          ],
+          "line_range": null,
           "parameters": [
             "file_path"
           ],
@@ -2165,10 +2166,7 @@
         {
           "name": "analyze_module",
           "docstring": "Analyze Python module and return structured data.",
-          "line_range": [
-            73,
-            130
-          ],
+          "line_range": null,
           "parameters": [
             "file_path",
             "root_dir",
@@ -2180,10 +2178,7 @@
         {
           "name": "__init__",
           "docstring": "",
-          "line_range": [
-            21,
-            24
-          ],
+          "line_range": null,
           "parameters": [
             "self"
           ],
@@ -2192,10 +2187,7 @@
         {
           "name": "visit_Import",
           "docstring": "Capture import statements.",
-          "line_range": [
-            26,
-            30
-          ],
+          "line_range": null,
           "parameters": [
             "self",
             "node"
@@ -2205,10 +2197,7 @@
         {
           "name": "visit_ImportFrom",
           "docstring": "Capture from-import statements.",
-          "line_range": [
-            32,
-            38
-          ],
+          "line_range": null,
           "parameters": [
             "self",
             "node"
@@ -2218,10 +2207,7 @@
         {
           "name": "visit_FunctionDef",
           "docstring": "Track function definitions and their calls.",
-          "line_range": [
-            40,
-            45
-          ],
+          "line_range": null,
           "parameters": [
             "self",
             "node"
@@ -2231,10 +2217,7 @@
         {
           "name": "visit_AsyncFunctionDef",
           "docstring": "Track async function definitions and their calls.",
-          "line_range": [
-            47,
-            52
-          ],
+          "line_range": null,
           "parameters": [
             "self",
             "node"
@@ -2244,10 +2227,7 @@
         {
           "name": "visit_Call",
           "docstring": "Capture function calls.",
-          "line_range": [
-            54,
-            62
-          ],
+          "line_range": null,
           "parameters": [
             "self",
             "node"
@@ -2259,18 +2239,12 @@
         {
           "name": "CallVisitor",
           "docstring": "AST visitor to collect function calls and dependencies.",
-          "line_range": [
-            19,
-            62
-          ],
+          "line_range": null,
           "methods": [
             {
               "name": "__init__",
               "docstring": "",
-              "line_range": [
-                21,
-                24
-              ],
+              "line_range": null,
               "parameters": [
                 "self"
               ]
@@ -2278,10 +2252,7 @@
             {
               "name": "visit_Import",
               "docstring": "Capture import statements.",
-              "line_range": [
-                26,
-                30
-              ],
+              "line_range": null,
               "parameters": [
                 "self",
                 "node"
@@ -2290,10 +2261,7 @@
             {
               "name": "visit_ImportFrom",
               "docstring": "Capture from-import statements.",
-              "line_range": [
-                32,
-                38
-              ],
+              "line_range": null,
               "parameters": [
                 "self",
                 "node"
@@ -2302,10 +2270,7 @@
             {
               "name": "visit_FunctionDef",
               "docstring": "Track function definitions and their calls.",
-              "line_range": [
-                40,
-                45
-              ],
+              "line_range": null,
               "parameters": [
                 "self",
                 "node"
@@ -2314,10 +2279,7 @@
             {
               "name": "visit_AsyncFunctionDef",
               "docstring": "Track async function definitions and their calls.",
-              "line_range": [
-                47,
-                52
-              ],
+              "line_range": null,
               "parameters": [
                 "self",
                 "node"
@@ -2326,10 +2288,7 @@
             {
               "name": "visit_Call",
               "docstring": "Capture function calls.",
-              "line_range": [
-                54,
-                62
-              ],
+              "line_range": null,
               "parameters": [
                 "self",
                 "node"
@@ -2363,34 +2322,34 @@
           "self.generic_visit"
         ],
         "visit_Call": [
-          "self.generic_visit",
-          "isinstance"
+          "isinstance",
+          "self.generic_visit"
         ],
         "compute_file_hash": [
-          "hashlib.sha256",
+          "open",
           "f.read",
           "logging.error",
-          "open"
+          "hashlib.sha256"
         ],
         "analyze_module": [
           "classes.append",
-          "functions.append",
-          "ast.get_docstring",
-          "ast.parse",
-          "infer_category",
-          "list",
-          "str",
-          "ast.walk",
-          "CallVisitor",
           "isinstance",
-          "open",
-          "compute_file_hash",
-          "sorted",
-          "f.read",
-          "ast.unparse",
-          "Path",
+          "logging.error",
+          "str",
           "visitor.visit",
-          "logging.error"
+          "list",
+          "compute_file_hash",
+          "ast.parse",
+          "Path",
+          "sorted",
+          "ast.get_docstring",
+          "infer_category",
+          "ast.walk",
+          "ast.unparse",
+          "open",
+          "f.read",
+          "functions.append",
+          "CallVisitor"
         ]
       },
       "dependencies": [
@@ -2408,7 +2367,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "768ed316-2202-45bf-980c-1e6ae7f6b12e"
+      "artifact_id": "1eb1a0ce-869a-4b5a-98cd-575418c1c21c"
     },
     {
       "module_id": "src.llmstruct.templates.__init__",
@@ -2420,7 +2379,7 @@
       "callgraph": {},
       "dependencies": [],
       "hash": null,
-      "artifact_id": "f7ddb37d-4050-48f6-ba8a-1c73c589c10d"
+      "artifact_id": "4daffe0e-328d-4ddf-b9c8-4f11cc111df1"
     },
     {
       "module_id": "src.llmstruct.validators.__init__",
@@ -2431,13 +2390,11 @@
       "classes": [],
       "callgraph": {},
       "dependencies": [
-        "generate_json",
-        "json_generator",
         "json_validator",
         "validate_struct_json"
       ],
       "hash": null,
-      "artifact_id": "b24bf997-19ae-4bfa-a80b-497fbe445741"
+      "artifact_id": "f1e11392-7325-4439-ba4c-8e984353fad2"
     },
     {
       "module_id": "src.llmstruct.validators.json_validator",
@@ -2448,10 +2405,7 @@
         {
           "name": "validate_struct_json",
           "docstring": "Validate a single JSON file against a schema.",
-          "line_range": [
-            9,
-            37
-          ],
+          "line_range": null,
           "parameters": [
             "json_path",
             "schema_path"
@@ -2461,10 +2415,7 @@
         {
           "name": "validate_directory",
           "docstring": "Validate all JSON files in a directory against a schema.",
-          "line_range": [
-            39,
-            50
-          ],
+          "line_range": null,
           "parameters": [
             "directory",
             "schema_path",
@@ -2477,22 +2428,22 @@
       "classes": [],
       "callgraph": {
         "validate_struct_json": [
-          "schema_file.exists",
-          "Path",
-          "str",
-          "validate",
-          "logging.info",
-          "open",
-          "json.load",
           "json_file.exists",
-          "logging.error"
+          "logging.error",
+          "json.load",
+          "logging.info",
+          "Path",
+          "validate",
+          "schema_file.exists",
+          "open",
+          "str"
         ],
         "validate_directory": [
           "validate_struct_json",
+          "Path",
           "json_file.match",
-          "str",
           "any",
-          "Path"
+          "str"
         ]
       },
       "dependencies": [
@@ -2509,7 +2460,7 @@
         "validate"
       ],
       "hash": null,
-      "artifact_id": "f0c1f41a-defe-452d-9ea1-fda2eb79ac55"
+      "artifact_id": "fbdd40a6-4fdb-483c-b115-80592882de8f"
     },
     {
       "module_id": "src.llmstruct.generators.json_generator",
@@ -2520,10 +2471,7 @@
         {
           "name": "get_folder_structure",
           "docstring": "Capture directory and file structure with artifact_id, respecting .gitignore and patterns.",
-          "line_range": [
-            13,
-            50
-          ],
+          "line_range": null,
           "parameters": [
             "root_dir",
             "gitignore_patterns",
@@ -2536,10 +2484,7 @@
         {
           "name": "build_toc_and_modules",
           "docstring": "Build TOC and modules with artifact_id and robust filtering.",
-          "line_range": [
-            52,
-            83
-          ],
+          "line_range": null,
           "parameters": [
             "root_dir",
             "include_patterns",
@@ -2554,10 +2499,7 @@
         {
           "name": "generate_json",
           "docstring": "Generate JSON structure for project with artifact_id, summary, and tags.",
-          "line_range": [
-            85,
-            126
-          ],
+          "line_range": null,
           "parameters": [
             "root_dir",
             "include_patterns",
@@ -2574,43 +2516,43 @@
       "classes": [],
       "callgraph": {
         "get_folder_structure": [
+          "os.walk",
+          "file_path.relative_to",
           "set",
-          "p.rstrip",
-          "str",
-          "uuid.uuid4",
-          "p.endswith",
           "structure.append",
-          "any",
+          "Path",
           "sorted",
           "file_path.match",
-          "os.walk",
-          "Path",
-          "file_path.relative_to"
+          "p.endswith",
+          "p.rstrip",
+          "any",
+          "uuid.uuid4",
+          "str"
         ],
         "build_toc_and_modules": [
-          "set",
           "modules.append",
-          "p.rstrip",
-          "str",
-          "analyze_module",
-          "uuid.uuid4",
-          "f.match",
-          "p.endswith",
-          "any",
+          "len",
           "toc.append",
+          "set",
           "Path",
-          "len"
+          "p.endswith",
+          "analyze_module",
+          "p.rstrip",
+          "any",
+          "uuid.uuid4",
+          "str",
+          "f.match"
         ],
         "generate_json": [
-          "sum",
-          "set",
           "list",
-          "str",
-          "get_folder_structure",
-          "uuid.uuid4",
+          "set",
           "build_toc_and_modules",
           "Path",
-          "len"
+          "get_folder_structure",
+          "sum",
+          "len",
+          "uuid.uuid4",
+          "str"
         ]
       },
       "dependencies": [
@@ -2630,7 +2572,7 @@
         "uuid"
       ],
       "hash": null,
-      "artifact_id": "7234be2b-2462-4bfa-8855-276c0ab3a809"
+      "artifact_id": "30dea2b8-a899-45b6-916f-c17543e949c7"
     },
     {
       "module_id": "src.llmstruct.generators.__init__",
@@ -2645,7 +2587,122 @@
         "json_generator"
       ],
       "hash": null,
-      "artifact_id": "069790e5-25c9-4726-83a4-bda167b226ca"
+      "artifact_id": "5bb19d31-3796-4fa1-badc-3b18f437b0dd"
+    },
+    {
+      "module_id": "tests.test_self_run",
+      "path": "tests/test_self_run.py",
+      "category": "test",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "test_filter_json_init_json",
+          "docstring": "Test filter_json with init.json structure.",
+          "line_range": null,
+          "parameters": [
+            "tmp_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "test_select_json_partial",
+          "docstring": "Test partial JSON loading.",
+          "line_range": null,
+          "parameters": [
+            "tmp_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "test_cache_json",
+          "docstring": "Test JSON caching.",
+          "line_range": null,
+          "parameters": [
+            "tmp_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "test_attach_to_llm_request_init_json",
+          "docstring": "Test attach_to_llm_request with init.json and cache.",
+          "line_range": null,
+          "parameters": [
+            "tmp_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "test_attach_to_llm_request_missing_file",
+          "docstring": "Test attach_to_llm_request with missing file.",
+          "line_range": null,
+          "parameters": [
+            "tmp_path"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "test_filter_json_init_json": [
+          "filter_json"
+        ],
+        "test_select_json_partial": [
+          "json.dump",
+          "open",
+          "str",
+          "select_json"
+        ],
+        "test_cache_json": [
+          "cache.get_metadata",
+          "cache.get_full_json",
+          "json.dump",
+          "cache.close",
+          "open",
+          "JSONCache",
+          "cache.cache_json",
+          "str"
+        ],
+        "test_attach_to_llm_request_init_json": [
+          "attach_to_llm_request",
+          "json.dump",
+          "cache.close",
+          "open",
+          "JSONCache",
+          "str"
+        ],
+        "test_attach_to_llm_request_missing_file": [
+          "attach_to_llm_request",
+          "str"
+        ]
+      },
+      "dependencies": [
+        "JSONCache",
+        "Path",
+        "attach_to_llm_request",
+        "filter_json",
+        "filter_struct",
+        "json",
+        "llmstruct.cache",
+        "llmstruct.json_selector",
+        "llmstruct.self_run",
+        "pathlib",
+        "pytest",
+        "select_json"
+      ],
+      "hash": null,
+      "artifact_id": "71c2b7b0-5bfa-4836-aea1-9f5a96170c34"
+    },
+    {
+      "module_id": "tests.__init__",
+      "path": "tests/__init__.py",
+      "category": "test",
+      "module_doc": "Test suite for LLMStruct, covering parsers, generators, validators, and integration.",
+      "functions": [],
+      "classes": [],
+      "callgraph": {},
+      "dependencies": [],
+      "hash": null,
+      "artifact_id": "20ddafb2-6faa-4f4a-9cb3-80340374b855"
     }
   ]
 }

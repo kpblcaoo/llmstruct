@@ -216,3 +216,7 @@ Context:
 2025-05-22 00:23:33,418 - INFO - Querying in grok mode with prompt:  hi! give me a status, 5 words
 2025-05-22 00:23:33,512 - ERROR - Grok API error: 403
 2025-05-22 00:23:33,512 - ERROR - Query failed
+2025-05-22 02:09:55,775 - ERROR - Failed to read llmstruct.toml: name 'config_pathオープン' is not defined
+2025-05-22 02:09:55,775 - WARNING - No project goals specified via --goals or llmstruct.toml. Consider adding goals for better context.
+2025-05-22 02:09:56,180 - INFO - Generated struct.json
+2025-05-22 02:09:56,189 - INFO - Cached JSON: struct.json with artifact_id: struct.json
