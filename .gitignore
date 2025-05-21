@@ -55,3 +55,4 @@ secrets/
 #Project specific
 
 llm_response.json
+tree_collector.py

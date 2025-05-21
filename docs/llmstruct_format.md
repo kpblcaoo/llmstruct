@@ -1,55 +1,39 @@
-# llmstruct JSON Format Specification
+import json
+import os
+from glob import glob
+from collections import defaultdict
 
-**Status**: Draft  
-**Version**: 0.1.0  
-**Last Updated**: 2025-05-18T23:00:27.888546Z  
-**Author**: Mikhail Stepanov ([kpblcaoo](https://github.com/kpblcaoo), kpblcaoo@gmail.com)
+folder = "clean"
+seen = set()
+merged = []
 
-## 1. Introduction
+def normalize(record):
+    # Нормализуем ID и структуру
+    id = record.get("id") or record.get("ID") or record.get("name")
+    content = record.get("description") or record.get("text") or ""
+    return {
+        "id": id.strip() if isinstance(id, str) else str(id),
+        "description": content.strip(),
+        "tags": record.get("tags", []),
+        "type": record.get("type") or "idea"
+    }
 
-The llmstruct JSON format is a universal, extensible structure for representing codebases, designed for automation and LLM integration.
+for path in glob(os.path.join(folder, "*.json")):
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            if isinstance(data, dict):  # Иногда файл — словарь
+                data = [data]
+            for entry in data:
+                norm = normalize(entry)
+                key = (norm["id"], norm["description"])
+                if key not in seen:
+                    seen.add(key)
+                    merged.append(norm)
+    except Exception as e:
+        print(f"⚠️ Failed to load {path}: {e}")
 
-## 2. Goals
-
-
-
-## 3. JSON Structure
-
-The format consists of three top-level fields: `metadata`, `toc`, and `modules`.
-
-### 3.1. `metadata`
-
-- **Type**: Object
-- **Required Fields**:
-  - `project_name`: String, project name (e.g., "llmstruct").
-  - `description`: String, brief description.
-  - `version`: String, ISO 8601 timestamp (e.g., "2025-05-18T23:00:27.888546Z").
-  - `authors`: Array of objects (name, github, email).
-  - `instructions`: Array of strings, LLM usage instructions.
-  - `goals`: Array of strings, project goals.
-  - `stats`: Object (modules_count, functions_count, classes_count, call_edges_count).
-  - `folder_structure`: Array of objects (path, type).
-
-**Example**:
-```json
-{
-  "metadata": {
-    "project_name": "llmstruct",
-    "description": "Utility for generating structured JSON for codebases",
-    "version": "2025-05-18T23:00:27.888546Z",
-    "authors": [{"name": "Mikhail Stepanov", "github": "kpblcaoo", "email": "kpblcaoo@gmail.com"}],
-    "instructions": ["Follow best practices", "Preserve functionality"],
-    "goals": [],
-    "stats": {
-      "modules_count": 14,
-      "functions_count": 27,
-      "classes_count": 3,
-      "call_edges_count": 90
-    },
-    "folder_structure": [
-      {"path": "src/", "type": "directory"},
-      {"path": "src/llmstruct/cli.py", "type": "file"}
-    ]
-  }
-}
-```
+# Сохраняем результат
+with open("merged.json", "w", encoding="utf-8") as out:
+    json.dump(merged, out, indent=2, ensure_ascii=False)
+print(f"✅ Merged {len(merged)} entries into merged.json")

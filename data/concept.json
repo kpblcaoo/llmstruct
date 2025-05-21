@@ -5,23 +5,13 @@
   "date": "2025-05-20",
   "license": "GPL-3.0",
   "principles": [
-    {
-      "id": "PRINCIPLE-001",
-      "name": "Dogfooding",
-      "description": "Use llmstruct to develop llmstruct",
-      "task": "TSK-095"
-    },
-    {
-      "id": "PRINCIPLE-002",
-      "name": "Idempotence",
-      "description": "Ensure all changes are reproducible",
-      "task": "TSK-024"
-    },
-    {
-      "id": "PRINCIPLE-003",
-      "name": "Transparency",
-      "description": "Use RFC-style documentation",
-      "task": "TSK-027"
-    }
+    {"id": "PRINCIPLE-001", "name": "Dogfooding", "description": "Use llmstruct to develop llmstruct"},
+    {"id": "PRINCIPLE-002", "name": "Idempotence", "description": "Ensure reproducible changes"},
+    {"id": "PRINCIPLE-003", "name": "Transparency", "description": "Use RFC-style docs and open collaboration"}
+  ],
+  "goals": [
+    "Create universal JSON format for codebases",
+    "Integrate with LLMs for context economy",
+    "Support extensible parsers and automation"
   ]
 }

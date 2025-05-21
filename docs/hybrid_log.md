@@ -134,3 +134,11 @@
 2025-05-20 15:38:05,638 - WARNING - Attempt 3 failed: [Errno 104] Connection reset by peer
 2025-05-20 15:38:05,638 - ERROR - All retries failed
 2025-05-20 15:38:05,638 - ERROR - Query failed
+2025-05-21 17:40:08,723 - INFO - Grok API key: None
+2025-05-21 17:40:08,724 - INFO - Querying in grok mode with prompt: Summarize struct.json
+2025-05-21 17:40:08,734 - ERROR - GROK_API_KEY not set
+2025-05-21 17:40:08,734 - ERROR - Query failed
+2025-05-21 17:41:25,182 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-21 17:41:25,182 - INFO - Querying in grok mode with prompt: Summarize struct.json
+2025-05-21 17:41:31,181 - INFO - Grok query successful
+2025-05-21 17:41:31,183 - INFO - Generated llm_response.json
