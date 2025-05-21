@@ -2,7 +2,7 @@
   "metadata": {
     "project_name": "llmstruct",
     "description": "Utility for generating structured JSON for codebases",
-    "version": "2025-05-21T18:15:19.637195Z",
+    "version": "2025-05-21T21:09:58.047952Z",
     "authors": [
       {
         "name": "Mikhail Stepanov",
@@ -28,194 +28,314 @@
       ]
     },
     "stats": {
-      "modules_count": 19,
-      "functions_count": 62,
+      "modules_count": 20,
+      "functions_count": 69,
       "classes_count": 5,
-      "call_edges_count": 225
+      "call_edges_count": 273
     },
+    "artifact_id": "00cb3cc0-16ab-4fbc-929e-ea29d8e64b76",
+    "summary": "Structured JSON for llmstruct codebase",
+    "tags": [
+      "codebase",
+      "automation"
+    ],
     "folder_structure": [
       {
         "path": ".",
-        "type": "directory"
+        "type": "directory",
+        "artifact_id": "6a6f6f07-08da-46ff-9e9f-44620ad88b6f",
+        "metadata": {}
       },
       {
         "path": ".github",
-        "type": "directory"
+        "type": "directory",
+        "artifact_id": "f3aa12c7-3add-4cbf-b530-edf8d5aece71",
+        "metadata": {}
       },
       {
-        "path": ".github\\workflows",
-        "type": "directory"
+        "path": ".github/workflows",
+        "type": "directory",
+        "artifact_id": "8442cb87-f51b-4cc3-ae71-23a329e6f7c8",
+        "metadata": {}
       },
       {
         "path": "collector.py",
-        "type": "file"
+        "type": "file",
+        "artifact_id": "921f1704-ac82-49f0-b5de-e789c1132790",
+        "metadata": {}
       },
       {
         "path": "data",
-        "type": "directory"
+        "type": "directory",
+        "artifact_id": "e8a94d20-4a12-4305-b5a5-a4365b260fd3",
+        "metadata": {}
       },
       {
         "path": "data.old",
-        "type": "directory"
+        "type": "directory",
+        "artifact_id": "20b99faa-91e0-4437-8dc1-81c9f6a01076",
+        "metadata": {}
       },
       {
         "path": "docs",
-        "type": "directory"
+        "type": "directory",
+        "artifact_id": "3a5a3748-3c37-4088-83ec-9a074462b8cb",
+        "metadata": {}
       },
       {
-        "path": "docs\\examples",
-        "type": "directory"
+        "path": "docs/examples",
+        "type": "directory",
+        "artifact_id": "86e657bf-9abf-43dd-a2dc-143ed5535db6",
+        "metadata": {}
       },
       {
-        "path": "docs\\internal",
-        "type": "directory"
+        "path": "docs/internal",
+        "type": "directory",
+        "artifact_id": "39caa5b7-adc8-4f9f-8dd7-eb37ee7750f2",
+        "metadata": {}
       },
       {
-        "path": "docs\\internal\\ru",
-        "type": "directory"
+        "path": "docs/internal/ru",
+        "type": "directory",
+        "artifact_id": "88cd653b-5811-4315-b30f-fd0e8816185c",
+        "metadata": {}
       },
       {
-        "path": "docs\\ru",
-        "type": "directory"
+        "path": "docs/ru",
+        "type": "directory",
+        "artifact_id": "8ab9be6c-081f-4112-8cdf-f5a16479652c",
+        "metadata": {}
       },
       {
-        "path": "docs\\ru\\examples",
-        "type": "directory"
+        "path": "docs/ru/examples",
+        "type": "directory",
+        "artifact_id": "4c958c19-c27e-4c6f-89ad-76117de6946d",
+        "metadata": {}
       },
       {
         "path": "examples",
-        "type": "directory"
+        "type": "directory",
+        "artifact_id": "69c8e9f1-c469-4b16-bf23-95fac3ecb0c7",
+        "metadata": {}
       },
       {
-        "path": "examples\\python_project_main.py",
-        "type": "file"
+        "path": "examples/python_project_main.py",
+        "type": "file",
+        "artifact_id": "3685bce8-d8ec-426d-b30e-5e26bb18d7a8",
+        "metadata": {}
       },
       {
-        "path": "examples\\python_project_utils.py",
-        "type": "file"
+        "path": "examples/python_project_utils.py",
+        "type": "file",
+        "artifact_id": "e7bd6a1e-1556-498d-b9ea-60ae3ac68609",
+        "metadata": {}
       },
       {
-        "path": "scripts",
-        "type": "directory"
+        "path": "internal",
+        "type": "directory",
+        "artifact_id": "285b112a-f94c-4c5e-b36d-4426226d7b9d",
+        "metadata": {}
+      },
+      {
+        "path": "llmstruct_project",
+        "type": "directory",
+        "artifact_id": "25857949-942c-48f9-b701-cd5321ac1260",
+        "metadata": {}
+      },
+      {
+        "path": "llmstruct_project/docs",
+        "type": "directory",
+        "artifact_id": "d558ccb0-0a8b-411d-8234-3a4173a2baf6",
+        "metadata": {}
+      },
+      {
+        "path": "llmstruct_project/scripts",
+        "type": "directory",
+        "artifact_id": "e26b8b87-f229-49f7-ae8d-df526881d932",
+        "metadata": {}
+      },
+      {
+        "path": "schemas",
+        "type": "directory",
+        "artifact_id": "71b3f9fc-785f-48be-8733-7f666581b625",
+        "metadata": {}
       },
       {
         "path": "src",
-        "type": "directory"
+        "type": "directory",
+        "artifact_id": "ba4dfeea-baa3-4886-9488-5246960a3132",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct",
-        "type": "directory"
+        "path": "src/llmstruct",
+        "type": "directory",
+        "artifact_id": "d9c685c5-396d-422b-93b1-577379909abe",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct.egg-info",
-        "type": "directory"
+        "path": "src/llmstruct.egg-info",
+        "type": "directory",
+        "artifact_id": "422ffada-b8ed-413a-ac6e-b844054b185f",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\__init__.py",
-        "type": "file"
+        "path": "src/llmstruct/__init__.py",
+        "type": "file",
+        "artifact_id": "29090500-b78d-40a3-a9e2-afe17903b0ee",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\__main__.py",
-        "type": "file"
+        "path": "src/llmstruct/__main__.py",
+        "type": "file",
+        "artifact_id": "2d3a660e-bc41-4574-a64a-226092c50d4a",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\cli.py",
-        "type": "file"
+        "path": "src/llmstruct/cli.py",
+        "type": "file",
+        "artifact_id": "ac9829dc-6a22-46b2-9a33-f59e1278a3f7",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\generators",
-        "type": "directory"
+        "path": "src/llmstruct/generators",
+        "type": "directory",
+        "artifact_id": "20236131-0008-4fb1-a18e-f729a7671c7b",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\generators\\__init__.py",
-        "type": "file"
+        "path": "src/llmstruct/generators/__init__.py",
+        "type": "file",
+        "artifact_id": "7758f241-108b-4d7c-92d2-1b9a9e7c4a56",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\generators\\json_generator.py",
-        "type": "file"
+        "path": "src/llmstruct/generators/json_generator.py",
+        "type": "file",
+        "artifact_id": "fa18fe03-b755-4df9-bb2d-0c14a7a614e5",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\grok.py",
-        "type": "file"
+        "path": "src/llmstruct/grok.py",
+        "type": "file",
+        "artifact_id": "e5aecb5e-de10-4c7d-8c67-f46352a09b8f",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\llm_client.py",
-        "type": "file"
+        "path": "src/llmstruct/json_selector.py",
+        "type": "file",
+        "artifact_id": "a0d17c69-fd2b-454f-b5d7-53c95af4f6f1",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\parsers",
-        "type": "directory"
+        "path": "src/llmstruct/llm_client.py",
+        "type": "file",
+        "artifact_id": "435db694-d016-4e1f-a9ca-279e616c650c",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\parsers\\__init__.py",
-        "type": "file"
+        "path": "src/llmstruct/parsers",
+        "type": "directory",
+        "artifact_id": "c59182f4-54d0-440d-81dc-1e4249686fd5",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\parsers\\javascript_parser.py",
-        "type": "file"
+        "path": "src/llmstruct/parsers/__init__.py",
+        "type": "file",
+        "artifact_id": "eff02b9d-c3f5-43c7-93f4-90a3ef1a4fe8",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\parsers\\python_parser.py",
-        "type": "file"
+        "path": "src/llmstruct/parsers/javascript_parser.py",
+        "type": "file",
+        "artifact_id": "701a0cd9-4c91-4ac9-8e7a-6a3ac17e5557",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\self_run.py",
-        "type": "file"
+        "path": "src/llmstruct/parsers/python_parser.py",
+        "type": "file",
+        "artifact_id": "461285ca-926e-404e-9fbe-4af71fd4a66a",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\templates",
-        "type": "directory"
+        "path": "src/llmstruct/self_run.py",
+        "type": "file",
+        "artifact_id": "a7fa7635-ff6c-4bc5-8cfc-d2b880cef759",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\templates\\__init__.py",
-        "type": "file"
+        "path": "src/llmstruct/templates",
+        "type": "directory",
+        "artifact_id": "e599e77b-9b21-4dd0-a7f8-c6473acf5990",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\validators",
-        "type": "directory"
+        "path": "src/llmstruct/templates/__init__.py",
+        "type": "file",
+        "artifact_id": "b0ed2d47-40b5-41f8-850b-13e7728ba9af",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\validators\\__init__.py",
-        "type": "file"
+        "path": "src/llmstruct/validators",
+        "type": "directory",
+        "artifact_id": "b43a6df9-b6a3-4b25-abba-23ab5ff1f103",
+        "metadata": {}
       },
       {
-        "path": "src\\llmstruct\\validators\\json_validator.py",
-        "type": "file"
+        "path": "src/llmstruct/validators/__init__.py",
+        "type": "file",
+        "artifact_id": "28fc4132-cef8-4762-ac44-0309748e3968",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/validators/json_validator.py",
+        "type": "file",
+        "artifact_id": "345b0c7b-c319-445a-96ad-425f9640b746",
+        "metadata": {}
       },
       {
         "path": "test_efficiency.py",
-        "type": "file"
+        "type": "file",
+        "artifact_id": "af8692d0-4fe8-4cb4-8f3f-396492e7177a",
+        "metadata": {}
       },
       {
         "path": "tests",
-        "type": "directory"
+        "type": "directory",
+        "artifact_id": "002bf409-e64b-4be7-8444-82cd6cabb00e",
+        "metadata": {}
       },
       {
         "path": "tmp",
-        "type": "directory"
+        "type": "directory",
+        "artifact_id": "161d3546-cb9d-46ec-ba57-a89ebebfd442",
+        "metadata": {}
       },
       {
         "path": "verify_llm_response.py",
-        "type": "file"
+        "type": "file",
+        "artifact_id": "28f1b430-0449-4e3a-b875-3675213bf061",
+        "metadata": {}
       }
     ]
   },
   "toc": [
-    {
-      "module_id": "collector",
-      "path": "collector.py",
-      "category": "core",
-      "functions": 3,
-      "classes": 0,
-      "summary": ""
-    },
     {
       "module_id": "test_efficiency",
       "path": "test_efficiency.py",
       "category": "test",
       "functions": 12,
       "classes": 0,
-      "summary": ""
+      "summary": "",
+      "artifact_id": "6240cd64-8bd7-48ff-900b-b557e5ec9fd3"
+    },
+    {
+      "module_id": "collector",
+      "path": "collector.py",
+      "category": "core",
+      "functions": 3,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "e010d577-5b76-43fd-8d19-78d8173d66a8"
     },
     {
       "module_id": "verify_llm_response",
@@ -223,213 +343,164 @@
       "category": "core",
       "functions": 6,
       "classes": 0,
-      "summary": ""
-    },
-    {
-      "module_id": "examples.python_project_main",
-      "path": "examples\\python_project_main.py",
-      "category": "core",
-      "functions": 2,
-      "classes": 1,
-      "summary": "Main module for the sample project."
+      "summary": "",
+      "artifact_id": "325e726c-0e43-408a-aea0-3c7e9daeab9a"
     },
     {
       "module_id": "examples.python_project_utils",
-      "path": "examples\\python_project_utils.py",
+      "path": "examples/python_project_utils.py",
       "category": "core",
       "functions": 2,
       "classes": 0,
-      "summary": "Utility functions for the sample project."
+      "summary": "Utility functions for the sample project.",
+      "artifact_id": "5ecb7bff-00ac-4259-8fc6-cf28543bd696"
     },
     {
-      "module_id": "src.llmstruct.cli",
-      "path": "src\\llmstruct\\cli.py",
+      "module_id": "examples.python_project_main",
+      "path": "examples/python_project_main.py",
       "category": "core",
-      "functions": 8,
-      "classes": 0,
-      "summary": ""
+      "functions": 2,
+      "classes": 1,
+      "summary": "Main module for the sample project.",
+      "artifact_id": "5e3c9122-4d14-44c1-ab57-08cff5f73f23"
     },
     {
       "module_id": "src.llmstruct.grok",
-      "path": "src\\llmstruct\\grok.py",
+      "path": "src/llmstruct/grok.py",
       "category": "core",
       "functions": 3,
       "classes": 1,
-      "summary": ""
-    },
-    {
-      "module_id": "src.llmstruct.llm_client",
-      "path": "src\\llmstruct\\llm_client.py",
-      "category": "core",
-      "functions": 6,
-      "classes": 1,
-      "summary": ""
-    },
-    {
-      "module_id": "src.llmstruct.self_run",
-      "path": "src\\llmstruct\\self_run.py",
-      "category": "core",
-      "functions": 2,
-      "classes": 0,
-      "summary": ""
+      "summary": "",
+      "artifact_id": "7ef3d6f2-254b-47bc-9e4f-13302363ab2b"
     },
     {
       "module_id": "src.llmstruct.__init__",
-      "path": "src\\llmstruct\\__init__.py",
+      "path": "src/llmstruct/__init__.py",
       "category": "cli",
       "functions": 0,
       "classes": 0,
-      "summary": ""
+      "summary": "",
+      "artifact_id": "3411e4ea-6015-4ea8-b3f5-0beb5395e5f2"
     },
     {
       "module_id": "src.llmstruct.__main__",
-      "path": "src\\llmstruct\\__main__.py",
+      "path": "src/llmstruct/__main__.py",
       "category": "cli",
       "functions": 0,
       "classes": 0,
-      "summary": ""
+      "summary": "",
+      "artifact_id": "33a48d8f-f693-4000-942d-ceb3f912287c"
     },
     {
-      "module_id": "src.llmstruct.generators.json_generator",
-      "path": "src\\llmstruct\\generators\\json_generator.py",
+      "module_id": "src.llmstruct.llm_client",
+      "path": "src/llmstruct/llm_client.py",
       "category": "core",
-      "functions": 3,
-      "classes": 0,
-      "summary": ""
-    },
-    {
-      "module_id": "src.llmstruct.generators.__init__",
-      "path": "src\\llmstruct\\generators\\__init__.py",
-      "category": "cli",
-      "functions": 0,
-      "classes": 0,
-      "summary": "Generator modules for creating LLMStruct JSON outputs from parsed code data."
-    },
-    {
-      "module_id": "src.llmstruct.parsers.javascript_parser",
-      "path": "src\\llmstruct\\parsers\\javascript_parser.py",
-      "category": "core",
-      "functions": 5,
+      "functions": 6,
       "classes": 1,
-      "summary": ""
+      "summary": "",
+      "artifact_id": "8c252ac2-3993-419d-b43a-8c7c0ac17b55"
     },
     {
-      "module_id": "src.llmstruct.parsers.python_parser",
-      "path": "src\\llmstruct\\parsers\\python_parser.py",
+      "module_id": "src.llmstruct.self_run",
+      "path": "src/llmstruct/self_run.py",
       "category": "core",
-      "functions": 9,
-      "classes": 1,
-      "summary": ""
+      "functions": 2,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "ed732046-645d-4af2-ab86-b6f44334c295"
+    },
+    {
+      "module_id": "src.llmstruct.json_selector",
+      "path": "src/llmstruct/json_selector.py",
+      "category": "core",
+      "functions": 2,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "d71f7b5c-df37-4dfb-b092-c554eec168d3"
+    },
+    {
+      "module_id": "src.llmstruct.cli",
+      "path": "src/llmstruct/cli.py",
+      "category": "core",
+      "functions": 12,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "cc44ab1e-8ead-4d94-bf3a-57916dbd27dc"
     },
     {
       "module_id": "src.llmstruct.parsers.__init__",
-      "path": "src\\llmstruct\\parsers\\__init__.py",
+      "path": "src/llmstruct/parsers/__init__.py",
       "category": "cli",
       "functions": 0,
       "classes": 0,
-      "summary": "Language-specific parsers for extracting code structure data for LLMStruct JSON."
+      "summary": "Language-specific parsers for extracting code structure data for LLMStruct JSON.",
+      "artifact_id": "23a88b42-4fa8-44c1-93ad-a043374a015c"
+    },
+    {
+      "module_id": "src.llmstruct.parsers.javascript_parser",
+      "path": "src/llmstruct/parsers/javascript_parser.py",
+      "category": "core",
+      "functions": 5,
+      "classes": 1,
+      "summary": "",
+      "artifact_id": "93d1d979-5229-4909-9d39-410f9f848e02"
+    },
+    {
+      "module_id": "src.llmstruct.parsers.python_parser",
+      "path": "src/llmstruct/parsers/python_parser.py",
+      "category": "core",
+      "functions": 9,
+      "classes": 1,
+      "summary": "",
+      "artifact_id": "768ed316-2202-45bf-980c-1e6ae7f6b12e"
     },
     {
       "module_id": "src.llmstruct.templates.__init__",
-      "path": "src\\llmstruct\\templates\\__init__.py",
+      "path": "src/llmstruct/templates/__init__.py",
       "category": "cli",
       "functions": 0,
       "classes": 0,
-      "summary": "Templates for LLM prompts used in LLMStruct integration."
-    },
-    {
-      "module_id": "src.llmstruct.validators.json_validator",
-      "path": "src\\llmstruct\\validators\\json_validator.py",
-      "category": "core",
-      "functions": 1,
-      "classes": 0,
-      "summary": ""
+      "summary": "Templates for LLM prompts used in LLMStruct integration.",
+      "artifact_id": "f7ddb37d-4050-48f6-ba8a-1c73c589c10d"
     },
     {
       "module_id": "src.llmstruct.validators.__init__",
-      "path": "src\\llmstruct\\validators\\__init__.py",
+      "path": "src/llmstruct/validators/__init__.py",
       "category": "cli",
       "functions": 0,
       "classes": 0,
-      "summary": "Validation modules for ensuring LLMStruct JSON complies with the schema."
+      "summary": "Validation modules for ensuring LLMStruct JSON complies with the schema.",
+      "artifact_id": "b24bf997-19ae-4bfa-a80b-497fbe445741"
+    },
+    {
+      "module_id": "src.llmstruct.validators.json_validator",
+      "path": "src/llmstruct/validators/json_validator.py",
+      "category": "core",
+      "functions": 2,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "f0c1f41a-defe-452d-9ea1-fda2eb79ac55"
+    },
+    {
+      "module_id": "src.llmstruct.generators.json_generator",
+      "path": "src/llmstruct/generators/json_generator.py",
+      "category": "core",
+      "functions": 3,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "7234be2b-2462-4bfa-8855-276c0ab3a809"
+    },
+    {
+      "module_id": "src.llmstruct.generators.__init__",
+      "path": "src/llmstruct/generators/__init__.py",
+      "category": "cli",
+      "functions": 0,
+      "classes": 0,
+      "summary": "Generator modules for creating LLMStruct JSON outputs from parsed code data.",
+      "artifact_id": "069790e5-25c9-4726-83a4-bda167b226ca"
     }
   ],
   "modules": [
-    {
-      "module_id": "collector",
-      "path": "collector.py",
-      "category": "core",
-      "module_doc": "",
-      "functions": [
-        {
-          "name": "load_gitignore",
-          "docstring": "",
-          "line_range": [
-            10,
-            14
-          ],
-          "parameters": [],
-          "decorators": []
-        },
-        {
-          "name": "is_text_file",
-          "docstring": "Check if file is likely a text file based on extension.",
-          "line_range": [
-            16,
-            19
-          ],
-          "parameters": [
-            "file_path"
-          ],
-          "decorators": []
-        },
-        {
-          "name": "collect_project",
-          "docstring": "",
-          "line_range": [
-            21,
-            44
-          ],
-          "parameters": [],
-          "decorators": []
-        }
-      ],
-      "classes": [],
-      "callgraph": {
-        "load_gitignore": [
-          "Path",
-          "gitignore_path.exists",
-          "gitignore_parser.parse_gitignore"
-        ],
-        "is_text_file": [],
-        "collect_project": [
-          "is_text_file",
-          "open",
-          "gitignore",
-          "f.read",
-          "logger.info",
-          "len",
-          "doc_files.items",
-          "str",
-          "file_path.is_file",
-          "json.dump",
-          "logger.error",
-          "any",
-          "logger.warning",
-          "root_dir.rglob",
-          "Path",
-          "load_gitignore"
-        ]
-      },
-      "dependencies": [
-        "Path",
-        "gitignore_parser",
-        "json",
-        "logging",
-        "pathlib"
-      ],
-      "hash": null
-    },
     {
       "module_id": "test_efficiency",
       "path": "test_efficiency.py",
@@ -601,82 +672,82 @@
           "os.getenv"
         ],
         "check_ollama": [
-          "response.json",
           "api_url.replace",
           "str",
-          "requests.get"
+          "requests.get",
+          "response.json"
         ],
         "optimize_prompt": [
-          "len",
           "print",
+          "len",
           "struct_data.split"
         ],
         "run_llm_request": [
-          "print",
-          "len",
-          "type",
-          "is_local_address",
+          "response.raise_for_status",
+          "session.post",
           "time.perf_counter",
           "requests.Session",
-          "response.raise_for_status",
-          "get_system_metrics",
+          "type",
           "response.json",
-          "session.post"
+          "is_local_address",
+          "get_system_metrics",
+          "print",
+          "len"
         ],
         "check_llmstruct_cli": [
           "shutil.which"
         ],
         "test_with_llmstruct": [
-          "open",
-          "f.read",
           "optimize_prompt",
           "str",
+          "FileNotFoundError",
+          "check_llmstruct_cli",
+          "target_path.exists",
+          "open",
+          "f.read",
           "json.dump",
           "run_llm_request",
           "subprocess.run",
-          "target_path.exists",
-          "check_llmstruct_cli",
-          "Path",
-          "FileNotFoundError"
+          "Path"
         ],
         "test_without_llmstruct": [
+          "optimize_prompt",
           "open",
           "f.read",
-          "optimize_prompt",
           "run_llm_request",
           "Path"
         ],
         "test_with_grok": [
+          "optimize_prompt",
+          "FileNotFoundError",
+          "target_path.exists",
           "open",
           "f.read",
-          "optimize_prompt",
           "json.dump",
-          "target_path.exists",
-          "test_grok",
           "Path",
-          "FileNotFoundError"
+          "test_grok"
         ],
         "evaluate_accuracy": [
-          "len",
+          "sum",
           "response_text.lower",
-          "sum"
+          "len"
         ],
         "main": [
-          "print",
-          "test_without_llmstruct",
-          "open",
+          "test_with_grok",
           "check_ollama",
           "range",
-          "parser.parse_args",
-          "str",
-          "test_with_grok",
-          "json.dump",
-          "argparse.ArgumentParser",
-          "parser.add_argument",
-          "test_with_llmstruct",
           "evaluate_accuracy",
+          "str",
+          "argparse.ArgumentParser",
           "check_llmstruct_cli",
-          "setup_proxy"
+          "test_without_llmstruct",
+          "open",
+          "parser.parse_args",
+          "setup_proxy",
+          "json.dump",
+          "test_with_llmstruct",
+          "print",
+          "parser.add_argument"
         ]
       },
       "dependencies": [
@@ -696,7 +767,84 @@
         "urllib.parse",
         "urlparse"
       ],
-      "hash": null
+      "hash": null,
+      "artifact_id": "6240cd64-8bd7-48ff-900b-b557e5ec9fd3"
+    },
+    {
+      "module_id": "collector",
+      "path": "collector.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "load_gitignore",
+          "docstring": "",
+          "line_range": [
+            10,
+            14
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "is_text_file",
+          "docstring": "Check if file is likely a text file based on extension.",
+          "line_range": [
+            16,
+            19
+          ],
+          "parameters": [
+            "file_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "collect_project",
+          "docstring": "",
+          "line_range": [
+            21,
+            44
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "load_gitignore": [
+          "gitignore_path.exists",
+          "Path",
+          "gitignore_parser.parse_gitignore"
+        ],
+        "is_text_file": [],
+        "collect_project": [
+          "gitignore",
+          "doc_files.items",
+          "root_dir.rglob",
+          "file_path.is_file",
+          "str",
+          "logger.error",
+          "load_gitignore",
+          "open",
+          "is_text_file",
+          "f.read",
+          "any",
+          "logger.warning",
+          "json.dump",
+          "logger.info",
+          "Path",
+          "len"
+        ]
+      },
+      "dependencies": [
+        "Path",
+        "gitignore_parser",
+        "json",
+        "logging",
+        "pathlib"
+      ],
+      "hash": null,
+      "artifact_id": "e010d577-5b76-43fd-8d19-78d8173d66a8"
     },
     {
       "module_id": "verify_llm_response",
@@ -781,58 +929,58 @@
       "classes": [],
       "callgraph": {
         "load_json_file": [
+          "open",
           "logging.error",
-          "json.load",
-          "open"
+          "json.load"
         ],
         "verify_response_with_struct": [
-          "logging.error",
-          "e.startswith",
-          "logging.info",
-          "expected_extensions.issubset",
-          "struct_data.get",
-          "expected_files.issubset",
+          "set",
           "expected_goals.issubset",
+          "logging.info",
+          "struct_data.get",
           "re.findall",
-          "set"
+          "expected_files.issubset",
+          "e.startswith",
+          "logging.error",
+          "expected_extensions.issubset"
         ],
         "verify_response_without_struct": [
-          "logging.error",
+          "set",
           "response_text.lower",
-          "logging.info",
-          "expected_extensions.issubset",
-          "expected_files.issubset",
           "principle.lower",
           "expected_goals.issubset",
+          "logging.info",
           "re.findall",
-          "set"
+          "expected_files.issubset",
+          "logging.error",
+          "expected_extensions.issubset"
         ],
         "generate_metrics": [
           "response_text.split",
-          "len",
-          "server_log.get",
+          "re.findall",
           "datetime.utcnow",
-          "re.findall"
+          "server_log.get",
+          "len"
         ],
         "update_tasks_json": [
-          "open",
           "logging.info",
+          "open",
           "load_json_file",
           "json.dump",
           "tasks.get"
         ],
         "main": [
-          "open",
-          "logging.info",
-          "parser.parse_args",
-          "load_json_file",
+          "generate_metrics",
           "verify_response_with_struct",
-          "json.dump",
-          "argparse.ArgumentParser",
-          "parser.add_argument",
-          "update_tasks_json",
           "verify_response_without_struct",
-          "generate_metrics"
+          "logging.info",
+          "argparse.ArgumentParser",
+          "open",
+          "load_json_file",
+          "parser.parse_args",
+          "json.dump",
+          "update_tasks_json",
+          "parser.add_argument"
         ]
       },
       "dependencies": [
@@ -847,11 +995,56 @@
         "re",
         "typing"
       ],
-      "hash": null
+      "hash": null,
+      "artifact_id": "325e726c-0e43-408a-aea0-3c7e9daeab9a"
+    },
+    {
+      "module_id": "examples.python_project_utils",
+      "path": "examples/python_project_utils.py",
+      "category": "core",
+      "module_doc": "Utility functions for the sample project.",
+      "functions": [
+        {
+          "name": "helper",
+          "docstring": "Help the main function.",
+          "line_range": [
+            5,
+            7
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "log",
+          "docstring": "Log a message.",
+          "line_range": [
+            9,
+            11
+          ],
+          "parameters": [
+            "message"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "helper": [
+          "log"
+        ],
+        "log": [
+          "logging.info"
+        ]
+      },
+      "dependencies": [
+        "logging"
+      ],
+      "hash": null,
+      "artifact_id": "5ecb7bff-00ac-4259-8fc6-cf28543bd696"
     },
     {
       "module_id": "examples.python_project_main",
-      "path": "examples\\python_project_main.py",
+      "path": "examples/python_project_main.py",
       "category": "core",
       "module_doc": "Main module for the sample project.",
       "functions": [
@@ -914,237 +1107,12 @@
       "dependencies": [
         "utils"
       ],
-      "hash": null
-    },
-    {
-      "module_id": "examples.python_project_utils",
-      "path": "examples\\python_project_utils.py",
-      "category": "core",
-      "module_doc": "Utility functions for the sample project.",
-      "functions": [
-        {
-          "name": "helper",
-          "docstring": "Help the main function.",
-          "line_range": [
-            5,
-            7
-          ],
-          "parameters": [],
-          "decorators": []
-        },
-        {
-          "name": "log",
-          "docstring": "Log a message.",
-          "line_range": [
-            9,
-            11
-          ],
-          "parameters": [
-            "message"
-          ],
-          "decorators": []
-        }
-      ],
-      "classes": [],
-      "callgraph": {
-        "helper": [
-          "log"
-        ],
-        "log": [
-          "logging.info"
-        ]
-      },
-      "dependencies": [
-        "logging"
-      ],
-      "hash": null
-    },
-    {
-      "module_id": "src.llmstruct.cli",
-      "path": "src\\llmstruct\\cli.py",
-      "category": "core",
-      "module_doc": "",
-      "functions": [
-        {
-          "name": "load_gitignore",
-          "docstring": "Load and normalize patterns from .gitignore.",
-          "line_range": [
-            16,
-            26
-          ],
-          "parameters": [
-            "root_dir"
-          ],
-          "decorators": []
-        },
-        {
-          "name": "load_config",
-          "docstring": "Load settings from llmstruct.toml or return empty dict.",
-          "line_range": [
-            28,
-            37
-          ],
-          "parameters": [
-            "root_dir"
-          ],
-          "decorators": []
-        },
-        {
-          "name": "parse",
-          "docstring": "Parse codebase and generate struct.json.",
-          "line_range": [
-            39,
-            75
-          ],
-          "parameters": [
-            "args"
-          ],
-          "decorators": []
-        },
-        {
-          "name": "query",
-          "docstring": "Query LLMs with prompt and context.",
-          "line_range": [
-            77,
-            95
-          ],
-          "parameters": [
-            "args"
-          ],
-          "decorators": []
-        },
-        {
-          "name": "context",
-          "docstring": "Generate context.json from input JSON.",
-          "line_range": [
-            97,
-            99
-          ],
-          "parameters": [
-            "args"
-          ],
-          "decorators": []
-        },
-        {
-          "name": "dogfood",
-          "docstring": "Run dogfooding analysis.",
-          "line_range": [
-            101,
-            103
-          ],
-          "parameters": [
-            "args"
-          ],
-          "decorators": []
-        },
-        {
-          "name": "review",
-          "docstring": "Review codebase with LLM.",
-          "line_range": [
-            105,
-            107
-          ],
-          "parameters": [
-            "args"
-          ],
-          "decorators": []
-        },
-        {
-          "name": "main",
-          "docstring": "Command-line interface for LLMstruct.",
-          "line_range": [
-            109,
-            162
-          ],
-          "parameters": [],
-          "decorators": []
-        }
-      ],
-      "classes": [],
-      "callgraph": {
-        "load_gitignore": [
-          "line.strip",
-          "logging.error",
-          "gitignore_path.exists",
-          "line.startswith",
-          "Path",
-          "gitignore_path.open"
-        ],
-        "load_config": [
-          "logging.error",
-          "config_path.exists",
-          "config_path.open",
-          "Path",
-          "toml.load"
-        ],
-        "parse": [
-          "generate_json",
-          "logging.error",
-          "logging.info",
-          "config.get",
-          "load_config",
-          "json.dump",
-          "Path",
-          "load_gitignore",
-          "logging.warning"
-        ],
-        "query": [
-          "logging.error",
-          "logging.info",
-          "json.dump",
-          "client.query",
-          "LLMClient",
-          "Path"
-        ],
-        "context": [
-          "logging.warning"
-        ],
-        "dogfood": [
-          "logging.warning"
-        ],
-        "review": [
-          "logging.warning"
-        ],
-        "main": [
-          "review_parser.add_argument",
-          "query",
-          "query_parser.add_argument",
-          "parser.parse_args",
-          "context_parser.add_argument",
-          "parse",
-          "parser.add_subparsers",
-          "context",
-          "subparsers.add_parser",
-          "review",
-          "argparse.ArgumentParser",
-          "parse_parser.add_argument",
-          "dogfood",
-          "dogfood_parser.add_argument",
-          "asyncio.run"
-        ]
-      },
-      "dependencies": [
-        "LLMClient",
-        "List",
-        "Optional",
-        "Path",
-        "argparse",
-        "asyncio",
-        "generate_json",
-        "json",
-        "llmstruct",
-        "llmstruct.generators.json_generator",
-        "logging",
-        "os",
-        "pathlib",
-        "toml",
-        "typing"
-      ],
-      "hash": null
+      "hash": null,
+      "artifact_id": "5e3c9122-4d14-44c1-ab57-08cff5f73f23"
     },
     {
       "module_id": "src.llmstruct.grok",
-      "path": "src\\llmstruct\\grok.py",
+      "path": "src/llmstruct/grok.py",
       "category": "core",
       "module_doc": "",
       "functions": [
@@ -1235,26 +1203,59 @@
           "requests.Session"
         ],
         "generate": [
-          "response.json",
           "response.raise_for_status",
-          "len",
-          "prompt.split"
+          "prompt.split",
+          "response.json",
+          "len"
         ],
         "test_grok": [
-          "client.generate",
+          "GrokClient",
           "time.perf_counter",
-          "GrokClient"
+          "client.generate"
         ]
       },
       "dependencies": [
         "os",
         "requests"
       ],
-      "hash": null
+      "hash": null,
+      "artifact_id": "7ef3d6f2-254b-47bc-9e4f-13302363ab2b"
+    },
+    {
+      "module_id": "src.llmstruct.__init__",
+      "path": "src/llmstruct/__init__.py",
+      "category": "cli",
+      "module_doc": "",
+      "functions": [],
+      "classes": [],
+      "callgraph": {},
+      "dependencies": [
+        "LLMClient",
+        "llm_client"
+      ],
+      "hash": null,
+      "artifact_id": "3411e4ea-6015-4ea8-b3f5-0beb5395e5f2"
+    },
+    {
+      "module_id": "src.llmstruct.__main__",
+      "path": "src/llmstruct/__main__.py",
+      "category": "cli",
+      "module_doc": "",
+      "functions": [],
+      "classes": [],
+      "callgraph": {},
+      "dependencies": [
+        "LLMClient",
+        "llm_client",
+        "llmstruct.cli",
+        "main"
+      ],
+      "hash": null,
+      "artifact_id": "33a48d8f-f693-4000-942d-ceb3f912287c"
     },
     {
       "module_id": "src.llmstruct.llm_client",
-      "path": "src\\llmstruct\\llm_client.py",
+      "path": "src/llmstruct/llm_client.py",
       "category": "core",
       "module_doc": "",
       "functions": [
@@ -1437,56 +1438,56 @@
       "callgraph": {
         "__init__": [
           "os.getenv",
-          "int",
-          "logging.info"
+          "logging.info",
+          "int"
         ],
         "query": [
-          "asyncio.sleep",
-          "json.load",
-          "self._query_ollama",
-          "logging.error",
           "range",
-          "logging.info",
-          "self._query_anthropic",
-          "self._query_grok",
-          "Path",
-          "self._query_hybrid",
           "json.dumps",
-          "logging.warning"
+          "logging.warning",
+          "logging.info",
+          "json.load",
+          "self._query_hybrid",
+          "self._query_ollama",
+          "self._query_anthropic",
+          "asyncio.sleep",
+          "Path",
+          "self._query_grok",
+          "logging.error"
         ],
         "_query_grok": [
-          "logging.error",
-          "aiohttp.ClientSession",
+          "session.post",
           "logging.info",
           "response.json",
-          "session.post",
-          "result.get"
+          "result.get",
+          "aiohttp.ClientSession",
+          "logging.error"
         ],
         "_query_anthropic": [
-          "logging.error",
-          "aiohttp.ClientSession",
+          "session.post",
           "logging.info",
           "response.json",
-          "session.post",
-          "result.get"
+          "result.get",
+          "aiohttp.ClientSession",
+          "logging.error"
         ],
         "_query_ollama": [
-          "logging.debug",
-          "logging.error",
-          "aiohttp.ClientSession",
+          "session.post",
           "logging.info",
           "response.json",
-          "session.post",
-          "result.get"
+          "result.get",
+          "logging.debug",
+          "aiohttp.ClientSession",
+          "logging.error"
         ],
         "_query_hybrid": [
-          "self._query_ollama",
-          "len",
-          "logging.info",
-          "isinstance",
-          "self._query_grok",
           "asyncio.gather",
-          "self._query_anthropic"
+          "isinstance",
+          "logging.info",
+          "self._query_ollama",
+          "self._query_anthropic",
+          "len",
+          "self._query_grok"
         ]
       },
       "dependencies": [
@@ -1506,36 +1507,37 @@
         "urljoin",
         "urllib.parse"
       ],
-      "hash": null
+      "hash": null,
+      "artifact_id": "8c252ac2-3993-419d-b43a-8c7c0ac17b55"
     },
     {
       "module_id": "src.llmstruct.self_run",
-      "path": "src\\llmstruct\\self_run.py",
+      "path": "src/llmstruct/self_run.py",
       "category": "core",
       "module_doc": "",
       "functions": [
         {
-          "name": "filter_json",
-          "docstring": "Filter JSON to include only modules/functions relevant to the query.",
+          "name": "filter_struct",
+          "docstring": "Filter struct.json or init.json based on prompt keywords.",
           "line_range": [
-            5,
-            25
+            16,
+            36
           ],
           "parameters": [
             "struct",
-            "query"
+            "prompt"
           ],
           "decorators": []
         },
         {
           "name": "attach_to_llm_request",
-          "docstring": "Attach filtered JSON structure to LLM prompt.",
+          "docstring": "Attach filtered JSON to LLM prompt.",
           "line_range": [
-            27,
-            32
+            38,
+            62
           ],
           "parameters": [
-            "json_path",
+            "context_path",
             "prompt"
           ],
           "decorators": []
@@ -1543,154 +1545,92 @@
       ],
       "classes": [],
       "callgraph": {
-        "filter_json": [
+        "filter_struct": [
           "module.get",
-          "k.lower",
-          "query.lower",
-          "re.findall"
+          "prompt.lower",
+          "struct.get",
+          "filter_json",
+          "any"
         ],
         "attach_to_llm_request": [
-          "filter_json",
+          "filter_struct",
+          "prompt.lower",
           "json.dumps",
+          "context_file.exists",
           "open",
-          "json.load"
+          "json.load",
+          "filter_json",
+          "Path",
+          "logging.error"
         ]
       },
       "dependencies": [
         "Any",
         "Dict",
+        "List",
+        "Path",
+        "filter_json",
         "json",
-        "re",
+        "json_selector",
+        "logging",
+        "pathlib",
         "typing"
       ],
-      "hash": null
+      "hash": null,
+      "artifact_id": "ed732046-645d-4af2-ab86-b6f44334c295"
     },
     {
-      "module_id": "src.llmstruct.__init__",
-      "path": "src\\llmstruct\\__init__.py",
-      "category": "cli",
-      "module_doc": "",
-      "functions": [],
-      "classes": [],
-      "callgraph": {},
-      "dependencies": [
-        "LLMClient",
-        "llm_client"
-      ],
-      "hash": null
-    },
-    {
-      "module_id": "src.llmstruct.__main__",
-      "path": "src\\llmstruct\\__main__.py",
-      "category": "cli",
-      "module_doc": "",
-      "functions": [],
-      "classes": [],
-      "callgraph": {},
-      "dependencies": [
-        "LLMClient",
-        "llm_client",
-        "llmstruct.cli",
-        "main"
-      ],
-      "hash": null
-    },
-    {
-      "module_id": "src.llmstruct.generators.json_generator",
-      "path": "src\\llmstruct\\generators\\json_generator.py",
+      "module_id": "src.llmstruct.json_selector",
+      "path": "src/llmstruct/json_selector.py",
       "category": "core",
       "module_doc": "",
       "functions": [
         {
-          "name": "get_folder_structure",
-          "docstring": "Capture directory and file structure, respecting .gitignore and patterns.",
+          "name": "filter_json",
+          "docstring": "Filter JSON data by key-value pair and select fields.",
           "line_range": [
-            12,
-            42
+            16,
+            28
           ],
           "parameters": [
-            "root_dir",
-            "gitignore_patterns",
-            "include_patterns",
-            "exclude_patterns",
-            "exclude_dirs"
+            "data",
+            "filter_key",
+            "filter_value",
+            "fields"
           ],
           "decorators": []
         },
         {
-          "name": "build_toc_and_modules",
-          "docstring": "Build TOC and modules with robust .gitignore and directory filtering.",
+          "name": "select_json",
+          "docstring": "Load and filter JSON file.",
           "line_range": [
-            44,
-            73
+            30,
+            47
           ],
           "parameters": [
-            "root_dir",
-            "include_patterns",
-            "exclude_patterns",
-            "gitignore_patterns",
-            "include_ranges",
-            "include_hashes",
-            "exclude_dirs"
-          ],
-          "decorators": []
-        },
-        {
-          "name": "generate_json",
-          "docstring": "Generate JSON structure for project.",
-          "line_range": [
-            75,
-            113
-          ],
-          "parameters": [
-            "root_dir",
-            "include_patterns",
-            "exclude_patterns",
-            "gitignore_patterns",
-            "include_ranges",
-            "include_hashes",
-            "goals",
-            "exclude_dirs"
+            "json_path",
+            "filter_key",
+            "filter_value",
+            "fields"
           ],
           "decorators": []
         }
       ],
       "classes": [],
       "callgraph": {
-        "get_folder_structure": [
-          "os.walk",
-          "file_path.match",
-          "str",
-          "file_path.relative_to",
-          "structure.append",
-          "p.endswith",
-          "any",
-          "sorted",
-          "Path",
-          "p.rstrip",
-          "set"
+        "filter_json": [
+          "filtered.append",
+          "isinstance",
+          "item.get",
+          "data.get"
         ],
-        "build_toc_and_modules": [
-          "toc.append",
-          "len",
-          "f.match",
-          "str",
-          "p.endswith",
-          "any",
-          "modules.append",
+        "select_json": [
           "Path",
-          "analyze_module",
-          "p.rstrip",
-          "set"
-        ],
-        "generate_json": [
-          "len",
-          "get_folder_structure",
-          "sum",
-          "build_toc_and_modules",
-          "list",
-          "Path",
-          "set"
+          "open",
+          "json.load",
+          "filter_json",
+          "json_file.exists",
+          "logging.error"
         ]
       },
       "dependencies": [
@@ -1699,34 +1639,325 @@
         "List",
         "Optional",
         "Path",
-        "analyze_module",
-        "datetime",
+        "argparse",
         "json",
         "logging",
-        "os",
-        "parsers.python_parser",
         "pathlib",
         "typing"
       ],
-      "hash": null
+      "hash": null,
+      "artifact_id": "d71f7b5c-df37-4dfb-b092-c554eec168d3"
     },
     {
-      "module_id": "src.llmstruct.generators.__init__",
-      "path": "src\\llmstruct\\generators\\__init__.py",
+      "module_id": "src.llmstruct.cli",
+      "path": "src/llmstruct/cli.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "load_gitignore",
+          "docstring": "Load and normalize patterns from .gitignore.",
+          "line_range": [
+            25,
+            35
+          ],
+          "parameters": [
+            "root_dir"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "load_config",
+          "docstring": "Load settings from llmstruct.toml or return empty dict.",
+          "line_range": [
+            37,
+            46
+          ],
+          "parameters": [
+            "root_dir"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "read_file_content",
+          "docstring": "Read content of a file if it exists and is a text file.",
+          "line_range": [
+            48,
+            57
+          ],
+          "parameters": [
+            "file_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "write_to_file",
+          "docstring": "Write content to a file in base_dir (default /tmp) and return the path.",
+          "line_range": [
+            59,
+            73
+          ],
+          "parameters": [
+            "content",
+            "filename",
+            "base_dir"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "parse_files_from_response",
+          "docstring": "Extract filenames and content from LLM response (e.g., ```filename\ncontent```).",
+          "line_range": [
+            75,
+            82
+          ],
+          "parameters": [
+            "response"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "interactive",
+          "docstring": "Run interactive CLI with LLM, supporting file/folder viewing and writing.",
+          "line_range": [
+            84,
+            195
+          ],
+          "parameters": [
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "parse",
+          "docstring": "Parse codebase and generate struct.json.",
+          "line_range": [
+            197,
+            232
+          ],
+          "parameters": [
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "query",
+          "docstring": "Query LLMs with prompt and context.",
+          "line_range": [
+            234,
+            252
+          ],
+          "parameters": [
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "context",
+          "docstring": "Generate context.json from input JSON.",
+          "line_range": [
+            254,
+            256
+          ],
+          "parameters": [
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "dogfood",
+          "docstring": "Run dogfooding analysis.",
+          "line_range": [
+            258,
+            260
+          ],
+          "parameters": [
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "review",
+          "docstring": "Review codebase with LLM.",
+          "line_range": [
+            262,
+            264
+          ],
+          "parameters": [
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "main",
+          "docstring": "Command-line interface for LLMstruct.",
+          "line_range": [
+            266,
+            329
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "load_gitignore": [
+          "logging.error",
+          "line.startswith",
+          "line.strip",
+          "gitignore_path.exists",
+          "Path",
+          "gitignore_path.open"
+        ],
+        "load_config": [
+          "toml.load",
+          "logging.error",
+          "config_path.exists",
+          "Path",
+          "config_path.open"
+        ],
+        "read_file_content": [
+          "path.is_file",
+          "path.open",
+          "f.read",
+          "Path",
+          "logging.error"
+        ],
+        "write_to_file": [
+          "f.write",
+          "base_path.mkdir",
+          "file_path.exists",
+          "logging.warning",
+          "str",
+          "logging.info",
+          "file_path.open",
+          "Path",
+          "logging.error"
+        ],
+        "parse_files_from_response": [
+          "re.findall",
+          "files.append",
+          "filename.strip",
+          "content.strip"
+        ],
+        "interactive": [
+          "user_input.lower",
+          "read_file_content",
+          "load_gitignore",
+          "Path",
+          "logging.error",
+          "os.listdir",
+          "json.dumps",
+          "client.query",
+          "re.search",
+          "logging.warning",
+          "get_folder_structure",
+          "write_dir.startswith",
+          "parse",
+          "files_to_write.append",
+          "parse_files_from_response",
+          "print",
+          "scan_match.group",
+          "write_to_file",
+          "input",
+          "sorted",
+          "attach_to_llm_request",
+          "LLMClient",
+          "write_match.group"
+        ],
+        "parse": [
+          "generate_json",
+          "logging.warning",
+          "logging.info",
+          "load_gitignore",
+          "load_config",
+          "config.get",
+          "json.dump",
+          "Path",
+          "logging.error"
+        ],
+        "query": [
+          "logging.info",
+          "client.query",
+          "LLMClient",
+          "json.dump",
+          "Path",
+          "logging.error"
+        ],
+        "context": [
+          "logging.warning"
+        ],
+        "dogfood": [
+          "logging.warning"
+        ],
+        "review": [
+          "logging.warning"
+        ],
+        "main": [
+          "dogfood",
+          "interactive_parser.add_argument",
+          "parse_parser.add_argument",
+          "parser.add_subparsers",
+          "asyncio.run",
+          "interactive",
+          "review",
+          "argparse.ArgumentParser",
+          "parser.parse_args",
+          "query_parser.add_argument",
+          "parse",
+          "query",
+          "context_parser.add_argument",
+          "subparsers.add_parser",
+          "context",
+          "dogfood_parser.add_argument",
+          "review_parser.add_argument"
+        ]
+      },
+      "dependencies": [
+        "LLMClient",
+        "List",
+        "Optional",
+        "Path",
+        "argparse",
+        "asyncio",
+        "attach_to_llm_request",
+        "generate_json",
+        "get_folder_structure",
+        "json",
+        "llmstruct",
+        "llmstruct.generators.json_generator",
+        "llmstruct.self_run",
+        "logging",
+        "os",
+        "pathlib",
+        "re",
+        "toml",
+        "typing",
+        "uuid"
+      ],
+      "hash": null,
+      "artifact_id": "cc44ab1e-8ead-4d94-bf3a-57916dbd27dc"
+    },
+    {
+      "module_id": "src.llmstruct.parsers.__init__",
+      "path": "src/llmstruct/parsers/__init__.py",
       "category": "cli",
-      "module_doc": "Generator modules for creating LLMStruct JSON outputs from parsed code data.",
+      "module_doc": "Language-specific parsers for extracting code structure data for LLMStruct JSON.",
       "functions": [],
       "classes": [],
       "callgraph": {},
       "dependencies": [
-        "generate_json",
-        "json_generator"
+        "JavaScriptParser",
+        "analyze_module",
+        "javascript_parser",
+        "python_parser"
       ],
-      "hash": null
+      "hash": null,
+      "artifact_id": "23a88b42-4fa8-44c1-93ad-a043374a015c"
     },
     {
       "module_id": "src.llmstruct.parsers.javascript_parser",
-      "path": "src\\llmstruct\\parsers\\javascript_parser.py",
+      "path": "src/llmstruct/parsers/javascript_parser.py",
       "category": "core",
       "module_doc": "",
       "functions": [
@@ -1868,21 +2099,21 @@
         ],
         "file_hash": [
           "hashlib.sha256",
-          "open",
-          "f.read"
+          "f.read",
+          "open"
         ],
         "compute_file_metadata": [
-          "os.stat",
+          "sum",
           "self.file_hash",
-          "open",
-          "sum"
+          "os.stat",
+          "open"
         ],
         "parse_module": [
-          "open",
-          "f.read",
           "esprima.parseModule",
+          "self.compute_file_metadata",
           "str",
-          "self.compute_file_metadata"
+          "open",
+          "f.read"
         ],
         "extract_signature": [
           "hasattr"
@@ -1898,11 +2129,12 @@
         "os",
         "typing"
       ],
-      "hash": null
+      "hash": null,
+      "artifact_id": "93d1d979-5229-4909-9d39-410f9f848e02"
     },
     {
       "module_id": "src.llmstruct.parsers.python_parser",
-      "path": "src\\llmstruct\\parsers\\python_parser.py",
+      "path": "src/llmstruct/parsers/python_parser.py",
       "category": "core",
       "module_doc": "",
       "functions": [
@@ -2123,42 +2355,42 @@
           "self.generic_visit"
         ],
         "visit_FunctionDef": [
-          "self.generic_visit",
-          "set"
+          "set",
+          "self.generic_visit"
         ],
         "visit_AsyncFunctionDef": [
-          "self.generic_visit",
-          "set"
+          "set",
+          "self.generic_visit"
         ],
         "visit_Call": [
-          "isinstance",
-          "self.generic_visit"
+          "self.generic_visit",
+          "isinstance"
         ],
         "compute_file_hash": [
           "hashlib.sha256",
-          "open",
-          "f.read",
-          "logging.error"
-        ],
-        "analyze_module": [
-          "functions.append",
-          "ast.parse",
-          "open",
           "f.read",
           "logging.error",
-          "visitor.visit",
-          "ast.get_docstring",
-          "isinstance",
-          "ast.unparse",
+          "open"
+        ],
+        "analyze_module": [
           "classes.append",
-          "str",
-          "sorted",
-          "compute_file_hash",
-          "CallVisitor",
+          "functions.append",
+          "ast.get_docstring",
+          "ast.parse",
+          "infer_category",
           "list",
-          "Path",
+          "str",
           "ast.walk",
-          "infer_category"
+          "CallVisitor",
+          "isinstance",
+          "open",
+          "compute_file_hash",
+          "sorted",
+          "f.read",
+          "ast.unparse",
+          "Path",
+          "visitor.visit",
+          "logging.error"
         ]
       },
       "dependencies": [
@@ -2175,84 +2407,24 @@
         "pathlib",
         "typing"
       ],
-      "hash": null
-    },
-    {
-      "module_id": "src.llmstruct.parsers.__init__",
-      "path": "src\\llmstruct\\parsers\\__init__.py",
-      "category": "cli",
-      "module_doc": "Language-specific parsers for extracting code structure data for LLMStruct JSON.",
-      "functions": [],
-      "classes": [],
-      "callgraph": {},
-      "dependencies": [
-        "JavaScriptParser",
-        "analyze_module",
-        "javascript_parser",
-        "python_parser"
-      ],
-      "hash": null
+      "hash": null,
+      "artifact_id": "768ed316-2202-45bf-980c-1e6ae7f6b12e"
     },
     {
       "module_id": "src.llmstruct.templates.__init__",
-      "path": "src\\llmstruct\\templates\\__init__.py",
+      "path": "src/llmstruct/templates/__init__.py",
       "category": "cli",
       "module_doc": "Templates for LLM prompts used in LLMStruct integration.",
       "functions": [],
       "classes": [],
       "callgraph": {},
       "dependencies": [],
-      "hash": null
-    },
-    {
-      "module_id": "src.llmstruct.validators.json_validator",
-      "path": "src\\llmstruct\\validators\\json_validator.py",
-      "category": "core",
-      "module_doc": "",
-      "functions": [
-        {
-          "name": "validate_struct_json",
-          "docstring": "",
-          "line_range": [
-            8,
-            35
-          ],
-          "parameters": [
-            "json_path",
-            "schema_path"
-          ],
-          "decorators": []
-        }
-      ],
-      "classes": [],
-      "callgraph": {
-        "validate_struct_json": [
-          "json_file.exists",
-          "validate",
-          "logging.error",
-          "open",
-          "logging.info",
-          "str",
-          "schema_file.exists",
-          "Path",
-          "json.load"
-        ]
-      },
-      "dependencies": [
-        "Path",
-        "ValidationError",
-        "json",
-        "jsonschema",
-        "logging",
-        "pathlib",
-        "sys",
-        "validate"
-      ],
-      "hash": null
+      "hash": null,
+      "artifact_id": "f7ddb37d-4050-48f6-ba8a-1c73c589c10d"
     },
     {
       "module_id": "src.llmstruct.validators.__init__",
-      "path": "src\\llmstruct\\validators\\__init__.py",
+      "path": "src/llmstruct/validators/__init__.py",
       "category": "cli",
       "module_doc": "Validation modules for ensuring LLMStruct JSON complies with the schema.",
       "functions": [],
@@ -2264,7 +2436,216 @@
         "json_validator",
         "validate_struct_json"
       ],
-      "hash": null
+      "hash": null,
+      "artifact_id": "b24bf997-19ae-4bfa-a80b-497fbe445741"
+    },
+    {
+      "module_id": "src.llmstruct.validators.json_validator",
+      "path": "src/llmstruct/validators/json_validator.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "validate_struct_json",
+          "docstring": "Validate a single JSON file against a schema.",
+          "line_range": [
+            9,
+            37
+          ],
+          "parameters": [
+            "json_path",
+            "schema_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "validate_directory",
+          "docstring": "Validate all JSON files in a directory against a schema.",
+          "line_range": [
+            39,
+            50
+          ],
+          "parameters": [
+            "directory",
+            "schema_path",
+            "include_patterns",
+            "exclude_patterns"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "validate_struct_json": [
+          "schema_file.exists",
+          "Path",
+          "str",
+          "validate",
+          "logging.info",
+          "open",
+          "json.load",
+          "json_file.exists",
+          "logging.error"
+        ],
+        "validate_directory": [
+          "validate_struct_json",
+          "json_file.match",
+          "str",
+          "any",
+          "Path"
+        ]
+      },
+      "dependencies": [
+        "List",
+        "Optional",
+        "Path",
+        "ValidationError",
+        "json",
+        "jsonschema",
+        "logging",
+        "pathlib",
+        "sys",
+        "typing",
+        "validate"
+      ],
+      "hash": null,
+      "artifact_id": "f0c1f41a-defe-452d-9ea1-fda2eb79ac55"
+    },
+    {
+      "module_id": "src.llmstruct.generators.json_generator",
+      "path": "src/llmstruct/generators/json_generator.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "get_folder_structure",
+          "docstring": "Capture directory and file structure with artifact_id, respecting .gitignore and patterns.",
+          "line_range": [
+            13,
+            50
+          ],
+          "parameters": [
+            "root_dir",
+            "gitignore_patterns",
+            "include_patterns",
+            "exclude_patterns",
+            "exclude_dirs"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "build_toc_and_modules",
+          "docstring": "Build TOC and modules with artifact_id and robust filtering.",
+          "line_range": [
+            52,
+            83
+          ],
+          "parameters": [
+            "root_dir",
+            "include_patterns",
+            "exclude_patterns",
+            "gitignore_patterns",
+            "include_ranges",
+            "include_hashes",
+            "exclude_dirs"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "generate_json",
+          "docstring": "Generate JSON structure for project with artifact_id, summary, and tags.",
+          "line_range": [
+            85,
+            126
+          ],
+          "parameters": [
+            "root_dir",
+            "include_patterns",
+            "exclude_patterns",
+            "gitignore_patterns",
+            "include_ranges",
+            "include_hashes",
+            "goals",
+            "exclude_dirs"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "get_folder_structure": [
+          "set",
+          "p.rstrip",
+          "str",
+          "uuid.uuid4",
+          "p.endswith",
+          "structure.append",
+          "any",
+          "sorted",
+          "file_path.match",
+          "os.walk",
+          "Path",
+          "file_path.relative_to"
+        ],
+        "build_toc_and_modules": [
+          "set",
+          "modules.append",
+          "p.rstrip",
+          "str",
+          "analyze_module",
+          "uuid.uuid4",
+          "f.match",
+          "p.endswith",
+          "any",
+          "toc.append",
+          "Path",
+          "len"
+        ],
+        "generate_json": [
+          "sum",
+          "set",
+          "list",
+          "str",
+          "get_folder_structure",
+          "uuid.uuid4",
+          "build_toc_and_modules",
+          "Path",
+          "len"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "List",
+        "Optional",
+        "Path",
+        "analyze_module",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "parsers.python_parser",
+        "pathlib",
+        "typing",
+        "uuid"
+      ],
+      "hash": null,
+      "artifact_id": "7234be2b-2462-4bfa-8855-276c0ab3a809"
+    },
+    {
+      "module_id": "src.llmstruct.generators.__init__",
+      "path": "src/llmstruct/generators/__init__.py",
+      "category": "cli",
+      "module_doc": "Generator modules for creating LLMStruct JSON outputs from parsed code data.",
+      "functions": [],
+      "classes": [],
+      "callgraph": {},
+      "dependencies": [
+        "generate_json",
+        "json_generator"
+      ],
+      "hash": null,
+      "artifact_id": "069790e5-25c9-4726-83a4-bda167b226ca"
     }
   ]
 }

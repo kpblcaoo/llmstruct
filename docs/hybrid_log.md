@@ -192,3 +192,27 @@
 2025-05-21 21:59:45,763 - INFO - Found 21 items in F:\projects\llmstruct\./src
 2025-05-21 22:38:50,989 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
 2025-05-21 23:36:29,593 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 00:09:58,079 - INFO - Generated struct.json
+2025-05-22 00:17:00,824 - ERROR - Schema file not found: llmstruct_schema.json
+2025-05-22 00:17:14,171 - ERROR - Schema file not found: docs/llmstruct_schema.json
+2025-05-22 00:17:19,039 - ERROR - Validation error in struct.json: 'folder_structure' is a required property
+2025-05-22 00:21:28,738 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 00:21:43,695 - INFO - Querying in grok mode with prompt: hi! give me a status, 5 words
+
+Context:
+{
+  "struct": {
+    "metadata": {
+      "project_name": "unknown",
+      "description": "",
+      "version": "0.0.0"
+    },
+    "modules": []
+  },
+  "selected": []
+}
+2025-05-22 00:21:44,009 - ERROR - Grok API error: 403
+2025-05-22 00:23:33,418 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 00:23:33,418 - INFO - Querying in grok mode with prompt:  hi! give me a status, 5 words
+2025-05-22 00:23:33,512 - ERROR - Grok API error: 403
+2025-05-22 00:23:33,512 - ERROR - Query failed
