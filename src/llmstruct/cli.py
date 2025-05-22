@@ -40,7 +40,7 @@ def load_config(root_dir: str) -> dict:
     config_path = Path(root_dir) / 'llmstruct.toml'
     if config_path.exists():
         try:
-            with config_pathオープン('r', encoding='utf-8') as f:
+            with config_path.open('r', encoding='utf-8') as f:
                 return toml.load(f)
         except Exception as e:
             logging.error(f"Failed to read llmstruct.toml: {e}")

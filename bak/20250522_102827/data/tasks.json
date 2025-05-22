@@ -5,11 +5,6 @@
   "date": "2025-05-21",
   "license": "GPL-3.0",
   "artifact_id": "f2a3b4c5-d6e7-48f9-a0b1-c2d3e4f5a6b7",
-  "metadata": {
-    "project_name": "llmstruct",
-    "description": "Tasks for parser and API",
-    "authors": [{"name": "@kpblcaoo", "github": "kpblcaoo", "email": "kpblcaoo@example.com"}]
-  },
   "summary": "Critical tasks for parser and API",
   "tags": ["parser", "api"],
   "tasks": [

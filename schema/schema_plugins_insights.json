@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LLMstruct Insights Schema",
+  "description": "Schema for insights in llmstruct",
+  "type": "object",
+  "required": ["insights", "artifact_id"],
+  "metadata": {
+    "project_name": "llmstruct",
+    "description": "Schema for insights and findings",
+    "authors": [{"name": "@kpblcaoo", "github": "kpblcaoo", "email": "kpblcaoo@example.com"}]
+  },
+  "version": "0.1.0",
+  "status": "Draft",
+  "author": "@kpblcaoo",
+  "date": "2025-05-22",
+  "license": "GPL-3.0",
+  "artifact_id": "a2b3c4d5-e6f7-48a9-b0c1-d2e3f4a5b6c7",
+  "summary": "Schema for insights",
+  "tags": ["insights", "schema"],
+  "properties": {
+    "insights": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "description", "priority"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^INS-\\d+$"},
+          "description": {"type": "string"},
+          "related_tasks": {"type": "array", "items": {"type": "string"}},
+          "related_ideas": {"type": "array", "items": {"type": "string"}},
+          "priority": {"type": "string", "enum": ["high", "medium", "low"]},
+          "created_at": {"type": "string", "format": "date-time"},
+          "author": {"type": "string"},
+          "ai-generated": {"type": "boolean"}
+        }
+      }
+    },
+    "artifact_id": {"$ref": "common/definitions.json#/definitions/artifact_id"}
+  }
+}

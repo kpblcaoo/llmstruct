@@ -220,3 +220,28 @@ Context:
 2025-05-22 02:09:55,775 - WARNING - No project goals specified via --goals or llmstruct.toml. Consider adding goals for better context.
 2025-05-22 02:09:56,180 - INFO - Generated struct.json
 2025-05-22 02:09:56,189 - INFO - Cached JSON: struct.json with artifact_id: struct.json
+2025-05-22 07:30:10,769 - ERROR - Failed to read llmstruct.toml: name 'config_pathオープン' is not defined
+2025-05-22 07:30:10,769 - WARNING - No project goals specified via --goals or llmstruct.toml. Consider adding goals for better context.
+2025-05-22 07:30:11,145 - INFO - Generated struct.json
+2025-05-22 07:30:11,150 - INFO - Cached JSON: struct.json with artifact_id: struct.json
+2025-05-22 07:32:12,264 - ERROR - Failed to read llmstruct.toml: name 'config_pathオープン' is not defined
+2025-05-22 07:32:12,264 - WARNING - No project goals specified via --goals or llmstruct.toml. Consider adding goals for better context.
+2025-05-22 07:32:12,580 - INFO - Generated ./struct.json
+2025-05-22 07:36:20,169 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 07:36:37,223 - ERROR - Error processing ./data/ideas.json: 'list' object has no attribute 'get'
+2025-05-22 07:36:37,223 - INFO - Querying in grok mode with prompt: 
+2025-05-22 07:36:51,689 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 07:42:24,149 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 07:42:24,149 - INFO - Querying in grok mode with prompt: heya! please read the project files in ./src using the guidance provided in init.json and related files. if you can't read them using the cli privided to you, tell me the reason. if you can, then use the project's cli capabilites to write a good test case for each of the models ssage. i want metrics. i want them to be honest and representative. i want to collect metrics on my method on any python project and get a clear picture of effectivness of current script. can you do it?"
+2025-05-22 07:42:57,298 - INFO - Grok query successful
+2025-05-22 07:42:57,300 - INFO - Wrote content to /tmp/python
+2025-05-22 07:42:57,300 - WARNING - File /tmp/python already exists, overwriting
+2025-05-22 07:42:57,300 - INFO - Wrote content to /tmp/python
+2025-05-22 07:42:57,301 - WARNING - File /tmp/python already exists, overwriting
+2025-05-22 07:42:57,301 - INFO - Wrote content to /tmp/python
+2025-05-22 07:42:57,301 - INFO - Wrote content to /tmp/bash
+2025-05-22 07:42:57,302 - INFO - Wrote content to /tmp/a
+2025-05-22 07:56:15,005 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 07:57:06,277 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 07:57:06,277 - INFO - Querying in anthropic mode with prompt: tell me honestly in less then 20 words, can you use the cli in this project for any tasks?
+2025-05-22 07:57:08,629 - INFO - Anthropic query successful
