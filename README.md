@@ -8,8 +8,26 @@ llmstruct is an open-source project developed by an international community, ini
 
 ## Installation
 
+### Docker (recommended for quick start)
+
+1. **Build the image:**
+   ```bash
+   docker build -t llmstruct .
+   ```
+2. **Run code analysis (struct.json will appear in your local folder):**
+   ```bash
+   docker run --rm -v "$PWD":/app llmstruct .
+   ```
+   - All files created in `/app` inside the container will be available on your host.
+3. **To analyze another directory or output to a different file:**
+   ```bash
+   docker run --rm -v "$PWD":/app llmstruct examples/ -o /app/result.json
+   ```
+
+### Local (from source)
+
 ```bash
-pip install llmstruct
+pip install -e .
 ```
 
 ## Usage
