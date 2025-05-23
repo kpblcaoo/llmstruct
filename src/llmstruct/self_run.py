@@ -14,25 +14,34 @@ from .cache import JSONCache
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-def filter_struct(struct: Dict[str, Any], prompt: str) -> Dict[str, Any]:
-    """Filter struct.json or init.json based on prompt keywords."""
-    if "guide" in struct:
-        filtered = {
-            "metadata": struct.get("metadata", {"project_name": "llmstruct", "version": struct.get("version", "0.0.0")}),
-            "guide": struct.get("guide", {})
-        }
+def filter_struct(struct, prompt: str) -> Any:
+    """Filter struct.json or init.json based on prompt keywords. Supports dict or list as root."""
+    if isinstance(struct, list):
+        # Фильтрация списка по ключевым словам в prompt (ищем dict-элементы с path/summary)
         keywords = prompt.lower().split()
-        if "cli" in keywords:
-            filtered["principles"] = filter_json(struct, "name", "Transparency")
+        filtered = [item for item in struct if isinstance(item, dict) and any(
+            k in str(item.get("path", "")).lower() or k in str(item.get("summary", "")).lower() for k in keywords
+        )]
         return filtered
-    filtered = {"metadata": struct.get("metadata", {"project_name": "unknown", "description": "", "version": "0.0.0"}), "modules": []}
-    keywords = prompt.lower().split()
-    
-    for module in struct.get("modules", []):
-        if any(k in module.get("path", "").lower() or k in module.get("summary", "").lower() for k in keywords):
-            filtered["modules"].append(module)
-    
-    return filtered
+    elif isinstance(struct, dict):
+        if "guide" in struct:
+            filtered = {
+                "metadata": struct.get("metadata", {"project_name": "llmstruct", "version": struct.get("version", "0.0.0")}),
+                "guide": struct.get("guide", {})
+            }
+            keywords = prompt.lower().split()
+            if "cli" in keywords:
+                filtered["principles"] = filter_json(struct, "name", "Transparency")
+            return filtered
+        filtered = {"metadata": struct.get("metadata", {"project_name": "unknown", "description": "", "version": "0.0.0"}), "modules": []}
+        keywords = prompt.lower().split()
+        for module in struct.get("modules", []):
+            if any(k in module.get("path", "").lower() or k in module.get("summary", "").lower() for k in keywords):
+                filtered["modules"].append(module)
+        return filtered
+    else:
+        # Неизвестный тип, возвращаем как есть
+        return struct
 
 def attach_to_llm_request(context_path: str, prompt: str, cache: Optional[JSONCache] = None) -> str:
     """Attach filtered JSON to LLM prompt, using cache if available."""
