@@ -1,29 +1,93 @@
 {
-  "version": "0.1.0",
-  "status": "Draft",
-  "author": "@kpblcaoo",
-  "date": "2025-05-22",
-  "license": "GPL-3.0",
-  "artifact_id": "1a2b3c4d-5e6f-47a8-b9c0-d1e2f3a4b5c6",
   "metadata": {
     "project_name": "llmstruct",
-    "description": "Introduction to llmstruct JSON structure",
-    "authors": [{"name": "@kpblcaoo", "github": "kpblcaoo", "email": "kpblcaoo@example.com"}]
+    "description": "Initialization file with CLI instructions",
+    "authors": [{"name": "@kpblcaoo", "github": "kpblcaoo"}],
+    "license": "GPL-3.0",
+    "version": "0.2.0",
+    "artifact_id": "f8d2c9e3-7a1b-4f2c-9e7a-5c9d8e2f1b3d"
   },
-  "summary": "Introduction to llmstruct JSON structure and usage",
-  "tags": ["init", "guide"],
-  "guide": {
-    "description": "llmstruct is a universal JSON format for codebases, enabling LLM-driven automation and transparent collaboration.",
-    "structure": {
-      "core_files": ["data/tasks.json", "data/ideas.json", "data/insights.json", "data/artifacts/index.json"],
-      "docs": ["docs/llmstruct_format.md", "docs/cli_commands.md", "docs/llmstruct_format.ru.md", "docs/cli_commands.ru.md"],
-      "schemas": ["schema/llmstruct_schema.json", "schema/core.json", "schema/plugins/insights.json", "schema/plugins/artifacts.json"],
-      "auxiliary": ["data/ideas_cache.json", "data/metrics.json", "data/prs.json", "data/cli.json"]
-    },
-    "usage": {
-      "cli": "llmstruct validate data/tasks.json schemas/llmstruct_schema.json",
-      "api": "GET /json/ideas.json?filter=priority=high",
-      "parser": "llmstruct parse ideas.json --filter 'priority=high' --fields id,description"
-    }
-  }
+  "cli_instructions": {
+    "commands": [
+      {
+        "name": "parse",
+        "description": "Parse codebase and generate struct.json",
+        "usage": "llmstruct parse --root-dir <path> --output <path>",
+        "options": [
+          {"name": "--root-dir", "description": "Project root directory", "default": "."},
+          {"name": "--output", "description": "Output JSON path", "default": "struct.json"}
+        ]
+      },
+      {
+        "name": "interactive",
+        "description": "Run interactive CLI with LLM, supporting file/folder viewing and writing",
+        "usage": "llmstruct interactive --context <path>",
+        "options": [
+          {"name": "--context", "description": "Context JSON path", "default": "struct.json"}
+        ],
+        "subcommands": [
+          {"name": "view <path>", "description": "View file or folder contents"},
+          {"name": "write <path> <content>", "description": "Write content to file"},
+          {"name": "scan <path>", "description": "Scan file or folder for analysis"},
+          {"name": "exit", "description": "Exit interactive mode"}
+        ]
+      },
+      {
+        "name": "query",
+        "description": "Query LLMs with prompt and context",
+        "usage": "llmstruct query --prompt <text> --context <path>",
+        "options": [
+          {"name": "--prompt", "description": "Prompt text", "required": true},
+          {"name": "--context", "description": "Context JSON path", "default": "struct.json"}
+        ]
+      },
+      {
+        "name": "validate",
+        "description": "Validate JSON against schema",
+        "usage": "llmstruct validate --json <path> --schema <path>",
+        "options": [
+          {"name": "--json", "description": "JSON file path", "required": true},
+          {"name": "--schema", "description": "Schema file path", "required": true}
+        ],
+        "examples": [
+          "llmstruct validate --json struct.json --schema schema/llmstruct_schema.json"
+        ]
+      },
+      {
+        "name": "context",
+        "description": "Generate context.json from input JSON",
+        "usage": "llmstruct context --input <path>",
+        "options": [
+          {"name": "--input", "description": "Input JSON path", "required": true}
+        ]
+      },
+      {
+        "name": "dogfood",
+        "description": "Run dogfooding analysis",
+        "usage": "llmstruct dogfood --root-dir <path>",
+        "options": [
+          {"name": "--root-dir", "description": "Project root directory", "default": "."}
+        ]
+      },
+      {
+        "name": "review",
+        "description": "Review codebase with LLM",
+        "usage": "llmstruct review --root-dir <path>",
+        "options": [
+          {"name": "--root-dir", "description": "Project root directory", "default": "."}
+        ]
+      }
+    ],
+    "usage_notes": [
+      "Use 'exit' to quit interactive mode",
+      "Use 'view <path>' to read files/folders in interactive mode",
+      "Use 'write <path> <content>' to write files in interactive mode",
+      "Use 'scan <path>' to scan files/folders in interactive mode",
+      "All commands support --help for details"
+    ]
+  },
+  "references": [
+    {"path": "docs/llmstruct_format.md", "description": "LLMStruct JSON format"},
+    {"path": "docs/cli_commands.md", "description": "CLI command reference"}
+  ]
 }

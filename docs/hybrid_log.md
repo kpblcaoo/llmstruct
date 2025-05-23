@@ -245,3 +245,178 @@ Context:
 2025-05-22 07:57:06,277 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
 2025-05-22 07:57:06,277 - INFO - Querying in anthropic mode with prompt: tell me honestly in less then 20 words, can you use the cli in this project for any tasks?
 2025-05-22 07:57:08,629 - INFO - Anthropic query successful
+2025-05-22 14:43:32,381 - INFO - Generated ./struct.json
+2025-05-22 14:47:09,607 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 14:48:21,503 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 14:48:21,504 - INFO - Querying in anthropic mode with prompt: list cli commands available to you. can you read ./data ? what files does it contain? don't lie.
+2025-05-22 14:48:25,559 - INFO - Anthropic query successful
+2025-05-22 14:57:47,437 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 14:57:47,438 - INFO - Querying in anthropic mode with prompt: 
+2025-05-22 14:58:08,733 - INFO - Anthropic query successful
+2025-05-22 14:58:08,734 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 14:58:08,734 - INFO - Querying in anthropic mode with prompt: 
+2025-05-22 14:58:23,192 - INFO - Anthropic query successful
+2025-05-22 14:58:23,194 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 14:58:23,194 - INFO - Querying in anthropic mode with prompt: 
+2025-05-22 14:58:44,523 - INFO - Anthropic query successful
+2025-05-22 14:59:16,794 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 14:59:16,794 - INFO - Querying in anthropic mode with prompt: do you have a knowledge of cli commands now? don't lie
+2025-05-22 14:59:20,412 - INFO - Anthropic query successful
+2025-05-22 15:37:27,202 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 15:37:45,144 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 15:37:45,144 - INFO - Querying in anthropic mode with prompt: hi! do you know your cli commands? short answer
+2025-05-22 15:37:47,165 - INFO - Anthropic query successful
+2025-05-22 15:38:18,252 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 15:38:18,252 - INFO - Querying in anthropic mode with prompt: please list them. then check my ./data folder and summarize
+2025-05-22 15:38:22,654 - INFO - Anthropic query successful
+2025-05-22 15:39:00,520 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 15:39:00,520 - INFO - Querying in anthropic mode with prompt: you also have a view command and write command. also scan. check them
+2025-05-22 15:39:07,496 - INFO - Anthropic query successful
+2025-05-22 15:39:07,497 - INFO - Wrote content to /tmp/command.
+2025-05-22 15:39:56,004 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 15:39:56,004 - INFO - Querying in anthropic mode with prompt: what led to you not initialy knowing said commands?
+2025-05-22 15:40:01,441 - INFO - Anthropic query successful
+2025-05-22 15:42:50,571 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 15:42:50,572 - INFO - Querying in anthropic mode with prompt: please familiarize yourself with ./data and ./src/llmstruct/cli.py. can you fill the cli.json in and make the most effective version of init.json you can think of for you to effectively start working. you can scan additional nessesary files, just give me report and stay in this folder
+2025-05-22 15:43:21,319 - INFO - Anthropic query successful
+2025-05-22 15:43:21,320 - INFO - Wrote content to /tmp/json
+2025-05-22 15:43:21,320 - WARNING - File /tmp/json already exists, overwriting
+2025-05-22 15:43:21,320 - INFO - Wrote content to /tmp/json
+2025-05-22 15:50:25,467 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 15:55:10,005 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 16:02:30,880 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 16:11:16,781 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 16:11:38,191 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 16:11:38,191 - INFO - Querying in anthropic mode with prompt: привет. русский язык работает? норм?
+2025-05-22 16:11:41,516 - INFO - Anthropic query successful
+2025-05-22 16:14:00,480 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 16:14:00,480 - INFO - Querying in anthropic mode with prompt: ознакомься с файлами проекта, начиная со struct.json и init.json. пожалуйста, разберись, почему у меня не работает запись с твоей помощью через cli
+2025-05-22 16:14:20,448 - INFO - Anthropic query successful
+2025-05-22 16:14:20,448 - WARNING - File /tmp/json already exists, overwriting
+2025-05-22 16:14:20,449 - INFO - Wrote content to /tmp/json
+2025-05-22 16:15:51,090 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 16:15:51,091 - INFO - Querying in anthropic mode with prompt: ну так проверь на баги код в ./src плз. интересует решение для нерабочей cli, выдай его, используя любые релевантные json, по задуманному методу. можешь читать любые файлы в проекте в помощь, выдай в конце список файлов к которым ты обращался
+2025-05-22 16:16:24,448 - INFO - Anthropic query successful
+2025-05-22 16:16:24,449 - INFO - Wrote content to /tmp/rust
+2025-05-22 16:19:12,991 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 16:19:12,991 - INFO - Querying in anthropic mode with prompt: повтори предыдущий запрос внимательно. у тебя есть view, изучи проект, будешь знать свои команды для выполнения. опирайся на struct.json и другие файлы json, релевантные задачи. попробуй понять общий концепт моего проекта и как им пользоваться. прогони предыдущую задачу с использованием моего метода и без, дай метрики. врать нельзя
+2025-05-22 16:19:39,046 - INFO - Anthropic query successful
+2025-05-22 16:23:34,574 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 16:23:34,575 - INFO - Querying in anthropic mode with prompt: уточняю - предыдущий вопрос нужно выполнить опираясь на json обвязку и принцип работы с ней. потом без использования json, но команды cli всё равно доступны. повтори предыдущий запрос с учетом уточнений, дай релевантные метрики - расход токенов, консистентность кода и так далее. придумай сам метод и дай мне репрезентативные цифры эффективности подхода. врать нельзя, честные цифры и анализ
+2025-05-22 16:23:59,659 - INFO - Anthropic query successful
+2025-05-22 16:30:08,679 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 16:30:08,680 - INFO - Querying in anthropic mode with prompt: scan the project, and try to fix the problem with cli not being able to write files while not breaking the existing code
+2025-05-22 16:30:28,233 - INFO - Anthropic query successful
+2025-05-22 16:30:28,234 - WARNING - File /tmp/json already exists, overwriting
+2025-05-22 16:30:28,234 - INFO - Wrote content to /tmp/json
+2025-05-22 16:30:28,234 - INFO - Wrote content to /tmp/files
+2025-05-22 16:36:55,941 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 16:36:55,941 - INFO - Querying in anthropic mode with prompt: please look at ./data and ./docs. попробуй понять концепт, общее направление разработки, и как пользоваться данным продуктом человеку и ллм наиболее эффективно. в первую очередь я хочу чтобы ты понял эффектиный способ использования, а потом попробовал найти репрезентативную методику тестирования обвязки и получения сравнительных метрик, и дал мне отчёт.
+2025-05-22 16:37:26,522 - INFO - Anthropic query successful
+2025-05-22 16:38:05,918 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 16:39:44,588 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 16:39:44,588 - INFO - Querying in grok mode with prompt: привет. врать нельзя. у тебя есть комманда view. опираясь на json файлы проекта ознакомься с ним, изучи доки, и сделай вывод, как тебе пользоваться json обвесом наиболее выгодно. после этого придумай и погоняй на моем проекте хорошую репрезентативную сравнительную методику для моего метода, и дай отчёт
+2025-05-22 16:40:37,045 - INFO - Grok query successful
+2025-05-22 16:42:42,610 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 16:42:42,610 - INFO - Querying in grok mode with prompt: ядро проекта - это struct.json, операции с кодом опираются на него. попробуй изучить схему взаимодействий в доках. попробуй погонять методику тестирования для репрезентации использования моих json в работе. ты должен понять в процессе тестирования, как использовать данные json наиболее эффективно для выполнения задач
+2025-05-22 16:43:32,950 - INFO - Grok query successful
+2025-05-22 16:43:32,951 - WARNING - File /tmp/python already exists, overwriting
+2025-05-22 16:43:32,952 - INFO - Wrote content to /tmp/python
+2025-05-22 16:46:55,028 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 16:57:50,452 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 16:58:59,396 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 16:58:59,396 - INFO - Querying in grok mode with prompt: 
+2025-05-22 16:58:59,987 - ERROR - Grok API error: 400
+2025-05-22 16:59:55,061 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 16:59:55,061 - INFO - Querying in grok mode with prompt: 
+2025-05-22 16:59:55,771 - ERROR - Grok API error: 400
+2025-05-22 17:03:15,545 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 17:03:39,196 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 17:03:39,196 - INFO - Querying in grok mode with prompt: hi! are you familiar with your context and commands? no more than 50 words
+2025-05-22 17:03:39,738 - ERROR - Grok API error: 400
+2025-05-22 17:04:15,142 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-22 17:05:16,276 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 17:05:16,276 - INFO - Querying in anthropic mode with prompt: hi! check the Error processing ./data/init.json: 'list' object has no attribute 'get'. you can use struct.json for help and read the data in project for sollution
+2025-05-22 17:05:37,851 - INFO - Anthropic query successful
+2025-05-22 17:05:57,075 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 17:05:57,075 - INFO - Querying in anthropic mode with prompt: use view command to see yourself, start with struct.json
+2025-05-22 17:06:09,225 - ERROR - Anthropic API error: 529
+2025-05-22 17:07:00,194 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 17:07:00,194 - INFO - Querying in anthropic mode with prompt: 
+2025-05-22 17:07:13,309 - INFO - Anthropic query successful
+2025-05-22 17:08:34,471 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 17:08:34,471 - INFO - Querying in anthropic mode with prompt: ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get' i want the best sollution to fix this in my project
+2025-05-22 17:08:49,334 - INFO - Anthropic query successful
+2025-05-22 17:09:27,796 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 17:09:27,796 - INFO - Querying in anthropic mode with prompt: use struct.json to solve the error: ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'. view any files nessesary
+2025-05-22 17:09:43,904 - INFO - Anthropic query successful
+2025-05-22 17:09:43,905 - WARNING - File /tmp/python already exists, overwriting
+2025-05-22 17:09:43,905 - INFO - Wrote content to /tmp/python
+2025-05-22 17:09:43,905 - WARNING - File /tmp/python already exists, overwriting
+2025-05-22 17:09:43,906 - INFO - Wrote content to /tmp/python
+2025-05-22 17:09:43,906 - WARNING - File /tmp/python already exists, overwriting
+2025-05-22 17:09:43,906 - INFO - Wrote content to /tmp/python
+2025-05-22 17:10:41,672 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 17:10:41,672 - INFO - Querying in anthropic mode with prompt: do you have real capabilities to read the project files and try to solve problems in this cli? short answer
+2025-05-22 17:10:45,301 - INFO - Anthropic query successful
+2025-05-22 17:12:07,910 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 17:12:07,910 - INFO - Querying in anthropic mode with prompt: you can interact with "view" to give me sollutions in chat. first of all i want fixes with line numbers and file names to fix your write capabilites
+2025-05-22 17:12:15,156 - INFO - Anthropic query successful
+2025-05-22 17:12:15,157 - INFO - Wrote content to /tmp/capabilites
+2025-05-22 17:14:19,713 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 17:14:19,714 - INFO - Querying in anthropic mode with prompt: test your write capabilities using cli, write and read. look for problems with the write process. you are interacting with cli, so it may report everything went fine, thats not true. review the code in ./src with help of ./struct.json to provide a stable fix not breaking any code
+2025-05-22 17:14:37,005 - INFO - Anthropic query successful
+2025-05-22 17:14:37,006 - INFO - Wrote content to /tmp/capabilities
+2025-05-22 17:15:43,773 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 17:15:43,773 - INFO - Querying in anthropic mode with prompt: fix the write capabilities of cli using view command, reading the ./src folder. provide me with file list and fix. thanks.
+2025-05-22 17:16:03,074 - INFO - Anthropic query successful
+2025-05-22 17:16:03,075 - INFO - Wrote content to /tmp/typescript
+2025-05-22 17:16:03,075 - WARNING - File /tmp/capabilities already exists, overwriting
+2025-05-22 17:16:03,075 - INFO - Wrote content to /tmp/capabilities
+2025-05-22 17:16:43,940 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 17:16:43,940 - INFO - Querying in anthropic mode with prompt: don't lie. can you use cli with use command to read files?
+2025-05-22 17:16:49,357 - INFO - Anthropic query successful
+2025-05-22 17:17:49,264 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 17:17:49,264 - INFO - Querying in anthropic mode with prompt: у тебя есть комманда на чтение. view. используй её, блин. что по-твоему делают известные тебе команды. а починить надо write и инициализацию твоего знания о командах
+2025-05-22 17:18:05,063 - INFO - Anthropic query successful
+2025-05-22 17:18:05,063 - INFO - Wrote content to /tmp/и
+2025-05-22 17:18:40,009 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 17:18:40,009 - INFO - Querying in anthropic mode with prompt: ты можешь использовать view для чтения любого файла в проекте
+2025-05-22 17:18:41,207 - WARNING - Attempt 1 failed: Cannot connect to host api.anthropic.com:443 ssl:default [None]
+2025-05-22 17:18:52,186 - INFO - Anthropic query successful
+2025-05-22 17:20:01,265 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-22 17:20:01,265 - INFO - Querying in anthropic mode with prompt: ты можешь использовать view для чтения файлов. scan для дирлистинга. пожалуйста, ознакомься со списком файлов в ./src и выведи мне. поищи в файлах, в чем проблема в коде. дай честный репорт, что помешало или помогло выполнить задачу
+2025-05-22 17:20:13,911 - INFO - Anthropic query successful
+2025-05-23 15:57:11,094 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-23 15:57:27,781 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-23 15:57:27,781 - INFO - Querying in anthropic mode with prompt: привет, мой умный помощник
+2025-05-23 15:57:30,564 - INFO - Anthropic query successful
+2025-05-23 15:59:03,704 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-23 15:59:03,705 - INFO - Querying in anthropic mode with prompt: 
+2025-05-23 15:59:16,997 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-23 16:02:24,199 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-23 16:06:28,855 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-23 16:06:28,856 - INFO - Querying in anthropic mode with prompt: используй кли команду 'view data/init.json' чтобы ознакомитьяс с его содержимым. с помощью узнанных комманд узнай ознакомься с необходимыми json и py файлами в соответствующих data и src (напоминаю про имющуюся команду scan). используй struct.json в работе. Мне нужно разобраться, что приводит к ошибке Error processing data/init.json: 'list' object has no attribute 'get'. Функционал записи в проекте сейчас работает некорректно, так что решение выдавай удобно в тексте ответа. если сможешь заодно разобраться с проблемой работы записи - супер. Не выдавай предположений, если тебе чего-то не хватает для решения - пиши об этом
+2025-05-23 16:06:55,508 - INFO - Anthropic query successful
+2025-05-23 16:10:52,199 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-23 16:10:52,200 - INFO - Querying in anthropic mode with prompt: 
+2025-05-23 16:11:23,949 - INFO - Generated struct.json
+2025-05-23 16:11:30,469 - INFO - Grok API key: xai-hZhlK8cWlv3KFmgSHEQL0fBtieVvBXDcIC9zjgYLK2m6Z8j0Dyl4gzhjCMFls75xVIR24EACfxgdBts2
+2025-05-23 16:12:44,970 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-23 16:12:44,971 - INFO - Querying in anthropic mode with prompt: привет!
+2025-05-23 16:12:50,032 - INFO - Anthropic query successful
+2025-05-23 16:14:13,036 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-23 16:14:13,037 - INFO - Querying in anthropic mode with prompt: используй кли команду 'view' e.g. 'view data/init.json','view struct.json' и 'view src/self_run.py' ознакомься с проектом. предоставь решение проблемы - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'. также попробуй разобраться, почему ты не можешь пользоваться записью через кли
+2025-05-23 16:14:41,918 - INFO - Anthropic query successful
+2025-05-23 16:14:41,919 - WARNING - File /tmp/json already exists, overwriting
+2025-05-23 16:14:41,919 - INFO - Wrote content to /tmp/json
+2025-05-23 16:14:41,920 - WARNING - File /tmp/python already exists, overwriting
+2025-05-23 16:14:41,920 - INFO - Wrote content to /tmp/python
+2025-05-23 16:16:24,290 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-23 16:16:24,291 - INFO - Querying in anthropic mode with prompt: о чем было наше предыдущее общение? кеш работает? как мне убедиться?
+2025-05-23 16:16:35,157 - INFO - Anthropic query successful
+2025-05-23 16:16:56,345 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-23 16:16:56,345 - INFO - Querying in anthropic mode with prompt: покажи начальный контекст
+2025-05-23 16:17:06,929 - INFO - Anthropic query successful
+2025-05-23 16:26:07,626 - ERROR - Error processing ./data/init.json: 'list' object has no attribute 'get'
+2025-05-23 16:26:07,629 - INFO - Querying in anthropic mode with prompt: 
