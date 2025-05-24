@@ -5,8 +5,6 @@ This script automatically parses the project and updates struct.json
 without requiring LLM intervention.
 """
 
-from src.llmstruct.cli import load_config, load_gitignore
-from src.llmstruct.generators.json_generator import generate_json
 import os
 import sys
 import json
@@ -14,6 +12,21 @@ import subprocess
 import logging
 from pathlib import Path
 from datetime import datetime
+
+# Add src to path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+
+try:
+    from llmstruct.cli import load_config, load_gitignore
+    from llmstruct.generators.json_generator import generate_json
+except ImportError:
+    # Fallback for when module is not installed
+    def load_config():
+        return {}
+    def load_gitignore():
+        return lambda x: False
+    def generate_json(*args, **kwargs):
+        raise ImportError("llmstruct module not available")
 from typing import Dict, Any, Optional
 
 # Add parent directory to path for imports
