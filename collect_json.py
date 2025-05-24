@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 
+
 def load_json_files(base_dir: Path) -> dict:
     result = {}
     for path in sorted(base_dir.rglob("*.json")):
@@ -16,6 +17,7 @@ def load_json_files(base_dir: Path) -> dict:
         with path.open("r", encoding="utf-8") as f:
             current[parts[-1]] = json.load(f)
     return result
+
 
 # Пример использования
 base = Path.cwd()  # или путь к твоему проекту

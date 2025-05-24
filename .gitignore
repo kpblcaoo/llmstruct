@@ -40,7 +40,7 @@ poetry.lock  # Optional: include if committing lock file
 
 # Generated JSON outputs (optional)
 filtered_struct.json
-struct.json  # Remove if version-controlling JSONs
+# struct.json - now included in repo for CI/CD and user reference
 
 # Logs and temporary data
 *.log

@@ -1,15 +1,57 @@
 name: CI
 on: [push, pull_request]
+
 jobs:
-  validate:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: "3.11"
       - name: Install dependencies
-        run: pip install jsonschema
+        run: |
+          pip install -e .
+          pip install flake8 pytest
+      - name: Run flake8
+        run: flake8 src/llmstruct --max-line-length=88 --extend-ignore=F541
+      - name: Run tests
+        run: python -m pytest tests/ -v
       - name: Validate references
-        run: python scripts/validate_refs.py
+        run: |
+          pip install jsonschema
+          python scripts/validate_refs.py
+
+  update-struct:
+    runs-on: ubuntu-latest
+    needs: lint
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Install llmstruct
+        run: pip install -e .
+      - name: Generate struct.json
+        run: python -m llmstruct parse . -o struct.json
+      - name: Check for changes
+        id: changes
+        run: |
+          git add struct.json
+          if git diff --cached --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+      - name: Commit updated struct.json
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Auto-update struct.json via CI/CD"
+          git push

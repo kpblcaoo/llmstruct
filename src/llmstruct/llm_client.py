@@ -4,13 +4,10 @@ import logging
 import os
 from pathlib import Path
 from typing import List, Optional
-from urllib.parse import urljoin
 
 import aiohttp
-import requests
 from dotenv import load_dotenv
 
-from dotenv import load_dotenv
 try:
     if not load_dotenv():
         logging.warning("No .env file found or failed to parse .env")
@@ -22,9 +19,10 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
         logging.FileHandler("docs/hybrid_log.md", encoding="utf-8"),
-        logging.StreamHandler()
-    ]
+        logging.StreamHandler(),
+    ],
 )
+
 
 class LLMClient:
     def __init__(self, ollama_host: str = None):
@@ -32,7 +30,9 @@ class LLMClient:
         self.grok_api_key = os.getenv("GROK_API_KEY")
         logging.info(f"Grok API key: {self.grok_api_key}")
         self.anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
-        self.ollama_host = ollama_host or os.getenv("OLLAMA_HOST", "http://localhost:11434")
+        self.ollama_host = ollama_host or os.getenv(
+            "OLLAMA_HOST", "http://localhost:11434"
+        )
         self.retry_count = int(os.getenv("RETRY_COUNT", 3))
 
     async def query(
@@ -41,7 +41,7 @@ class LLMClient:
         context_path: str = None,
         mode: str = "hybrid",
         model: Optional[str] = None,
-        artifact_ids: Optional[List[str]] = None
+        artifact_ids: Optional[List[str]] = None,
     ) -> Optional[str]:
         """Query LLMs with prompt, context, and optional model."""
         logging.info(f"Querying in {mode} mode with prompt: {prompt}")
@@ -50,7 +50,7 @@ class LLMClient:
         context = {}
         if context_path and Path(context_path).exists():
             try:
-                with Path(context_path).open('r', encoding='utf-8') as f:
+                with Path(context_path).open("r", encoding="utf-8") as f:
                     context = json.load(f)
             except Exception as e:
                 logging.error(f"Failed to load context from {context_path}: {e}")
@@ -93,19 +93,23 @@ class LLMClient:
         url = "https://api.x.ai/v1/chat/completions"
         headers = {
             "Authorization": f"Bearer {self.grok_api_key}",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         }
         data = {
             "model": "grok-3",
             "messages": [{"role": "user", "content": prompt}],
-            "max_tokens": 4096
+            "max_tokens": 4096,
         }
         async with aiohttp.ClientSession() as session:
             async with session.post(url, headers=headers, json=data) as response:
                 if response.status == 200:
                     result = await response.json()
                     logging.info("Grok query successful")
-                    return result.get("choices", [{}])[0].get("message", {}).get("content", "")
+                    return (
+                        result.get("choices", [{}])[0]
+                        .get("message", {})
+                        .get("content", "")
+                    )
                 else:
                     logging.error(f"Grok API error: {response.status}")
                     return None
@@ -119,12 +123,12 @@ class LLMClient:
         headers = {
             "x-api-key": self.anthropic_api_key,
             "anthropic-version": "2023-06-01",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         }
         data = {
             "model": "claude-3-opus-20240229",
             "messages": [{"role": "user", "content": prompt}],
-            "max_tokens": 4096
+            "max_tokens": 4096,
         }
         async with aiohttp.ClientSession() as session:
             async with session.post(url, headers=headers, json=data) as response:
@@ -139,11 +143,7 @@ class LLMClient:
     async def _query_ollama(self, prompt: str, model: str) -> Optional[str]:
         """Query Ollama API with specified model."""
         url = f"{self.ollama_host.rstrip('/')}/api/generate"
-        data = {
-            "model": model,
-            "prompt": prompt,
-            "stream": False
-        }
+        data = {"model": model, "prompt": prompt, "stream": False}
         async with aiohttp.ClientSession() as session:
             logging.debug(f"Sending request to Ollama: url={url}, data={data}")
             async with session.post(url, json=data) as response:
@@ -155,14 +155,18 @@ class LLMClient:
                     logging.error(f"Ollama API error: {response.status}")
                     return None
 
-    async def _query_hybrid(self, prompt: str, model: Optional[str] = None) -> Optional[str]:
+    async def _query_hybrid(
+        self, prompt: str, model: Optional[str] = None
+    ) -> Optional[str]:
         """Query multiple LLMs and combine results."""
         tasks = [
             self._query_grok(prompt),
             self._query_anthropic(prompt),
-            self._query_ollama(prompt, model or "mixtral")
+            self._query_ollama(prompt, model or "mixtral"),
         ]
         results = await asyncio.gather(*tasks, return_exceptions=True)
         valid_results = [r for r in results if r and not isinstance(r, Exception)]
-        logging.info(f"Hybrid query completed with {len(valid_results)} valid responses")
+        logging.info(
+            f"Hybrid query completed with {len(valid_results)} valid responses"
+        )
         return "\n".join(valid_results) if valid_results else None
