@@ -7,7 +7,7 @@ validate JSON representations of code projects, supporting automation and
 context-aware LLM assistance.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.4.1"
 
 __all__ = [
     "LLMClient",

@@ -75,16 +75,25 @@ class CLIConfig:
             "__pycache__",
             "node_modules",
         ]
-        config_excludes = self._config.get("exclude_dirs", [])
+        # Check [parsing] section first, then [cli] for compatibility
+        parsing_config = self._config.get("parsing", {})
+        cli_config = self._config.get("cli", {})
+        config_excludes = parsing_config.get("exclude_dirs") or cli_config.get("exclude_dirs", [])
         return list(set(default_excludes + config_excludes))
 
     def get_include_patterns(self) -> List[str]:
         """Get file patterns to include."""
-        return self._config.get("include_patterns", [])
+        # Check [parsing] section first, then [cli] for compatibility
+        parsing_config = self._config.get("parsing", {})
+        cli_config = self._config.get("cli", {})
+        return parsing_config.get("include_patterns") or cli_config.get("include_patterns", [])
 
     def get_exclude_patterns(self) -> List[str]:
         """Get file patterns to exclude."""
-        return self._config.get("exclude_patterns", [])
+        # Check [parsing] section first, then [cli] for compatibility
+        parsing_config = self._config.get("parsing", {})
+        cli_config = self._config.get("cli", {})
+        return parsing_config.get("exclude_patterns") or cli_config.get("exclude_patterns", [])
 
     def get_max_file_size(self) -> int:
         """Get maximum file size for processing (in bytes)."""

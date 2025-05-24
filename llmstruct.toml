@@ -27,8 +27,36 @@ watch_patterns = ["src/**/*.py", "data/*.json", "*.toml"]
 
 [parsing]
 include_patterns = ["src/**/*.py", "*.py", "*.json", "*.md"]
-exclude_patterns = ["**/__pycache__/**", "**/.*", "temp_workfiles/**", "build/**"]
-exclude_dirs = ["venv", "__pycache__", ".git", ".pytest_cache", "build", "dist", "tmp", "bak"]
+exclude_patterns = [
+    "**/__pycache__/**", 
+    "**/.*", 
+    "temp_workfiles/**", 
+    "build/**",
+    "sorting_workspace/**",
+    "ideas_sorting/**",
+    "**/*.bak",
+    "**/*.swp", 
+    "**/*~",
+    "secrets/**",
+    "secret_*",
+    "*_secret*",
+    "private_*",
+    "*api_key*",
+    "*_token*",
+    "*.key",
+    "*.pem",
+    "*.env",
+    "*.env.*",
+    "**/*.backup",
+    "*_backup.*",
+    "**/*_personal.json",
+    "**/personal_*.json",
+    "**/session_*.json",
+    "**/local_config.*",
+    "workflow_archive/**",
+    "**/*.log"
+]
+exclude_dirs = ["venv", "__pycache__", ".git", ".pytest_cache", "build", "dist", "tmp", "bak", "sorting_workspace", "temp_workfiles", "workflow_archive", "htmlcov", "logs"]
 include_ranges = true
 include_hashes = false
 use_gitignore = true

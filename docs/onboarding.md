@@ -18,6 +18,13 @@ Get started with `llmstruct`, the open-source dev tool for JSON-driven developme
    - Join Issues on GitHub: [github.com/kpblcaoo/llmstruct](#).
    - Try Telegram bot: `/join`, `/tasks`, `/fix`.
 
+## For Developers
+- **CLI Reference:** [data/cli.json](../data/cli.json)
+- **Audit & Recovery:** Используйте `llmstruct audit` для восстановления задач/идей
+- **Task & Idea Management:** [data/tasks.json](../data/tasks.json), [data/ideas.json](../data/ideas.json)
+- **Cross-References:** [docs.json](../docs.json) — все связи между задачами, идеями и документацией
+- **Модульная архитектура:** [docs/cli_modular_architecture.md](cli_modular_architecture.md)
+
 ## Next Steps
 - Read [integration.md](#integration.md) for CI/CD setup.
 - Follow [best_practices.md](#best_practices.md) for clean code.
