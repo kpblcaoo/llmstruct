@@ -109,10 +109,10 @@
         "data_safety": 0
       },
       "risk_thresholds": {
-        "low": 0-25,
-        "medium": 26-50,
-        "high": 51-75,
-        "critical": 76-100
+        "low": "0-25",
+        "medium": "26-50", 
+        "high": "51-75",
+        "critical": "76-100"
       }
     },
     

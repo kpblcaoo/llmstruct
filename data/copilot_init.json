@@ -378,6 +378,51 @@
           "@ivan-ib": "contributor"
         }
       }
+    },
+
+    "processing_queue_integration": {
+      "enabled": true,
+      "config_source": "data/copilot/processing_queue.json",
+      "real_time_monitoring": {
+        "track_ai_sessions": true,
+        "monitor_file_changes": true,
+        "rampage_prevention": true,
+        "github_sync": true
+      },
+      
+      "session_hooks": {
+        "on_session_start": [
+          "initialize_task_queue",
+          "load_user_profile",
+          "check_constraint_limits",
+          "start_performance_tracking"
+        ],
+        "on_file_change": [
+          "log_change_to_queue",
+          "check_rampage_limits", 
+          "update_session_metrics",
+          "trigger_github_sync_if_needed"
+        ],
+        "on_session_end": [
+          "finalize_task_queue",
+          "generate_session_report",
+          "cleanup_temporary_data",
+          "update_github_dashboard"
+        ]
+      },
+
+      "dashboard_integration": {
+        "auto_update": true,
+        "real_time_websocket": false,
+        "github_pages_deploy": true,
+        "mobile_optimized": true
+      },
+
+      "api_integration": {
+        "expose_endpoints": false,
+        "local_only": true,
+        "secure_mode": true
+      }
     }
   }
 }
