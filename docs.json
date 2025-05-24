@@ -1,0 +1,99 @@
+{
+  "version": "0.2.0",
+  "status": "Enhanced",
+  "author": "@kpblcaoo",
+  "date": "2025-05-24",
+  "license": "GPL-3.0",
+  "artifact_id": "d6e7f8a9-b0c1-42d3-e4f5-a6b7c8d9e0f1",
+  "summary": "Comprehensive documentation and automation artifacts for llmstruct v0.2.0.",
+  "tags": ["docs", "cli", "automation", "security", "context", "llm"],
+  "docs": [
+    {
+      "path": "docs/llmstruct_format.md",
+      "title": "LLMstruct JSON Format Specification",
+      "version": "0.2.0",
+      "status": "Enhanced",
+      "author": "@kpblcaoo",
+      "issue": "#141",
+      "artifact_id": "e7f8a9b0-c1d2-43e4-f5a6-b7c8d9e0f1a2",
+      "description": "Full specification of the JSON format, context orchestration, and plugin system."
+    },
+    {
+      "path": "docs/cli_commands.md",
+      "title": "CLI Command Reference & Automation",
+      "version": "0.2.0",
+      "status": "Enhanced",
+      "author": "@kpblcaoo",
+      "issue": "#142",
+      "artifact_id": "f8a9b0c1-d2e3-44f5-a6b7-c8d9e0f1a2b3",
+      "description": "Reference for all CLI commands, queue system, cache, and automation patterns."
+    },
+    {
+      "path": "docs/SECURITY.md",
+      "title": "Security & Safe Automation Guide",
+      "version": "0.2.0",
+      "status": "Enhanced",
+      "author": "@kpblcaoo",
+      "issue": "#143",
+      "artifact_id": "a1b2c3d4-e5f6-47a8-b9c0-d1e2f3a4b5c6",
+      "description": "Security model, git hooks, secret detection, and safe automation boundaries."
+    },
+    {
+      "path": "docs/integration.md",
+      "title": "Integration & Extensibility",
+      "version": "0.2.0",
+      "status": "Draft",
+      "author": "@kpblcaoo",
+      "issue": "#144",
+      "artifact_id": "b2c3d4e5-f6a7-48b9-c0d1-e2f3a4b5c6d7",
+      "description": "How to extend llmstruct with plugins, new backends, and custom workflows."
+    },
+    {
+      "path": "docs/project_structure.md",
+      "title": "Project Structure & Best Practices",
+      "version": "0.2.0",
+      "status": "Draft",
+      "author": "@kpblcaoo",
+      "issue": "#145",
+      "artifact_id": "c3d4e5f6-a7b8-49c0-d1e2-f3a4b5c6d7e8",
+      "description": "Recommended structure for JSON, CLI, and automation files."
+    },
+    {
+      "path": "docs/onboarding.md",
+      "title": "Onboarding & Quickstart",
+      "version": "0.2.0",
+      "status": "Draft",
+      "author": "@kpblcaoo",
+      "issue": "#146",
+      "artifact_id": "d4e5f6a7-b8c9-40d1-e2f3-a4b5c6d7e8f9",
+      "description": "How to start using llmstruct, run CLI, and automate tasks."
+    }
+  ],
+  "automation": [
+    {
+      "workflow": "Automated Documentation",
+      "source": "data/cli_queue_enhanced.json",
+      "description": "LLM-driven workflow for scanning code, generating docs, and reviewing documentation."
+    },
+    {
+      "workflow": "Performance Monitoring",
+      "source": "data/cli_queue_enhanced.json",
+      "description": "Queue-based workflow for performance and context efficiency analysis."
+    }
+  ],
+  "security": {
+    "git_hooks": ["pre-commit", "commit-msg"],
+    "patterns": ["api key", "token", "ghp_", "sk-", "xai-", "Bearer"],
+    "safe_write_dir": "./tmp",
+    "docs": ["docs/SECURITY.md"]
+  },
+  "core_json": [
+    "data/init.json", "data/cli.json", "data/cli_queue.json", "data/tasks.json", "struct.json"
+  ],
+  "enhanced_json": [
+    "data/init_enhanced.json", "data/cli_enhanced.json", "data/cli_queue_enhanced.json"
+  ],
+  "artifacts": [
+    "data/artifacts_index.json", "data/ideas.json", "data/prs.json", "data/ideas_cache.json"
+  ]
+}
