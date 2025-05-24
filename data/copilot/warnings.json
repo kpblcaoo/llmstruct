@@ -1,0 +1,182 @@
+{
+  "warnings_system": {
+    "version": "1.0.0",
+    "description": "AI session warning and risk logging system",
+    "created": "2025-01-27T12:00:00Z",
+    "session_tracking": {
+      "current_session_id": null,
+      "session_start_time": null,
+      "changes_count": 0,
+      "risk_level": "low"
+    },
+    
+    "warning_types": {
+      "scope_creep": {
+        "severity": "medium",
+        "description": "Request scope expanding beyond initial plan",
+        "triggers": [
+          "Additional features requested mid-session",
+          "Multiple file additions beyond plan",
+          "Cross-module changes not initially planned"
+        ],
+        "action": "request_clarification"
+      },
+      "rampage_risk": {
+        "severity": "high", 
+        "description": "AI making too many changes without consultation",
+        "triggers": [
+          "More than 5 files modified in single request",
+          "Changes to core architecture files",
+          "Breaking changes to public APIs"
+        ],
+        "action": "stop_and_consult"
+      },
+      "dependency_risk": {
+        "severity": "medium",
+        "description": "Changes affecting multiple modules or dependencies",
+        "triggers": [
+          "Import changes affecting multiple files",
+          "Package.json or requirements.txt modifications",
+          "Schema changes affecting data structures"
+        ],
+        "action": "validate_impact"
+      },
+      "ci_cd_risk": {
+        "severity": "high",
+        "description": "Changes that could break CI/CD pipeline",
+        "triggers": [
+          "Workflow file modifications",
+          "Test configuration changes",
+          "Build script modifications"
+        ],
+        "action": "test_pipeline"
+      },
+      "data_safety": {
+        "severity": "high",
+        "description": "Risk to important data or configuration files",
+        "triggers": [
+          "struct.json modifications",
+          "Core data file changes",
+          "Configuration file deletions"
+        ],
+        "action": "backup_and_validate"
+      }
+    },
+    
+    "session_limits": {
+      "max_file_changes": 5,
+      "max_new_files": 3,
+      "max_deletions": 1,
+      "max_session_duration": "60min",
+      "cooldown_period": "15min"
+    },
+    
+    "escalation_rules": {
+      "auto_stop_conditions": [
+        "risk_level == 'critical'",
+        "changes_count > session_limits.max_file_changes",
+        "multiple high severity warnings",
+        "ci_cd_risk triggered"
+      ],
+      "consultation_required": [
+        "breaking_changes_detected",
+        "architecture_modifications",
+        "scope_expansion_beyond_initial",
+        "dependency_version_changes"
+      ],
+      "user_notification": [
+        "warning_count >= 3",
+        "risk_level >= 'medium'",
+        "session_duration > 45min",
+        "rampage_prevention_triggered"
+      ]
+    },
+    
+    "logging": {
+      "warning_history": [],
+      "session_logs": [],
+      "escalation_events": [],
+      "user_confirmations": []
+    },
+    
+    "risk_assessment": {
+      "current_risk_score": 0,
+      "risk_factors": {
+        "change_velocity": 0,
+        "scope_drift": 0,
+        "dependency_impact": 0,
+        "ci_cd_stability": 0,
+        "data_safety": 0
+      },
+      "risk_thresholds": {
+        "low": 0-25,
+        "medium": 26-50,
+        "high": 51-75,
+        "critical": 76-100
+      }
+    },
+    
+    "prevention_actions": {
+      "scope_validation": {
+        "enabled": true,
+        "validate_before_changes": true,
+        "require_user_confirmation": "medium_risk_and_above"
+      },
+      "change_tracking": {
+        "enabled": true,
+        "real_time_monitoring": true,
+        "auto_backup_trigger": "high_risk"
+      },
+      "consultation_protocol": {
+        "enabled": true,
+        "clarification_templates": true,
+        "user_preference_aware": true
+      }
+    },
+    
+    "mobile_controls": {
+      "description": "Simplified controls for mobile GitHub access",
+      "quick_actions": [
+        "approve_low_risk_changes",
+        "request_clarification", 
+        "pause_session",
+        "emergency_stop"
+      ],
+      "notification_settings": {
+        "high_risk_alerts": true,
+        "session_summaries": true,
+        "completion_notifications": true
+      },
+      "simplified_interface": {
+        "emoji_status": true,
+        "color_coded_risks": true,
+        "one_tap_responses": true
+      }
+    },
+    
+    "integration": {
+      "copilot_init_reference": "data/copilot_init.json",
+      "ai_constraints_reference": "data/copilot/ai_constraints.json", 
+      "session_rules_reference": "data/copilot/session_rules.json",
+      "update_triggers": [
+        "session_start",
+        "file_modification",
+        "risk_level_change",
+        "user_interaction"
+      ]
+    },
+    
+    "metadata": {
+      "artifact_id": "warnings-system-001",
+      "tags": ["warnings", "ai-safety", "rampage-prevention", "session-control"],
+      "last_updated": "2025-01-27T12:00:00Z",
+      "version_history": [
+        {
+          "version": "1.0.0",
+          "date": "2025-01-27T12:00:00Z", 
+          "changes": "Initial warnings and risk management system"
+        }
+      ]
+    }
+  }
+}

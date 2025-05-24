@@ -25,5 +25,32 @@
     "actions": [
       "test_action"
     ]
+  },
+  {
+    "event_id": "test_1748061733",
+    "event_type": "integration_test",
+    "timestamp": 1748061733.7019339,
+    "description": "Test workflow event from integration test",
+    "actions": [
+      "test_action"
+    ]
+  },
+  {
+    "event_id": "test_1748061793",
+    "event_type": "integration_test",
+    "timestamp": 1748061793.4379928,
+    "description": "Test workflow event from integration test",
+    "actions": [
+      "test_action"
+    ]
+  },
+  {
+    "event_id": "test_1748061961",
+    "event_type": "integration_test",
+    "timestamp": 1748061961.0417678,
+    "description": "Test workflow event from integration test",
+    "actions": [
+      "test_action"
+    ]
   }
 ]

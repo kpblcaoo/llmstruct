@@ -2,7 +2,7 @@
   "metadata": {
     "project_name": "llmstruct",
     "description": "Utility for generating structured JSON for codebases",
-    "version": "2025-05-24T04:27:06.869224Z",
+    "version": "2025-05-24T05:30:05.192198Z",
     "authors": [
       {
         "name": "Mikhail Stepanov",
@@ -29,11 +29,11 @@
     },
     "stats": {
       "modules_count": 43,
-      "functions_count": 205,
+      "functions_count": 208,
       "classes_count": 16,
-      "call_edges_count": 729
+      "call_edges_count": 730
     },
-    "artifact_id": "8c581470-0f43-4c8a-8a28-e06cd0e04a96",
+    "artifact_id": "623ceb7a-4839-42af-bed1-32977d6ec739",
     "summary": "Structured JSON for llmstruct codebase",
     "tags": [
       "codebase",
@@ -43,397 +43,409 @@
       {
         "path": ".",
         "type": "directory",
-        "artifact_id": "5fe5c28e-2702-4b87-a5d2-b6a02ce67917",
+        "artifact_id": "e9f8ece0-44d6-4af4-a0af-35aace1e88bc",
         "metadata": {}
       },
       {
         "path": ".github",
         "type": "directory",
-        "artifact_id": "a8f49bc0-d064-4be0-8a32-cd2b434fdea9",
+        "artifact_id": "37690e86-92d9-415f-9dfe-4fa852a82031",
         "metadata": {}
       },
       {
         "path": ".github/workflows",
         "type": "directory",
-        "artifact_id": "ab7d50d6-dfca-40b4-bd1d-fc9e1438a649",
+        "artifact_id": "ce1ef910-ad02-4bef-b4a5-49fbad0977a6",
+        "metadata": {}
+      },
+      {
+        "path": ".llmstruct_cache",
+        "type": "directory",
+        "artifact_id": "63cab97d-7cf5-45d8-9ecd-28ca13885d49",
         "metadata": {}
       },
       {
         "path": "bak",
         "type": "directory",
-        "artifact_id": "ba555306-81de-47ea-a4b9-5a7c9fd9aea7",
+        "artifact_id": "89365f43-01c5-49f9-b078-4850a0631836",
         "metadata": {}
       },
       {
         "path": "collector.py",
         "type": "file",
-        "artifact_id": "c9adf263-8edf-4456-ab63-e7e07434a4af",
+        "artifact_id": "57160a4a-6b32-43d8-84e6-e3eca883065a",
         "metadata": {}
       },
       {
         "path": "data",
         "type": "directory",
-        "artifact_id": "f6e563e6-3066-4c27-8d77-24a789554c6a",
+        "artifact_id": "1096809b-96e8-4ae6-8506-d0b38c579e97",
         "metadata": {}
       },
       {
         "path": "data/artifacts",
         "type": "directory",
-        "artifact_id": "987dcc77-3e36-4231-ad88-51f21c71e6c6",
+        "artifact_id": "12c82ff2-9c7c-4550-a6a7-f8db2f6a775a",
+        "metadata": {}
+      },
+      {
+        "path": "data/copilot",
+        "type": "directory",
+        "artifact_id": "b11b1ba0-7dbe-449a-ac48-fc1e59be2c5a",
         "metadata": {}
       },
       {
         "path": "docs",
         "type": "directory",
-        "artifact_id": "b2a8e57f-c369-4fc6-9d6e-abed374811f8",
+        "artifact_id": "08be5e06-adcb-4595-b6bd-495f2d7cd230",
         "metadata": {}
       },
       {
         "path": "docs/examples",
         "type": "directory",
-        "artifact_id": "fd540301-e4f4-4944-a954-8d5314b3e3fd",
+        "artifact_id": "6ad40540-8e51-4aa4-89e6-fbeb08f30ada",
         "metadata": {}
       },
       {
         "path": "docs/internal",
         "type": "directory",
-        "artifact_id": "f9790320-fb61-4876-9001-0d65f2c532d3",
+        "artifact_id": "d046605d-4b99-4950-89b4-6f78495bcc77",
         "metadata": {}
       },
       {
         "path": "docs/internal/ru",
         "type": "directory",
-        "artifact_id": "0b401058-5f4d-47b5-bf61-32d1664fc021",
+        "artifact_id": "2f4331e9-8777-4e7d-9b0e-e4aee34cf88e",
         "metadata": {}
       },
       {
         "path": "docs/ru",
         "type": "directory",
-        "artifact_id": "08178685-508a-4664-bb4a-82393de0e0e8",
+        "artifact_id": "287e64aa-e32b-42bc-9ab7-17fbc92cfdce",
         "metadata": {}
       },
       {
         "path": "docs/ru/examples",
         "type": "directory",
-        "artifact_id": "57d20a05-e419-410d-8558-b72020cb1e2e",
+        "artifact_id": "696f3242-aa77-4530-baa3-d03c52b50013",
         "metadata": {}
       },
       {
         "path": "examples",
         "type": "directory",
-        "artifact_id": "18feea7c-7f2d-408e-8f34-49fae123ec69",
+        "artifact_id": "1273f42c-3fea-4886-bbf5-1e4ad7ca6ceb",
         "metadata": {}
       },
       {
         "path": "examples/python_project_main.py",
         "type": "file",
-        "artifact_id": "d06d5fa7-3358-4608-a907-48e50f70e906",
+        "artifact_id": "c40ce0aa-80bf-4e27-bfb0-4becfdf13e9c",
         "metadata": {}
       },
       {
         "path": "examples/python_project_utils.py",
         "type": "file",
-        "artifact_id": "4704d176-6c0c-458f-aafe-344f39ee9bd5",
+        "artifact_id": "a1727d2b-0244-4c32-bb11-ece368af5d50",
         "metadata": {}
       },
       {
         "path": "internal",
         "type": "directory",
-        "artifact_id": "0e2a150b-6091-4a2c-a402-2c2bf8a58acc",
+        "artifact_id": "7026ecce-8f49-43b7-9862-b1d53607d54d",
         "metadata": {}
       },
       {
         "path": "schema",
         "type": "directory",
-        "artifact_id": "ae81392f-00e3-473b-a9e1-5610f4504e38",
+        "artifact_id": "fac18f18-ca04-4a8a-bada-bfd910439b68",
         "metadata": {}
       },
       {
         "path": "schema/common",
         "type": "directory",
-        "artifact_id": "5a237ffa-2107-45ed-9dc1-c3a390c78438",
+        "artifact_id": "53cbfdc3-492e-4848-b3bd-23a1def548c6",
         "metadata": {}
       },
       {
         "path": "schema/plugins",
         "type": "directory",
-        "artifact_id": "27fdca37-2304-4d0c-a28c-1fdf8da047ec",
+        "artifact_id": "30584e4b-f403-4f97-8131-4ec47c52c333",
         "metadata": {}
       },
       {
         "path": "scripts",
         "type": "directory",
-        "artifact_id": "0ae5b5e7-3e79-4821-b9ae-59576eeffeca",
+        "artifact_id": "3c3afe00-f593-4d60-ba3b-b72c7d62949d",
         "metadata": {}
       },
       {
         "path": "scripts/auto_update_struct.py",
         "type": "file",
-        "artifact_id": "44dce1c3-2988-4cff-a23e-2de92532d541",
+        "artifact_id": "6f19c0e6-a62e-444e-85ec-26af944bcd71",
         "metadata": {}
       },
       {
         "path": "scripts/collector.py",
         "type": "file",
-        "artifact_id": "5157c98d-594e-4be2-8e69-6b3dc699ad9b",
+        "artifact_id": "1a4de5bb-b30f-473d-a7f6-50425b8a0988",
         "metadata": {}
       },
       {
         "path": "scripts/deploy_embedded_files.py",
         "type": "file",
-        "artifact_id": "e2322467-18c7-4d91-a103-b0b8b18c1e5b",
+        "artifact_id": "57e2b068-4909-4a5e-ba2e-c33d812f9c6a",
         "metadata": {}
       },
       {
         "path": "scripts/validate_refs.py",
         "type": "file",
-        "artifact_id": "2a270e84-7861-48d9-8fea-11d9f9d742eb",
+        "artifact_id": "a55ec067-6423-48e0-8d02-8fed15196c35",
         "metadata": {}
       },
       {
         "path": "src",
         "type": "directory",
-        "artifact_id": "568208c0-fca8-49fc-b4ba-017868b811e1",
+        "artifact_id": "ee2dfe17-0f1b-4ada-9ac1-0fdb71643bb7",
         "metadata": {}
       },
       {
         "path": "src/llmstruct",
         "type": "directory",
-        "artifact_id": "4cef45df-9659-431f-8fb7-f0494d279fc2",
+        "artifact_id": "575c6a90-67db-4613-824a-9c389a6adf40",
         "metadata": {}
       },
       {
         "path": "src/llmstruct.egg-info",
         "type": "directory",
-        "artifact_id": "df07e348-8c88-4f17-a35c-d19f35597747",
+        "artifact_id": "5a466ab0-226a-42bc-bb99-fa1763c0b93b",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/__init__.py",
         "type": "file",
-        "artifact_id": "c17c5175-c098-4826-8d32-cdee10d1064f",
+        "artifact_id": "b8b45435-d408-4075-99cf-6a3a8680316b",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/__main__.py",
         "type": "file",
-        "artifact_id": "c678aa10-bae3-455d-8e7c-8a59e9038f1c",
+        "artifact_id": "9be4e4c5-ec92-4230-b518-3b2fcf312d4b",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/cache.py",
         "type": "file",
-        "artifact_id": "ede9b6b2-6312-4bc6-9a41-05509261a56a",
+        "artifact_id": "fcd7f4e8-01df-4f69-99c2-567a21b6ff81",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/cli.py",
         "type": "file",
-        "artifact_id": "69ba646a-bc18-4eda-802f-08e943f4402d",
+        "artifact_id": "146b3dc9-8d22-43b9-b98c-f09caf78f685",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/cli_commands.py",
         "type": "file",
-        "artifact_id": "f11bd661-f2b8-4b46-a244-a0bd4543840b",
+        "artifact_id": "9b978979-80e2-43ac-8433-2f4d390f2e16",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/cli_config.py",
         "type": "file",
-        "artifact_id": "eff70099-39d8-4a38-af8b-27175ec33697",
+        "artifact_id": "5a0da7de-5856-4827-8ef6-85377f21ce4c",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/cli_core.py",
         "type": "file",
-        "artifact_id": "e788be8b-b035-407d-baf1-586cdea8d2c3",
+        "artifact_id": "eaf621c8-a65d-4fc0-b175-a88e4bb9926e",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/cli_utils.py",
         "type": "file",
-        "artifact_id": "1b45f94d-c5a5-4f4a-99a5-d52aba3b23ee",
+        "artifact_id": "1dac99c9-5f5d-4d2b-9354-bd2a5a862f1d",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/copilot.py",
         "type": "file",
-        "artifact_id": "828ec115-7985-4181-8d95-9c4e605537e2",
+        "artifact_id": "5f212d59-7e91-4f5a-bcd0-82b260291df9",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/generators",
         "type": "directory",
-        "artifact_id": "ffa3b39a-89df-4e1c-8e52-d3a3b00b121a",
+        "artifact_id": "978db15e-248a-4703-be95-355368f8a6be",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/generators/__init__.py",
         "type": "file",
-        "artifact_id": "ecfadf87-fc2d-405d-badb-47a1b1db9152",
+        "artifact_id": "fb397b92-5562-4282-bb5b-a09effd40148",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/generators/json_generator.py",
         "type": "file",
-        "artifact_id": "dc629cf9-cd82-4512-b05a-8f6c98c60170",
+        "artifact_id": "71955a6f-1959-493c-a66a-3941da897d0b",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/grok.py",
         "type": "file",
-        "artifact_id": "e80330ba-0770-4bca-abb5-afa7c4c1b83d",
+        "artifact_id": "4859fe0a-8e26-40ee-aa8e-869e870d29ca",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/json_selector.py",
         "type": "file",
-        "artifact_id": "758aeb4a-4470-4497-83b8-a4d81e703e35",
+        "artifact_id": "8776f65c-7ce3-4e22-ba02-ca4cba345c77",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/llm_client.py",
         "type": "file",
-        "artifact_id": "1603fea3-a834-47f5-a6b0-9949baf05756",
+        "artifact_id": "355ca002-e224-4354-8203-832f78ccdda6",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/parsers",
         "type": "directory",
-        "artifact_id": "cbbff508-4deb-440e-b169-f396c0e93df0",
+        "artifact_id": "11cf7e2d-7b0b-4b62-b081-ed77449f7959",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/parsers/__init__.py",
         "type": "file",
-        "artifact_id": "3ff84d3f-3c30-4107-bcfa-1e1d83c8b389",
+        "artifact_id": "d949f77e-1158-4605-866a-eef457628299",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/parsers/javascript_parser.py",
         "type": "file",
-        "artifact_id": "59ca501e-7c01-4cff-bf1d-d0af19b2d1fd",
+        "artifact_id": "b5e931ff-6afc-466a-8d44-a280f23752df",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/parsers/python_parser.py",
         "type": "file",
-        "artifact_id": "e6c95bff-c94c-46eb-b14d-23e834b35081",
+        "artifact_id": "f756931d-4e45-447e-a46d-e964df75e151",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/self_run.py",
         "type": "file",
-        "artifact_id": "ad45b2ea-7a4c-436e-9266-6fd60fbe5250",
+        "artifact_id": "1f55f899-cb2d-4a1a-8913-b862fdcb40b4",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/templates",
         "type": "directory",
-        "artifact_id": "2bc2b31c-d4ff-4a80-be0b-d94b8e9eef37",
+        "artifact_id": "41af0e84-7c36-4adf-936f-fff70d03d671",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/templates/__init__.py",
         "type": "file",
-        "artifact_id": "7e9748ac-372f-4944-994a-d41fa625a13c",
+        "artifact_id": "7556fb8f-93fb-4d6b-81c1-d8a0aa006472",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/validators",
         "type": "directory",
-        "artifact_id": "e97788b0-24b4-40ab-a40d-3ed6721160bc",
+        "artifact_id": "138974a7-8b97-4d5c-810f-6a2db96bc28e",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/validators/__init__.py",
         "type": "file",
-        "artifact_id": "f5293732-59df-4e4e-bab9-e314761c0f54",
+        "artifact_id": "020c2870-630d-4349-b3f5-7b4f56280b29",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/validators/json_validator.py",
         "type": "file",
-        "artifact_id": "26456db0-6a7c-4dff-b973-b7a4d7fcc0ec",
+        "artifact_id": "23df2f1a-d2c8-455c-8d6a-519f9d6ad196",
         "metadata": {}
       },
       {
         "path": "temp_workfiles",
         "type": "directory",
-        "artifact_id": "bffbccf8-4879-4554-9b70-6421a76875a0",
+        "artifact_id": "a28cad57-76f6-48c7-8986-cece813d66c2",
         "metadata": {}
       },
       {
         "path": "temp_workfiles/final_system_check.py",
         "type": "file",
-        "artifact_id": "c7a2d7c9-e2f8-4748-b2ad-280b70b3450f",
+        "artifact_id": "49149db2-0df6-4480-a73a-2c836f423803",
         "metadata": {}
       },
       {
         "path": "temp_workfiles/final_system_validation.py",
         "type": "file",
-        "artifact_id": "2594ee55-55c9-44d0-96ad-0d91957adb56",
+        "artifact_id": "50abc968-9dd2-47ed-86b1-903104fb8581",
         "metadata": {}
       },
       {
         "path": "temp_workfiles/test_cli.py",
         "type": "file",
-        "artifact_id": "d07786f9-e1ed-4c7c-9ec8-6d09b65bff65",
+        "artifact_id": "b23d9a99-19a7-437a-930d-9926c6f2f3c3",
         "metadata": {}
       },
       {
         "path": "temp_workfiles/test_cli_demo.py",
         "type": "file",
-        "artifact_id": "4e369405-1db4-42f7-81b0-07a2b0b6b901",
+        "artifact_id": "5ff27290-31e5-4183-aaea-c1f8de229ab4",
         "metadata": {}
       },
       {
         "path": "temp_workfiles/test_cli_integration.py",
         "type": "file",
-        "artifact_id": "a52e8663-1d35-4a70-9d4e-1815e64ff59b",
+        "artifact_id": "d876bb2c-6bd6-46dd-98f4-9d51cc6e51e4",
         "metadata": {}
       },
       {
         "path": "temp_workfiles/test_modular_cli.py",
         "type": "file",
-        "artifact_id": "1a325f4d-037a-4dce-9e92-43d04f8ac8da",
+        "artifact_id": "e0b68447-5c1d-4a6a-b3de-4977bb3a9683",
         "metadata": {}
       },
       {
         "path": "test_efficiency.py",
         "type": "file",
-        "artifact_id": "9f3c3ef9-d63f-444e-a4f6-dcc1879fdfa0",
+        "artifact_id": "b6375184-a542-4e61-b752-6867cd407f82",
         "metadata": {}
       },
       {
         "path": "tests",
         "type": "directory",
-        "artifact_id": "f52d558a-2f3c-4566-86de-bd30d7253207",
+        "artifact_id": "eba180a1-4dfb-43e9-9baa-43df14b88062",
         "metadata": {}
       },
       {
         "path": "tmp",
         "type": "directory",
-        "artifact_id": "66e2908d-2109-492d-9a98-fc4313daf535",
+        "artifact_id": "80db1b35-942e-4227-83bd-62b3caed6ca1",
         "metadata": {}
       },
       {
         "path": "validate_schemas.py",
         "type": "file",
-        "artifact_id": "20eee48a-d936-4499-afac-b02dff2a373b",
+        "artifact_id": "a5f83241-bdfd-4429-966e-bd761565bf16",
         "metadata": {}
       },
       {
         "path": "verify_llm_response.py",
         "type": "file",
-        "artifact_id": "c4f83c6e-e26e-4d0b-861f-859afa1b6555",
+        "artifact_id": "254b433b-524c-48dd-811d-66e2b2b2562d",
         "metadata": {}
       },
       {
         "path": "workflow_archive",
         "type": "directory",
-        "artifact_id": "25277e29-8c3b-418f-8d0b-3a9ce08e0dbe",
+        "artifact_id": "13a19137-c095-4884-bb0d-0857b5ddae1a",
         "metadata": {}
       }
     ]
@@ -446,7 +458,7 @@
       "functions": 12,
       "classes": 0,
       "summary": "",
-      "artifact_id": "dc77249b-eaf6-4387-ba45-f35443881efc"
+      "artifact_id": "47401edb-d4cc-4087-995b-316247f26f57"
     },
     {
       "module_id": "collector",
@@ -455,7 +467,7 @@
       "functions": 3,
       "classes": 0,
       "summary": "",
-      "artifact_id": "2448cead-9cb5-49f1-8bf8-8ef126d04a40"
+      "artifact_id": "df763cfa-466d-4364-98e0-1480ab795817"
     },
     {
       "module_id": "validate_schemas",
@@ -464,7 +476,7 @@
       "functions": 3,
       "classes": 1,
       "summary": "JSON Schema Validation Script for llmstruct",
-      "artifact_id": "1825f73f-8e99-480f-824d-420d9cd9095a"
+      "artifact_id": "eb43789c-1848-4d23-a7a5-ba2401709901"
     },
     {
       "module_id": "verify_llm_response",
@@ -473,7 +485,7 @@
       "functions": 6,
       "classes": 0,
       "summary": "",
-      "artifact_id": "00e3fe15-5cb9-4900-a39d-104f2014ecc6"
+      "artifact_id": "6e011142-fdf7-4eab-9f78-c1547d464831"
     },
     {
       "module_id": "examples.python_project_utils",
@@ -482,7 +494,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "Utility functions for the sample project.",
-      "artifact_id": "2b7799b5-ee9f-4ee8-ba3e-e974b703dad4"
+      "artifact_id": "ff7fa4bf-2540-41a6-ae94-d9fefb2f88d0"
     },
     {
       "module_id": "examples.python_project_main",
@@ -491,7 +503,7 @@
       "functions": 2,
       "classes": 1,
       "summary": "Main module for the sample project.",
-      "artifact_id": "1e3af7d6-3068-42e9-9ea5-f824b3691873"
+      "artifact_id": "a82bd0ca-d753-438b-9381-37a258d3067b"
     },
     {
       "module_id": "src.llmstruct.cli_config",
@@ -500,7 +512,7 @@
       "functions": 18,
       "classes": 1,
       "summary": "CLI configuration management.",
-      "artifact_id": "3c259873-5fb4-47de-8def-15c3dcb7c084"
+      "artifact_id": "418ce3be-424e-4733-9b5b-255eaf431a34"
     },
     {
       "module_id": "src.llmstruct.grok",
@@ -509,7 +521,7 @@
       "functions": 3,
       "classes": 1,
       "summary": "",
-      "artifact_id": "76a346cf-eb4e-49fe-a7ac-644381a08706"
+      "artifact_id": "b1688460-b40f-4dde-8949-decdfb7b34b0"
     },
     {
       "module_id": "src.llmstruct.cli_commands",
@@ -518,7 +530,7 @@
       "functions": 23,
       "classes": 1,
       "summary": "CLI command processing and handlers.",
-      "artifact_id": "57df3545-01ad-498e-a3a2-eba1ec62a514"
+      "artifact_id": "11ddd298-61ab-4b40-bae1-548f5d9c9563"
     },
     {
       "module_id": "src.llmstruct.__init__",
@@ -527,7 +539,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "",
-      "artifact_id": "75308cef-8c9e-4bb5-a772-5cc0cf77a307"
+      "artifact_id": "e57dd323-7c34-4ed3-8cf9-2c967f40067c"
     },
     {
       "module_id": "src.llmstruct.__main__",
@@ -536,7 +548,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "",
-      "artifact_id": "b314df41-10e8-4b1b-b093-8f7f21043d59"
+      "artifact_id": "802f6e7d-1a70-4bc2-9ee3-f6cba75c95b8"
     },
     {
       "module_id": "src.llmstruct.cli_utils",
@@ -545,7 +557,7 @@
       "functions": 13,
       "classes": 1,
       "summary": "CLI utility functions.",
-      "artifact_id": "872cd4dd-f9e3-4176-9451-6696294c64e8"
+      "artifact_id": "a946b1ac-9361-48b3-9b8c-6d926f452d99"
     },
     {
       "module_id": "src.llmstruct.copilot",
@@ -554,7 +566,7 @@
       "functions": 21,
       "classes": 5,
       "summary": "LLMStruct Copilot Integration Module",
-      "artifact_id": "a03c9097-1b50-4a73-9368-598e465cde4d"
+      "artifact_id": "94a51827-ada2-4f70-9f47-11cea1bc85b6"
     },
     {
       "module_id": "src.llmstruct.llm_client",
@@ -563,7 +575,7 @@
       "functions": 6,
       "classes": 1,
       "summary": "",
-      "artifact_id": "a2f64a69-fc88-4049-a162-f4a12c5e8f94"
+      "artifact_id": "1b4bdfc6-f2a8-4c46-b2b7-cd042472e9a6"
     },
     {
       "module_id": "src.llmstruct.cache",
@@ -572,7 +584,7 @@
       "functions": 6,
       "classes": 1,
       "summary": "",
-      "artifact_id": "346c63f6-2f30-4c98-a30b-b53f8e37d72b"
+      "artifact_id": "ed5261fe-fabd-478f-9f4d-5fc25ee120df"
     },
     {
       "module_id": "src.llmstruct.self_run",
@@ -581,7 +593,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "",
-      "artifact_id": "7a03dea2-5a6a-4720-9ee4-650f3ab54156"
+      "artifact_id": "9444f30d-6c9b-4d89-a259-69abc645086a"
     },
     {
       "module_id": "src.llmstruct.json_selector",
@@ -590,7 +602,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "",
-      "artifact_id": "3d0b9a20-edfa-4c3a-9435-48540f2a94a9"
+      "artifact_id": "b6c064a7-9bac-4abc-bc3f-ae6beecf7da4"
     },
     {
       "module_id": "src.llmstruct.cli",
@@ -599,7 +611,7 @@
       "functions": 16,
       "classes": 0,
       "summary": "LLMStruct CLI - Main entry point for the command-line interface.",
-      "artifact_id": "10e4a8e3-ba22-4b43-a183-ab485c55429b"
+      "artifact_id": "19f53d28-193c-492e-becd-f7a4c5be1f4c"
     },
     {
       "module_id": "src.llmstruct.cli_core",
@@ -608,7 +620,7 @@
       "functions": 6,
       "classes": 1,
       "summary": "Core CLI functionality and main loop.",
-      "artifact_id": "7a3290fc-0025-414d-af1e-edffe505ed12"
+      "artifact_id": "cf85716a-225b-4955-b2e7-ea0c9565bff6"
     },
     {
       "module_id": "src.llmstruct.parsers.__init__",
@@ -617,7 +629,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "Language-specific parsers for extracting code structure data for LLMStruct JSON.",
-      "artifact_id": "3a8d04fc-19e5-4c85-b54a-a8d16a4b3e6f"
+      "artifact_id": "acf93108-751e-4c5d-8605-667367e2dde5"
     },
     {
       "module_id": "src.llmstruct.parsers.javascript_parser",
@@ -626,7 +638,7 @@
       "functions": 5,
       "classes": 1,
       "summary": "",
-      "artifact_id": "5a46ad6b-d672-4ef2-a0c4-73f7d7e1dcb8"
+      "artifact_id": "abe7c4ce-c29c-4253-91a7-f6a4c47a7137"
     },
     {
       "module_id": "src.llmstruct.parsers.python_parser",
@@ -635,7 +647,7 @@
       "functions": 9,
       "classes": 1,
       "summary": "",
-      "artifact_id": "29c84891-2774-4598-ab27-0716beba43a0"
+      "artifact_id": "0bfd14e5-41fb-4e5d-9a33-7e8d0fe0346e"
     },
     {
       "module_id": "src.llmstruct.templates.__init__",
@@ -644,7 +656,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "Templates for LLM prompts used in LLMStruct integration.",
-      "artifact_id": "88c15247-8c8f-4cac-b313-c69ee2aa0897"
+      "artifact_id": "9443fa22-8d11-4736-8b0c-7d9b00a67764"
     },
     {
       "module_id": "src.llmstruct.validators.__init__",
@@ -653,7 +665,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "Validation modules for ensuring LLMStruct JSON complies with the schema.",
-      "artifact_id": "35fc8f31-af03-40f4-b8c6-d30ea8f34010"
+      "artifact_id": "9991e611-f7a4-4f5d-98de-316c5a310136"
     },
     {
       "module_id": "src.llmstruct.validators.json_validator",
@@ -662,7 +674,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "",
-      "artifact_id": "74b7ff8a-8980-4f26-9023-4a9b60282a06"
+      "artifact_id": "13d555ef-386b-4ddd-8b66-df7df8d381ef"
     },
     {
       "module_id": "src.llmstruct.generators.json_generator",
@@ -671,7 +683,7 @@
       "functions": 3,
       "classes": 0,
       "summary": "",
-      "artifact_id": "1d3bb12f-3a4d-470e-b904-7ff21ebdf9e7"
+      "artifact_id": "c073479e-b392-4d13-b495-af2b739cc571"
     },
     {
       "module_id": "src.llmstruct.generators.__init__",
@@ -680,7 +692,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "Generator modules for creating LLMStruct JSON outputs from parsed code data.",
-      "artifact_id": "0b8696b5-e7f8-4b63-8375-5dcae46afd48"
+      "artifact_id": "2a3d5f28-8122-4d2d-9386-2b00e4d5dd00"
     },
     {
       "module_id": "temp_workfiles.test_cli_integration",
@@ -689,7 +701,7 @@
       "functions": 1,
       "classes": 0,
       "summary": "Test script for CLI integration with new commands",
-      "artifact_id": "eddb200a-8b50-451c-816f-8283e8751016"
+      "artifact_id": "f3608c78-8894-466a-a6d8-ce58b147f78b"
     },
     {
       "module_id": "temp_workfiles.test_cli",
@@ -698,7 +710,7 @@
       "functions": 1,
       "classes": 0,
       "summary": "Test script for the enhanced CLI functionality.",
-      "artifact_id": "9229f4ea-3371-4c98-8eda-9d06f424368a"
+      "artifact_id": "ddcb5ad1-66e5-4693-80ae-a1b9b1d1c1de"
     },
     {
       "module_id": "temp_workfiles.final_system_check",
@@ -707,7 +719,7 @@
       "functions": 1,
       "classes": 0,
       "summary": "Final System Status Check - LLMStruct Modular CLI Integration",
-      "artifact_id": "7c20aa58-8f3b-4299-a1da-c330d7f485f8"
+      "artifact_id": "cb18c90f-c653-4ebe-875e-08dbb5fa4399"
     },
     {
       "module_id": "temp_workfiles.final_system_validation",
@@ -716,7 +728,7 @@
       "functions": 1,
       "classes": 0,
       "summary": "Final system validation script for LLMStruct Modular CLI Integration",
-      "artifact_id": "6a0f52ff-6b9f-40c7-90ce-71620033ddca"
+      "artifact_id": "57bcae53-3871-42a8-b6a2-dccc1e3f4404"
     },
     {
       "module_id": "temp_workfiles.test_modular_cli",
@@ -725,7 +737,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "Test script for modular CLI structure",
-      "artifact_id": "0f89a68c-9357-4185-bdd7-372e29645170"
+      "artifact_id": "1403f0b0-8d58-479c-b0eb-d17e8f210bbb"
     },
     {
       "module_id": "temp_workfiles.test_cli_demo",
@@ -734,7 +746,7 @@
       "functions": 1,
       "classes": 0,
       "summary": "Quick CLI test to demonstrate new commands",
-      "artifact_id": "57977c10-7b47-4fe7-b739-50b6aa2a75dd"
+      "artifact_id": "3573c53e-4eca-44ee-aa82-e6edc7139826"
     },
     {
       "module_id": "bak.20250522_102827.scripts.collector",
@@ -743,7 +755,7 @@
       "functions": 4,
       "classes": 0,
       "summary": "",
-      "artifact_id": "5b52c654-bcc0-4f17-becf-4a6b9e2d56bc"
+      "artifact_id": "af0a8b6a-6264-4c08-aec4-10b156e3e6a6"
     },
     {
       "module_id": "bak.20250522_102827.scripts.validate_refs",
@@ -752,7 +764,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "",
-      "artifact_id": "df4f7cb0-4c0a-4110-92e6-9d16fb0a8272"
+      "artifact_id": "45ef6f7e-d113-4d89-95ce-f56e3b3594c9"
     },
     {
       "module_id": "bak.20250522_102827.scripts.deploy_embedded_files",
@@ -761,7 +773,7 @@
       "functions": 4,
       "classes": 0,
       "summary": "",
-      "artifact_id": "2f8c138d-8c11-4d5b-ade1-945fdc3ac8f2"
+      "artifact_id": "55a8a7e5-55cf-423a-8842-4d0433438fd9"
     },
     {
       "module_id": "bak.20250522_131121.scripts.collector",
@@ -770,7 +782,7 @@
       "functions": 4,
       "classes": 0,
       "summary": "",
-      "artifact_id": "d7b5e7c1-622b-4e42-bab1-6937433bc5be"
+      "artifact_id": "1e9feba7-55c8-4c5a-ae4a-7e4beb3e70d5"
     },
     {
       "module_id": "bak.20250522_131121.scripts.validate_refs",
@@ -779,7 +791,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "",
-      "artifact_id": "db51be03-690b-44e6-b50f-267f50970a64"
+      "artifact_id": "6ba721e5-fd76-43c6-97c7-b96a379f2d73"
     },
     {
       "module_id": "bak.20250522_131121.scripts.deploy_embedded_files",
@@ -788,7 +800,7 @@
       "functions": 4,
       "classes": 0,
       "summary": "",
-      "artifact_id": "312e389c-3e8a-4a32-854d-b10fdb4f3252"
+      "artifact_id": "cb0547b7-bc70-4deb-aa2c-27ba2f30d67c"
     },
     {
       "module_id": "scripts.collector",
@@ -797,16 +809,16 @@
       "functions": 4,
       "classes": 0,
       "summary": "",
-      "artifact_id": "bc26da2c-daec-4b1f-ad92-56bb3232c2f3"
+      "artifact_id": "279709af-f7f6-4930-9628-6af39742e617"
     },
     {
       "module_id": "scripts.auto_update_struct",
       "path": "scripts/auto_update_struct.py",
       "category": "core",
-      "functions": 5,
+      "functions": 8,
       "classes": 0,
       "summary": "Automatic struct.json update script",
-      "artifact_id": "6410222d-9ac4-4d6a-b88c-54d651dbe647"
+      "artifact_id": "c83fc865-572c-4870-ac89-05a78bfd6aa0"
     },
     {
       "module_id": "scripts.validate_refs",
@@ -815,7 +827,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "",
-      "artifact_id": "2831d022-2831-42c7-83fe-e64a60e0f982"
+      "artifact_id": "79a09110-d391-4e85-9d25-cfb5d1e67eea"
     },
     {
       "module_id": "scripts.deploy_embedded_files",
@@ -824,7 +836,7 @@
       "functions": 4,
       "classes": 0,
       "summary": "",
-      "artifact_id": "2ce782bb-f571-4bd9-8307-b3552ca7e0c2"
+      "artifact_id": "a44b8721-3abc-4912-91f9-8a0af7c31d61"
     }
   ],
   "modules": [
@@ -988,93 +1000,93 @@
       "classes": [],
       "callgraph": {
         "get_system_metrics": [
-          "psutil.cpu_percent",
-          "psutil.virtual_memory"
+          "psutil.virtual_memory",
+          "psutil.cpu_percent"
         ],
         "is_local_address": [
-          "ipaddress.ip_address",
-          "urlparse"
+          "urlparse",
+          "ipaddress.ip_address"
         ],
         "setup_proxy": [
           "os.getenv"
         ],
         "check_ollama": [
           "response.json",
-          "requests.get",
+          "str",
           "api_url.replace",
-          "str"
+          "requests.get"
         ],
         "optimize_prompt": [
-          "print",
+          "len",
           "struct_data.split",
-          "len"
+          "print"
         ],
         "run_llm_request": [
-          "requests.Session",
-          "get_system_metrics",
-          "type",
-          "time.perf_counter",
-          "session.post",
           "response.json",
-          "response.raise_for_status",
-          "print",
+          "get_system_metrics",
+          "time.perf_counter",
           "is_local_address",
-          "len"
+          "session.post",
+          "len",
+          "response.raise_for_status",
+          "requests.Session",
+          "print",
+          "type"
         ],
         "check_llmstruct_cli": [
           "shutil.which"
         ],
         "test_with_llmstruct": [
-          "run_llm_request",
-          "Path",
-          "f.read",
-          "open",
-          "subprocess.run",
-          "target_path.exists",
-          "optimize_prompt",
-          "check_llmstruct_cli",
-          "json.dump",
           "FileNotFoundError",
-          "str"
+          "run_llm_request",
+          "target_path.exists",
+          "open",
+          "optimize_prompt",
+          "Path",
+          "subprocess.run",
+          "str",
+          "check_llmstruct_cli",
+          "f.read",
+          "json.dump"
         ],
         "test_without_llmstruct": [
           "run_llm_request",
-          "Path",
-          "open",
           "optimize_prompt",
+          "open",
+          "Path",
           "f.read"
         ],
         "test_with_grok": [
-          "Path",
-          "open",
-          "test_grok",
-          "target_path.exists",
-          "optimize_prompt",
-          "json.dump",
           "FileNotFoundError",
-          "f.read"
+          "target_path.exists",
+          "open",
+          "optimize_prompt",
+          "Path",
+          "f.read",
+          "json.dump",
+          "test_grok"
         ],
         "evaluate_accuracy": [
           "len",
-          "response_text.lower",
-          "sum"
+          "sum",
+          "response_text.lower"
         ],
         "main": [
-          "json.dump",
-          "str",
           "check_ollama",
-          "evaluate_accuracy",
-          "argparse.ArgumentParser",
-          "open",
           "test_with_grok",
+          "open",
+          "argparse.ArgumentParser",
+          "test_without_llmstruct",
+          "parser.parse_args",
           "parser.add_argument",
           "range",
-          "check_llmstruct_cli",
-          "print",
           "test_with_llmstruct",
-          "parser.parse_args",
+          "str",
+          "check_llmstruct_cli",
           "setup_proxy",
-          "test_without_llmstruct"
+          "print",
+          "json.dump",
+          "evaluate_accuracy"
         ]
       },
       "dependencies": [
@@ -1095,7 +1107,7 @@
         "urlparse"
       ],
       "hash": null,
-      "artifact_id": "dc77249b-eaf6-4387-ba45-f35443881efc"
+      "artifact_id": "47401edb-d4cc-4087-995b-316247f26f57"
     },
     {
       "module_id": "collector",
@@ -1130,7 +1142,7 @@
           "docstring": "",
           "line_range": [
             34,
-            63
+            66
           ],
           "parameters": [],
           "decorators": []
@@ -1140,27 +1152,27 @@
       "callgraph": {
         "load_gitignore": [
           "gitignore_parser.parse_gitignore",
-          "Path",
-          "gitignore_path.exists"
+          "gitignore_path.exists",
+          "Path"
         ],
         "is_text_file": [],
         "collect_project": [
           "any",
-          "json.dump",
+          "doc_files.items",
+          "open",
+          "root_dir.rglob",
           "len",
           "Path",
-          "doc_files.items",
-          "f.read",
-          "open",
-          "logger.error",
+          "gitignore",
+          "str",
           "load_gitignore",
-          "file_path.is_file",
-          "root_dir.rglob",
-          "logger.info",
+          "f.read",
+          "logger.error",
+          "json.dump",
           "is_text_file",
           "logger.warning",
-          "str",
-          "gitignore"
+          "logger.info",
+          "file_path.is_file"
         ]
       },
       "dependencies": [
@@ -1171,7 +1183,7 @@
         "pathlib"
       ],
       "hash": null,
-      "artifact_id": "2448cead-9cb5-49f1-8bf8-8ef126d04a40"
+      "artifact_id": "df763cfa-466d-4364-98e0-1480ab795817"
     },
     {
       "module_id": "validate_schemas",
@@ -1230,20 +1242,20 @@
       ],
       "callgraph": {
         "load_json": [
-          "print",
           "json.load",
+          "print",
           "open"
         ],
         "validate_json_against_schema": [
-          "print",
           "validate",
+          "print",
           "str"
         ],
         "main": [
-          "print",
-          "validate_json_against_schema",
           "errors.append",
-          "load_json"
+          "validate_json_against_schema",
+          "load_json",
+          "print"
         ]
       },
       "dependencies": [
@@ -1255,7 +1267,7 @@
         "validate"
       ],
       "hash": null,
-      "artifact_id": "1825f73f-8e99-480f-824d-420d9cd9095a"
+      "artifact_id": "eb43789c-1848-4d23-a7a5-ba2401709901"
     },
     {
       "module_id": "verify_llm_response",
@@ -1340,58 +1352,58 @@
       "classes": [],
       "callgraph": {
         "load_json_file": [
-          "logging.error",
           "json.load",
+          "logging.error",
           "open"
         ],
         "verify_response_with_struct": [
-          "struct_data.get",
-          "re.findall",
-          "logging.error",
           "e.startswith",
+          "struct_data.get",
           "expected_goals.issubset",
-          "expected_files.issubset",
-          "logging.info",
+          "logging.error",
           "set",
-          "expected_extensions.issubset"
+          "re.findall",
+          "logging.info",
+          "expected_extensions.issubset",
+          "expected_files.issubset"
         ],
         "verify_response_without_struct": [
-          "re.findall",
-          "logging.error",
-          "expected_files.issubset",
-          "expected_goals.issubset",
-          "logging.info",
-          "response_text.lower",
-          "set",
           "principle.lower",
-          "expected_extensions.issubset"
+          "logging.error",
+          "expected_goals.issubset",
+          "set",
+          "re.findall",
+          "logging.info",
+          "expected_extensions.issubset",
+          "expected_files.issubset",
+          "response_text.lower"
         ],
         "generate_metrics": [
-          "re.findall",
-          "server_log.get",
-          "datetime.utcnow",
+          "len",
           "response_text.split",
-          "len"
+          "re.findall",
+          "datetime.utcnow",
+          "server_log.get"
         ],
         "update_tasks_json": [
-          "logging.info",
+          "load_json_file",
           "open",
           "tasks.get",
-          "json.dump",
-          "load_json_file"
+          "logging.info",
+          "json.dump"
         ],
         "main": [
-          "update_tasks_json",
-          "logging.info",
           "generate_metrics",
-          "argparse.ArgumentParser",
-          "open",
+          "load_json_file",
           "verify_response_without_struct",
-          "verify_response_with_struct",
-          "parser.add_argument",
-          "json.dump",
+          "open",
+          "argparse.ArgumentParser",
           "parser.parse_args",
-          "load_json_file"
+          "parser.add_argument",
+          "logging.info",
+          "json.dump",
+          "verify_response_with_struct",
+          "update_tasks_json"
         ]
       },
       "dependencies": [
@@ -1407,7 +1419,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "00e3fe15-5cb9-4900-a39d-104f2014ecc6"
+      "artifact_id": "6e011142-fdf7-4eab-9f78-c1547d464831"
     },
     {
       "module_id": "examples.python_project_utils",
@@ -1451,7 +1463,7 @@
         "logging"
       ],
       "hash": null,
-      "artifact_id": "2b7799b5-ee9f-4ee8-ba3e-e974b703dad4"
+      "artifact_id": "ff7fa4bf-2540-41a6-ae94-d9fefb2f88d0"
     },
     {
       "module_id": "examples.python_project_main",
@@ -1508,8 +1520,8 @@
       ],
       "callgraph": {
         "main": [
-          "print",
-          "utils.helper"
+          "utils.helper",
+          "print"
         ],
         "run": [
           "utils.log"
@@ -1519,7 +1531,7 @@
         "utils"
       ],
       "hash": null,
-      "artifact_id": "1e3af7d6-3068-42e9-9ea5-f824b3691873"
+      "artifact_id": "a82bd0ca-d753-438b-9381-37a258d3067b"
     },
     {
       "module_id": "src.llmstruct.cli_config",
@@ -1969,19 +1981,19 @@
           "Path"
         ],
         "_load_config": [
-          "logging.error",
-          "toml.load"
+          "toml.load",
+          "logging.error"
         ],
         "get_cache_config": [],
         "get_copilot_config": [],
         "get_queue_config": [],
         "get_context_config": [],
         "get_gitignore_patterns": [
-          "Path",
-          "line.strip",
           "line.startswith",
-          "gitignore_path.exists",
           "logging.error",
+          "Path",
+          "gitignore_path.exists",
+          "line.strip",
           "gitignore_path.open"
         ],
         "get_exclude_dirs": [
@@ -2019,7 +2031,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "3c259873-5fb4-47de-8def-15c3dcb7c084"
+      "artifact_id": "418ce3be-424e-4733-9b5b-255eaf431a34"
     },
     {
       "module_id": "src.llmstruct.grok",
@@ -2114,15 +2126,15 @@
           "requests.Session"
         ],
         "generate": [
-          "prompt.split",
           "response.json",
           "len",
+          "prompt.split",
           "response.raise_for_status"
         ],
         "test_grok": [
+          "GrokClient",
           "time.perf_counter",
-          "client.generate",
-          "GrokClient"
+          "client.generate"
         ]
       },
       "dependencies": [
@@ -2130,7 +2142,7 @@
         "time"
       ],
       "hash": null,
-      "artifact_id": "76a346cf-eb4e-49fe-a7ac-644381a08706"
+      "artifact_id": "b1688460-b40f-4dde-8949-decdfb7b34b0"
     },
     {
       "module_id": "src.llmstruct.cli_commands",
@@ -2728,133 +2740,133 @@
         "set_cache": [],
         "set_copilot": [],
         "process_command": [
-          "command_line.split",
-          "logging.error",
           "command_line.strip",
-          "print",
-          "len"
+          "len",
+          "logging.error",
+          "command_line.split",
+          "print"
         ],
         "process_prompt": [
+          "prompt.strip",
           "CopilotEvent",
-          "logging.error",
           "print",
-          "prompt.strip"
+          "logging.error"
         ],
         "cmd_help": [
           "print"
         ],
         "cmd_view": [
-          "print",
-          "args.strip"
+          "args.strip",
+          "print"
         ],
         "cmd_write": [
-          "content.startswith",
-          "content.strip",
           "match.groups",
-          "content.endswith",
-          "self._trigger_auto_update",
+          "content.startswith",
+          "re.match",
           "print",
-          "re.match"
+          "self._trigger_auto_update",
+          "content.strip",
+          "content.endswith"
         ],
         "cmd_queue": [
-          "self._show_queue_status",
           "self._process_queue",
           "self._clear_queue",
           "self._list_queue",
+          "self._show_queue_status",
           "print",
           "args.strip"
         ],
         "cmd_cache": [
-          "print",
           "args.strip",
-          "len"
+          "len",
+          "print"
         ],
         "cmd_copilot": [
-          "print",
           "args.strip",
-          "CopilotEvent"
+          "CopilotEvent",
+          "print"
         ],
         "cmd_config": [
-          "print",
           "args.strip",
+          "print",
           "section.title"
         ],
         "cmd_status": [
           "print"
         ],
         "cmd_backup": [
-          "print",
-          "args.strip"
+          "args.strip",
+          "print"
         ],
         "cmd_parse": [
-          "print",
+          "generate_json",
           "logging.error",
-          "generate_json"
+          "print"
         ],
         "_process_queue": [
-          "Path",
-          "logging.error",
-          "json.load",
           "queue_file.exists",
-          "queue_data.get",
-          "print",
+          "logging.error",
+          "Path",
+          "json.load",
           "queue_file.open",
-          "item.get"
+          "print",
+          "item.get",
+          "queue_data.get"
         ],
         "_show_queue_status": [
+          "queue_file.exists",
+          "sum",
+          "len",
           "Path",
           "json.load",
-          "queue_file.exists",
-          "queue_data.get",
-          "print",
           "queue_file.open",
-          "len",
+          "print",
           "item.get",
-          "sum"
+          "queue_data.get"
         ],
         "_clear_queue": [
-          "json.dump",
+          "queue_file.exists",
           "Path",
           "json.load",
-          "queue_file.exists",
+          "queue_file.open",
           "print",
-          "queue_file.open"
+          "json.dump"
         ],
         "_list_queue": [
+          "queue_file.exists",
           "Path",
           "json.load",
-          "enumerate",
-          "queue_file.exists",
-          "queue_data.get",
-          "print",
           "queue_file.open",
-          "item.get"
+          "print",
+          "item.get",
+          "queue_data.get",
+          "enumerate"
         ],
         "_trigger_auto_update": [
-          "logging.error",
-          "self.handle_auto_update"
+          "self.handle_auto_update",
+          "logging.error"
         ],
         "handle_auto_update": [
-          "Path",
           "script_path.exists",
+          "Path",
+          "str",
           "subprocess.run",
-          "print",
-          "str"
+          "print"
         ],
         "handle_struct_status": [
+          "os.stat",
           "struct_path.exists",
           "Path",
-          "os.stat",
           "datetime.fromtimestamp",
           "print"
         ],
         "handle_workflow_trigger": [
           "len",
-          "initialize_copilot",
-          "trigger_copilot_event",
-          "copilot.close",
           "str",
-          "self.handle_auto_update"
+          "self.handle_auto_update",
+          "trigger_copilot_event",
+          "initialize_copilot",
+          "copilot.close"
         ]
       },
       "dependencies": [
@@ -2888,7 +2900,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "57df3545-01ad-498e-a3a2-eba1ec62a514"
+      "artifact_id": "11ddd298-61ab-4b40-bae1-548f5d9c9563"
     },
     {
       "module_id": "src.llmstruct.__init__",
@@ -2903,7 +2915,7 @@
         "llm_client"
       ],
       "hash": null,
-      "artifact_id": "75308cef-8c9e-4bb5-a772-5cc0cf77a307"
+      "artifact_id": "e57dd323-7c34-4ed3-8cf9-2c967f40067c"
     },
     {
       "module_id": "src.llmstruct.__main__",
@@ -2918,7 +2930,7 @@
         "main"
       ],
       "hash": null,
-      "artifact_id": "b314df41-10e8-4b1b-b093-8f7f21043d59"
+      "artifact_id": "802f6e7d-1a70-4bc2-9ee3-f6cba75c95b8"
     },
     {
       "module_id": "src.llmstruct.cli_utils",
@@ -3282,38 +3294,38 @@
       "callgraph": {
         "__init__": [],
         "read_file_content": [
-          "logging.error",
-          "open",
-          "logging.warning",
           "os.stat",
-          "f.read"
+          "open",
+          "logging.error",
+          "f.read",
+          "logging.warning"
         ],
         "write_file_content": [
-          "Path",
-          "f.write",
-          "logging.info",
+          "open",
           "logging.error",
-          "open"
+          "Path",
+          "logging.info",
+          "f.write"
         ],
         "get_directory_structure": [
+          "os.listdir",
           "logging.error",
           "get_folder_structure",
-          "os.listdir",
           "sorted"
         ],
         "validate_json": [
-          "str",
-          "json.loads"
+          "json.loads",
+          "str"
         ],
         "format_json": [
           "logging.error",
-          "str",
-          "json.dumps"
+          "json.dumps",
+          "str"
         ],
         "generate_unique_id": [
           "time.time",
-          "int",
           "uuid.uuid4",
+          "int",
           "str"
         ],
         "safe_path_join": [
@@ -3331,25 +3343,25 @@
         ],
         "backup_file": [
           "dst.write",
-          "src.read",
-          "self.safe_path_join",
-          "logging.error",
+          "int",
           "open",
           "time.time",
-          "int"
+          "self.safe_path_join",
+          "logging.error",
+          "src.read"
         ],
         "cleanup_old_backups": [
-          "self.safe_path_join",
-          "filename.startswith",
-          "filename.split",
-          "backups.sort",
-          "logging.info",
-          "logging.error",
-          "logging.warning",
-          "os.remove",
-          "backups.append",
           "int",
-          "os.listdir"
+          "os.listdir",
+          "self.safe_path_join",
+          "os.remove",
+          "logging.error",
+          "filename.split",
+          "filename.startswith",
+          "logging.info",
+          "logging.warning",
+          "backups.sort",
+          "backups.append"
         ]
       },
       "dependencies": [
@@ -3369,7 +3381,7 @@
         "uuid"
       ],
       "hash": null,
-      "artifact_id": "872cd4dd-f9e3-4176-9451-6696294c64e8"
+      "artifact_id": "a946b1ac-9361-48b3-9b8c-6d926f452d99"
     },
     {
       "module_id": "src.llmstruct.copilot",
@@ -3933,74 +3945,74 @@
       ],
       "callgraph": {
         "__init__": [
-          "self._load_config",
           "Path",
-          "JSONCache",
           "self._initialize_layers",
-          "os.getcwd"
+          "JSONCache",
+          "os.getcwd",
+          "self._load_config"
         ],
         "_load_config": [
+          "open",
           "Path",
           "json.load",
-          "open",
           "logger.error",
           "logger.info",
           "logger.warning"
         ],
         "_initialize_layers": [
-          "layer_config.get",
           "ContextLayerConfig",
-          "layers_config.items"
+          "layers_config.items",
+          "layer_config.get"
         ],
         "load_context_layer": [
-          "json.load",
-          "logger.error",
           "open",
           "time.time",
+          "json.load",
+          "logger.error",
+          "source_path.exists",
           "logger.debug",
           "logger.info",
-          "logger.warning",
-          "source_path.exists"
+          "logger.warning"
         ],
         "unload_context_layer": [
           "logger.info"
         ],
         "get_context_for_event": [
-          "triggers.get",
           "workflow_triggers.get",
-          "code_triggers.get",
-          "file_triggers.get",
-          "json.load",
           "open",
-          "logger.error",
+          "file_triggers.get",
+          "triggers.get",
+          "json.load",
+          "code_triggers.get",
           "self.load_context_layer",
+          "logger.error",
           "source_path.exists"
         ],
         "suggest_completion": [
+          "func.get",
+          "suggestions.append",
           "current_module.get",
           "Path",
-          "self.load_context_layer",
-          "module.get",
-          "suggestions.append",
-          "struct_context.get",
           "str",
-          "func.get"
+          "self.load_context_layer",
+          "struct_context.get",
+          "module.get"
         ],
         "validate_change": [
+          "self._validate_json_schema",
           "self._matches_scope",
-          "self._matches_trigger",
+          "len",
           "safety_features.get",
           "rule.get",
-          "result.get",
-          "self._validate_json_schema",
-          "self._validate_task_references",
+          "self._matches_trigger",
           "self._check_circular_dependencies",
-          "len"
+          "result.get",
+          "self._validate_task_references"
         ],
         "_matches_scope": [
-          "fnmatch",
+          "Path",
           "str",
-          "Path"
+          "fnmatch"
         ],
         "_matches_trigger": [
           "trigger_map.get"
@@ -4011,42 +4023,42 @@
           "file_path.endswith"
         ],
         "_check_circular_dependencies": [
-          "len",
           "struct_data.get",
+          "len",
           "Path",
+          "str",
           "self.load_context_layer",
-          "module.get",
-          "str"
+          "module.get"
         ],
         "_validate_task_references": [
+          "open",
           "task.get",
           "json.load",
-          "open",
           "tasks_data.get",
-          "file_path.endswith",
           "set",
-          "task_ids.add"
+          "task_ids.add",
+          "file_path.endswith"
         ],
         "get_workflow_suggestions": [
-          "command.lower",
-          "self.load_context_layer",
-          "workflow.get",
           "suggestions.append",
+          "workflows.items",
           "suggestions.extend",
-          "workflows.items"
+          "workflow.get",
+          "self.load_context_layer",
+          "command.lower"
         ],
         "refresh_all_contexts": [
-          "logger.info",
+          "self.load_context_layer",
           "list",
-          "self.load_context_layer"
+          "logger.info"
         ],
         "get_context_status": [
           "list"
         ],
         "export_context": [
           "list",
-          "str",
-          "json.dumps"
+          "json.dumps",
+          "str"
         ],
         "close": [
           "logger.info"
@@ -4084,7 +4096,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "a03c9097-1b50-4a73-9368-598e465cde4d"
+      "artifact_id": "94a51827-ada2-4f70-9f47-11cea1bc85b6"
     },
     {
       "module_id": "src.llmstruct.llm_client",
@@ -4275,52 +4287,52 @@
           "os.getenv"
         ],
         "query": [
-          "self._query_grok",
-          "Path",
-          "self._query_hybrid",
-          "logging.info",
           "logging.error",
-          "json.load",
-          "logging.warning",
+          "Path",
           "json.dumps",
-          "asyncio.sleep",
+          "json.load",
           "range",
+          "self._query_ollama",
+          "logging.info",
           "self._query_anthropic",
-          "self._query_ollama"
+          "asyncio.sleep",
+          "self._query_hybrid",
+          "self._query_grok",
+          "logging.warning"
         ],
         "_query_grok": [
           "aiohttp.ClientSession",
-          "logging.info",
+          "session.post",
           "logging.error",
           "response.json",
-          "session.post",
+          "logging.info",
           "result.get"
         ],
         "_query_anthropic": [
           "aiohttp.ClientSession",
-          "logging.info",
+          "session.post",
           "logging.error",
           "response.json",
-          "session.post",
+          "logging.info",
           "result.get"
         ],
         "_query_ollama": [
           "aiohttp.ClientSession",
-          "logging.info",
-          "logging.error",
-          "response.json",
           "session.post",
-          "logging.debug",
-          "result.get"
+          "response.json",
+          "logging.error",
+          "logging.info",
+          "result.get",
+          "logging.debug"
         ],
         "_query_hybrid": [
-          "self._query_grok",
+          "len",
+          "self._query_ollama",
           "logging.info",
           "self._query_anthropic",
-          "asyncio.gather",
           "isinstance",
-          "len",
-          "self._query_ollama"
+          "asyncio.gather",
+          "self._query_grok"
         ]
       },
       "dependencies": [
@@ -4338,7 +4350,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "a2f64a69-fc88-4049-a162-f4a12c5e8f94"
+      "artifact_id": "1b4bdfc6-f2a8-4c46-b2b7-cd042472e9a6"
     },
     {
       "module_id": "src.llmstruct.cache",
@@ -4519,26 +4531,26 @@
         ],
         "create_tables": [],
         "cache_json": [
-          "json_file.exists",
-          "Path",
-          "str",
-          "content.encode",
-          "logging.error",
-          "logging.info",
           "open",
+          "json_file.exists",
+          "logging.error",
+          "Path",
+          "hashlib.sha256",
+          "str",
           "json.dumps",
+          "logging.info",
           "f.read",
-          "hashlib.sha256"
+          "content.encode"
         ],
         "get_metadata": [
           "json.loads",
           "cursor.fetchone"
         ],
         "get_full_json": [
-          "logging.error",
           "json.load",
-          "open",
-          "cursor.fetchone"
+          "logging.error",
+          "cursor.fetchone",
+          "open"
         ],
         "close": []
       },
@@ -4556,7 +4568,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "346c63f6-2f30-4c98-a30b-b53f8e37d72b"
+      "artifact_id": "ed5261fe-fabd-478f-9f4d-5fc25ee120df"
     },
     {
       "module_id": "src.llmstruct.self_run",
@@ -4596,27 +4608,27 @@
       "callgraph": {
         "filter_struct": [
           "any",
-          "filter_json",
-          "module.get",
-          "struct.get",
-          "isinstance",
-          "str",
           "prompt.lower",
-          "item.get"
+          "str",
+          "struct.get",
+          "filter_json",
+          "isinstance",
+          "item.get",
+          "module.get"
         ],
         "attach_to_llm_request": [
-          "filter_json",
-          "select_json",
-          "Path",
-          "logging.info",
-          "logging.error",
-          "cache.cache_json",
-          "cache.get_full_json",
+          "prompt.lower",
           "cache.get_metadata",
-          "context_file.exists",
-          "filter_struct",
+          "logging.error",
+          "Path",
           "json.dumps",
-          "prompt.lower"
+          "logging.info",
+          "select_json",
+          "filter_json",
+          "filter_struct",
+          "cache.get_full_json",
+          "context_file.exists",
+          "cache.cache_json"
         ]
       },
       "dependencies": [
@@ -4634,7 +4646,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "7a03dea2-5a6a-4720-9ee4-650f3ab54156"
+      "artifact_id": "9444f30d-6c9b-4d89-a259-69abc645086a"
     },
     {
       "module_id": "src.llmstruct.json_selector",
@@ -4677,24 +4689,24 @@
       "classes": [],
       "callgraph": {
         "filter_json": [
+          "data.get",
           "filtered.append",
           "isinstance",
-          "data.get",
           "item.get"
         ],
         "select_json": [
-          "json_file.exists",
-          "filter_json",
-          "Path",
-          "logging.error",
-          "json.load",
           "open",
-          "f.seek",
           "path.append",
+          "json_file.exists",
+          "logging.error",
+          "Path",
+          "ijson.parse",
+          "json.load",
           "prefix.startswith",
+          "f.seek",
           "filtered.append",
-          "current_item.get",
-          "ijson.parse"
+          "filter_json",
+          "current_item.get"
         ]
       },
       "dependencies": [
@@ -4711,7 +4723,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "3d0b9a20-edfa-4c3a-9435-48540f2a94a9"
+      "artifact_id": "b6c064a7-9bac-4abc-bc3f-ae6beecf7da4"
     },
     {
       "module_id": "src.llmstruct.cli",
@@ -4919,140 +4931,140 @@
       "classes": [],
       "callgraph": {
         "load_gitignore": [
-          "Path",
-          "line.strip",
           "line.startswith",
-          "gitignore_path.exists",
           "logging.error",
+          "Path",
+          "gitignore_path.exists",
+          "line.strip",
           "gitignore_path.open"
         ],
         "load_config": [
-          "config_path.open",
-          "Path",
           "logging.error",
+          "Path",
+          "config_path.open",
           "config_path.exists",
           "toml.load"
         ],
         "read_file_content": [
-          "Path",
           "logging.error",
+          "Path",
+          "f.read",
           "path.open",
-          "path.is_file",
-          "f.read"
+          "path.is_file"
         ],
         "write_to_file": [
-          "Path",
-          "f.write",
-          "logging.error",
-          "logging.info",
-          "logging.warning",
           "file_path.exists",
           "base_path.mkdir",
+          "re.sub",
+          "logging.error",
           "file_path.open",
+          "Path",
           "str",
-          "re.sub"
+          "logging.info",
+          "f.write",
+          "logging.warning"
         ],
         "parse_files_from_response": [
-          "filename.strip",
           "re.findall",
+          "filename.strip",
           "content.strip",
           "files.append"
         ],
         "interactive": [
-          "logging.warning",
           "interactive_legacy",
-          "interactive_modular"
+          "interactive_modular",
+          "logging.warning"
         ],
         "interactive_modular": [
           "create_cli_core",
           "cli_core.run_interactive_mode"
         ],
         "interactive_legacy": [
-          "m.group",
-          "Path",
-          "JSONCache",
-          "client.query",
-          "get_folder_structure",
-          "time.ctime",
-          "os.makedirs",
-          "cache.get_stats",
-          "read_file_content",
-          "input",
-          "sorted",
-          "write_to_file",
-          "cache.close",
-          "attach_to_llm_request",
-          "cache.clear",
-          "user_input.lower",
-          "json.load",
-          "open",
-          "logging.warning",
-          "workflow.get",
           "os.stat",
-          "time.time",
-          "json.dump",
-          "re.match",
-          "os.listdir",
-          "parse",
+          "sorted",
+          "cache.get_stats",
           "logging.error",
-          "load_gitignore",
-          "subprocess.run",
-          "LLMClient",
-          "json.dumps",
-          "print",
           "isinstance",
-          "int",
-          "events_data.append",
-          "user_input.startswith",
-          "struct_data.get",
+          "cache.clear",
+          "time.ctime",
           "process_cli_queue_enhanced",
+          "JSONCache",
+          "time.time",
+          "os.listdir",
+          "len",
+          "client.query",
+          "parse",
+          "events_data.append",
+          "get_folder_structure",
+          "m.group",
+          "write_to_file",
+          "int",
+          "open",
+          "cache.close",
+          "json.load",
+          "load_gitignore",
+          "print",
+          "json.dump",
+          "input",
+          "attach_to_llm_request",
+          "os.makedirs",
+          "user_input.startswith",
+          "LLMClient",
           "args_str.strip",
           "cache.list_keys",
-          "len"
+          "struct_data.get",
+          "Path",
+          "json.dumps",
+          "workflow.get",
+          "subprocess.run",
+          "user_input.lower",
+          "re.match",
+          "read_file_content",
+          "logging.warning"
         ],
         "process_cli_queue_enhanced": [
-          "write_to_file",
-          "attach_to_llm_request",
-          "logging.info",
-          "logging.error",
-          "json.load",
           "open",
-          "get_folder_structure",
-          "client.query",
-          "enumerate",
-          "workflow.get",
-          "load_gitignore",
           "time.time",
-          "read_file_content",
           "options.get",
-          "print",
-          "isinstance",
+          "logging.error",
           "len",
-          "item.get"
+          "workflow.get",
+          "client.query",
+          "json.load",
+          "load_gitignore",
+          "logging.info",
+          "get_folder_structure",
+          "read_file_content",
+          "isinstance",
+          "print",
+          "item.get",
+          "attach_to_llm_request",
+          "write_to_file",
+          "enumerate"
         ],
         "parse": [
           "config.get",
-          "cache.close",
-          "Path",
-          "JSONCache",
-          "logging.info",
-          "load_config",
           "generate_json",
-          "cache.cache_json",
           "logging.error",
+          "load_config",
+          "Path",
+          "cache.close",
           "load_gitignore",
+          "logging.info",
+          "json.dump",
+          "JSONCache",
           "logging.warning",
-          "json.dump"
+          "cache.cache_json"
         ],
         "query": [
-          "cache.close",
-          "Path",
-          "JSONCache",
-          "client.query",
           "logging.error",
+          "client.query",
+          "Path",
+          "cache.close",
           "logging.info",
-          "LLMClient",
-          "json.dump"
+          "json.dump",
+          "JSONCache",
+          "LLMClient"
         ],
         "context": [
           "logging.warning"
@@ -5064,49 +5076,49 @@
           "logging.warning"
         ],
         "copilot": [
-          "Path",
-          "manager.validate_change",
-          "manager.export_context",
-          "getattr",
           "manager.unload_context_layer",
-          "config_path.exists",
-          "shutil.copy",
           "manager.refresh_all_contexts",
-          "manager.close",
+          "layers.split",
+          "shutil.copy",
+          "logging.error",
           "initialize_copilot",
-          "open",
-          "enumerate",
-          "hasattr",
-          "smart_suggest",
+          "manager.load_context_layer",
+          "f.write",
+          "manager.close",
+          "template_path.exists",
+          "manager.export_context",
           "manager.get_context_status",
           "logging.info",
-          "logging.error",
-          "f.write",
-          "manager.load_context_layer",
+          "config_path.exists",
+          "enumerate",
+          "open",
+          "manager.validate_change",
           "print",
-          "template_path.exists",
-          "layers.split"
+          "Path",
+          "hasattr",
+          "getattr",
+          "smart_suggest"
         ],
         "main": [
-          "context",
-          "parse_parser.add_argument",
+          "review",
           "copilot",
           "review_parser.add_argument",
-          "copilot_parser.add_argument",
-          "dogfood",
           "dogfood_parser.add_argument",
-          "parse",
-          "interactive_parser.add_argument",
-          "interactive_legacy",
-          "review",
           "asyncio.run",
+          "parse",
+          "parse_parser.add_argument",
           "subparsers.add_parser",
-          "argparse.ArgumentParser",
           "parser.add_subparsers",
+          "argparse.ArgumentParser",
+          "interactive_parser.add_argument",
+          "copilot_parser.add_argument",
+          "query",
+          "context",
           "context_parser.add_argument",
-          "parser.parse_args",
+          "dogfood",
           "query_parser.add_argument",
-          "query"
+          "parser.parse_args",
+          "interactive_legacy"
         ]
       },
       "dependencies": [
@@ -5142,7 +5154,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "10e4a8e3-ba22-4b43-a183-ab485c55429b"
+      "artifact_id": "19f53d28-193c-492e-becd-f7a4c5be1f4c"
     },
     {
       "module_id": "src.llmstruct.cli_core",
@@ -5295,34 +5307,34 @@
       ],
       "callgraph": {
         "__init__": [
-          "CommandProcessor",
           "CLIConfig",
-          "CLIUtils"
+          "CLIUtils",
+          "CommandProcessor"
         ],
         "setup_cache": [
           "Path",
-          "JSONCache",
-          "logging.info",
+          "str",
           "cache_config.get",
-          "logging.warning",
           "cache_path.mkdir",
-          "str"
+          "logging.info",
+          "JSONCache",
+          "logging.warning"
         ],
         "setup_copilot": [
-          "logging.warning",
-          "logging.info",
           "copilot_config.get",
-          "initialize_copilot"
+          "initialize_copilot",
+          "logging.warning",
+          "logging.info"
         ],
         "run_interactive_mode": [
           "self.cleanup",
-          "self.setup_copilot",
-          "user_input.startswith",
-          "user_input.lower",
           "logging.error",
+          "user_input.lower",
+          "self.setup_copilot",
           "print",
           "self.setup_cache",
-          "input"
+          "input",
+          "user_input.startswith"
         ],
         "cleanup": [
           "logging.info"
@@ -5350,7 +5362,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "7a3290fc-0025-414d-af1e-edffe505ed12"
+      "artifact_id": "cf85716a-225b-4955-b2e7-ea0c9565bff6"
     },
     {
       "module_id": "src.llmstruct.parsers.__init__",
@@ -5365,7 +5377,7 @@
         "javascript_parser"
       ],
       "hash": null,
-      "artifact_id": "3a8d04fc-19e5-4c85-b54a-a8d16a4b3e6f"
+      "artifact_id": "acf93108-751e-4c5d-8605-667367e2dde5"
     },
     {
       "module_id": "src.llmstruct.parsers.javascript_parser",
@@ -5510,21 +5522,21 @@
           "set"
         ],
         "file_hash": [
+          "f.read",
           "hashlib.sha256",
-          "open",
-          "f.read"
+          "open"
         ],
         "compute_file_metadata": [
+          "sum",
           "os.stat",
           "open",
-          "self.file_hash",
-          "sum"
+          "self.file_hash"
         ],
         "parse_module": [
           "esprima.parseModule",
-          "str",
-          "self.compute_file_metadata",
           "open",
+          "self.compute_file_metadata",
+          "str",
           "f.read"
         ],
         "extract_signature": [
@@ -5541,7 +5553,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "5a46ad6b-d672-4ef2-a0c4-73f7d7e1dcb8"
+      "artifact_id": "abe7c4ce-c29c-4253-91a7-f6a4c47a7137"
     },
     {
       "module_id": "src.llmstruct.parsers.python_parser",
@@ -5766,42 +5778,42 @@
           "self.generic_visit"
         ],
         "visit_FunctionDef": [
-          "set",
-          "self.generic_visit"
+          "self.generic_visit",
+          "set"
         ],
         "visit_AsyncFunctionDef": [
-          "set",
-          "self.generic_visit"
+          "self.generic_visit",
+          "set"
         ],
         "visit_Call": [
-          "isinstance",
-          "self.generic_visit"
+          "self.generic_visit",
+          "isinstance"
         ],
         "compute_file_hash": [
           "logging.error",
+          "f.read",
           "hashlib.sha256",
-          "open",
-          "f.read"
+          "open"
         ],
         "analyze_module": [
-          "list",
-          "CallVisitor",
-          "functions.append",
-          "Path",
-          "ast.get_docstring",
-          "str",
-          "ast.unparse",
-          "logging.error",
-          "open",
-          "infer_category",
-          "ast.parse",
-          "ast.walk",
           "compute_file_hash",
-          "isinstance",
+          "list",
+          "ast.parse",
           "visitor.visit",
-          "f.read",
+          "open",
+          "sorted",
+          "functions.append",
+          "logging.error",
           "classes.append",
-          "sorted"
+          "Path",
+          "ast.walk",
+          "str",
+          "infer_category",
+          "ast.get_docstring",
+          "f.read",
+          "isinstance",
+          "CallVisitor",
+          "ast.unparse"
         ]
       },
       "dependencies": [
@@ -5818,7 +5830,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "29c84891-2774-4598-ab27-0716beba43a0"
+      "artifact_id": "0bfd14e5-41fb-4e5d-9a33-7e8d0fe0346e"
     },
     {
       "module_id": "src.llmstruct.templates.__init__",
@@ -5830,7 +5842,7 @@
       "callgraph": {},
       "dependencies": [],
       "hash": null,
-      "artifact_id": "88c15247-8c8f-4cac-b313-c69ee2aa0897"
+      "artifact_id": "9443fa22-8d11-4736-8b0c-7d9b00a67764"
     },
     {
       "module_id": "src.llmstruct.validators.__init__",
@@ -5845,7 +5857,7 @@
         "validate_struct_json"
       ],
       "hash": null,
-      "artifact_id": "35fc8f31-af03-40f4-b8c6-d30ea8f34010"
+      "artifact_id": "9991e611-f7a4-4f5d-98de-316c5a310136"
     },
     {
       "module_id": "src.llmstruct.validators.json_validator",
@@ -5885,22 +5897,22 @@
       "classes": [],
       "callgraph": {
         "validate_struct_json": [
-          "json_file.exists",
-          "Path",
-          "logging.info",
-          "logging.error",
-          "json.load",
           "open",
+          "json_file.exists",
+          "logging.error",
+          "Path",
+          "json.load",
+          "str",
+          "logging.info",
           "schema_file.exists",
-          "validate",
-          "str"
+          "validate"
         ],
         "validate_directory": [
           "any",
-          "validate_struct_json",
+          "json_file.match",
           "Path",
           "str",
-          "json_file.match"
+          "validate_struct_json"
         ]
       },
       "dependencies": [
@@ -5917,7 +5929,7 @@
         "validate"
       ],
       "hash": null,
-      "artifact_id": "74b7ff8a-8980-4f26-9023-4a9b60282a06"
+      "artifact_id": "13d555ef-386b-4ddd-8b66-df7df8d381ef"
     },
     {
       "module_id": "src.llmstruct.generators.json_generator",
@@ -5983,41 +5995,41 @@
       "callgraph": {
         "get_folder_structure": [
           "any",
-          "Path",
-          "structure.append",
-          "p.rstrip",
-          "file_path.match",
-          "file_path.relative_to",
-          "set",
           "sorted",
+          "os.walk",
           "uuid.uuid4",
-          "str",
+          "file_path.match",
           "p.endswith",
-          "os.walk"
+          "Path",
+          "set",
+          "str",
+          "p.rstrip",
+          "file_path.relative_to",
+          "structure.append"
         ],
         "build_toc_and_modules": [
           "any",
-          "len",
-          "Path",
-          "f.match",
-          "analyze_module",
-          "modules.append",
-          "p.rstrip",
-          "set",
           "uuid.uuid4",
+          "len",
+          "p.endswith",
+          "Path",
+          "set",
           "str",
           "toc.append",
-          "p.endswith"
+          "f.match",
+          "modules.append",
+          "analyze_module",
+          "p.rstrip"
         ],
         "generate_json": [
           "list",
-          "Path",
-          "str",
-          "get_folder_structure",
-          "build_toc_and_modules",
-          "set",
           "uuid.uuid4",
           "len",
+          "Path",
+          "set",
+          "str",
+          "build_toc_and_modules",
+          "get_folder_structure",
           "sum"
         ]
       },
@@ -6037,7 +6049,7 @@
         "uuid"
       ],
       "hash": null,
-      "artifact_id": "1d3bb12f-3a4d-470e-b904-7ff21ebdf9e7"
+      "artifact_id": "c073479e-b392-4d13-b495-af2b739cc571"
     },
     {
       "module_id": "src.llmstruct.generators.__init__",
@@ -6052,7 +6064,7 @@
         "json_generator"
       ],
       "hash": null,
-      "artifact_id": "0b8696b5-e7f8-4b63-8375-5dcae46afd48"
+      "artifact_id": "2a3d5f28-8122-4d2d-9386-2b00e4d5dd00"
     },
     {
       "module_id": "temp_workfiles.test_cli_integration",
@@ -6074,18 +6086,18 @@
       "classes": [],
       "callgraph": {
         "test_modular_cli_commands": [
-          "events_data.append",
           "create_cli_core",
-          "json.dump",
-          "json.load",
-          "open",
-          "time.ctime",
-          "os.makedirs",
-          "subprocess.run",
           "os.stat",
+          "int",
+          "open",
           "time.time",
+          "subprocess.run",
+          "json.load",
+          "events_data.append",
           "print",
-          "int"
+          "time.ctime",
+          "json.dump",
+          "os.makedirs"
         ]
       },
       "dependencies": [
@@ -6109,7 +6121,7 @@
         "time"
       ],
       "hash": null,
-      "artifact_id": "eddb200a-8b50-451c-816f-8283e8751016"
+      "artifact_id": "f3608c78-8894-466a-a6d8-ce58b147f78b"
     },
     {
       "module_id": "temp_workfiles.test_cli",
@@ -6131,9 +6143,9 @@
       "classes": [],
       "callgraph": {
         "test_cli_commands": [
-          "print",
           "process.communicate",
           "process.kill",
+          "print",
           "subprocess.Popen"
         ]
       },
@@ -6145,7 +6157,7 @@
         "time"
       ],
       "hash": null,
-      "artifact_id": "9229f4ea-3371-4c98-8eda-9d06f424368a"
+      "artifact_id": "ddcb5ad1-66e5-4693-80ae-a1b9b1d1c1de"
     },
     {
       "module_id": "temp_workfiles.final_system_check",
@@ -6168,11 +6180,11 @@
       "callgraph": {
         "check_system_status": [
           "i.get",
-          "json.load",
           "open",
-          "t.get",
-          "print",
           "len",
+          "json.load",
+          "print",
+          "t.get",
           "data.get"
         ]
       },
@@ -6184,7 +6196,7 @@
         "sys"
       ],
       "hash": null,
-      "artifact_id": "7c20aa58-8f3b-4299-a1da-c330d7f485f8"
+      "artifact_id": "cb18c90f-c653-4ebe-875e-08dbb5fa4399"
     },
     {
       "module_id": "temp_workfiles.final_system_validation",
@@ -6207,16 +6219,16 @@
       "callgraph": {
         "main": [
           "create_cli_core",
+          "status.upper",
+          "open",
+          "len",
           "task.get",
+          "json.load",
+          "subprocess.run",
           "next",
           "getattr",
-          "json.load",
-          "open",
-          "status.upper",
-          "subprocess.run",
-          "__import__",
           "print",
-          "len"
+          "__import__"
         ]
       },
       "dependencies": [
@@ -6231,7 +6243,7 @@
         "time"
       ],
       "hash": null,
-      "artifact_id": "6a0f52ff-6b9f-40c7-90ce-71620033ddca"
+      "artifact_id": "57bcae53-3871-42a8-b6a2-dccc1e3f4404"
     },
     {
       "module_id": "temp_workfiles.test_modular_cli",
@@ -6265,25 +6277,25 @@
         "test_modular_cli": [
           "create_cli_core",
           "tempfile.TemporaryDirectory",
-          "utils.read_file_content",
-          "traceback.print_exc",
-          "CommandProcessor",
           "CLIUtils",
-          "utils.write_file_content",
-          "print",
-          "CLIConfig",
+          "traceback.print_exc",
           "len",
-          "config.get_cache_config"
+          "CommandProcessor",
+          "utils.read_file_content",
+          "print",
+          "config.get_cache_config",
+          "CLIConfig",
+          "utils.write_file_content"
         ],
         "test_copilot_integration": [
-          "tempfile.TemporaryDirectory",
           "manager.close",
-          "manager.get_context_status",
-          "initialize_copilot",
-          "CopilotEvent",
+          "tempfile.TemporaryDirectory",
           "traceback.print_exc",
+          "len",
+          "manager.get_context_status",
           "print",
-          "len"
+          "CopilotEvent",
+          "initialize_copilot"
         ]
       },
       "dependencies": [
@@ -6308,7 +6320,7 @@
         "traceback"
       ],
       "hash": null,
-      "artifact_id": "0f89a68c-9357-4185-bdd7-372e29645170"
+      "artifact_id": "1403f0b0-8d58-479c-b0eb-d17e8f210bbb"
     },
     {
       "module_id": "temp_workfiles.test_cli_demo",
@@ -6340,7 +6352,7 @@
         "time"
       ],
       "hash": null,
-      "artifact_id": "57977c10-7b47-4fe7-b739-50b6aa2a75dd"
+      "artifact_id": "3573c53e-4eca-44ee-aa82-e6edc7139826"
     },
     {
       "module_id": "bak.20250522_102827.scripts.collector",
@@ -6401,30 +6413,30 @@
       "classes": [],
       "callgraph": {
         "apply_filters": [
-          "pattern.startswith",
           "fnmatch.fnmatch",
-          "filtered.append"
+          "filtered.append",
+          "pattern.startswith"
         ],
         "collect_files": [
-          "str",
-          "path.relative_to",
           "files.append",
           "root_dir.rglob",
-          "path.is_file",
-          "apply_filters"
+          "str",
+          "apply_filters",
+          "path.relative_to",
+          "path.is_file"
         ],
         "generate_struct": [
           "existing.get",
-          "len",
-          "Path",
-          "collect_files",
-          "output_path.open",
-          "json.load",
           "logger.info",
-          "output_path.exists",
+          "collect_files",
           "uuid.uuid4",
+          "len",
+          "output_path.exists",
+          "Path",
+          "str",
+          "json.load",
           "json.dump",
-          "str"
+          "output_path.open"
         ],
         "main": [
           "generate_struct"
@@ -6439,7 +6451,7 @@
         "uuid"
       ],
       "hash": null,
-      "artifact_id": "5b52c654-bcc0-4f17-becf-4a6b9e2d56bc"
+      "artifact_id": "af0a8b6a-6264-4c08-aec4-10b156e3e6a6"
     },
     {
       "module_id": "bak.20250522_102827.scripts.validate_refs",
@@ -6471,16 +6483,16 @@
       "classes": [],
       "callgraph": {
         "validate_references": [
-          "source_file.exists",
-          "target_file.exists",
-          "json.dump",
-          "Path",
-          "json.load",
-          "logger.error",
-          "broken_links.append",
-          "enumerate",
-          "idea.get",
           "logger.info",
+          "Path",
+          "broken_links.append",
+          "json.load",
+          "target_file.exists",
+          "logger.error",
+          "json.dump",
+          "idea.get",
+          "enumerate",
+          "source_file.exists",
           "logger.warning"
         ],
         "main": [
@@ -6494,7 +6506,7 @@
         "pathlib"
       ],
       "hash": null,
-      "artifact_id": "df4f7cb0-4c0a-4110-92e6-9d16fb0a8272"
+      "artifact_id": "45ef6f7e-d113-4d89-95ce-f56e3b3594c9"
     },
     {
       "module_id": "bak.20250522_102827.scripts.deploy_embedded_files",
@@ -6552,27 +6564,27 @@
       "classes": [],
       "callgraph": {
         "validate_json": [
-          "logger.warning",
-          "validate"
+          "validate",
+          "logger.warning"
         ],
         "backup_files": [
-          "shutil.copytree",
           "target_dir.exists",
           "datetime.now",
+          "shutil.copytree",
           "logger.info"
         ],
         "deploy_embedded_files": [
+          "EMBEDDED_FILES.get",
+          "target_path.exists",
           "Path",
           "target_path.open",
+          "logger.error",
+          "validate_json",
+          "json.dump",
+          "EMBEDDED_FILES.items",
           "f.write",
           "backup_files",
-          "logger.error",
-          "EMBEDDED_FILES.get",
-          "EMBEDDED_FILES.items",
-          "target_path.exists",
-          "validate_json",
-          "logger.info",
-          "json.dump"
+          "logger.info"
         ],
         "main": [
           "deploy_embedded_files"
@@ -6591,7 +6603,7 @@
         "validate"
       ],
       "hash": null,
-      "artifact_id": "2f8c138d-8c11-4d5b-ade1-945fdc3ac8f2"
+      "artifact_id": "55a8a7e5-55cf-423a-8842-4d0433438fd9"
     },
     {
       "module_id": "bak.20250522_131121.scripts.collector",
@@ -6652,30 +6664,30 @@
       "classes": [],
       "callgraph": {
         "apply_filters": [
-          "pattern.startswith",
           "fnmatch.fnmatch",
-          "filtered.append"
+          "filtered.append",
+          "pattern.startswith"
         ],
         "collect_files": [
-          "str",
-          "path.relative_to",
           "files.append",
           "root_dir.rglob",
-          "path.is_file",
-          "apply_filters"
+          "str",
+          "apply_filters",
+          "path.relative_to",
+          "path.is_file"
         ],
         "generate_struct": [
           "existing.get",
-          "len",
-          "Path",
-          "collect_files",
-          "output_path.open",
-          "json.load",
           "logger.info",
-          "output_path.exists",
+          "collect_files",
           "uuid.uuid4",
+          "len",
+          "output_path.exists",
+          "Path",
+          "str",
+          "json.load",
           "json.dump",
-          "str"
+          "output_path.open"
         ],
         "main": [
           "generate_struct"
@@ -6690,7 +6702,7 @@
         "uuid"
       ],
       "hash": null,
-      "artifact_id": "d7b5e7c1-622b-4e42-bab1-6937433bc5be"
+      "artifact_id": "1e9feba7-55c8-4c5a-ae4a-7e4beb3e70d5"
     },
     {
       "module_id": "bak.20250522_131121.scripts.validate_refs",
@@ -6722,16 +6734,16 @@
       "classes": [],
       "callgraph": {
         "validate_references": [
-          "source_file.exists",
-          "target_file.exists",
-          "json.dump",
-          "Path",
-          "json.load",
-          "logger.error",
-          "broken_links.append",
-          "enumerate",
-          "idea.get",
           "logger.info",
+          "Path",
+          "broken_links.append",
+          "json.load",
+          "target_file.exists",
+          "logger.error",
+          "json.dump",
+          "idea.get",
+          "enumerate",
+          "source_file.exists",
           "logger.warning"
         ],
         "main": [
@@ -6745,7 +6757,7 @@
         "pathlib"
       ],
       "hash": null,
-      "artifact_id": "db51be03-690b-44e6-b50f-267f50970a64"
+      "artifact_id": "6ba721e5-fd76-43c6-97c7-b96a379f2d73"
     },
     {
       "module_id": "bak.20250522_131121.scripts.deploy_embedded_files",
@@ -6804,28 +6816,28 @@
       "classes": [],
       "callgraph": {
         "validate_json": [
-          "logger.warning",
           "validate",
           "RefResolver",
-          "logger.error"
+          "logger.error",
+          "logger.warning"
         ],
         "backup_files": [
-          "shutil.copytree",
           "target_dir.exists",
           "datetime.now",
+          "shutil.copytree",
           "logger.info"
         ],
         "deploy_embedded_files": [
-          "json.dump",
-          "Path",
-          "target_path.open",
-          "Path.cwd",
-          "backup_files",
-          "logger.error",
-          "f.write",
           "EMBEDDED_FILES.get",
           "target_path.exists",
+          "Path",
+          "Path.cwd",
+          "target_path.open",
+          "logger.error",
           "validate_json",
+          "json.dump",
+          "backup_files",
+          "f.write",
           "logger.info",
           "logger.warning"
         ],
@@ -6847,7 +6859,7 @@
         "validate"
       ],
       "hash": null,
-      "artifact_id": "312e389c-3e8a-4a32-854d-b10fdb4f3252"
+      "artifact_id": "cb0547b7-bc70-4deb-aa2c-27ba2f30d67c"
     },
     {
       "module_id": "scripts.collector",
@@ -6908,30 +6920,30 @@
       "classes": [],
       "callgraph": {
         "apply_filters": [
-          "pattern.startswith",
           "fnmatch.fnmatch",
-          "filtered.append"
+          "filtered.append",
+          "pattern.startswith"
         ],
         "collect_files": [
-          "str",
-          "path.relative_to",
           "files.append",
           "root_dir.rglob",
-          "path.is_file",
-          "apply_filters"
+          "str",
+          "apply_filters",
+          "path.relative_to",
+          "path.is_file"
         ],
         "generate_struct": [
           "existing.get",
-          "len",
-          "Path",
-          "collect_files",
-          "output_path.open",
-          "json.load",
           "logger.info",
-          "output_path.exists",
+          "collect_files",
           "uuid.uuid4",
+          "len",
+          "output_path.exists",
+          "Path",
+          "str",
+          "json.load",
           "json.dump",
-          "str"
+          "output_path.open"
         ],
         "main": [
           "generate_struct"
@@ -6946,7 +6958,7 @@
         "uuid"
       ],
       "hash": null,
-      "artifact_id": "bc26da2c-daec-4b1f-ad92-56bb3232c2f3"
+      "artifact_id": "279709af-f7f6-4930-9628-6af39742e617"
     },
     {
       "module_id": "scripts.auto_update_struct",
@@ -6958,8 +6970,8 @@
           "name": "detect_project_changes",
           "docstring": "Detect if project files have changed since last struct.json generation.\nUses git status to check for modifications.",
           "line_range": [
-            31,
-            68
+            44,
+            81
           ],
           "parameters": [
             "root_dir",
@@ -6971,8 +6983,8 @@
           "name": "backup_struct_json",
           "docstring": "Create a backup of existing struct.json.",
           "line_range": [
-            71,
-            84
+            84,
+            97
           ],
           "parameters": [
             "struct_path"
@@ -6983,8 +6995,8 @@
           "name": "validate_struct_json",
           "docstring": "Validate generated struct.json for basic structure.",
           "line_range": [
-            87,
-            115
+            100,
+            128
           ],
           "parameters": [
             "struct_path"
@@ -6995,8 +7007,8 @@
           "name": "update_struct_json",
           "docstring": "Main function to update struct.json automatically.\n\nArgs:\n    root_dir: Project root directory (default: current directory)\n    struct_path: Path to struct.json (default: ./struct.json)\n    force: Force regeneration even if no changes detected\n    config_override: Override default configuration\n\nReturns:\n    bool: True if update was successful",
           "line_range": [
-            118,
-            212
+            131,
+            225
           ],
           "parameters": [
             "root_dir",
@@ -7010,8 +7022,38 @@
           "name": "main",
           "docstring": "Command-line interface for auto-update script.",
           "line_range": [
-            215,
-            273
+            228,
+            286
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "load_config",
+          "docstring": "",
+          "line_range": [
+            24,
+            25
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "load_gitignore",
+          "docstring": "",
+          "line_range": [
+            26,
+            27
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "generate_json",
+          "docstring": "",
+          "line_range": [
+            28,
+            29
           ],
           "parameters": [],
           "decorators": []
@@ -7019,6 +7061,11 @@
       ],
       "classes": [],
       "callgraph": {
+        "load_config": [],
+        "load_gitignore": [],
+        "generate_json": [
+          "ImportError"
+        ],
         "detect_project_changes": [
           "Path",
           "subprocess.run",
@@ -7029,43 +7076,43 @@
         "backup_struct_json": [
           "datetime.now",
           "Path",
-          "logger.error",
           "subprocess.run",
+          "logger.error",
           "logger.info"
         ],
         "validate_struct_json": [
-          "logger.error",
           "json.load",
-          "open",
-          "logger.info"
+          "logger.error",
+          "logger.info",
+          "open"
         ],
         "update_struct_json": [
-          "validate_struct_json",
-          "json.dump",
           "config.get",
-          "config.update",
-          "load_config",
-          "generate_json",
-          "detect_project_changes",
           "open",
-          "logger.error",
-          "load_gitignore",
-          "os.getcwd",
           "backup_struct_json",
+          "generate_json",
+          "load_config",
+          "config.update",
           "subprocess.run",
-          "logger.info",
-          "cli_config.get"
+          "load_gitignore",
+          "cli_config.get",
+          "validate_struct_json",
+          "logger.error",
+          "os.getcwd",
+          "json.dump",
+          "detect_project_changes",
+          "logger.info"
         ],
         "main": [
           "logging.getLogger",
+          "update_struct_json",
           "argparse.ArgumentParser",
-          "detect_project_changes",
+          "parser.parse_args",
+          "parser.add_argument",
+          "print",
           "os.getcwd",
           "sys.exit",
-          "parser.add_argument",
-          "update_struct_json",
-          "print",
-          "parser.parse_args"
+          "detect_project_changes"
         ]
       },
       "dependencies": [
@@ -7077,19 +7124,19 @@
         "datetime",
         "generate_json",
         "json",
+        "llmstruct.cli",
+        "llmstruct.generators.json_generator",
         "load_config",
         "load_gitignore",
         "logging",
         "os",
         "pathlib",
-        "src.llmstruct.cli",
-        "src.llmstruct.generators.json_generator",
         "subprocess",
         "sys",
         "typing"
       ],
       "hash": null,
-      "artifact_id": "6410222d-9ac4-4d6a-b88c-54d651dbe647"
+      "artifact_id": "c83fc865-572c-4870-ac89-05a78bfd6aa0"
     },
     {
       "module_id": "scripts.validate_refs",
@@ -7121,16 +7168,16 @@
       "classes": [],
       "callgraph": {
         "validate_references": [
-          "source_file.exists",
-          "target_file.exists",
-          "json.dump",
-          "Path",
-          "json.load",
-          "logger.error",
-          "broken_links.append",
-          "enumerate",
-          "idea.get",
           "logger.info",
+          "Path",
+          "broken_links.append",
+          "json.load",
+          "target_file.exists",
+          "logger.error",
+          "json.dump",
+          "idea.get",
+          "enumerate",
+          "source_file.exists",
           "logger.warning"
         ],
         "main": [
@@ -7144,7 +7191,7 @@
         "pathlib"
       ],
       "hash": null,
-      "artifact_id": "2831d022-2831-42c7-83fe-e64a60e0f982"
+      "artifact_id": "79a09110-d391-4e85-9d25-cfb5d1e67eea"
     },
     {
       "module_id": "scripts.deploy_embedded_files",
@@ -7203,28 +7250,28 @@
       "classes": [],
       "callgraph": {
         "validate_json": [
-          "logger.warning",
           "validate",
           "RefResolver",
-          "logger.error"
+          "logger.error",
+          "logger.warning"
         ],
         "backup_files": [
-          "shutil.copytree",
           "target_dir.exists",
           "datetime.now",
+          "shutil.copytree",
           "logger.info"
         ],
         "deploy_embedded_files": [
-          "json.dump",
-          "Path",
-          "target_path.open",
-          "Path.cwd",
-          "backup_files",
-          "logger.error",
-          "f.write",
           "EMBEDDED_FILES.get",
           "target_path.exists",
+          "Path",
+          "Path.cwd",
+          "target_path.open",
+          "logger.error",
           "validate_json",
+          "json.dump",
+          "backup_files",
+          "f.write",
           "logger.info",
           "logger.warning"
         ],
@@ -7245,7 +7292,7 @@
         "validate"
       ],
       "hash": null,
-      "artifact_id": "2ce782bb-f571-4bd9-8307-b3552ca7e0c2"
+      "artifact_id": "a44b8721-3abc-4912-91f9-8a0af7c31d61"
     }
   ]
 }

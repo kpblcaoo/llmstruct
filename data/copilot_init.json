@@ -282,10 +282,40 @@
     },
 
     "ai_session_support": {
-      "description": "Enhanced Copilot support for AI-driven development sessions",
-      "session_detection": {          "branch_pattern": "ai-helped/.*",
+      "description": "Enhanced Copilot support for AI-driven development sessions with rampage prevention",
+      "modular_constraints": {
+        "ai_constraints_file": "data/copilot/ai_constraints.json",
+        "session_rules_file": "data/copilot/session_rules.json",
+        "warnings_file": "data/copilot/warnings.json",
+        "auto_load": true
+      },
+      "session_detection": {
+        "branch_pattern": "ai-helped/.*",
         "session_file": "SESSION_TASKS.md",
         "auto_context": true
+      },
+      "rampage_prevention": {
+        "enabled": true,
+        "max_changes_per_session": 5,
+        "change_tracking": {
+          "file_modifications": true,
+          "new_files": true,
+          "deleted_files": true,
+          "major_refactors": true
+        },
+        "consultation_triggers": [
+          "Scope expansion beyond initial request",
+          "Cross-module dependencies changes",
+          "Breaking changes to public APIs",
+          "Multiple file deletions",
+          "Changes affecting CI/CD pipeline"
+        ],
+        "safety_stops": [
+          "More than 10 files modified",
+          "Changes to core architecture",
+          "Dependency version changes",
+          "Database schema modifications"
+        ]
       },
       "session_workflows": {
         "task_clarification": {
@@ -294,7 +324,8 @@
           "suggest_actions": [
             "Review current tasks in SESSION_TASKS.md",
             "Check related TSK-numbers in data/tasks.json",
-            "Propose implementation plan",
+            "Apply AI constraints from data/copilot/ai_constraints.json",
+            "Propose implementation plan with scope limits",
             "Identify potential scope issues"
           ]
         },
@@ -304,7 +335,9 @@
             "Clear deliverables defined",
             "Success criteria specified",
             "Dependencies identified",
-            "Time estimation provided"
+            "Time estimation provided",
+            "Change count within limits",
+            "No breaking changes without consultation"
           ],
           "auto_suggest": "scope_refinement"
         },
@@ -312,7 +345,9 @@
           "trigger": "on_file_change",
           "update_session_file": true,
           "track_completion": true,
-          "suggest_next_steps": true
+          "suggest_next_steps": true,
+          "check_rampage_limits": true,
+          "log_warnings": "data/copilot/warnings.json"
         }
       },
       "ambiguity_detection": {
@@ -321,10 +356,27 @@
           "Multiple interpretation paths detected",
           "Unclear requirements in user input",
           "Complex interdependencies found",
-          "Conflicting constraints identified"
+          "Conflicting constraints identified",
+          "Request could lead to scope creep"
         ],
         "response": "request_clarification",
-        "context_enhancement": "load_related_context"
+        "context_enhancement": "load_related_context",
+        "clarification_template": {
+          "request_context": "[llmstruct] context",
+          "ambiguity_type": "scope|technical|requirements",
+          "suggested_approaches": "list of 2-3 options",
+          "risk_assessment": "low|medium|high",
+          "consultation_needed": "boolean"
+        }
+      },
+      "user_profiles": {
+        "load_from": "data/copilot/session_rules.json",
+        "active_profile": "auto_detect",
+        "profile_contexts": {
+          "@kpblcaoo": "lead_developer",
+          "@momai": "product_manager", 
+          "@ivan-ib": "contributor"
+        }
       }
     }
   }
