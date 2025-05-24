@@ -1,51 +1,105 @@
 {
-  "version": "0.4.0",
-  "status": "Draft",
+  "version": "0.2.0",
+  "status": "Active",
   "author": "@kpblcaoo",
   "date": "2025-05-21",
   "license": "GPL-3.0",
-  "artifact_id": "e1f2a3b4-c5d6-47e8-b9f0-a1b2c3d4e5f6",
-  "summary": "High-priority ideas for automation and transparency",
-  "tags": ["automation", "transparency"],
+  "artifact_id": "ideas-core-001",
+  "metadata": {
+    "project_name": "llmstruct",
+    "description": "Conceptual ideas repository for project development",
+    "authors": [{"name": "@kpblcaoo", "github": "kpblcaoo", "email": "kpblcaoo@example.com"}]
+  },
+  "summary": "Repository of project concepts and development ideas",
+  "tags": ["concepts", "planning", "development"],
   "ideas": [
     {
       "id": "IDEA-001",
-      "description": "Dynamic Task Generation from struct.json",
-      "goal": "Automate task creation",
-      "weight": 0.8,
-      "priority": "high",
-      "estimated_effort": "5d",
-      "status": "proposed",
-      "dependencies": ["TSK-006"],
-      "created_at": "2025-05-20T18:00:00Z",
-      "author": "Grok (xAI)",
-      "ai-generated": true
+      "title": "Context-Aware LLM Orchestration",
+      "description": "Intelligent system for managing LLM interactions with context hierarchy and token optimization",
+      "status": "implemented",
+      "priority": "critical",
+      "category": "architecture",
+      "created_at": "2025-05-21T10:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Implemented in init.json with 4-level context hierarchy",
+      "related_files": ["init.json", "cli.json", "cli_queue.json"]
     },
     {
       "id": "IDEA-002",
-      "description": "RFC-Driven Development with struct.json",
-      "goal": "Enhance transparency",
-      "weight": 0.7,
-      "priority": "medium",
-      "estimated_effort": "7d",
-      "status": "proposed",
-      "dependencies": ["TSK-027"],
-      "created_at": "2025-05-20T18:00:00Z",
-      "author": "Grok (xAI)",
-      "ai-generated": true
+      "title": "Multi-Stage Workflow Automation",
+      "description": "Automated workflow system with safety boundaries and performance monitoring",
+      "status": "implemented",
+      "priority": "high",
+      "category": "automation",
+      "created_at": "2025-05-21T10:30:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Implemented in cli_queue.json with comprehensive workflow engine",
+      "related_files": ["cli_queue.json", "cli.py"]
     },
     {
-      "id": "IDEA-126",
-      "description": "Automate CI/CD with GitHub Actions and Telegram notifications",
-      "goal": "Streamline development",
-      "weight": 0.7,
-      "priority": "high",
-      "estimated_effort": "3d",
+      "id": "IDEA-003",
+      "title": "Smart Cache Management",
+      "description": "Intelligent caching system for context optimization and performance enhancement",
+      "status": "in_progress",
+      "priority": "medium",
+      "category": "performance",
+      "created_at": "2025-05-21T11:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Partially implemented in CLI, needs backend development",
+      "related_files": ["cli.py"],
+      "next_steps": ["Implement cache statistics backend", "Add cleanup automation", "Optimize context loading"]
+    },
+    {
+      "id": "IDEA-004",
+      "title": "Dynamic Schema Validation",
+      "description": "Real-time validation system for JSON configurations with auto-correction suggestions",
       "status": "proposed",
-      "dependencies": ["TSK-012", "TSK-023"],
-      "created_at": "2025-05-20T22:20:00Z",
-      "author": "Grok (xAI)",
-      "ai-generated": true
+      "priority": "medium",
+      "category": "validation",
+      "created_at": "2025-05-21T11:30:00Z",
+      "author": "@kpblcaoo",
+      "potential_implementation": "JSON schema validator with ML-based correction suggestions",
+      "related_files": ["schema/*.json"]
+    },
+    {
+      "id": "IDEA-005",
+      "title": "Cross-Language Parser Enhancement",
+      "description": "Enhanced parser supporting multiple programming languages with unified AST",
+      "status": "in_progress",
+      "priority": "high",
+      "category": "parser",
+      "created_at": "2025-05-21T12:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Related to TSK-006",
+      "related_tasks": ["TSK-006"]
     }
-  ]
+  ],
+  "categories": {
+    "architecture": {
+      "description": "Structural and design concepts",
+      "color": "#FF6B6B"
+    },
+    "automation": {
+      "description": "Workflow and process automation",
+      "color": "#4ECDC4"
+    },
+    "performance": {
+      "description": "Optimization and efficiency improvements",
+      "color": "#45B7D1"
+    },
+    "validation": {
+      "description": "Data validation and integrity",
+      "color": "#96CEB4"
+    },
+    "parser": {
+      "description": "Code parsing and analysis",
+      "color": "#FFEAA7"
+    }
+  },
+  "workflow": {
+    "idea_lifecycle": ["proposed", "evaluating", "approved", "in_progress", "implemented", "archived"],
+    "evaluation_criteria": ["feasibility", "impact", "complexity", "resources_required"],
+    "approval_process": "Technical review by maintainer"
+  }
 }

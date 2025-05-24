@@ -2,9 +2,14 @@
   "version": "0.2.0",
   "status": "Draft",
   "author": "@kpblcaoo",
-  "date": "2025-05-21",
+  "date": "2025-05-22",
   "license": "GPL-3.0",
   "artifact_id": "b6c7d8e9-f0a1-42b3-c4d5-e6f7a8b9c0d1",
+  "metadata": {
+    "project_name": "llmstruct",
+    "description": "Schema for llmstruct JSON",
+    "authors": [{"name": "@kpblcaoo", "github": "kpblcaoo", "email": "kpblcaoo@example.com"}]
+  },
   "summary": "Schema for llmstruct JSON",
   "tags": ["schema"],
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -78,6 +83,11 @@
           "metadata": {"type": "object"}
         }
       }
+    },
+    "filters": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Glob patterns to include/exclude files (e.g., ['src/*', '!tests/*'])"
     }
   }
 }

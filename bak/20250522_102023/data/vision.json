@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "status": "Draft",
+  "author": "@kpblcaoo",
+  "date": "2025-05-21",
+  "license": "GPL-3.0",
+  "artifact_id": "e3f4a5b6-c7d8-49e0-f1a2-b3c4d5e6f7a8",
+  "summary": "Project vision and priorities",
+  "tags": ["vision"],
+  "concept": {
+    "description": "Universal JSON for codebases with LLM integration",
+    "principles": ["dogfooding", "idempotence", "transparency"],
+    "goals": ["Universal format", "LLM integration", "Automation"]
+  },
+  "priorities": ["TSK-006", "TSK-119", "TSK-126"],
+  "structure": {
+    "core_files": ["data/tasks.json", "data/ideas.json"],
+    "docs": ["docs/llmstruct_format.md"],
+    "modules": ["cli", "collector"]
+  }
+}

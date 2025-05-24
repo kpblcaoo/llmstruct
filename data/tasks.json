@@ -5,6 +5,11 @@
   "date": "2025-05-21",
   "license": "GPL-3.0",
   "artifact_id": "f2a3b4c5-d6e7-48f9-a0b1-c2d3e4f5a6b7",
+  "metadata": {
+    "project_name": "llmstruct",
+    "description": "Tasks for parser and API",
+    "authors": [{"name": "@kpblcaoo", "github": "kpblcaoo", "email": "kpblcaoo@example.com"}]
+  },
   "summary": "Critical tasks for parser and API",
   "tags": ["parser", "api"],
   "tasks": [
@@ -55,6 +60,86 @@
       "created_at": "2025-05-20T22:20:00Z",
       "author": "@kpblcaoo",
       "ai-generated": false
+    },
+    {
+      "id": "TSK-127",
+      "description": "Implement CLI queue system backend functionality",
+      "status": "completed",
+      "priority": "high",
+      "estimated_effort": "3d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T15:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Implement queue processing engine, file I/O handlers, safety validation",
+        "components": ["queue processor", "workflow engine", "safety validator"]
+      }
+    },
+    {
+      "id": "TSK-128",
+      "description": "Implement CLI cache system backend functionality",
+      "status": "completed",
+      "priority": "medium",
+      "estimated_effort": "2d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T15:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Implement cache statistics, cleanup, optimization for context loading",
+        "components": ["cache manager", "statistics collector", "cleanup scheduler"]
+      }
+    },
+    {
+      "id": "TSK-129",
+      "description": "Restore missing JSON configuration files",
+      "status": "completed",
+      "priority": "medium",
+      "estimated_effort": "1d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T15:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Recreate ideas.json, prs.json, ideas_cache.json based on project needs",
+        "components": ["ideas.json", "prs.json", "ideas_cache.json"]
+      }
+    },
+    {
+      "id": "TSK-130",
+      "description": "Validate JSON schema compliance for enhanced files",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "1d",
+      "dependencies": ["TSK-129"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T15:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Run schema validation against all enhanced JSON files",
+        "components": ["schema validator", "error reporter", "compliance checker"]
+      }
+    },
+    {
+      "id": "TSK-131",
+      "description": "Document context orchestration architecture",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "2d",
+      "dependencies": ["TSK-127", "TSK-128"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T15:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Document new 4-level context hierarchy, smart selection rules, token optimization",
+        "components": ["architecture docs", "usage examples", "best practices guide"]
+      }
     }
   ]
 }

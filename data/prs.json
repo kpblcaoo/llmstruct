@@ -1,21 +1,108 @@
 {
-  "version": "0.2.0",
-  "status": "Draft",
+  "version": "0.1.0",
+  "status": "Active",
   "author": "@kpblcaoo",
   "date": "2025-05-21",
   "license": "GPL-3.0",
-  "artifact_id": "c1d2e3f4-a5b6-47c8-d9e0-f1a2b3c4d5e6",
-  "summary": "Pull requests for ideas",
-  "tags": ["prs"],
-  "prs": [
+  "artifact_id": "prs-tracker-001",
+  "metadata": {
+    "project_name": "llmstruct",
+    "description": "Pull requests tracking and management system",
+    "authors": [{"name": "@kpblcaoo", "github": "kpblcaoo", "email": "kpblcaoo@example.com"}]
+  },
+  "summary": "Pull requests repository for development tracking",
+  "tags": ["git", "tracking", "development"],
+  "pull_requests": [
     {
-      "pr_id": "PR-001",
-      "idea_id": "IDEA-126",
-      "branch": "ai-generated",
-      "status": "pending",
-      "created_at": "2025-05-20T22:20:00Z",
-      "issue": "#138",
-      "artifact_id": "d2e3f4a5-b6c7-48d9-e0f1-a2b3c4d5e6f7"
+      "id": "PR-001",
+      "title": "Context Orchestration System Implementation",
+      "description": "Major enhancement to JSON context system with intelligent LLM interaction orchestration",
+      "status": "draft",
+      "priority": "critical",
+      "branch": "dev/v0.2.0",
+      "target_branch": "main",
+      "created_at": "2025-05-21T15:00:00Z",
+      "author": "@kpblcaoo",
+      "changes": {
+        "files_modified": [
+          "data/init.json",
+          "data/cli.json", 
+          "data/cli_queue.json",
+          "src/llmstruct/cli.py",
+          "data/tasks.json"
+        ],
+        "files_created": [
+          "data/init_enhanced.json",
+          "data/cli_enhanced.json",
+          "data/cli_queue_enhanced.json",
+          "test_cli.py",
+          "data/ideas.json",
+          "data/prs.json",
+          "data/ideas_cache.json"
+        ],
+        "lines_added": 500,
+        "lines_removed": 50
+      },
+      "features": [
+        "4-level context hierarchy system",
+        "Smart context selection rules",
+        "Token optimization strategies",
+        "Multi-stage workflow automation",
+        "CLI queue and cache commands integration",
+        "Safety boundaries for automated operations",
+        "Performance monitoring and validation"
+      ],
+      "testing": {
+        "test_files": ["test_cli.py"],
+        "coverage": "pending",
+        "manual_testing": "CLI commands validated"
+      },
+      "documentation": {
+        "updated": ["README updates pending"],
+        "new": ["Architecture documentation needed"]
+      },
+      "related_tasks": ["TSK-127", "TSK-128", "TSK-129", "TSK-130", "TSK-131"],
+      "related_ideas": ["IDEA-001", "IDEA-002", "IDEA-003"]
     }
-  ]
+  ],
+  "templates": {
+    "feature_pr": {
+      "title_format": "[FEATURE] {feature_name}",
+      "required_sections": ["Description", "Changes", "Testing", "Documentation"],
+      "review_checklist": [
+        "Code follows project standards",
+        "Tests are included and passing",
+        "Documentation is updated",
+        "Breaking changes are documented"
+      ]
+    },
+    "bugfix_pr": {
+      "title_format": "[BUGFIX] {issue_description}",
+      "required_sections": ["Problem", "Solution", "Testing"],
+      "review_checklist": [
+        "Root cause identified",
+        "Fix is minimal and targeted",
+        "Regression tests added"
+      ]
+    }
+  },
+  "workflow": {
+    "states": ["draft", "review", "approved", "merged", "closed"],
+    "review_process": {
+      "required_reviewers": 1,
+      "auto_merge_conditions": ["All checks pass", "Approved by maintainer"],
+      "merge_strategy": "squash"
+    },
+    "automation": {
+      "ci_checks": ["tests", "linting", "schema_validation"],
+      "auto_labeling": true,
+      "conflict_detection": true
+    }
+  },
+  "statistics": {
+    "total_prs": 1,
+    "merged_prs": 0,
+    "open_prs": 1,
+    "average_review_time": "N/A"
+  }
 }

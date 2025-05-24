@@ -1,0 +1,381 @@
+{
+  "version": "0.2.0",
+  "status": "Enhanced",
+  "author": "@kpblcaoo",
+  "date": "2025-05-24",
+  "license": "GPL-3.0",
+  "artifact_id": "e5f6a7b8-c9d0-41e2-f3a4-b5c6d7e8f9a0",
+  "metadata": {
+    "project_name": "llmstruct",
+    "description": "Enhanced CLI commands with automation and queue integration",
+    "authors": [{"name": "@kpblcaoo", "github": "kpblcaoo", "email": "kpblcaoo@example.com"}]
+  },
+  "summary": "Comprehensive CLI command reference with LLM automation support",
+  "tags": ["cli", "automation", "llm", "queue"],
+
+  "command_categories": {
+    "core_operations": {
+      "description": "Primary commands for codebase analysis and structure generation",
+      "commands": ["parse", "query", "validate"]
+    },
+    "interactive_mode": {
+      "description": "Interactive CLI with LLM integration and real-time operations",
+      "commands": ["interactive"]
+    },
+    "automation": {
+      "description": "Automated workflows and batch operations",
+      "commands": ["queue", "batch", "workflow"]
+    },
+    "analysis": {
+      "description": "Deep analysis and insight generation",
+      "commands": ["analyze", "review", "dogfood"]
+    }
+  },
+
+  "commands": [
+    {
+      "name": "parse",
+      "category": "core_operations",
+      "description": "Parse codebase and generate comprehensive struct.json with metadata",
+      "usage": "llmstruct parse <root_dir> [options]",
+      "arguments": [
+        {"name": "root_dir", "type": "string", "required": true, "description": "Root directory of the project to analyze"},
+        {"name": "--output", "type": "string", "required": false, "default": "struct.json", "description": "Output JSON file path"},
+        {"name": "--include", "type": "array", "required": false, "description": "Glob patterns to include (e.g., 'src/**/*.py')"},
+        {"name": "--exclude", "type": "array", "required": false, "description": "Glob patterns to exclude (e.g., 'tests/**')"},
+        {"name": "--language", "type": "string", "required": false, "description": "Primary programming language (python, javascript, etc.)"},
+        {"name": "--include-ranges", "type": "boolean", "required": false, "description": "Include line ranges for functions and classes"},
+        {"name": "--include-hashes", "type": "boolean", "required": false, "description": "Include file content hashes for change detection"},
+        {"name": "--goals", "type": "array", "required": false, "description": "Custom project goals for context"},
+        {"name": "--use-cache", "type": "boolean", "required": false, "description": "Enable caching for performance"}
+      ],
+      "examples": [
+        {
+          "command": "llmstruct parse . --output struct.json --include 'src/**/*.py' --exclude 'tests/**'",
+          "description": "Parse Python project with filters"
+        },
+        {
+          "command": "llmstruct parse . --include-ranges --include-hashes --use-cache",
+          "description": "Full parse with line ranges, hashes, and caching"
+        }
+      ],
+      "queue_template": {
+        "cmd": "parse",
+        "root_dir": "{root_dir}",
+        "output": "{output_file}",
+        "options": {
+          "include": "{include_patterns}",
+          "exclude": "{exclude_patterns}",
+          "use_cache": true
+        }
+      },
+      "context_requirements": ["minimal"],
+      "output_artifacts": ["struct.json", "cache_entries"],
+      "related_tasks": ["TSK-006", "TSK-126"],
+      "related_ideas": ["IDEA-001"]
+    },
+    
+    {
+      "name": "interactive",
+      "category": "interactive_mode", 
+      "description": "Run interactive CLI with LLM integration, supporting file operations and real-time queries",
+      "usage": "llmstruct interactive <root_dir> [options]",
+      "arguments": [
+        {"name": "root_dir", "type": "string", "required": true, "description": "Root directory of the project"},
+        {"name": "--context", "type": "string", "required": false, "default": "struct.json", "description": "Primary context JSON file"},
+        {"name": "--mode", "type": "string", "required": false, "default": "hybrid", "choices": ["grok", "anthropic", "ollama", "hybrid"], "description": "LLM backend mode"},
+        {"name": "--model", "type": "string", "required": false, "description": "Specific model name (e.g., mixtral, llama3, gpt-4)"},
+        {"name": "--artifact-ids", "type": "array", "required": false, "description": "Specific artifact IDs to include in context"},
+        {"name": "--use-cache", "type": "boolean", "required": false, "description": "Enable response caching"}
+      ],
+      "subcommands": [
+        {
+          "name": "/view",
+          "syntax": "/view <path>",
+          "description": "View file or directory contents",
+          "examples": ["/view src/cli.py", "/view data/"]
+        },
+        {
+          "name": "/write", 
+          "syntax": "/write <filename> <content>",
+          "description": "Write content to file (restricted to ./tmp for safety)",
+          "examples": ["/write test.py print('hello')", "/write config.json {\"key\": \"value\"}"]
+        },
+        {
+          "name": "/scan",
+          "syntax": "/scan <path>",
+          "description": "Scan and analyze file or directory structure",
+          "examples": ["/scan src/", "/scan data/init.json"]
+        },
+        {
+          "name": "/queue",
+          "syntax": "/queue <action>",
+          "description": "Manage command queue operations",
+          "examples": ["/queue process", "/queue view", "/queue clear"]
+        },
+        {
+          "name": "/cache",
+          "syntax": "/cache <action>",
+          "description": "Manage cache operations",
+          "examples": ["/cache status", "/cache clear", "/cache stats"]
+        }
+      ],
+      "context_selection": {
+        "default": "data/init.json",
+        "code_analysis": "struct.json",
+        "automation": "data/cli.json",
+        "task_management": "data/tasks.json"
+      },
+      "examples": [
+        {
+          "command": "llmstruct interactive . --context data/init.json --mode anthropic",
+          "description": "Start interactive mode with init context and Anthropic backend"
+        }
+      ],
+      "related_tasks": ["TSK-119"],
+      "related_ideas": ["IDEA-126"]
+    },
+
+    {
+      "name": "query",
+      "category": "core_operations",
+      "description": "Query LLMs with structured prompts and smart context selection",
+      "usage": "llmstruct query --prompt <text> [options]",
+      "arguments": [
+        {"name": "--prompt", "type": "string", "required": true, "description": "Query prompt for LLM"},
+        {"name": "--context", "type": "string", "required": false, "default": "data/init.json", "description": "Context JSON file"},
+        {"name": "--mode", "type": "string", "required": false, "default": "hybrid", "choices": ["grok", "anthropic", "ollama", "hybrid"], "description": "LLM backend mode"},
+        {"name": "--model", "type": "string", "required": false, "description": "Specific model name"},
+        {"name": "--artifact-ids", "type": "array", "required": false, "description": "Artifact IDs to include"},
+        {"name": "--output", "type": "string", "required": false, "default": "llm_response.json", "description": "Output file for response"},
+        {"name": "--use-cache", "type": "boolean", "required": false, "description": "Enable response caching"}
+      ],
+      "examples": [
+        {
+          "command": "llmstruct query --prompt 'Explain the main architecture' --context data/init.json",
+          "description": "General architecture query with minimal context"
+        },
+        {
+          "command": "llmstruct query --prompt 'Find all CLI functions' --context struct.json",
+          "description": "Code analysis query with full structure context"
+        }
+      ],
+      "queue_template": {
+        "cmd": "llm",
+        "prompt": "{prompt_text}",
+        "context_preference": "{context_type}",
+        "options": {
+          "mode": "{llm_mode}",
+          "model": "{model_name}"
+        }
+      }
+    },
+
+    {
+      "name": "queue",
+      "category": "automation",
+      "description": "Process command queue for automated workflows",
+      "usage": "llmstruct queue <action> [options]",
+      "arguments": [
+        {"name": "action", "type": "string", "required": true, "choices": ["process", "add", "view", "clear", "validate"], "description": "Queue action to perform"},
+        {"name": "--file", "type": "string", "required": false, "default": "data/cli_queue.json", "description": "Queue file path"},
+        {"name": "--dry-run", "type": "boolean", "required": false, "description": "Show what would be executed without running"},
+        {"name": "--context", "type": "string", "required": false, "description": "Override default context selection"}
+      ],
+      "queue_commands": [
+        {
+          "type": "write",
+          "description": "Write content to file (./tmp only)",
+          "required_fields": ["filename", "content"],
+          "optional_fields": ["encoding", "permissions"]
+        },
+        {
+          "type": "scan", 
+          "description": "Scan file or directory",
+          "required_fields": ["path"],
+          "optional_fields": ["depth", "filters"]
+        },
+        {
+          "type": "llm",
+          "description": "Execute LLM query",
+          "required_fields": ["prompt"],
+          "optional_fields": ["context_preference", "model", "mode"]
+        },
+        {
+          "type": "validate",
+          "description": "Validate JSON against schema",
+          "required_fields": ["json_path", "schema_path"],
+          "optional_fields": ["strict_mode"]
+        },
+        {
+          "type": "analyze",
+          "description": "Perform code analysis",
+          "required_fields": ["target_path"],
+          "optional_fields": ["analysis_type", "output_format"]
+        }
+      ],
+      "safety_features": [
+        "All write operations restricted to ./tmp directory",
+        "Filename sanitization and validation",
+        "Path traversal protection",
+        "Command validation against known patterns",
+        "Execution logging and error handling"
+      ],
+      "examples": [
+        {
+          "command": "llmstruct queue process --dry-run",
+          "description": "Preview queue execution without running commands"
+        },
+        {
+          "command": "llmstruct queue add --type write --filename test.py --content 'print(\"hello\")'",
+          "description": "Add write command to queue"
+        }
+      ]
+    },
+
+    {
+      "name": "validate",
+      "category": "core_operations",
+      "description": "Validate JSON files against schemas with detailed error reporting",
+      "usage": "llmstruct validate --json <path> --schema <path> [options]",
+      "arguments": [
+        {"name": "--json", "type": "string", "required": true, "description": "JSON file to validate"},
+        {"name": "--schema", "type": "string", "required": true, "description": "Schema file path"},
+        {"name": "--strict", "type": "boolean", "required": false, "description": "Enable strict validation mode"},
+        {"name": "--output", "type": "string", "required": false, "description": "Output validation report to file"}
+      ],
+      "examples": [
+        {
+          "command": "llmstruct validate --json struct.json --schema schema/llmstruct_schema.json",
+          "description": "Validate struct.json against main schema"
+        },
+        {
+          "command": "llmstruct validate --json data/tasks.json --schema schema/common/definitions.json --strict",
+          "description": "Strict validation of tasks.json"
+        }
+      ],
+      "queue_template": {
+        "cmd": "validate",
+        "json_path": "{json_file}",
+        "schema_path": "{schema_file}",
+        "options": {
+          "strict_mode": "{strict_flag}"
+        }
+      }
+    },
+
+    {
+      "name": "analyze",
+      "category": "analysis",
+      "description": "Perform deep code analysis with insights generation",
+      "usage": "llmstruct analyze <target> [options]",
+      "arguments": [
+        {"name": "target", "type": "string", "required": true, "description": "Target file or directory to analyze"},
+        {"name": "--type", "type": "string", "required": false, "choices": ["complexity", "dependencies", "patterns", "performance"], "description": "Analysis type"},
+        {"name": "--output", "type": "string", "required": false, "default": "analysis_report.json", "description": "Output report file"},
+        {"name": "--include-suggestions", "type": "boolean", "required": false, "description": "Include improvement suggestions"}
+      ],
+      "analysis_types": {
+        "complexity": "Analyze code complexity metrics and identify complex functions",
+        "dependencies": "Map dependencies and identify potential issues",
+        "patterns": "Identify code patterns and anti-patterns",
+        "performance": "Analyze performance characteristics and bottlenecks"
+      },
+      "examples": [
+        {
+          "command": "llmstruct analyze src/llmstruct/ --type complexity --include-suggestions",
+          "description": "Complexity analysis with improvement suggestions"
+        }
+      ]
+    }
+  ],
+
+  "automation_patterns": {
+    "documentation_workflow": [
+      {"cmd": "scan", "path": "src/"},
+      {"cmd": "llm", "prompt": "Analyze the scanned code structure and identify modules that need documentation"},
+      {"cmd": "llm", "prompt": "Generate documentation for the identified modules"},
+      {"cmd": "write", "filename": "generated_docs.md", "content": "{llm_response}"}
+    ],
+    "code_review_workflow": [
+      {"cmd": "scan", "path": "{target_file}"},
+      {"cmd": "llm", "prompt": "Review the scanned code for best practices, potential issues, and improvements"},
+      {"cmd": "write", "filename": "review_report.md", "content": "{llm_response}"},
+      {"cmd": "validate", "json_path": "review_report.json", "schema_path": "schema/review_schema.json"}
+    ],
+    "refactoring_analysis": [
+      {"cmd": "analyze", "target": "{target_path}", "type": "complexity"},
+      {"cmd": "llm", "prompt": "Based on the complexity analysis, suggest refactoring opportunities"},
+      {"cmd": "write", "filename": "refactoring_plan.md", "content": "{llm_response}"}
+    ]
+  },
+
+  "context_optimization": {
+    "smart_loading": {
+      "description": "Load only necessary context based on command type and content",
+      "rules": {
+        "parse": ["data/init.json"],
+        "interactive": ["data/init.json", "dynamic_based_on_query"],
+        "query": ["context_from_args", "fallback_to_init"],
+        "analyze": ["data/init.json", "struct.json", "data/insights.json"],
+        "queue": ["data/init.json", "data/cli.json"]
+      }
+    },
+    "token_management": {
+      "thresholds": {
+        "light_context": "< 4K tokens (init.json only)",
+        "medium_context": "4K-16K tokens (init + specific files)",
+        "heavy_context": "16K-32K tokens (multiple files)",
+        "max_context": "< 128K tokens (comprehensive)"
+      },
+      "optimization_strategies": [
+        "Progressive context loading",
+        "Query-based relevance filtering", 
+        "Cached context combinations",
+        "Incremental context building"
+      ]
+    }
+  },
+
+  "integration_points": {
+    "llm_backends": {
+      "supported": ["grok", "anthropic", "ollama", "hybrid"],
+      "configuration": "via environment variables and CLI arguments",
+      "fallback_strategy": "hybrid -> anthropic -> grok -> ollama"
+    },
+    "cache_system": {
+      "implementation": "JSONCache class",
+      "cache_types": ["query_responses", "context_combinations", "structure_data"],
+      "invalidation": "file_change_based"
+    },
+    "artifact_system": {
+      "tracking": "via artifacts_index.json",
+      "versioning": "UUID-based with timestamps",
+      "storage": "data/artifacts/ directory"
+    }
+  },
+
+  "best_practices": {
+    "command_design": [
+      "Use consistent argument patterns across commands",
+      "Provide clear examples and usage documentation", 
+      "Implement proper error handling and validation",
+      "Support both interactive and batch operations",
+      "Enable caching for expensive operations"
+    ],
+    "automation_safety": [
+      "Restrict write operations to safe directories",
+      "Validate all inputs and parameters",
+      "Implement dry-run modes for testing",
+      "Log all automated operations",
+      "Provide clear error messages and recovery options"
+    ],
+    "context_efficiency": [
+      "Use minimal context for simple operations",
+      "Implement smart context selection logic",
+      "Cache frequently used context combinations",
+      "Monitor token usage and optimize accordingly",
+      "Provide context usage analytics"
+    ]
+  }
+}
