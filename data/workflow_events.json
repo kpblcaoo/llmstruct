@@ -1,0 +1,29 @@
+[
+  {
+    "event_id": "test_1748055279",
+    "event_type": "integration_test",
+    "timestamp": 1748055279.1668987,
+    "description": "Test workflow event from integration test",
+    "actions": [
+      "test_action"
+    ]
+  },
+  {
+    "event_id": "test_1748055361",
+    "event_type": "integration_test",
+    "timestamp": 1748055361.8552232,
+    "description": "Test workflow event from integration test",
+    "actions": [
+      "test_action"
+    ]
+  },
+  {
+    "event_id": "test_1748055622",
+    "event_type": "integration_test",
+    "timestamp": 1748055622.9110737,
+    "description": "Test workflow event from integration test",
+    "actions": [
+      "test_action"
+    ]
+  }
+]

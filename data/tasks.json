@@ -140,6 +140,104 @@
         "scope": "Document new 4-level context hierarchy, smart selection rules, token optimization",
         "components": ["architecture docs", "usage examples", "best practices guide"]
       }
+    },
+    {
+      "id": "TSK-132",
+      "description": "Implement auto-update struct.json functionality",
+      "status": "completed",
+      "priority": "critical",
+      "estimated_effort": "3d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T16:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Automatic struct.json updates through parse functionality when LLM works via CLI",
+        "components": ["auto_update_struct.py", "Git hooks", "cron integration", "change detection"]
+      }
+    },
+    {
+      "id": "TSK-133",
+      "description": "Create VSCode Copilot integration module",
+      "status": "completed",
+      "priority": "critical",
+      "estimated_effort": "4d",
+      "dependencies": ["TSK-132"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T16:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Initialization file for VSCode Copilot work with context system hybrid capabilities",
+        "components": ["copilot.py", "CopilotContextManager", "event system", "validation layer"]
+      }
+    },
+    {
+      "id": "TSK-134",
+      "description": "Refactor cli.py into modular structure",
+      "status": "completed",
+      "priority": "critical",
+      "estimated_effort": "5d",
+      "dependencies": ["TSK-133"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T16:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Modular refactoring of cli.py for better maintainability and extensibility",
+        "components": ["cli_core.py", "cli_commands.py", "cli_utils.py", "cli_config.py"]
+      }
+    },
+    {
+      "id": "TSK-135",
+      "description": "Integrate auto-update into CLI workflow",
+      "status": "completed",
+      "priority": "high",
+      "estimated_effort": "2d",
+      "dependencies": ["TSK-132", "TSK-134"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T16:00:00Z",
+      "completed_at": "2025-05-21T18:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Seamless integration of auto-update functionality into LLM CLI workflow",
+        "components": ["CLI workflow hooks", "update triggers", "validation integration"],
+        "implementation": "Added /auto-update, /struct status, /workflow trigger commands to CLI"
+      }
+    },
+    {
+      "id": "TSK-136",
+      "description": "Test and document modular CLI system",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "3d",
+      "dependencies": ["TSK-134", "TSK-135"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T18:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Complete testing and documentation of new modular CLI architecture",
+        "components": ["Integration tests", "CLI documentation", "Usage examples", "Performance benchmarks"]
+      }
+    },
+    {
+      "id": "TSK-137",
+      "description": "Implement CLI plugin system architecture",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "7d",
+      "dependencies": ["TSK-136"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T06:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Design and implement extensible plugin system for CLI commands",
+        "components": ["Plugin interface", "Registration system", "Command namespace", "Configuration management"]
+      }
     }
   ]
 }

@@ -5,22 +5,36 @@
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 
+"""LLMStruct CLI - Main entry point for the command-line interface."""
+
 import argparse
 import asyncio
 import json
 import logging
 import os
 import re
+import shutil
+import sys
 import time
 from pathlib import Path
 from typing import List, Optional
-import uuid
 
 import toml
 from llmstruct import LLMClient
+from llmstruct.cache import JSONCache
 from llmstruct.generators.json_generator import generate_json, get_folder_structure
 from llmstruct.self_run import attach_to_llm_request
-from llmstruct.cache import JSONCache
+
+# Import modular CLI components
+try:
+    from .cli_core import CLICore, create_cli_core
+    from .cli_config import CLIConfig
+    from .cli_utils import CLIUtils
+    from .copilot import initialize_copilot
+    MODULAR_CLI_AVAILABLE = True
+except ImportError as e:
+    logging.warning(f"Modular CLI components not available: {e}")
+    MODULAR_CLI_AVAILABLE = False
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
@@ -90,6 +104,26 @@ def parse_files_from_response(response: str) -> List[tuple[str, str]]:
     return files
 
 async def interactive(args: argparse.Namespace):
+    """Run interactive CLI with modular structure if available, fallback to legacy."""
+    if MODULAR_CLI_AVAILABLE:
+        try:
+            await interactive_modular(args)
+            return
+        except Exception as e:
+            logging.warning(f"Modular CLI failed, falling back to legacy: {e}")
+    
+    # Fallback to legacy implementation
+    await interactive_legacy(args)
+
+async def interactive_modular(args: argparse.Namespace):
+    """Run interactive CLI with modular structure."""
+    root_dir = os.path.abspath(args.root_dir)
+    
+    # Create and run modular CLI
+    cli_core = create_cli_core(root_dir)
+    cli_core.run_interactive_mode()
+
+async def interactive_legacy(args: argparse.Namespace):
     """Run interactive CLI with LLM, supporting file/folder viewing and writing."""
     client = LLMClient()
     cache = JSONCache() if args.use_cache else None
@@ -99,7 +133,7 @@ async def interactive(args: argparse.Namespace):
         logging.warning(f"Context file {context_path} does not exist, generating new struct.json")
         parse(args)
 
-    print("Interactive LLMStruct CLI. Type 'exit' to quit, '/view <path>' to read files/folders, '/queue run' to process command queue, '/cache stats' for cache info, or enter /commands to scan/write.")
+    print("Interactive LLMStruct CLI. Type 'exit' to quit, '/view <path>' to read files/folders, '/queue run' to process command queue, '/cache stats' for cache info, '/auto-update' for struct.json auto-update, '/struct status' for struct info, '/workflow trigger' for workflow events, or enter /commands to scan/write.")
     while True:
         user_input = input("Prompt> ").strip()
         if user_input.lower() == 'exit':
@@ -233,6 +267,123 @@ async def interactive(args: argparse.Namespace):
                         print(f"Error listing cache keys: {e}")
                 else:
                     print("Usage: /cache stats | /cache clear | /cache list")
+                continue
+            elif cmd == 'auto-update':
+                # Автообновление struct.json
+                try:
+                    import subprocess
+                    script_path = os.path.join(root_dir, 'scripts', 'auto_update_struct.py')
+                    if os.path.exists(script_path):
+                        result = subprocess.run([
+                            sys.executable, script_path, 
+                            '--root-dir', root_dir,
+                            '--output', os.path.join(root_dir, 'struct.json')
+                        ], capture_output=True, text=True, timeout=60)
+                        if result.returncode == 0:
+                            print("✅ Auto-update struct.json completed successfully")
+                            if result.stdout:
+                                print(f"Output: {result.stdout}")
+                        else:
+                            print(f"❌ Auto-update failed: {result.stderr}")
+                    else:
+                        print(f"❌ Auto-update script not found at {script_path}")
+                except Exception as e:
+                    print(f"❌ Auto-update error: {e}")
+                continue
+            elif cmd == 'struct':
+                subcmd = args_str.strip()
+                if subcmd == 'status':
+                    # Статус struct.json и автообновления
+                    struct_path = os.path.join(root_dir, 'struct.json')
+                    if os.path.exists(struct_path):
+                        try:
+                            stat_info = os.stat(struct_path)
+                            mod_time = time.ctime(stat_info.st_mtime)
+                            size = stat_info.st_size
+                            print(f"struct.json status:")
+                            print(f"  📁 Path: {struct_path}")
+                            print(f"  📅 Modified: {mod_time}")
+                            print(f"  📏 Size: {size} bytes")
+                            
+                            # Проверка наличия скрипта автообновления
+                            auto_script = os.path.join(root_dir, 'scripts', 'auto_update_struct.py')
+                            if os.path.exists(auto_script):
+                                print(f"  🔄 Auto-update: Available")
+                            else:
+                                print(f"  🔄 Auto-update: Not available")
+                        except Exception as e:
+                            print(f"❌ Error getting struct.json status: {e}")
+                    else:
+                        print("❌ struct.json not found")
+                elif subcmd == 'validate':
+                    # Валидация struct.json
+                    struct_path = os.path.join(root_dir, 'struct.json')
+                    if os.path.exists(struct_path):
+                        try:
+                            with open(struct_path, 'r', encoding='utf-8') as f:
+                                struct_data = json.load(f)
+                            print("✅ struct.json is valid JSON")
+                            print(f"  📊 Contains {len(struct_data.get('files', []))} files")
+                            print(f"  🎯 Goals: {len(struct_data.get('goals', []))}")
+                        except json.JSONDecodeError as e:
+                            print(f"❌ struct.json is invalid JSON: {e}")
+                        except Exception as e:
+                            print(f"❌ Error validating struct.json: {e}")
+                    else:
+                        print("❌ struct.json not found")
+                else:
+                    print("Usage: /struct status | /struct validate")
+                continue
+            elif cmd == 'workflow':
+                subcmd = args_str.strip()
+                if subcmd == 'trigger':
+                    # Триггер workflow событий с автообновлением
+                    try:
+                        # Создание события для workflow
+                        workflow_event = {
+                            "event_id": f"manual_{int(time.time())}",
+                            "event_type": "manual_trigger",
+                            "timestamp": time.time(),
+                            "description": "Manual workflow trigger from CLI",
+                            "actions": ["auto_update_struct"]
+                        }
+                        
+                        events_path = os.path.join(root_dir, 'data', 'workflow_events.json')
+                        events_data = []
+                        if os.path.exists(events_path):
+                            try:
+                                with open(events_path, 'r', encoding='utf-8') as f:
+                                    events_data = json.load(f)
+                            except:
+                                events_data = []
+                        
+                        events_data.append(workflow_event)
+                        
+                        # Сохранение событий
+                        os.makedirs(os.path.dirname(events_path), exist_ok=True)
+                        with open(events_path, 'w', encoding='utf-8') as f:
+                            json.dump(events_data, f, indent=2)
+                        
+                        print(f"✅ Workflow event triggered: {workflow_event['event_id']}")
+                        
+                        # Автоматический запуск автообновления
+                        import subprocess
+                        script_path = os.path.join(root_dir, 'scripts', 'auto_update_struct.py')
+                        if os.path.exists(script_path):
+                            result = subprocess.run([
+                                sys.executable, script_path,
+                                '--root-dir', root_dir,
+                                '--output', os.path.join(root_dir, 'struct.json')
+                            ], capture_output=True, text=True, timeout=60)
+                            if result.returncode == 0:
+                                print("✅ Auto-update triggered by workflow completed")
+                            else:
+                                print(f"❌ Auto-update failed: {result.stderr}")
+                        
+                    except Exception as e:
+                        print(f"❌ Workflow trigger error: {e}")
+                else:
+                    print("Usage: /workflow trigger")
                 continue
             # ...можно добавить другие /команды...
         # --- Всё остальное — обычный текстовый запрос к LLM ---
@@ -501,6 +652,123 @@ def review(args: argparse.Namespace):
     """Review codebase with LLM."""
     logging.warning("Review command not implemented yet (TSK-096)")
 
+def copilot(args):
+    """Copilot integration and context management."""
+    try:
+        # Initialize copilot context manager
+        manager = initialize_copilot(args.root_dir)
+        
+        if args.copilot_command == "init":
+            # Initialize copilot configuration
+            config_path = Path(args.root_dir) / "data" / "copilot_init.json"
+            if config_path.exists() and not args.force:
+                logging.info(f"Copilot already initialized at {config_path}")
+            else:
+                # Copy template configuration
+                template_path = Path(__file__).parent / "templates" / "copilot_init.json"
+                if template_path.exists():
+                    shutil.copy(template_path, config_path)
+                    logging.info(f"Initialized copilot configuration at {config_path}")
+                else:
+                    logging.error("Copilot template not found")
+                    
+        elif args.copilot_command == "status":
+            # Show context status
+            status = manager.get_context_status()
+            print(f"Loaded layers: {', '.join(status['loaded_layers'])}")
+            print(f"Available layers: {', '.join(status['available_layers'])}")
+            
+        elif args.copilot_command == "load":
+            # Load specific context layer
+            if hasattr(args, 'layer') and args.layer:
+                success = manager.load_context_layer(args.layer)
+                if success:
+                    logging.info(f"Loaded context layer: {args.layer}")
+                else:
+                    logging.error(f"Failed to load context layer: {args.layer}")
+            else:
+                logging.error("Layer name required for load command")
+                
+        elif args.copilot_command == "unload":
+            # Unload specific context layer
+            if hasattr(args, 'layer') and args.layer:
+                success = manager.unload_context_layer(args.layer)
+                if success:
+                    logging.info(f"Unloaded context layer: {args.layer}")
+                else:
+                    logging.error(f"Failed to unload context layer: {args.layer}")
+            else:
+                logging.error("Layer name required for unload command")
+                
+        elif args.copilot_command == "refresh":
+            # Refresh all contexts
+            success = manager.refresh_all_contexts()
+            if success:
+                logging.info("Refreshed all context layers")
+            else:
+                logging.error("Failed to refresh some context layers")
+                
+        elif args.copilot_command == "suggest":
+            # Get smart suggestions
+            from .copilot import smart_suggest
+            if hasattr(args, 'query') and args.query:
+                context_type = getattr(args, 'context', 'code')
+                suggestions = smart_suggest(manager, args.query, context_type)
+                print("Suggestions:")
+                for i, suggestion in enumerate(suggestions, 1):
+                    print(f"{i}. {suggestion}")
+            else:
+                logging.error("Query required for suggest command")
+                
+        elif args.copilot_command == "validate":
+            # Validate file changes
+            if hasattr(args, 'file_path') and args.file_path:
+                change_type = getattr(args, 'change_type', 'edit')
+                result = manager.validate_change(args.file_path, change_type)
+                
+                if result['valid']:
+                    print("✓ Validation passed")
+                else:
+                    print("✗ Validation failed")
+                    
+                if result['warnings']:
+                    print("Warnings:")
+                    for warning in result['warnings']:
+                        print(f"  - {warning}")
+                        
+                if result['errors']:
+                    print("Errors:")
+                    for error in result['errors']:
+                        print(f"  - {error}")
+            else:
+                logging.error("File path required for validate command")
+                
+        elif args.copilot_command == "export":
+            # Export context
+            format_type = getattr(args, 'format', 'json')
+            layers = getattr(args, 'layers', None)
+            if layers:
+                layers = layers.split(',')
+                
+            exported = manager.export_context(layers, format_type)
+            
+            output_file = getattr(args, 'output', None)
+            if output_file:
+                with open(output_file, 'w', encoding='utf-8') as f:
+                    f.write(exported)
+                logging.info(f"Exported context to {output_file}")
+            else:
+                print(exported)
+                
+        else:
+            logging.error(f"Unknown copilot command: {args.copilot_command}")
+            
+        manager.close()
+        
+    except Exception as e:
+        logging.error(f"Copilot command failed: {e}")
+        raise
+
 def main():
     """Command-line interface for LLMstruct."""
     parser = argparse.ArgumentParser(description="Generate structured JSON for codebases and query LLMs")
@@ -548,6 +816,18 @@ def main():
     review_parser.add_argument("--mode", choices=["grok", "anthropic", "ollama", "hybrid"], default="hybrid", help="LLM mode")
     review_parser.add_argument("--output", default="review_report.json", help="Output report JSON")
 
+    copilot_parser = subparsers.add_parser("copilot", help="Copilot integration and context management")
+    copilot_parser.add_argument("root_dir", help="Root directory of the project")
+    copilot_parser.add_argument("copilot_command", choices=["init", "status", "load", "unload", "refresh", "suggest", "validate", "export"], help="Copilot command")
+    copilot_parser.add_argument("--layer", help="Layer name for load/unload commands")
+    copilot_parser.add_argument("--query", help="Query for suggest command")
+    copilot_parser.add_argument("--file-path", help="File path for validate command")
+    copilot_parser.add_argument("--change-type", choices=["edit", "delete", "add"], default="edit", help="Change type for validate command")
+    copilot_parser.add_argument("--format", choices=["json", "yaml"], default="json", help="Export format for export command")
+    copilot_parser.add_argument("--layers", help="Comma-separated list of layers for export command")
+    copilot_parser.add_argument("--output", help="Output file for export command")
+    copilot_parser.add_argument("--force", action="store_true", help="Force initialization for init command")
+
     args = parser.parse_args()
 
     if args.command == "parse":
@@ -555,13 +835,15 @@ def main():
     elif args.command == "query":
         asyncio.run(query(args))
     elif args.command == "interactive":
-        asyncio.run(interactive(args))
+        asyncio.run(interactive_legacy(args))
     elif args.command == "context":
         context(args)
     elif args.command == "dogfood":
         dogfood(args)
     elif args.command == "review":
         review(args)
+    elif args.command == "copilot":
+        copilot(args)
 
 if __name__ == "__main__":
     main()
