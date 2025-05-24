@@ -2,7 +2,7 @@
   "metadata": {
     "project_name": "llmstruct",
     "description": "Utility for generating structured JSON for codebases",
-    "version": "2025-05-23T13:11:23.911649Z",
+    "version": "2025-05-23T21:48:42.961044Z",
     "authors": [
       {
         "name": "Mikhail Stepanov",
@@ -33,7 +33,7 @@
       "classes_count": 6,
       "call_edges_count": 448
     },
-    "artifact_id": "d248a865-2c8b-482b-972d-af9f9c72d0bd",
+    "artifact_id": "2670123c-7bb0-4538-b97d-6a23a33ebca6",
     "summary": "Structured JSON for llmstruct codebase",
     "tags": [
       "codebase",
@@ -43,307 +43,307 @@
       {
         "path": ".",
         "type": "directory",
-        "artifact_id": "f5a205c5-aa69-4c52-987c-2b56ef58abbb",
+        "artifact_id": "96910852-6725-48b1-870e-8ca209ab9554",
         "metadata": {}
       },
       {
         "path": ".github",
         "type": "directory",
-        "artifact_id": "d794a492-ca15-46e9-bdf1-fb21694f08c4",
+        "artifact_id": "ea163073-2d9b-4a0d-bc69-5d0ac2317ef0",
         "metadata": {}
       },
       {
         "path": ".github/workflows",
         "type": "directory",
-        "artifact_id": "7beb914f-cbf3-4f71-b336-8e795368db62",
+        "artifact_id": "12762d5f-e778-4193-a6cc-b573ba0196da",
         "metadata": {}
       },
       {
         "path": "bak",
         "type": "directory",
-        "artifact_id": "0c92a8d1-0b1d-4048-90da-ed23573db056",
+        "artifact_id": "091fc399-e294-4757-87b8-129c6ca7fbe8",
         "metadata": {}
       },
       {
         "path": "collector.py",
         "type": "file",
-        "artifact_id": "ac818420-8087-4cbc-be40-05e021c57891",
+        "artifact_id": "659f81f5-050c-4cbf-bd58-be31b425d574",
         "metadata": {}
       },
       {
         "path": "data",
         "type": "directory",
-        "artifact_id": "724f7103-c7b8-4885-a9fe-b2170f744363",
+        "artifact_id": "1284c208-0e7b-46ed-8ba3-2fac4be0f130",
         "metadata": {}
       },
       {
         "path": "data/artifacts",
         "type": "directory",
-        "artifact_id": "f82160cf-8419-4e0a-bb10-0bbb9b8ccbee",
+        "artifact_id": "a6c82fcd-70c8-471a-ae91-b7d99fef7e1c",
         "metadata": {}
       },
       {
         "path": "docs",
         "type": "directory",
-        "artifact_id": "734942aa-3ad2-451f-bfe1-6294fdf12f39",
+        "artifact_id": "d40da7d8-e63a-42b7-8667-a2584eba7752",
         "metadata": {}
       },
       {
         "path": "docs/examples",
         "type": "directory",
-        "artifact_id": "8d47353e-e6dc-4b6c-ae98-8564eebf964f",
+        "artifact_id": "93a2be48-10bf-42e9-bbec-101aa2770110",
         "metadata": {}
       },
       {
         "path": "docs/internal",
         "type": "directory",
-        "artifact_id": "8475ec46-0763-4d98-97f6-a8836aa433e0",
+        "artifact_id": "99e38f87-72a3-48c9-8d66-e84241e7d0a0",
         "metadata": {}
       },
       {
         "path": "docs/internal/ru",
         "type": "directory",
-        "artifact_id": "56bfdb9b-ccce-4963-9708-e4299d685eb8",
+        "artifact_id": "c7474970-9a2e-4fb4-b2a1-0a711063e8f2",
         "metadata": {}
       },
       {
         "path": "docs/ru",
         "type": "directory",
-        "artifact_id": "965523e5-e0d9-4846-a130-a55099a963d7",
+        "artifact_id": "6f97e95c-3b65-4c63-b4be-e10918dd4fdc",
         "metadata": {}
       },
       {
         "path": "docs/ru/examples",
         "type": "directory",
-        "artifact_id": "479098e9-991c-4f98-b1fb-61a691272620",
+        "artifact_id": "c558e9c7-a52f-4046-ae86-7e5017307431",
         "metadata": {}
       },
       {
         "path": "examples",
         "type": "directory",
-        "artifact_id": "d5b53bae-9b43-4ad2-bbc7-0c35ddfd5954",
+        "artifact_id": "7d5aa3b6-903c-4335-b277-a6474a9a9aba",
         "metadata": {}
       },
       {
         "path": "examples/python_project_main.py",
         "type": "file",
-        "artifact_id": "2bdaa2fd-d3e0-4ebd-9f83-fb6e4adcd829",
+        "artifact_id": "7b80ffe4-720c-417c-9a17-f357ad10ff25",
         "metadata": {}
       },
       {
         "path": "examples/python_project_utils.py",
         "type": "file",
-        "artifact_id": "5ca8a7a1-071a-4c4b-91d8-27ed83098727",
+        "artifact_id": "5a0318ef-199b-4e8b-bff1-3433e1c72756",
         "metadata": {}
       },
       {
         "path": "internal",
         "type": "directory",
-        "artifact_id": "8a70d22d-17ba-4d02-bcd2-3e80faa679ba",
+        "artifact_id": "108495b1-71d1-46ba-833f-4f7d02d7d489",
         "metadata": {}
       },
       {
         "path": "schema",
         "type": "directory",
-        "artifact_id": "45244cf0-2782-423b-b24d-c36cdcee10ba",
+        "artifact_id": "b8f53020-2928-4e1e-8e08-1dba69067826",
         "metadata": {}
       },
       {
         "path": "schema/common",
         "type": "directory",
-        "artifact_id": "7a85b3ca-0cad-4ced-af03-7a2514630b43",
+        "artifact_id": "969cdf2f-7391-464c-a65d-5adba9519ad5",
         "metadata": {}
       },
       {
         "path": "schema/plugins",
         "type": "directory",
-        "artifact_id": "91fc793a-6d38-4d3a-bbed-f77620d4689b",
+        "artifact_id": "43280908-6d26-4f3c-a453-e5ece8a864f9",
         "metadata": {}
       },
       {
         "path": "scripts",
         "type": "directory",
-        "artifact_id": "4e3aa5b2-35a1-411a-bf7a-c70ec4fcdfe6",
+        "artifact_id": "c46030e3-ad1f-4775-925e-d4c722dea47c",
         "metadata": {}
       },
       {
         "path": "scripts/collector.py",
         "type": "file",
-        "artifact_id": "29c5cf81-2ce6-4b45-a432-13b4acd29460",
+        "artifact_id": "6e10be01-08b5-450d-908f-9a011b00400f",
         "metadata": {}
       },
       {
         "path": "scripts/deploy_embedded_files.py",
         "type": "file",
-        "artifact_id": "b94b26ef-6541-48b5-80f3-6b7409362ecc",
+        "artifact_id": "d6a06dab-d261-4642-a54c-d1e7c5c5746e",
         "metadata": {}
       },
       {
         "path": "scripts/validate_refs.py",
         "type": "file",
-        "artifact_id": "958d9940-d88b-4c90-b573-0f8b316e4085",
+        "artifact_id": "b35f61e4-4f05-468a-bf9b-b18065cf89e4",
         "metadata": {}
       },
       {
         "path": "src",
         "type": "directory",
-        "artifact_id": "e8fbb9b1-aa9a-486e-a9cd-25121da81f27",
+        "artifact_id": "537b447e-37e1-4ed1-9308-dafb710cd5e0",
         "metadata": {}
       },
       {
         "path": "src/llmstruct",
         "type": "directory",
-        "artifact_id": "f5371047-7c08-4917-ad8b-9b52a513c69b",
+        "artifact_id": "9a1e39d4-e067-4fe7-8d71-b87a0a98c55b",
         "metadata": {}
       },
       {
         "path": "src/llmstruct.egg-info",
         "type": "directory",
-        "artifact_id": "502871fb-d114-40f7-ab3a-9edfa79e3bc2",
+        "artifact_id": "1f29b87b-d6da-475b-9c17-0583ffa81e37",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/__init__.py",
         "type": "file",
-        "artifact_id": "64b97a67-5df3-42a9-b5dd-3d6c3c76cdec",
+        "artifact_id": "9fc3169f-734b-40d5-b274-14dc29e7ac8c",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/__main__.py",
         "type": "file",
-        "artifact_id": "5018d7ba-85ba-415b-bb57-f019299bd1fa",
+        "artifact_id": "1c5adf4d-44b5-4d62-8cfe-9852c172f7ea",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/cache.py",
         "type": "file",
-        "artifact_id": "c3386e70-b17d-42ef-984c-9e8feb9feb91",
+        "artifact_id": "63f23ab8-7719-4959-aaae-c846ba948836",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/cli.py",
         "type": "file",
-        "artifact_id": "704c955d-8119-443e-b40a-c3db18f455ad",
+        "artifact_id": "c3ed6e85-4757-478b-afef-cf6b87a6c4cd",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/generators",
         "type": "directory",
-        "artifact_id": "bfb73cce-9092-477b-9bb7-288f7f91d62a",
+        "artifact_id": "8ed9c267-c7fa-487c-b0dd-b7a8461fd4d1",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/generators/__init__.py",
         "type": "file",
-        "artifact_id": "8bc3c312-c94d-402f-971a-ae71d43a10db",
+        "artifact_id": "4a706dcb-a94e-4c5b-bfe0-1f269f01fa15",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/generators/json_generator.py",
         "type": "file",
-        "artifact_id": "a8787d1a-a910-4149-adfd-bafae36affb9",
+        "artifact_id": "e78de5b2-a055-4c04-b77c-35bf7f3dfdec",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/grok.py",
         "type": "file",
-        "artifact_id": "e1b6cb7b-f205-406e-9f24-a03a9f857e08",
+        "artifact_id": "63564499-c4ed-497a-a2bd-da1857fdc334",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/json_selector.py",
         "type": "file",
-        "artifact_id": "75012611-7dec-4ad4-bd7d-764f772e5d9a",
+        "artifact_id": "661f9a50-cd33-4296-9c45-75b03a765c47",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/llm_client.py",
         "type": "file",
-        "artifact_id": "4079d79e-2226-4423-a210-76f7454114c4",
+        "artifact_id": "a870cdfc-6116-42cb-8dbf-e29629273360",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/parsers",
         "type": "directory",
-        "artifact_id": "7b31f25b-4477-4f84-aaa0-aa726c36e5b1",
+        "artifact_id": "a76afb82-3afc-4826-b7d0-22dc80818b92",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/parsers/__init__.py",
         "type": "file",
-        "artifact_id": "03104593-6fc5-4479-987b-4f6a19bc700f",
+        "artifact_id": "e230b8f1-3881-4fdd-a4f2-103212aa54a4",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/parsers/javascript_parser.py",
         "type": "file",
-        "artifact_id": "de790e37-f7a3-4edd-94fd-ce03306568df",
+        "artifact_id": "a685bed7-d19e-4846-acaf-7581e672492d",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/parsers/python_parser.py",
         "type": "file",
-        "artifact_id": "f51bc86f-b5f0-4b4f-b8fe-b156205c87d5",
+        "artifact_id": "2a06a4ad-b6d2-4e90-aedb-fa5c6870a537",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/self_run.py",
         "type": "file",
-        "artifact_id": "bf33886a-7d84-4055-bae9-2b7fcb418cce",
+        "artifact_id": "e6369ae1-1850-4024-a857-19a6d1b69e1d",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/templates",
         "type": "directory",
-        "artifact_id": "c259a639-5ce8-48ff-ae7c-d532bd1dd507",
+        "artifact_id": "9f2dd7e8-5bc7-4c5a-8832-f9a400483da0",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/templates/__init__.py",
         "type": "file",
-        "artifact_id": "3c9606a6-fe6d-4267-8106-a64127d8fe2a",
+        "artifact_id": "e8c62a15-7667-4090-979f-ba42e419bbfc",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/validators",
         "type": "directory",
-        "artifact_id": "458e4fd6-1d47-40a2-98a9-40e3efe71bfe",
+        "artifact_id": "75579aae-a5c1-4982-889b-9ea2424c1a4e",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/validators/__init__.py",
         "type": "file",
-        "artifact_id": "92db4087-98bb-443c-8cf8-f9d400e033e6",
+        "artifact_id": "dc0b18ce-e9e3-43be-a9d9-b5c43b32f629",
         "metadata": {}
       },
       {
         "path": "src/llmstruct/validators/json_validator.py",
         "type": "file",
-        "artifact_id": "f2ba214c-5710-4a8e-b6fb-e12856e134a0",
+        "artifact_id": "4bdd6f99-c6b2-4cde-a20b-7946075bf191",
         "metadata": {}
       },
       {
         "path": "test_efficiency.py",
         "type": "file",
-        "artifact_id": "c2e7271f-e092-42a4-867d-f40b64f4cff0",
+        "artifact_id": "e5c7dd3f-0785-4f2b-8b1b-e805553fd2e0",
         "metadata": {}
       },
       {
         "path": "tests",
         "type": "directory",
-        "artifact_id": "9962f9fe-4b63-4791-b1a0-3fafb5b91bd5",
+        "artifact_id": "06962e3d-493b-4d55-887c-a8aae606ed66",
         "metadata": {}
       },
       {
         "path": "tmp",
         "type": "directory",
-        "artifact_id": "e0dc527a-cf46-4639-93f4-20e102640abf",
+        "artifact_id": "61ba6be5-cdca-4c04-8a7c-4056dc8d922a",
         "metadata": {}
       },
       {
         "path": "verify_llm_response.py",
         "type": "file",
-        "artifact_id": "5d4047ad-c4e8-4cda-928a-53532363f643",
+        "artifact_id": "e80bce17-18f4-4f56-82b9-8bfdc762a220",
         "metadata": {}
       }
     ]
@@ -356,7 +356,7 @@
       "functions": 12,
       "classes": 0,
       "summary": "",
-      "artifact_id": "c22a4a3c-11a4-4367-85e1-963b41881c73"
+      "artifact_id": "e1a29354-aea7-426f-a21f-602d67b468c3"
     },
     {
       "module_id": "collector",
@@ -365,7 +365,7 @@
       "functions": 3,
       "classes": 0,
       "summary": "",
-      "artifact_id": "87fc9eb0-77c7-4d1d-84b2-fcc77ad0f544"
+      "artifact_id": "ac600783-9226-4197-937a-1d88c1c589e2"
     },
     {
       "module_id": "verify_llm_response",
@@ -374,7 +374,7 @@
       "functions": 6,
       "classes": 0,
       "summary": "",
-      "artifact_id": "dcb5b78d-4c29-4141-8f19-676748c97ac7"
+      "artifact_id": "9430c32f-30b5-4386-8e07-f2ea116fb5fe"
     },
     {
       "module_id": "examples.python_project_utils",
@@ -383,7 +383,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "Utility functions for the sample project.",
-      "artifact_id": "9257ebe2-9635-42e3-9ec7-03c8b20e5314"
+      "artifact_id": "ae328e78-4142-4000-afcf-8d75582503af"
     },
     {
       "module_id": "examples.python_project_main",
@@ -392,7 +392,7 @@
       "functions": 2,
       "classes": 1,
       "summary": "Main module for the sample project.",
-      "artifact_id": "69692aa2-8cdc-4b66-91cf-b11a50455765"
+      "artifact_id": "623db842-4072-49f8-876d-9de76b494859"
     },
     {
       "module_id": "src.llmstruct.grok",
@@ -401,7 +401,7 @@
       "functions": 3,
       "classes": 1,
       "summary": "",
-      "artifact_id": "d178f4fb-08b4-41c7-9dc9-7a342c29ab66"
+      "artifact_id": "c96a8674-88ed-40c8-9f7b-eaace0b8258a"
     },
     {
       "module_id": "src.llmstruct.__init__",
@@ -410,7 +410,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "",
-      "artifact_id": "93595376-91d5-48f7-ada1-657108cbe144"
+      "artifact_id": "3390faf2-f15a-4746-9caf-504b3dd0b0a8"
     },
     {
       "module_id": "src.llmstruct.__main__",
@@ -419,7 +419,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "",
-      "artifact_id": "e37b7702-a5b5-48c3-92bd-1f97a07498fc"
+      "artifact_id": "89928b34-c538-4b6e-a335-1b5c67877392"
     },
     {
       "module_id": "src.llmstruct.llm_client",
@@ -428,7 +428,7 @@
       "functions": 6,
       "classes": 1,
       "summary": "",
-      "artifact_id": "28e05b1c-4feb-4a66-8ffb-8603dd6b32c1"
+      "artifact_id": "3723664b-cd2e-414f-b982-1dd313d89b0f"
     },
     {
       "module_id": "src.llmstruct.cache",
@@ -437,7 +437,7 @@
       "functions": 6,
       "classes": 1,
       "summary": "",
-      "artifact_id": "b6d005d6-839d-4e74-ad52-74bcbae7d71c"
+      "artifact_id": "7e322eec-00dc-4609-86dc-67b5c864cb1d"
     },
     {
       "module_id": "src.llmstruct.self_run",
@@ -446,7 +446,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "",
-      "artifact_id": "5413c62e-c3cb-46d3-b9c7-8b949506e451"
+      "artifact_id": "83cd3be9-9c24-488d-9776-8e316a73c441"
     },
     {
       "module_id": "src.llmstruct.json_selector",
@@ -455,7 +455,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "",
-      "artifact_id": "1b875e88-fbd0-4a10-8a50-833ac9218237"
+      "artifact_id": "f4509a02-5852-4595-adab-8412ac0167ab"
     },
     {
       "module_id": "src.llmstruct.cli",
@@ -464,7 +464,7 @@
       "functions": 12,
       "classes": 0,
       "summary": "",
-      "artifact_id": "c3b32319-a51b-4901-942e-7b94463f44e8"
+      "artifact_id": "3244109a-1ec2-4973-b0ab-7d6c9e1dda7a"
     },
     {
       "module_id": "src.llmstruct.parsers.__init__",
@@ -473,7 +473,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "Language-specific parsers for extracting code structure data for LLMStruct JSON.",
-      "artifact_id": "508ac8d5-e741-4410-8ee2-8e0a99a282fe"
+      "artifact_id": "919bd17c-c71b-45af-b427-ff40facf14a6"
     },
     {
       "module_id": "src.llmstruct.parsers.javascript_parser",
@@ -482,7 +482,7 @@
       "functions": 5,
       "classes": 1,
       "summary": "",
-      "artifact_id": "00fb9fa3-4ae7-41dc-be03-7bda7bbbf0d8"
+      "artifact_id": "61544120-6f6f-4f5c-b11d-40d79c53db31"
     },
     {
       "module_id": "src.llmstruct.parsers.python_parser",
@@ -491,7 +491,7 @@
       "functions": 9,
       "classes": 1,
       "summary": "",
-      "artifact_id": "334c5c56-efbc-4fd3-89fc-facc962a5df5"
+      "artifact_id": "d8443ba9-37f3-4c3d-bf53-ff02f0558839"
     },
     {
       "module_id": "src.llmstruct.templates.__init__",
@@ -500,7 +500,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "Templates for LLM prompts used in LLMStruct integration.",
-      "artifact_id": "61b34659-57d9-4a59-b3af-b8a56b5e3069"
+      "artifact_id": "6980f741-0401-41ac-a452-6fac92cdac9b"
     },
     {
       "module_id": "src.llmstruct.validators.__init__",
@@ -509,7 +509,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "Validation modules for ensuring LLMStruct JSON complies with the schema.",
-      "artifact_id": "c7843bd5-6518-4b78-b68e-3f8de835386a"
+      "artifact_id": "637f6730-0853-4679-a67d-26f6f6019ebb"
     },
     {
       "module_id": "src.llmstruct.validators.json_validator",
@@ -518,7 +518,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "",
-      "artifact_id": "e2bfefc4-652c-4d7c-b7de-f8c6586bdb63"
+      "artifact_id": "aea82ecc-2193-41a9-9edd-2166033021db"
     },
     {
       "module_id": "src.llmstruct.generators.json_generator",
@@ -527,7 +527,7 @@
       "functions": 3,
       "classes": 0,
       "summary": "",
-      "artifact_id": "dc3766e1-06b0-410c-963a-457837f77b4d"
+      "artifact_id": "05b6187d-7dd5-44e2-a9df-02ccbd571b93"
     },
     {
       "module_id": "src.llmstruct.generators.__init__",
@@ -536,7 +536,7 @@
       "functions": 0,
       "classes": 0,
       "summary": "Generator modules for creating LLMStruct JSON outputs from parsed code data.",
-      "artifact_id": "86c1d710-9446-4119-b449-d27c94c33acf"
+      "artifact_id": "fe4fd0ef-6cb2-456d-889d-a9e8a4c520c7"
     },
     {
       "module_id": "bak.20250522_102827.scripts.collector",
@@ -545,7 +545,7 @@
       "functions": 4,
       "classes": 0,
       "summary": "",
-      "artifact_id": "5bc27bf1-8155-4b33-bb7d-922a4bd6e4e4"
+      "artifact_id": "4b80078d-49d0-4cbc-ac39-8e71a1e76777"
     },
     {
       "module_id": "bak.20250522_102827.scripts.validate_refs",
@@ -554,7 +554,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "",
-      "artifact_id": "9070e92d-c908-4e5a-9cb8-914cda6c36ee"
+      "artifact_id": "b9a0d618-61a8-475c-8443-b8df0ec294a5"
     },
     {
       "module_id": "bak.20250522_102827.scripts.deploy_embedded_files",
@@ -563,7 +563,7 @@
       "functions": 4,
       "classes": 0,
       "summary": "",
-      "artifact_id": "80b0ee7c-b30e-4ca9-b430-621d96349849"
+      "artifact_id": "6bc90a63-7a92-4196-a7e6-3d9356222a6b"
     },
     {
       "module_id": "bak.20250522_131121.scripts.collector",
@@ -572,7 +572,7 @@
       "functions": 4,
       "classes": 0,
       "summary": "",
-      "artifact_id": "330424c5-ee36-4c97-a6e1-6785677a21dd"
+      "artifact_id": "2707f682-b686-42cd-be96-f2a2b0bf49b2"
     },
     {
       "module_id": "bak.20250522_131121.scripts.validate_refs",
@@ -581,7 +581,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "",
-      "artifact_id": "fb9fba96-62e1-4c24-ae61-b833e0144789"
+      "artifact_id": "325488d3-eb79-41cf-ac60-167bf20db76a"
     },
     {
       "module_id": "bak.20250522_131121.scripts.deploy_embedded_files",
@@ -590,7 +590,7 @@
       "functions": 4,
       "classes": 0,
       "summary": "",
-      "artifact_id": "24b70d14-929b-4207-a00a-0e907d52e6c0"
+      "artifact_id": "9c3541d4-42c5-4ba1-acd2-4f0175e45c00"
     },
     {
       "module_id": "scripts.collector",
@@ -599,7 +599,7 @@
       "functions": 4,
       "classes": 0,
       "summary": "",
-      "artifact_id": "919d91c4-8bd6-4a4a-b667-9281356add10"
+      "artifact_id": "8477689f-ce68-485a-b737-1369c566e82c"
     },
     {
       "module_id": "scripts.validate_refs",
@@ -608,7 +608,7 @@
       "functions": 2,
       "classes": 0,
       "summary": "",
-      "artifact_id": "d366d316-2cdc-41a3-b8f0-a8274f41f26f"
+      "artifact_id": "d82c87d0-37b4-4c09-be15-66ac2b4481b4"
     },
     {
       "module_id": "scripts.deploy_embedded_files",
@@ -617,7 +617,7 @@
       "functions": 4,
       "classes": 0,
       "summary": "",
-      "artifact_id": "23ab53aa-2e78-47a9-bc0e-83c3c5ec8e61"
+      "artifact_id": "fa8cbcb4-430e-472d-a4c7-be5fabb1ff54"
     }
   ],
   "modules": [
@@ -781,8 +781,8 @@
       "classes": [],
       "callgraph": {
         "get_system_metrics": [
-          "psutil.cpu_percent",
-          "psutil.virtual_memory"
+          "psutil.virtual_memory",
+          "psutil.cpu_percent"
         ],
         "is_local_address": [
           "urlparse",
@@ -794,8 +794,8 @@
         "check_ollama": [
           "response.json",
           "str",
-          "api_url.replace",
-          "requests.get"
+          "requests.get",
+          "api_url.replace"
         ],
         "optimize_prompt": [
           "len",
@@ -803,71 +803,71 @@
           "print"
         ],
         "run_llm_request": [
-          "requests.Session",
-          "response.json",
-          "get_system_metrics",
-          "time.perf_counter",
-          "len",
-          "type",
           "session.post",
-          "response.raise_for_status",
+          "get_system_metrics",
+          "print",
           "is_local_address",
-          "print"
+          "requests.Session",
+          "len",
+          "response.json",
+          "time.perf_counter",
+          "response.raise_for_status",
+          "type"
         ],
         "check_llmstruct_cli": [
           "shutil.which"
         ],
         "test_with_llmstruct": [
-          "f.read",
-          "subprocess.run",
           "optimize_prompt",
-          "open",
           "run_llm_request",
+          "json.dump",
+          "Path",
+          "check_llmstruct_cli",
+          "subprocess.run",
           "str",
           "FileNotFoundError",
+          "open",
           "target_path.exists",
-          "json.dump",
-          "check_llmstruct_cli",
-          "Path"
+          "f.read"
         ],
         "test_without_llmstruct": [
-          "f.read",
           "optimize_prompt",
-          "open",
           "run_llm_request",
-          "Path"
+          "Path",
+          "open",
+          "f.read"
         ],
         "test_with_grok": [
-          "f.read",
           "optimize_prompt",
-          "open",
           "test_grok",
-          "FileNotFoundError",
-          "target_path.exists",
           "json.dump",
-          "Path"
+          "Path",
+          "FileNotFoundError",
+          "open",
+          "target_path.exists",
+          "f.read"
         ],
         "evaluate_accuracy": [
-          "len",
           "response_text.lower",
-          "sum"
+          "sum",
+          "len"
         ],
         "main": [
-          "open",
-          "parser.add_argument",
-          "check_llmstruct_cli",
           "evaluate_accuracy",
-          "range",
           "parser.parse_args",
-          "str",
-          "check_ollama",
           "test_without_llmstruct",
           "test_with_grok",
-          "test_with_llmstruct",
+          "check_ollama",
+          "parser.add_argument",
           "json.dump",
           "print",
-          "argparse.ArgumentParser",
-          "setup_proxy"
+          "check_llmstruct_cli",
+          "test_with_llmstruct",
+          "str",
+          "open",
+          "range",
+          "setup_proxy",
+          "argparse.ArgumentParser"
         ]
       },
       "dependencies": [
@@ -888,7 +888,7 @@
         "urlparse"
       ],
       "hash": null,
-      "artifact_id": "c22a4a3c-11a4-4367-85e1-963b41881c73"
+      "artifact_id": "e1a29354-aea7-426f-a21f-602d67b468c3"
     },
     {
       "module_id": "collector",
@@ -932,28 +932,28 @@
       "classes": [],
       "callgraph": {
         "load_gitignore": [
-          "gitignore_parser.parse_gitignore",
           "gitignore_path.exists",
+          "gitignore_parser.parse_gitignore",
           "Path"
         ],
         "is_text_file": [],
         "collect_project": [
-          "f.read",
-          "gitignore",
-          "open",
-          "load_gitignore",
-          "file_path.is_file",
-          "len",
-          "str",
-          "is_text_file",
           "logger.info",
-          "root_dir.rglob",
           "logger.warning",
-          "logger.error",
-          "any",
           "json.dump",
-          "doc_files.items",
-          "Path"
+          "file_path.is_file",
+          "Path",
+          "gitignore",
+          "len",
+          "is_text_file",
+          "root_dir.rglob",
+          "logger.error",
+          "load_gitignore",
+          "open",
+          "str",
+          "f.read",
+          "any",
+          "doc_files.items"
         ]
       },
       "dependencies": [
@@ -964,7 +964,7 @@
         "pathlib"
       ],
       "hash": null,
-      "artifact_id": "87fc9eb0-77c7-4d1d-84b2-fcc77ad0f544"
+      "artifact_id": "ac600783-9226-4197-937a-1d88c1c589e2"
     },
     {
       "module_id": "verify_llm_response",
@@ -1049,58 +1049,58 @@
       "classes": [],
       "callgraph": {
         "load_json_file": [
-          "logging.error",
           "open",
+          "logging.error",
           "json.load"
         ],
         "verify_response_with_struct": [
-          "logging.info",
           "expected_goals.issubset",
-          "expected_extensions.issubset",
-          "set",
-          "e.startswith",
           "struct_data.get",
-          "expected_files.issubset",
           "logging.error",
-          "re.findall"
+          "e.startswith",
+          "set",
+          "expected_files.issubset",
+          "re.findall",
+          "expected_extensions.issubset",
+          "logging.info"
         ],
         "verify_response_without_struct": [
-          "logging.info",
-          "expected_goals.issubset",
           "principle.lower",
-          "set",
-          "expected_extensions.issubset",
+          "expected_goals.issubset",
+          "logging.error",
           "expected_files.issubset",
           "response_text.lower",
-          "logging.error",
-          "re.findall"
+          "set",
+          "re.findall",
+          "expected_extensions.issubset",
+          "logging.info"
         ],
         "generate_metrics": [
-          "len",
-          "response_text.split",
           "datetime.utcnow",
           "server_log.get",
-          "re.findall"
+          "len",
+          "re.findall",
+          "response_text.split"
         ],
         "update_tasks_json": [
           "tasks.get",
-          "logging.info",
-          "open",
+          "json.dump",
           "load_json_file",
-          "json.dump"
+          "open",
+          "logging.info"
         ],
         "main": [
-          "logging.info",
-          "open",
-          "parser.add_argument",
-          "verify_response_without_struct",
-          "parser.parse_args",
-          "load_json_file",
-          "generate_metrics",
           "verify_response_with_struct",
-          "update_tasks_json",
+          "parser.add_argument",
           "json.dump",
-          "argparse.ArgumentParser"
+          "verify_response_without_struct",
+          "load_json_file",
+          "open",
+          "generate_metrics",
+          "parser.parse_args",
+          "argparse.ArgumentParser",
+          "logging.info",
+          "update_tasks_json"
         ]
       },
       "dependencies": [
@@ -1116,7 +1116,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "dcb5b78d-4c29-4141-8f19-676748c97ac7"
+      "artifact_id": "9430c32f-30b5-4386-8e07-f2ea116fb5fe"
     },
     {
       "module_id": "examples.python_project_utils",
@@ -1160,7 +1160,7 @@
         "logging"
       ],
       "hash": null,
-      "artifact_id": "9257ebe2-9635-42e3-9ec7-03c8b20e5314"
+      "artifact_id": "ae328e78-4142-4000-afcf-8d75582503af"
     },
     {
       "module_id": "examples.python_project_main",
@@ -1217,8 +1217,8 @@
       ],
       "callgraph": {
         "main": [
-          "print",
-          "utils.helper"
+          "utils.helper",
+          "print"
         ],
         "run": [
           "utils.log"
@@ -1228,7 +1228,7 @@
         "utils"
       ],
       "hash": null,
-      "artifact_id": "69692aa2-8cdc-4b66-91cf-b11a50455765"
+      "artifact_id": "623db842-4072-49f8-876d-9de76b494859"
     },
     {
       "module_id": "src.llmstruct.grok",
@@ -1323,14 +1323,14 @@
           "requests.Session"
         ],
         "generate": [
-          "response.json",
-          "prompt.split",
           "len",
-          "response.raise_for_status"
+          "response.json",
+          "response.raise_for_status",
+          "prompt.split"
         ],
         "test_grok": [
-          "time.perf_counter",
           "client.generate",
+          "time.perf_counter",
           "GrokClient"
         ]
       },
@@ -1339,7 +1339,7 @@
         "requests"
       ],
       "hash": null,
-      "artifact_id": "d178f4fb-08b4-41c7-9dc9-7a342c29ab66"
+      "artifact_id": "c96a8674-88ed-40c8-9f7b-eaace0b8258a"
     },
     {
       "module_id": "src.llmstruct.__init__",
@@ -1354,7 +1354,7 @@
         "llm_client"
       ],
       "hash": null,
-      "artifact_id": "93595376-91d5-48f7-ada1-657108cbe144"
+      "artifact_id": "3390faf2-f15a-4746-9caf-504b3dd0b0a8"
     },
     {
       "module_id": "src.llmstruct.__main__",
@@ -1371,7 +1371,7 @@
         "main"
       ],
       "hash": null,
-      "artifact_id": "e37b7702-a5b5-48c3-92bd-1f97a07498fc"
+      "artifact_id": "89928b34-c538-4b6e-a335-1b5c67877392"
     },
     {
       "module_id": "src.llmstruct.llm_client",
@@ -1557,57 +1557,57 @@
       ],
       "callgraph": {
         "__init__": [
+          "os.getenv",
           "logging.info",
-          "int",
-          "os.getenv"
+          "int"
         ],
         "query": [
-          "logging.info",
-          "self._query_grok",
-          "range",
-          "self._query_ollama",
-          "json.load",
-          "self._query_hybrid",
           "asyncio.sleep",
+          "self._query_anthropic",
+          "self._query_grok",
           "logging.warning",
           "logging.error",
+          "Path",
           "json.dumps",
-          "self._query_anthropic",
-          "Path"
+          "json.load",
+          "self._query_ollama",
+          "self._query_hybrid",
+          "range",
+          "logging.info"
         ],
         "_query_grok": [
-          "logging.info",
           "result.get",
-          "response.json",
-          "aiohttp.ClientSession",
           "session.post",
-          "logging.error"
+          "logging.error",
+          "aiohttp.ClientSession",
+          "response.json",
+          "logging.info"
         ],
         "_query_anthropic": [
-          "logging.info",
           "result.get",
-          "response.json",
-          "aiohttp.ClientSession",
           "session.post",
-          "logging.error"
+          "logging.error",
+          "aiohttp.ClientSession",
+          "response.json",
+          "logging.info"
         ],
         "_query_ollama": [
-          "logging.info",
           "result.get",
-          "response.json",
-          "aiohttp.ClientSession",
-          "logging.debug",
           "session.post",
-          "logging.error"
+          "logging.error",
+          "aiohttp.ClientSession",
+          "response.json",
+          "logging.debug",
+          "logging.info"
         ],
         "_query_hybrid": [
-          "logging.info",
-          "isinstance",
+          "self._query_anthropic",
           "self._query_grok",
-          "len",
-          "self._query_ollama",
           "asyncio.gather",
-          "self._query_anthropic"
+          "isinstance",
+          "self._query_ollama",
+          "len",
+          "logging.info"
         ]
       },
       "dependencies": [
@@ -1628,7 +1628,7 @@
         "urllib.parse"
       ],
       "hash": null,
-      "artifact_id": "28e05b1c-4feb-4a66-8ffb-8603dd6b32c1"
+      "artifact_id": "3723664b-cd2e-414f-b982-1dd313d89b0f"
     },
     {
       "module_id": "src.llmstruct.cache",
@@ -1809,25 +1809,25 @@
         ],
         "create_tables": [],
         "cache_json": [
-          "f.read",
-          "hashlib.sha256",
-          "logging.info",
-          "open",
           "json_file.exists",
-          "content.encode",
-          "str",
           "logging.error",
+          "Path",
           "json.dumps",
-          "Path"
+          "content.encode",
+          "hashlib.sha256",
+          "open",
+          "str",
+          "f.read",
+          "logging.info"
         ],
         "get_metadata": [
-          "json.loads",
-          "cursor.fetchone"
+          "cursor.fetchone",
+          "json.loads"
         ],
         "get_full_json": [
-          "logging.error",
           "cursor.fetchone",
           "open",
+          "logging.error",
           "json.load"
         ],
         "close": []
@@ -1846,7 +1846,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "b6d005d6-839d-4e74-ad52-74bcbae7d71c"
+      "artifact_id": "7e322eec-00dc-4609-86dc-67b5c864cb1d"
     },
     {
       "module_id": "src.llmstruct.self_run",
@@ -1885,25 +1885,25 @@
       "classes": [],
       "callgraph": {
         "filter_struct": [
-          "filter_json",
           "module.get",
-          "any",
+          "filter_json",
+          "prompt.lower",
           "struct.get",
-          "prompt.lower"
+          "any"
         ],
         "attach_to_llm_request": [
-          "cache.get_full_json",
-          "logging.info",
-          "context_file.exists",
-          "filter_json",
           "select_json",
-          "Path",
-          "cache.cache_json",
-          "cache.get_metadata",
           "logging.error",
+          "Path",
           "json.dumps",
+          "filter_json",
+          "cache.get_full_json",
+          "prompt.lower",
           "filter_struct",
-          "prompt.lower"
+          "cache.cache_json",
+          "context_file.exists",
+          "logging.info",
+          "cache.get_metadata"
         ]
       },
       "dependencies": [
@@ -1923,7 +1923,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "5413c62e-c3cb-46d3-b9c7-8b949506e451"
+      "artifact_id": "83cd3be9-9c24-488d-9776-8e316a73c441"
     },
     {
       "module_id": "src.llmstruct.json_selector",
@@ -1966,24 +1966,24 @@
       "classes": [],
       "callgraph": {
         "filter_json": [
-          "item.get",
+          "data.get",
           "filtered.append",
-          "isinstance",
-          "data.get"
+          "item.get",
+          "isinstance"
         ],
         "select_json": [
           "prefix.startswith",
-          "open",
-          "filter_json",
-          "json_file.exists",
-          "ijson.parse",
-          "path.append",
           "filtered.append",
-          "current_item.get",
-          "json.load",
+          "json_file.exists",
           "logging.error",
+          "Path",
+          "ijson.parse",
+          "json.load",
           "f.seek",
-          "Path"
+          "filter_json",
+          "open",
+          "current_item.get",
+          "path.append"
         ]
       },
       "dependencies": [
@@ -2000,7 +2000,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "1b875e88-fbd0-4a10-8a50-833ac9218237"
+      "artifact_id": "f4509a02-5852-4595-adab-8412ac0167ab"
     },
     {
       "module_id": "src.llmstruct.cli",
@@ -2157,93 +2157,93 @@
       "callgraph": {
         "load_gitignore": [
           "gitignore_path.exists",
+          "line.startswith",
+          "Path",
           "gitignore_path.open",
           "logging.error",
-          "line.startswith",
-          "line.strip",
-          "Path"
+          "line.strip"
         ],
         "load_config": [
-          "config_path.exists",
-          "toml.load",
-          "logging.error",
           "config_path.open",
-          "Path"
+          "logging.error",
+          "Path",
+          "config_path.exists",
+          "toml.load"
         ],
         "read_file_content": [
-          "f.read",
-          "path.is_file",
-          "logging.error",
           "path.open",
-          "Path"
+          "logging.error",
+          "Path",
+          "path.is_file",
+          "f.read"
         ],
         "write_to_file": [
-          "logging.info",
           "f.write",
-          "str",
-          "base_path.mkdir",
-          "file_path.open",
           "logging.warning",
           "logging.error",
+          "Path",
+          "str",
+          "base_path.mkdir",
           "file_path.exists",
-          "Path"
+          "file_path.open",
+          "logging.info"
         ],
         "parse_files_from_response": [
+          "filename.strip",
           "files.append",
-          "content.strip",
           "re.findall",
-          "filename.strip"
+          "content.strip"
         ],
         "interactive": [
+          "input",
           "re.search",
-          "load_gitignore",
-          "read_file_content",
-          "parse",
-          "cache.close",
-          "json.dumps",
-          "print",
+          "get_folder_structure",
           "Path",
           "write_match.group",
           "write_dir.startswith",
-          "files_to_write.append",
+          "attach_to_llm_request",
+          "client.query",
+          "parse_files_from_response",
+          "parse",
+          "json.dumps",
+          "write_to_file",
+          "read_file_content",
           "JSONCache",
+          "scan_match.group",
+          "user_input.lower",
+          "files_to_write.append",
+          "cache.close",
+          "logging.warning",
+          "print",
+          "logging.error",
           "os.listdir",
           "LLMClient",
-          "logging.error",
-          "input",
-          "write_to_file",
-          "sorted",
-          "parse_files_from_response",
-          "user_input.lower",
-          "get_folder_structure",
-          "client.query",
-          "logging.warning",
-          "attach_to_llm_request",
-          "scan_match.group"
+          "load_gitignore",
+          "sorted"
         ],
         "parse": [
-          "JSONCache",
-          "logging.info",
-          "load_config",
-          "load_gitignore",
-          "config.get",
-          "generate_json",
-          "cache.cache_json",
-          "cache.close",
           "logging.warning",
-          "logging.error",
+          "config.get",
           "json.dump",
-          "Path"
+          "logging.error",
+          "Path",
+          "cache.cache_json",
+          "load_config",
+          "cache.close",
+          "JSONCache",
+          "load_gitignore",
+          "generate_json",
+          "logging.info"
         ],
         "query": [
-          "JSONCache",
-          "logging.info",
-          "cache.close",
-          "client.query",
-          "LLMClient",
-          "logging.error",
           "json.dump",
-          "Path"
+          "logging.error",
+          "Path",
+          "client.query",
+          "cache.close",
+          "LLMClient",
+          "JSONCache",
+          "logging.info"
         ],
         "context": [
           "logging.warning"
@@ -2255,23 +2255,23 @@
           "logging.warning"
         ],
         "main": [
-          "context",
-          "query",
-          "asyncio.run",
-          "subparsers.add_parser",
-          "parse",
           "parser.parse_args",
-          "review_parser.add_argument",
-          "query_parser.add_argument",
-          "dogfood",
-          "context_parser.add_argument",
-          "dogfood_parser.add_argument",
           "interactive_parser.add_argument",
+          "dogfood",
+          "context",
+          "parser.add_subparsers",
+          "review_parser.add_argument",
+          "parse_parser.add_argument",
           "interactive",
           "review",
-          "parse_parser.add_argument",
+          "context_parser.add_argument",
+          "query_parser.add_argument",
+          "parse",
+          "asyncio.run",
+          "subparsers.add_parser",
+          "query",
           "argparse.ArgumentParser",
-          "parser.add_subparsers"
+          "dogfood_parser.add_argument"
         ]
       },
       "dependencies": [
@@ -2299,7 +2299,7 @@
         "uuid"
       ],
       "hash": null,
-      "artifact_id": "c3b32319-a51b-4901-942e-7b94463f44e8"
+      "artifact_id": "3244109a-1ec2-4973-b0ab-7d6c9e1dda7a"
     },
     {
       "module_id": "src.llmstruct.parsers.__init__",
@@ -2316,7 +2316,7 @@
         "python_parser"
       ],
       "hash": null,
-      "artifact_id": "508ac8d5-e741-4410-8ee2-8e0a99a282fe"
+      "artifact_id": "919bd17c-c71b-45af-b427-ff40facf14a6"
     },
     {
       "module_id": "src.llmstruct.parsers.javascript_parser",
@@ -2461,22 +2461,22 @@
           "set"
         ],
         "file_hash": [
+          "open",
           "f.read",
-          "hashlib.sha256",
-          "open"
+          "hashlib.sha256"
         ],
         "compute_file_metadata": [
-          "os.stat",
           "open",
           "self.file_hash",
+          "os.stat",
           "sum"
         ],
         "parse_module": [
-          "f.read",
-          "open",
           "self.compute_file_metadata",
+          "esprima.parseModule",
+          "open",
           "str",
-          "esprima.parseModule"
+          "f.read"
         ],
         "extract_signature": [
           "hasattr"
@@ -2493,7 +2493,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "00fb9fa3-4ae7-41dc-be03-7bda7bbbf0d8"
+      "artifact_id": "61544120-6f6f-4f5c-b11d-40d79c53db31"
     },
     {
       "module_id": "src.llmstruct.parsers.python_parser",
@@ -2726,34 +2726,34 @@
           "self.generic_visit"
         ],
         "visit_Call": [
-          "isinstance",
-          "self.generic_visit"
+          "self.generic_visit",
+          "isinstance"
         ],
         "compute_file_hash": [
-          "f.read",
-          "hashlib.sha256",
           "open",
-          "logging.error"
+          "logging.error",
+          "f.read",
+          "hashlib.sha256"
         ],
         "analyze_module": [
-          "f.read",
-          "infer_category",
-          "sorted",
-          "compute_file_hash",
-          "open",
-          "isinstance",
-          "ast.parse",
-          "list",
-          "classes.append",
-          "str",
-          "logging.error",
-          "CallVisitor",
-          "visitor.visit",
           "functions.append",
-          "ast.get_docstring",
           "ast.walk",
+          "infer_category",
+          "list",
+          "logging.error",
+          "ast.get_docstring",
+          "Path",
+          "isinstance",
+          "visitor.visit",
+          "compute_file_hash",
+          "CallVisitor",
+          "ast.parse",
+          "open",
+          "str",
           "ast.unparse",
-          "Path"
+          "sorted",
+          "f.read",
+          "classes.append"
         ]
       },
       "dependencies": [
@@ -2771,7 +2771,7 @@
         "typing"
       ],
       "hash": null,
-      "artifact_id": "334c5c56-efbc-4fd3-89fc-facc962a5df5"
+      "artifact_id": "d8443ba9-37f3-4c3d-bf53-ff02f0558839"
     },
     {
       "module_id": "src.llmstruct.templates.__init__",
@@ -2783,7 +2783,7 @@
       "callgraph": {},
       "dependencies": [],
       "hash": null,
-      "artifact_id": "61b34659-57d9-4a59-b3af-b8a56b5e3069"
+      "artifact_id": "6980f741-0401-41ac-a452-6fac92cdac9b"
     },
     {
       "module_id": "src.llmstruct.validators.__init__",
@@ -2798,7 +2798,7 @@
         "validate_struct_json"
       ],
       "hash": null,
-      "artifact_id": "c7843bd5-6518-4b78-b68e-3f8de835386a"
+      "artifact_id": "637f6730-0853-4679-a67d-26f6f6019ebb"
     },
     {
       "module_id": "src.llmstruct.validators.json_validator",
@@ -2838,22 +2838,22 @@
       "classes": [],
       "callgraph": {
         "validate_struct_json": [
-          "schema_file.exists",
-          "logging.info",
-          "open",
           "json_file.exists",
-          "validate",
-          "str",
-          "json.load",
           "logging.error",
-          "Path"
+          "Path",
+          "json.load",
+          "validate",
+          "open",
+          "str",
+          "schema_file.exists",
+          "logging.info"
         ],
         "validate_directory": [
-          "str",
-          "any",
-          "validate_struct_json",
+          "Path",
           "json_file.match",
-          "Path"
+          "validate_struct_json",
+          "str",
+          "any"
         ]
       },
       "dependencies": [
@@ -2870,7 +2870,7 @@
         "validate"
       ],
       "hash": null,
-      "artifact_id": "e2bfefc4-652c-4d7c-b7de-f8c6586bdb63"
+      "artifact_id": "aea82ecc-2193-41a9-9edd-2166033021db"
     },
     {
       "module_id": "src.llmstruct.generators.json_generator",
@@ -2936,42 +2936,42 @@
       "callgraph": {
         "get_folder_structure": [
           "sorted",
-          "p.rstrip",
-          "set",
-          "Path",
-          "str",
-          "uuid.uuid4",
           "os.walk",
           "file_path.relative_to",
-          "any",
-          "structure.append",
+          "Path",
+          "set",
+          "p.rstrip",
           "file_path.match",
-          "p.endswith"
+          "uuid.uuid4",
+          "str",
+          "structure.append",
+          "p.endswith",
+          "any"
         ],
         "build_toc_and_modules": [
-          "f.match",
-          "modules.append",
-          "p.rstrip",
-          "set",
-          "analyze_module",
-          "len",
-          "str",
-          "uuid.uuid4",
-          "p.endswith",
           "toc.append",
-          "any",
-          "Path"
+          "analyze_module",
+          "set",
+          "Path",
+          "p.rstrip",
+          "modules.append",
+          "len",
+          "f.match",
+          "uuid.uuid4",
+          "str",
+          "p.endswith",
+          "any"
         ],
         "generate_json": [
+          "build_toc_and_modules",
           "list",
-          "sum",
+          "get_folder_structure",
+          "Path",
           "set",
           "len",
-          "build_toc_and_modules",
+          "sum",
           "str",
-          "uuid.uuid4",
-          "get_folder_structure",
-          "Path"
+          "uuid.uuid4"
         ]
       },
       "dependencies": [
@@ -2991,7 +2991,7 @@
         "uuid"
       ],
       "hash": null,
-      "artifact_id": "dc3766e1-06b0-410c-963a-457837f77b4d"
+      "artifact_id": "05b6187d-7dd5-44e2-a9df-02ccbd571b93"
     },
     {
       "module_id": "src.llmstruct.generators.__init__",
@@ -3006,7 +3006,7 @@
         "json_generator"
       ],
       "hash": null,
-      "artifact_id": "86c1d710-9446-4119-b449-d27c94c33acf"
+      "artifact_id": "fe4fd0ef-6cb2-456d-889d-a9e8a4c520c7"
     },
     {
       "module_id": "bak.20250522_102827.scripts.collector",
@@ -3068,29 +3068,29 @@
       "callgraph": {
         "apply_filters": [
           "pattern.startswith",
-          "filtered.append",
-          "fnmatch.fnmatch"
+          "fnmatch.fnmatch",
+          "filtered.append"
         ],
         "collect_files": [
-          "str",
-          "path.relative_to",
-          "path.is_file",
-          "apply_filters",
           "files.append",
-          "root_dir.rglob"
+          "apply_filters",
+          "path.relative_to",
+          "root_dir.rglob",
+          "path.is_file",
+          "str"
         ],
         "generate_struct": [
           "output_path.open",
-          "len",
-          "str",
-          "uuid.uuid4",
-          "collect_files",
-          "json.load",
-          "logger.info",
-          "existing.get",
-          "json.dump",
           "output_path.exists",
-          "Path"
+          "logger.info",
+          "json.dump",
+          "collect_files",
+          "Path",
+          "json.load",
+          "len",
+          "existing.get",
+          "str",
+          "uuid.uuid4"
         ],
         "main": [
           "generate_struct"
@@ -3105,7 +3105,7 @@
         "uuid"
       ],
       "hash": null,
-      "artifact_id": "5bc27bf1-8155-4b33-bb7d-922a4bd6e4e4"
+      "artifact_id": "4b80078d-49d0-4cbc-ac39-8e71a1e76777"
     },
     {
       "module_id": "bak.20250522_102827.scripts.validate_refs",
@@ -3137,17 +3137,17 @@
       "classes": [],
       "callgraph": {
         "validate_references": [
-          "enumerate",
-          "idea.get",
           "broken_links.append",
-          "source_file.exists",
-          "target_file.exists",
           "logger.info",
-          "json.load",
           "logger.warning",
-          "logger.error",
           "json.dump",
-          "Path"
+          "source_file.exists",
+          "Path",
+          "idea.get",
+          "json.load",
+          "target_file.exists",
+          "logger.error",
+          "enumerate"
         ],
         "main": [
           "validate_references"
@@ -3160,7 +3160,7 @@
         "pathlib"
       ],
       "hash": null,
-      "artifact_id": "9070e92d-c908-4e5a-9cb8-914cda6c36ee"
+      "artifact_id": "b9a0d618-61a8-475c-8443-b8df0ec294a5"
     },
     {
       "module_id": "bak.20250522_102827.scripts.deploy_embedded_files",
@@ -3218,27 +3218,27 @@
       "classes": [],
       "callgraph": {
         "validate_json": [
-          "validate",
-          "logger.warning"
+          "logger.warning",
+          "validate"
         ],
         "backup_files": [
-          "datetime.now",
-          "target_dir.exists",
+          "logger.info",
           "shutil.copytree",
-          "logger.info"
+          "target_dir.exists",
+          "datetime.now"
         ],
         "deploy_embedded_files": [
-          "target_path.open",
-          "EMBEDDED_FILES.items",
           "f.write",
-          "EMBEDDED_FILES.get",
-          "backup_files",
-          "validate_json",
           "logger.info",
-          "logger.error",
-          "target_path.exists",
+          "EMBEDDED_FILES.items",
           "json.dump",
-          "Path"
+          "Path",
+          "validate_json",
+          "logger.error",
+          "EMBEDDED_FILES.get",
+          "target_path.exists",
+          "target_path.open",
+          "backup_files"
         ],
         "main": [
           "deploy_embedded_files"
@@ -3257,7 +3257,7 @@
         "validate"
       ],
       "hash": null,
-      "artifact_id": "80b0ee7c-b30e-4ca9-b430-621d96349849"
+      "artifact_id": "6bc90a63-7a92-4196-a7e6-3d9356222a6b"
     },
     {
       "module_id": "bak.20250522_131121.scripts.collector",
@@ -3319,29 +3319,29 @@
       "callgraph": {
         "apply_filters": [
           "pattern.startswith",
-          "filtered.append",
-          "fnmatch.fnmatch"
+          "fnmatch.fnmatch",
+          "filtered.append"
         ],
         "collect_files": [
-          "str",
-          "path.relative_to",
-          "path.is_file",
-          "apply_filters",
           "files.append",
-          "root_dir.rglob"
+          "apply_filters",
+          "path.relative_to",
+          "root_dir.rglob",
+          "path.is_file",
+          "str"
         ],
         "generate_struct": [
           "output_path.open",
-          "len",
-          "str",
-          "uuid.uuid4",
-          "collect_files",
-          "json.load",
-          "logger.info",
-          "existing.get",
-          "json.dump",
           "output_path.exists",
-          "Path"
+          "logger.info",
+          "json.dump",
+          "collect_files",
+          "Path",
+          "json.load",
+          "len",
+          "existing.get",
+          "str",
+          "uuid.uuid4"
         ],
         "main": [
           "generate_struct"
@@ -3356,7 +3356,7 @@
         "uuid"
       ],
       "hash": null,
-      "artifact_id": "330424c5-ee36-4c97-a6e1-6785677a21dd"
+      "artifact_id": "2707f682-b686-42cd-be96-f2a2b0bf49b2"
     },
     {
       "module_id": "bak.20250522_131121.scripts.validate_refs",
@@ -3388,17 +3388,17 @@
       "classes": [],
       "callgraph": {
         "validate_references": [
-          "enumerate",
-          "idea.get",
           "broken_links.append",
-          "source_file.exists",
-          "target_file.exists",
           "logger.info",
-          "json.load",
           "logger.warning",
-          "logger.error",
           "json.dump",
-          "Path"
+          "source_file.exists",
+          "Path",
+          "idea.get",
+          "json.load",
+          "target_file.exists",
+          "logger.error",
+          "enumerate"
         ],
         "main": [
           "validate_references"
@@ -3411,7 +3411,7 @@
         "pathlib"
       ],
       "hash": null,
-      "artifact_id": "fb9fba96-62e1-4c24-ae61-b833e0144789"
+      "artifact_id": "325488d3-eb79-41cf-ac60-167bf20db76a"
     },
     {
       "module_id": "bak.20250522_131121.scripts.deploy_embedded_files",
@@ -3470,30 +3470,30 @@
       "classes": [],
       "callgraph": {
         "validate_json": [
-          "RefResolver",
           "logger.warning",
           "logger.error",
+          "RefResolver",
           "validate"
         ],
         "backup_files": [
-          "datetime.now",
-          "target_dir.exists",
+          "logger.info",
           "shutil.copytree",
-          "logger.info"
+          "target_dir.exists",
+          "datetime.now"
         ],
         "deploy_embedded_files": [
-          "target_path.open",
           "f.write",
-          "EMBEDDED_FILES.get",
-          "backup_files",
-          "validate_json",
-          "Path.cwd",
           "logger.info",
           "logger.warning",
-          "logger.error",
-          "target_path.exists",
           "json.dump",
-          "Path"
+          "Path",
+          "validate_json",
+          "logger.error",
+          "Path.cwd",
+          "EMBEDDED_FILES.get",
+          "target_path.exists",
+          "target_path.open",
+          "backup_files"
         ],
         "main": [
           "deploy_embedded_files"
@@ -3513,7 +3513,7 @@
         "validate"
       ],
       "hash": null,
-      "artifact_id": "24b70d14-929b-4207-a00a-0e907d52e6c0"
+      "artifact_id": "9c3541d4-42c5-4ba1-acd2-4f0175e45c00"
     },
     {
       "module_id": "scripts.collector",
@@ -3575,29 +3575,29 @@
       "callgraph": {
         "apply_filters": [
           "pattern.startswith",
-          "filtered.append",
-          "fnmatch.fnmatch"
+          "fnmatch.fnmatch",
+          "filtered.append"
         ],
         "collect_files": [
-          "str",
-          "path.relative_to",
-          "path.is_file",
-          "apply_filters",
           "files.append",
-          "root_dir.rglob"
+          "apply_filters",
+          "path.relative_to",
+          "root_dir.rglob",
+          "path.is_file",
+          "str"
         ],
         "generate_struct": [
           "output_path.open",
-          "len",
-          "str",
-          "uuid.uuid4",
-          "collect_files",
-          "json.load",
-          "logger.info",
-          "existing.get",
-          "json.dump",
           "output_path.exists",
-          "Path"
+          "logger.info",
+          "json.dump",
+          "collect_files",
+          "Path",
+          "json.load",
+          "len",
+          "existing.get",
+          "str",
+          "uuid.uuid4"
         ],
         "main": [
           "generate_struct"
@@ -3612,7 +3612,7 @@
         "uuid"
       ],
       "hash": null,
-      "artifact_id": "919d91c4-8bd6-4a4a-b667-9281356add10"
+      "artifact_id": "8477689f-ce68-485a-b737-1369c566e82c"
     },
     {
       "module_id": "scripts.validate_refs",
@@ -3644,17 +3644,17 @@
       "classes": [],
       "callgraph": {
         "validate_references": [
-          "enumerate",
-          "idea.get",
           "broken_links.append",
-          "source_file.exists",
-          "target_file.exists",
           "logger.info",
-          "json.load",
           "logger.warning",
-          "logger.error",
           "json.dump",
-          "Path"
+          "source_file.exists",
+          "Path",
+          "idea.get",
+          "json.load",
+          "target_file.exists",
+          "logger.error",
+          "enumerate"
         ],
         "main": [
           "validate_references"
@@ -3667,7 +3667,7 @@
         "pathlib"
       ],
       "hash": null,
-      "artifact_id": "d366d316-2cdc-41a3-b8f0-a8274f41f26f"
+      "artifact_id": "d82c87d0-37b4-4c09-be15-66ac2b4481b4"
     },
     {
       "module_id": "scripts.deploy_embedded_files",
@@ -3726,30 +3726,30 @@
       "classes": [],
       "callgraph": {
         "validate_json": [
-          "RefResolver",
           "logger.warning",
           "logger.error",
+          "RefResolver",
           "validate"
         ],
         "backup_files": [
-          "datetime.now",
-          "target_dir.exists",
+          "logger.info",
           "shutil.copytree",
-          "logger.info"
+          "target_dir.exists",
+          "datetime.now"
         ],
         "deploy_embedded_files": [
-          "target_path.open",
           "f.write",
-          "EMBEDDED_FILES.get",
-          "backup_files",
-          "validate_json",
-          "Path.cwd",
           "logger.info",
           "logger.warning",
-          "logger.error",
-          "target_path.exists",
           "json.dump",
-          "Path"
+          "Path",
+          "validate_json",
+          "logger.error",
+          "Path.cwd",
+          "EMBEDDED_FILES.get",
+          "target_path.exists",
+          "target_path.open",
+          "backup_files"
         ],
         "main": [
           "deploy_embedded_files"
@@ -3769,7 +3769,7 @@
         "validate"
       ],
       "hash": null,
-      "artifact_id": "23ab53aa-2e78-47a9-bc0e-83c3c5ec8e61"
+      "artifact_id": "fa8cbcb4-430e-472d-a4c7-be5fabb1ff54"
     }
   ]
 }
