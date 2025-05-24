@@ -1,9 +1,12 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "status": "Draft",
   "author": "@kpblcaoo",
-  "date": "2025-05-20",
+  "date": "2025-05-21",
   "license": "GPL-3.0",
+  "artifact_id": "b4c5d6e7-f8a9-40b1-c2d3-e4f5a6b7c8d9",
+  "summary": "Core principles and goals for llmstruct",
+  "tags": ["principles", "goals"],
   "principles": [
     {"id": "PRINCIPLE-001", "name": "Dogfooding", "description": "Use llmstruct to develop llmstruct"},
     {"id": "PRINCIPLE-002", "name": "Idempotence", "description": "Ensure reproducible changes"},

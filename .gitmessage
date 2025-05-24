@@ -1,0 +1,33 @@
+# <type>: <description>
+#
+# <body>
+#
+# <footer>
+
+# Type can be:
+#   feat     - new feature
+#   fix      - bug fix
+#   docs     - documentation
+#   style    - formatting, missing semi colons, etc; no code change
+#   refactor - refactoring production code
+#   test     - adding tests, refactoring test; no production code change
+#   chore    - updating build tasks, package manager configs, etc; no production code change
+#   security - security-related changes
+#   perf     - performance improvements
+
+# Description should be imperative, lowercase and no period
+# Body should explain what and why vs. how
+# Footer should contain any BREAKING CHANGE and issue references
+
+# Example:
+# feat: add user authentication system
+#
+# - Implement JWT-based authentication
+# - Add user registration and login endpoints
+# - Create middleware for protected routes
+#
+# Closes #123
+# BREAKING CHANGE: API endpoints now require authentication
+#
+# Security: Ensure no secrets are committed
+# Run pre-commit hook: git config --local core.hooksPath .git/hooks

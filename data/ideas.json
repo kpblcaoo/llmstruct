@@ -1,35 +1,196 @@
 {
-  "version": "0.3.6",
-  "status": "Draft",
+  "version": "0.2.0",
+  "status": "Active",
   "author": "@kpblcaoo",
-  "date": "2025-05-20",
+  "date": "2025-05-21",
   "license": "GPL-3.0",
+  "artifact_id": "ideas-core-001",
+  "metadata": {
+    "project_name": "llmstruct",
+    "description": "Conceptual ideas repository for project development",
+    "authors": [{"name": "@kpblcaoo", "github": "kpblcaoo", "email": "kpblcaoo@example.com"}]
+  },
+  "summary": "Repository of project concepts and development ideas",
+  "tags": ["concepts", "planning", "development"],
   "ideas": [
     {
+      "id": "IDEA-001",
+      "title": "Context-Aware LLM Orchestration",
+      "description": "Intelligent system for managing LLM interactions with context hierarchy and token optimization",
+      "status": "implemented",
+      "priority": "critical",
+      "category": "architecture",
+      "created_at": "2025-05-21T10:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Implemented in init.json with 4-level context hierarchy",
+      "related_files": ["init.json", "cli.json", "cli_queue.json"]
+    },
+    {
+      "id": "IDEA-002",
+      "title": "Multi-Stage Workflow Automation",
+      "description": "Automated workflow system with safety boundaries and performance monitoring",
+      "status": "implemented",
+      "priority": "high",
+      "category": "automation",
+      "created_at": "2025-05-21T10:30:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Implemented in cli_queue.json with comprehensive workflow engine",
+      "related_files": ["cli_queue.json", "cli.py"]
+    },
+    {
       "id": "IDEA-003",
-      "description": "Optimize Qwen indexing for small projects",
-      "goal": "Improve performance for projects <10k LOC",
-      "weight": 0.6,
+      "title": "Smart Cache Management",
+      "description": "Intelligent caching system for context optimization and performance enhancement",
+      "status": "in_progress",
       "priority": "medium",
-      "estimated_effort": "5–7d",
-      "status": "proposed",
-      "dependencies": ["TSK-016"]
+      "category": "performance",
+      "created_at": "2025-05-21T11:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Partially implemented in CLI, needs backend development",
+      "related_files": ["cli.py"],
+      "next_steps": ["Implement cache statistics backend", "Add cleanup automation", "Optimize context loading"]
     },
     {
-      "id": "IDEA-120",
-      "description": "Test efficiency of llmstruct approach vs. raw code with AI metrics",
+      "id": "IDEA-004",
+      "title": "Dynamic Schema Validation",
+      "description": "Real-time validation system for JSON configurations with auto-correction suggestions",
       "status": "proposed",
-      "priority": "high",
-      "estimated_effort": "7d",
-      "dependencies": ["TSK-060", "TSK-014"]
+      "priority": "medium",
+      "category": "validation",
+      "created_at": "2025-05-21T11:30:00Z",
+      "author": "@kpblcaoo",
+      "potential_implementation": "JSON schema validator with ML-based correction suggestions",
+      "related_files": ["schema/*.json"]
     },
     {
-      "id": "IDEA-121",
-      "description": "Add proxy support for llmstruct API and GitHub sync",
-      "status": "proposed",
+      "id": "IDEA-005",
+      "title": "Cross-Language Parser Enhancement",
+      "description": "Enhanced parser supporting multiple programming languages with unified AST",
+      "status": "in_progress",
       "priority": "high",
-      "estimated_effort": "2d",
-      "dependencies": ["TSK-060", "TSK-014"]
+      "category": "parser",
+      "created_at": "2025-05-21T12:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Related to TSK-006",
+      "related_tasks": ["TSK-006"]
+    },
+    {
+      "id": "IDEA-006",
+      "title": "Automated Project Structure Maintenance",
+      "description": "Self-updating project structure through intelligent parsing and change detection",
+      "status": "implemented",
+      "priority": "critical",
+      "category": "automation",
+      "created_at": "2025-05-21T16:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Implemented auto_update_struct.py with Git hooks and cron integration",
+      "related_tasks": ["TSK-132"],
+      "related_files": ["scripts/auto_update_struct.py", ".git/hooks/post-commit"]
+    },
+    {
+      "id": "IDEA-007",
+      "title": "Hybrid IDE Integration",
+      "description": "Seamless integration with VSCode Copilot for enhanced development experience",
+      "status": "implemented",
+      "priority": "critical",
+      "category": "integration",
+      "created_at": "2025-05-21T16:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Created CopilotContextManager with 4-level context system",
+      "related_tasks": ["TSK-133"],
+      "related_files": ["src/llmstruct/copilot.py"]
+    },
+    {
+      "id": "IDEA-008",
+      "title": "Modular CLI Architecture",
+      "description": "Refactored CLI with modular, extensible architecture for better maintainability",
+      "status": "implemented",
+      "priority": "critical",
+      "category": "architecture",
+      "created_at": "2025-05-21T16:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Created modular CLI structure with cli_core, cli_commands, cli_utils, cli_config",
+      "related_tasks": ["TSK-134"],
+      "related_files": ["src/llmstruct/cli_core.py", "src/llmstruct/cli_commands.py", "src/llmstruct/cli_utils.py", "src/llmstruct/cli_config.py"],
+      "benefits": ["Better maintainability", "Easier testing", "Modular development"]
+    },
+    {
+      "id": "IDEA-009",
+      "title": "Contextual Workflow Orchestration",
+      "description": "Advanced workflow system with smart context management and real-time adaptation",
+      "status": "in_progress",
+      "priority": "high",
+      "category": "orchestration",
+      "created_at": "2025-05-21T16:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Combining auto-update, CLI workflow, and context management",
+      "related_tasks": ["TSK-135"],
+      "next_steps": ["Integrate auto-update triggers", "Implement workflow validation", "Add performance monitoring"]
+    },
+    {
+      "id": "IDEA-010",
+      "title": "CLI Plugin Ecosystem",
+      "description": "Extensible plugin system for CLI with custom commands, workflows, and integrations",
+      "status": "proposed",
+      "priority": "medium",
+      "category": "architecture",
+      "created_at": "2025-05-24T06:00:00Z",
+      "author": "@kpblcaoo",
+      "technical_details": {
+        "plugin_interface": "Python module-based with registration system",
+        "command_extension": "Custom / commands with plugin namespace",
+        "workflow_hooks": "Pre/post execution hooks for enhanced functionality",
+        "configuration": "Plugin-specific configuration in llmstruct.toml"
+      },
+      "use_cases": [
+        "Custom project-specific commands",
+        "Third-party tool integrations",
+        "Domain-specific workflows",
+        "Advanced analytics and reporting"
+      ],
+      "implementation_roadmap": [
+        "Design plugin interface and registration system",
+        "Create plugin discovery and loading mechanism", 
+        "Implement plugin command namespace handling",
+        "Add plugin configuration management",
+        "Create plugin template and documentation",
+        "Develop core plugin examples"
+      ]
     }
-  ]
+  ],
+  "categories": {
+    "architecture": {
+      "description": "Structural and design concepts",
+      "color": "#FF6B6B"
+    },
+    "automation": {
+      "description": "Workflow and process automation",
+      "color": "#4ECDC4"
+    },
+    "performance": {
+      "description": "Optimization and efficiency improvements",
+      "color": "#45B7D1"
+    },
+    "validation": {
+      "description": "Data validation and integrity",
+      "color": "#96CEB4"
+    },
+    "parser": {
+      "description": "Code parsing and analysis",
+      "color": "#FFEAA7"
+    },
+    "integration": {
+      "description": "IDE and tool integrations",
+      "color": "#74B9FF"
+    },
+    "orchestration": {
+      "description": "Workflow and context orchestration",
+      "color": "#A29BFE"
+    }
+  },
+  "workflow": {
+    "idea_lifecycle": ["proposed", "evaluating", "approved", "in_progress", "implemented", "archived"],
+    "evaluation_criteria": ["feasibility", "impact", "complexity", "resources_required"],
+    "approval_process": "Technical review by maintainer"
+  }
 }

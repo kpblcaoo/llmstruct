@@ -1,0 +1,46 @@
+# Git attributes for llmstruct project
+
+# Text files
+*.md text
+*.txt text
+*.json text
+*.py text
+*.toml text
+*.yml text
+*.yaml text
+
+# Ensure consistent line endings
+*.py text eol=lf
+*.sh text eol=lf
+*.json text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+
+# Files that should never be committed
+*.env filter=secret
+*.key filter=secret
+*.pem filter=secret
+*_secret* filter=secret
+*api_key* filter=secret
+
+# Archive files
+*.zip binary
+*.tar.gz binary
+
+# Exclude hybrid_log.md from stats and diff
+docs/hybrid_log.md linguist-generated=true
+docs/hybrid_log.md -diff
+
+# Mark test files
+test/** linguist-language=Python
+tests/** linguist-language=Python
+
+# Documentation
+docs/** linguist-documentation=true
+*.md linguist-documentation=true

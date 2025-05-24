@@ -1,0 +1,125 @@
+{
+  "version": "0.1.0",
+  "status": "Active",
+  "author": "@kpblcaoo",
+  "date": "2025-05-21",
+  "license": "GPL-3.0",
+  "artifact_id": "ideas-cache-001",
+  "metadata": {
+    "project_name": "llmstruct",
+    "description": "Cache system for ideas in active development and evaluation",
+    "authors": [{"name": "@kpblcaoo", "github": "kpblcaoo", "email": "kpblcaoo@example.com"}]
+  },
+  "summary": "Active cache for ideas being evaluated and developed",
+  "tags": ["cache", "ideas", "development"],
+  "cached_ideas": [
+    {
+      "id": "CACHE-001",
+      "source_idea": "IDEA-003",
+      "title": "Smart Cache Management Implementation",
+      "status": "in_development",
+      "priority": "medium",
+      "cached_at": "2025-05-21T15:00:00Z",
+      "developer": "@kpblcaoo",
+      "progress": {
+        "completed": 40,
+        "current_phase": "backend_development",
+        "next_milestone": "statistics_implementation",
+        "estimated_completion": "2025-05-23T15:00:00Z"
+      },
+      "implementation_notes": [
+        "CLI interface completed",
+        "Backend implementation in progress",
+        "Need to add statistics collection",
+        "Cache cleanup automation pending"
+      ],
+      "blockers": [],
+      "related_files": ["src/llmstruct/cli.py"],
+      "commits": [],
+      "testing_status": "manual_testing_only"
+    },
+    {
+      "id": "CACHE-002",
+      "source_idea": "IDEA-004",
+      "title": "Dynamic Schema Validation System",
+      "status": "evaluating",
+      "priority": "medium",
+      "cached_at": "2025-05-21T15:30:00Z",
+      "developer": "@kpblcaoo",
+      "progress": {
+        "completed": 10,
+        "current_phase": "research",
+        "next_milestone": "prototype_development",
+        "estimated_completion": "2025-05-30T15:00:00Z"
+      },
+      "implementation_notes": [
+        "Researching JSON schema validation libraries",
+        "Investigating ML-based correction approaches",
+        "Need to define validation rules architecture"
+      ],
+      "blockers": [
+        "Need to choose validation library",
+        "ML integration complexity assessment needed"
+      ],
+      "related_files": ["schema/*.json"],
+      "commits": [],
+      "testing_status": "not_started"
+    }
+  ],
+  "cache_management": {
+    "retention_policy": {
+      "max_entries": 50,
+      "auto_cleanup": true,
+      "cleanup_triggers": ["completed", "abandoned", "merged_to_main"]
+    },
+    "priority_levels": {
+      "critical": {
+        "retention_days": 90,
+        "auto_promote": true
+      },
+      "high": {
+        "retention_days": 60,
+        "auto_promote": false
+      },
+      "medium": {
+        "retention_days": 30,
+        "auto_promote": false
+      },
+      "low": {
+        "retention_days": 14,
+        "auto_promote": false
+      }
+    },
+    "status_workflow": [
+      "evaluating",
+      "approved", 
+      "in_development",
+      "testing",
+      "completed",
+      "abandoned"
+    ]
+  },
+  "statistics": {
+    "total_cached": 2,
+    "in_development": 1,
+    "evaluating": 1,
+    "completed_this_week": 0,
+    "average_development_time": "N/A",
+    "most_active_developer": "@kpblcaoo"
+  },
+  "automation": {
+    "sync_with_ideas": true,
+    "auto_create_tasks": true,
+    "progress_tracking": true,
+    "notification_rules": [
+      {
+        "trigger": "blocker_added",
+        "action": "notify_developer"
+      },
+      {
+        "trigger": "milestone_missed",
+        "action": "escalate_priority"
+      }
+    ]
+  }
+}

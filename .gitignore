@@ -49,6 +49,45 @@ tmp/
 
 # Exclude sensitive or local config
 *.env
+.env.*
+secrets/
+secret_*
+*_secret*
+private_*
+
+# API keys and tokens
+*api_key*
+*_token*
+*_secret*
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Hybrid logs with potential API keys
+docs/hybrid_log.md
+**/hybrid_log.md
+
+# Exclude files with potential secrets
+**/secret.*
+**/private.*
+**/*.credentials
+**/auth.*
+**/.auth
+**/oauth.*
+**/.oauth
+
+# Local development
+.env.local
+.env.development
+.env.production
+config/local.json
+config/secrets.json
+
+# Backup files that might contain secrets
+*.backup
+*_backup.*
+*.bak.*
 .env
 secrets/
 
@@ -56,3 +95,10 @@ secrets/
 
 llm_response.json
 tree_collector.py
+deploy_llmstruct.py
+./sripts
+bak/
+workflow_archive/
+collect_json.py
+merged.json
+proj

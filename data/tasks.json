@@ -1,33 +1,243 @@
 {
-  "version": "0.3.2",
+  "version": "0.4.0",
   "status": "Draft",
   "author": "@kpblcaoo",
-  "date": "2025-05-20",
+  "date": "2025-05-21",
   "license": "GPL-3.0",
+  "artifact_id": "f2a3b4c5-d6e7-48f9-a0b1-c2d3e4f5a6b7",
+  "metadata": {
+    "project_name": "llmstruct",
+    "description": "Tasks for parser and API",
+    "authors": [{"name": "@kpblcaoo", "github": "kpblcaoo", "email": "kpblcaoo@example.com"}]
+  },
+  "summary": "Critical tasks for parser and API",
+  "tags": ["parser", "api"],
   "tasks": [
     {
       "id": "TSK-006",
-      "description": "Improve parser for multi-language support",
+      "description": "Improve parser for multi-language support (Python, JS)",
       "status": "in_progress",
       "priority": "high",
       "estimated_effort": "10d",
-      "dependencies": []
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-20T19:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false
     },
     {
-      "id": "TSK-108",
-      "description": "Implement efficiency testing for llmstruct",
+      "id": "TSK-027",
+      "description": "Implement RFC documentation process",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "5d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-20T19:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false
+    },
+    {
+      "id": "TSK-119",
+      "description": "Implement FastAPI for project access",
+      "status": "proposed",
+      "priority": "critical",
+      "estimated_effort": "7d",
+      "dependencies": ["TSK-126"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-20T22:20:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false
+    },
+    {
+      "id": "TSK-126",
+      "description": "Complete struct.json and struct_light.json",
       "status": "proposed",
       "priority": "high",
-      "estimated_effort": "7d",
-      "dependencies": ["TSK-060", "TSK-014"]
+      "estimated_effort": "5d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-20T22:20:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false
     },
     {
-      "id": "TSK-109",
-      "description": "Implement proxy support in CLI and API",
+      "id": "TSK-127",
+      "description": "Implement CLI queue system backend functionality",
+      "status": "completed",
+      "priority": "high",
+      "estimated_effort": "3d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T15:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Implement queue processing engine, file I/O handlers, safety validation",
+        "components": ["queue processor", "workflow engine", "safety validator"]
+      }
+    },
+    {
+      "id": "TSK-128",
+      "description": "Implement CLI cache system backend functionality",
+      "status": "completed",
+      "priority": "medium",
+      "estimated_effort": "2d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T15:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Implement cache statistics, cleanup, optimization for context loading",
+        "components": ["cache manager", "statistics collector", "cleanup scheduler"]
+      }
+    },
+    {
+      "id": "TSK-129",
+      "description": "Restore missing JSON configuration files",
+      "status": "completed",
+      "priority": "medium",
+      "estimated_effort": "1d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T15:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Recreate ideas.json, prs.json, ideas_cache.json based on project needs",
+        "components": ["ideas.json", "prs.json", "ideas_cache.json"]
+      }
+    },
+    {
+      "id": "TSK-130",
+      "description": "Validate JSON schema compliance for enhanced files",
       "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "1d",
+      "dependencies": ["TSK-129"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T15:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Run schema validation against all enhanced JSON files",
+        "components": ["schema validator", "error reporter", "compliance checker"]
+      }
+    },
+    {
+      "id": "TSK-131",
+      "description": "Document context orchestration architecture",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "2d",
+      "dependencies": ["TSK-127", "TSK-128"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T15:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Document new 4-level context hierarchy, smart selection rules, token optimization",
+        "components": ["architecture docs", "usage examples", "best practices guide"]
+      }
+    },
+    {
+      "id": "TSK-132",
+      "description": "Implement auto-update struct.json functionality",
+      "status": "completed",
+      "priority": "critical",
+      "estimated_effort": "3d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T16:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Automatic struct.json updates through parse functionality when LLM works via CLI",
+        "components": ["auto_update_struct.py", "Git hooks", "cron integration", "change detection"]
+      }
+    },
+    {
+      "id": "TSK-133",
+      "description": "Create VSCode Copilot integration module",
+      "status": "completed",
+      "priority": "critical",
+      "estimated_effort": "4d",
+      "dependencies": ["TSK-132"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T16:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Initialization file for VSCode Copilot work with context system hybrid capabilities",
+        "components": ["copilot.py", "CopilotContextManager", "event system", "validation layer"]
+      }
+    },
+    {
+      "id": "TSK-134",
+      "description": "Refactor cli.py into modular structure",
+      "status": "completed",
+      "priority": "critical",
+      "estimated_effort": "5d",
+      "dependencies": ["TSK-133"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T16:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Modular refactoring of cli.py for better maintainability and extensibility",
+        "components": ["cli_core.py", "cli_commands.py", "cli_utils.py", "cli_config.py"]
+      }
+    },
+    {
+      "id": "TSK-135",
+      "description": "Integrate auto-update into CLI workflow",
+      "status": "completed",
       "priority": "high",
       "estimated_effort": "2d",
-      "dependencies": ["TSK-060", "TSK-014"]
+      "dependencies": ["TSK-132", "TSK-134"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T16:00:00Z",
+      "completed_at": "2025-05-21T18:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Seamless integration of auto-update functionality into LLM CLI workflow",
+        "components": ["CLI workflow hooks", "update triggers", "validation integration"],
+        "implementation": "Added /auto-update, /struct status, /workflow trigger commands to CLI"
+      }
+    },
+    {
+      "id": "TSK-136",
+      "description": "Test and document modular CLI system",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "3d",
+      "dependencies": ["TSK-134", "TSK-135"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T18:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Complete testing and documentation of new modular CLI architecture",
+        "components": ["Integration tests", "CLI documentation", "Usage examples", "Performance benchmarks"]
+      }
+    },
+    {
+      "id": "TSK-137",
+      "description": "Implement CLI plugin system architecture",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "7d",
+      "dependencies": ["TSK-136"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T06:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Design and implement extensible plugin system for CLI commands",
+        "components": ["Plugin interface", "Registration system", "Command namespace", "Configuration management"]
+      }
     }
   ]
 }

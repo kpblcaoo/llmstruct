@@ -1,0 +1,11 @@
+# Temporary work files - do not commit to repository
+# This folder contains development reports, temporary commits, and work-in-progress files
+
+# All files in this directory
+*
+
+# But track this .gitignore file itself
+!.gitignore
+
+# Optional: track README if needed
+!README.md

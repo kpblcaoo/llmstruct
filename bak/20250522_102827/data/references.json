@@ -1,0 +1,27 @@
+{
+  "version": "0.1.0",
+  "status": "Draft",
+  "author": "@kpblcaoo",
+  "date": "2025-05-21",
+  "license": "GPL-3.0",
+  "artifact_id": "2b3c4d5e-6f7a-48b9-c0d1-e2f3a4b5c6d7",
+  "summary": "Cross-references between JSON entities",
+  "tags": ["references", "linking"],
+  "references": [
+    {
+      "source": {"file": "data/ideas.json", "id": "IDEA-001", "artifact_id": "e1f2a3b4-c5d6-47e8-b9f0-a1b2c3d4e5f6"},
+      "target": {"file": "data/tasks.json", "id": "TSK-006", "artifact_id": "f2a3b4c5-d6e7-48f9-a0b1-c2d3e4f5a6b7"},
+      "type": "dependency"
+    },
+    {
+      "source": {"file": "data/ideas.json", "id": "IDEA-002", "artifact_id": "e1f2a3b4-c5d6-47e8-b9f0-a1b2c3d4e5f6"},
+      "target": {"file": "data/tasks.json", "id": "TSK-027", "artifact_id": "f2a3b4c5-d6e7-48f9-a0b1-c2d3e4f5a6b7"},
+      "type": "dependency"
+    },
+    {
+      "source": {"file": "data/ideas.json", "id": "IDEA-126", "artifact_id": "e1f2a3b4-c5d6-47e8-b9f0-a1b2c3d4e5f6"},
+      "target": {"file": "data/prs.json", "id": "PR-001", "artifact_id": "d2e3f4a5-b6c7-48d9-e0f1-a2b3c4d5e6f7"},
+      "type": "implementation"
+    }
+  ]
+}

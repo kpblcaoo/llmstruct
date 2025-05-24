@@ -1,0 +1,15 @@
+[
+  {
+    "workflow_id": "test_workflow_1748055623",
+    "description": "Integration test workflow",
+    "commands": [
+      {
+        "cmd": "scan",
+        "path": "src",
+        "options": {
+          "include_metadata": true
+        }
+      }
+    ]
+  }
+]
