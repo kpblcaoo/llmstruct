@@ -3,21 +3,26 @@ import hashlib
 import logging
 import os
 from pathlib import Path
-from typing import Dict, Any, Optional, List, Set
+from typing import Dict, Any, Optional, Set
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
 
 def infer_category(file_path: str) -> str:
     """Infer module category based on its path."""
     path = Path(file_path)
-    if path.name.startswith('test_') or 'tests' in path.parts:
-        return 'test'
-    if path.name in ('__init__.py', '__main__.py') or path.parent.name == 'cli':
-        return 'cli'
-    return 'core'
+    if path.name.startswith("test_") or "tests" in path.parts:
+        return "test"
+    if path.name in ("__init__.py", "__main__.py") or path.parent.name == "cli":
+        return "cli"
+    return "core"
+
 
 class CallVisitor(ast.NodeVisitor):
     """AST visitor to collect function calls and dependencies."""
+
     def __init__(self):
         self.calls: Dict[str, Set[str]] = {}
         self.dependencies: Set[str] = set()
@@ -58,22 +63,28 @@ class CallVisitor(ast.NodeVisitor):
                 self.calls[self.current_function].add(node.func.id)
             elif isinstance(node.func, ast.Attribute):
                 if isinstance(node.func.value, ast.Name):
-                    self.calls[self.current_function].add(f"{node.func.value.id}.{node.func.attr}")
+                    self.calls[self.current_function].add(
+                        f"{node.func.value.id}.{node.func.attr}"
+                    )
         self.generic_visit(node)
+
 
 def compute_file_hash(file_path: str) -> str:
     """Compute SHA-256 hash of file content."""
     try:
-        with open(file_path, 'rb') as f:
+        with open(file_path, "rb") as f:
             return hashlib.sha256(f.read()).hexdigest()
     except Exception as e:
         logging.error(f"Failed to compute hash for {file_path}: {e}")
         return ""
 
-def analyze_module(file_path: str, root_dir: str, include_ranges: bool, include_hashes: bool) -> Optional[Dict[str, Any]]:
+
+def analyze_module(
+    file_path: str, root_dir: str, include_ranges: bool, include_hashes: bool
+) -> Optional[Dict[str, Any]]:
     """Analyze Python module and return structured data."""
     try:
-        with open(file_path, 'r', encoding='utf-8') as f:
+        with open(file_path, "r", encoding="utf-8") as f:
             source = f.read()
         tree = ast.parse(source, filename=file_path)
     except Exception as e:
@@ -83,7 +94,11 @@ def analyze_module(file_path: str, root_dir: str, include_ranges: bool, include_
     visitor = CallVisitor()
     visitor.visit(tree)
 
-    module_id = str(Path(file_path).relative_to(root_dir)).replace(os.sep, '.').rsplit('.py', 1)[0]
+    module_id = (
+        str(Path(file_path).relative_to(root_dir))
+        .replace(os.sep, ".")
+        .rsplit(".py", 1)[0]
+    )
     module_doc = ast.get_docstring(tree) or ""
     functions = []
     classes = []
@@ -91,13 +106,17 @@ def analyze_module(file_path: str, root_dir: str, include_ranges: bool, include_
     for node in ast.walk(tree):
         if isinstance(node, ast.FunctionDef) or isinstance(node, ast.AsyncFunctionDef):
             docstring = ast.get_docstring(node) or ""
-            functions.append({
-                "name": node.name,
-                "docstring": docstring,
-                "line_range": [node.lineno, node.end_lineno] if include_ranges else None,
-                "parameters": [arg.arg for arg in node.args.args],
-                "decorators": [ast.unparse(dec) for dec in node.decorator_list]
-            })
+            functions.append(
+                {
+                    "name": node.name,
+                    "docstring": docstring,
+                    "line_range": (
+                        [node.lineno, node.end_lineno] if include_ranges else None
+                    ),
+                    "parameters": [arg.arg for arg in node.args.args],
+                    "decorators": [ast.unparse(dec) for dec in node.decorator_list],
+                }
+            )
         elif isinstance(node, ast.ClassDef):
             docstring = ast.get_docstring(node) or ""
             methods = [
@@ -105,17 +124,22 @@ def analyze_module(file_path: str, root_dir: str, include_ranges: bool, include_
                     "name": n.name,
                     "docstring": ast.get_docstring(n) or "",
                     "line_range": [n.lineno, n.end_lineno] if include_ranges else None,
-                    "parameters": [arg.arg for arg in n.args.args]
+                    "parameters": [arg.arg for arg in n.args.args],
                 }
-                for n in node.body if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))
+                for n in node.body
+                if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))
             ]
-            classes.append({
-                "name": node.name,
-                "docstring": docstring,
-                "line_range": [node.lineno, node.end_lineno] if include_ranges else None,
-                "methods": methods,
-                "bases": [ast.unparse(base) for base in node.bases]
-            })
+            classes.append(
+                {
+                    "name": node.name,
+                    "docstring": docstring,
+                    "line_range": (
+                        [node.lineno, node.end_lineno] if include_ranges else None
+                    ),
+                    "methods": methods,
+                    "bases": [ast.unparse(base) for base in node.bases],
+                }
+            )
 
     return {
         "module_id": module_id,
@@ -126,5 +150,5 @@ def analyze_module(file_path: str, root_dir: str, include_ranges: bool, include_
         "classes": classes,
         "callgraph": {k: list(v) for k, v in visitor.calls.items()},
         "dependencies": sorted([d for d in visitor.dependencies if d is not None]),
-        "hash": compute_file_hash(file_path) if include_hashes else None
+        "hash": compute_file_hash(file_path) if include_hashes else None,
     }

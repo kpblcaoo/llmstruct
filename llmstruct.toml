@@ -1,7 +1,7 @@
 [goals]
 goals = [
     "Create universal JSON format for codebase structure (modules, functions, classes, calls, metadata)",
-    "Ensure extensibility for new languages and entity types",
+    "Ensure extensibility for new languages and entity types", 
     "Develop modular, plugin-based parsers for new languages",
     "Maintain an open, RFC-style documented format",
     "Integrate with LLMs by generating and attaching JSON structure to queries"
@@ -9,12 +9,29 @@ goals = [
 
 [cli]
 language = "python"
-include_patterns = ["*.py"]
-exclude_patterns = ["tests/*", "venv/*", "__pycache__/*"]
+
+[cache]
+enabled = true
+directory = ".llmstruct_cache"
+max_size = 100
+ttl = 3600
+
+[copilot]
+enabled = true
+context_layers = ["core", "data", "insights"]
+auto_refresh = true
+
+[auto_update]
+enabled = true
+watch_patterns = ["src/**/*.py", "data/*.json", "*.toml"]
+
+[parsing]
+include_patterns = ["src/**/*.py", "*.py", "*.json", "*.md"]
+exclude_patterns = ["**/__pycache__/**", "**/.*", "temp_workfiles/**", "build/**"]
+exclude_dirs = ["venv", "__pycache__", ".git", ".pytest_cache", "build", "dist", "tmp", "bak"]
 include_ranges = true
 include_hashes = false
 use_gitignore = true
-exclude_dirs = ["venv", "__pycache__", ".git", ".pytest_cache", "build", "dist"]
 
 [api]
 ollama_host = "http://192.168.88.50:11434"

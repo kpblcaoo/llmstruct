@@ -1,7 +1,7 @@
 [project]
 name = "llmstruct"
-version = "0.1.0"
-description = "Utility for generating structured JSON for codebases"
+version = "0.4.1"
+description = "Universal JSON format for codebases with LLM integration and automated validation"
 authors = [
     { name = "Mikhail Stepanov", email = "kpblcaoo@gmail.com" }
 ]
@@ -12,7 +12,8 @@ dependencies = [
     "jsonschema>=4.17.3",
     "aiohttp>=3.8.0",
     "requests>=2.28.0",
-    "python-dotenv>=0.20.0"
+    "python-dotenv>=0.20.0",
+    "click>=8.0.0"
 ]
 license = { text = "GPL-3.0" }
 readme = "README.md"
@@ -23,7 +24,7 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Operating System :: OS Independent",
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Code Generators"
 ]
@@ -42,6 +43,9 @@ dev = [
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[project.scripts]
+llmstruct = "llmstruct.cli:main"
+
 [project.urls]
 Homepage = "https://github.com/kpblcaoo/llmstruct"
 Repository = "https://github.com/kpblcaoo/llmstruct"
@@ -52,4 +56,41 @@ packages = ["llmstruct"]
 package-dir = { "" = "src" }
 
 [tool.setuptools.package-data]
-llmstruct = ["*.py", "*.toml"]
+llmstruct = ["*.py", "*.toml", "*.json", "templates/*", "schema/*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.tox
+  | \.venv
+  | build
+  | dist
+  | temp_workfiles
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+src_paths = ["src", "tests"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"

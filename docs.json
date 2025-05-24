@@ -17,16 +17,22 @@
       "issue": "#141",
       "artifact_id": "e7f8a9b0-c1d2-43e4-f5a6-b7c8d9e0f1a2",
       "description": "Full specification of the JSON format, context orchestration, and plugin system."
-    },
-    {
-      "path": "docs/cli_commands.md",
-      "title": "CLI Command Reference & Automation",
+    },    {
+      "path": "data/cli.json",
+      "title": "CLI Command Reference & Audit System",
       "version": "0.2.0",
       "status": "Enhanced",
       "author": "@kpblcaoo",
       "issue": "#142",
       "artifact_id": "f8a9b0c1-d2e3-44f5-a6b7-c8d9e0f1a2b3",
-      "description": "Reference for all CLI commands, queue system, cache, and automation patterns."
+      "description": "Reference for all CLI commands including new audit functionality for data recovery.",
+      "audit_system": {
+        "commands": ["audit scan", "audit recover", "audit status"],
+        "recovery_sources": "temp_workfiles/unsorted_mess/dump/",
+        "backup_creation": "automatic",
+        "related_tasks": ["TSK-098", "TSK-138", "TSK-139", "TSK-140"],
+        "related_ideas": ["IDEA-139", "IDEA-140", "IDEA-141"]
+      }
     },
     {
       "path": "docs/SECURITY.md",
@@ -67,6 +73,49 @@
       "issue": "#146",
       "artifact_id": "d4e5f6a7-b8c9-40d1-e2f3-a4b5c6d7e8f9",
       "description": "How to start using llmstruct, run CLI, and automate tasks."
+    },
+    {
+      "path": "temp_workfiles/branch_differences_dev_v0.2.0_to_feature_modular_cli.md",
+      "title": "Branch Differences Analysis: dev/v0.2.0 → feature/modular-cli-integration", 
+      "version": "1.0.0",
+      "status": "Completed",
+      "author": "@kpblcaoo",
+      "artifact_id": "branch-analysis-20250524-001",
+      "description": "Comprehensive analysis of ecosystem transformation between branches including 3325% task increase, AI safety implementation, and modular CLI architecture.",
+      "analysis_scope": {
+        "commits_analyzed": 11,
+        "base_commit": "9d7300a",
+        "target_commit": "7202160",
+        "json_files_compared": ["tasks.json", "ideas.json", "cli.json", "artifacts_index.json"],
+        "major_features_identified": ["AI Safety System", "Modular CLI", "Processing Queue", "Enhanced Architecture"]
+      },
+      "key_findings": {
+        "task_evolution": "4 → 137 tasks (+3325%)",
+        "ideas_evolution": "3 → 127 ideas (+4133%)",
+        "architecture_transformation": "Simple parser → Enterprise ecosystem",
+        "ai_integration": "Complete safety framework with rampage prevention"
+      },
+      "data_quality_issues": {
+        "placeholder_entries": 46,
+        "version_inconsistencies": "v0.4.1 vs v0.2.1",
+        "recovery_task": "TSK-098"
+      },
+      "created_at": "2025-05-24T15:30:00Z"
+    },
+    {
+      "path": "temp_workfiles/session_2025-05-24_branch_analysis_personal.json",
+      "title": "Personal Analysis Session: Branch Differences Investigation",
+      "version": "1.0.0", 
+      "status": "Active",
+      "author": "@kpblcaoo",
+      "privacy_level": "gitignore_protected",
+      "artifact_id": "session-branch-analysis-20250524",
+      "description": "Personal session notes for branch analysis including insights, challenges, and integration with llmstruct ecosystem.",      "integration_points": {
+        "related_tasks": ["TSK-098", "TSK-134", "TSK-133", "TSK-138", "TSK-139", "TSK-140"],
+        "related_ideas": ["IDEA-083", "IDEA-126", "IDEA-127", "IDEA-139", "IDEA-140", "IDEA-141"],
+        "workflow_state": "analysis_completed_recovery_pending"
+      },
+      "created_at": "2025-05-24T15:30:00Z"
     }
   ],
   "automation": [
@@ -86,14 +135,29 @@
     "patterns": ["api key", "token", "ghp_", "sk-", "xai-", "Bearer"],
     "safe_write_dir": "./tmp",
     "docs": ["docs/SECURITY.md"]
-  },
-  "core_json": [
-    "data/init.json", "data/cli.json", "data/cli_queue.json", "data/tasks.json", "struct.json"
+  },  "core_json": [
+    "data/init.json", "data/cli.json", "data/cli_queue.json", "data/tasks.json", "data/ideas.json", "struct.json"
+  ],
+  "audit_backups": [
+    "data/tasks.json.audit_backup_1748093632", "data/ideas.json.audit_backup_1748093632"
   ],
   "enhanced_json": [
     "data/init_enhanced.json", "data/cli_enhanced.json", "data/cli_queue_enhanced.json"
   ],
   "artifacts": [
-    "data/artifacts_index.json", "data/ideas.json", "data/prs.json", "data/ideas_cache.json"
-  ]
+    "data/artifacts_index.json", "data/ideas.json", "data/prs.json", "data/ideas_cache.json", "data/references.json", "data/weights.json", "data/conflicts.json", "data/vision.json"
+  ],
+  "missing_core_files": [
+    "data/references.json", "data/weights.json", "data/conflicts.json", "data/vision.json", "scripts/validate_refs.py"
+  ],  "analysis_status": {
+    "tasks_json": "64 tasks, 11 placeholders remaining (10 recovered by audit command)",
+    "ideas_json": "82 ideas, 11 placeholders remaining (10 recovered by audit command)",
+    "recovery_completed": ["TSK-098 (audit command implementation)", "10 placeholder ideas recovered", "TSK-138 (AI CLI training)", "TSK-139 (API layer design)", "TSK-140 (docs cross-references)"],
+    "branch_analysis": "feature/modular-cli-integration ready for testing/v0.2.0 merge",
+    "audit_system": "CLI audit command fully functional with scan/recover/status actions",
+    "personal_notes_system": "Template-based integration completed with privacy protection",
+    "pr_queue_status": "Ready for commit and PR to testing/v0.2.0",
+    "last_analysis": "2025-05-24",
+    "priority": "Finalize v0.2.0 release with audit functionality"
+  }
 }

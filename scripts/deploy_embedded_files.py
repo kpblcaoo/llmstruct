@@ -1,12 +1,13 @@
 import json
 import logging
-import os
 import shutil
 from datetime import datetime
 from pathlib import Path
 from jsonschema import validate, ValidationError, RefResolver
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
 EMBEDDED_FILES = {
@@ -790,29 +791,29 @@ def validate_references():
         conversions = {idea["id"]: idea.get("converted_to") for idea in ideas["ideas"] if idea.get("converted_to")}
         broken_links = []
         updated_refs = refs["references"].copy()
-        
+
         for i, ref in enumerate(refs["references"]):
             source_id = ref["source"]["id"]
             target_id = ref["target"]["id"]
             source_file = Path(ref["source"]["file"])
             target_file = Path(ref["target"]["file"])
-            
+
             if not source_file.exists() or not target_file.exists():
                 broken_links.append((source_id, target_id))
                 continue
-                
+
             if source_id in conversions:
                 logger.info(f"Redirecting {source_id} to {conversions[source_id]}")
                 updated_refs[i]["source"]["id"] = conversions[source_id]
-            
+
         if broken_links:
             logger.warning(f"Broken links found: {broken_links}")
         else:
             logger.info("All references valid")
-            
+
         with Path("data/references.json").open("w", encoding="utf-8") as f:
             json.dump({"references": updated_refs}, f, indent=2)
-            
+
     except Exception as e:
         logger.error(f"Validation failed: {e}")
 
@@ -874,15 +875,15 @@ def generate_struct(root_dir: str, output: str = "struct.json"):
         "folder_structure": [],
         "filters": ["src/*", "!tests/*", "!venv/*", "!build/*"]
     }
-    
+
     output_path = Path(output)
     if output_path.exists():
         with output_path.open("r", encoding="utf-8") as f:
             existing = json.load(f)
             struct["filters"] = existing.get("filters", struct["filters"])
-    
+
     files = collect_files(root_path, struct["filters"])
-    
+
     for file in files:
         struct["folder_structure"].append({
             "path": file,
@@ -890,14 +891,14 @@ def generate_struct(root_dir: str, output: str = "struct.json"):
             "artifact_id": str(uuid.uuid4()),
             "metadata": {}
         })
-    
+
     struct["modules"] = [
         {"name": "cli", "path": "src/cli", "artifact_id": str(uuid.uuid4()), "functions": []},
         {"name": "collector", "path": "src/collector", "artifact_id": str(uuid.uuid4()), "functions": []}
     ]
     struct["toc"] = files
     struct["metadata"]["stats"]["modules_count"] = len(struct["modules"])
-    
+
     with output_path.open("w", encoding="utf-8") as f:
         json.dump(struct, f, indent=2)
     logger.info(f"Generated {output}")
@@ -926,6 +927,7 @@ jobs:
 """
 }
 
+
 def validate_json(data: dict, schema: dict, base_path: Path) -> bool:
     try:
         resolver = RefResolver(base_uri=f"file://{base_path}/", referrer=schema)
@@ -938,6 +940,7 @@ def validate_json(data: dict, schema: dict, base_path: Path) -> bool:
         logger.error(f"Validation failed: {e}")
         return False
 
+
 def backup_files(target_dir: Path, backup_root: Path):
     if target_dir.exists():
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -946,10 +949,11 @@ def backup_files(target_dir: Path, backup_root: Path):
         shutil.copytree(target_dir, backup_path, dirs_exist_ok=True)
         logger.info(f"Backed up {target_dir} to {backup_path}")
 
+
 def deploy_embedded_files():
     backup_root = Path("./bak")
     base_path = Path.cwd()
-    
+
     # Define deployment order to respect dependencies
     deploy_order = [
         "schema/common/definitions.json",
@@ -974,20 +978,20 @@ def deploy_embedded_files():
         "scripts/collector.py",
         ".github/workflows/ci.yml"
     ]
-    
+
     core_schema = EMBEDDED_FILES.get("schema/core.json", {})
-    
+
     for filename in deploy_order:
         content = EMBEDDED_FILES.get(filename)
         if not content:
             logger.warning(f"Skipping missing file: {filename}")
             continue
-            
+
         target_path = Path(filename)
         target_path.parent.mkdir(parents=True, exist_ok=True)
         if target_path.exists():
             backup_files(target_path.parent, backup_root)
-        
+
         try:
             if target_path.suffix == ".json":
                 if not validate_json(content, core_schema, base_path):
@@ -1002,8 +1006,10 @@ def deploy_embedded_files():
         except Exception as e:
             logger.error(f"Error writing {filename}: {e}")
 
+
 def main():
     deploy_embedded_files()
+
 
 if __name__ == "__main__":
     main()
