@@ -1,0 +1,118 @@
+{
+  "version": "1.0.0",
+  "status": "Active",
+  "author": "@kpblcaoo",
+  "date": "2025-05-24",
+  "license": "GPL-3.0",
+  "artifact_id": "c1a2b3d4-e5f6-47a8-b9c0-d1e2f3a4b5c6",
+  "summary": "AI session constraints and rampage prevention",
+  "tags": ["ai", "constraints", "safety", "copilot"],
+  
+  "ai_session_constraints": {
+    "rampage_prevention": {
+      "enabled": true,
+      "description": "Prevent autonomous large-scale changes without user consultation",
+      "max_changes_per_session": 5,
+      "require_confirmation_for": [
+        "file_deletion",
+        "schema_changes", 
+        "git_operations",
+        "bulk_modifications",
+        "structural_refactoring",
+        "dependency_updates"
+      ],
+      "pause_triggers": [
+        "ambiguous_requirements",
+        "multiple_interpretation_paths",
+        "missing_critical_context",
+        "conflicting_constraints",
+        "high_risk_operations"
+      ]
+    },
+    
+    "clarification_protocol": {
+      "enabled": true,
+      "description": "Adapted from llmstruct_workspace_instructions p.11",
+      "ambiguity_detection": true,
+      "request_template_enforcement": true,
+      "suggest_defaults": true,
+      "provide_examples": true,
+      "clarification_phrases": [
+        "Could you clarify:",
+        "I need to understand:",
+        "Should I assume:",
+        "Would you prefer:"
+      ],
+      "example_requests": [
+        "Markdown in Russian or English?",
+        "Upload tasks.json first?",
+        "Use GPL-3.0 license?",
+        "Generate struct.json or update existing?"
+      ]
+    },
+    
+    "scope_limitations": {
+      "enabled": true,
+      "description": "Task-focused approach with minimal necessary changes",
+      "task_focused": true,
+      "minimal_changes": true,
+      "preserve_existing_functionality": true,
+      "validate_before_modify": true,
+      "incremental_approach": true,
+      "backup_critical_files": true
+    },
+    
+    "consultation_requirements": {
+      "enabled": true,
+      "description": "When to stop and consult with user",
+      "before_major_changes": true,
+      "before_schema_modifications": true,
+      "before_git_operations": true,
+      "when_multiple_solutions_exist": true,
+      "when_risk_level_high": true,
+      "consultation_template": {
+        "what": "What I want to do",
+        "why": "Why this approach",
+        "risks": "Potential risks",
+        "alternatives": "Alternative approaches",
+        "recommendation": "My recommendation"
+      }
+    }
+  },
+  
+  "context_management": {
+    "context_layers": {
+      "essential": ["struct.json", "data/init.json"],
+      "structural": ["data/cli_enhanced.json", "schema/base_schema.json"],
+      "operational": ["data/tasks.json", "data/cli_queue_enhanced.json"],
+      "analytical": ["data/ideas.json", "data/prs.json", "docs.json"]
+    },
+    
+    "request_template": {
+      "what": "Describe task (e.g., 'Generate README')",
+      "format": "Specify output (e.g., 'Markdown, Russian, GPL-3.0')",
+      "context": "[llmstruct] or [meta]",
+      "files": "List files (e.g., 'tasks.json, artifact_id: XYZ')",
+      "example": "Generate Russian README for llmstruct [llmstruct], use tasks.json (artifact_id: f2a3b4c5-d6e7-48f9-a0b1-c2d3e4f5a6b7), GPL-3.0."
+    }
+  },
+  
+  "data_protection": {
+    "backup_before_risky_operations": true,
+    "validate_json_before_save": true,
+    "log_all_changes": true,
+    "create_warnings_for_risks": true,
+    "full_content_output_before_loss_risk": true,
+    "auto_save_artifacts": false,
+    "manual_review_required": true
+  },
+  
+  "workflow_integration": {
+    "json_first_approach": true,
+    "schema_validation": true,
+    "artifact_tracking": true,
+    "reference_validation": true,
+    "cli_simulation": true,
+    "hybrid_tool_usage": true
+  }
+}

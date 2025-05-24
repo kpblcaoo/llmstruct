@@ -1,0 +1,428 @@
+{
+  "copilot_init": {
+    "version": "1.0.0",
+    "description": "LLMStruct Copilot Integration - Context-aware development assistant",
+    "created": "2025-01-27T00:00:00Z",
+    "type": "copilot_context_system",
+    "integration_mode": "hybrid_context",
+    
+    "context_layers": {
+      "essential": {
+        "priority": 1,
+        "auto_attach": true,
+        "sources": [
+          "struct.json",
+          "data/init.json"
+        ],
+        "description": "Core project structure and initialization context"
+      },
+      "structural": {
+        "priority": 2,
+        "auto_attach": "on_code_edit",
+        "sources": [
+          "data/cli_enhanced.json",
+          "schema/base_schema.json"
+        ],
+        "description": "CLI workflows and architectural schemas"
+      },
+      "operational": {
+        "priority": 3,
+        "auto_attach": "on_request",
+        "sources": [
+          "data/tasks.json",
+          "data/cli_queue_enhanced.json"
+        ],
+        "description": "Task management and queue operations"
+      },
+      "analytical": {
+        "priority": 4,
+        "auto_attach": "smart",
+        "sources": [
+          "data/ideas.json",
+          "data/prs.json",
+          "docs.json"
+        ],
+        "description": "Ideas, pull requests, and documentation context"
+      }
+    },
+
+    "copilot_triggers": {
+      "file_operations": {
+        "on_file_create": {
+          "action": "attach_context",
+          "layers": ["essential", "structural"],
+          "scope": "related_modules"
+        },
+        "on_file_edit": {
+          "action": "smart_context",
+          "layers": ["essential"],
+          "scope": "current_file_dependencies"
+        },
+        "on_file_delete": {
+          "action": "validate_references",
+          "layers": ["essential", "structural"],
+          "scope": "global_impact"
+        }
+      },
+      
+      "code_events": {
+        "function_creation": {
+          "attach_context": ["structural", "operational"],
+          "suggest_patterns": true,
+          "validate_schema": true
+        },
+        "class_creation": {
+          "attach_context": ["essential", "structural"],
+          "suggest_architecture": true,
+          "check_dependencies": true
+        },
+        "import_changes": {
+          "attach_context": ["essential"],
+          "validate_structure": true,
+          "update_callgraph": true
+        }
+      },
+
+      "workflow_triggers": {
+        "cli_command_detected": {
+          "context_sources": ["data/cli_enhanced.json"],
+          "auto_suggest": "workflow_completion",
+          "validate": "command_syntax"
+        },
+        "queue_operation": {
+          "context_sources": ["data/cli_queue_enhanced.json"],
+          "auto_suggest": "queue_management",
+          "safety_check": true
+        },
+        "task_creation": {
+          "context_sources": ["data/tasks.json"],
+          "auto_suggest": "task_structure",
+          "id_generation": "auto"
+        }
+      }
+    },
+
+    "smart_suggestions": {
+      "context_aware_completions": {
+        "enabled": true,
+        "use_struct_json": true,
+        "use_callgraph": true,
+        "function_signatures": true,
+        "import_suggestions": true
+      },
+      
+      "architectural_guidance": {
+        "pattern_detection": true,
+        "dependency_analysis": true,
+        "circular_dependency_warning": true,
+        "naming_conventions": true
+      },
+      
+      "workflow_assistance": {
+        "cli_command_completion": true,
+        "queue_operation_guidance": true,
+        "task_management_hints": true,
+        "git_workflow_integration": true
+      }
+    },
+
+    "safety_features": {
+      "validation_rules": [
+        {
+          "rule": "validate_json_schema",
+          "scope": "data/*.json",
+          "trigger": "on_save"
+        },
+        {
+          "rule": "check_circular_dependencies",
+          "scope": "src/**/*.py",
+          "trigger": "on_import_change"
+        },
+        {
+          "rule": "validate_task_references",
+          "scope": "data/tasks.json",
+          "trigger": "on_task_update"
+        }
+      ],
+      
+      "security_checks": {
+        "secret_detection": true,
+        "api_key_warning": true,
+        "sensitive_data_alert": true
+      },
+      
+      "backup_triggers": {
+        "auto_backup_on_major_change": true,
+        "struct_json_backup": true,
+        "context_file_versioning": true
+      }
+    },
+
+    "performance_optimization": {
+      "context_caching": {
+        "enabled": true,
+        "cache_duration": "1h",
+        "smart_invalidation": true
+      },
+      
+      "lazy_loading": {
+        "enabled": true,
+        "load_on_demand": ["analytical"],
+        "preload": ["essential"]
+      },
+      
+      "context_compression": {
+        "enabled": true,
+        "compress_large_files": true,
+        "summary_mode": "smart"
+      }
+    },
+
+    "integration_commands": {
+      "/context": {
+        "description": "Manage context layers",
+        "subcommands": {
+          "load <layer>": "Load specific context layer",
+          "unload <layer>": "Unload context layer", 
+          "refresh": "Refresh all loaded contexts",
+          "status": "Show context status"
+        }
+      },
+      
+      "/struct": {
+        "description": "Interact with struct.json",
+        "subcommands": {
+          "update": "Update struct.json from current codebase",
+          "validate": "Validate struct.json integrity",
+          "search <query>": "Search within struct.json",
+          "export <format>": "Export struct in different format"
+        }
+      },
+      
+      "/workflow": {
+        "description": "Manage development workflows",
+        "subcommands": {
+          "queue <operation>": "Queue workflow operations",
+          "task <action>": "Task management operations",
+          "review": "Code review assistance",
+          "refactor": "Refactoring guidance"
+        }
+      }
+    },
+
+    "customization": {
+      "user_preferences": {
+        "context_verbosity": "medium",
+        "auto_attach_level": "smart",
+        "suggestion_frequency": "moderate",
+        "validation_strictness": "high"
+      },
+      
+      "project_specific": {
+        "primary_language": "python",
+        "framework": "custom",
+        "architecture_pattern": "modular",
+        "testing_framework": "pytest"
+      },
+      
+      "workspace_config": {
+        "exclude_patterns": [
+          "**/__pycache__/**",
+          "**/node_modules/**",
+          "**/.git/**",
+          "**/venv/**"
+        ],
+        "include_patterns": [
+          "**/*.py",
+          "**/*.json",
+          "**/*.md",
+          "**/*.toml"
+        ]
+      }
+    },
+
+    "monitoring": {
+      "usage_tracking": {
+        "context_access_frequency": true,
+        "suggestion_acceptance_rate": true,
+        "error_frequency": true
+      },
+      
+      "performance_metrics": {
+        "context_load_time": true,
+        "suggestion_generation_time": true,
+        "validation_time": true
+      },
+      
+      "quality_metrics": {
+        "suggestion_relevance": true,
+        "context_accuracy": true,
+        "workflow_efficiency": true
+      }
+    },
+
+    "documentation": {
+      "usage_guide": "docs/copilot_usage.md",
+      "integration_examples": "docs/copilot_examples.md",
+      "troubleshooting": "docs/copilot_troubleshooting.md",
+      "api_reference": "docs/copilot_api.md"
+    },
+
+    "metadata": {
+      "artifact_id": "copilot-init-001",
+      "tags": ["copilot", "integration", "context", "development"],
+      "last_updated": "2025-01-27T00:00:00Z",
+      "version_history": [
+        {
+          "version": "1.0.0",
+          "date": "2025-01-27T00:00:00Z",
+          "changes": "Initial copilot integration configuration"
+        }
+      ]
+    },
+
+    "ai_session_support": {
+      "description": "Enhanced Copilot support for AI-driven development sessions with rampage prevention",
+      "modular_constraints": {
+        "ai_constraints_file": "data/copilot/ai_constraints.json",
+        "session_rules_file": "data/copilot/session_rules.json",
+        "warnings_file": "data/copilot/warnings.json",
+        "auto_load": true
+      },
+      "session_detection": {
+        "branch_pattern": "ai-helped/.*",
+        "session_file": "SESSION_TASKS.md",
+        "auto_context": true
+      },
+      "rampage_prevention": {
+        "enabled": true,
+        "max_changes_per_session": 5,
+        "change_tracking": {
+          "file_modifications": true,
+          "new_files": true,
+          "deleted_files": true,
+          "major_refactors": true
+        },
+        "consultation_triggers": [
+          "Scope expansion beyond initial request",
+          "Cross-module dependencies changes",
+          "Breaking changes to public APIs",
+          "Multiple file deletions",
+          "Changes affecting CI/CD pipeline"
+        ],
+        "safety_stops": [
+          "More than 10 files modified",
+          "Changes to core architecture",
+          "Dependency version changes",
+          "Database schema modifications"
+        ]
+      },
+      "session_workflows": {
+        "task_clarification": {
+          "trigger": "on_session_start",
+          "context_layers": ["essential", "operational"],
+          "suggest_actions": [
+            "Review current tasks in SESSION_TASKS.md",
+            "Check related TSK-numbers in data/tasks.json",
+            "Apply AI constraints from data/copilot/ai_constraints.json",
+            "Propose implementation plan with scope limits",
+            "Identify potential scope issues"
+          ]
+        },
+        "scope_validation": {
+          "trigger": "on_plan_creation",
+          "validation_rules": [
+            "Clear deliverables defined",
+            "Success criteria specified",
+            "Dependencies identified",
+            "Time estimation provided",
+            "Change count within limits",
+            "No breaking changes without consultation"
+          ],
+          "auto_suggest": "scope_refinement"
+        },
+        "progress_tracking": {
+          "trigger": "on_file_change",
+          "update_session_file": true,
+          "track_completion": true,
+          "suggest_next_steps": true,
+          "check_rampage_limits": true,
+          "log_warnings": "data/copilot/warnings.json"
+        }
+      },
+      "ambiguity_detection": {
+        "enabled": true,
+        "triggers": [
+          "Multiple interpretation paths detected",
+          "Unclear requirements in user input",
+          "Complex interdependencies found",
+          "Conflicting constraints identified",
+          "Request could lead to scope creep"
+        ],
+        "response": "request_clarification",
+        "context_enhancement": "load_related_context",
+        "clarification_template": {
+          "request_context": "[llmstruct] context",
+          "ambiguity_type": "scope|technical|requirements",
+          "suggested_approaches": "list of 2-3 options",
+          "risk_assessment": "low|medium|high",
+          "consultation_needed": "boolean"
+        }
+      },
+      "user_profiles": {
+        "load_from": "data/copilot/session_rules.json",
+        "active_profile": "auto_detect",
+        "profile_contexts": {
+          "@kpblcaoo": "lead_developer",
+          "@momai": "product_manager", 
+          "@ivan-ib": "contributor"
+        }
+      }
+    },
+
+    "processing_queue_integration": {
+      "enabled": true,
+      "config_source": "data/copilot/processing_queue.json",
+      "real_time_monitoring": {
+        "track_ai_sessions": true,
+        "monitor_file_changes": true,
+        "rampage_prevention": true,
+        "github_sync": true
+      },
+      
+      "session_hooks": {
+        "on_session_start": [
+          "initialize_task_queue",
+          "load_user_profile",
+          "check_constraint_limits",
+          "start_performance_tracking"
+        ],
+        "on_file_change": [
+          "log_change_to_queue",
+          "check_rampage_limits", 
+          "update_session_metrics",
+          "trigger_github_sync_if_needed"
+        ],
+        "on_session_end": [
+          "finalize_task_queue",
+          "generate_session_report",
+          "cleanup_temporary_data",
+          "update_github_dashboard"
+        ]
+      },
+
+      "dashboard_integration": {
+        "auto_update": true,
+        "real_time_websocket": false,
+        "github_pages_deploy": true,
+        "mobile_optimized": true
+      },
+
+      "api_integration": {
+        "expose_endpoints": false,
+        "local_only": true,
+        "secure_mode": true
+      }
+    }
+  }
+}

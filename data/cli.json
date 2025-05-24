@@ -29,6 +29,10 @@
     "analysis": {
       "description": "Deep analysis and insight generation",
       "commands": ["analyze", "review", "dogfood"]
+    },
+    "maintenance": {
+      "description": "Data integrity and recovery operations",
+      "commands": ["audit"]
     }
   },
 
@@ -90,34 +94,77 @@
       ],
       "subcommands": [
         {
+          "name": "/help",
+          "syntax": "/help [command]",
+          "description": "Show available commands and usage information",
+          "examples": ["/help", "/help view", "/help queue"]
+        },
+        {
           "name": "/view",
           "syntax": "/view <path>",
-          "description": "View file or directory contents",
-          "examples": ["/view src/cli.py", "/view data/"]
+          "description": "View file or directory contents with smart formatting",
+          "examples": ["/view src/cli.py", "/view data/", "/view *.json"]
         },
         {
           "name": "/write", 
           "syntax": "/write <filename> <content>",
           "description": "Write content to file (restricted to ./tmp for safety)",
+          "aliases": ["/generate", "/create"],
           "examples": ["/write test.py print('hello')", "/write config.json {\"key\": \"value\"}"]
         },
         {
-          "name": "/scan",
-          "syntax": "/scan <path>",
-          "description": "Scan and analyze file or directory structure",
-          "examples": ["/scan src/", "/scan data/init.json"]
-        },
-        {
           "name": "/queue",
-          "syntax": "/queue <action>",
+          "syntax": "/queue <action> [args]",
           "description": "Manage command queue operations",
-          "examples": ["/queue process", "/queue view", "/queue clear"]
+          "examples": ["/queue process", "/queue view", "/queue clear", "/queue add write test.txt content"]
         },
         {
           "name": "/cache",
           "syntax": "/cache <action>",
-          "description": "Manage cache operations",
-          "examples": ["/cache status", "/cache clear", "/cache stats"]
+          "description": "Manage cache operations and statistics",
+          "examples": ["/cache status", "/cache clear", "/cache stats", "/cache size"]
+        },
+        {
+          "name": "/copilot",
+          "syntax": "/copilot <action>",
+          "description": "Control Copilot integration and automation",
+          "examples": ["/copilot start", "/copilot status", "/copilot stop"]
+        },
+        {
+          "name": "/config",
+          "syntax": "/config [key] [value]",
+          "description": "View or modify configuration settings",
+          "examples": ["/config", "/config llm_mode anthropic", "/config cache_enabled true"]
+        },
+        {
+          "name": "/status", 
+          "syntax": "/status",
+          "description": "Show system status including context, cache, and Copilot",
+          "examples": ["/status"]
+        },
+        {
+          "name": "/backup",
+          "syntax": "/backup [target]",
+          "description": "Create backup of important files",
+          "examples": ["/backup", "/backup data/tasks.json"]
+        },
+        {
+          "name": "/parse",
+          "syntax": "/parse [target] [options]",
+          "description": "Parse and analyze codebase structure",
+          "examples": ["/parse .", "/parse src/ --include-ranges"]
+        },
+        {
+          "name": "/auto-update",
+          "syntax": "/auto-update",
+          "description": "Update system files and configurations automatically",
+          "examples": ["/auto-update"]
+        },
+        {
+          "name": "/struct-status",
+          "syntax": "/struct-status",
+          "description": "Check status of struct.json and related files",
+          "examples": ["/struct-status"]
         }
       ],
       "context_selection": {
@@ -169,6 +216,101 @@
           "model": "{model_name}"
         }
       }
+    },
+
+    {
+      "name": "context",
+      "category": "core_operations",
+      "description": "Manage and display context information for LLM operations",
+      "usage": "llmstruct context [options]",
+      "arguments": [
+        {"name": "--file", "type": "string", "required": false, "description": "Context file to load (init.json, struct.json, etc.)"},
+        {"name": "--show", "type": "boolean", "required": false, "description": "Display current context information"},
+        {"name": "--validate", "type": "boolean", "required": false, "description": "Validate context file structure"}
+      ],
+      "examples": [
+        {
+          "command": "llmstruct context --show",
+          "description": "Display current context status"
+        },
+        {
+          "command": "llmstruct context --file data/init.json --validate",
+          "description": "Validate init.json context file"
+        }
+      ],
+      "related_tasks": ["TSK-113", "TSK-119"]
+    },
+
+    {
+      "name": "dogfood",
+      "category": "analysis",
+      "description": "Run comprehensive dogfooding analysis of the llmstruct project itself",
+      "usage": "llmstruct dogfood [options]",
+      "arguments": [
+        {"name": "--output", "type": "string", "required": false, "default": "dogfood_analysis.json", "description": "Output file for analysis results"},
+        {"name": "--include-performance", "type": "boolean", "required": false, "description": "Include performance metrics in analysis"}
+      ],
+      "examples": [
+        {
+          "command": "llmstruct dogfood --include-performance",
+          "description": "Full dogfooding analysis with performance metrics"
+        }
+      ],
+      "related_tasks": ["TSK-117", "TSK-134"]
+    },
+
+    {
+      "name": "review",
+      "category": "analysis", 
+      "description": "Review codebase with LLM for quality, patterns, and improvements",
+      "usage": "llmstruct review <target> [options]",
+      "arguments": [
+        {"name": "target", "type": "string", "required": true, "description": "Target file or directory to review"},
+        {"name": "--output", "type": "string", "required": false, "default": "review_report.json", "description": "Output file for review results"},
+        {"name": "--focus", "type": "string", "required": false, "choices": ["security", "performance", "maintainability", "all"], "description": "Review focus area"},
+        {"name": "--model", "type": "string", "required": false, "description": "LLM model to use for review"}
+      ],
+      "examples": [
+        {
+          "command": "llmstruct review src/llmstruct/ --focus security",
+          "description": "Security-focused review of main source directory"
+        },
+        {
+          "command": "llmstruct review data/tasks.json --focus maintainability",
+          "description": "Maintainability review of tasks configuration"
+        }
+      ],
+      "related_tasks": ["TSK-121", "TSK-127"]
+    },
+
+    {
+      "name": "copilot",
+      "category": "automation",
+      "description": "Manage GitHub Copilot integration and automated assistance",
+      "usage": "llmstruct copilot <action> [options]",
+      "arguments": [
+        {"name": "action", "type": "string", "required": true, "choices": ["start", "stop", "status", "config"], "description": "Copilot action to perform"},
+        {"name": "--session-id", "type": "string", "required": false, "description": "Specific session ID for operations"},
+        {"name": "--context", "type": "string", "required": false, "description": "Context file for Copilot operations"}
+      ],
+      "copilot_features": {
+        "context_awareness": "4-layer context hierarchy (init → struct → cli → tasks)",
+        "rampage_prevention": "Safety mechanisms to prevent runaway automation",
+        "session_monitoring": "Track and manage Copilot sessions",
+        "processing_queue": "Queue management for automated tasks"
+      },
+      "examples": [
+        {
+          "command": "llmstruct copilot start --context data/init.json",
+          "description": "Start Copilot with init context"
+        },
+        {
+          "command": "llmstruct copilot status",
+          "description": "Check current Copilot status and active sessions"
+        }
+      ],
+      "related_tasks": ["TSK-125", "TSK-135"],
+      "related_ideas": ["IDEA-120", "IDEA-126"]
     },
 
     {
@@ -285,6 +427,37 @@
         {
           "command": "llmstruct analyze src/llmstruct/ --type complexity --include-suggestions",
           "description": "Complexity analysis with improvement suggestions"
+        }
+      ]
+    },
+
+    {
+      "name": "audit",
+      "category": "maintenance", 
+      "description": "Audit and recover lost ideas/tasks from source files",
+      "usage": "llmstruct audit <action> [options]",
+      "arguments": [
+        {"name": "action", "type": "string", "required": true, "choices": ["scan", "recover", "status"], "description": "Audit action to perform"},
+        {"name": "--dry-run", "type": "boolean", "required": false, "description": "Show what would be done without making changes"},
+        {"name": "--backup", "type": "boolean", "required": false, "default": true, "description": "Create backup before recovery"}
+      ],
+      "actions": {
+        "scan": "Scan dump directory for recoverable JSON files and show available sources",
+        "recover": "Create backups and recover placeholder entries from source files", 
+        "status": "Show current placeholder counts and example IDs"
+      },
+      "examples": [
+        {
+          "command": "llmstruct audit status",
+          "description": "Show current placeholder statistics"
+        },
+        {
+          "command": "llmstruct audit scan",
+          "description": "Scan for available recovery sources"
+        },
+        {
+          "command": "llmstruct audit recover",
+          "description": "Recover placeholder entries from source files"
         }
       ]
     }

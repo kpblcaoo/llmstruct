@@ -1,0 +1,1135 @@
+{
+  "version": "0.4.1",
+  "status": "Draft",
+  "author": "@kpblcaoo",
+  "date": "2025-05-24",
+  "license": "GPL-3.0",
+  "artifact_id": "f2a3b4c5-d6e7-48f9-a0b1-c2d3e4f5a6b7",
+  "metadata": {
+    "project_name": "llmstruct",
+    "description": "Tasks for parser and API",
+    "authors": [
+      {
+        "name": "@kpblcaoo",
+        "github": "kpblcaoo",
+        "email": "kpblcaoo@example.com"
+      }
+    ]
+  },
+  "summary": "Critical tasks for parser and API",
+  "tags": [
+    "parser",
+    "api"
+  ],
+  "tasks": [
+    {
+      "id": "TSK-003",
+      "description": "Optimize Qwen indexing for small projects",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "5\u20137d",
+      "dependencies": [
+        "TSK-016"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601596Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.2.0",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (8).json"
+    },
+    {
+      "id": "TSK-004",
+      "description": "Optimize Qwen indexing for medium projects",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "7\u201310d",
+      "dependencies": [
+        "TSK-016"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601603Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (8).json"
+    },
+    {
+      "id": "TSK-005",
+      "description": "Optimize Qwen indexing for large projects",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "10\u201314d",
+      "dependencies": [
+        "TSK-016"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601608Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (8).json"
+    },
+    {
+      "id": "TSK-006",
+      "description": "Improve parser for multi-language support (Python, JS)",
+      "status": "in_progress",
+      "priority": "high",
+      "estimated_effort": "10d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-20T19:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false
+    },
+    {
+      "id": "TSK-007",
+      "description": "Develop standalone parser for Python/JS",
+      "status": "proposed",
+      "priority": "high",
+      "estimated_effort": "5\u20137d",
+      "dependencies": [
+        "TSK-006"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601617Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.2.0",
+      "related_idea": "IDEA-101",
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (8).json"
+    },
+    {
+      "id": "TSK-010",
+      "description": "Delegate documentation tasks to team",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "3\u20135d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601622Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.2.0",
+      "related_idea": "IDEA-097",
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (8).json"
+    },
+    {
+      "id": "TSK-011",
+      "description": "Implement GitHub sync for Issues",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "5d",
+      "dependencies": [],
+      "assignee": "@ivan-ib",
+      "created_at": "2025-05-24T11:26:17.600693Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (10).json"
+    },
+    {
+      "id": "TSK-012",
+      "description": "Set up CI/CD with Docker and GitHub Actions",
+      "status": "in_progress",
+      "priority": "high",
+      "estimated_effort": "7\u201310d",
+      "dependencies": [],
+      "assignee": "@momai",
+      "created_at": "2025-05-24T11:26:17.599869Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.2.0",
+      "related_idea": null,
+      "confirmation_status": "approved",
+      "source": "chat",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks.json"
+    },
+    {
+      "id": "TSK-014",
+      "description": "Develop API client for LLM integration",
+      "status": "in_progress",
+      "priority": "high",
+      "estimated_effort": "10d",
+      "dependencies": [],
+      "assignee": "@ivan-ib",
+      "created_at": "2025-05-24T11:26:17.600708Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (10).json"
+    },
+    {
+      "id": "TSK-015",
+      "description": "Implement MLOps metrics for LLM (tokens, VRAM, CPU/RAM)",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "12\u201318d",
+      "dependencies": [],
+      "assignee": "@momai",
+      "created_at": "2025-05-24T11:26:17.601634Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (8).json"
+    },
+    {
+      "id": "TSK-016",
+      "description": "Stabilize Qwen-1.5B for simple scenarios",
+      "status": "proposed",
+      "priority": "high",
+      "estimated_effort": "35\u201345d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601638Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.2.0",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (8).json"
+    },
+    {
+      "id": "TSK-017",
+      "description": "Promote project on X and Habr",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "3d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.600713Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (10).json"
+    },
+    {
+      "id": "TSK-018",
+      "description": "Set up GitHub Sponsors for VPS funding",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "3\u20135d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601645Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (8).json"
+    },
+    {
+      "id": "TSK-019",
+      "description": "Onboard @ivan-ib via video tutorial",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "3\u20135d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601650Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.2.0",
+      "related_idea": "IDEA-097",
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (8).json"
+    },
+    {
+      "id": "TSK-020",
+      "description": "Onboard @momai via video tutorial",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "3\u20135d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601654Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.2.0",
+      "related_idea": "IDEA-097",
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (8).json"
+    },
+    {
+      "id": "TSK-021",
+      "description": "Develop Flask-based mini-UI for struct.json",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "10\u201315d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601658Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": "IDEA-094",
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (8).json"
+    },
+    {
+      "id": "TSK-022",
+      "description": "Implement SQLite backend for struct.json",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "5\u20138d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601662Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": "IDEA-095",
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (8).json"
+    },
+    {
+      "id": "TSK-023",
+      "description": "Develop Telegram bot for task management",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "5d",
+      "dependencies": [
+        "TSK-014"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.600718Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (10).json"
+    },
+    {
+      "id": "TSK-024",
+      "description": "Ensure idempotence for all changes",
+      "status": "in_progress",
+      "priority": "high",
+      "estimated_effort": "7d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.600722Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (10).json"
+    },
+    {
+      "id": "TSK-027",
+      "description": "Implement RFC documentation process",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "5d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-20T19:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false
+    },
+    {
+      "id": "TSK-060",
+      "description": "Develop CLI and Kanban for idea/task tracking",
+      "status": "proposed",
+      "priority": "high",
+      "estimated_effort": "10-14d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-19T14:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "metadata": {
+        "target_release": "v0.2.0",
+        "related_idea": "IDEA-043",
+        "source": "legacy_consolidation",
+        "consolidation_notes": "Recovered from unsorted files, supports automated idea validation"
+      }
+    },
+    {
+      "id": "TSK-061",
+      "description": "Add AI-idea tracking to CLI (--filter-ai-ideas)",
+      "status": "planned",
+      "priority": "medium",
+      "estimated_effort": "10-14d",
+      "dependencies": [
+        "TSK-060"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-19T14:30:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "metadata": {
+        "target_release": "v0.3.0",
+        "related_idea": "IDEA-043",
+        "source": "legacy_consolidation",
+        "consolidation_notes": "Extends TSK-060 with AI-specific filtering capabilities"
+      }
+    },
+    {
+      "id": "TSK-065",
+      "description": "Improve ideas.json format (add author, version_history, validation)",
+      "status": "in_progress",
+      "priority": "medium",
+      "estimated_effort": "5-7d",
+      "dependencies": [
+        "TSK-060"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-19T15:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "metadata": {
+        "target_release": "v0.3.0",
+        "related_idea": "IDEA-040",
+        "source": "legacy_consolidation",
+        "consolidation_notes": "Currently being implemented through data sorting activities",
+        "active_implementation": true
+      }
+    },
+    {
+      "id": "TSK-066",
+      "description": "Create JSON schema for struct.json",
+      "status": "proposed",
+      "priority": "high",
+      "estimated_effort": "5-7d",
+      "dependencies": [
+        "TSK-006"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-19T15:30:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "metadata": {
+        "target_release": "v0.2.0",
+        "related_idea": "IDEA-041",
+        "source": "legacy_consolidation",
+        "consolidation_notes": "Critical for struct.json validation and extensibility"
+      }
+    },
+    {
+      "id": "TSK-072",
+      "description": "Implement --to-json, --sync-memory in CLI",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "5\u20137d",
+      "dependencies": [
+        "IDEA-070",
+        "IDEA-071"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601253Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": "IDEA-070",
+      "confirmation_status": "pending",
+      "source": "chat",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (7).json"
+    },
+    {
+      "id": "TSK-074",
+      "description": "Implement instructions for working with JSON files",
+      "status": "proposed",
+      "priority": "high",
+      "estimated_effort": "3\u20135d",
+      "dependencies": [
+        "TSK-060"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601261Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.2.0",
+      "related_idea": "IDEA-081",
+      "confirmation_status": "pending",
+      "source": "chat",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (7).json"
+    },
+    {
+      "id": "TSK-075",
+      "description": "Implement intelligent workflow with LLM analysis of JSON",
+      "status": "proposed",
+      "priority": "high",
+      "estimated_effort": "10\u201314d",
+      "dependencies": [
+        "TSK-060",
+        "TSK-074"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601266Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": "IDEA-082",
+      "confirmation_status": "pending",
+      "source": "chat",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (7).json"
+    },
+    {
+      "id": "TSK-076",
+      "description": "Create instructions.json for workspace configuration",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "3\u20135d",
+      "dependencies": [
+        "TSK-074"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601270Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": "IDEA-081",
+      "confirmation_status": "pending",
+      "source": "chat",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (7).json"
+    },
+    {
+      "id": "TSK-078",
+      "description": "Implement hybrid mode for LLMClient",
+      "status": "completed",
+      "priority": "medium",
+      "estimated_effort": "unknown",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601039Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (6).json"
+    },
+    {
+      "id": "TSK-079",
+      "description": "Add support for incremental indexing",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "7d",
+      "dependencies": [
+        "TSK-006"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.600732Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (10).json"
+    },
+    {
+      "id": "TSK-080",
+      "description": "Placeholder: Missing task details",
+      "status": "proposed",
+      "priority": "unknown",
+      "estimated_effort": "unknown",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601280Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "unknown",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (7).json"
+    },
+    {
+      "id": "TSK-081",
+      "description": "Placeholder: Missing task details",
+      "status": "proposed",
+      "priority": "unknown",
+      "estimated_effort": "unknown",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601284Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "unknown",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (7).json"
+    },
+    {
+      "id": "TSK-082",
+      "description": "Placeholder: Missing task details",
+      "status": "proposed",
+      "priority": "unknown",
+      "estimated_effort": "unknown",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601289Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "unknown",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (7).json"
+    },
+    {
+      "id": "TSK-085",
+      "description": "Placeholder: Missing task details",
+      "status": "proposed",
+      "priority": "unknown",
+      "estimated_effort": "unknown",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601293Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "unknown",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (7).json"
+    },
+    {
+      "id": "TSK-086",
+      "description": "Placeholder: Missing task details",
+      "status": "proposed",
+      "priority": "unknown",
+      "estimated_effort": "unknown",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601297Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "unknown",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (7).json"
+    },
+    {
+      "id": "TSK-087",
+      "description": "Add tests for CLI (tests/test_cli.py)",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "unknown",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601049Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (6).json"
+    },
+    {
+      "id": "TSK-088",
+      "description": "Placeholder: Missing task details",
+      "status": "proposed",
+      "priority": "unknown",
+      "estimated_effort": "unknown",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601304Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "unknown",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (7).json"
+    },
+    {
+      "id": "TSK-089",
+      "description": "Placeholder: Missing task details",
+      "status": "proposed",
+      "priority": "unknown",
+      "estimated_effort": "unknown",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601309Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "unknown",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (7).json"
+    },
+    {
+      "id": "TSK-090",
+      "description": "Placeholder: Missing task details",
+      "status": "proposed",
+      "priority": "unknown",
+      "estimated_effort": "unknown",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601313Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "unknown",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (7).json"
+    },
+    {
+      "id": "TSK-091",
+      "description": "Implement context command for context.json",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "unknown",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601053Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (6).json"
+    },
+    {
+      "id": "TSK-092",
+      "description": "Placeholder: Missing task details",
+      "status": "proposed",
+      "priority": "unknown",
+      "estimated_effort": "unknown",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601320Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "unknown",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (7).json"
+    },
+    {
+      "id": "TSK-093",
+      "description": "Placeholder: Missing task details",
+      "status": "proposed",
+      "priority": "unknown",
+      "estimated_effort": "unknown",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601324Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "unknown",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (7).json"
+    },
+    {
+      "id": "TSK-094",
+      "description": "Placeholder: Missing task details",
+      "status": "proposed",
+      "priority": "unknown",
+      "estimated_effort": "unknown",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601328Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "unknown",
+      "related_idea": null,
+      "confirmation_status": "pending",
+      "source": "manual",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (7).json"
+    },
+    {
+      "id": "TSK-095",
+      "description": "Implement dogfooding pipeline",
+      "status": "proposed",
+      "priority": "high",
+      "estimated_effort": "10d",
+      "dependencies": [
+        "TSK-006",
+        "TSK-014"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.600739Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (10).json"
+    },
+    {
+      "id": "TSK-096",
+      "description": "Implement review command for LLM-based code review",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "unknown",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601060Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (6).json"
+    },
+    {
+      "id": "TSK-097",
+      "description": "Create features.json for tracking implemented functionality and avoiding duplication",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "unknown",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601064Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (6).json"
+    },
+    {
+      "id": "TSK-098",
+      "description": "Implement CLI audit command to recover lost ideas/tasks",
+      "status": "proposed",
+      "priority": "high",
+      "estimated_effort": "5\u20137d",
+      "dependencies": [
+        "TSK-060"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.601735Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": "IDEA-083",
+      "confirmation_status": "pending",
+      "source": "chat",
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (8).json"
+    },
+    {
+      "id": "TSK-100",
+      "description": "Recover lost ideas and tasks from history",
+      "status": "in_progress",
+      "priority": "critical",
+      "estimated_effort": "2d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.600745Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (10).json"
+    },
+    {
+      "id": "TSK-108",
+      "description": "Implement efficiency testing for llmstruct",
+      "status": "in_progress",
+      "priority": "high",
+      "estimated_effort": "7d",
+      "dependencies": [
+        "TSK-060",
+        "TSK-014"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.600749Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (10).json"
+    },
+    {
+      "id": "TSK-109",
+      "description": "Implement proxy support in CLI and API",
+      "status": "proposed",
+      "priority": "high",
+      "estimated_effort": "2d",
+      "dependencies": [
+        "TSK-060",
+        "TSK-014"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.600754Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (10).json"
+    },
+    {
+      "id": "TSK-110",
+      "description": "Add Grok module for testing",
+      "status": "proposed",
+      "priority": "high",
+      "estimated_effort": "5d",
+      "dependencies": [
+        "TSK-108"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T11:26:17.600757Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (10).json"
+    },
+    {
+      "id": "TSK-119",
+      "description": "Implement FastAPI for project access",
+      "status": "proposed",
+      "priority": "critical",
+      "estimated_effort": "7d",
+      "dependencies": [
+        "TSK-126"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-20T22:20:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false
+    },
+    {
+      "id": "TSK-126",
+      "description": "Complete struct.json and struct_light.json",
+      "status": "proposed",
+      "priority": "high",
+      "estimated_effort": "5d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-20T22:20:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false
+    },
+    {
+      "id": "TSK-127",
+      "description": "Implement CLI queue system backend functionality",
+      "status": "completed",
+      "priority": "high",
+      "estimated_effort": "3d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T15:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Implement queue processing engine, file I/O handlers, safety validation",
+        "components": [
+          "queue processor",
+          "workflow engine",
+          "safety validator"
+        ]
+      }
+    },
+    {
+      "id": "TSK-128",
+      "description": "Implement CLI cache system backend functionality",
+      "status": "completed",
+      "priority": "medium",
+      "estimated_effort": "2d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T15:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Implement cache statistics, cleanup, optimization for context loading",
+        "components": [
+          "cache manager",
+          "statistics collector",
+          "cleanup scheduler"
+        ]
+      }
+    },
+    {
+      "id": "TSK-129",
+      "description": "Restore missing JSON configuration files",
+      "status": "completed",
+      "priority": "medium",
+      "estimated_effort": "1d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T15:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Recreate ideas.json, prs.json, ideas_cache.json based on project needs",
+        "components": [
+          "ideas.json",
+          "prs.json",
+          "ideas_cache.json"
+        ]
+      }
+    },
+    {
+      "id": "TSK-130",
+      "description": "Validate JSON schema compliance for enhanced files",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "1d",
+      "dependencies": [
+        "TSK-129"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T15:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Run schema validation against all enhanced JSON files",
+        "components": [
+          "schema validator",
+          "error reporter",
+          "compliance checker"
+        ]
+      }
+    },
+    {
+      "id": "TSK-131",
+      "description": "Document context orchestration architecture",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "2d",
+      "dependencies": [
+        "TSK-127",
+        "TSK-128"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T15:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Document new 4-level context hierarchy, smart selection rules, token optimization",
+        "components": [
+          "architecture docs",
+          "usage examples",
+          "best practices guide"
+        ]
+      }
+    },
+    {
+      "id": "TSK-132",
+      "description": "Implement auto-update struct.json functionality",
+      "status": "completed",
+      "priority": "critical",
+      "estimated_effort": "3d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T16:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Automatic struct.json updates through parse functionality when LLM works via CLI",
+        "components": [
+          "auto_update_struct.py",
+          "Git hooks",
+          "cron integration",
+          "change detection"
+        ]
+      }
+    },
+    {
+      "id": "TSK-133",
+      "description": "Create VSCode Copilot integration module",
+      "status": "completed",
+      "priority": "critical",
+      "estimated_effort": "4d",
+      "dependencies": [
+        "TSK-132"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T16:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Initialization file for VSCode Copilot work with context system hybrid capabilities",
+        "components": [
+          "copilot.py",
+          "CopilotContextManager",
+          "event system",
+          "validation layer"
+        ]
+      }
+    },
+    {
+      "id": "TSK-134",
+      "description": "Refactor cli.py into modular structure",
+      "status": "completed",
+      "priority": "critical",
+      "estimated_effort": "5d",
+      "dependencies": [
+        "TSK-133"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T16:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Modular refactoring of cli.py for better maintainability and extensibility",
+        "components": [
+          "cli_core.py",
+          "cli_commands.py",
+          "cli_utils.py",
+          "cli_config.py"
+        ]
+      }
+    },
+    {
+      "id": "TSK-135",
+      "description": "Integrate auto-update into CLI workflow",
+      "status": "completed",
+      "priority": "high",
+      "estimated_effort": "2d",
+      "dependencies": [
+        "TSK-132",
+        "TSK-134"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T16:00:00Z",
+      "completed_at": "2025-05-21T18:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Seamless integration of auto-update functionality into LLM CLI workflow",
+        "components": [
+          "CLI workflow hooks",
+          "update triggers",
+          "validation integration"
+        ],
+        "implementation": "Added /auto-update, /struct status, /workflow trigger commands to CLI"
+      }
+    },
+    {
+      "id": "TSK-136",
+      "description": "Test and document modular CLI system",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "3d",
+      "dependencies": [
+        "TSK-134",
+        "TSK-135"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-21T18:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Complete testing and documentation of new modular CLI architecture",
+        "components": [
+          "Integration tests",
+          "CLI documentation",
+          "Usage examples",
+          "Performance benchmarks"
+        ]
+      }
+    },
+    {
+      "id": "TSK-137",
+      "description": "Implement CLI plugin system architecture",
+      "status": "proposed",
+      "priority": "medium",
+      "estimated_effort": "7d",
+      "dependencies": [
+        "TSK-136"
+      ],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T06:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "details": {
+        "scope": "Design and implement extensible plugin system for CLI commands",
+        "components": [
+          "Plugin interface",
+          "Registration system",
+          "Command namespace",
+          "Configuration management"
+        ]
+      }
+    }
+  ]
+}

@@ -30,6 +30,13 @@ Technical ideas for `llmstruct` v0.2.0–v0.3.0, focusing on `struct.json`, LLM 
   - How: `.github/workflows/chatbot.yml`. Effort: ~3–5h.
   - Impact: Bridges chatbot, G5.
 
+## CI/CD Automation
+- **struct.json Auto-Generation in CI/CD (NEW)**: Include struct.json generation as part of CI/CD pipeline to improve process efficiency without reducing its transparency.
+  - Why: Automatically updated struct.json provides current project context for developers and LLMs, enables immediate context awareness in CI checks, reduces manual maintenance overhead
+  - How: Add struct.json generation step in GitHub Actions after lint/test phases, commit updated struct.json back to repo if changed, use in subsequent CI steps for context-aware operations
+  - Impact: Improves developer experience, enables context-aware CI/CD workflows, maintains project documentation automatically
+  - Effort: ~3-5h (GitHub Action workflow, auto-commit logic)
+
 ## User Interface
 - **Mini-UI (TSK-021)**: Flask app for `struct.json` to view/edit tasks, metrics. Replaces GitHub Projects in v0.3.0.
   - Why: Simplifies for community (TSK-017). Aider’s CLI focus shows UI demand.

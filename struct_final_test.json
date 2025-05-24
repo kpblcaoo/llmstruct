@@ -1,0 +1,7286 @@
+{
+  "metadata": {
+    "project_name": "llmstruct",
+    "description": "Utility for generating structured JSON for codebases",
+    "version": "2025-05-24T04:32:05.161892Z",
+    "authors": [
+      {
+        "name": "Mikhail Stepanov",
+        "github": "kpblcaoo",
+        "email": "kpblcaoo@gmail.com"
+      }
+    ],
+    "instructions": [
+      "Follow best practices, warn if instructions conflict with them",
+      "Preserve functionality, ensure idempotency",
+      "Use attached struct.json for context and navigation",
+      "Request missing modules or functions if needed",
+      "Regenerate JSON for significant changes, track via Git and artifacts",
+      "Use internal comments for descriptions, append brief summary"
+    ],
+    "goals": {
+      "goals": [
+        "Create universal JSON format for codebase structure (modules, functions, classes, calls, metadata)",
+        "Ensure extensibility for new languages and entity types",
+        "Develop modular, plugin-based parsers for new languages",
+        "Maintain an open, RFC-style documented format",
+        "Integrate with LLMs by generating and attaching JSON structure to queries"
+      ]
+    },
+    "stats": {
+      "modules_count": 43,
+      "functions_count": 208,
+      "classes_count": 16,
+      "call_edges_count": 730
+    },
+    "artifact_id": "c604ece8-f051-4636-a8c2-4695b9011862",
+    "summary": "Structured JSON for llmstruct codebase",
+    "tags": [
+      "codebase",
+      "automation"
+    ],
+    "folder_structure": [
+      {
+        "path": ".",
+        "type": "directory",
+        "artifact_id": "66b34710-073a-4dff-b31a-61dc6c45f5bf",
+        "metadata": {}
+      },
+      {
+        "path": ".github",
+        "type": "directory",
+        "artifact_id": "2a7d7130-11ac-4a13-8173-79af3bfcacb5",
+        "metadata": {}
+      },
+      {
+        "path": ".github/workflows",
+        "type": "directory",
+        "artifact_id": "8968e95d-f157-4d9c-92e5-c171fed6e31d",
+        "metadata": {}
+      },
+      {
+        "path": "bak",
+        "type": "directory",
+        "artifact_id": "7b9a8995-99c5-4e35-b156-b62766e308ae",
+        "metadata": {}
+      },
+      {
+        "path": "collector.py",
+        "type": "file",
+        "artifact_id": "9a076b2e-18a7-4eeb-824a-4f13895dc3f2",
+        "metadata": {}
+      },
+      {
+        "path": "data",
+        "type": "directory",
+        "artifact_id": "517aaffb-d423-4f8c-aa9a-511adeb0c08d",
+        "metadata": {}
+      },
+      {
+        "path": "data/artifacts",
+        "type": "directory",
+        "artifact_id": "c804ff38-b59f-46b9-bb1e-c3420311e8bd",
+        "metadata": {}
+      },
+      {
+        "path": "docs",
+        "type": "directory",
+        "artifact_id": "d7819ef4-5bb9-413e-9f0a-dea66100f3aa",
+        "metadata": {}
+      },
+      {
+        "path": "docs/examples",
+        "type": "directory",
+        "artifact_id": "11e91ef7-b7cf-4e8e-974a-c7a5b0eb3da8",
+        "metadata": {}
+      },
+      {
+        "path": "docs/internal",
+        "type": "directory",
+        "artifact_id": "3b65b542-313e-4bbd-b122-ef71696353de",
+        "metadata": {}
+      },
+      {
+        "path": "docs/internal/ru",
+        "type": "directory",
+        "artifact_id": "6c3bcb9b-6bbb-4f72-a9aa-f6ec2c9f5b5a",
+        "metadata": {}
+      },
+      {
+        "path": "docs/ru",
+        "type": "directory",
+        "artifact_id": "52fc7c65-cc59-47d3-82c0-7c96aa9b0900",
+        "metadata": {}
+      },
+      {
+        "path": "docs/ru/examples",
+        "type": "directory",
+        "artifact_id": "0d420c0d-70f2-4101-afb7-33e347ffe534",
+        "metadata": {}
+      },
+      {
+        "path": "examples",
+        "type": "directory",
+        "artifact_id": "58e2347f-71d5-47b2-9b1a-b747e8d0c14b",
+        "metadata": {}
+      },
+      {
+        "path": "examples/python_project_main.py",
+        "type": "file",
+        "artifact_id": "77ddb265-eb1b-4511-a2d3-ad4f8f6c56bd",
+        "metadata": {}
+      },
+      {
+        "path": "examples/python_project_utils.py",
+        "type": "file",
+        "artifact_id": "6cdf5aa4-b3f4-4465-adc3-b6525437553e",
+        "metadata": {}
+      },
+      {
+        "path": "internal",
+        "type": "directory",
+        "artifact_id": "a8841eef-1d5e-4d50-a1b1-c6a28d0cac62",
+        "metadata": {}
+      },
+      {
+        "path": "schema",
+        "type": "directory",
+        "artifact_id": "6729383e-f26a-4c73-88c6-b7f517703d72",
+        "metadata": {}
+      },
+      {
+        "path": "schema/common",
+        "type": "directory",
+        "artifact_id": "ee192b64-d641-4b85-885d-74c5b614a5b6",
+        "metadata": {}
+      },
+      {
+        "path": "schema/plugins",
+        "type": "directory",
+        "artifact_id": "1c211cb9-16b3-4f42-80bf-a597c4bcff37",
+        "metadata": {}
+      },
+      {
+        "path": "scripts",
+        "type": "directory",
+        "artifact_id": "47ffd23d-7e61-4c90-aa56-22e8dcd57c20",
+        "metadata": {}
+      },
+      {
+        "path": "scripts/auto_update_struct.py",
+        "type": "file",
+        "artifact_id": "f3845386-43c4-4d32-80fb-f06051253f6c",
+        "metadata": {}
+      },
+      {
+        "path": "scripts/collector.py",
+        "type": "file",
+        "artifact_id": "f9e665b3-1b88-443d-a41b-8201e7d08dc0",
+        "metadata": {}
+      },
+      {
+        "path": "scripts/deploy_embedded_files.py",
+        "type": "file",
+        "artifact_id": "a84e70e0-c66d-45b9-b577-3c916f51d0b3",
+        "metadata": {}
+      },
+      {
+        "path": "scripts/validate_refs.py",
+        "type": "file",
+        "artifact_id": "dff7cfcd-68a9-471c-8acd-d21f83e6989d",
+        "metadata": {}
+      },
+      {
+        "path": "src",
+        "type": "directory",
+        "artifact_id": "65d609e6-dae6-498c-ade9-c08ef95d5ea4",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct",
+        "type": "directory",
+        "artifact_id": "aaa93b35-f982-4c10-ac58-37ff5ff0a7b7",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct.egg-info",
+        "type": "directory",
+        "artifact_id": "fec7ff9d-d1ff-4ebd-81b8-3244b300de6b",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/__init__.py",
+        "type": "file",
+        "artifact_id": "d3352015-1a27-49a8-8f0c-60879c7688c8",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/__main__.py",
+        "type": "file",
+        "artifact_id": "7a7f7142-2561-4af8-ae98-0f3c72a47d93",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/cache.py",
+        "type": "file",
+        "artifact_id": "9d5e87ed-5ca6-41c5-92e8-667250480c59",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/cli.py",
+        "type": "file",
+        "artifact_id": "688b8b45-a9be-444b-8b74-937eab4203dd",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/cli_commands.py",
+        "type": "file",
+        "artifact_id": "80a944a6-513b-4ab4-af3f-a48e4aa787f1",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/cli_config.py",
+        "type": "file",
+        "artifact_id": "955fda9e-fb45-4d86-bf22-6adb6269ee35",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/cli_core.py",
+        "type": "file",
+        "artifact_id": "4eb299a6-e2eb-4275-a3a7-b3458b068d9e",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/cli_utils.py",
+        "type": "file",
+        "artifact_id": "9e83d7c2-4ba7-499b-99fc-46b216cd6f59",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/copilot.py",
+        "type": "file",
+        "artifact_id": "fc4c7f84-6715-4429-aa78-c05fa98cd31e",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/generators",
+        "type": "directory",
+        "artifact_id": "b7e66a64-d844-4a22-a3bd-2efa5ded6079",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/generators/__init__.py",
+        "type": "file",
+        "artifact_id": "7cb0c39c-7049-4474-86e8-ca1c7f1aadc9",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/generators/json_generator.py",
+        "type": "file",
+        "artifact_id": "75d41ddb-8863-44e0-b8d5-0706c59f2c40",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/grok.py",
+        "type": "file",
+        "artifact_id": "ea08d091-f32f-4c68-9763-20b53dd8cf9b",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/json_selector.py",
+        "type": "file",
+        "artifact_id": "82610524-a3af-48d0-82f0-83c7c029d939",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/llm_client.py",
+        "type": "file",
+        "artifact_id": "f8603de8-8581-47fc-9f19-793f9ac39ef2",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/parsers",
+        "type": "directory",
+        "artifact_id": "90f82db5-425b-421a-98c8-21ba439fb8d9",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/parsers/__init__.py",
+        "type": "file",
+        "artifact_id": "650be281-721c-4a6b-9dc0-d69d358b3c07",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/parsers/javascript_parser.py",
+        "type": "file",
+        "artifact_id": "767356cd-d3d4-4ea2-a9f1-6b004f112dd2",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/parsers/python_parser.py",
+        "type": "file",
+        "artifact_id": "fd0f812c-1628-447a-9cc8-8a9c3b0f2d2a",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/self_run.py",
+        "type": "file",
+        "artifact_id": "e54d44c1-f8ae-48a3-bcb9-509323219d96",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/templates",
+        "type": "directory",
+        "artifact_id": "f4a9006a-1a7d-40e1-a9cc-e7a74045af30",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/templates/__init__.py",
+        "type": "file",
+        "artifact_id": "a0788915-1aec-4535-8af8-93f31e1c1feb",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/validators",
+        "type": "directory",
+        "artifact_id": "db5a7b13-26e8-4caf-ab2e-a24f0a9480ad",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/validators/__init__.py",
+        "type": "file",
+        "artifact_id": "4228cf2c-1707-4c1e-a7fc-57484bcb6ed3",
+        "metadata": {}
+      },
+      {
+        "path": "src/llmstruct/validators/json_validator.py",
+        "type": "file",
+        "artifact_id": "40bbcee5-c5ff-4cbc-a764-5752ccef8df2",
+        "metadata": {}
+      },
+      {
+        "path": "temp_workfiles",
+        "type": "directory",
+        "artifact_id": "ff5bdd44-e4be-4d26-93e7-f86ffa99e1cb",
+        "metadata": {}
+      },
+      {
+        "path": "temp_workfiles/final_system_check.py",
+        "type": "file",
+        "artifact_id": "4fc775e6-e59a-4c1f-aad6-f79d38818c86",
+        "metadata": {}
+      },
+      {
+        "path": "temp_workfiles/final_system_validation.py",
+        "type": "file",
+        "artifact_id": "edc06416-2144-4dbf-99fc-c1685b4ad6f7",
+        "metadata": {}
+      },
+      {
+        "path": "temp_workfiles/test_cli.py",
+        "type": "file",
+        "artifact_id": "c112333b-ba7f-4317-9d0e-a5561cce85e0",
+        "metadata": {}
+      },
+      {
+        "path": "temp_workfiles/test_cli_demo.py",
+        "type": "file",
+        "artifact_id": "32d998c4-8d9f-4bb4-9b19-eebb64869216",
+        "metadata": {}
+      },
+      {
+        "path": "temp_workfiles/test_cli_integration.py",
+        "type": "file",
+        "artifact_id": "358506dd-8c66-482f-ac24-19b25457c304",
+        "metadata": {}
+      },
+      {
+        "path": "temp_workfiles/test_modular_cli.py",
+        "type": "file",
+        "artifact_id": "ae8f1651-2255-4e84-a21f-d7b48b5bf3b7",
+        "metadata": {}
+      },
+      {
+        "path": "test_efficiency.py",
+        "type": "file",
+        "artifact_id": "5dc00c4f-00ce-4e10-a1d1-af97e2f91b49",
+        "metadata": {}
+      },
+      {
+        "path": "tests",
+        "type": "directory",
+        "artifact_id": "790c8aba-c11b-4e20-b6f6-db42333ce89c",
+        "metadata": {}
+      },
+      {
+        "path": "tmp",
+        "type": "directory",
+        "artifact_id": "5d3e4048-75b1-46df-b289-f8b078c9ac61",
+        "metadata": {}
+      },
+      {
+        "path": "validate_schemas.py",
+        "type": "file",
+        "artifact_id": "b0363004-3faf-43ac-ad9d-8caf03fea206",
+        "metadata": {}
+      },
+      {
+        "path": "verify_llm_response.py",
+        "type": "file",
+        "artifact_id": "306c19a1-da91-4c2a-b082-c0ca7cd94b7e",
+        "metadata": {}
+      },
+      {
+        "path": "workflow_archive",
+        "type": "directory",
+        "artifact_id": "e081b45b-297f-4b94-a15f-1715e191c98d",
+        "metadata": {}
+      }
+    ]
+  },
+  "toc": [
+    {
+      "module_id": "test_efficiency",
+      "path": "test_efficiency.py",
+      "category": "test",
+      "functions": 12,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "e815e911-3986-4170-b781-3326bc1fc647"
+    },
+    {
+      "module_id": "collector",
+      "path": "collector.py",
+      "category": "core",
+      "functions": 3,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "fe095197-8611-41a1-95c4-845c954c3672"
+    },
+    {
+      "module_id": "validate_schemas",
+      "path": "validate_schemas.py",
+      "category": "core",
+      "functions": 3,
+      "classes": 1,
+      "summary": "JSON Schema Validation Script for llmstruct",
+      "artifact_id": "1d044d20-22c7-42fb-bd86-66c0f68781a9"
+    },
+    {
+      "module_id": "verify_llm_response",
+      "path": "verify_llm_response.py",
+      "category": "core",
+      "functions": 6,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "e0b441fb-351b-4990-a47c-f6679953295f"
+    },
+    {
+      "module_id": "examples.python_project_utils",
+      "path": "examples/python_project_utils.py",
+      "category": "core",
+      "functions": 2,
+      "classes": 0,
+      "summary": "Utility functions for the sample project.",
+      "artifact_id": "f59606a1-0eb8-4074-b268-b1bb7a969236"
+    },
+    {
+      "module_id": "examples.python_project_main",
+      "path": "examples/python_project_main.py",
+      "category": "core",
+      "functions": 2,
+      "classes": 1,
+      "summary": "Main module for the sample project.",
+      "artifact_id": "9a1ec558-1834-4c4a-8cc8-79b73a8a3ec9"
+    },
+    {
+      "module_id": "src.llmstruct.cli_config",
+      "path": "src/llmstruct/cli_config.py",
+      "category": "core",
+      "functions": 18,
+      "classes": 1,
+      "summary": "CLI configuration management.",
+      "artifact_id": "bb051882-fcfb-45a7-85f7-b4c624271e54"
+    },
+    {
+      "module_id": "src.llmstruct.grok",
+      "path": "src/llmstruct/grok.py",
+      "category": "core",
+      "functions": 3,
+      "classes": 1,
+      "summary": "",
+      "artifact_id": "150f5b1f-e6e4-4a1d-85e5-74a2eeab3fce"
+    },
+    {
+      "module_id": "src.llmstruct.cli_commands",
+      "path": "src/llmstruct/cli_commands.py",
+      "category": "core",
+      "functions": 23,
+      "classes": 1,
+      "summary": "CLI command processing and handlers.",
+      "artifact_id": "5d5b4714-cbcf-4cbf-bba9-9889f82e6a26"
+    },
+    {
+      "module_id": "src.llmstruct.__init__",
+      "path": "src/llmstruct/__init__.py",
+      "category": "cli",
+      "functions": 0,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "9d9e40a3-47b8-42fa-a26c-fd8452571924"
+    },
+    {
+      "module_id": "src.llmstruct.__main__",
+      "path": "src/llmstruct/__main__.py",
+      "category": "cli",
+      "functions": 0,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "1011eb87-5c0e-4d65-b41b-54d15ceb8fb5"
+    },
+    {
+      "module_id": "src.llmstruct.cli_utils",
+      "path": "src/llmstruct/cli_utils.py",
+      "category": "core",
+      "functions": 13,
+      "classes": 1,
+      "summary": "CLI utility functions.",
+      "artifact_id": "ca1722f2-102b-4358-a7be-72db81e58022"
+    },
+    {
+      "module_id": "src.llmstruct.copilot",
+      "path": "src/llmstruct/copilot.py",
+      "category": "core",
+      "functions": 21,
+      "classes": 5,
+      "summary": "LLMStruct Copilot Integration Module",
+      "artifact_id": "8d4c1a1d-9920-4a38-b9cf-eb9e414bbb31"
+    },
+    {
+      "module_id": "src.llmstruct.llm_client",
+      "path": "src/llmstruct/llm_client.py",
+      "category": "core",
+      "functions": 6,
+      "classes": 1,
+      "summary": "",
+      "artifact_id": "7816dd62-8077-402c-8edf-7e269cdcafec"
+    },
+    {
+      "module_id": "src.llmstruct.cache",
+      "path": "src/llmstruct/cache.py",
+      "category": "core",
+      "functions": 6,
+      "classes": 1,
+      "summary": "",
+      "artifact_id": "6a72c6e8-2969-43f4-a0a6-34969a04f20e"
+    },
+    {
+      "module_id": "src.llmstruct.self_run",
+      "path": "src/llmstruct/self_run.py",
+      "category": "core",
+      "functions": 2,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "cb68087c-4272-4e7d-9d3c-9bcdf3eca37d"
+    },
+    {
+      "module_id": "src.llmstruct.json_selector",
+      "path": "src/llmstruct/json_selector.py",
+      "category": "core",
+      "functions": 2,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "4e18adfa-b98e-4cc1-abea-9c416e324d27"
+    },
+    {
+      "module_id": "src.llmstruct.cli",
+      "path": "src/llmstruct/cli.py",
+      "category": "core",
+      "functions": 16,
+      "classes": 0,
+      "summary": "LLMStruct CLI - Main entry point for the command-line interface.",
+      "artifact_id": "cd2620a6-06ce-4d96-a1c8-eb55e9935d5d"
+    },
+    {
+      "module_id": "src.llmstruct.cli_core",
+      "path": "src/llmstruct/cli_core.py",
+      "category": "core",
+      "functions": 6,
+      "classes": 1,
+      "summary": "Core CLI functionality and main loop.",
+      "artifact_id": "d281fca8-47dd-4908-8c08-8d8d0fa216fe"
+    },
+    {
+      "module_id": "src.llmstruct.parsers.__init__",
+      "path": "src/llmstruct/parsers/__init__.py",
+      "category": "cli",
+      "functions": 0,
+      "classes": 0,
+      "summary": "Language-specific parsers for extracting code structure data for LLMStruct JSON.",
+      "artifact_id": "985ac1db-5d65-4f5e-bf38-7a2c3883c6ea"
+    },
+    {
+      "module_id": "src.llmstruct.parsers.javascript_parser",
+      "path": "src/llmstruct/parsers/javascript_parser.py",
+      "category": "core",
+      "functions": 5,
+      "classes": 1,
+      "summary": "",
+      "artifact_id": "10cd5694-c46a-4471-977b-412ec61d3f42"
+    },
+    {
+      "module_id": "src.llmstruct.parsers.python_parser",
+      "path": "src/llmstruct/parsers/python_parser.py",
+      "category": "core",
+      "functions": 9,
+      "classes": 1,
+      "summary": "",
+      "artifact_id": "1f266f2c-6740-46dd-8c19-7ae991348d6b"
+    },
+    {
+      "module_id": "src.llmstruct.templates.__init__",
+      "path": "src/llmstruct/templates/__init__.py",
+      "category": "cli",
+      "functions": 0,
+      "classes": 0,
+      "summary": "Templates for LLM prompts used in LLMStruct integration.",
+      "artifact_id": "8ce0a8f8-00ec-4e75-92d9-0971d5c959a1"
+    },
+    {
+      "module_id": "src.llmstruct.validators.__init__",
+      "path": "src/llmstruct/validators/__init__.py",
+      "category": "cli",
+      "functions": 0,
+      "classes": 0,
+      "summary": "Validation modules for ensuring LLMStruct JSON complies with the schema.",
+      "artifact_id": "ef648d19-f5a9-4642-b486-949186c9a75c"
+    },
+    {
+      "module_id": "src.llmstruct.validators.json_validator",
+      "path": "src/llmstruct/validators/json_validator.py",
+      "category": "core",
+      "functions": 2,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "b1957c31-5432-4c5c-8155-f44a4b2e6a1e"
+    },
+    {
+      "module_id": "src.llmstruct.generators.json_generator",
+      "path": "src/llmstruct/generators/json_generator.py",
+      "category": "core",
+      "functions": 3,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "b712921a-2839-43c6-91bb-82f53856dbc7"
+    },
+    {
+      "module_id": "src.llmstruct.generators.__init__",
+      "path": "src/llmstruct/generators/__init__.py",
+      "category": "cli",
+      "functions": 0,
+      "classes": 0,
+      "summary": "Generator modules for creating LLMStruct JSON outputs from parsed code data.",
+      "artifact_id": "bf0dbec3-3456-4548-92a8-24e5123eef65"
+    },
+    {
+      "module_id": "temp_workfiles.test_cli_integration",
+      "path": "temp_workfiles/test_cli_integration.py",
+      "category": "test",
+      "functions": 1,
+      "classes": 0,
+      "summary": "Test script for CLI integration with new commands",
+      "artifact_id": "d3f66f85-e03d-450d-84f9-29053a4305dd"
+    },
+    {
+      "module_id": "temp_workfiles.test_cli",
+      "path": "temp_workfiles/test_cli.py",
+      "category": "test",
+      "functions": 1,
+      "classes": 0,
+      "summary": "Test script for the enhanced CLI functionality.",
+      "artifact_id": "9b1a367e-6ba4-4516-a4e8-4d5475d038af"
+    },
+    {
+      "module_id": "temp_workfiles.final_system_check",
+      "path": "temp_workfiles/final_system_check.py",
+      "category": "core",
+      "functions": 1,
+      "classes": 0,
+      "summary": "Final System Status Check - LLMStruct Modular CLI Integration",
+      "artifact_id": "8144b39a-cd2d-44b4-a3ec-750167270ecc"
+    },
+    {
+      "module_id": "temp_workfiles.final_system_validation",
+      "path": "temp_workfiles/final_system_validation.py",
+      "category": "core",
+      "functions": 1,
+      "classes": 0,
+      "summary": "Final system validation script for LLMStruct Modular CLI Integration",
+      "artifact_id": "9b12d964-6157-4308-8b44-a2107bf4339c"
+    },
+    {
+      "module_id": "temp_workfiles.test_modular_cli",
+      "path": "temp_workfiles/test_modular_cli.py",
+      "category": "test",
+      "functions": 2,
+      "classes": 0,
+      "summary": "Test script for modular CLI structure",
+      "artifact_id": "058a7034-e133-43fb-bdd1-02a8769892d5"
+    },
+    {
+      "module_id": "temp_workfiles.test_cli_demo",
+      "path": "temp_workfiles/test_cli_demo.py",
+      "category": "test",
+      "functions": 1,
+      "classes": 0,
+      "summary": "Quick CLI test to demonstrate new commands",
+      "artifact_id": "fdb9e408-964f-4621-ab0c-f4f8293619b9"
+    },
+    {
+      "module_id": "bak.20250522_102827.scripts.collector",
+      "path": "bak/20250522_102827/scripts/collector.py",
+      "category": "core",
+      "functions": 4,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "0de19f52-8a04-4e37-aaab-7f9303c936c6"
+    },
+    {
+      "module_id": "bak.20250522_102827.scripts.validate_refs",
+      "path": "bak/20250522_102827/scripts/validate_refs.py",
+      "category": "core",
+      "functions": 2,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "002a23bf-62ac-43e7-84ce-6018d17cb8f5"
+    },
+    {
+      "module_id": "bak.20250522_102827.scripts.deploy_embedded_files",
+      "path": "bak/20250522_102827/scripts/deploy_embedded_files.py",
+      "category": "core",
+      "functions": 4,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "32c9b7b8-dbd8-4d73-87dd-3d096daeddad"
+    },
+    {
+      "module_id": "bak.20250522_131121.scripts.collector",
+      "path": "bak/20250522_131121/scripts/collector.py",
+      "category": "core",
+      "functions": 4,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "4929a210-a2f8-4a51-904b-df67336a8434"
+    },
+    {
+      "module_id": "bak.20250522_131121.scripts.validate_refs",
+      "path": "bak/20250522_131121/scripts/validate_refs.py",
+      "category": "core",
+      "functions": 2,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "5a392092-f12e-447a-abd0-feed8ac39952"
+    },
+    {
+      "module_id": "bak.20250522_131121.scripts.deploy_embedded_files",
+      "path": "bak/20250522_131121/scripts/deploy_embedded_files.py",
+      "category": "core",
+      "functions": 4,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "6b41a920-8cec-4eb2-865d-bf9e6ed7b56a"
+    },
+    {
+      "module_id": "scripts.collector",
+      "path": "scripts/collector.py",
+      "category": "core",
+      "functions": 4,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "41c5b972-e26d-4733-b72e-d31e4be12dd7"
+    },
+    {
+      "module_id": "scripts.auto_update_struct",
+      "path": "scripts/auto_update_struct.py",
+      "category": "core",
+      "functions": 8,
+      "classes": 0,
+      "summary": "Automatic struct.json update script",
+      "artifact_id": "dbe704de-6fc4-470d-88b3-1497dfa7d238"
+    },
+    {
+      "module_id": "scripts.validate_refs",
+      "path": "scripts/validate_refs.py",
+      "category": "core",
+      "functions": 2,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "dca40acd-626d-4b85-a53d-9bc02ff522e5"
+    },
+    {
+      "module_id": "scripts.deploy_embedded_files",
+      "path": "scripts/deploy_embedded_files.py",
+      "category": "core",
+      "functions": 4,
+      "classes": 0,
+      "summary": "",
+      "artifact_id": "bdee6521-6c01-40d7-b18c-a637a89d9142"
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "test_efficiency",
+      "path": "test_efficiency.py",
+      "category": "test",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "get_system_metrics",
+          "docstring": "",
+          "line_range": [
+            15,
+            19
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "is_local_address",
+          "docstring": "",
+          "line_range": [
+            22,
+            28
+          ],
+          "parameters": [
+            "url"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "setup_proxy",
+          "docstring": "",
+          "line_range": [
+            31,
+            34
+          ],
+          "parameters": [
+            "proxy_url"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "check_ollama",
+          "docstring": "",
+          "line_range": [
+            37,
+            42
+          ],
+          "parameters": [
+            "api_url"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "optimize_prompt",
+          "docstring": "",
+          "line_range": [
+            45,
+            51
+          ],
+          "parameters": [
+            "struct_data",
+            "max_tokens"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "run_llm_request",
+          "docstring": "",
+          "line_range": [
+            54,
+            78
+          ],
+          "parameters": [
+            "api_url",
+            "payload",
+            "proxy"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "check_llmstruct_cli",
+          "docstring": "",
+          "line_range": [
+            81,
+            82
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "test_with_llmstruct",
+          "docstring": "",
+          "line_range": [
+            85,
+            112
+          ],
+          "parameters": [
+            "api_url",
+            "project_path",
+            "proxy",
+            "use_placeholder"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "test_without_llmstruct",
+          "docstring": "",
+          "line_range": [
+            115,
+            122
+          ],
+          "parameters": [
+            "api_url",
+            "project_path",
+            "proxy"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "test_with_grok",
+          "docstring": "",
+          "line_range": [
+            125,
+            147
+          ],
+          "parameters": [
+            "api_key",
+            "project_path",
+            "proxy",
+            "use_placeholder"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "evaluate_accuracy",
+          "docstring": "",
+          "line_range": [
+            150,
+            152
+          ],
+          "parameters": [
+            "response_text",
+            "expected"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "main",
+          "docstring": "",
+          "line_range": [
+            155,
+            215
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "get_system_metrics": [
+          "psutil.virtual_memory",
+          "psutil.cpu_percent"
+        ],
+        "is_local_address": [
+          "urlparse",
+          "ipaddress.ip_address"
+        ],
+        "setup_proxy": [
+          "os.getenv"
+        ],
+        "check_ollama": [
+          "response.json",
+          "str",
+          "requests.get",
+          "api_url.replace"
+        ],
+        "optimize_prompt": [
+          "len",
+          "struct_data.split",
+          "print"
+        ],
+        "run_llm_request": [
+          "response.raise_for_status",
+          "session.post",
+          "time.perf_counter",
+          "requests.Session",
+          "len",
+          "is_local_address",
+          "get_system_metrics",
+          "print",
+          "type",
+          "response.json"
+        ],
+        "check_llmstruct_cli": [
+          "shutil.which"
+        ],
+        "test_with_llmstruct": [
+          "target_path.exists",
+          "run_llm_request",
+          "f.read",
+          "open",
+          "subprocess.run",
+          "check_llmstruct_cli",
+          "Path",
+          "str",
+          "optimize_prompt",
+          "json.dump",
+          "FileNotFoundError"
+        ],
+        "test_without_llmstruct": [
+          "run_llm_request",
+          "f.read",
+          "open",
+          "Path",
+          "optimize_prompt"
+        ],
+        "test_with_grok": [
+          "target_path.exists",
+          "f.read",
+          "test_grok",
+          "open",
+          "Path",
+          "optimize_prompt",
+          "json.dump",
+          "FileNotFoundError"
+        ],
+        "evaluate_accuracy": [
+          "len",
+          "sum",
+          "response_text.lower"
+        ],
+        "main": [
+          "open",
+          "check_llmstruct_cli",
+          "argparse.ArgumentParser",
+          "check_ollama",
+          "test_with_llmstruct",
+          "parser.parse_args",
+          "range",
+          "str",
+          "test_with_grok",
+          "json.dump",
+          "test_without_llmstruct",
+          "parser.add_argument",
+          "print",
+          "setup_proxy",
+          "evaluate_accuracy"
+        ]
+      },
+      "dependencies": [
+        "Path",
+        "argparse",
+        "ipaddress",
+        "json",
+        "os",
+        "pathlib",
+        "psutil",
+        "requests",
+        "shutil",
+        "src.llmstruct.grok",
+        "subprocess",
+        "test_grok",
+        "time",
+        "urllib.parse",
+        "urlparse"
+      ],
+      "hash": null,
+      "artifact_id": "e815e911-3986-4170-b781-3326bc1fc647"
+    },
+    {
+      "module_id": "collector",
+      "path": "collector.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "load_gitignore",
+          "docstring": "",
+          "line_range": [
+            13,
+            17
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "is_text_file",
+          "docstring": "Check if file is likely a text file based on extension.",
+          "line_range": [
+            20,
+            31
+          ],
+          "parameters": [
+            "file_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "collect_project",
+          "docstring": "",
+          "line_range": [
+            34,
+            66
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "load_gitignore": [
+          "Path",
+          "gitignore_parser.parse_gitignore",
+          "gitignore_path.exists"
+        ],
+        "is_text_file": [],
+        "collect_project": [
+          "any",
+          "f.read",
+          "open",
+          "file_path.is_file",
+          "root_dir.rglob",
+          "Path",
+          "str",
+          "gitignore",
+          "logger.error",
+          "logger.info",
+          "load_gitignore",
+          "json.dump",
+          "len",
+          "is_text_file",
+          "logger.warning",
+          "doc_files.items"
+        ]
+      },
+      "dependencies": [
+        "Path",
+        "gitignore_parser",
+        "json",
+        "logging",
+        "pathlib"
+      ],
+      "hash": null,
+      "artifact_id": "fe095197-8611-41a1-95c4-845c954c3672"
+    },
+    {
+      "module_id": "validate_schemas",
+      "path": "validate_schemas.py",
+      "category": "core",
+      "module_doc": "JSON Schema Validation Script for llmstruct\nValidates all enhanced JSON files against their appropriate schemas.\nPart of TSK-130 implementation.",
+      "functions": [
+        {
+          "name": "load_json",
+          "docstring": "Load JSON file with error handling.",
+          "line_range": [
+            24,
+            34
+          ],
+          "parameters": [
+            "file_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "validate_json_against_schema",
+          "docstring": "Validate JSON data against schema.",
+          "line_range": [
+            37,
+            53
+          ],
+          "parameters": [
+            "json_data",
+            "schema_data",
+            "file_name"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "main",
+          "docstring": "",
+          "line_range": [
+            56,
+            177
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Colors",
+          "docstring": "",
+          "line_range": [
+            15,
+            21
+          ],
+          "methods": [],
+          "bases": []
+        }
+      ],
+      "callgraph": {
+        "load_json": [
+          "open",
+          "print",
+          "json.load"
+        ],
+        "validate_json_against_schema": [
+          "str",
+          "validate",
+          "print"
+        ],
+        "main": [
+          "errors.append",
+          "load_json",
+          "print",
+          "validate_json_against_schema"
+        ]
+      },
+      "dependencies": [
+        "ValidationError",
+        "draft7_format_checker",
+        "json",
+        "jsonschema",
+        "sys",
+        "validate"
+      ],
+      "hash": null,
+      "artifact_id": "1d044d20-22c7-42fb-bd86-66c0f68781a9"
+    },
+    {
+      "module_id": "verify_llm_response",
+      "path": "verify_llm_response.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "load_json_file",
+          "docstring": "Load a JSON file and return its contents.",
+          "line_range": [
+            15,
+            25
+          ],
+          "parameters": [
+            "file_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "verify_response_with_struct",
+          "docstring": "Verify llm_response.json against struct.json.",
+          "line_range": [
+            28,
+            71
+          ],
+          "parameters": [
+            "response_text",
+            "struct_data"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "verify_response_without_struct",
+          "docstring": "Verify llm_response.json based on LLMstruct principles.",
+          "line_range": [
+            74,
+            108
+          ],
+          "parameters": [
+            "response_text"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "generate_metrics",
+          "docstring": "Generate metrics for the response per EXT-004.",
+          "line_range": [
+            111,
+            141
+          ],
+          "parameters": [
+            "response_data",
+            "server_log"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "update_tasks_json",
+          "docstring": "Append a new task to tasks.json.",
+          "line_range": [
+            144,
+            151
+          ],
+          "parameters": [
+            "tasks_file",
+            "new_task"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "main",
+          "docstring": "",
+          "line_range": [
+            154,
+            225
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "load_json_file": [
+          "open",
+          "logging.error",
+          "json.load"
+        ],
+        "verify_response_with_struct": [
+          "re.findall",
+          "logging.error",
+          "e.startswith",
+          "set",
+          "expected_files.issubset",
+          "struct_data.get",
+          "logging.info",
+          "expected_extensions.issubset",
+          "expected_goals.issubset"
+        ],
+        "verify_response_without_struct": [
+          "re.findall",
+          "logging.error",
+          "response_text.lower",
+          "principle.lower",
+          "set",
+          "expected_files.issubset",
+          "logging.info",
+          "expected_extensions.issubset",
+          "expected_goals.issubset"
+        ],
+        "generate_metrics": [
+          "re.findall",
+          "datetime.utcnow",
+          "server_log.get",
+          "len",
+          "response_text.split"
+        ],
+        "update_tasks_json": [
+          "load_json_file",
+          "tasks.get",
+          "open",
+          "json.dump",
+          "logging.info"
+        ],
+        "main": [
+          "load_json_file",
+          "verify_response_with_struct",
+          "verify_response_without_struct",
+          "open",
+          "generate_metrics",
+          "argparse.ArgumentParser",
+          "parser.parse_args",
+          "update_tasks_json",
+          "json.dump",
+          "parser.add_argument",
+          "logging.info"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "Optional",
+        "argparse",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "re",
+        "typing"
+      ],
+      "hash": null,
+      "artifact_id": "e0b441fb-351b-4990-a47c-f6679953295f"
+    },
+    {
+      "module_id": "examples.python_project_utils",
+      "path": "examples/python_project_utils.py",
+      "category": "core",
+      "module_doc": "Utility functions for the sample project.",
+      "functions": [
+        {
+          "name": "helper",
+          "docstring": "Help the main function.",
+          "line_range": [
+            6,
+            8
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "log",
+          "docstring": "Log a message.",
+          "line_range": [
+            11,
+            13
+          ],
+          "parameters": [
+            "message"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "helper": [
+          "log"
+        ],
+        "log": [
+          "logging.info"
+        ]
+      },
+      "dependencies": [
+        "logging"
+      ],
+      "hash": null,
+      "artifact_id": "f59606a1-0eb8-4074-b268-b1bb7a969236"
+    },
+    {
+      "module_id": "examples.python_project_main",
+      "path": "examples/python_project_main.py",
+      "category": "core",
+      "module_doc": "Main module for the sample project.",
+      "functions": [
+        {
+          "name": "main",
+          "docstring": "Run the program.",
+          "line_range": [
+            6,
+            9
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "run",
+          "docstring": "Execute the app.",
+          "line_range": [
+            15,
+            17
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "App",
+          "docstring": "Application class.",
+          "line_range": [
+            12,
+            17
+          ],
+          "methods": [
+            {
+              "name": "run",
+              "docstring": "Execute the app.",
+              "line_range": [
+                15,
+                17
+              ],
+              "parameters": [
+                "self"
+              ]
+            }
+          ],
+          "bases": []
+        }
+      ],
+      "callgraph": {
+        "main": [
+          "utils.helper",
+          "print"
+        ],
+        "run": [
+          "utils.log"
+        ]
+      },
+      "dependencies": [
+        "utils"
+      ],
+      "hash": null,
+      "artifact_id": "9a1ec558-1834-4c4a-8cc8-79b73a8a3ec9"
+    },
+    {
+      "module_id": "src.llmstruct.cli_config",
+      "path": "src/llmstruct/cli_config.py",
+      "category": "core",
+      "module_doc": "CLI configuration management.",
+      "functions": [
+        {
+          "name": "__init__",
+          "docstring": "Initialize configuration manager.",
+          "line_range": [
+            20,
+            24
+          ],
+          "parameters": [
+            "self",
+            "root_dir"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_load_config",
+          "docstring": "Load configuration from llmstruct.toml.",
+          "line_range": [
+            26,
+            34
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_cache_config",
+          "docstring": "Get cache configuration section.",
+          "line_range": [
+            36,
+            38
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_copilot_config",
+          "docstring": "Get Copilot configuration section.",
+          "line_range": [
+            40,
+            42
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_queue_config",
+          "docstring": "Get queue configuration section.",
+          "line_range": [
+            44,
+            46
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_context_config",
+          "docstring": "Get context configuration section.",
+          "line_range": [
+            48,
+            50
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_gitignore_patterns",
+          "docstring": "Load and normalize patterns from .gitignore.",
+          "line_range": [
+            52,
+            66
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_exclude_dirs",
+          "docstring": "Get directories to exclude from scanning.",
+          "line_range": [
+            68,
+            79
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_include_patterns",
+          "docstring": "Get file patterns to include.",
+          "line_range": [
+            81,
+            83
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_exclude_patterns",
+          "docstring": "Get file patterns to exclude.",
+          "line_range": [
+            85,
+            87
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_max_file_size",
+          "docstring": "Get maximum file size for processing (in bytes).",
+          "line_range": [
+            89,
+            91
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_auto_update_config",
+          "docstring": "Get auto-update configuration.",
+          "line_range": [
+            93,
+            95
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "is_auto_update_enabled",
+          "docstring": "Check if auto-update is enabled.",
+          "line_range": [
+            97,
+            99
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_struct_file_path",
+          "docstring": "Get path to struct.json file.",
+          "line_range": [
+            101,
+            103
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_context_file_path",
+          "docstring": "Get path to context file.",
+          "line_range": [
+            105,
+            107
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "save_config",
+          "docstring": "Save current configuration to file.",
+          "line_range": [
+            109,
+            115
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "update_config",
+          "docstring": "Update configuration value.",
+          "line_range": [
+            117,
+            122
+          ],
+          "parameters": [
+            "self",
+            "section",
+            "key",
+            "value"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "reload_config",
+          "docstring": "Reload configuration from file.",
+          "line_range": [
+            124,
+            126
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CLIConfig",
+          "docstring": "Manages CLI configuration from llmstruct.toml and other sources.",
+          "line_range": [
+            17,
+            126
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "docstring": "Initialize configuration manager.",
+              "line_range": [
+                20,
+                24
+              ],
+              "parameters": [
+                "self",
+                "root_dir"
+              ]
+            },
+            {
+              "name": "_load_config",
+              "docstring": "Load configuration from llmstruct.toml.",
+              "line_range": [
+                26,
+                34
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "get_cache_config",
+              "docstring": "Get cache configuration section.",
+              "line_range": [
+                36,
+                38
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "get_copilot_config",
+              "docstring": "Get Copilot configuration section.",
+              "line_range": [
+                40,
+                42
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "get_queue_config",
+              "docstring": "Get queue configuration section.",
+              "line_range": [
+                44,
+                46
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "get_context_config",
+              "docstring": "Get context configuration section.",
+              "line_range": [
+                48,
+                50
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "get_gitignore_patterns",
+              "docstring": "Load and normalize patterns from .gitignore.",
+              "line_range": [
+                52,
+                66
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "get_exclude_dirs",
+              "docstring": "Get directories to exclude from scanning.",
+              "line_range": [
+                68,
+                79
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "get_include_patterns",
+              "docstring": "Get file patterns to include.",
+              "line_range": [
+                81,
+                83
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "get_exclude_patterns",
+              "docstring": "Get file patterns to exclude.",
+              "line_range": [
+                85,
+                87
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "get_max_file_size",
+              "docstring": "Get maximum file size for processing (in bytes).",
+              "line_range": [
+                89,
+                91
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "get_auto_update_config",
+              "docstring": "Get auto-update configuration.",
+              "line_range": [
+                93,
+                95
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "is_auto_update_enabled",
+              "docstring": "Check if auto-update is enabled.",
+              "line_range": [
+                97,
+                99
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "get_struct_file_path",
+              "docstring": "Get path to struct.json file.",
+              "line_range": [
+                101,
+                103
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "get_context_file_path",
+              "docstring": "Get path to context file.",
+              "line_range": [
+                105,
+                107
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "save_config",
+              "docstring": "Save current configuration to file.",
+              "line_range": [
+                109,
+                115
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "update_config",
+              "docstring": "Update configuration value.",
+              "line_range": [
+                117,
+                122
+              ],
+              "parameters": [
+                "self",
+                "section",
+                "key",
+                "value"
+              ]
+            },
+            {
+              "name": "reload_config",
+              "docstring": "Reload configuration from file.",
+              "line_range": [
+                124,
+                126
+              ],
+              "parameters": [
+                "self"
+              ]
+            }
+          ],
+          "bases": []
+        }
+      ],
+      "callgraph": {
+        "__init__": [
+          "Path",
+          "self._load_config"
+        ],
+        "_load_config": [
+          "toml.load",
+          "logging.error"
+        ],
+        "get_cache_config": [],
+        "get_copilot_config": [],
+        "get_queue_config": [],
+        "get_context_config": [],
+        "get_gitignore_patterns": [
+          "gitignore_path.open",
+          "logging.error",
+          "Path",
+          "gitignore_path.exists",
+          "line.startswith",
+          "line.strip"
+        ],
+        "get_exclude_dirs": [
+          "set",
+          "list"
+        ],
+        "get_include_patterns": [],
+        "get_exclude_patterns": [],
+        "get_max_file_size": [],
+        "get_auto_update_config": [],
+        "is_auto_update_enabled": [
+          "self.get_auto_update_config"
+        ],
+        "get_struct_file_path": [],
+        "get_context_file_path": [],
+        "save_config": [
+          "toml.dump",
+          "logging.error"
+        ],
+        "update_config": [
+          "self.save_config"
+        ],
+        "reload_config": [
+          "self._load_config"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "List",
+        "Path",
+        "logging",
+        "pathlib",
+        "toml",
+        "typing"
+      ],
+      "hash": null,
+      "artifact_id": "bb051882-fcfb-45a7-85f7-b4c624271e54"
+    },
+    {
+      "module_id": "src.llmstruct.grok",
+      "path": "src/llmstruct/grok.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "test_grok",
+          "docstring": "",
+          "line_range": [
+            24,
+            30
+          ],
+          "parameters": [
+            "api_key",
+            "prompt",
+            "proxy"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            6,
+            11
+          ],
+          "parameters": [
+            "self",
+            "api_key",
+            "proxy"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "generate",
+          "docstring": "",
+          "line_range": [
+            13,
+            21
+          ],
+          "parameters": [
+            "self",
+            "prompt",
+            "model"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "GrokClient",
+          "docstring": "",
+          "line_range": [
+            5,
+            21
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "docstring": "",
+              "line_range": [
+                6,
+                11
+              ],
+              "parameters": [
+                "self",
+                "api_key",
+                "proxy"
+              ]
+            },
+            {
+              "name": "generate",
+              "docstring": "",
+              "line_range": [
+                13,
+                21
+              ],
+              "parameters": [
+                "self",
+                "prompt",
+                "model"
+              ]
+            }
+          ],
+          "bases": []
+        }
+      ],
+      "callgraph": {
+        "__init__": [
+          "requests.Session"
+        ],
+        "generate": [
+          "prompt.split",
+          "response.raise_for_status",
+          "len",
+          "response.json"
+        ],
+        "test_grok": [
+          "GrokClient",
+          "time.perf_counter",
+          "client.generate"
+        ]
+      },
+      "dependencies": [
+        "requests",
+        "time"
+      ],
+      "hash": null,
+      "artifact_id": "150f5b1f-e6e4-4a1d-85e5-74a2eeab3fce"
+    },
+    {
+      "module_id": "src.llmstruct.cli_commands",
+      "path": "src/llmstruct/cli_commands.py",
+      "category": "core",
+      "module_doc": "CLI command processing and handlers.",
+      "functions": [
+        {
+          "name": "__init__",
+          "docstring": "Initialize command processor.",
+          "line_range": [
+            31,
+            55
+          ],
+          "parameters": [
+            "self",
+            "root_dir",
+            "config",
+            "utils"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "set_cache",
+          "docstring": "Set cache instance.",
+          "line_range": [
+            57,
+            59
+          ],
+          "parameters": [
+            "self",
+            "cache"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "set_copilot",
+          "docstring": "Set Copilot manager instance.",
+          "line_range": [
+            61,
+            63
+          ],
+          "parameters": [
+            "self",
+            "copilot_manager"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "process_command",
+          "docstring": "Process a command starting with /.",
+          "line_range": [
+            65,
+            81
+          ],
+          "parameters": [
+            "self",
+            "command_line"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "process_prompt",
+          "docstring": "Process a regular user prompt (not a command).",
+          "line_range": [
+            83,
+            103
+          ],
+          "parameters": [
+            "self",
+            "prompt"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "cmd_help",
+          "docstring": "Show help information.",
+          "line_range": [
+            105,
+            134
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "cmd_view",
+          "docstring": "View file or directory contents.",
+          "line_range": [
+            136,
+            171
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "cmd_write",
+          "docstring": "Write content to file.",
+          "line_range": [
+            173,
+            203
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "cmd_queue",
+          "docstring": "Handle queue operations.",
+          "line_range": [
+            205,
+            222
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "cmd_cache",
+          "docstring": "Handle cache operations.",
+          "line_range": [
+            224,
+            253
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "cmd_copilot",
+          "docstring": "Handle Copilot operations.",
+          "line_range": [
+            255,
+            286
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "cmd_config",
+          "docstring": "View or modify configuration.",
+          "line_range": [
+            288,
+            318
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "cmd_status",
+          "docstring": "Show system status.",
+          "line_range": [
+            320,
+            338
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "cmd_backup",
+          "docstring": "Create backup of file.",
+          "line_range": [
+            340,
+            352
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "cmd_parse",
+          "docstring": "Parse project structure.",
+          "line_range": [
+            354,
+            379
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_process_queue",
+          "docstring": "Process command queue.",
+          "line_range": [
+            381,
+            404
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_show_queue_status",
+          "docstring": "Show queue status.",
+          "line_range": [
+            406,
+            435
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_clear_queue",
+          "docstring": "Clear command queue.",
+          "line_range": [
+            437,
+            462
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_list_queue",
+          "docstring": "List queue items.",
+          "line_range": [
+            464,
+            487
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_trigger_auto_update",
+          "docstring": "Trigger auto-update of struct.json.",
+          "line_range": [
+            489,
+            494
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "handle_auto_update",
+          "docstring": "Handle auto-update struct.json command.",
+          "line_range": [
+            496,
+            528
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "handle_struct_status",
+          "docstring": "Show struct.json status and last update info.",
+          "line_range": [
+            530,
+            557
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "handle_workflow_trigger",
+          "docstring": "Trigger workflow events that may require struct.json update.",
+          "line_range": [
+            559,
+            586
+          ],
+          "parameters": [
+            "self",
+            "event_type",
+            "context"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CommandProcessor",
+          "docstring": "Processes CLI commands and user prompts.",
+          "line_range": [
+            28,
+            586
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "docstring": "Initialize command processor.",
+              "line_range": [
+                31,
+                55
+              ],
+              "parameters": [
+                "self",
+                "root_dir",
+                "config",
+                "utils"
+              ]
+            },
+            {
+              "name": "set_cache",
+              "docstring": "Set cache instance.",
+              "line_range": [
+                57,
+                59
+              ],
+              "parameters": [
+                "self",
+                "cache"
+              ]
+            },
+            {
+              "name": "set_copilot",
+              "docstring": "Set Copilot manager instance.",
+              "line_range": [
+                61,
+                63
+              ],
+              "parameters": [
+                "self",
+                "copilot_manager"
+              ]
+            },
+            {
+              "name": "process_command",
+              "docstring": "Process a command starting with /.",
+              "line_range": [
+                65,
+                81
+              ],
+              "parameters": [
+                "self",
+                "command_line"
+              ]
+            },
+            {
+              "name": "process_prompt",
+              "docstring": "Process a regular user prompt (not a command).",
+              "line_range": [
+                83,
+                103
+              ],
+              "parameters": [
+                "self",
+                "prompt"
+              ]
+            },
+            {
+              "name": "cmd_help",
+              "docstring": "Show help information.",
+              "line_range": [
+                105,
+                134
+              ],
+              "parameters": [
+                "self",
+                "args"
+              ]
+            },
+            {
+              "name": "cmd_view",
+              "docstring": "View file or directory contents.",
+              "line_range": [
+                136,
+                171
+              ],
+              "parameters": [
+                "self",
+                "args"
+              ]
+            },
+            {
+              "name": "cmd_write",
+              "docstring": "Write content to file.",
+              "line_range": [
+                173,
+                203
+              ],
+              "parameters": [
+                "self",
+                "args"
+              ]
+            },
+            {
+              "name": "cmd_queue",
+              "docstring": "Handle queue operations.",
+              "line_range": [
+                205,
+                222
+              ],
+              "parameters": [
+                "self",
+                "args"
+              ]
+            },
+            {
+              "name": "cmd_cache",
+              "docstring": "Handle cache operations.",
+              "line_range": [
+                224,
+                253
+              ],
+              "parameters": [
+                "self",
+                "args"
+              ]
+            },
+            {
+              "name": "cmd_copilot",
+              "docstring": "Handle Copilot operations.",
+              "line_range": [
+                255,
+                286
+              ],
+              "parameters": [
+                "self",
+                "args"
+              ]
+            },
+            {
+              "name": "cmd_config",
+              "docstring": "View or modify configuration.",
+              "line_range": [
+                288,
+                318
+              ],
+              "parameters": [
+                "self",
+                "args"
+              ]
+            },
+            {
+              "name": "cmd_status",
+              "docstring": "Show system status.",
+              "line_range": [
+                320,
+                338
+              ],
+              "parameters": [
+                "self",
+                "args"
+              ]
+            },
+            {
+              "name": "cmd_backup",
+              "docstring": "Create backup of file.",
+              "line_range": [
+                340,
+                352
+              ],
+              "parameters": [
+                "self",
+                "args"
+              ]
+            },
+            {
+              "name": "cmd_parse",
+              "docstring": "Parse project structure.",
+              "line_range": [
+                354,
+                379
+              ],
+              "parameters": [
+                "self",
+                "args"
+              ]
+            },
+            {
+              "name": "_process_queue",
+              "docstring": "Process command queue.",
+              "line_range": [
+                381,
+                404
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "_show_queue_status",
+              "docstring": "Show queue status.",
+              "line_range": [
+                406,
+                435
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "_clear_queue",
+              "docstring": "Clear command queue.",
+              "line_range": [
+                437,
+                462
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "_list_queue",
+              "docstring": "List queue items.",
+              "line_range": [
+                464,
+                487
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "_trigger_auto_update",
+              "docstring": "Trigger auto-update of struct.json.",
+              "line_range": [
+                489,
+                494
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "handle_auto_update",
+              "docstring": "Handle auto-update struct.json command.",
+              "line_range": [
+                496,
+                528
+              ],
+              "parameters": [
+                "self",
+                "args"
+              ]
+            },
+            {
+              "name": "handle_struct_status",
+              "docstring": "Show struct.json status and last update info.",
+              "line_range": [
+                530,
+                557
+              ],
+              "parameters": [
+                "self",
+                "args"
+              ]
+            },
+            {
+              "name": "handle_workflow_trigger",
+              "docstring": "Trigger workflow events that may require struct.json update.",
+              "line_range": [
+                559,
+                586
+              ],
+              "parameters": [
+                "self",
+                "event_type",
+                "context"
+              ]
+            }
+          ],
+          "bases": []
+        }
+      ],
+      "callgraph": {
+        "__init__": [],
+        "set_cache": [],
+        "set_copilot": [],
+        "process_command": [
+          "command_line.split",
+          "logging.error",
+          "len",
+          "command_line.strip",
+          "print"
+        ],
+        "process_prompt": [
+          "logging.error",
+          "CopilotEvent",
+          "prompt.strip",
+          "print"
+        ],
+        "cmd_help": [
+          "print"
+        ],
+        "cmd_view": [
+          "args.strip",
+          "print"
+        ],
+        "cmd_write": [
+          "content.endswith",
+          "content.strip",
+          "match.groups",
+          "content.startswith",
+          "print",
+          "self._trigger_auto_update",
+          "re.match"
+        ],
+        "cmd_queue": [
+          "self._clear_queue",
+          "args.strip",
+          "print",
+          "self._process_queue",
+          "self._show_queue_status",
+          "self._list_queue"
+        ],
+        "cmd_cache": [
+          "args.strip",
+          "len",
+          "print"
+        ],
+        "cmd_copilot": [
+          "args.strip",
+          "CopilotEvent",
+          "print"
+        ],
+        "cmd_config": [
+          "args.strip",
+          "print",
+          "section.title"
+        ],
+        "cmd_status": [
+          "print"
+        ],
+        "cmd_backup": [
+          "args.strip",
+          "print"
+        ],
+        "cmd_parse": [
+          "logging.error",
+          "generate_json",
+          "print"
+        ],
+        "_process_queue": [
+          "queue_data.get",
+          "item.get",
+          "logging.error",
+          "Path",
+          "print",
+          "json.load",
+          "queue_file.exists",
+          "queue_file.open"
+        ],
+        "_show_queue_status": [
+          "queue_data.get",
+          "item.get",
+          "Path",
+          "sum",
+          "len",
+          "print",
+          "json.load",
+          "queue_file.exists",
+          "queue_file.open"
+        ],
+        "_clear_queue": [
+          "Path",
+          "json.dump",
+          "print",
+          "json.load",
+          "queue_file.exists",
+          "queue_file.open"
+        ],
+        "_list_queue": [
+          "queue_data.get",
+          "item.get",
+          "Path",
+          "print",
+          "json.load",
+          "enumerate",
+          "queue_file.exists",
+          "queue_file.open"
+        ],
+        "_trigger_auto_update": [
+          "logging.error",
+          "self.handle_auto_update"
+        ],
+        "handle_auto_update": [
+          "subprocess.run",
+          "script_path.exists",
+          "Path",
+          "str",
+          "print"
+        ],
+        "handle_struct_status": [
+          "struct_path.exists",
+          "Path",
+          "print",
+          "datetime.fromtimestamp",
+          "os.stat"
+        ],
+        "handle_workflow_trigger": [
+          "trigger_copilot_event",
+          "str",
+          "copilot.close",
+          "len",
+          "self.handle_auto_update",
+          "initialize_copilot"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "CLIConfig",
+        "CLIUtils",
+        "CopilotContextManager",
+        "CopilotEvent",
+        "Dict",
+        "JSONCache",
+        "List",
+        "Optional",
+        "Path",
+        "cli_config",
+        "cli_utils",
+        "copilot",
+        "datetime",
+        "generate_json",
+        "initialize_copilot",
+        "json",
+        "llmstruct.cache",
+        "llmstruct.copilot",
+        "llmstruct.generators.json_generator",
+        "logging",
+        "os",
+        "pathlib",
+        "re",
+        "subprocess",
+        "sys",
+        "trigger_copilot_event",
+        "typing"
+      ],
+      "hash": null,
+      "artifact_id": "5d5b4714-cbcf-4cbf-bba9-9889f82e6a26"
+    },
+    {
+      "module_id": "src.llmstruct.__init__",
+      "path": "src/llmstruct/__init__.py",
+      "category": "cli",
+      "module_doc": "",
+      "functions": [],
+      "classes": [],
+      "callgraph": {},
+      "dependencies": [
+        "LLMClient",
+        "llm_client"
+      ],
+      "hash": null,
+      "artifact_id": "9d9e40a3-47b8-42fa-a26c-fd8452571924"
+    },
+    {
+      "module_id": "src.llmstruct.__main__",
+      "path": "src/llmstruct/__main__.py",
+      "category": "cli",
+      "module_doc": "",
+      "functions": [],
+      "classes": [],
+      "callgraph": {},
+      "dependencies": [
+        "llmstruct.cli",
+        "main"
+      ],
+      "hash": null,
+      "artifact_id": "1011eb87-5c0e-4d65-b41b-54d15ceb8fb5"
+    },
+    {
+      "module_id": "src.llmstruct.cli_utils",
+      "path": "src/llmstruct/cli_utils.py",
+      "category": "core",
+      "module_doc": "CLI utility functions.",
+      "functions": [
+        {
+          "name": "__init__",
+          "docstring": "Initialize utils with root directory.",
+          "line_range": [
+            24,
+            26
+          ],
+          "parameters": [
+            "self",
+            "root_dir"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "read_file_content",
+          "docstring": "Read file content with size limit.",
+          "line_range": [
+            28,
+            50
+          ],
+          "parameters": [
+            "self",
+            "file_path",
+            "max_size"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "write_file_content",
+          "docstring": "Write content to file.",
+          "line_range": [
+            52,
+            70
+          ],
+          "parameters": [
+            "self",
+            "file_path",
+            "content"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_directory_structure",
+          "docstring": "Get directory structure using folder generator.",
+          "line_range": [
+            72,
+            115
+          ],
+          "parameters": [
+            "self",
+            "path",
+            "gitignore_patterns",
+            "include_patterns",
+            "exclude_patterns",
+            "exclude_dirs"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "validate_json",
+          "docstring": "Validate JSON content.",
+          "line_range": [
+            117,
+            123
+          ],
+          "parameters": [
+            "self",
+            "content"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "format_json",
+          "docstring": "Format data as JSON string.",
+          "line_range": [
+            125,
+            131
+          ],
+          "parameters": [
+            "self",
+            "data",
+            "indent"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "generate_unique_id",
+          "docstring": "Generate unique ID for commands, queues, etc.",
+          "line_range": [
+            133,
+            137
+          ],
+          "parameters": [
+            "self",
+            "prefix"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "safe_path_join",
+          "docstring": "Safely join path parts, preventing directory traversal.",
+          "line_range": [
+            139,
+            149
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "file_exists",
+          "docstring": "Check if file exists.",
+          "line_range": [
+            151,
+            157
+          ],
+          "parameters": [
+            "self",
+            "file_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "dir_exists",
+          "docstring": "Check if directory exists.",
+          "line_range": [
+            159,
+            165
+          ],
+          "parameters": [
+            "self",
+            "dir_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_file_size",
+          "docstring": "Get file size in bytes.",
+          "line_range": [
+            167,
+            173
+          ],
+          "parameters": [
+            "self",
+            "file_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "backup_file",
+          "docstring": "Create backup of file with timestamp.",
+          "line_range": [
+            175,
+            191
+          ],
+          "parameters": [
+            "self",
+            "file_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "cleanup_old_backups",
+          "docstring": "Clean up old backup files, keeping only the most recent ones.",
+          "line_range": [
+            193,
+            222
+          ],
+          "parameters": [
+            "self",
+            "file_path",
+            "keep_count"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CLIUtils",
+          "docstring": "Utility functions for CLI operations.",
+          "line_range": [
+            21,
+            222
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "docstring": "Initialize utils with root directory.",
+              "line_range": [
+                24,
+                26
+              ],
+              "parameters": [
+                "self",
+                "root_dir"
+              ]
+            },
+            {
+              "name": "read_file_content",
+              "docstring": "Read file content with size limit.",
+              "line_range": [
+                28,
+                50
+              ],
+              "parameters": [
+                "self",
+                "file_path",
+                "max_size"
+              ]
+            },
+            {
+              "name": "write_file_content",
+              "docstring": "Write content to file.",
+              "line_range": [
+                52,
+                70
+              ],
+              "parameters": [
+                "self",
+                "file_path",
+                "content"
+              ]
+            },
+            {
+              "name": "get_directory_structure",
+              "docstring": "Get directory structure using folder generator.",
+              "line_range": [
+                72,
+                115
+              ],
+              "parameters": [
+                "self",
+                "path",
+                "gitignore_patterns",
+                "include_patterns",
+                "exclude_patterns",
+                "exclude_dirs"
+              ]
+            },
+            {
+              "name": "validate_json",
+              "docstring": "Validate JSON content.",
+              "line_range": [
+                117,
+                123
+              ],
+              "parameters": [
+                "self",
+                "content"
+              ]
+            },
+            {
+              "name": "format_json",
+              "docstring": "Format data as JSON string.",
+              "line_range": [
+                125,
+                131
+              ],
+              "parameters": [
+                "self",
+                "data",
+                "indent"
+              ]
+            },
+            {
+              "name": "generate_unique_id",
+              "docstring": "Generate unique ID for commands, queues, etc.",
+              "line_range": [
+                133,
+                137
+              ],
+              "parameters": [
+                "self",
+                "prefix"
+              ]
+            },
+            {
+              "name": "safe_path_join",
+              "docstring": "Safely join path parts, preventing directory traversal.",
+              "line_range": [
+                139,
+                149
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "file_exists",
+              "docstring": "Check if file exists.",
+              "line_range": [
+                151,
+                157
+              ],
+              "parameters": [
+                "self",
+                "file_path"
+              ]
+            },
+            {
+              "name": "dir_exists",
+              "docstring": "Check if directory exists.",
+              "line_range": [
+                159,
+                165
+              ],
+              "parameters": [
+                "self",
+                "dir_path"
+              ]
+            },
+            {
+              "name": "get_file_size",
+              "docstring": "Get file size in bytes.",
+              "line_range": [
+                167,
+                173
+              ],
+              "parameters": [
+                "self",
+                "file_path"
+              ]
+            },
+            {
+              "name": "backup_file",
+              "docstring": "Create backup of file with timestamp.",
+              "line_range": [
+                175,
+                191
+              ],
+              "parameters": [
+                "self",
+                "file_path"
+              ]
+            },
+            {
+              "name": "cleanup_old_backups",
+              "docstring": "Clean up old backup files, keeping only the most recent ones.",
+              "line_range": [
+                193,
+                222
+              ],
+              "parameters": [
+                "self",
+                "file_path",
+                "keep_count"
+              ]
+            }
+          ],
+          "bases": []
+        }
+      ],
+      "callgraph": {
+        "__init__": [],
+        "read_file_content": [
+          "f.read",
+          "open",
+          "logging.error",
+          "logging.warning",
+          "os.stat"
+        ],
+        "write_file_content": [
+          "open",
+          "logging.error",
+          "Path",
+          "f.write",
+          "logging.info"
+        ],
+        "get_directory_structure": [
+          "os.listdir",
+          "get_folder_structure",
+          "logging.error",
+          "sorted"
+        ],
+        "validate_json": [
+          "str",
+          "json.loads"
+        ],
+        "format_json": [
+          "json.dumps",
+          "str",
+          "logging.error"
+        ],
+        "generate_unique_id": [
+          "str",
+          "uuid.uuid4",
+          "time.time",
+          "int"
+        ],
+        "safe_path_join": [
+          "resolved_path.startswith",
+          "ValueError"
+        ],
+        "file_exists": [
+          "self.safe_path_join"
+        ],
+        "dir_exists": [
+          "self.safe_path_join"
+        ],
+        "get_file_size": [
+          "self.safe_path_join"
+        ],
+        "backup_file": [
+          "open",
+          "logging.error",
+          "int",
+          "self.safe_path_join",
+          "src.read",
+          "dst.write",
+          "time.time"
+        ],
+        "cleanup_old_backups": [
+          "filename.split",
+          "backups.append",
+          "logging.error",
+          "backups.sort",
+          "int",
+          "self.safe_path_join",
+          "logging.warning",
+          "os.listdir",
+          "os.remove",
+          "filename.startswith",
+          "logging.info"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "List",
+        "Optional",
+        "Path",
+        "get_folder_structure",
+        "json",
+        "llmstruct.generators.json_generator",
+        "logging",
+        "os",
+        "pathlib",
+        "time",
+        "typing",
+        "uuid"
+      ],
+      "hash": null,
+      "artifact_id": "ca1722f2-102b-4358-a7be-72db81e58022"
+    },
+    {
+      "module_id": "src.llmstruct.copilot",
+      "path": "src/llmstruct/copilot.py",
+      "category": "core",
+      "module_doc": "LLMStruct Copilot Integration Module\nProvides context-aware development assistance with hybrid copilot capabilities.",
+      "functions": [
+        {
+          "name": "initialize_copilot",
+          "docstring": "Initialize copilot context manager for the project.\n\nArgs:\n    project_root: Project root directory\n\nReturns:\n    Configured CopilotContextManager instance",
+          "line_range": [
+            532,
+            542
+          ],
+          "parameters": [
+            "project_root"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "trigger_copilot_event",
+          "docstring": "Trigger a copilot event and get relevant context.\n\nArgs:\n    manager: CopilotContextManager instance\n    event_type: Type of event\n    file_path: Optional file path\n    **kwargs: Additional event metadata\n\nReturns:\n    Dict with event context",
+          "line_range": [
+            545,
+            562
+          ],
+          "parameters": [
+            "manager",
+            "event_type",
+            "file_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "smart_suggest",
+          "docstring": "Get smart suggestions based on query and context.\n\nArgs:\n    manager: CopilotContextManager instance\n    query: Query string\n    context: Context type (code, workflow, task, etc.)\n\nReturns:\n    List of suggestions",
+          "line_range": [
+            565,
+            585
+          ],
+          "parameters": [
+            "manager",
+            "query",
+            "context"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "__init__",
+          "docstring": "Initialize the Copilot Context Manager.\n\nArgs:\n    project_root: Project root directory\n    config_path: Path to copilot_init.json",
+          "line_range": [
+            67,
+            86
+          ],
+          "parameters": [
+            "self",
+            "project_root",
+            "config_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_load_config",
+          "docstring": "Load copilot configuration from JSON file.",
+          "line_range": [
+            88,
+            100
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_initialize_layers",
+          "docstring": "Initialize context layers from configuration.",
+          "line_range": [
+            102,
+            112
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "load_context_layer",
+          "docstring": "Load a specific context layer.\n\nArgs:\n    layer_name: Name of the layer to load\n    force: Force reload if already loaded\n\nReturns:\n    bool: True if successful",
+          "line_range": [
+            114,
+            156
+          ],
+          "parameters": [
+            "self",
+            "layer_name",
+            "force"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "unload_context_layer",
+          "docstring": "Unload a context layer to free memory.\n\nArgs:\n    layer_name: Name of the layer to unload\n\nReturns:\n    bool: True if successful",
+          "line_range": [
+            158,
+            176
+          ],
+          "parameters": [
+            "self",
+            "layer_name"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_context_for_event",
+          "docstring": "Get relevant context for a copilot event.\n\nArgs:\n    event: The copilot event\n\nReturns:\n    Dict containing relevant context",
+          "line_range": [
+            178,
+            238
+          ],
+          "parameters": [
+            "self",
+            "event"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "suggest_completion",
+          "docstring": "Generate context-aware code completions.\n\nArgs:\n    current_code: Current code content\n    file_path: Path to the current file\n    cursor_position: Cursor position in the code\n\nReturns:\n    List of completion suggestions",
+          "line_range": [
+            240,
+            285
+          ],
+          "parameters": [
+            "self",
+            "current_code",
+            "file_path",
+            "cursor_position"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "validate_change",
+          "docstring": "Validate a code change against safety rules.\n\nArgs:\n    file_path: Path to the changed file\n    change_type: Type of change (create, edit, delete)\n\nReturns:\n    Dict with validation results",
+          "line_range": [
+            287,
+            333
+          ],
+          "parameters": [
+            "self",
+            "file_path",
+            "change_type"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_matches_scope",
+          "docstring": "Check if file matches scope pattern.",
+          "line_range": [
+            335,
+            340
+          ],
+          "parameters": [
+            "self",
+            "file_path",
+            "scope"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_matches_trigger",
+          "docstring": "Check if change type matches trigger.",
+          "line_range": [
+            342,
+            351
+          ],
+          "parameters": [
+            "self",
+            "change_type",
+            "trigger"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_validate_json_schema",
+          "docstring": "Validate JSON file against schema.",
+          "line_range": [
+            353,
+            368
+          ],
+          "parameters": [
+            "self",
+            "file_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_check_circular_dependencies",
+          "docstring": "Check for circular dependencies.",
+          "line_range": [
+            370,
+            395
+          ],
+          "parameters": [
+            "self",
+            "file_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_validate_task_references",
+          "docstring": "Validate task references in tasks.json.",
+          "line_range": [
+            397,
+            424
+          ],
+          "parameters": [
+            "self",
+            "file_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_workflow_suggestions",
+          "docstring": "Get workflow suggestions based on current command context.\n\nArgs:\n    command: Current command or operation\n\nReturns:\n    List of workflow suggestions",
+          "line_range": [
+            426,
+            456
+          ],
+          "parameters": [
+            "self",
+            "command"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "refresh_all_contexts",
+          "docstring": "Refresh all loaded context layers.\n\nReturns:\n    bool: True if successful",
+          "line_range": [
+            458,
+            472
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_context_status",
+          "docstring": "Get status of all context layers.\n\nReturns:\n    Dict with context status information",
+          "line_range": [
+            474,
+            495
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "export_context",
+          "docstring": "Export context in specified format.\n\nArgs:\n    layers: List of layers to export (None for all loaded)\n    format: Export format (json, yaml, etc.)\n\nReturns:\n    Exported context as string",
+          "line_range": [
+            497,
+            519
+          ],
+          "parameters": [
+            "self",
+            "layers",
+            "format"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "close",
+          "docstring": "Clean up resources.",
+          "line_range": [
+            521,
+            526
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ContextLayer",
+          "docstring": "Context layer priorities for copilot integration.",
+          "line_range": [
+            21,
+            27
+          ],
+          "methods": [],
+          "bases": [
+            "Enum"
+          ]
+        },
+        {
+          "name": "AttachMode",
+          "docstring": "Context attachment modes.",
+          "line_range": [
+            30,
+            36
+          ],
+          "methods": [],
+          "bases": [
+            "Enum"
+          ]
+        },
+        {
+          "name": "ContextLayerConfig",
+          "docstring": "Configuration for a context layer.",
+          "line_range": [
+            40,
+            48
+          ],
+          "methods": [],
+          "bases": []
+        },
+        {
+          "name": "CopilotEvent",
+          "docstring": "Represents a copilot event for context triggering.",
+          "line_range": [
+            52,
+            58
+          ],
+          "methods": [],
+          "bases": []
+        },
+        {
+          "name": "CopilotContextManager",
+          "docstring": "Manages context layers and integration with GitHub Copilot.\nProvides intelligent context loading and workflow assistance.",
+          "line_range": [
+            61,
+            526
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "docstring": "Initialize the Copilot Context Manager.\n\nArgs:\n    project_root: Project root directory\n    config_path: Path to copilot_init.json",
+              "line_range": [
+                67,
+                86
+              ],
+              "parameters": [
+                "self",
+                "project_root",
+                "config_path"
+              ]
+            },
+            {
+              "name": "_load_config",
+              "docstring": "Load copilot configuration from JSON file.",
+              "line_range": [
+                88,
+                100
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "_initialize_layers",
+              "docstring": "Initialize context layers from configuration.",
+              "line_range": [
+                102,
+                112
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "load_context_layer",
+              "docstring": "Load a specific context layer.\n\nArgs:\n    layer_name: Name of the layer to load\n    force: Force reload if already loaded\n\nReturns:\n    bool: True if successful",
+              "line_range": [
+                114,
+                156
+              ],
+              "parameters": [
+                "self",
+                "layer_name",
+                "force"
+              ]
+            },
+            {
+              "name": "unload_context_layer",
+              "docstring": "Unload a context layer to free memory.\n\nArgs:\n    layer_name: Name of the layer to unload\n\nReturns:\n    bool: True if successful",
+              "line_range": [
+                158,
+                176
+              ],
+              "parameters": [
+                "self",
+                "layer_name"
+              ]
+            },
+            {
+              "name": "get_context_for_event",
+              "docstring": "Get relevant context for a copilot event.\n\nArgs:\n    event: The copilot event\n\nReturns:\n    Dict containing relevant context",
+              "line_range": [
+                178,
+                238
+              ],
+              "parameters": [
+                "self",
+                "event"
+              ]
+            },
+            {
+              "name": "suggest_completion",
+              "docstring": "Generate context-aware code completions.\n\nArgs:\n    current_code: Current code content\n    file_path: Path to the current file\n    cursor_position: Cursor position in the code\n\nReturns:\n    List of completion suggestions",
+              "line_range": [
+                240,
+                285
+              ],
+              "parameters": [
+                "self",
+                "current_code",
+                "file_path",
+                "cursor_position"
+              ]
+            },
+            {
+              "name": "validate_change",
+              "docstring": "Validate a code change against safety rules.\n\nArgs:\n    file_path: Path to the changed file\n    change_type: Type of change (create, edit, delete)\n\nReturns:\n    Dict with validation results",
+              "line_range": [
+                287,
+                333
+              ],
+              "parameters": [
+                "self",
+                "file_path",
+                "change_type"
+              ]
+            },
+            {
+              "name": "_matches_scope",
+              "docstring": "Check if file matches scope pattern.",
+              "line_range": [
+                335,
+                340
+              ],
+              "parameters": [
+                "self",
+                "file_path",
+                "scope"
+              ]
+            },
+            {
+              "name": "_matches_trigger",
+              "docstring": "Check if change type matches trigger.",
+              "line_range": [
+                342,
+                351
+              ],
+              "parameters": [
+                "self",
+                "change_type",
+                "trigger"
+              ]
+            },
+            {
+              "name": "_validate_json_schema",
+              "docstring": "Validate JSON file against schema.",
+              "line_range": [
+                353,
+                368
+              ],
+              "parameters": [
+                "self",
+                "file_path"
+              ]
+            },
+            {
+              "name": "_check_circular_dependencies",
+              "docstring": "Check for circular dependencies.",
+              "line_range": [
+                370,
+                395
+              ],
+              "parameters": [
+                "self",
+                "file_path"
+              ]
+            },
+            {
+              "name": "_validate_task_references",
+              "docstring": "Validate task references in tasks.json.",
+              "line_range": [
+                397,
+                424
+              ],
+              "parameters": [
+                "self",
+                "file_path"
+              ]
+            },
+            {
+              "name": "get_workflow_suggestions",
+              "docstring": "Get workflow suggestions based on current command context.\n\nArgs:\n    command: Current command or operation\n\nReturns:\n    List of workflow suggestions",
+              "line_range": [
+                426,
+                456
+              ],
+              "parameters": [
+                "self",
+                "command"
+              ]
+            },
+            {
+              "name": "refresh_all_contexts",
+              "docstring": "Refresh all loaded context layers.\n\nReturns:\n    bool: True if successful",
+              "line_range": [
+                458,
+                472
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "get_context_status",
+              "docstring": "Get status of all context layers.\n\nReturns:\n    Dict with context status information",
+              "line_range": [
+                474,
+                495
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "export_context",
+              "docstring": "Export context in specified format.\n\nArgs:\n    layers: List of layers to export (None for all loaded)\n    format: Export format (json, yaml, etc.)\n\nReturns:\n    Exported context as string",
+              "line_range": [
+                497,
+                519
+              ],
+              "parameters": [
+                "self",
+                "layers",
+                "format"
+              ]
+            },
+            {
+              "name": "close",
+              "docstring": "Clean up resources.",
+              "line_range": [
+                521,
+                526
+              ],
+              "parameters": [
+                "self"
+              ]
+            }
+          ],
+          "bases": []
+        }
+      ],
+      "callgraph": {
+        "__init__": [
+          "Path",
+          "self._initialize_layers",
+          "os.getcwd",
+          "JSONCache",
+          "self._load_config"
+        ],
+        "_load_config": [
+          "open",
+          "Path",
+          "logger.error",
+          "logger.info",
+          "json.load",
+          "logger.warning"
+        ],
+        "_initialize_layers": [
+          "layer_config.get",
+          "ContextLayerConfig",
+          "layers_config.items"
+        ],
+        "load_context_layer": [
+          "logger.debug",
+          "open",
+          "logger.error",
+          "logger.info",
+          "source_path.exists",
+          "json.load",
+          "logger.warning",
+          "time.time"
+        ],
+        "unload_context_layer": [
+          "logger.info"
+        ],
+        "get_context_for_event": [
+          "code_triggers.get",
+          "json.load",
+          "open",
+          "logger.error",
+          "triggers.get",
+          "source_path.exists",
+          "self.load_context_layer",
+          "workflow_triggers.get",
+          "file_triggers.get"
+        ],
+        "suggest_completion": [
+          "current_module.get",
+          "str",
+          "Path",
+          "func.get",
+          "struct_context.get",
+          "suggestions.append",
+          "self.load_context_layer",
+          "module.get"
+        ],
+        "validate_change": [
+          "self._matches_trigger",
+          "safety_features.get",
+          "result.get",
+          "rule.get",
+          "len",
+          "self._matches_scope",
+          "self._validate_task_references",
+          "self._check_circular_dependencies",
+          "self._validate_json_schema"
+        ],
+        "_matches_scope": [
+          "str",
+          "Path",
+          "fnmatch"
+        ],
+        "_matches_trigger": [
+          "trigger_map.get"
+        ],
+        "_validate_json_schema": [
+          "open",
+          "file_path.endswith",
+          "json.load"
+        ],
+        "_check_circular_dependencies": [
+          "str",
+          "Path",
+          "len",
+          "struct_data.get",
+          "self.load_context_layer",
+          "module.get"
+        ],
+        "_validate_task_references": [
+          "open",
+          "task_ids.add",
+          "tasks_data.get",
+          "set",
+          "file_path.endswith",
+          "json.load",
+          "task.get"
+        ],
+        "get_workflow_suggestions": [
+          "suggestions.extend",
+          "workflows.items",
+          "command.lower",
+          "suggestions.append",
+          "self.load_context_layer",
+          "workflow.get"
+        ],
+        "refresh_all_contexts": [
+          "logger.info",
+          "self.load_context_layer",
+          "list"
+        ],
+        "get_context_status": [
+          "list"
+        ],
+        "export_context": [
+          "json.dumps",
+          "str",
+          "list"
+        ],
+        "close": [
+          "logger.info"
+        ],
+        "initialize_copilot": [
+          "CopilotContextManager"
+        ],
+        "trigger_copilot_event": [
+          "CopilotEvent",
+          "manager.get_context_for_event"
+        ],
+        "smart_suggest": [
+          "manager.get_workflow_suggestions"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "Enum",
+        "JSONCache",
+        "List",
+        "Optional",
+        "Path",
+        "Union",
+        "dataclass",
+        "dataclasses",
+        "enum",
+        "fnmatch",
+        "json",
+        "llmstruct.cache",
+        "logging",
+        "os",
+        "pathlib",
+        "time",
+        "typing"
+      ],
+      "hash": null,
+      "artifact_id": "8d4c1a1d-9920-4a38-b9cf-eb9e414bbb31"
+    },
+    {
+      "module_id": "src.llmstruct.llm_client",
+      "path": "src/llmstruct/llm_client.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "__init__",
+          "docstring": "Initialize LLMClient with optional Ollama host.",
+          "line_range": [
+            28,
+            36
+          ],
+          "parameters": [
+            "self",
+            "ollama_host"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "query",
+          "docstring": "Query LLMs with prompt, context, and optional model.",
+          "line_range": [
+            38,
+            86
+          ],
+          "parameters": [
+            "self",
+            "prompt",
+            "context_path",
+            "mode",
+            "model",
+            "artifact_ids"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_query_grok",
+          "docstring": "Query Grok API.",
+          "line_range": [
+            88,
+            115
+          ],
+          "parameters": [
+            "self",
+            "prompt"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_query_anthropic",
+          "docstring": "Query Anthropic API.",
+          "line_range": [
+            117,
+            141
+          ],
+          "parameters": [
+            "self",
+            "prompt"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_query_ollama",
+          "docstring": "Query Ollama API with specified model.",
+          "line_range": [
+            143,
+            156
+          ],
+          "parameters": [
+            "self",
+            "prompt",
+            "model"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "_query_hybrid",
+          "docstring": "Query multiple LLMs and combine results.",
+          "line_range": [
+            158,
+            172
+          ],
+          "parameters": [
+            "self",
+            "prompt",
+            "model"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "LLMClient",
+          "docstring": "",
+          "line_range": [
+            27,
+            172
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "docstring": "Initialize LLMClient with optional Ollama host.",
+              "line_range": [
+                28,
+                36
+              ],
+              "parameters": [
+                "self",
+                "ollama_host"
+              ]
+            },
+            {
+              "name": "query",
+              "docstring": "Query LLMs with prompt, context, and optional model.",
+              "line_range": [
+                38,
+                86
+              ],
+              "parameters": [
+                "self",
+                "prompt",
+                "context_path",
+                "mode",
+                "model",
+                "artifact_ids"
+              ]
+            },
+            {
+              "name": "_query_grok",
+              "docstring": "Query Grok API.",
+              "line_range": [
+                88,
+                115
+              ],
+              "parameters": [
+                "self",
+                "prompt"
+              ]
+            },
+            {
+              "name": "_query_anthropic",
+              "docstring": "Query Anthropic API.",
+              "line_range": [
+                117,
+                141
+              ],
+              "parameters": [
+                "self",
+                "prompt"
+              ]
+            },
+            {
+              "name": "_query_ollama",
+              "docstring": "Query Ollama API with specified model.",
+              "line_range": [
+                143,
+                156
+              ],
+              "parameters": [
+                "self",
+                "prompt",
+                "model"
+              ]
+            },
+            {
+              "name": "_query_hybrid",
+              "docstring": "Query multiple LLMs and combine results.",
+              "line_range": [
+                158,
+                172
+              ],
+              "parameters": [
+                "self",
+                "prompt",
+                "model"
+              ]
+            }
+          ],
+          "bases": []
+        }
+      ],
+      "callgraph": {
+        "__init__": [
+          "logging.info",
+          "os.getenv",
+          "int"
+        ],
+        "query": [
+          "logging.error",
+          "self._query_ollama",
+          "self._query_anthropic",
+          "Path",
+          "self._query_hybrid",
+          "range",
+          "self._query_grok",
+          "asyncio.sleep",
+          "logging.warning",
+          "json.load",
+          "json.dumps",
+          "logging.info"
+        ],
+        "_query_grok": [
+          "logging.error",
+          "result.get",
+          "session.post",
+          "aiohttp.ClientSession",
+          "logging.info",
+          "response.json"
+        ],
+        "_query_anthropic": [
+          "logging.error",
+          "result.get",
+          "session.post",
+          "aiohttp.ClientSession",
+          "logging.info",
+          "response.json"
+        ],
+        "_query_ollama": [
+          "logging.error",
+          "logging.debug",
+          "result.get",
+          "session.post",
+          "aiohttp.ClientSession",
+          "logging.info",
+          "response.json"
+        ],
+        "_query_hybrid": [
+          "self._query_ollama",
+          "self._query_anthropic",
+          "self._query_grok",
+          "len",
+          "logging.info",
+          "asyncio.gather",
+          "isinstance"
+        ]
+      },
+      "dependencies": [
+        "List",
+        "Optional",
+        "Path",
+        "aiohttp",
+        "asyncio",
+        "dotenv",
+        "json",
+        "load_dotenv",
+        "logging",
+        "os",
+        "pathlib",
+        "typing"
+      ],
+      "hash": null,
+      "artifact_id": "7816dd62-8077-402c-8edf-7e269cdcafec"
+    },
+    {
+      "module_id": "src.llmstruct.cache",
+      "path": "src/llmstruct/cache.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "__init__",
+          "docstring": "Initialize SQLite cache for JSON files.",
+          "line_range": [
+            21,
+            25
+          ],
+          "parameters": [
+            "self",
+            "db_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "create_tables",
+          "docstring": "Create tables for metadata and file paths.",
+          "line_range": [
+            27,
+            49
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "cache_json",
+          "docstring": "Cache JSON metadata and store full file path.",
+          "line_range": [
+            51,
+            90
+          ],
+          "parameters": [
+            "self",
+            "json_path",
+            "artifact_id",
+            "summary",
+            "tags"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_metadata",
+          "docstring": "Retrieve metadata by artifact_id.",
+          "line_range": [
+            92,
+            108
+          ],
+          "parameters": [
+            "self",
+            "artifact_id"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "get_full_json",
+          "docstring": "Load full JSON by artifact_id.",
+          "line_range": [
+            110,
+            126
+          ],
+          "parameters": [
+            "self",
+            "artifact_id"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "close",
+          "docstring": "Close database connection.",
+          "line_range": [
+            128,
+            130
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "JSONCache",
+          "docstring": "",
+          "line_range": [
+            20,
+            130
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "docstring": "Initialize SQLite cache for JSON files.",
+              "line_range": [
+                21,
+                25
+              ],
+              "parameters": [
+                "self",
+                "db_path"
+              ]
+            },
+            {
+              "name": "create_tables",
+              "docstring": "Create tables for metadata and file paths.",
+              "line_range": [
+                27,
+                49
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "cache_json",
+              "docstring": "Cache JSON metadata and store full file path.",
+              "line_range": [
+                51,
+                90
+              ],
+              "parameters": [
+                "self",
+                "json_path",
+                "artifact_id",
+                "summary",
+                "tags"
+              ]
+            },
+            {
+              "name": "get_metadata",
+              "docstring": "Retrieve metadata by artifact_id.",
+              "line_range": [
+                92,
+                108
+              ],
+              "parameters": [
+                "self",
+                "artifact_id"
+              ]
+            },
+            {
+              "name": "get_full_json",
+              "docstring": "Load full JSON by artifact_id.",
+              "line_range": [
+                110,
+                126
+              ],
+              "parameters": [
+                "self",
+                "artifact_id"
+              ]
+            },
+            {
+              "name": "close",
+              "docstring": "Close database connection.",
+              "line_range": [
+                128,
+                130
+              ],
+              "parameters": [
+                "self"
+              ]
+            }
+          ],
+          "bases": []
+        }
+      ],
+      "callgraph": {
+        "__init__": [
+          "sqlite3.connect",
+          "self.create_tables"
+        ],
+        "create_tables": [],
+        "cache_json": [
+          "f.read",
+          "open",
+          "logging.error",
+          "json_file.exists",
+          "Path",
+          "content.encode",
+          "str",
+          "hashlib.sha256",
+          "json.dumps",
+          "logging.info"
+        ],
+        "get_metadata": [
+          "json.loads",
+          "cursor.fetchone"
+        ],
+        "get_full_json": [
+          "logging.error",
+          "open",
+          "cursor.fetchone",
+          "json.load"
+        ],
+        "close": []
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "List",
+        "Optional",
+        "Path",
+        "hashlib",
+        "json",
+        "logging",
+        "pathlib",
+        "sqlite3",
+        "typing"
+      ],
+      "hash": null,
+      "artifact_id": "6a72c6e8-2969-43f4-a0a6-34969a04f20e"
+    },
+    {
+      "module_id": "src.llmstruct.self_run",
+      "path": "src/llmstruct/self_run.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "filter_struct",
+          "docstring": "Filter struct.json or init.json based on prompt keywords. Supports dict or list as root.",
+          "line_range": [
+            20,
+            71
+          ],
+          "parameters": [
+            "struct",
+            "prompt"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "attach_to_llm_request",
+          "docstring": "Attach filtered JSON to LLM prompt, using cache if available.",
+          "line_range": [
+            74,
+            114
+          ],
+          "parameters": [
+            "context_path",
+            "prompt",
+            "cache"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "filter_struct": [
+          "any",
+          "item.get",
+          "filter_json",
+          "struct.get",
+          "str",
+          "prompt.lower",
+          "module.get",
+          "isinstance"
+        ],
+        "attach_to_llm_request": [
+          "filter_json",
+          "logging.error",
+          "Path",
+          "select_json",
+          "cache.get_metadata",
+          "prompt.lower",
+          "cache.get_full_json",
+          "cache.cache_json",
+          "filter_struct",
+          "context_file.exists",
+          "json.dumps",
+          "logging.info"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "JSONCache",
+        "Optional",
+        "Path",
+        "cache",
+        "filter_json",
+        "json",
+        "json_selector",
+        "logging",
+        "pathlib",
+        "select_json",
+        "typing"
+      ],
+      "hash": null,
+      "artifact_id": "cb68087c-4272-4e7d-9d3c-9bcdf3eca37d"
+    },
+    {
+      "module_id": "src.llmstruct.json_selector",
+      "path": "src/llmstruct/json_selector.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "filter_json",
+          "docstring": "Filter JSON data by key-value pair and select fields.",
+          "line_range": [
+            20,
+            46
+          ],
+          "parameters": [
+            "data",
+            "filter_key",
+            "filter_value",
+            "fields"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "select_json",
+          "docstring": "Load and filter JSON file, optionally parsing partially.",
+          "line_range": [
+            49,
+            116
+          ],
+          "parameters": [
+            "json_path",
+            "filter_key",
+            "filter_value",
+            "fields",
+            "partial"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "filter_json": [
+          "filtered.append",
+          "item.get",
+          "data.get",
+          "isinstance"
+        ],
+        "select_json": [
+          "f.seek",
+          "prefix.startswith",
+          "open",
+          "filter_json",
+          "logging.error",
+          "json_file.exists",
+          "Path",
+          "filtered.append",
+          "ijson.parse",
+          "path.append",
+          "json.load",
+          "current_item.get"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "List",
+        "Optional",
+        "Path",
+        "argparse",
+        "ijson",
+        "json",
+        "logging",
+        "pathlib",
+        "typing"
+      ],
+      "hash": null,
+      "artifact_id": "4e18adfa-b98e-4cc1-abea-9c416e324d27"
+    },
+    {
+      "module_id": "src.llmstruct.cli",
+      "path": "src/llmstruct/cli.py",
+      "category": "core",
+      "module_doc": "LLMStruct CLI - Main entry point for the command-line interface.",
+      "functions": [
+        {
+          "name": "load_gitignore",
+          "docstring": "Load and normalize patterns from .gitignore.",
+          "line_range": [
+            43,
+            57
+          ],
+          "parameters": [
+            "root_dir"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "load_config",
+          "docstring": "Load settings from llmstruct.toml or return empty dict.",
+          "line_range": [
+            60,
+            69
+          ],
+          "parameters": [
+            "root_dir"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "read_file_content",
+          "docstring": "Read content of a file if it exists and is a text file.",
+          "line_range": [
+            72,
+            81
+          ],
+          "parameters": [
+            "file_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "write_to_file",
+          "docstring": "Write content to a file in base_dir (default ./tmp) and return the path.",
+          "line_range": [
+            84,
+            104
+          ],
+          "parameters": [
+            "content",
+            "filename",
+            "base_dir"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "parse_files_from_response",
+          "docstring": "Extract filenames and content from LLM response (e.g., ```filename\ncontent```).",
+          "line_range": [
+            107,
+            114
+          ],
+          "parameters": [
+            "response"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "interactive",
+          "docstring": "Run interactive CLI with modular structure if available, fallback to legacy.",
+          "line_range": [
+            117,
+            127
+          ],
+          "parameters": [
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "interactive_modular",
+          "docstring": "Run interactive CLI with modular structure.",
+          "line_range": [
+            130,
+            136
+          ],
+          "parameters": [
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "interactive_legacy",
+          "docstring": "Run interactive CLI with LLM, supporting file/folder viewing and writing.",
+          "line_range": [
+            139,
+            495
+          ],
+          "parameters": [
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "process_cli_queue_enhanced",
+          "docstring": "Enhanced queue processing with workflow support, performance tracking, and safety validation.",
+          "line_range": [
+            498,
+            697
+          ],
+          "parameters": [
+            "root_dir",
+            "context_path",
+            "args",
+            "cache",
+            "client"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "parse",
+          "docstring": "Parse codebase and generate struct.json.",
+          "line_range": [
+            700,
+            751
+          ],
+          "parameters": [
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "query",
+          "docstring": "Query LLMs with prompt and context.",
+          "line_range": [
+            754,
+            775
+          ],
+          "parameters": [
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "context",
+          "docstring": "Generate context.json from input JSON.",
+          "line_range": [
+            778,
+            780
+          ],
+          "parameters": [
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "dogfood",
+          "docstring": "Run dogfooding analysis.",
+          "line_range": [
+            783,
+            785
+          ],
+          "parameters": [
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "review",
+          "docstring": "Review codebase with LLM.",
+          "line_range": [
+            788,
+            790
+          ],
+          "parameters": [
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "copilot",
+          "docstring": "Copilot integration and context management.",
+          "line_range": [
+            793,
+            911
+          ],
+          "parameters": [
+            "args"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "main",
+          "docstring": "Command-line interface for LLMstruct.",
+          "line_range": [
+            914,
+            1099
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "load_gitignore": [
+          "gitignore_path.open",
+          "logging.error",
+          "Path",
+          "gitignore_path.exists",
+          "line.startswith",
+          "line.strip"
+        ],
+        "load_config": [
+          "toml.load",
+          "logging.error",
+          "Path",
+          "config_path.exists",
+          "config_path.open"
+        ],
+        "read_file_content": [
+          "path.open",
+          "f.read",
+          "path.is_file",
+          "logging.error",
+          "Path"
+        ],
+        "write_to_file": [
+          "logging.error",
+          "Path",
+          "f.write",
+          "str",
+          "file_path.exists",
+          "file_path.open",
+          "logging.warning",
+          "base_path.mkdir",
+          "logging.info",
+          "re.sub"
+        ],
+        "parse_files_from_response": [
+          "re.findall",
+          "files.append",
+          "content.strip",
+          "filename.strip"
+        ],
+        "interactive": [
+          "logging.warning",
+          "interactive_modular",
+          "interactive_legacy"
+        ],
+        "interactive_modular": [
+          "create_cli_core",
+          "cli_core.run_interactive_mode"
+        ],
+        "interactive_legacy": [
+          "cache.clear",
+          "LLMClient",
+          "write_to_file",
+          "open",
+          "sorted",
+          "Path",
+          "user_input.lower",
+          "get_folder_structure",
+          "events_data.append",
+          "m.group",
+          "len",
+          "args_str.strip",
+          "print",
+          "json.load",
+          "struct_data.get",
+          "cache.close",
+          "JSONCache",
+          "workflow.get",
+          "isinstance",
+          "process_cli_queue_enhanced",
+          "subprocess.run",
+          "user_input.startswith",
+          "input",
+          "int",
+          "os.listdir",
+          "cache.list_keys",
+          "os.stat",
+          "json.dumps",
+          "client.query",
+          "logging.error",
+          "parse",
+          "time.ctime",
+          "cache.get_stats",
+          "logging.warning",
+          "load_gitignore",
+          "read_file_content",
+          "json.dump",
+          "os.makedirs",
+          "attach_to_llm_request",
+          "time.time",
+          "re.match"
+        ],
+        "process_cli_queue_enhanced": [
+          "open",
+          "item.get",
+          "logging.error",
+          "client.query",
+          "get_folder_structure",
+          "load_gitignore",
+          "len",
+          "options.get",
+          "read_file_content",
+          "print",
+          "json.load",
+          "write_to_file",
+          "enumerate",
+          "logging.info",
+          "workflow.get",
+          "time.time",
+          "attach_to_llm_request",
+          "isinstance"
+        ],
+        "parse": [
+          "logging.error",
+          "Path",
+          "load_config",
+          "logging.warning",
+          "load_gitignore",
+          "json.dump",
+          "cache.cache_json",
+          "config.get",
+          "logging.info",
+          "cache.close",
+          "JSONCache",
+          "generate_json"
+        ],
+        "query": [
+          "logging.error",
+          "Path",
+          "LLMClient",
+          "json.dump",
+          "logging.info",
+          "cache.close",
+          "JSONCache",
+          "client.query"
+        ],
+        "context": [
+          "logging.warning"
+        ],
+        "dogfood": [
+          "logging.warning"
+        ],
+        "review": [
+          "logging.warning"
+        ],
+        "copilot": [
+          "manager.get_context_status",
+          "getattr",
+          "smart_suggest",
+          "initialize_copilot",
+          "template_path.exists",
+          "manager.close",
+          "open",
+          "Path",
+          "shutil.copy",
+          "manager.unload_context_layer",
+          "print",
+          "manager.load_context_layer",
+          "enumerate",
+          "logging.info",
+          "layers.split",
+          "hasattr",
+          "manager.refresh_all_contexts",
+          "logging.error",
+          "f.write",
+          "config_path.exists",
+          "manager.validate_change",
+          "manager.export_context"
+        ],
+        "main": [
+          "review",
+          "argparse.ArgumentParser",
+          "context_parser.add_argument",
+          "dogfood",
+          "copilot_parser.add_argument",
+          "subparsers.add_parser",
+          "context",
+          "dogfood_parser.add_argument",
+          "interactive_legacy",
+          "query",
+          "parse_parser.add_argument",
+          "copilot",
+          "asyncio.run",
+          "review_parser.add_argument",
+          "query_parser.add_argument",
+          "parser.add_subparsers",
+          "parser.parse_args",
+          "parse",
+          "interactive_parser.add_argument"
+        ]
+      },
+      "dependencies": [
+        "JSONCache",
+        "LLMClient",
+        "List",
+        "Optional",
+        "Path",
+        "argparse",
+        "asyncio",
+        "attach_to_llm_request",
+        "cli_core",
+        "copilot",
+        "create_cli_core",
+        "generate_json",
+        "get_folder_structure",
+        "initialize_copilot",
+        "json",
+        "llmstruct",
+        "llmstruct.cache",
+        "llmstruct.generators.json_generator",
+        "llmstruct.self_run",
+        "logging",
+        "os",
+        "pathlib",
+        "re",
+        "shutil",
+        "smart_suggest",
+        "subprocess",
+        "sys",
+        "time",
+        "toml",
+        "typing"
+      ],
+      "hash": null,
+      "artifact_id": "cd2620a6-06ce-4d96-a1c8-eb55e9935d5d"
+    },
+    {
+      "module_id": "src.llmstruct.cli_core",
+      "path": "src/llmstruct/cli_core.py",
+      "category": "core",
+      "module_doc": "Core CLI functionality and main loop.",
+      "functions": [
+        {
+          "name": "create_cli_core",
+          "docstring": "Factory function to create CLI core instance.",
+          "line_range": [
+            110,
+            112
+          ],
+          "parameters": [
+            "root_dir"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "__init__",
+          "docstring": "Initialize CLI core with root directory.",
+          "line_range": [
+            28,
+            35
+          ],
+          "parameters": [
+            "self",
+            "root_dir"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "setup_cache",
+          "docstring": "Initialize cache if enabled in config.",
+          "line_range": [
+            37,
+            53
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "setup_copilot",
+          "docstring": "Initialize Copilot integration if enabled.",
+          "line_range": [
+            55,
+            63
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "run_interactive_mode",
+          "docstring": "Run the interactive CLI mode.",
+          "line_range": [
+            65,
+            97
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "cleanup",
+          "docstring": "Clean up resources.",
+          "line_range": [
+            99,
+            107
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CLICore",
+          "docstring": "Core CLI class handling main loop and coordination.",
+          "line_range": [
+            25,
+            107
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "docstring": "Initialize CLI core with root directory.",
+              "line_range": [
+                28,
+                35
+              ],
+              "parameters": [
+                "self",
+                "root_dir"
+              ]
+            },
+            {
+              "name": "setup_cache",
+              "docstring": "Initialize cache if enabled in config.",
+              "line_range": [
+                37,
+                53
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "setup_copilot",
+              "docstring": "Initialize Copilot integration if enabled.",
+              "line_range": [
+                55,
+                63
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "run_interactive_mode",
+              "docstring": "Run the interactive CLI mode.",
+              "line_range": [
+                65,
+                97
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "cleanup",
+              "docstring": "Clean up resources.",
+              "line_range": [
+                99,
+                107
+              ],
+              "parameters": [
+                "self"
+              ]
+            }
+          ],
+          "bases": []
+        }
+      ],
+      "callgraph": {
+        "__init__": [
+          "CommandProcessor",
+          "CLIConfig",
+          "CLIUtils"
+        ],
+        "setup_cache": [
+          "cache_config.get",
+          "Path",
+          "str",
+          "cache_path.mkdir",
+          "logging.warning",
+          "logging.info",
+          "JSONCache"
+        ],
+        "setup_copilot": [
+          "logging.info",
+          "logging.warning",
+          "initialize_copilot",
+          "copilot_config.get"
+        ],
+        "run_interactive_mode": [
+          "self.setup_copilot",
+          "self.setup_cache",
+          "logging.error",
+          "user_input.startswith",
+          "self.cleanup",
+          "user_input.lower",
+          "input",
+          "print"
+        ],
+        "cleanup": [
+          "logging.info"
+        ],
+        "create_cli_core": [
+          "CLICore"
+        ]
+      },
+      "dependencies": [
+        "CLIConfig",
+        "CLIUtils",
+        "CommandProcessor",
+        "CopilotContextManager",
+        "JSONCache",
+        "Optional",
+        "Path",
+        "cli_commands",
+        "cli_config",
+        "cli_utils",
+        "copilot",
+        "initialize_copilot",
+        "llmstruct.cache",
+        "logging",
+        "pathlib",
+        "typing"
+      ],
+      "hash": null,
+      "artifact_id": "d281fca8-47dd-4908-8c08-8d8d0fa216fe"
+    },
+    {
+      "module_id": "src.llmstruct.parsers.__init__",
+      "path": "src/llmstruct/parsers/__init__.py",
+      "category": "cli",
+      "module_doc": "Language-specific parsers for extracting code structure data for LLMStruct JSON.",
+      "functions": [],
+      "classes": [],
+      "callgraph": {},
+      "dependencies": [
+        "JavaScriptParser",
+        "javascript_parser"
+      ],
+      "hash": null,
+      "artifact_id": "985ac1db-5d65-4f5e-bf38-7a2c3883c6ea"
+    },
+    {
+      "module_id": "src.llmstruct.parsers.javascript_parser",
+      "path": "src/llmstruct/parsers/javascript_parser.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            9,
+            13
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "file_hash",
+          "docstring": "",
+          "line_range": [
+            15,
+            20
+          ],
+          "parameters": [
+            "self",
+            "filepath"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "compute_file_metadata",
+          "docstring": "",
+          "line_range": [
+            22,
+            41
+          ],
+          "parameters": [
+            "self",
+            "filepath",
+            "include_hashes"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "parse_module",
+          "docstring": "",
+          "line_range": [
+            43,
+            124
+          ],
+          "parameters": [
+            "self",
+            "filepath",
+            "root_dir",
+            "include_ranges",
+            "include_hashes"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "extract_signature",
+          "docstring": "",
+          "line_range": [
+            78,
+            80
+          ],
+          "parameters": [
+            "node"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "JavaScriptParser",
+          "docstring": "",
+          "line_range": [
+            8,
+            124
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "docstring": "",
+              "line_range": [
+                9,
+                13
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "file_hash",
+              "docstring": "",
+              "line_range": [
+                15,
+                20
+              ],
+              "parameters": [
+                "self",
+                "filepath"
+              ]
+            },
+            {
+              "name": "compute_file_metadata",
+              "docstring": "",
+              "line_range": [
+                22,
+                41
+              ],
+              "parameters": [
+                "self",
+                "filepath",
+                "include_hashes"
+              ]
+            },
+            {
+              "name": "parse_module",
+              "docstring": "",
+              "line_range": [
+                43,
+                124
+              ],
+              "parameters": [
+                "self",
+                "filepath",
+                "root_dir",
+                "include_ranges",
+                "include_hashes"
+              ]
+            }
+          ],
+          "bases": []
+        }
+      ],
+      "callgraph": {
+        "__init__": [
+          "set"
+        ],
+        "file_hash": [
+          "hashlib.sha256",
+          "f.read",
+          "open"
+        ],
+        "compute_file_metadata": [
+          "open",
+          "sum",
+          "self.file_hash",
+          "os.stat"
+        ],
+        "parse_module": [
+          "f.read",
+          "open",
+          "esprima.parseModule",
+          "str",
+          "self.compute_file_metadata"
+        ],
+        "extract_signature": [
+          "hasattr"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "datetime",
+        "esprima",
+        "hashlib",
+        "os",
+        "typing"
+      ],
+      "hash": null,
+      "artifact_id": "10cd5694-c46a-4471-977b-412ec61d3f42"
+    },
+    {
+      "module_id": "src.llmstruct.parsers.python_parser",
+      "path": "src/llmstruct/parsers/python_parser.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "infer_category",
+          "docstring": "Infer module category based on its path.",
+          "line_range": [
+            13,
+            20
+          ],
+          "parameters": [
+            "file_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "compute_file_hash",
+          "docstring": "Compute SHA-256 hash of file content.",
+          "line_range": [
+            72,
+            79
+          ],
+          "parameters": [
+            "file_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "analyze_module",
+          "docstring": "Analyze Python module and return structured data.",
+          "line_range": [
+            82,
+            154
+          ],
+          "parameters": [
+            "file_path",
+            "root_dir",
+            "include_ranges",
+            "include_hashes"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            26,
+            29
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "visit_Import",
+          "docstring": "Capture import statements.",
+          "line_range": [
+            31,
+            35
+          ],
+          "parameters": [
+            "self",
+            "node"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "visit_ImportFrom",
+          "docstring": "Capture from-import statements.",
+          "line_range": [
+            37,
+            43
+          ],
+          "parameters": [
+            "self",
+            "node"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "visit_FunctionDef",
+          "docstring": "Track function definitions and their calls.",
+          "line_range": [
+            45,
+            50
+          ],
+          "parameters": [
+            "self",
+            "node"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "visit_AsyncFunctionDef",
+          "docstring": "Track async function definitions and their calls.",
+          "line_range": [
+            52,
+            57
+          ],
+          "parameters": [
+            "self",
+            "node"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "visit_Call",
+          "docstring": "Capture function calls.",
+          "line_range": [
+            59,
+            69
+          ],
+          "parameters": [
+            "self",
+            "node"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CallVisitor",
+          "docstring": "AST visitor to collect function calls and dependencies.",
+          "line_range": [
+            23,
+            69
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "docstring": "",
+              "line_range": [
+                26,
+                29
+              ],
+              "parameters": [
+                "self"
+              ]
+            },
+            {
+              "name": "visit_Import",
+              "docstring": "Capture import statements.",
+              "line_range": [
+                31,
+                35
+              ],
+              "parameters": [
+                "self",
+                "node"
+              ]
+            },
+            {
+              "name": "visit_ImportFrom",
+              "docstring": "Capture from-import statements.",
+              "line_range": [
+                37,
+                43
+              ],
+              "parameters": [
+                "self",
+                "node"
+              ]
+            },
+            {
+              "name": "visit_FunctionDef",
+              "docstring": "Track function definitions and their calls.",
+              "line_range": [
+                45,
+                50
+              ],
+              "parameters": [
+                "self",
+                "node"
+              ]
+            },
+            {
+              "name": "visit_AsyncFunctionDef",
+              "docstring": "Track async function definitions and their calls.",
+              "line_range": [
+                52,
+                57
+              ],
+              "parameters": [
+                "self",
+                "node"
+              ]
+            },
+            {
+              "name": "visit_Call",
+              "docstring": "Capture function calls.",
+              "line_range": [
+                59,
+                69
+              ],
+              "parameters": [
+                "self",
+                "node"
+              ]
+            }
+          ],
+          "bases": [
+            "ast.NodeVisitor"
+          ]
+        }
+      ],
+      "callgraph": {
+        "infer_category": [
+          "Path"
+        ],
+        "__init__": [
+          "set"
+        ],
+        "visit_Import": [
+          "self.generic_visit"
+        ],
+        "visit_ImportFrom": [
+          "self.generic_visit"
+        ],
+        "visit_FunctionDef": [
+          "self.generic_visit",
+          "set"
+        ],
+        "visit_AsyncFunctionDef": [
+          "self.generic_visit",
+          "set"
+        ],
+        "visit_Call": [
+          "self.generic_visit",
+          "isinstance"
+        ],
+        "compute_file_hash": [
+          "hashlib.sha256",
+          "f.read",
+          "open",
+          "logging.error"
+        ],
+        "analyze_module": [
+          "visitor.visit",
+          "f.read",
+          "ast.walk",
+          "open",
+          "functions.append",
+          "logging.error",
+          "infer_category",
+          "ast.get_docstring",
+          "str",
+          "Path",
+          "classes.append",
+          "list",
+          "ast.parse",
+          "sorted",
+          "compute_file_hash",
+          "ast.unparse",
+          "CallVisitor",
+          "isinstance"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "Optional",
+        "Path",
+        "Set",
+        "ast",
+        "hashlib",
+        "logging",
+        "os",
+        "pathlib",
+        "typing"
+      ],
+      "hash": null,
+      "artifact_id": "1f266f2c-6740-46dd-8c19-7ae991348d6b"
+    },
+    {
+      "module_id": "src.llmstruct.templates.__init__",
+      "path": "src/llmstruct/templates/__init__.py",
+      "category": "cli",
+      "module_doc": "Templates for LLM prompts used in LLMStruct integration.",
+      "functions": [],
+      "classes": [],
+      "callgraph": {},
+      "dependencies": [],
+      "hash": null,
+      "artifact_id": "8ce0a8f8-00ec-4e75-92d9-0971d5c959a1"
+    },
+    {
+      "module_id": "src.llmstruct.validators.__init__",
+      "path": "src/llmstruct/validators/__init__.py",
+      "category": "cli",
+      "module_doc": "Validation modules for ensuring LLMStruct JSON complies with the schema.",
+      "functions": [],
+      "classes": [],
+      "callgraph": {},
+      "dependencies": [
+        "json_validator",
+        "validate_struct_json"
+      ],
+      "hash": null,
+      "artifact_id": "ef648d19-f5a9-4642-b486-949186c9a75c"
+    },
+    {
+      "module_id": "src.llmstruct.validators.json_validator",
+      "path": "src/llmstruct/validators/json_validator.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "validate_struct_json",
+          "docstring": "Validate a single JSON file against a schema.",
+          "line_range": [
+            12,
+            40
+          ],
+          "parameters": [
+            "json_path",
+            "schema_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "validate_directory",
+          "docstring": "Validate all JSON files in a directory against a schema.",
+          "line_range": [
+            43,
+            61
+          ],
+          "parameters": [
+            "directory",
+            "schema_path",
+            "include_patterns",
+            "exclude_patterns"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "validate_struct_json": [
+          "open",
+          "validate",
+          "logging.error",
+          "json_file.exists",
+          "Path",
+          "str",
+          "schema_file.exists",
+          "json.load",
+          "logging.info"
+        ],
+        "validate_directory": [
+          "any",
+          "validate_struct_json",
+          "Path",
+          "str",
+          "json_file.match"
+        ]
+      },
+      "dependencies": [
+        "List",
+        "Optional",
+        "Path",
+        "ValidationError",
+        "json",
+        "jsonschema",
+        "logging",
+        "pathlib",
+        "sys",
+        "typing",
+        "validate"
+      ],
+      "hash": null,
+      "artifact_id": "b1957c31-5432-4c5c-8155-f44a4b2e6a1e"
+    },
+    {
+      "module_id": "src.llmstruct.generators.json_generator",
+      "path": "src/llmstruct/generators/json_generator.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "get_folder_structure",
+          "docstring": "Capture directory and file structure with artifact_id, respecting .gitignore and patterns.",
+          "line_range": [
+            15,
+            88
+          ],
+          "parameters": [
+            "root_dir",
+            "gitignore_patterns",
+            "include_patterns",
+            "exclude_patterns",
+            "exclude_dirs"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "build_toc_and_modules",
+          "docstring": "Build TOC and modules with artifact_id and robust filtering.",
+          "line_range": [
+            91,
+            148
+          ],
+          "parameters": [
+            "root_dir",
+            "include_patterns",
+            "exclude_patterns",
+            "gitignore_patterns",
+            "include_ranges",
+            "include_hashes",
+            "exclude_dirs"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "generate_json",
+          "docstring": "Generate JSON structure for project with artifact_id, summary, and tags.",
+          "line_range": [
+            151,
+            218
+          ],
+          "parameters": [
+            "root_dir",
+            "include_patterns",
+            "exclude_patterns",
+            "gitignore_patterns",
+            "include_ranges",
+            "include_hashes",
+            "goals",
+            "exclude_dirs"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "get_folder_structure": [
+          "any",
+          "p.endswith",
+          "sorted",
+          "Path",
+          "str",
+          "set",
+          "structure.append",
+          "p.rstrip",
+          "file_path.match",
+          "os.walk",
+          "file_path.relative_to",
+          "uuid.uuid4"
+        ],
+        "build_toc_and_modules": [
+          "any",
+          "p.endswith",
+          "Path",
+          "analyze_module",
+          "f.match",
+          "set",
+          "str",
+          "modules.append",
+          "len",
+          "p.rstrip",
+          "toc.append",
+          "uuid.uuid4"
+        ],
+        "generate_json": [
+          "list",
+          "Path",
+          "str",
+          "set",
+          "sum",
+          "get_folder_structure",
+          "len",
+          "uuid.uuid4",
+          "build_toc_and_modules"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "List",
+        "Optional",
+        "Path",
+        "analyze_module",
+        "datetime",
+        "logging",
+        "os",
+        "parsers.python_parser",
+        "pathlib",
+        "typing",
+        "uuid"
+      ],
+      "hash": null,
+      "artifact_id": "b712921a-2839-43c6-91bb-82f53856dbc7"
+    },
+    {
+      "module_id": "src.llmstruct.generators.__init__",
+      "path": "src/llmstruct/generators/__init__.py",
+      "category": "cli",
+      "module_doc": "Generator modules for creating LLMStruct JSON outputs from parsed code data.",
+      "functions": [],
+      "classes": [],
+      "callgraph": {},
+      "dependencies": [
+        "generate_json",
+        "json_generator"
+      ],
+      "hash": null,
+      "artifact_id": "bf0dbec3-3456-4548-92a8-24e5123eef65"
+    },
+    {
+      "module_id": "temp_workfiles.test_cli_integration",
+      "path": "temp_workfiles/test_cli_integration.py",
+      "category": "test",
+      "module_doc": "Test script for CLI integration with new commands",
+      "functions": [
+        {
+          "name": "test_modular_cli_commands",
+          "docstring": "Test new CLI commands integration",
+          "line_range": [
+            13,
+            164
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "test_modular_cli_commands": [
+          "json.load",
+          "open",
+          "subprocess.run",
+          "int",
+          "time.ctime",
+          "events_data.append",
+          "json.dump",
+          "os.makedirs",
+          "print",
+          "os.stat",
+          "create_cli_core",
+          "time.time"
+        ]
+      },
+      "dependencies": [
+        "CLIConfig",
+        "CLICore",
+        "CLIUtils",
+        "CommandProcessor",
+        "CopilotContextManager",
+        "Path",
+        "create_cli_core",
+        "json",
+        "llmstruct.cli_commands",
+        "llmstruct.cli_config",
+        "llmstruct.cli_core",
+        "llmstruct.cli_utils",
+        "llmstruct.copilot",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "hash": null,
+      "artifact_id": "d3f66f85-e03d-450d-84f9-29053a4305dd"
+    },
+    {
+      "module_id": "temp_workfiles.test_cli",
+      "path": "temp_workfiles/test_cli.py",
+      "category": "test",
+      "module_doc": "Test script for the enhanced CLI functionality.",
+      "functions": [
+        {
+          "name": "test_cli_commands",
+          "docstring": "Test the CLI with various commands.",
+          "line_range": [
+            10,
+            46
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "test_cli_commands": [
+          "subprocess.Popen",
+          "process.kill",
+          "print",
+          "process.communicate"
+        ]
+      },
+      "dependencies": [
+        "asyncio",
+        "os",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "hash": null,
+      "artifact_id": "9b1a367e-6ba4-4516-a4e8-4d5475d038af"
+    },
+    {
+      "module_id": "temp_workfiles.final_system_check",
+      "path": "temp_workfiles/final_system_check.py",
+      "category": "core",
+      "module_doc": "Final System Status Check - LLMStruct Modular CLI Integration\nComprehensive validation of all completed components",
+      "functions": [
+        {
+          "name": "check_system_status",
+          "docstring": "Comprehensive system status check",
+          "line_range": [
+            12,
+            155
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "check_system_status": [
+          "open",
+          "data.get",
+          "i.get",
+          "len",
+          "print",
+          "json.load",
+          "t.get"
+        ]
+      },
+      "dependencies": [
+        "Path",
+        "json",
+        "os",
+        "pathlib",
+        "sys"
+      ],
+      "hash": null,
+      "artifact_id": "8144b39a-cd2d-44b4-a3ec-750167270ecc"
+    },
+    {
+      "module_id": "temp_workfiles.final_system_validation",
+      "path": "temp_workfiles/final_system_validation.py",
+      "category": "core",
+      "module_doc": "Final system validation script for LLMStruct Modular CLI Integration",
+      "functions": [
+        {
+          "name": "main",
+          "docstring": "Run comprehensive system validation",
+          "line_range": [
+            13,
+            238
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "main": [
+          "open",
+          "subprocess.run",
+          "next",
+          "__import__",
+          "len",
+          "getattr",
+          "print",
+          "json.load",
+          "status.upper",
+          "create_cli_core",
+          "task.get"
+        ]
+      },
+      "dependencies": [
+        "Path",
+        "create_cli_core",
+        "json",
+        "llmstruct.cli_core",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "hash": null,
+      "artifact_id": "9b12d964-6157-4308-8b44-a2107bf4339c"
+    },
+    {
+      "module_id": "temp_workfiles.test_modular_cli",
+      "path": "temp_workfiles/test_modular_cli.py",
+      "category": "test",
+      "module_doc": "Test script for modular CLI structure",
+      "functions": [
+        {
+          "name": "test_modular_cli",
+          "docstring": "Test basic modular CLI functionality.",
+          "line_range": [
+            14,
+            63
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "test_copilot_integration",
+          "docstring": "Test Copilot integration.",
+          "line_range": [
+            65,
+            100
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "test_modular_cli": [
+          "CommandProcessor",
+          "config.get_cache_config",
+          "utils.write_file_content",
+          "CLIUtils",
+          "len",
+          "tempfile.TemporaryDirectory",
+          "CLIConfig",
+          "print",
+          "create_cli_core",
+          "traceback.print_exc",
+          "utils.read_file_content"
+        ],
+        "test_copilot_integration": [
+          "manager.close",
+          "manager.get_context_status",
+          "CopilotEvent",
+          "tempfile.TemporaryDirectory",
+          "len",
+          "print",
+          "initialize_copilot",
+          "traceback.print_exc"
+        ]
+      },
+      "dependencies": [
+        "CLIConfig",
+        "CLICore",
+        "CLIUtils",
+        "CommandProcessor",
+        "CopilotContextManager",
+        "CopilotEvent",
+        "Path",
+        "create_cli_core",
+        "initialize_copilot",
+        "llmstruct.cli_commands",
+        "llmstruct.cli_config",
+        "llmstruct.cli_core",
+        "llmstruct.cli_utils",
+        "llmstruct.copilot",
+        "os",
+        "pathlib",
+        "sys",
+        "tempfile",
+        "traceback"
+      ],
+      "hash": null,
+      "artifact_id": "058a7034-e133-43fb-bdd1-02a8769892d5"
+    },
+    {
+      "module_id": "temp_workfiles.test_cli_demo",
+      "path": "temp_workfiles/test_cli_demo.py",
+      "category": "test",
+      "module_doc": "Quick CLI test to demonstrate new commands",
+      "functions": [
+        {
+          "name": "test_interactive_cli",
+          "docstring": "Test interactive CLI with new commands",
+          "line_range": [
+            10,
+            69
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "test_interactive_cli": [
+          "subprocess.run",
+          "print"
+        ]
+      },
+      "dependencies": [
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "hash": null,
+      "artifact_id": "fdb9e408-964f-4621-ab0c-f4f8293619b9"
+    },
+    {
+      "module_id": "bak.20250522_102827.scripts.collector",
+      "path": "bak/20250522_102827/scripts/collector.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "apply_filters",
+          "docstring": "",
+          "line_range": [
+            10,
+            26
+          ],
+          "parameters": [
+            "files",
+            "filters"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "collect_files",
+          "docstring": "",
+          "line_range": [
+            28,
+            34
+          ],
+          "parameters": [
+            "root_dir",
+            "filters"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "generate_struct",
+          "docstring": "",
+          "line_range": [
+            36,
+            79
+          ],
+          "parameters": [
+            "root_dir",
+            "output"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "main",
+          "docstring": "",
+          "line_range": [
+            81,
+            82
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "apply_filters": [
+          "pattern.startswith",
+          "filtered.append",
+          "fnmatch.fnmatch"
+        ],
+        "collect_files": [
+          "path.is_file",
+          "root_dir.rglob",
+          "str",
+          "path.relative_to",
+          "files.append",
+          "apply_filters"
+        ],
+        "generate_struct": [
+          "output_path.exists",
+          "existing.get",
+          "collect_files",
+          "Path",
+          "str",
+          "output_path.open",
+          "logger.info",
+          "len",
+          "json.dump",
+          "json.load",
+          "uuid.uuid4"
+        ],
+        "main": [
+          "generate_struct"
+        ]
+      },
+      "dependencies": [
+        "Path",
+        "fnmatch",
+        "json",
+        "logging",
+        "pathlib",
+        "uuid"
+      ],
+      "hash": null,
+      "artifact_id": "0de19f52-8a04-4e37-aaab-7f9303c936c6"
+    },
+    {
+      "module_id": "bak.20250522_102827.scripts.validate_refs",
+      "path": "bak/20250522_102827/scripts/validate_refs.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "validate_references",
+          "docstring": "",
+          "line_range": [
+            8,
+            39
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "main",
+          "docstring": "",
+          "line_range": [
+            41,
+            42
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "validate_references": [
+          "Path",
+          "logger.warning",
+          "broken_links.append",
+          "logger.info",
+          "logger.error",
+          "idea.get",
+          "json.dump",
+          "target_file.exists",
+          "json.load",
+          "enumerate",
+          "source_file.exists"
+        ],
+        "main": [
+          "validate_references"
+        ]
+      },
+      "dependencies": [
+        "Path",
+        "json",
+        "logging",
+        "pathlib"
+      ],
+      "hash": null,
+      "artifact_id": "002a23bf-62ac-43e7-84ce-6018d17cb8f5"
+    },
+    {
+      "module_id": "bak.20250522_102827.scripts.deploy_embedded_files",
+      "path": "bak/20250522_102827/scripts/deploy_embedded_files.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "validate_json",
+          "docstring": "",
+          "line_range": [
+            922,
+            928
+          ],
+          "parameters": [
+            "data",
+            "schema"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "backup_files",
+          "docstring": "",
+          "line_range": [
+            930,
+            936
+          ],
+          "parameters": [
+            "target_dir",
+            "backup_root"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "deploy_embedded_files",
+          "docstring": "",
+          "line_range": [
+            938,
+            964
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "main",
+          "docstring": "",
+          "line_range": [
+            966,
+            967
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "validate_json": [
+          "logger.warning",
+          "validate"
+        ],
+        "backup_files": [
+          "shutil.copytree",
+          "target_dir.exists",
+          "datetime.now",
+          "logger.info"
+        ],
+        "deploy_embedded_files": [
+          "target_path.exists",
+          "EMBEDDED_FILES.get",
+          "backup_files",
+          "Path",
+          "logger.error",
+          "validate_json",
+          "f.write",
+          "logger.info",
+          "json.dump",
+          "EMBEDDED_FILES.items",
+          "target_path.open"
+        ],
+        "main": [
+          "deploy_embedded_files"
+        ]
+      },
+      "dependencies": [
+        "Path",
+        "ValidationError",
+        "datetime",
+        "json",
+        "jsonschema",
+        "logging",
+        "os",
+        "pathlib",
+        "shutil",
+        "validate"
+      ],
+      "hash": null,
+      "artifact_id": "32c9b7b8-dbd8-4d73-87dd-3d096daeddad"
+    },
+    {
+      "module_id": "bak.20250522_131121.scripts.collector",
+      "path": "bak/20250522_131121/scripts/collector.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "apply_filters",
+          "docstring": "",
+          "line_range": [
+            10,
+            26
+          ],
+          "parameters": [
+            "files",
+            "filters"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "collect_files",
+          "docstring": "",
+          "line_range": [
+            28,
+            34
+          ],
+          "parameters": [
+            "root_dir",
+            "filters"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "generate_struct",
+          "docstring": "",
+          "line_range": [
+            36,
+            79
+          ],
+          "parameters": [
+            "root_dir",
+            "output"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "main",
+          "docstring": "",
+          "line_range": [
+            81,
+            82
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "apply_filters": [
+          "pattern.startswith",
+          "filtered.append",
+          "fnmatch.fnmatch"
+        ],
+        "collect_files": [
+          "path.is_file",
+          "root_dir.rglob",
+          "str",
+          "path.relative_to",
+          "files.append",
+          "apply_filters"
+        ],
+        "generate_struct": [
+          "output_path.exists",
+          "existing.get",
+          "collect_files",
+          "Path",
+          "str",
+          "output_path.open",
+          "logger.info",
+          "len",
+          "json.dump",
+          "json.load",
+          "uuid.uuid4"
+        ],
+        "main": [
+          "generate_struct"
+        ]
+      },
+      "dependencies": [
+        "Path",
+        "fnmatch",
+        "json",
+        "logging",
+        "pathlib",
+        "uuid"
+      ],
+      "hash": null,
+      "artifact_id": "4929a210-a2f8-4a51-904b-df67336a8434"
+    },
+    {
+      "module_id": "bak.20250522_131121.scripts.validate_refs",
+      "path": "bak/20250522_131121/scripts/validate_refs.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "validate_references",
+          "docstring": "",
+          "line_range": [
+            8,
+            39
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "main",
+          "docstring": "",
+          "line_range": [
+            41,
+            42
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "validate_references": [
+          "Path",
+          "logger.warning",
+          "broken_links.append",
+          "logger.info",
+          "logger.error",
+          "idea.get",
+          "json.dump",
+          "target_file.exists",
+          "json.load",
+          "enumerate",
+          "source_file.exists"
+        ],
+        "main": [
+          "validate_references"
+        ]
+      },
+      "dependencies": [
+        "Path",
+        "json",
+        "logging",
+        "pathlib"
+      ],
+      "hash": null,
+      "artifact_id": "5a392092-f12e-447a-abd0-feed8ac39952"
+    },
+    {
+      "module_id": "bak.20250522_131121.scripts.deploy_embedded_files",
+      "path": "bak/20250522_131121/scripts/deploy_embedded_files.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "validate_json",
+          "docstring": "",
+          "line_range": [
+            929,
+            939
+          ],
+          "parameters": [
+            "data",
+            "schema",
+            "base_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "backup_files",
+          "docstring": "",
+          "line_range": [
+            941,
+            947
+          ],
+          "parameters": [
+            "target_dir",
+            "backup_root"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "deploy_embedded_files",
+          "docstring": "",
+          "line_range": [
+            949,
+            1003
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "main",
+          "docstring": "",
+          "line_range": [
+            1005,
+            1006
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "validate_json": [
+          "RefResolver",
+          "logger.warning",
+          "validate",
+          "logger.error"
+        ],
+        "backup_files": [
+          "shutil.copytree",
+          "target_dir.exists",
+          "datetime.now",
+          "logger.info"
+        ],
+        "deploy_embedded_files": [
+          "target_path.exists",
+          "EMBEDDED_FILES.get",
+          "backup_files",
+          "Path",
+          "logger.error",
+          "validate_json",
+          "f.write",
+          "logger.info",
+          "json.dump",
+          "Path.cwd",
+          "logger.warning",
+          "target_path.open"
+        ],
+        "main": [
+          "deploy_embedded_files"
+        ]
+      },
+      "dependencies": [
+        "Path",
+        "RefResolver",
+        "ValidationError",
+        "datetime",
+        "json",
+        "jsonschema",
+        "logging",
+        "os",
+        "pathlib",
+        "shutil",
+        "validate"
+      ],
+      "hash": null,
+      "artifact_id": "6b41a920-8cec-4eb2-865d-bf9e6ed7b56a"
+    },
+    {
+      "module_id": "scripts.collector",
+      "path": "scripts/collector.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "apply_filters",
+          "docstring": "",
+          "line_range": [
+            13,
+            29
+          ],
+          "parameters": [
+            "files",
+            "filters"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "collect_files",
+          "docstring": "",
+          "line_range": [
+            32,
+            38
+          ],
+          "parameters": [
+            "root_dir",
+            "filters"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "generate_struct",
+          "docstring": "",
+          "line_range": [
+            41,
+            88
+          ],
+          "parameters": [
+            "root_dir",
+            "output"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "main",
+          "docstring": "",
+          "line_range": [
+            91,
+            92
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "apply_filters": [
+          "pattern.startswith",
+          "filtered.append",
+          "fnmatch.fnmatch"
+        ],
+        "collect_files": [
+          "path.is_file",
+          "root_dir.rglob",
+          "str",
+          "path.relative_to",
+          "files.append",
+          "apply_filters"
+        ],
+        "generate_struct": [
+          "output_path.exists",
+          "existing.get",
+          "collect_files",
+          "Path",
+          "str",
+          "output_path.open",
+          "logger.info",
+          "len",
+          "json.dump",
+          "json.load",
+          "uuid.uuid4"
+        ],
+        "main": [
+          "generate_struct"
+        ]
+      },
+      "dependencies": [
+        "Path",
+        "fnmatch",
+        "json",
+        "logging",
+        "pathlib",
+        "uuid"
+      ],
+      "hash": null,
+      "artifact_id": "41c5b972-e26d-4733-b72e-d31e4be12dd7"
+    },
+    {
+      "module_id": "scripts.auto_update_struct",
+      "path": "scripts/auto_update_struct.py",
+      "category": "core",
+      "module_doc": "Automatic struct.json update script\nThis script automatically parses the project and updates struct.json\nwithout requiring LLM intervention.",
+      "functions": [
+        {
+          "name": "detect_project_changes",
+          "docstring": "Detect if project files have changed since last struct.json generation.\nUses git status to check for modifications.",
+          "line_range": [
+            44,
+            81
+          ],
+          "parameters": [
+            "root_dir",
+            "struct_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "backup_struct_json",
+          "docstring": "Create a backup of existing struct.json.",
+          "line_range": [
+            84,
+            97
+          ],
+          "parameters": [
+            "struct_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "validate_struct_json",
+          "docstring": "Validate generated struct.json for basic structure.",
+          "line_range": [
+            100,
+            128
+          ],
+          "parameters": [
+            "struct_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "update_struct_json",
+          "docstring": "Main function to update struct.json automatically.\n\nArgs:\n    root_dir: Project root directory (default: current directory)\n    struct_path: Path to struct.json (default: ./struct.json)\n    force: Force regeneration even if no changes detected\n    config_override: Override default configuration\n\nReturns:\n    bool: True if update was successful",
+          "line_range": [
+            131,
+            225
+          ],
+          "parameters": [
+            "root_dir",
+            "struct_path",
+            "force",
+            "config_override"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "main",
+          "docstring": "Command-line interface for auto-update script.",
+          "line_range": [
+            228,
+            286
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "load_config",
+          "docstring": "",
+          "line_range": [
+            24,
+            25
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "load_gitignore",
+          "docstring": "",
+          "line_range": [
+            26,
+            27
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "generate_json",
+          "docstring": "",
+          "line_range": [
+            28,
+            29
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "load_config": [],
+        "load_gitignore": [],
+        "generate_json": [
+          "ImportError"
+        ],
+        "detect_project_changes": [
+          "subprocess.run",
+          "Path",
+          "logger.info",
+          "file_path.stat",
+          "logger.warning"
+        ],
+        "backup_struct_json": [
+          "subprocess.run",
+          "Path",
+          "logger.error",
+          "logger.info",
+          "datetime.now"
+        ],
+        "validate_struct_json": [
+          "logger.error",
+          "open",
+          "logger.info",
+          "json.load"
+        ],
+        "update_struct_json": [
+          "cli_config.get",
+          "open",
+          "subprocess.run",
+          "config.update",
+          "validate_struct_json",
+          "logger.error",
+          "load_config",
+          "logger.info",
+          "backup_struct_json",
+          "load_gitignore",
+          "json.dump",
+          "config.get",
+          "os.getcwd",
+          "generate_json",
+          "detect_project_changes"
+        ],
+        "main": [
+          "update_struct_json",
+          "sys.exit",
+          "logging.getLogger",
+          "argparse.ArgumentParser",
+          "parser.parse_args",
+          "parser.add_argument",
+          "print",
+          "os.getcwd",
+          "detect_project_changes"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "Optional",
+        "Path",
+        "argparse",
+        "datetime",
+        "generate_json",
+        "json",
+        "llmstruct.cli",
+        "llmstruct.generators.json_generator",
+        "load_config",
+        "load_gitignore",
+        "logging",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "typing"
+      ],
+      "hash": null,
+      "artifact_id": "dbe704de-6fc4-470d-88b3-1497dfa7d238"
+    },
+    {
+      "module_id": "scripts.validate_refs",
+      "path": "scripts/validate_refs.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "validate_references",
+          "docstring": "",
+          "line_range": [
+            11,
+            43
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "main",
+          "docstring": "",
+          "line_range": [
+            46,
+            47
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "validate_references": [
+          "Path",
+          "logger.warning",
+          "broken_links.append",
+          "logger.info",
+          "logger.error",
+          "idea.get",
+          "json.dump",
+          "target_file.exists",
+          "json.load",
+          "enumerate",
+          "source_file.exists"
+        ],
+        "main": [
+          "validate_references"
+        ]
+      },
+      "dependencies": [
+        "Path",
+        "json",
+        "logging",
+        "pathlib"
+      ],
+      "hash": null,
+      "artifact_id": "dca40acd-626d-4b85-a53d-9bc02ff522e5"
+    },
+    {
+      "module_id": "scripts.deploy_embedded_files",
+      "path": "scripts/deploy_embedded_files.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "validate_json",
+          "docstring": "",
+          "line_range": [
+            931,
+            941
+          ],
+          "parameters": [
+            "data",
+            "schema",
+            "base_path"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "backup_files",
+          "docstring": "",
+          "line_range": [
+            944,
+            950
+          ],
+          "parameters": [
+            "target_dir",
+            "backup_root"
+          ],
+          "decorators": []
+        },
+        {
+          "name": "deploy_embedded_files",
+          "docstring": "",
+          "line_range": [
+            953,
+            1007
+          ],
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "main",
+          "docstring": "",
+          "line_range": [
+            1010,
+            1011
+          ],
+          "parameters": [],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "validate_json": [
+          "RefResolver",
+          "logger.warning",
+          "validate",
+          "logger.error"
+        ],
+        "backup_files": [
+          "shutil.copytree",
+          "target_dir.exists",
+          "datetime.now",
+          "logger.info"
+        ],
+        "deploy_embedded_files": [
+          "target_path.exists",
+          "EMBEDDED_FILES.get",
+          "backup_files",
+          "Path",
+          "logger.error",
+          "validate_json",
+          "f.write",
+          "logger.info",
+          "json.dump",
+          "Path.cwd",
+          "logger.warning",
+          "target_path.open"
+        ],
+        "main": [
+          "deploy_embedded_files"
+        ]
+      },
+      "dependencies": [
+        "Path",
+        "RefResolver",
+        "ValidationError",
+        "datetime",
+        "json",
+        "jsonschema",
+        "logging",
+        "pathlib",
+        "shutil",
+        "validate"
+      ],
+      "hash": null,
+      "artifact_id": "bdee6521-6c01-40d7-b18c-a637a89d9142"
+    }
+  ]
+}

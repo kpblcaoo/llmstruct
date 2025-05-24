@@ -7,7 +7,10 @@ from typing import Optional, Dict, Any
 from datetime import datetime
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s")
+
 
 def load_json_file(file_path: str) -> Optional[Dict[str, Any]]:
     """Load a JSON file and return its contents."""
@@ -21,7 +24,9 @@ def load_json_file(file_path: str) -> Optional[Dict[str, Any]]:
         logging.error(f"Error decoding {file_path}: {e}")
         return None
 
-def verify_response_with_struct(response_text: str, struct_data: Dict[str, Any]) -> bool:
+
+def verify_response_with_struct(
+        response_text: str, struct_data: Dict[str, Any]) -> bool:
     """Verify llm_response.json against struct.json."""
     try:
         # Check metadata
@@ -31,24 +36,32 @@ def verify_response_with_struct(response_text: str, struct_data: Dict[str, Any])
         assert struct_data.get("date") == "2025-05-20", "Date mismatch"
 
         # Check goals
-        expected_goals = {g for g in struct_data.get("goals", []) if g in ["G1", "G4", "G5", "G6"]}
+        expected_goals = {
+            g for g in struct_data.get(
+                "goals", []) if g in [
+                "G1", "G4", "G5", "G6"]}
         goals_in_response = set(re.findall(r"G\d", response_text))
         if not expected_goals.issubset(goals_in_response):
             logging.error(f"Missing goals: {expected_goals - goals_in_response}")
             return False
 
         # Check extensions
-        expected_extensions = {e for e in struct_data.get("extensions", []) if e.startswith("EXT-")}
+        expected_extensions = {
+            e for e in struct_data.get(
+                "extensions",
+                []) if e.startswith("EXT-")}
         extensions_in_response = set(re.findall(r"EXT-\d{3}", response_text))
         if not expected_extensions.issubset(extensions_in_response):
-            logging.error(f"Missing extensions: {expected_extensions - extensions_in_response}")
+            logging.error(
+                f"Missing extensions: {expected_extensions - extensions_in_response}")
             return False
 
         # Check file references
         files_in_response = set(re.findall(r"\w+\.json", response_text))
         expected_files = {"tasks.json", "project_context.json"}
         if not expected_files.issubset(files_in_response):
-            logging.error(f"Missing file references: {expected_files - files_in_response}")
+            logging.error(
+                f"Missing file references: {expected_files - files_in_response}")
             return False
 
         logging.info("Verification successful: Response matches struct.json")
@@ -57,10 +70,15 @@ def verify_response_with_struct(response_text: str, struct_data: Dict[str, Any])
         logging.error(f"Metadata mismatch: {e}")
         return False
 
+
 def verify_response_without_struct(response_text: str) -> bool:
     """Verify llm_response.json based on LLMstruct principles."""
     # Check for key principles
-    principles = ["universal JSON format", "transparency", "LLM optimization", "end-to-end"]
+    principles = [
+        "universal JSON format",
+        "transparency",
+        "LLM optimization",
+        "end-to-end"]
     for principle in principles:
         if principle.lower() not in response_text.lower():
             logging.error(f"Principle '{principle}' not mentioned in response")
@@ -89,7 +107,9 @@ def verify_response_without_struct(response_text: str) -> bool:
     logging.info("Verification successful: Response aligns with LLMstruct principles")
     return True
 
-def generate_metrics(response_data: Dict[str, Any], server_log: Dict[str, Any]) -> Dict[str, Any]:
+
+def generate_metrics(response_data: Dict[str, Any],
+                     server_log: Dict[str, Any]) -> Dict[str, Any]:
     """Generate metrics for the response per EXT-004."""
     response_text = response_data["response"]
     word_count = len(response_text.split())
@@ -98,7 +118,8 @@ def generate_metrics(response_data: Dict[str, Any], server_log: Dict[str, Any]) 
     extensions_mentioned = len(re.findall(r"EXT-\d{3}", response_text))
     files_mentioned = len(re.findall(r"\w+\.json", response_text))
 
-    # Hard-coded server log metrics (replace with actual parsing if log file is available)
+    # Hard-coded server log metrics (replace with actual parsing if log file
+    # is available)
     metrics = {
         "total_duration_s": server_log.get("total_duration_s", 4.35),
         "prompt_eval_duration_s": server_log.get("prompt_eval_duration_s", 0.16),
@@ -119,6 +140,7 @@ def generate_metrics(response_data: Dict[str, Any], server_log: Dict[str, Any]) 
     }
     return metrics
 
+
 def update_tasks_json(tasks_file: str, new_task: Dict[str, Any]):
     """Append a new task to tasks.json."""
     tasks = load_json_file(tasks_file) or {"tasks": []}
@@ -128,12 +150,23 @@ def update_tasks_json(tasks_file: str, new_task: Dict[str, Any]):
         json.dump(tasks, f, indent=2)
     logging.info(f"Added task {new_task['task_id']} to {tasks_file}")
 
+
 def main():
-    parser = argparse.ArgumentParser(description="Verify llm_response.json and manage tasks")
-    parser.add_argument("--response", default="llm_response.json", help="Path to llm_response.json")
-    parser.add_argument("--struct", default="struct.json", help="Path to struct.json (optional)")
+    parser = argparse.ArgumentParser(
+        description="Verify llm_response.json and manage tasks")
+    parser.add_argument(
+        "--response",
+        default="llm_response.json",
+        help="Path to llm_response.json")
+    parser.add_argument(
+        "--struct",
+        default="struct.json",
+        help="Path to struct.json (optional)")
     parser.add_argument("--tasks", default="tasks.json", help="Path to tasks.json")
-    parser.add_argument("--metrics", default="metrics.json", help="Path to output metrics.json")
+    parser.add_argument(
+        "--metrics",
+        default="metrics.json",
+        help="Path to output metrics.json")
     args = parser.parse_args()
 
     # Load response
@@ -145,10 +178,10 @@ def main():
     struct_data = load_json_file(args.struct)
     if struct_data:
         logging.info("Verifying with struct.json")
-        verified = verify_response_with_struct(response_data["response"], struct_data)
+        verify_response_with_struct(response_data["response"], struct_data)
     else:
         logging.info("No struct.json found, verifying with LLMstruct principles")
-        verified = verify_response_without_struct(response_data["response"])
+        verify_response_without_struct(response_data["response"])
 
     # Generate metrics
     server_log = {
@@ -188,9 +221,9 @@ def main():
         "priority": "medium",
         "due_date": "2025-06-10",
         "related_idea": "G5",
-        "extension": "EXT-005"
-    }
+        "extension": "EXT-005"}
     update_tasks_json(args.tasks, tokenizer_task)
+
 
 if __name__ == "__main__":
     main()

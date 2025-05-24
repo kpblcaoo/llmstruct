@@ -19,6 +19,10 @@ dist/
 .pytest_cache/
 .coverage
 coverage.xml
+
+# Sorting and temporary workspaces
+sorting_workspace/
+ideas_sorting/
 htmlcov/
 
 # Temporary files
@@ -40,7 +44,7 @@ poetry.lock  # Optional: include if committing lock file
 
 # Generated JSON outputs (optional)
 filtered_struct.json
-struct.json  # Remove if version-controlling JSONs
+# struct.json - now included in repo for CI/CD and user reference
 
 # Logs and temporary data
 *.log
@@ -91,13 +95,23 @@ config/secrets.json
 .env
 secrets/
 
-#Project specific
-
+# Project specific
 llm_response.json
 tree_collector.py
 deploy_llmstruct.py
 ./sripts
 bak/
+workflow_archive/
 collect_json.py
 merged.json
 proj
+
+# Personal workfiles - fully excluded
+temp_workfiles/
+
+# Personal configuration files
+*_personal.json
+personal_*.json
+session_*.json
+llmstruct_personal.toml
+local_config.*
