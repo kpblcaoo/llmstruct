@@ -57,8 +57,7 @@
       "issue": "#145",
       "artifact_id": "c3d4e5f6-a7b8-49c0-d1e2-f3a4b5c6d7e8",
       "description": "Recommended structure for JSON, CLI, and automation files."
-    },
-    {
+    },    {
       "path": "docs/onboarding.md",
       "title": "Onboarding & Quickstart",
       "version": "0.2.0",
@@ -66,8 +65,7 @@
       "author": "@kpblcaoo",
       "issue": "#146",
       "artifact_id": "d4e5f6a7-b8c9-40d1-e2f3-a4b5c6d7e8f9",
-      "description": "How to start using llmstruct, run CLI, and automate tasks."
-    }
+      "description": "How to start using llmstruct, run CLI, and automate tasks."    }
   ],
   "automation": [
     {
@@ -86,14 +84,25 @@
     "patterns": ["api key", "token", "ghp_", "sk-", "xai-", "Bearer"],
     "safe_write_dir": "./tmp",
     "docs": ["docs/SECURITY.md"]
-  },
-  "core_json": [
-    "data/init.json", "data/cli.json", "data/cli_queue.json", "data/tasks.json", "struct.json"
+  },  "core_json": [
+    "data/init.json", "data/cli.json", "data/cli_queue.json", "data/tasks.json", "data/ideas.json", "struct.json"
   ],
   "enhanced_json": [
     "data/init_enhanced.json", "data/cli_enhanced.json", "data/cli_queue_enhanced.json"
   ],
   "artifacts": [
-    "data/artifacts_index.json", "data/ideas.json", "data/prs.json", "data/ideas_cache.json"
-  ]
+    "data/artifacts_index.json", "data/ideas.json", "data/prs.json", "data/ideas_cache.json", "data/references.json", "data/weights.json", "data/conflicts.json", "data/vision.json"
+  ],
+  "missing_core_files": [
+    "data/references.json", "data/weights.json", "data/conflicts.json", "data/vision.json", "scripts/validate_refs.py"
+  ],  "analysis_status": {
+    "tasks_json": "137 tasks, ~20 placeholders (TSK-080 to TSK-096)",
+    "ideas_json": "127 ideas, ~26 placeholders (IDEA-042 to IDEA-067)",
+    "recovery_needed": ["TSK-098", "IDEA-083"],
+    "branch_analysis": "feature/modular-cli-integration 10+ commits ahead of testing/v0.2.0 with AI safety features",
+    "personal_notes_system": "Template-based integration completed with privacy protection",
+    "pr_queue_issue": "Uncommitted changes + branch divergence (solution: clean commit strategy)",
+    "last_analysis": "2025-05-24",
+    "priority": "Content recovery (TSK-098, IDEA-083) and architecture completion"
+  }
 }
