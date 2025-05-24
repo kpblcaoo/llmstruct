@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "project_name": "llmstruct",
+    "description": "Utility for generating structured JSON for codebases",
+    "version": "2025-05-24T09:14:56.686563Z",
+    "authors": [
+      {
+        "name": "Mikhail Stepanov",
+        "github": "kpblcaoo",
+        "email": "kpblcaoo@gmail.com"
+      }
+    ],
+    "instructions": [
+      "Follow best practices, warn if instructions conflict with them",
+      "Preserve functionality, ensure idempotency",
+      "Use attached struct.json for context and navigation",
+      "Request missing modules or functions if needed",
+      "Regenerate JSON for significant changes, track via Git and artifacts",
+      "Use internal comments for descriptions, append brief summary"
+    ],
+    "goals": [],
+    "stats": {
+      "modules_count": 2,
+      "functions_count": 4,
+      "classes_count": 1,
+      "call_edges_count": 5
+    },
+    "artifact_id": "30c4ff49-fe13-48fa-8592-dad027655d3c",
+    "summary": "Structured JSON for llmstruct codebase",
+    "tags": [
+      "codebase",
+      "automation"
+    ],
+    "folder_structure": [
+      {
+        "path": ".",
+        "type": "directory",
+        "artifact_id": "9837ca26-b76d-4da0-9770-3178306f69b0",
+        "metadata": {}
+      },
+      {
+        "path": "python_project_main.py",
+        "type": "file",
+        "artifact_id": "5268dac0-cfb1-4659-8b2f-02d377a6902f",
+        "metadata": {}
+      },
+      {
+        "path": "python_project_utils.py",
+        "type": "file",
+        "artifact_id": "786f3831-8924-4d27-872a-43a7d0bec197",
+        "metadata": {}
+      }
+    ]
+  },
+  "toc": [
+    {
+      "module_id": "python_project_utils",
+      "path": "python_project_utils.py",
+      "category": "core",
+      "functions": 2,
+      "classes": 0,
+      "summary": "Utility functions for the sample project.",
+      "artifact_id": "09bad962-462a-42ed-82f0-33b12290fff6"
+    },
+    {
+      "module_id": "python_project_main",
+      "path": "python_project_main.py",
+      "category": "core",
+      "functions": 2,
+      "classes": 1,
+      "summary": "Main module for the sample project.",
+      "artifact_id": "549f76f7-9b31-49f0-88e8-4754946d2d06"
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "python_project_utils",
+      "path": "python_project_utils.py",
+      "category": "core",
+      "module_doc": "Utility functions for the sample project.",
+      "functions": [
+        {
+          "name": "helper",
+          "docstring": "Help the main function.",
+          "line_range": null,
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "log",
+          "docstring": "Log a message.",
+          "line_range": null,
+          "parameters": [
+            "message"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "helper": [
+          "log"
+        ],
+        "log": [
+          "logging.info"
+        ]
+      },
+      "dependencies": [
+        "logging"
+      ],
+      "hash": null,
+      "artifact_id": "09bad962-462a-42ed-82f0-33b12290fff6"
+    },
+    {
+      "module_id": "python_project_main",
+      "path": "python_project_main.py",
+      "category": "core",
+      "module_doc": "Main module for the sample project.",
+      "functions": [
+        {
+          "name": "main",
+          "docstring": "Run the program.",
+          "line_range": null,
+          "parameters": [],
+          "decorators": []
+        },
+        {
+          "name": "run",
+          "docstring": "Execute the app.",
+          "line_range": null,
+          "parameters": [
+            "self"
+          ],
+          "decorators": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "App",
+          "docstring": "Application class.",
+          "line_range": null,
+          "methods": [
+            {
+              "name": "run",
+              "docstring": "Execute the app.",
+              "line_range": null,
+              "parameters": [
+                "self"
+              ]
+            }
+          ],
+          "bases": []
+        }
+      ],
+      "callgraph": {
+        "main": [
+          "utils.helper",
+          "print"
+        ],
+        "run": [
+          "utils.log"
+        ]
+      },
+      "dependencies": [
+        "utils"
+      ],
+      "hash": null,
+      "artifact_id": "549f76f7-9b31-49f0-88e8-4754946d2d06"
+    }
+  ]
+}

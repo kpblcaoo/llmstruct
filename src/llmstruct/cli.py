@@ -709,16 +709,16 @@ def parse(args: argparse.Namespace):
         )
 
     args.language or config.get("cli", {}).get("language", "python")
-    include_patterns = args.include or config.get("cli", {}).get("include_patterns")
-    exclude_patterns = args.exclude or config.get("cli", {}).get("exclude_patterns")
-    include_ranges = args.include_ranges or config.get("cli", {}).get(
-        "include_ranges", False
-    )
-    include_hashes = args.include_hashes or config.get("cli", {}).get(
-        "include_hashes", False
-    )
-    use_gitignore = config.get("cli", {}).get("use_gitignore", True)
-    exclude_dirs = config.get("cli", {}).get("exclude_dirs", [])
+    # Read parsing configuration from [parsing] section, fallback to [cli] for compatibility
+    parsing_config = config.get("parsing", {})
+    cli_config = config.get("cli", {})
+    
+    include_patterns = args.include or parsing_config.get("include_patterns") or cli_config.get("include_patterns")
+    exclude_patterns = args.exclude or parsing_config.get("exclude_patterns") or cli_config.get("exclude_patterns")
+    include_ranges = args.include_ranges or parsing_config.get("include_ranges") or cli_config.get("include_ranges", False)
+    include_hashes = args.include_hashes or parsing_config.get("include_hashes") or cli_config.get("include_hashes", False)
+    use_gitignore = parsing_config.get("use_gitignore", cli_config.get("use_gitignore", True))
+    exclude_dirs = parsing_config.get("exclude_dirs") or cli_config.get("exclude_dirs", [])
 
     gitignore_patterns = load_gitignore(root_dir) if use_gitignore else []
 
