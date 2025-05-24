@@ -1,0 +1,29 @@
+[
+  {
+    "cmd": "write",
+    "filename": "test1.txt",
+    "content": "Hello from queue! This is test1."
+  },
+  {
+    "cmd": "scan",
+    "path": "tmp"
+  },
+  {
+    "cmd": "llm",
+    "prompt": "Сколько файлов в папке tmp? Ответь коротко."
+  },
+  {
+    "cmd": "write",
+    "filename": "test2.txt",
+    "content": "Second file from queue."
+  },
+  {
+    "cmd": "scan",
+    "path": "tmp"
+  },
+  {
+    "cmd": "write",
+    "filename": "../hack.txt",
+    "content": "Should not be allowed (invalid filename test)."
+  }
+]

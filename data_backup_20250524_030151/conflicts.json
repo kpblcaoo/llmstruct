@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "status": "Draft",
+  "author": "@kpblcaoo",
+  "date": "2025-05-21",
+  "license": "GPL-3.0",
+  "artifact_id": "f4a5b6c7-d8e9-40f1-a2b3-c4d5e6f7a8b9",
+  "metadata": {
+    "project_name": "llmstruct",
+    "description": "Documentation conflicts",
+    "authors": [{"name": "@kpblcaoo", "github": "kpblcaoo", "email": "kpblcaoo@example.com"}]
+  },
+  "summary": "Documentation conflicts",
+  "tags": ["conflicts"],
+  "conflicts": [
+    {
+      "conflict_id": "CONF-001",
+      "file": "docs/llmstruct_format.md",
+      "issue": "Missing folder_structure",
+      "suggested_fix": "Update to match struct.json v0.1.1",
+      "status": "resolved",
+      "issue_ref": "#141",
+      "artifact_id": "a5b6c7d8-e9f0-41a2-b3c4-d5e6f7a8b9c0"
+    }
+  ]
+}

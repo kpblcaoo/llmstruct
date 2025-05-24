@@ -267,46 +267,5 @@
     "new_context_rules": "Add to context_orchestration.smart_selection_rules",
     "new_automation_types": "Extend cli.json and implement in cli.py",
     "new_llm_backends": "Implement in llm_client.py following existing patterns"
-  },
-
-  "ai_session_management": {
-    "description": "Configuration for AI-driven development sessions",
-    "session_principles": [
-      "AI branches start with 'ai-helped/' for task-specific work",
-      "Minimize ambiguous interpretation - clarify important details",
-      "Maintain session task file for focused development",
-      "Create work plan before committing to avoid scope creep"
-    ],
-    "branch_naming": {
-      "pattern": "ai-helped/{task-description}",
-      "examples": [
-        "ai-helped/session-task-management",
-        "ai-helped/cli-plugin-system",
-        "ai-helped/context-optimization"
-      ],
-      "numbering": "descriptive task names, ai-helped prefix"
-    },
-    "session_workflow": {
-      "steps": [
-        "1. Clarify objectives and scope with user",
-        "2. Propose related tasks and ideas from existing project context", 
-        "3. Form work plan with clear deliverables until commit",
-        "4. Create AI branch for focused development",
-        "5. Execute plan with regular status updates",
-        "6. Complete with comprehensive commit and documentation"
-      ],
-      "session_file": "SESSION_TASKS.md",
-      "task_linking": "Link session tasks to existing TSK-numbers where applicable"
-    },
-    "scope_management": {
-      "focus_principle": "AI should not tackle everything at once",
-      "clarification_triggers": [
-        "Ambiguous requirements",
-        "Multiple possible interpretations", 
-        "Unclear success criteria",
-        "Complex interdependencies"
-      ],
-      "plan_validation": "Always confirm plan with user before execution"
-    }
   }
 }
