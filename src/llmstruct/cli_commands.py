@@ -50,6 +50,7 @@ class CommandProcessor:
             "status": self.cmd_status,
             "backup": self.cmd_backup,
             "parse": self.cmd_parse,
+            "audit": self.cmd_audit,
             "auto-update": self.handle_auto_update,
             "struct-status": self.handle_struct_status,
         }
@@ -118,6 +119,7 @@ Available commands:
   /status              - Show system status
   /backup <file>       - Create backup of file
   /parse               - Parse project structure
+  /audit [scan|recover|status] - Audit and recover missing tasks/ideas
   /auto-update         - Trigger auto-update of struct.json
   /struct-status       - Show struct.json status and last update info
 
@@ -128,6 +130,9 @@ Examples:
   /queue run           - Process command queue
   /cache stats         - Show cache statistics
   /copilot status      - Show Copilot status
+  /audit scan          - Scan source files for missing entries
+  /audit recover       - Recover missing tasks/ideas from source files
+  /audit status        - Show current placeholder status
   /auto-update         - Trigger struct.json update
   /struct-status       - Show struct.json status
 """
@@ -377,6 +382,225 @@ Examples:
         except Exception as e:
             logging.error(f"Error parsing project: {e}")
             print(f"Error parsing project: {e}")
+
+    def cmd_audit(self, args: str) -> None:
+        """Audit and recover missing tasks/ideas from source files."""
+        try:
+            action = args.strip().lower() if args.strip() else "scan"
+            
+            if action == "scan":
+                self._audit_scan_sources()
+            elif action == "recover":
+                self._audit_recover_placeholders()
+            elif action == "status":
+                self._audit_show_status()
+            else:
+                print("Usage: /audit [scan|recover|status]")
+                print("  scan    - Scan source files for missing entries")
+                print("  recover - Recover missing tasks/ideas from source files")
+                print("  status  - Show current placeholder status")
+                
+        except Exception as e:
+            logging.error(f"Audit command error: {e}")
+            print(f"Error in audit command: {e}")
+
+    def _audit_scan_sources(self) -> None:
+        """Scan dump directory for recoverable content."""
+        import json
+        import os
+        from pathlib import Path
+        
+        dump_dir = Path(self.root_dir) / "temp_workfiles" / "unsorted_mess" / "dump"
+        if not dump_dir.exists():
+            print(f"❌ Dump directory not found: {dump_dir}")
+            return
+            
+        print(f"🔍 Scanning recovery sources in: {dump_dir}")
+        
+        json_files = list(dump_dir.glob("*.json"))
+        py_files = list(dump_dir.glob("*.py"))
+        
+        print(f"📁 Found {len(json_files)} JSON files and {len(py_files)} Python files")
+        
+        for file_path in json_files:
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    
+                if isinstance(data, dict):
+                    if "tasks" in data:
+                        tasks = data["tasks"]
+                        if isinstance(tasks, list):
+                            print(f"📋 {file_path.name}: {len(tasks)} tasks")
+                    if "ideas" in data:
+                        ideas = data["ideas"]
+                        if isinstance(ideas, list):
+                            print(f"💡 {file_path.name}: {len(ideas)} ideas")
+                            
+            except (json.JSONDecodeError, UnicodeDecodeError) as e:
+                print(f"⚠️  {file_path.name}: {e}")
+                
+        print("✅ Scan complete. Use '/audit recover' to restore missing entries.")
+
+    def _audit_recover_placeholders(self) -> None:
+        """Recover placeholder entries from source files."""
+        import json
+        from pathlib import Path
+        
+        print("🔄 Starting placeholder recovery...")
+        
+        # Load current data
+        tasks_file = Path(self.root_dir) / "data" / "tasks.json"
+        ideas_file = Path(self.root_dir) / "data" / "ideas.json"
+        
+        if not tasks_file.exists() or not ideas_file.exists():
+            print("❌ Core data files not found")
+            return
+            
+        with open(tasks_file, 'r') as f:
+            tasks_data = json.load(f)
+        with open(ideas_file, 'r') as f:
+            ideas_data = json.load(f)
+            
+        # Count placeholders
+        task_placeholders = [t for t in tasks_data["tasks"] if "Placeholder: Missing task details" in t.get("description", "")]
+        idea_placeholders = [i for i in ideas_data["ideas"] if "Placeholder: Missing idea details" in i.get("description", "")]
+        
+        print(f"📊 Found {len(task_placeholders)} task placeholders and {len(idea_placeholders)} idea placeholders")
+        
+        # Backup current files
+        backup_tasks = str(tasks_file) + f".audit_backup_{int(datetime.now().timestamp())}"
+        backup_ideas = str(ideas_file) + f".audit_backup_{int(datetime.now().timestamp())}"
+        
+        with open(backup_tasks, 'w') as f:
+            json.dump(tasks_data, f, indent=2)
+        with open(backup_ideas, 'w') as f:
+            json.dump(ideas_data, f, indent=2)
+            
+        print(f"💾 Created backups: {Path(backup_tasks).name}, {Path(backup_ideas).name}")
+        
+        # Try to recover from source files
+        recovered = self._recover_from_sources(task_placeholders, idea_placeholders)
+        
+        if recovered["tasks"] or recovered["ideas"]:
+            print(f"✅ Recovery complete: {recovered['tasks']} tasks, {recovered['ideas']} ideas restored")
+        else:
+            print("⚠️  No recoverable content found in source files")
+
+    def _audit_show_status(self) -> None:
+        """Show current placeholder status."""
+        import json
+        from pathlib import Path
+        
+        tasks_file = Path(self.root_dir) / "data" / "tasks.json"
+        ideas_file = Path(self.root_dir) / "data" / "ideas.json"
+        
+        if not tasks_file.exists() or not ideas_file.exists():
+            print("❌ Core data files not found")
+            return
+            
+        with open(tasks_file, 'r') as f:
+            tasks_data = json.load(f)
+        with open(ideas_file, 'r') as f:
+            ideas_data = json.load(f)
+            
+        task_placeholders = [t for t in tasks_data["tasks"] if "Placeholder: Missing task details" in t.get("description", "")]
+        idea_placeholders = [i for i in ideas_data["ideas"] if "Placeholder: Missing idea details" in i.get("description", "")]
+        
+        print("📊 Current placeholder status:")
+        print(f"   Tasks: {len(task_placeholders)} placeholders of {len(tasks_data['tasks'])} total")
+        print(f"   Ideas: {len(idea_placeholders)} placeholders of {len(ideas_data['ideas'])} total")
+        
+        if task_placeholders:
+            task_ids = [t["id"] for t in task_placeholders[:5]]
+            print(f"   Example task IDs: {', '.join(task_ids)}{'...' if len(task_placeholders) > 5 else ''}")
+            
+        if idea_placeholders:
+            idea_ids = [i["id"] for i in idea_placeholders[:5]]
+            print(f"   Example idea IDs: {', '.join(idea_ids)}{'...' if len(idea_placeholders) > 5 else ''}")
+
+    def _recover_from_sources(self, task_placeholders, idea_placeholders):
+        """Attempt to recover content from source files."""
+        import json
+        from pathlib import Path
+        
+        dump_dir = Path(self.root_dir) / "temp_workfiles" / "unsorted_mess" / "dump"
+        recovered = {"tasks": 0, "ideas": 0}
+        
+        if not dump_dir.exists():
+            return recovered
+            
+        # Map placeholder IDs for targeted recovery
+        placeholder_task_ids = {t["id"]: t for t in task_placeholders}
+        placeholder_idea_ids = {i["id"]: i for i in idea_placeholders}
+        
+        print(f"🎯 Targeting {len(placeholder_task_ids)} task IDs and {len(placeholder_idea_ids)} idea IDs")
+        
+        # Load current data files
+        tasks_file = Path(self.root_dir) / "data" / "tasks.json"
+        ideas_file = Path(self.root_dir) / "data" / "ideas.json"
+        
+        with open(tasks_file, 'r') as f:
+            tasks_data = json.load(f)
+        with open(ideas_file, 'r') as f:
+            ideas_data = json.load(f)
+        
+        # Track recovery progress
+        tasks_updated = []
+        ideas_updated = []
+        
+        for json_file in dump_dir.glob("*.json"):
+            try:
+                with open(json_file, 'r', encoding='utf-8') as f:
+                    source_data = json.load(f)
+                    
+                # Check for tasks
+                if isinstance(source_data, dict) and "tasks" in source_data:
+                    for task in source_data["tasks"]:
+                        if isinstance(task, dict) and task.get("id") in placeholder_task_ids:
+                            if "Placeholder" not in task.get("description", ""):
+                                task_id = task["id"]
+                                print(f"🔄 Recovering task: {task_id} from {json_file.name}")
+                                
+                                # Find and update the task in tasks_data
+                                for i, existing_task in enumerate(tasks_data["tasks"]):
+                                    if existing_task["id"] == task_id:
+                                        tasks_data["tasks"][i] = task
+                                        tasks_updated.append(task_id)
+                                        recovered["tasks"] += 1
+                                        break
+                                
+                # Check for ideas  
+                if isinstance(source_data, dict) and "ideas" in source_data:
+                    for idea in source_data["ideas"]:
+                        if isinstance(idea, dict) and idea.get("id") in placeholder_idea_ids:
+                            if "Placeholder" not in idea.get("description", ""):
+                                idea_id = idea["id"]
+                                print(f"💡 Recovering idea: {idea_id} from {json_file.name}")
+                                
+                                # Find and update the idea in ideas_data
+                                for i, existing_idea in enumerate(ideas_data["ideas"]):
+                                    if existing_idea["id"] == idea_id:
+                                        ideas_data["ideas"][i] = idea
+                                        ideas_updated.append(idea_id)
+                                        recovered["ideas"] += 1
+                                        break
+                                
+            except (json.JSONDecodeError, UnicodeDecodeError, KeyError):
+                continue
+        
+        # Write updated data back to files
+        if tasks_updated:
+            with open(tasks_file, 'w') as f:
+                json.dump(tasks_data, f, indent=2)
+            print(f"✅ Updated {len(tasks_updated)} tasks: {', '.join(tasks_updated[:5])}{'...' if len(tasks_updated) > 5 else ''}")
+            
+        if ideas_updated:
+            with open(ideas_file, 'w') as f:
+                json.dump(ideas_data, f, indent=2)
+            print(f"✅ Updated {len(ideas_updated)} ideas: {', '.join(ideas_updated[:5])}{'...' if len(ideas_updated) > 5 else ''}")
+                
+        return recovered
 
     def _process_queue(self) -> None:
         """Process command queue."""

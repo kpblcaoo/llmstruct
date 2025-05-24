@@ -646,30 +646,30 @@
     },
     {
       "id": "IDEA-044",
-      "description": "Context log for conversation",
-      "goal": "\u0422\u0440\u0435\u043a\u0430\u0442\u044c \u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u044f \u0438 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u044f \u0432 context_log.json",
-      "weight": 0.55,
+      "title": "Placeholder: Missing idea details",
+      "description": "Placeholder: Missing idea details",
+      "status": "missing",
+      "priority": "unknown",
+      "category": "general",
+      "created_at": "2025-05-24T11:26:17.602895Z",
+      "author": "@kpblcaoo",
+      "goal": "To be recovered from backup or logs",
+      "weight": 0.0,
       "impact": {
-        "speed": 0.3,
-        "accuracy": 0.4,
-        "adoption": 0.2
+        "speed": 0.0,
+        "accuracy": 0.0,
+        "adoption": 0.0
       },
-      "complexity": 0.3,
+      "complexity": 0.0,
       "tags": [
-        "workflow",
-        "logging"
+        "placeholder"
       ],
       "dependencies": [],
-      "complements": [
-        "IDEA-043"
-      ],
-      "duplicates": [],
-      "priority": "medium",
-      "estimated_effort": "3\u20135d",
-      "status": "raw",
-      "target_release": "v0.3.0",
-      "concept_score": 0.7,
-      "ai_generated": false
+      "estimated_effort": "unknown",
+      "target_release": "unknown",
+      "concept_score": 0.0,
+      "ai_generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/ideas (12).json"
     },
     {
       "id": "IDEA-045",
@@ -774,271 +774,246 @@
     },
     {
       "id": "IDEA-048",
-      "description": "Dynamic updates to concept.json with AI proposals",
-      "goal": "\u041f\u043e\u0437\u0432\u043e\u043b\u0438\u0442\u044c \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u044f concept.json \u0438 AI-\u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u043f\u0440\u0438 \u043d\u0430\u043a\u043e\u043f\u043b\u0435\u043d\u0438\u0438 \u043c\u0430\u0441\u0441\u044b",
-      "weight": 0.65,
+      "title": "Placeholder: Missing idea details",
+      "description": "Placeholder: Missing idea details",
+      "status": "missing",
+      "priority": "unknown",
+      "category": "general",
+      "created_at": "2025-05-24T11:26:17.602925Z",
+      "author": "@kpblcaoo",
+      "goal": "To be recovered from backup or logs",
+      "weight": 0.0,
       "impact": {
-        "speed": 0.3,
-        "accuracy": 0.4,
-        "adoption": 0.3
+        "speed": 0.0,
+        "accuracy": 0.0,
+        "adoption": 0.0
       },
-      "complexity": 0.5,
+      "complexity": 0.0,
       "tags": [
-        "concept",
-        "automation",
-        "llm"
+        "placeholder"
       ],
-      "dependencies": [
-        "TSK-060"
-      ],
-      "complements": [
-        "IDEA-046"
-      ],
-      "duplicates": [],
-      "priority": "medium",
-      "estimated_effort": "7\u201310d",
-      "status": "raw",
-      "target_release": "v0.3.0",
-      "concept_score": 0.8,
-      "ai_generated": false
+      "dependencies": [],
+      "estimated_effort": "unknown",
+      "target_release": "unknown",
+      "concept_score": 0.0,
+      "ai_generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/ideas (12).json"
     },
     {
       "id": "IDEA-049",
-      "description": "AI modes (Docs, Ideas, Code, Rephraser) with context.json",
-      "goal": "\u0420\u0435\u0436\u0438\u043c\u044b \u0440\u0430\u0431\u043e\u0442\u044b AI \u0441 \u043e\u0431\u0449\u0438\u043c \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442\u043e\u043c \u0438 \u0430\u0432\u0442\u043e-\u0432\u044b\u0431\u043e\u0440\u043e\u043c",
-      "weight": 0.7,
+      "title": "Placeholder: Missing idea details",
+      "description": "Placeholder: Missing idea details",
+      "status": "missing",
+      "priority": "unknown",
+      "category": "general",
+      "created_at": "2025-05-24T11:26:17.602933Z",
+      "author": "@kpblcaoo",
+      "goal": "To be recovered from backup or logs",
+      "weight": 0.0,
       "impact": {
-        "speed": 0.4,
-        "accuracy": 0.3,
-        "adoption": 0.4
+        "speed": 0.0,
+        "accuracy": 0.0,
+        "adoption": 0.0
       },
-      "complexity": 0.6,
+      "complexity": 0.0,
       "tags": [
-        "workflow",
-        "automation",
-        "llm"
+        "placeholder"
       ],
-      "dependencies": [
-        "TSK-060"
-      ],
-      "complements": [
-        "IDEA-047"
-      ],
-      "duplicates": [],
-      "priority": "high",
-      "estimated_effort": "10\u201314d",
-      "status": "raw",
-      "target_release": "v0.3.0",
-      "concept_score": 0.85,
-      "ai_generated": false
+      "dependencies": [],
+      "estimated_effort": "unknown",
+      "target_release": "unknown",
+      "concept_score": 0.0,
+      "ai_generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/ideas (12).json"
     },
     {
       "id": "IDEA-050",
-      "description": "Use ideas.json as idea source across modes",
-      "goal": "\u041f\u043e\u0438\u0441\u043a \u0438\u0434\u0435\u0439 \u0438\u0437 ideas.json \u0432 \u0440\u0430\u0437\u043d\u044b\u0445 \u0440\u0435\u0436\u0438\u043c\u0430\u0445 \u0440\u0430\u0431\u043e\u0442\u044b",
-      "weight": 0.5,
+      "title": "Placeholder: Missing idea details",
+      "description": "Placeholder: Missing idea details",
+      "status": "missing",
+      "priority": "unknown",
+      "category": "general",
+      "created_at": "2025-05-24T11:26:17.602941Z",
+      "author": "@kpblcaoo",
+      "goal": "To be recovered from backup or logs",
+      "weight": 0.0,
       "impact": {
-        "speed": 0.3,
-        "accuracy": 0.2,
-        "adoption": 0.3
+        "speed": 0.0,
+        "accuracy": 0.0,
+        "adoption": 0.0
       },
-      "complexity": 0.4,
+      "complexity": 0.0,
       "tags": [
-        "ideas",
-        "automation"
+        "placeholder"
       ],
-      "dependencies": [
-        "TSK-060",
-        "IDEA-049"
-      ],
-      "complements": [
-        "IDEA-043"
-      ],
-      "duplicates": [],
-      "priority": "low",
-      "estimated_effort": "5\u20137d",
-      "status": "raw",
-      "target_release": "v0.4.0",
-      "concept_score": 0.7,
-      "ai_generated": false
+      "dependencies": [],
+      "estimated_effort": "unknown",
+      "target_release": "unknown",
+      "concept_score": 0.0,
+      "ai_generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/ideas (12).json"
     },
     {
       "id": "IDEA-051",
-      "description": "Clarify ambiguous requests before execution",
-      "goal": "\u0423\u0442\u043e\u0447\u043d\u044f\u0442\u044c \u0441\u043f\u043e\u0440\u043d\u044b\u0435 \u043c\u043e\u043c\u0435\u043d\u0442\u044b, \u0441\u0441\u044b\u043b\u0430\u044f\u0441\u044c \u043d\u0430 concept.json, \u0447\u0442\u043e\u0431\u044b \u043d\u0435 \u0442\u0435\u0440\u044f\u0442\u044c \u043a\u043e\u043d\u0446\u0435\u043f\u0442",
-      "weight": 0.6,
+      "title": "Placeholder: Missing idea details",
+      "description": "Placeholder: Missing idea details",
+      "status": "missing",
+      "priority": "unknown",
+      "category": "general",
+      "created_at": "2025-05-24T11:26:17.602949Z",
+      "author": "@kpblcaoo",
+      "goal": "To be recovered from backup or logs",
+      "weight": 0.0,
       "impact": {
-        "speed": 0.3,
-        "accuracy": 0.5,
-        "adoption": 0.2
+        "speed": 0.0,
+        "accuracy": 0.0,
+        "adoption": 0.0
       },
-      "complexity": 0.4,
+      "complexity": 0.0,
       "tags": [
-        "workflow",
-        "automation",
-        "llm"
+        "placeholder"
       ],
-      "dependencies": [
-        "TSK-060"
-      ],
-      "complements": [
-        "IDEA-044",
-        "IDEA-047"
-      ],
-      "duplicates": [],
-      "priority": "medium",
-      "estimated_effort": "5\u20137d",
-      "status": "raw",
-      "target_release": "v0.3.0",
-      "concept_score": 0.75,
-      "ai_generated": false
+      "dependencies": [],
+      "estimated_effort": "unknown",
+      "target_release": "unknown",
+      "concept_score": 0.0,
+      "ai_generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/ideas (12).json"
     },
     {
       "id": "IDEA-052",
-      "description": "Visualize ideas.json and tasks.json",
-      "goal": "\u041d\u0430\u0433\u043b\u044f\u0434\u043d\u043e \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0438\u0434\u0435\u0438 \u0438 \u0437\u0430\u0434\u0430\u0447\u0438 \u0434\u043b\u044f \u043a\u043e\u043c\u0430\u043d\u0434\u044b",
-      "weight": 0.55,
+      "title": "Placeholder: Missing idea details",
+      "description": "Placeholder: Missing idea details",
+      "status": "missing",
+      "priority": "unknown",
+      "category": "general",
+      "created_at": "2025-05-24T11:26:17.602957Z",
+      "author": "@kpblcaoo",
+      "goal": "To be recovered from backup or logs",
+      "weight": 0.0,
       "impact": {
-        "speed": 0.2,
-        "accuracy": 0.3,
-        "adoption": 0.4
+        "speed": 0.0,
+        "accuracy": 0.0,
+        "adoption": 0.0
       },
-      "complexity": 0.5,
+      "complexity": 0.0,
       "tags": [
-        "visualization",
-        "onboarding",
-        "team"
+        "placeholder"
       ],
-      "dependencies": [
-        "TSK-060"
-      ],
-      "complements": [],
-      "duplicates": [],
-      "priority": "medium",
-      "estimated_effort": "7\u201310d",
-      "status": "raw",
-      "target_release": "v0.3.0",
-      "concept_score": 0.7,
-      "ai_generated": false
+      "dependencies": [],
+      "estimated_effort": "unknown",
+      "target_release": "unknown",
+      "concept_score": 0.0,
+      "ai_generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/ideas (12).json"
     },
     {
       "id": "IDEA-053",
-      "description": "Sub-mode for concept.json work",
-      "goal": "\u041f\u043e\u0434\u0440\u0435\u0436\u0438\u043c AI \u0434\u043b\u044f \u0430\u043d\u0430\u043b\u0438\u0437\u0430 \u0438 \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u044f concept.json",
-      "weight": 0.6,
+      "title": "Placeholder: Missing idea details",
+      "description": "Placeholder: Missing idea details",
+      "status": "missing",
+      "priority": "unknown",
+      "category": "general",
+      "created_at": "2025-05-24T11:26:17.602965Z",
+      "author": "@kpblcaoo",
+      "goal": "To be recovered from backup or logs",
+      "weight": 0.0,
       "impact": {
-        "speed": 0.3,
-        "accuracy": 0.4,
-        "adoption": 0.3
+        "speed": 0.0,
+        "accuracy": 0.0,
+        "adoption": 0.0
       },
-      "complexity": 0.5,
+      "complexity": 0.0,
       "tags": [
-        "concept",
-        "automation",
-        "llm"
+        "placeholder"
       ],
-      "dependencies": [
-        "TSK-060",
-        "IDEA-049"
-      ],
-      "complements": [
-        "IDEA-048"
-      ],
-      "duplicates": [],
-      "priority": "medium",
-      "estimated_effort": "7\u201310d",
-      "status": "raw",
-      "target_release": "v0.3.0",
-      "concept_score": 0.75,
-      "ai_generated": false
+      "dependencies": [],
+      "estimated_effort": "unknown",
+      "target_release": "unknown",
+      "concept_score": 0.0,
+      "ai_generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/ideas (12).json"
     },
     {
       "id": "IDEA-054",
-      "description": "Automated evaluation of idea metrics",
-      "goal": "\u041e\u0446\u0435\u043d\u0438\u0432\u0430\u0442\u044c concept_score, weight, impact \u0441\u043a\u0440\u0438\u043f\u0442\u0430\u043c\u0438 \u0441 \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435\u043c LLM",
-      "weight": 0.6,
+      "title": "Placeholder: Missing idea details",
+      "description": "Placeholder: Missing idea details",
+      "status": "missing",
+      "priority": "unknown",
+      "category": "general",
+      "created_at": "2025-05-24T11:26:17.602973Z",
+      "author": "@kpblcaoo",
+      "goal": "To be recovered from backup or logs",
+      "weight": 0.0,
       "impact": {
-        "speed": 0.4,
-        "accuracy": 0.3,
-        "adoption": 0.3
+        "speed": 0.0,
+        "accuracy": 0.0,
+        "adoption": 0.0
       },
-      "complexity": 0.5,
+      "complexity": 0.0,
       "tags": [
-        "automation",
-        "metrics",
-        "ideas"
+        "placeholder"
       ],
-      "dependencies": [
-        "TSK-060"
-      ],
-      "complements": [
-        "IDEA-043"
-      ],
-      "duplicates": [],
-      "priority": "medium",
-      "estimated_effort": "7\u201310d",
-      "status": "raw",
-      "target_release": "v0.3.0",
-      "concept_score": 0.75,
-      "ai_generated": false
+      "dependencies": [],
+      "estimated_effort": "unknown",
+      "target_release": "unknown",
+      "concept_score": 0.0,
+      "ai_generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/ideas (12).json"
     },
     {
       "id": "IDEA-055",
-      "description": "Regular backup of ideas.json",
-      "goal": "\u0410\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u0441\u043e\u0445\u0440\u0430\u043d\u0435\u043d\u0438\u0435 \u0438\u0434\u0435\u0439 \u0441 \u0432\u0435\u0440\u0441\u0438\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435\u043c",
-      "weight": 0.5,
+      "title": "Placeholder: Missing idea details",
+      "description": "Placeholder: Missing idea details",
+      "status": "missing",
+      "priority": "unknown",
+      "category": "general",
+      "created_at": "2025-05-24T11:26:17.602981Z",
+      "author": "@kpblcaoo",
+      "goal": "To be recovered from backup or logs",
+      "weight": 0.0,
       "impact": {
-        "speed": 0.2,
-        "accuracy": 0.3,
-        "adoption": 0.2
+        "speed": 0.0,
+        "accuracy": 0.0,
+        "adoption": 0.0
       },
-      "complexity": 0.3,
+      "complexity": 0.0,
       "tags": [
-        "backup",
-        "reliability"
+        "placeholder"
       ],
-      "dependencies": [
-        "TSK-012"
-      ],
-      "complements": [],
-      "duplicates": [],
-      "priority": "medium",
-      "estimated_effort": "3\u20135d",
-      "status": "raw",
-      "target_release": "v0.2.0",
-      "concept_score": 0.7,
-      "ai_generated": false
+      "dependencies": [],
+      "estimated_effort": "unknown",
+      "target_release": "unknown",
+      "concept_score": 0.0,
+      "ai_generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/ideas (12).json"
     },
     {
       "id": "IDEA-056",
-      "description": "Hybrid approach in concept.json",
-      "goal": "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u043f\u0440\u0438\u043d\u0446\u0438\u043f \u0433\u0438\u0431\u0440\u0438\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u0434\u0445\u043e\u0434\u0430 (LLM + \u0440\u0443\u0447\u043d\u0430\u044f \u0444\u0438\u043a\u0441\u0430\u0446\u0438\u044f)",
-      "weight": 0.55,
+      "title": "Placeholder: Missing idea details",
+      "description": "Placeholder: Missing idea details",
+      "status": "missing",
+      "priority": "unknown",
+      "category": "general",
+      "created_at": "2025-05-24T11:26:17.602989Z",
+      "author": "@kpblcaoo",
+      "goal": "To be recovered from backup or logs",
+      "weight": 0.0,
       "impact": {
-        "speed": 0.3,
-        "accuracy": 0.4,
-        "adoption": 0.3
+        "speed": 0.0,
+        "accuracy": 0.0,
+        "adoption": 0.0
       },
-      "complexity": 0.4,
+      "complexity": 0.0,
       "tags": [
-        "concept",
-        "workflow",
-        "llm"
+        "placeholder"
       ],
-      "dependencies": [
-        "TSK-060",
-        "IDEA-048"
-      ],
-      "complements": [
-        "IDEA-051"
-      ],
-      "duplicates": [],
-      "priority": "medium",
-      "estimated_effort": "5\u20137d",
-      "status": "raw",
-      "target_release": "v0.3.0",
-      "concept_score": 0.75,
-      "ai_generated": false
+      "dependencies": [],
+      "estimated_effort": "unknown",
+      "target_release": "unknown",
+      "concept_score": 0.0,
+      "ai_generated": false,
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/ideas (12).json"
     },
     {
       "id": "IDEA-057",
@@ -2291,118 +2266,6 @@
         ],
         "processing_method": "manual_json_orchestration"
       }
-    },
-    {
-      "id": "IDEA-139",
-      "title": "AI Agent CLI Training Framework",
-      "description": "Comprehensive training system for AI agents to efficiently interact with llmstruct CLI, including pattern recognition, command optimization, and self-improvement mechanisms",
-      "status": "proposed",
-      "priority": "high",
-      "category": "ai_integration",
-      "created_at": "2025-05-24T16:25:00Z",
-      "author": "@kpblcaoo",
-      "goal": "Enable AI agents to work seamlessly and efficiently with CLI layer",
-      "weight": 0.9,
-      "impact": {
-        "speed": 0.8,
-        "accuracy": 0.9,
-        "adoption": 0.7
-      },
-      "complexity": 0.7,
-      "tags": [
-        "ai",
-        "cli",
-        "training", 
-        "automation",
-        "optimization"
-      ],
-      "implementation_notes": "Build upon existing CLI audit command and command processor architecture",
-      "success_metrics": [
-        "Reduced command trial-and-error by 80%",
-        "Consistent CLI usage patterns across sessions",
-        "Self-improving interaction quality over time",
-        "Clear documentation of optimal command sequences"
-      ],
-      "components": [
-        "CLI interaction pattern analysis",
-        "Command sequence optimization",
-        "Error pattern recognition and recovery",
-        "Performance metrics collection",
-        "Training feedback loops"
-      ]
-    },
-    {
-      "id": "IDEA-140", 
-      "title": "Unified CLI-API Architecture Design",
-      "description": "Design future REST/GraphQL API layer that seamlessly integrates with existing CLI infrastructure, sharing core logic and maintaining consistency",
-      "status": "proposed",
-      "priority": "high",
-      "category": "architecture",
-      "created_at": "2025-05-24T16:25:00Z",
-      "author": "@kpblcaoo",
-      "goal": "Create unified backend that serves both CLI and API interfaces",
-      "weight": 0.9,
-      "impact": {
-        "speed": 0.6,
-        "accuracy": 0.8, 
-        "adoption": 0.9
-      },
-      "complexity": 0.8,
-      "tags": [
-        "api",
-        "architecture",
-        "integration",
-        "scalability",
-        "design"
-      ],
-      "implementation_notes": "Leverage existing CommandProcessor and CLI infrastructure as foundation",
-      "api_features": [
-        "RESTful endpoints for all CLI commands",
-        "GraphQL interface for complex queries",
-        "WebSocket support for real-time operations",
-        "Rate limiting and authentication",
-        "Auto-generated documentation"
-      ],
-      "integration_strategy": [
-        "Shared command processing core",
-        "Unified configuration system",
-        "Common data models and validation",
-        "Consistent error handling patterns",
-        "Shared caching and optimization"
-      ]
-    },
-    {
-      "id": "IDEA-141",
-      "title": "Enhanced Documentation Cross-Reference System", 
-      "description": "Systematic linking between documentation, tasks, and ideas with automated validation and placeholder management for future documentation needs",
-      "status": "proposed",
-      "priority": "medium",
-      "category": "documentation",
-      "created_at": "2025-05-24T16:25:00Z",
-      "author": "@kpblcaoo",
-      "goal": "Create comprehensive and maintainable documentation ecosystem",
-      "weight": 0.6,
-      "impact": {
-        "speed": 0.4,
-        "accuracy": 0.7,
-        "adoption": 0.6
-      },
-      "complexity": 0.4,
-      "tags": [
-        "documentation", 
-        "organization",
-        "maintenance",
-        "cross-reference",
-        "automation"
-      ],
-      "implementation_notes": "Build upon existing docs.json structure and audit command functionality",
-      "features": [
-        "Automated task/idea linking in docs.json",
-        "Placeholder documentation creation",
-        "Cross-reference validation",
-        "Documentation status tracking",
-        "Automated update notifications"
-      ]
     }
   ],
   "categories": {

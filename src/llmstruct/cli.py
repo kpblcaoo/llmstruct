@@ -911,6 +911,32 @@ def copilot(args):
         raise
 
 
+def audit(args):
+    """Handle audit command for recovering lost ideas/tasks."""
+    from .cli_commands import CommandProcessor
+    from .cli_config import CLIConfig
+    from .cli_utils import CLIUtils
+    import os
+    
+    try:
+        # Get the root directory from environment or current directory
+        root_dir = os.getcwd()
+        
+        # Initialize config and utils
+        config = CLIConfig(root_dir)
+        utils = CLIUtils(root_dir)
+        
+        # Initialize command processor
+        processor = CommandProcessor(root_dir, config, utils)
+        
+        # Execute audit command
+        processor.cmd_audit(args.action)
+        
+    except Exception as e:
+        logging.error(f"Audit command failed: {e}")
+        raise
+
+
 def main():
     """Command-line interface for LLMstruct."""
     parser = argparse.ArgumentParser(
@@ -1081,6 +1107,22 @@ def main():
         "--force", action="store_true", help="Force initialization for init command"
     )
 
+    # Audit command parser
+    audit_parser = subparsers.add_parser(
+        "audit", help="Audit and recover lost ideas/tasks from source files"
+    )
+    audit_parser.add_argument(
+        "action",
+        choices=["scan", "recover", "status"],
+        help="Audit action to perform"
+    )
+    audit_parser.add_argument(
+        "--dry-run", action="store_true", help="Show what would be done without making changes"
+    )
+    audit_parser.add_argument(
+        "--backup", action="store_true", default=True, help="Create backup before recovery"
+    )
+
     args = parser.parse_args()
 
     if args.command == "parse":
@@ -1097,6 +1139,8 @@ def main():
         review(args)
     elif args.command == "copilot":
         copilot(args)
+    elif args.command == "audit":
+        audit(args)
 
 
 if __name__ == "__main__":

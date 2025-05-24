@@ -27,7 +27,7 @@
       "description": "Optimize Qwen indexing for small projects",
       "status": "proposed",
       "priority": "medium",
-      "estimated_effort": "5–7d",
+      "estimated_effort": "5\u20137d",
       "dependencies": [
         "TSK-016"
       ],
@@ -46,7 +46,7 @@
       "description": "Optimize Qwen indexing for medium projects",
       "status": "proposed",
       "priority": "medium",
-      "estimated_effort": "7–10d",
+      "estimated_effort": "7\u201310d",
       "dependencies": [
         "TSK-016"
       ],
@@ -65,7 +65,7 @@
       "description": "Optimize Qwen indexing for large projects",
       "status": "proposed",
       "priority": "medium",
-      "estimated_effort": "10–14d",
+      "estimated_effort": "10\u201314d",
       "dependencies": [
         "TSK-016"
       ],
@@ -96,7 +96,7 @@
       "description": "Develop standalone parser for Python/JS",
       "status": "proposed",
       "priority": "high",
-      "estimated_effort": "5–7d",
+      "estimated_effort": "5\u20137d",
       "dependencies": [
         "TSK-006"
       ],
@@ -115,7 +115,7 @@
       "description": "Delegate documentation tasks to team",
       "status": "proposed",
       "priority": "medium",
-      "estimated_effort": "3–5d",
+      "estimated_effort": "3\u20135d",
       "dependencies": [],
       "assignee": "@kpblcaoo",
       "created_at": "2025-05-24T11:26:17.601622Z",
@@ -145,7 +145,7 @@
       "description": "Set up CI/CD with Docker and GitHub Actions",
       "status": "in_progress",
       "priority": "high",
-      "estimated_effort": "7–10d",
+      "estimated_effort": "7\u201310d",
       "dependencies": [],
       "assignee": "@momai",
       "created_at": "2025-05-24T11:26:17.599869Z",
@@ -175,7 +175,7 @@
       "description": "Implement MLOps metrics for LLM (tokens, VRAM, CPU/RAM)",
       "status": "proposed",
       "priority": "medium",
-      "estimated_effort": "12–18d",
+      "estimated_effort": "12\u201318d",
       "dependencies": [],
       "assignee": "@momai",
       "created_at": "2025-05-24T11:26:17.601634Z",
@@ -192,7 +192,7 @@
       "description": "Stabilize Qwen-1.5B for simple scenarios",
       "status": "proposed",
       "priority": "high",
-      "estimated_effort": "35–45d",
+      "estimated_effort": "35\u201345d",
       "dependencies": [],
       "assignee": "@kpblcaoo",
       "created_at": "2025-05-24T11:26:17.601638Z",
@@ -222,7 +222,7 @@
       "description": "Set up GitHub Sponsors for VPS funding",
       "status": "proposed",
       "priority": "medium",
-      "estimated_effort": "3–5d",
+      "estimated_effort": "3\u20135d",
       "dependencies": [],
       "assignee": "@kpblcaoo",
       "created_at": "2025-05-24T11:26:17.601645Z",
@@ -239,7 +239,7 @@
       "description": "Onboard @ivan-ib via video tutorial",
       "status": "proposed",
       "priority": "medium",
-      "estimated_effort": "3–5d",
+      "estimated_effort": "3\u20135d",
       "dependencies": [],
       "assignee": "@kpblcaoo",
       "created_at": "2025-05-24T11:26:17.601650Z",
@@ -256,7 +256,7 @@
       "description": "Onboard @momai via video tutorial",
       "status": "proposed",
       "priority": "medium",
-      "estimated_effort": "3–5d",
+      "estimated_effort": "3\u20135d",
       "dependencies": [],
       "assignee": "@kpblcaoo",
       "created_at": "2025-05-24T11:26:17.601654Z",
@@ -273,7 +273,7 @@
       "description": "Develop Flask-based mini-UI for struct.json",
       "status": "proposed",
       "priority": "medium",
-      "estimated_effort": "10–15d",
+      "estimated_effort": "10\u201315d",
       "dependencies": [],
       "assignee": "@kpblcaoo",
       "created_at": "2025-05-24T11:26:17.601658Z",
@@ -290,7 +290,7 @@
       "description": "Implement SQLite backend for struct.json",
       "status": "proposed",
       "priority": "medium",
-      "estimated_effort": "5–8d",
+      "estimated_effort": "5\u20138d",
       "dependencies": [],
       "assignee": "@kpblcaoo",
       "created_at": "2025-05-24T11:26:17.601662Z",
@@ -426,7 +426,7 @@
       "description": "Implement --to-json, --sync-memory in CLI",
       "status": "proposed",
       "priority": "medium",
-      "estimated_effort": "5–7d",
+      "estimated_effort": "5\u20137d",
       "dependencies": [
         "IDEA-070",
         "IDEA-071"
@@ -446,7 +446,7 @@
       "description": "Implement instructions for working with JSON files",
       "status": "proposed",
       "priority": "high",
-      "estimated_effort": "3–5d",
+      "estimated_effort": "3\u20135d",
       "dependencies": [
         "TSK-060"
       ],
@@ -465,7 +465,7 @@
       "description": "Implement intelligent workflow with LLM analysis of JSON",
       "status": "proposed",
       "priority": "high",
-      "estimated_effort": "10–14d",
+      "estimated_effort": "10\u201314d",
       "dependencies": [
         "TSK-060",
         "TSK-074"
@@ -485,7 +485,7 @@
       "description": "Create instructions.json for workspace configuration",
       "status": "proposed",
       "priority": "medium",
-      "estimated_effort": "3–5d",
+      "estimated_effort": "3\u20135d",
       "dependencies": [
         "TSK-074"
       ],
@@ -785,9 +785,9 @@
     {
       "id": "TSK-098",
       "description": "Implement CLI audit command to recover lost ideas/tasks",
-      "status": "completed",
+      "status": "proposed",
       "priority": "high",
-      "estimated_effort": "5–7d",
+      "estimated_effort": "5\u20137d",
       "dependencies": [
         "TSK-060"
       ],
@@ -797,11 +797,9 @@
       "ai-generated": false,
       "target_release": "v0.3.0",
       "related_idea": "IDEA-083",
-      "confirmation_status": "confirmed",
+      "confirmation_status": "pending",
       "source": "chat",
-      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (8).json",
-      "completion_date": "2025-05-24T16:20:00.000000Z",
-      "completion_notes": "Successfully implemented CLI audit command with scan/recover/status actions. Recovered 10 placeholder ideas from source files."
+      "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/tasks (8).json"
     },
     {
       "id": "TSK-100",
@@ -1130,99 +1128,6 @@
           "Registration system",
           "Command namespace",
           "Configuration management"
-        ]
-      }
-    },
-    {
-      "id": "TSK-138",
-      "description": "Create AI agent training system for CLI layer interaction",
-      "status": "proposed",
-      "priority": "high",
-      "estimated_effort": "7-10d",
-      "dependencies": ["TSK-098"],
-      "assignee": "@kpblcaoo",
-      "created_at": "2025-05-24T16:25:00Z",
-      "author": "@kpblcaoo",
-      "ai-generated": false,
-      "target_release": "v0.3.0",
-      "related_idea": "IDEA-139",
-      "confirmation_status": "pending",
-      "source": "user_request",
-      "details": {
-        "scope": "Design and implement training system for AI agents to work effectively through CLI",
-        "components": [
-          "CLI interaction patterns documentation",
-          "Agent training protocols", 
-          "Command optimization strategies",
-          "Error handling and recovery patterns",
-          "Performance measurement framework"
-        ],
-        "success_criteria": [
-          "AI agents can efficiently navigate CLI commands",
-          "Reduced trial-and-error in CLI usage",
-          "Consistent command usage patterns",
-          "Self-improving interaction quality"
-        ]
-      }
-    },
-    {
-      "id": "TSK-139", 
-      "description": "Design future API layer architecture with CLI integration",
-      "status": "proposed",
-      "priority": "high",
-      "estimated_effort": "10-14d",
-      "dependencies": ["TSK-138"],
-      "assignee": "@kpblcaoo",
-      "created_at": "2025-05-24T16:25:00Z",
-      "author": "@kpblcaoo", 
-      "ai-generated": false,
-      "target_release": "v0.4.0",
-      "related_idea": "IDEA-140",
-      "confirmation_status": "pending",
-      "source": "user_request",
-      "details": {
-        "scope": "Plan and design REST/GraphQL API layer that seamlessly integrates with existing CLI",
-        "components": [
-          "API endpoint design",
-          "CLI-to-API mapping",
-          "Authentication and authorization",
-          "Rate limiting and quotas",
-          "WebSocket support for real-time features",
-          "API documentation generation",
-          "CLI wrapper for API calls"
-        ],
-        "integration_points": [
-          "Shared command processing logic",
-          "Unified configuration system", 
-          "Common data models",
-          "Consistent error handling",
-          "Shared caching layer"
-        ]
-      }
-    },
-    {
-      "id": "TSK-140",
-      "description": "Update docs.json with proper task/idea cross-references",
-      "status": "proposed", 
-      "priority": "medium",
-      "estimated_effort": "2-3d",
-      "dependencies": ["TSK-098"],
-      "assignee": "@kpblcaoo",
-      "created_at": "2025-05-24T16:25:00Z",
-      "author": "@kpblcaoo",
-      "ai-generated": false,
-      "target_release": "v0.2.0",
-      "related_idea": "IDEA-141", 
-      "confirmation_status": "pending",
-      "source": "user_request",
-      "details": {
-        "scope": "Enhance documentation system with systematic task/idea references",
-        "components": [
-          "Add task references to each doc entry",
-          "Create placeholders for future docs",
-          "Fix path inconsistencies",
-          "Update status fields accurately",
-          "Add cross-reference validation"
         ]
       }
     }
