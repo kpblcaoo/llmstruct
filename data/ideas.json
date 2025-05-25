@@ -357,7 +357,7 @@
       "estimated_effort": "2 weeks",
       "target_release": "v0.2.0",
       "concept_score": 0.7,
-      "ai_generated": false,
+      "ai_generated": true,
       "_consolidation_source": "/home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/ideas (12).json"
     },
     {
@@ -2403,6 +2403,32 @@
         "Documentation status tracking",
         "Automated update notifications"
       ]
+    },
+    {
+      "id": "IDEA-153",
+      "title": "Split insights and ideas into separate files (insights.json)",
+      "description": "Refactor project data model: move insights (metrics, analytics, project health, statistics) into a dedicated insights.json, keep ideas.json for conceptual and feature ideas only.",
+      "status": "planned",
+      "priority": "medium",
+      "category": "data-structure",
+      "created_at": "2025-05-25T21:00:00Z",
+      "author": "@ai-copilot",
+      "ai-generated": true,
+      "implementation_notes": "Required for better separation of analytics and creative planning. Will simplify future automation and reporting.",
+      "related_tasks": ["TSK-145"]
+    },
+    {
+      "id": "IDEA-154",
+      "title": "Automate custom field assignment in GitHub Projects via Actions/API",
+      "description": "Implement GitHub Action or webhook to automatically set custom fields (e.g., Type: Task/Idea) for new project items using GraphQL API.",
+      "status": "planned",
+      "priority": "medium",
+      "category": "automation",
+      "created_at": "2025-05-25T21:00:00Z",
+      "author": "@ai-copilot",
+      "ai-generated": true,
+      "implementation_notes": "Will allow full Kanban automation and reduce manual work after export.",
+      "related_tasks": ["TSK-146"]
     }
   ],
   "categories": {
