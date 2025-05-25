@@ -1300,6 +1300,115 @@
           "docs.json (updated)"
         ]
       }
+    },
+    {
+      "id": "TSK-143",
+      "description": "Implement GitHub visualization/graph (gh-view-v1)",
+      "status": "completed",
+      "priority": "high",
+      "estimated_effort": "7d",
+      "dependencies": ["TSK-060", "TSK-081"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T19:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.4.0",
+      "related_idea": "IDEA-052",
+      "confirmation_status": "confirmed",
+      "source": "user_request",
+      "completed_at": "2025-05-24T20:30:00Z",
+      "details": {
+        "scope": "Design and implement GitHub visualization/graph feature (CLI and/or web)",
+        "components": [
+          "CLI command: gh-view",
+          "Module: src/llmstruct/gh_view.py",
+          "Config: [gh_view] section in llmstruct.toml",
+          "Documentation: docs/gh_view.md",
+          "Export script: scripts/export_to_github_projects.py",
+          "Bash wrapper: scripts/gh_export.sh"
+        ],
+        "success_criteria": [
+          "✅ GitHub Projects export functionality implemented",
+          "✅ Documentation and cross-references updated",
+          "✅ Feature tracked in tasks.json and docs.json",
+          "✅ ID mapping system for sync",
+          "✅ Filtering and dry-run support"
+        ],
+        "implementation_notes": "Implemented as GitHub Projects export system with full CLI support, filtering, mapping, and comprehensive documentation."
+      }
+    },
+    {
+      "id": "TSK-144",
+      "description": "Оформить и заполнить документацию по gh_view.md (GitHub Projects Integration)",
+      "status": "planned",
+      "priority": "medium",
+      "estimated_effort": "1d",
+      "dependencies": ["TSK-143"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-24T21:40:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": true,
+      "target_release": "v0.4.1",
+      "related_idea": "IDEA-052",
+      "confirmation_status": "pending",
+      "source": "auto_doc_task",
+      "details": {
+        "scope": "Заполнить подробную документацию по интеграции с GitHub Projects в docs/gh_view.md, включая примеры CLI, фильтрацию, dry-run, описание структуры и troubleshooting.",
+        "success_criteria": [
+          "Документ gh_view.md содержит подробное описание всех возможностей экспорта задач/идей в GitHub Projects",
+          "Есть примеры CLI-команд и bash-обёртки",
+          "Описаны фильтры, dry-run, mapping и troubleshooting",
+          "Документация зарегистрирована в docs.json и связана с задачей"
+        ]
+      }
+    },
+    {
+      "id": "TSK-145",
+      "description": "Refactor: split insights and ideas into insights.json and ideas.json",
+      "status": "planned",
+      "priority": "medium",
+      "estimated_effort": "2d",
+      "dependencies": [],
+      "assignee": "@ai-copilot",
+      "created_at": "2025-05-25T21:00:00Z",
+      "author": "@ai-copilot",
+      "ai-generated": true,
+      "target_release": "v0.4.2",
+      "related_idea": "IDEA-153",
+      "confirmation_status": "pending",
+      "source": "ai-generated",
+      "details": {
+        "scope": "Move all analytics, metrics, and project health data to insights.json. Keep ideas.json for feature and conceptual ideas only.",
+        "success_criteria": [
+          "insights.json created and filled with analytics",
+          "ideas.json contains only ideas",
+          "Documentation updated"
+        ]
+      }
+    },
+    {
+      "id": "TSK-146",
+      "description": "Automate custom field assignment in GitHub Projects via Actions/API",
+      "status": "planned",
+      "priority": "medium",
+      "estimated_effort": "2d",
+      "dependencies": [],
+      "assignee": "@ai-copilot",
+      "created_at": "2025-05-25T21:00:00Z",
+      "author": "@ai-copilot",
+      "ai-generated": true,
+      "target_release": "v0.4.2",
+      "related_idea": "IDEA-154",
+      "confirmation_status": "pending",
+      "source": "ai-generated",
+      "details": {
+        "scope": "Create GitHub Action or webhook to set custom fields (Type: Task/Idea) for new project items using GraphQL API.",
+        "success_criteria": [
+          "Action or webhook implemented",
+          "Custom fields set automatically after export",
+          "Manual work minimized"
+        ]
+      }
     }
   ]
 }

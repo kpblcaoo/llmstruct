@@ -139,6 +139,62 @@
         "workflow_state": "analysis_completed_recovery_pending"
       },
       "created_at": "2025-05-24T15:30:00Z"
+    },
+    {
+      "path": "docs/gh_view.md",
+      "title": "GitHub Projects Integration (gh-view-v1)",
+      "version": "1.0.0",
+      "status": "Implemented",
+      "author": "@kpblcaoo",
+      "artifact_id": "gh-view-20250524-001",
+      "description": "Complete implementation of GitHub Projects export feature. Export tasks/ideas from official JSON files to GitHub Project cards with filtering, mapping, and dry-run support.",
+      "related_tasks": ["TSK-143", "TSK-060", "TSK-081"],
+      "related_ideas": ["IDEA-052", "IDEA-086"],
+      "doc_type": "feature",
+      "implementation": {
+        "main_module": "src/llmstruct/gh_view.py",
+        "export_script": "scripts/export_to_github_projects.py",
+        "bash_wrapper": "scripts/gh_export.sh",
+        "config_section": "[gh_view] in llmstruct.toml",
+        "mapping_file": "data/gh_mapping.json",
+        "features": [
+          "Export tasks and ideas to GitHub Projects",
+          "Status and priority filtering", 
+          "Dry-run mode for safe testing",
+          "ID mapping between local and GitHub",
+          "Duplicate prevention",
+          "GitHub CLI integration"
+        ]
+      },
+      "created_at": "2025-05-24T19:00:00Z",
+      "completed_at": "2025-05-24T20:30:00Z"
+    },
+    {
+      "path": "docs/gh_view.md",
+      "title": "GitHub Projects Integration (gh-view-v1)",
+      "version": "0.2.0",
+      "status": "In Progress",
+      "author": "@kpblcaoo",
+      "artifact_id": "gh-view-20250524-002",
+      "description": "Документация по интеграции с GitHub Projects: экспорт задач/идей, фильтрация, dry-run, mapping, troubleshooting. Заполнить по задаче TSK-144.",
+      "related_tasks": ["TSK-144"],
+      "related_ideas": ["IDEA-052"],
+      "doc_type": "feature",
+      "created_at": "2025-05-24T21:40:00Z",
+      "updated_at": "2025-05-25T21:00:00Z"
+    },
+    {
+      "path": "data/insights.json",
+      "title": "Project Insights (insights.json)",
+      "version": "0.1.0",
+      "status": "Planned",
+      "author": "@ai-copilot",
+      "artifact_id": "insights-core-001",
+      "description": "Project analytics, metrics, and health insights. Split from ideas.json for clarity. See TSK-145, IDEA-153.",
+      "related_tasks": ["TSK-145"],
+      "related_ideas": ["IDEA-153"],
+      "doc_type": "data",
+      "created_at": "2025-05-25T21:00:00Z"
     }
   ],
   "automation": [
