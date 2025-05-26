@@ -1,0 +1,9 @@
+{
+  "version": "0.1.0",
+  "session_id": "SES-002",
+  "branch": "chore/docs-cleanup-and-organization",
+  "status": "active",
+  "started_at": "2025-05-26T00:00:00Z",
+  "author": "@kpblcaoo",
+  "notes": "Новая сессия: очистка и организация документации. Цель - привести в порядок все docs/, temp_workfiles/, internal/, убрать личные заметки в скрытые папки."
+}

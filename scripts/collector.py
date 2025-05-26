@@ -1,96 +1,70 @@
 import json
-import logging
-import uuid
 from pathlib import Path
-import fnmatch
+import gitignore_parser
+import logging
 
+# Setup logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
 
-def apply_filters(files, filters):
-    filtered = []
-    for file in files:
-        if not filters:
-            filtered.append(file)
-            continue
-        include = False
-        for pattern in filters:
-            if pattern.startswith("!"):
-                if fnmatch.fnmatch(file, pattern[1:]):
-                    include = False
-                    break
-            elif fnmatch.fnmatch(file, pattern):
-                include = True
-        if include:
-            filtered.append(file)
-    return filtered
+def load_gitignore():
+    gitignore_path = Path(".gitignore")
+    if gitignore_path.exists():
+        return gitignore_parser.parse_gitignore(gitignore_path)
+    return lambda x: False
 
 
-def collect_files(root_dir: Path, filters: list = None):
-    files = []
-    for path in root_dir.rglob("*"):
-        if path.is_file():
-            rel_path = str(path.relative_to(root_dir))
-            files.append(rel_path)
-    return apply_filters(files, filters or [])
+def is_text_file(file_path):
+    """Check if file is likely a text file based on extension."""
+    text_extensions = {
+        '.py',
+        '.md',
+        '.txt',
+        '.json',
+        '.toml',
+        '.yml',
+        '.yaml',
+        '.gitignore'}
+    return file_path.suffix.lower() in text_extensions
 
 
-def generate_struct(root_dir: str, output: str = "struct.json"):
-    root_path = Path(root_dir)
-    struct = {
-        "metadata": {
-            "project_name": "llmstruct",
-            "version": "0.2.0",
-            "authors": [{"name": "@kpblcaoo", "github": "kpblcaoo", "email": "kpblcaoo@example.com"}],
-            "stats": {"modules_count": 0, "functions_count": 0},
-            "artifact_id": str(uuid.uuid4()),
-            "summary": "LLMstruct project structure",
-            "tags": ["struct"]
-        },
-        "toc": [],
-        "modules": [],
-        "folder_structure": [],
-        "filters": ["src/*", "!tests/*", "!venv/*", "!build/*"]
-    }
+def collect_project():
+    root_dir = Path(".")
+    ignore_dirs = ["src", "tests", "venv", "tmp", "build", "examples"]
+    gitignore = load_gitignore()
+    output_json = "project_context.json"
 
-    output_path = Path(output)
-    if output_path.exists():
-        with output_path.open("r", encoding="utf-8") as f:
-            existing = json.load(f)
-            struct["filters"] = existing.get("filters", struct["filters"])
+    doc_files = {}
+    for file_path in root_dir.rglob("*"):
+        if file_path.is_file() and not any(
+            ignore_dir in str(file_path) for ignore_dir in ignore_dirs
+        ):
+            if (not gitignore(file_path) or
+                file_path.name == output_json or
+                    file_path.name == ".gitignore"):
+                if is_text_file(file_path):
+                    try:
+                        with open(file_path, "r", encoding="utf-8") as f:
+                            doc_files[str(file_path)] = f.read()
+                    except UnicodeDecodeError as e:
+                        logger.warning(
+                            f"Skipping {file_path}: not a valid UTF-8 file "
+                            f"({e})")
+                    except Exception as e:
+                        logger.error(f"Error reading {file_path}: {e}")
+                else:
+                    logger.warning(f"Skipping {file_path}: not a text file")
 
-    files = collect_files(root_path, struct["filters"])
-
-    for file in files:
-        struct["folder_structure"].append({
-            "path": file,
-            "type": "file",
-            "artifact_id": str(uuid.uuid4()),
-            "metadata": {}
-        })
-
-    struct["modules"] = [{"name": "cli",
-                          "path": "src/cli",
-                          "artifact_id": str(uuid.uuid4()),
-                          "functions": []},
-                         {"name": "collector",
-                          "path": "src/collector",
-                          "artifact_id": str(uuid.uuid4()),
-                          "functions": []}]
-    struct["toc"] = files
-    struct["metadata"]["stats"]["modules_count"] = len(struct["modules"])
-
-    with output_path.open("w", encoding="utf-8") as f:
-        json.dump(struct, f, indent=2)
-    logger.info(f"Generated {output}")
-
-
-def main():
-    generate_struct(".", "struct.json")
+    with open(output_json, "w", encoding="utf-8") as f:
+        json.dump(
+            {"files": [{"path": k, "content": v}
+             for k, v in doc_files.items()]},
+            f, ensure_ascii=False)
+        logger.info(f"Generated {output_json} with {len(doc_files)} files")
 
 
 if __name__ == "__main__":
-    main()
+    collect_project()
