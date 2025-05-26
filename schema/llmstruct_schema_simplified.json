@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LLMstruct Schema (Simplified)",
+  "type": "object",
+  "required": ["metadata"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "project_name": {"type": "string"},
+        "description": {"type": "string"},
+        "version": {"type": "string"},
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {"type": "string"},
+              "github": {"type": "string"},
+              "email": {"type": "string"}
+            }
+          }
+        },
+        "instructions": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "toc": {"type": "array"},
+    "modules": {"type": "array"},
+    "folder_structure": {"type": "object"},
+    "files": {"type": "array"},
+    "summary": {"type": "string"}
+  }
+}

@@ -384,7 +384,8 @@
         {"name": "--json", "type": "string", "required": true, "description": "JSON file to validate"},
         {"name": "--schema", "type": "string", "required": true, "description": "Schema file path"},
         {"name": "--strict", "type": "boolean", "required": false, "description": "Enable strict validation mode"},
-        {"name": "--output", "type": "string", "required": false, "description": "Output validation report to file"}
+        {"name": "--output", "type": "string", "required": false, "description": "Output validation report to file"},
+        {"name": "--all", "type": "boolean", "required": false, "description": "Validate all JSON files in the directory"}
       ],
       "examples": [
         {
@@ -394,6 +395,10 @@
         {
           "command": "llmstruct validate --json data/tasks.json --schema schema/common/definitions.json --strict",
           "description": "Strict validation of tasks.json"
+        },
+        {
+          "command": "llmstruct validate --all --schema schema/common/definitions.json",
+          "description": "Validate all JSON files in the directory against the schema"
         }
       ],
       "queue_template": {
@@ -401,7 +406,8 @@
         "json_path": "{json_file}",
         "schema_path": "{schema_file}",
         "options": {
-          "strict_mode": "{strict_flag}"
+          "strict_mode": "{strict_flag}",
+          "validate_all": "{all_flag}"
         }
       }
     },

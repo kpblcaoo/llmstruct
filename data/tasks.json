@@ -1089,7 +1089,7 @@
     {
       "id": "TSK-136",
       "description": "Test and document modular CLI system",
-      "status": "proposed",
+      "status": "in_progress",
       "priority": "medium",
       "estimated_effort": "3d",
       "dependencies": [
@@ -1340,26 +1340,28 @@
     {
       "id": "TSK-144",
       "description": "Оформить и заполнить документацию по gh_view.md (GitHub Projects Integration)",
-      "status": "planned",
+      "status": "completed",
       "priority": "medium",
       "estimated_effort": "1d",
       "dependencies": ["TSK-143"],
       "assignee": "@kpblcaoo",
       "created_at": "2025-05-24T21:40:00Z",
+      "completed_at": "2025-05-26T10:30:00Z",
       "author": "@kpblcaoo",
       "ai-generated": true,
       "target_release": "v0.4.1",
       "related_idea": "IDEA-052",
-      "confirmation_status": "pending",
+      "confirmation_status": "confirmed",
       "source": "auto_doc_task",
       "details": {
         "scope": "Заполнить подробную документацию по интеграции с GitHub Projects в docs/gh_view.md, включая примеры CLI, фильтрацию, dry-run, описание структуры и troubleshooting.",
         "success_criteria": [
-          "Документ gh_view.md содержит подробное описание всех возможностей экспорта задач/идей в GitHub Projects",
-          "Есть примеры CLI-команд и bash-обёртки",
-          "Описаны фильтры, dry-run, mapping и troubleshooting",
-          "Документация зарегистрирована в docs.json и связана с задачей"
-        ]
+          "✅ Документ gh_view.md содержит подробное описание всех возможностей экспорта задач/идей в GitHub Projects",
+          "✅ Есть примеры CLI-команд и bash-обёртки",
+          "✅ Описаны фильтры, dry-run, mapping и troubleshooting",
+          "✅ Документация зарегистрирована в docs.json и связана с задачей"
+        ],
+        "completion_notes": "Создана исчерпывающая документация на 415 строк с полным покрытием функций, включая архитектуру, примеры использования, отображение данных, систему ID mapping, рабочие процессы интеграции, обработку ошибок, API reference, соображения безопасности, оптимизацию производительности и руководство по устранению неполадок."
       }
     },
     {
@@ -1407,6 +1409,496 @@
           "Action or webhook implemented",
           "Custom fields set automatically after export",
           "Manual work minimized"
+        ]
+      }
+    },
+    {
+      "id": "TSK-147",
+      "description": "Интегрировать систему сессий (ai_sessions.json, current_session.json, worklog.json) в рабочий процесс и автоматизировать подгрузку контекста для LLM и пользователя.",
+      "status": "in_progress",
+      "priority": "high",
+      "estimated_effort": "3d",
+      "dependencies": ["TSK-145"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-26T00:00:00Z",
+      "author": "@ai-copilot",
+      "ai-generated": true,
+      "target_release": "v0.4.2",
+      "related_idea": "IDEA-153",
+      "confirmation_status": "pending",
+      "source": "ai-session-integration",
+      "details": {
+        "scope": "Внедрить автоматическую работу сессий: переключение, логирование, подгрузка knowledge_cache и инструкций для LLM, интеграция с ветками и задачами.",
+        "success_criteria": [
+          "current_session.json всегда отражает активную ветку/сессию",
+          "worklog.json содержит историю событий и решений",
+          "ai_sessions.json позволяет быстро переключаться между сессиями и видеть summary",
+          "LLM и пользователь получают нужные инструкции и контекст при старте сессии"
+        ]
+      }
+    },
+    {
+      "id": "TSK-150",
+      "description": "Plan and create comprehensive integration documentation (integration.md)",
+      "status": "planned",
+      "priority": "high",
+      "estimated_effort": "3-4d",
+      "dependencies": ["TSK-131"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": "IDEA-150",
+      "confirmation_status": "pending",
+      "source": "future_planning",
+      "details": {
+        "scope": "Create comprehensive integration documentation covering VS Code Copilot, context orchestration, GitHub Projects, CLI workflows, and API interfaces",
+        "components": [
+          "VS Code Copilot integration patterns",
+          "Context orchestration workflows", 
+          "GitHub Projects synchronization",
+          "API integration examples",
+          "CLI workflow automation",
+          "Multi-tool integration scenarios"
+        ],
+        "success_criteria": [
+          "Complete integration.md with all major integration patterns",
+          "Working examples for each integration type",
+          "Troubleshooting guides and best practices",
+          "Cross-references with other documentation"
+        ]
+      }
+    },
+    {
+      "id": "TSK-151",
+      "description": "Develop automated cleanup utilities for project maintenance",
+      "status": "planned",
+      "priority": "medium",
+      "estimated_effort": "5-7d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo", 
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": "IDEA-151",
+      "confirmation_status": "pending",
+      "source": "future_planning",
+      "details": {
+        "scope": "Create automated utilities for ongoing project maintenance, cleanup, and organization",
+        "components": [
+          "Duplicate file detection and removal",
+          "Outdated backup cleanup scheduler",
+          "Documentation link validation",
+          "JSON schema compliance checker",
+          "Archive organization automation",
+          "Development artifact management"
+        ],
+        "success_criteria": [
+          "Automated cleanup scripts in scripts/ directory",
+          "Configurable cleanup policies",
+          "Safety checks and rollback capabilities",
+          "Integration with CI/CD workflows"
+        ]
+      }
+    },
+    {
+      "id": "TSK-152",
+      "description": "Create comprehensive teaching and onboarding process documentation",
+      "status": "planned",
+      "priority": "high",
+      "estimated_effort": "4-6d",
+      "dependencies": ["TSK-150"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": "IDEA-152",
+      "confirmation_status": "pending",
+      "source": "future_planning",
+      "details": {
+        "scope": "Develop systematic teaching materials for project contributors and AI agents",
+        "components": [
+          "Step-by-step onboarding guide",
+          "Video tutorial scripts and materials",
+          "Interactive learning modules",
+          "AI agent training protocols",
+          "Best practices documentation",
+          "Common pitfalls and solutions"
+        ],
+        "success_criteria": [
+          "Complete onboarding documentation in docs/onboarding/",
+          "Video tutorial outlines and scripts",
+          "AI agent training datasets and protocols",
+          "Measurable learning outcomes and checkpoints"
+        ]
+      }
+    },
+    {
+      "id": "TSK-153",
+      "description": "Implement comprehensive tasks and ideas revision system",
+      "status": "planned",
+      "priority": "high",
+      "estimated_effort": "3-5d",
+      "dependencies": ["TSK-098"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": "IDEA-153",
+      "confirmation_status": "pending",
+      "source": "future_planning",
+      "details": {
+        "scope": "Create systematic process for reviewing, updating, and managing tasks and ideas lifecycle",
+        "components": [
+          "Task completion validation system",
+          "Idea implementation tracking",
+          "Obsolete task identification and archival",
+          "Task dependency analysis and optimization",
+          "Progress reporting and metrics",
+          "Quality assurance workflows"
+        ],
+        "success_criteria": [
+          "Automated task lifecycle management",
+          "Regular review and cleanup processes",
+          "Clear completion criteria and validation",
+          "Improved task-to-implementation traceability"
+        ]
+      }
+    },
+    {
+      "id": "TSK-154",
+      "description": "Design and implement API-mode evaluation framework",
+      "status": "planned",
+      "priority": "medium",
+      "estimated_effort": "7-10d",
+      "dependencies": ["TSK-139"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.4.0",
+      "related_idea": "IDEA-154",
+      "confirmation_status": "pending",
+      "source": "future_planning",
+      "details": {
+        "scope": "Evaluate different approaches for API layer implementation and choose optimal architecture",
+        "components": [
+          "REST API vs GraphQL comparison",
+          "FastAPI vs Django vs Flask evaluation",
+          "WebSocket integration patterns",
+          "Authentication/authorization strategies",
+          "Performance benchmarking framework",
+          "Scalability analysis and planning"
+        ],
+        "success_criteria": [
+          "Comprehensive API architecture evaluation report",
+          "Performance benchmarks and comparisons",
+          "Recommended API technology stack",
+          "Implementation roadmap and milestones"
+        ]
+      }
+    },
+    {
+      "id": "TSK-155",
+      "description": "Plan advanced project workflow automation and CI/CD enhancements",
+      "status": "planned",
+      "priority": "medium",
+      "estimated_effort": "5-8d",
+      "dependencies": ["TSK-151"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.4.0",
+      "related_idea": "IDEA-155",
+      "confirmation_status": "pending",
+      "source": "future_planning",
+      "details": {
+        "scope": "Design advanced automation workflows for development, testing, deployment, and maintenance",
+        "components": [
+          "Advanced GitHub Actions workflows",
+          "Automated testing and validation pipelines",
+          "Documentation generation automation",
+          "Release management automation",
+          "Quality gates and compliance checking",
+          "Performance monitoring and alerting"
+        ],
+        "success_criteria": [
+          "Fully automated CI/CD pipeline",
+          "Zero-touch deployment capabilities",
+          "Comprehensive quality gates",
+          "Automated documentation updates"
+        ]
+      }
+    },
+    {
+      "id": "TSK-156",
+      "description": "Create pull request process documentation and demonstration",
+      "status": "planned",
+      "priority": "high",
+      "estimated_effort": "1-2d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.2.1",
+      "related_idea": "IDEA-156",
+      "confirmation_status": "pending",
+      "source": "future_planning",
+      "details": {
+        "scope": "Document proper PR process and demonstrate with cleanup branch",
+        "components": [
+          "PR creation guidelines and templates",
+          "Code review process documentation",
+          "Branch management best practices",
+          "Merge strategies and policies",
+          "Cleanup branch PR demonstration",
+          "Conflict resolution procedures"
+        ],
+        "success_criteria": [
+          "Complete PR process documentation",
+          "Successful cleanup branch PR",
+          "Clear branch management guidelines",
+          "Documented review and merge procedures"
+        ]
+      }
+    },
+    {
+      "id": "TSK-157",
+      "description": "Plan project structure documentation overhaul (project_structure.md)",
+      "status": "planned",
+      "priority": "medium",
+      "estimated_effort": "2-3d",
+      "dependencies": ["TSK-150"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": "IDEA-157",
+      "confirmation_status": "pending",
+      "source": "future_planning",
+      "details": {
+        "scope": "Create comprehensive project structure documentation with navigation and architecture overview",
+        "components": [
+          "Directory structure explanation",
+          "File naming conventions",
+          "Architecture component mapping",
+          "Development workflow integration",
+          "Configuration file relationships",
+          "Data flow and dependencies"
+        ],
+        "success_criteria": [
+          "Complete project_structure.md documentation",
+          "Visual diagrams and component maps",
+          "Clear navigation and reference guides",
+          "Integration with other documentation"
+        ]
+      }
+    },
+    {
+      "id": "TSK-158",
+      "description": "Design metrics and analytics expansion framework",
+      "status": "planned",
+      "priority": "low",
+      "estimated_effort": "6-8d",
+      "dependencies": ["TSK-154"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.4.0",
+      "related_idea": "IDEA-158",
+      "confirmation_status": "pending",
+      "source": "future_planning",
+      "details": {
+        "scope": "Plan comprehensive metrics collection and analytics framework for project insights",
+        "components": [
+          "Performance metrics collection",
+          "Usage analytics and patterns",
+          "Error tracking and reporting",
+          "Resource utilization monitoring",
+          "User experience metrics",
+          "Development productivity measures"
+        ],
+        "success_criteria": [
+          "Metrics collection framework design",
+          "Analytics dashboard specifications",
+          "Privacy-compliant data collection",
+          "Actionable insights generation"
+        ]
+      }
+    },
+    {
+      "id": "TSK-159",
+      "description": "Plan security audit and compliance framework implementation",
+      "status": "planned",
+      "priority": "high",
+      "estimated_effort": "4-6d",
+      "dependencies": ["TSK-142"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": "IDEA-159",
+      "confirmation_status": "pending",
+      "source": "future_planning",
+      "details": {
+        "scope": "Design comprehensive security audit framework and compliance checking system",
+        "components": [
+          "Security policy enforcement automation",
+          "Vulnerability scanning integration",
+          "Compliance checking workflows",
+          "Security documentation updates",
+          "Incident response procedures",
+          "Regular security review processes"
+        ],
+        "success_criteria": [
+          "Automated security audit pipeline",
+          "Comprehensive security documentation",
+          "Regular compliance checking",
+          "Incident response framework"
+        ]
+      }
+    },
+    {
+      "id": "TSK-160",
+      "description": "Plan and execute comprehensive branch cleanup strategy",
+      "status": "planned",
+      "priority": "high",
+      "estimated_effort": "2-3d",
+      "dependencies": ["TSK-156"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-26T14:30:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.2.1",
+      "related_idea": "IDEA-160",
+      "confirmation_status": "pending",
+      "source": "branch_management",
+      "details": {
+        "scope": "Systematically clean up obsolete branches and establish branch management policies",
+        "current_branches": [
+          "ai-helped/feature/cli-context-sessions",
+          "chore/docs-cleanup-and-organization (current)",
+          "dev/0.1.1",
+          "dev/v0.1.2", 
+          "dev/v0.2.0",
+          "feature/docs-cleanup-and-organization",
+          "main",
+          "temp/unsaved-v0.1.1-changes",
+          "testing/v0.2.0",
+          "v0.1.0"
+        ],
+        "cleanup_strategy": [
+          "Merge/archive completed feature branches",
+          "Remove obsolete development branches",
+          "Consolidate version branches",
+          "Establish naming conventions",
+          "Document branch lifecycle policies"
+        ],
+        "success_criteria": [
+          "Clean branch structure with clear purposes",
+          "Documented branch management guidelines", 
+          "Merged important features into main",
+          "Archived obsolete branches safely"
+        ]
+      }
+    },
+    {
+      "id": "TSK-161",
+      "description": "Design and plan CI/CD process architecture for @momai implementation",
+      "status": "planned",
+      "priority": "critical",
+      "estimated_effort": "5-7d",
+      "dependencies": ["TSK-160"],
+      "assignee": "@momai",
+      "created_at": "2025-05-26T14:30:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.3.0",
+      "related_idea": "IDEA-161",
+      "confirmation_status": "pending",
+      "source": "ci_cd_planning",
+      "details": {
+        "scope": "Comprehensive CI/CD architecture design and implementation planning for @momai",
+        "components": [
+          "GitHub Actions workflow design",
+          "Docker containerization strategy",
+          "Testing pipeline architecture",
+          "Deployment automation",
+          "Security scanning integration",
+          "Performance monitoring setup"
+        ],
+        "evaluation_areas": [
+          "Current CI/CD state assessment",
+          "Technology stack evaluation (GitHub Actions vs alternatives)",
+          "Security and compliance requirements",
+          "Performance and scalability considerations",
+          "Integration with existing project structure",
+          "Documentation and maintenance procedures"
+        ],
+        "deliverables": [
+          "CI/CD architecture document",
+          "Implementation roadmap and timeline",
+          "Technology recommendations",
+          "Security and compliance checklist",
+          "Performance benchmarks and targets",
+          "Documentation and training materials"
+        ],
+        "success_criteria": [
+          "Complete CI/CD architecture specification",
+          "Clear implementation plan for @momai",
+          "Security and quality gates defined",
+          "Integration points with existing workflow identified"
+        ]
+      }
+    },
+    {
+      "id": "TSK-162",
+      "description": "Validate and fix JSON consistency across all configuration files",
+      "status": "planned",
+      "priority": "high",
+      "estimated_effort": "1-2d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-26T14:30:00Z",
+      "author": "@kpblcaoo",
+      "ai-generated": false,
+      "target_release": "v0.2.1",
+      "related_idea": "IDEA-162",
+      "confirmation_status": "pending",
+      "source": "json_validation",
+      "details": {
+        "scope": "Comprehensive validation and consistency checking of all JSON configuration files",
+        "validation_targets": [
+          "data/tasks.json - task IDs, dependencies, references",
+          "data/ideas.json - idea IDs, related tasks, categories",
+          "docs.json - documentation references, cross-links",
+          "data/artifacts_index.json - artifact references and metadata",
+          "Cross-file reference integrity",
+          "Schema compliance validation"
+        ],
+        "validation_checks": [
+          "JSON syntax validation (✅ Already passed)",
+          "Cross-reference integrity",
+          "Duplicate ID detection",
+          "Missing dependency validation",
+          "Broken link detection",
+          "Schema compliance verification"
+        ],
+        "success_criteria": [
+          "All JSON files pass syntax validation",
+          "No broken cross-references between files",
+          "All task/idea dependencies are valid",
+          "Documentation links are current and accessible",
+          "Automated validation scripts created"
         ]
       }
     }
