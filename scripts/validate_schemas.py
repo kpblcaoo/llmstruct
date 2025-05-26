@@ -8,10 +8,9 @@ Part of TSK-130 implementation.
 import json
 import sys
 from jsonschema import validate, ValidationError, draft7_format_checker
+import os
 
 # Color output
-
-
 class Colors:
     GREEN = '\033[92m'
     RED = '\033[91m'
@@ -49,133 +48,42 @@ def validate_json_against_schema(json_data, schema_data, file_name):
         print(f"   Error: {e.message}")
         return False
     except Exception as e:
-        print(f"{Colors.RED}❌ {file_name}: Unexpected error: {e}{Colors.ENDC}")
+        print(f"{Colors.RED}❌ Unexpected error in {file_name}: {e}{Colors.ENDC}")
         return False
 
 
 def main():
-    print(f"{Colors.BOLD}{Colors.BLUE}🔍 llmstruct JSON Schema Validation{Colors.ENDC}")
-    print(f"{Colors.BLUE}Part of TSK-130: Validate JSON schema compliance{Colors.ENDC}")
-    print()
+    """Main execution flow for validating JSON files against schemas."""
+    if len(sys.argv) < 3:
+        print(f"{Colors.BLUE}Usage: validate_schemas.py <schema_directory> <json_directory>{Colors.ENDC}")
+        sys.exit(1)
 
-    # Define file-to-schema mappings
-    validations = [
-        # Core project files
-        {
-            "file": "struct.json",
-            "schema": "schema/llmstruct_schema.json",
-            "description": "Main project structure"
-        },
-        {
-            "file": "data/tasks.json",
-            "schema": "schema/core.json",
-            "description": "Task management"
-        },
+    schema_dir = sys.argv[1]
+    json_dir = sys.argv[2]
 
-        # Enhanced files (new)
-        {
-            "file": "data/init_enhanced.json",
-            "schema": "schema/core.json",
-            "description": "Enhanced context orchestration"
-        },
-        {
-            "file": "data/cli_enhanced.json",
-            "schema": "schema/plugins/cli.json",
-            "description": "Enhanced CLI automation"
-        },
-        {
-            "file": "data/cli_queue_enhanced.json",
-            "schema": "schema/plugins/cli.json",
-            "description": "Enhanced workflow system"
-        },
+    if not os.path.isdir(schema_dir):
+        print(f"{Colors.RED}Error: Schema directory {schema_dir} does not exist.{Colors.ENDC}")
+        sys.exit(1)
 
-        # Standard data files
-        {
-            "file": "data/cli.json",
-            "schema": "schema/plugins/cli.json",
-            "description": "CLI configuration"
-        },
-        {
-            "file": "data/cli_queue.json",
-            "schema": "schema/plugins/cli.json",
-            "description": "CLI queue system"
-        },
-        {
-            "file": "data/artifacts_index.json",
-            "schema": "schema/plugins/artifacts.json",
-            "description": "Artifacts index"
-        },
-        {
-            "file": "data/insights.json",
-            "schema": "schema/plugins/insights.json",
-            "description": "Project insights"
-        },
+    if not os.path.isdir(json_dir):
+        print(f"{Colors.RED}Error: JSON directory {json_dir} does not exist.{Colors.ENDC}")
+        sys.exit(1)
 
-        # New project management files
-        {
-            "file": "data/ideas.json",
-            "schema": "schema/core.json",
-            "description": "Project ideas"
-        },
-        {
-            "file": "data/prs.json",
-            "schema": "schema/core.json",
-            "description": "Pull request tracking"
-        },
-        {
-            "file": "data/ideas_cache.json",
-            "schema": "schema/core.json",
-            "description": "Ideas cache"
-        }
-    ]
+    for json_file in os.listdir(json_dir):
+        if json_file.endswith('.json'):
+            json_path = os.path.join(json_dir, json_file)
+            schema_path = os.path.join(schema_dir, f"{os.path.splitext(json_file)[0]}_schema.json")
 
-    valid_count = 0
-    total_count = 0
-    errors = []
+            if not os.path.exists(schema_path):
+                print(f"{Colors.YELLOW}⚠️ Schema not found for {json_file}: {schema_path}{Colors.ENDC}")
+                continue
 
-    for validation in validations:
-        file_path = validation["file"]
-        schema_path = validation["schema"]
-        description = validation["description"]
+            json_data = load_json(json_path)
+            schema_data = load_json(schema_path)
 
-        print(f"{Colors.YELLOW}Validating: {description}{Colors.ENDC}")
-
-        # Load JSON file
-        json_data = load_json(file_path)
-        if json_data is None:
-            errors.append(f"Failed to load {file_path}")
-            total_count += 1
-            continue
-
-        # Load schema
-        schema_data = load_json(schema_path)
-        if schema_data is None:
-            errors.append(f"Failed to load schema {schema_path}")
-            total_count += 1
-            continue
-
-        # Validate
-        if validate_json_against_schema(json_data, schema_data, file_path):
-            valid_count += 1
-        else:
-            errors.append(f"Validation failed for {file_path}")
-
-        total_count += 1
-        print()
-
-    # Summary
-    print(f"{Colors.BOLD}📊 Validation Summary{Colors.ENDC}")
-    print(f"Valid files: {Colors.GREEN}{valid_count}/{total_count}{Colors.ENDC}")
-
-    if errors:
-        print(f"{Colors.RED}❌ Errors found:{Colors.ENDC}")
-        for error in errors:
-            print(f"  - {error}")
-        return 1
-    else:
-        print(f"{Colors.GREEN}🎉 All JSON files are valid!{Colors.ENDC}")
-        return 0
+            if json_data and schema_data:
+                validate_json_against_schema(json_data, schema_data, json_file)
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()
