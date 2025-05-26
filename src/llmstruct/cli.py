@@ -133,6 +133,14 @@ async def interactive_modular(args: argparse.Namespace):
 
     # Create and run modular CLI
     cli_core = create_cli_core(root_dir)
+    
+    # Set context mode if available
+    if hasattr(args, 'context_mode') and args.context_mode:
+        # Pass context mode to CLI core components
+        if hasattr(cli_core, 'command_processor') and cli_core.command_processor:
+            cli_core.command_processor.default_context_mode = args.context_mode
+            logging.info(f"Set default context mode to {args.context_mode}")
+    
     cli_core.run_interactive_mode()
 
 
@@ -709,16 +717,16 @@ def parse(args: argparse.Namespace):
         )
 
     args.language or config.get("cli", {}).get("language", "python")
-    include_patterns = args.include or config.get("cli", {}).get("include_patterns")
-    exclude_patterns = args.exclude or config.get("cli", {}).get("exclude_patterns")
-    include_ranges = args.include_ranges or config.get("cli", {}).get(
-        "include_ranges", False
-    )
-    include_hashes = args.include_hashes or config.get("cli", {}).get(
-        "include_hashes", False
-    )
-    use_gitignore = config.get("cli", {}).get("use_gitignore", True)
-    exclude_dirs = config.get("cli", {}).get("exclude_dirs", [])
+    # Read parsing configuration from [parsing] section, fallback to [cli] for compatibility
+    parsing_config = config.get("parsing", {})
+    cli_config = config.get("cli", {})
+    
+    include_patterns = args.include or parsing_config.get("include_patterns") or cli_config.get("include_patterns")
+    exclude_patterns = args.exclude or parsing_config.get("exclude_patterns") or cli_config.get("exclude_patterns")
+    include_ranges = args.include_ranges or parsing_config.get("include_ranges") or cli_config.get("include_ranges", False)
+    include_hashes = args.include_hashes or parsing_config.get("include_hashes") or cli_config.get("include_hashes", False)
+    use_gitignore = parsing_config.get("use_gitignore", cli_config.get("use_gitignore", True))
+    exclude_dirs = parsing_config.get("exclude_dirs") or cli_config.get("exclude_dirs", [])
 
     gitignore_patterns = load_gitignore(root_dir) if use_gitignore else []
 
@@ -756,15 +764,50 @@ async def query(args: argparse.Namespace):
     if not Path(args.context).exists():
         logging.error(f"Context file {args.context} does not exist")
         return
+    
     cache = JSONCache() if args.use_cache else None
     client = LLMClient()
-    result = await client.query(
-        prompt=args.prompt,
-        context_path=args.context,
-        mode=args.mode,
-        model=args.model,
-        artifact_ids=args.artifact_ids,
-    )
+    
+    # Use context orchestrator if available and context mode is specified
+    context_data = None
+    if hasattr(args, 'context_mode') and args.context_mode:
+        try:
+            from .context_orchestrator import create_context_orchestrator
+            
+            # Determine scenario based on mode and usage
+            scenario = "cli_query" if args.context_mode == "FOCUSED" else "cli_interactive"
+            
+            # Get optimized context
+            orchestrator = create_context_orchestrator(os.path.dirname(args.context))
+            optimized_context = orchestrator.get_context_for_scenario(scenario)
+            
+            # Use optimized context instead of raw file
+            if optimized_context:
+                logging.info(f"Using optimized context with mode {args.context_mode}")
+                context_data = optimized_context
+        except ImportError:
+            logging.warning("Context orchestrator not available, using raw context file")
+        except Exception as e:
+            logging.warning(f"Failed to use context orchestrator: {e}")
+    
+    # Query with optimized or raw context
+    if context_data:
+        result = await client.query_with_context(
+            prompt=args.prompt,
+            context_data=context_data,
+            mode=args.mode,
+            model=args.model,
+            artifact_ids=args.artifact_ids,
+        )
+    else:
+        result = await client.query(
+            prompt=args.prompt,
+            context_path=args.context,
+            mode=args.mode,
+            model=args.model,
+            artifact_ids=args.artifact_ids,
+        )
+    
     if result:
         with Path(args.output).open("w", encoding="utf-8") as f:
             json.dump({"prompt": args.prompt, "response": result}, f, indent=2)
@@ -990,6 +1033,12 @@ def main():
     )
     query_parser.add_argument("--model", help="Ollama model (e.g., mixtral, llama3)")
     query_parser.add_argument(
+        "--context-mode",
+        choices=["FULL", "FOCUSED", "MINIMAL", "SESSION"],
+        default="FOCUSED",
+        help="Context loading mode for optimization",
+    )
+    query_parser.add_argument(
         "--artifact-ids",
         nargs="*",
         default=[],
@@ -1026,6 +1075,12 @@ def main():
     )
     interactive_parser.add_argument(
         "--use-cache", action="store_true", help="Use JSON cache"
+    )
+    interactive_parser.add_argument(
+        "--context-mode",
+        choices=["FULL", "FOCUSED", "MINIMAL", "SESSION"],
+        default="FULL",
+        help="Context loading mode for optimization",
     )
 
     context_parser = subparsers.add_parser(
@@ -1130,7 +1185,7 @@ def main():
     elif args.command == "query":
         asyncio.run(query(args))
     elif args.command == "interactive":
-        asyncio.run(interactive_legacy(args))
+        asyncio.run(interactive(args))
     elif args.command == "context":
         context(args)
     elif args.command == "dogfood":

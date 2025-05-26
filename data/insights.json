@@ -32,6 +32,22 @@
       "created_at": "2025-05-22T08:00:00Z",
       "author": "Grok (xAI)",
       "ai-generated": true
+    },
+    {
+      "id": "INS-003",
+      "title": "Export coverage",
+      "description": "100% of tasks and ideas are now visualized in GitHub Projects.",
+      "status": "achieved",
+      "date": "2025-05-25",
+      "source": "automation"
+    },
+    {
+      "id": "INS-004",
+      "title": "Automation readiness",
+      "description": "System is ready for full automation of custom field assignment via GitHub Actions.",
+      "status": "planned",
+      "date": "2025-05-25",
+      "source": "ai-generated"
     }
   ]
 }

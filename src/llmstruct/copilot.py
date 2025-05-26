@@ -13,6 +13,7 @@ from dataclasses import dataclass
 from enum import Enum
 
 from llmstruct.cache import JSONCache
+from llmstruct.context_orchestrator import SmartContextOrchestrator, create_context_orchestrator
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -81,6 +82,9 @@ class CopilotContextManager:
         self.context_layers: Dict[str, ContextLayerConfig] = {}
         self.cache = JSONCache()
         self.active_contexts: Dict[str, Any] = {}
+        
+        # Initialize Smart Context Orchestrator
+        self.context_orchestrator = create_context_orchestrator(str(self.project_root))
 
         self._load_config()
         self._initialize_layers()
@@ -175,9 +179,79 @@ class CopilotContextManager:
 
         return False
 
+    def get_optimized_context(
+        self, 
+        scenario: str, 
+        file_path: str = None,
+        max_tokens: int = None
+    ) -> Dict[str, Any]:
+        """
+        Get optimized context using Smart Context Orchestrator.
+        
+        Args:
+            scenario: Usage scenario (vscode_copilot, cli_direct, etc.)
+            file_path: Optional file path for focused context
+            max_tokens: Optional token limit override
+            
+        Returns:
+            Optimized context dictionary
+        """
+        try:
+            # Map scenario to context orchestrator scenarios
+            scenario_mapping = {
+                "vscode_copilot": "vscode_copilot",
+                "cli_direct": "cli_direct", 
+                "session_work": "session_work",
+                "quick_operation": "quick_operation"
+            }
+            
+            mapped_scenario = scenario_mapping.get(scenario, "vscode_copilot")
+            
+            context = self.context_orchestrator.get_context_for_scenario(
+                scenario=mapped_scenario,
+                file_path=file_path,
+                custom_budget=None if not max_tokens else {
+                    "max_tokens": max_tokens,
+                    "priority_files": [],
+                    "essential_sections": []
+                }
+            )
+            
+            return context
+            
+        except Exception as e:
+            logger.error(f"Failed to get optimized context: {e}")
+            # Fallback to legacy context loading
+            return self._get_legacy_context()
+
+    def _get_legacy_context(self) -> Dict[str, Any]:
+        """Fallback to legacy context loading."""
+        context = {}
+        
+        # Load essential layer as fallback
+        if self.load_context_layer("essential"):
+            context = self.active_contexts.get("essential", {})
+            
+        return context
+
+    def get_context_for_vscode(self, file_path: str = None) -> Dict[str, Any]:
+        """
+        Get optimized context specifically for VS Code Copilot integration.
+        
+        Args:
+            file_path: Optional file path for focused context
+            
+        Returns:
+            Token-optimized context for VS Code
+        """
+        return self.get_optimized_context(
+            scenario="vscode_copilot",
+            file_path=file_path,
+            max_tokens=2000  # VS Code Copilot token limit
+        )
     def get_context_for_event(self, event: CopilotEvent) -> Dict[str, Any]:
         """
-        Get relevant context for a copilot event.
+        Get relevant context for a copilot event using Smart Context Orchestrator.
 
         Args:
             event: The copilot event
@@ -185,6 +259,44 @@ class CopilotContextManager:
         Returns:
             Dict containing relevant context
         """
+        try:
+            # Determine scenario based on event type
+            scenario_mapping = {
+                "file_create": "vscode_copilot",
+                "file_edit": "vscode_copilot", 
+                "file_delete": "vscode_copilot",
+                "function_creation": "vscode_copilot",
+                "class_creation": "vscode_copilot",
+                "import_changes": "vscode_copilot",
+                "cli_command_detected": "cli_direct",
+                "queue_operation": "session_work",
+                "task_creation": "session_work"
+            }
+            
+            scenario = scenario_mapping.get(event.event_type, "vscode_copilot")
+            
+            # Get optimized context using orchestrator
+            context = self.get_optimized_context(
+                scenario=scenario,
+                file_path=event.file_path
+            )
+            
+            # Add event-specific metadata
+            context["event_metadata"] = {
+                "event_type": event.event_type,
+                "file_path": event.file_path,
+                "scope": event.scope,
+                "metadata": event.metadata
+            }
+            
+            return context
+            
+        except Exception as e:
+            logger.error(f"Failed to get context for event {event.event_type}: {e}")
+            return self._get_legacy_event_context(event)
+
+    def _get_legacy_event_context(self, event: CopilotEvent) -> Dict[str, Any]:
+        """Legacy event context loading as fallback."""
         context = {}
 
         # Get triggers configuration
@@ -523,6 +635,11 @@ class CopilotContextManager:
         if self.cache:
             self.cache.close()
         self.active_contexts.clear()
+        
+        # Close context orchestrator if it has cleanup methods
+        if hasattr(self.context_orchestrator, 'close'):
+            self.context_orchestrator.close()
+            
         logger.info("Copilot context manager closed")
 
 
@@ -583,3 +700,29 @@ def smart_suggest(
         return [f"Code suggestion for: {query}"]
     else:
         return [f"General suggestion for: {query}"]
+
+
+def get_optimized_context_for_scenario(
+    project_root: str,
+    scenario: str, 
+    file_path: str = None,
+    max_tokens: int = None
+) -> Dict[str, Any]:
+    """
+    Get optimized context for specific scenario - standalone function.
+    
+    Args:
+        project_root: Project root directory
+        scenario: Usage scenario (vscode_copilot, cli_direct, etc.)
+        file_path: Optional file path for focused context
+        max_tokens: Optional token limit override
+        
+    Returns:
+        Optimized context dictionary
+    """
+    try:
+        manager = initialize_copilot(project_root)
+        return manager.get_optimized_context(scenario, file_path, max_tokens)
+    finally:
+        if 'manager' in locals():
+            manager.close()
