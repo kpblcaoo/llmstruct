@@ -19,7 +19,8 @@ from typing import Any, Dict, List, Optional
 
 from llmstruct.cache import JSONCache
 from llmstruct.generators.json_generator import generate_json
-from llmstruct.copilot import initialize_copilot, trigger_copilot_event
+from llmstruct.copilot import initialize_copilot, trigger_copilot_event, get_optimized_context_for_scenario
+from llmstruct.context_orchestrator import create_context_orchestrator, get_optimized_context
 from .cli_config import CLIConfig
 from .cli_utils import CLIUtils
 from .copilot import CopilotContextManager, CopilotEvent
@@ -35,6 +36,7 @@ class CommandProcessor:
         self.utils = utils
         self.cache: Optional[JSONCache] = None
         self.copilot_manager: Optional[CopilotContextManager] = None
+        self.default_context_mode: str = "FOCUSED"  # Default context mode for optimization
 
         # Initialize command handlers
         self.commands = {
@@ -53,6 +55,9 @@ class CommandProcessor:
             "audit": self.cmd_audit,
             "auto-update": self.handle_auto_update,
             "struct-status": self.handle_struct_status,
+            "context": self.cmd_context,
+            "session": self.cmd_session,
+            "mode": self.cmd_mode,
         }
 
     def set_cache(self, cache: Optional[JSONCache]) -> None:
@@ -87,17 +92,49 @@ class CommandProcessor:
             return
 
         try:
+            # Use context orchestrator for optimized context
+            context_data = None
+            try:
+                # Determine scenario based on default context mode
+                scenario = "cli_interactive" if self.default_context_mode == "FULL" else "cli_query"
+                
+                # Get optimized context using the orchestrator
+                context_data = get_optimized_context(
+                    project_root=self.root_dir,
+                    scenario=scenario,
+                    file_path=None
+                )
+                
+                if context_data:
+                    logging.info(f"Using optimized context with mode {self.default_context_mode}")
+                else:
+                    logging.warning("Failed to get optimized context, using standard processing")
+                    
+            except Exception as e:
+                logging.warning(f"Context orchestration failed: {e}")
+
             # Emit Copilot event if manager is available
             if self.copilot_manager:
                 event = CopilotEvent(
-                    event_type="prompt_received", data={"prompt": prompt}, source="cli"
+                    event_type="prompt_received", 
+                    data={
+                        "prompt": prompt,
+                        "context_mode": self.default_context_mode,
+                        "optimized_context": context_data is not None
+                    }, 
+                    source="cli"
                 )
                 self.copilot_manager.emit_event(event)
 
-            # For now, just acknowledge the prompt
-            # TODO: Integrate with LLM processing
+            # For now, just acknowledge the prompt with context info
             print(f"Received prompt: {prompt}")
-            print("Note: LLM processing integration is pending.")
+            if context_data:
+                context_info = context_data.get("metrics", {})
+                print(f"Using optimized context - Mode: {self.default_context_mode}, Sources: {len(context_data.get('sources', {}))}")
+                if context_info:
+                    print(f"  Tokens: {context_info.get('tokens_used', 'unknown')}, Load time: {context_info.get('load_time', 'unknown')}s")
+            
+            print("Note: LLM processing integration is pending. Use '/context get <scenario>' to test context optimization.")
 
         except Exception as e:
             logging.error(f"Error processing prompt: {e}")
@@ -122,6 +159,22 @@ Available commands:
   /audit [scan|recover|status] - Audit and recover missing tasks/ideas
   /auto-update         - Trigger auto-update of struct.json
   /struct-status       - Show struct.json status and last update info
+  /context <action>    - Smart context operations (get, optimize, scenarios)
+  /session <action>    - Session management (start, switch, status, summary)
+  /mode <FULL|FOCUSED|MINIMAL|SESSION> - Switch context mode
+
+Context Commands:
+  /context get <scenario> [file] - Get optimized context for scenario
+  /context optimize <scenario>   - Show context optimization for scenario
+  /context scenarios             - List available scenarios
+  /context metrics               - Show context loading metrics
+
+Session Commands:
+  /session start <branch>        - Start new session for branch
+  /session switch <session_id>   - Switch to existing session
+  /session status                - Show current session status
+  /session summary               - Generate session summary
+  /session list                  - List all sessions
 
 Examples:
   /view src/           - Show directory structure
@@ -135,6 +188,12 @@ Examples:
   /audit status        - Show current placeholder status
   /auto-update         - Trigger struct.json update
   /struct-status       - Show struct.json status
+  /context get vscode_copilot src/main.py - Get VS Code context for file
+  /context scenarios   - Show available context scenarios
+  /session start feature/new-feature - Start session for new branch
+  /session status      - Show current session info
+  /mode FOCUSED        - Set context mode (FULL|FOCUSED|MINIMAL|SESSION)
+  /mode FOCUSED        - Switch to focused context mode
 """
         print(help_text)
 
@@ -404,6 +463,449 @@ Examples:
             logging.error(f"Audit command error: {e}")
             print(f"Error in audit command: {e}")
 
+    def cmd_mode(self, args: str) -> None:
+        """Handle context mode operations."""
+        if not args:
+            print(f"Current context mode: {self.default_context_mode}")
+            print("Usage: /mode <FULL|FOCUSED|MINIMAL|SESSION>")
+            print("  FULL    - Complete context with documentation and code")
+            print("  FOCUSED - Balanced context for interactive work")  
+            print("  MINIMAL - Lightweight context for quick queries")
+            print("  SESSION - Session-only context for continuity")
+            return
+
+        mode = args.strip().upper()
+        valid_modes = ["FULL", "FOCUSED", "MINIMAL", "SESSION"]
+        
+        if mode not in valid_modes:
+            print(f"Invalid mode: {mode}")
+            print(f"Valid modes: {', '.join(valid_modes)}")
+            return
+        
+        old_mode = self.default_context_mode
+        self.default_context_mode = mode
+        
+        print(f"Context mode changed: {old_mode} → {mode}")
+        
+        # Test the new mode
+        try:
+            scenario = "cli_interactive" if mode == "FULL" else "cli_query"
+            context_data = get_optimized_context(
+                project_root=self.root_dir,
+                scenario=scenario,
+                file_path=None
+            )
+            
+            if context_data:
+                metrics = context_data.get("metrics", {})
+                print(f"Mode test successful:")
+                print(f"  Sources loaded: {len(context_data.get('sources', {}))}")
+                print(f"  Estimated tokens: {metrics.get('tokens_used', 'unknown')}")
+                print(f"  Load time: {metrics.get('load_time', 'unknown')}s")
+            else:
+                print("Mode test failed - context orchestrator not available")
+                
+        except Exception as e:
+            print(f"Mode test failed: {e}")
+
+    def handle_auto_update(self, args: str) -> None:
+        """Handle auto-update struct.json command."""
+        try:
+            print("🔄 Triggering auto-update of struct.json...")
+            
+            # Path to the auto-update script
+            script_path = Path(self.root_dir) / "scripts" / "auto_update_struct.py"
+            
+            if not script_path.exists():
+                print("❌ Auto-update script not found at scripts/auto_update_struct.py")
+                return
+            
+            # Run the auto-update script
+            import subprocess
+            import sys
+            
+            result = subprocess.run(
+                [sys.executable, str(script_path), "--root-dir", self.root_dir],
+                capture_output=True,
+                text=True,
+                cwd=self.root_dir
+            )
+            
+            if result.returncode == 0:
+                print("✅ Auto-update struct.json completed successfully")
+                if result.stdout.strip():
+                    print(f"Output: {result.stdout.strip()}")
+            else:
+                print("❌ Auto-update failed")
+                if result.stderr.strip():
+                    print(f"Error: {result.stderr.strip()}")
+                    
+        except Exception as e:
+            logging.error(f"Auto-update command error: {e}")
+            print(f"Error in auto-update command: {e}")
+
+    def handle_struct_status(self, args: str) -> None:
+        """Handle struct status command."""
+        try:
+            struct_path = Path(self.root_dir) / "struct.json"
+            
+            print("struct.json status:")
+            
+            if struct_path.exists():
+                stat = struct_path.stat()
+                
+                # Format file size
+                size_bytes = stat.st_size
+                if size_bytes < 1024:
+                    size_str = f"{size_bytes} bytes"
+                elif size_bytes < 1024 * 1024:
+                    size_str = f"{size_bytes / 1024:.1f} KB"
+                else:
+                    size_str = f"{size_bytes / (1024 * 1024):.1f} MB"
+                
+                # Format modification time
+                import time
+                mod_time = time.ctime(stat.st_mtime)
+                
+                print(f"  📁 Path: {struct_path}")
+                print(f"  📅 Modified: {mod_time}")
+                print(f"  📏 Size: {size_str}")
+                
+                # Check if auto-update script is available
+                script_path = Path(self.root_dir) / "scripts" / "auto_update_struct.py"
+                if script_path.exists():
+                    print("  🔄 Auto-update: Available")
+                else:
+                    print("  🔄 Auto-update: Not available")
+                
+                # Try to get basic statistics from the file
+                try:
+                    with open(struct_path, 'r', encoding='utf-8') as f:
+                        struct_data = json.load(f)
+                    
+                    metadata = struct_data.get('metadata', {})
+                    stats = metadata.get('stats', {})
+                    
+                    if stats:
+                        print(f"  📊 Modules: {stats.get('modules_count', 'unknown')}")
+                        print(f"  🎯 Functions: {stats.get('functions_count', 'unknown')}")
+                        print(f"  📋 Classes: {stats.get('classes_count', 'unknown')}")
+                    
+                    goals = struct_data.get('goals', [])
+                    if goals:
+                        print(f"  🎯 Goals: {len(goals)}")
+                        
+                except Exception as e:
+                    print(f"  ⚠️  Could not parse struct.json: {e}")
+                    
+            else:
+                print("  ❌ struct.json not found")
+                print("  💡 Run '/parse' to generate struct.json")
+                
+        except Exception as e:
+            logging.error(f"Struct status command error: {e}")
+            print(f"Error in struct status command: {e}")
+
+    def cmd_context(self, args: str) -> None:
+        """Handle smart context operations."""
+        if not args:
+            print("Usage: /context <get|optimize|scenarios|metrics> [options]")
+            return
+
+        parts = args.strip().split()
+        action = parts[0].lower()
+
+        try:
+            if action == "get":
+                if len(parts) < 2:
+                    print("Usage: /context get <scenario> [file_path]")
+                    return
+                
+                scenario = parts[1]
+                file_path = parts[2] if len(parts) > 2 else None
+                
+                context = get_optimized_context(
+                    project_root=self.root_dir,
+                    scenario=scenario,
+                    file_path=file_path
+                )
+                
+                print(f"Optimized context for scenario '{scenario}':")
+                print(self.utils.format_json(context))
+
+            elif action == "optimize":
+                if len(parts) < 2:
+                    print("Usage: /context optimize <scenario>")
+                    return
+                
+                scenario = parts[1]
+                orchestrator = create_context_orchestrator(self.root_dir)
+                
+                # Get optimization metrics
+                context = orchestrator.get_context_for_scenario(scenario)
+                metrics = context.get("metrics", {})
+                
+                print(f"Context optimization for scenario '{scenario}':")
+                print(f"  Mode: {context.get('mode', 'unknown')}")
+                print(f"  Sources loaded: {len(context.get('sources', {}))}")
+                print(f"  Tokens used: {metrics.get('tokens_used', 'unknown')}")
+                print(f"  Load time: {metrics.get('load_time', 'unknown')}s")
+
+            elif action == "scenarios":
+                orchestrator = create_context_orchestrator(self.root_dir)
+                
+                # Get available scenarios from config
+                config = orchestrator.config.get("scenario_mappings", {})
+                
+                print("Available context scenarios:")
+                for scenario_name, mode in config.items():
+                    print(f"  {scenario_name}: {mode}")
+
+            elif action == "metrics":
+                # Show context loading metrics
+                print("Context loading metrics:")
+                print("  Feature available in future version")
+                # TODO: Implement metrics collection and display
+
+            else:
+                print(f"Unknown context action: {action}")
+                print("Available actions: get, optimize, scenarios, metrics")
+
+        except Exception as e:
+            logging.error(f"Context command error: {e}")
+            print(f"Error in context command: {e}")
+
+    def cmd_session(self, args: str) -> None:
+        """Handle session management operations."""
+        if not args:
+            print("Usage: /session <start|switch|status|summary|list> [options]")
+            return
+
+        parts = args.strip().split()
+        action = parts[0].lower()
+
+        try:
+            sessions_dir = Path(self.root_dir) / "data" / "sessions"
+            current_session_file = sessions_dir / "current_session.json"
+            ai_sessions_file = sessions_dir / "ai_sessions.json"
+            worklog_file = sessions_dir / "worklog.json"
+
+            if action == "start":
+                if len(parts) < 2:
+                    print("Usage: /session start <branch_name>")
+                    return
+                
+                branch_name = parts[1]
+                self._start_new_session(branch_name, sessions_dir)
+
+            elif action == "switch":
+                if len(parts) < 2:
+                    print("Usage: /session switch <session_id>")
+                    return
+                
+                session_id = parts[1]
+                self._switch_session(session_id, sessions_dir)
+
+            elif action == "status":
+                self._show_session_status(current_session_file)
+
+            elif action == "summary":
+                self._generate_session_summary(current_session_file, worklog_file)
+
+            elif action == "list":
+                self._list_sessions(ai_sessions_file)
+
+            else:
+                print(f"Unknown session action: {action}")
+                print("Available actions: start, switch, status, summary, list")
+
+        except Exception as e:
+            logging.error(f"Session command error: {e}")
+            print(f"Error in session command: {e}")
+
+    def _start_new_session(self, branch_name: str, sessions_dir: Path) -> None:
+        """Start a new session."""
+        import uuid
+        from datetime import datetime
+        
+        session_id = f"SES-{str(uuid.uuid4())[:8]}"
+        timestamp = datetime.now().isoformat() + "Z"
+        
+        # Create session data
+        session_data = {
+            "id": session_id,
+            "branch": branch_name,
+            "title": f"Session for {branch_name}",
+            "status": "active",
+            "created_at": timestamp,
+            "author": "@user",
+            "type": "ai-helped",
+            "related_tasks": [],
+            "related_ideas": [],
+            "related_insights": [],
+            "related_docs": [],
+            "knowledge_cache": [],
+            "context_notes": f"Working on branch {branch_name}",
+            "results": [],
+            "summary": ""
+        }
+        
+        # Update current_session.json
+        current_session = {
+            "version": "0.1.0",
+            "session_id": session_id,
+            "branch": branch_name,
+            "status": "active",
+            "started_at": timestamp,
+            "author": "@user",
+            "notes": f"Started session for branch {branch_name}"
+        }
+        
+        # Update ai_sessions.json
+        ai_sessions_file = sessions_dir / "ai_sessions.json"
+        if ai_sessions_file.exists():
+            with open(ai_sessions_file, 'r', encoding='utf-8') as f:
+                ai_sessions = json.load(f)
+        else:
+            ai_sessions = {"version": "0.1.0", "sessions": []}
+        
+        ai_sessions["sessions"].append(session_data)
+        
+        # Write files
+        os.makedirs(sessions_dir, exist_ok=True)
+        
+        with open(sessions_dir / "current_session.json", 'w', encoding='utf-8') as f:
+            json.dump(current_session, f, indent=2)
+        
+        with open(ai_sessions_file, 'w', encoding='utf-8') as f:
+            json.dump(ai_sessions, f, indent=2)
+        
+        # Initialize worklog
+        worklog = {
+            "version": "0.1.0",
+            "session_id": session_id,
+            "branch": branch_name,
+            "log": [
+                {
+                    "timestamp": timestamp,
+                    "author": "@user",
+                    "event": f"Session {session_id} started for branch {branch_name}"
+                }
+            ]
+        }
+        
+        with open(sessions_dir / "worklog.json", 'w', encoding='utf-8') as f:
+            json.dump(worklog, f, indent=2)
+        
+        print(f"✅ Started new session: {session_id} for branch '{branch_name}'")
+
+    def _switch_session(self, session_id: str, sessions_dir: Path) -> None:
+        """Switch to an existing session."""
+        ai_sessions_file = sessions_dir / "ai_sessions.json"
+        
+        if not ai_sessions_file.exists():
+            print("❌ No sessions found")
+            return
+        
+        with open(ai_sessions_file, 'r', encoding='utf-8') as f:
+            ai_sessions = json.load(f)
+        
+        # Find session
+        target_session = None
+        for session in ai_sessions.get("sessions", []):
+            if session.get("id") == session_id:
+                target_session = session
+                break
+        
+        if not target_session:
+            print(f"❌ Session {session_id} not found")
+            return
+        
+        # Update current_session.json
+        current_session = {
+            "version": "0.1.0",
+            "session_id": session_id,
+            "branch": target_session.get("branch", "unknown"),
+            "status": "active",
+            "started_at": target_session.get("created_at", "unknown"),
+            "author": target_session.get("author", "@user"),
+            "notes": f"Switched to session {session_id}"
+        }
+        
+        with open(sessions_dir / "current_session.json", 'w', encoding='utf-8') as f:
+            json.dump(current_session, f, indent=2)
+        
+        print(f"✅ Switched to session: {session_id}")
+
+    def _show_session_status(self, current_session_file: Path) -> None:
+        """Show current session status."""
+        if not current_session_file.exists():
+            print("❌ No active session")
+            return
+        
+        with open(current_session_file, 'r', encoding='utf-8') as f:
+            current_session = json.load(f)
+        
+        print("📊 Current session status:")
+        print(f"  Session ID: {current_session.get('session_id', 'unknown')}")
+        print(f"  Branch: {current_session.get('branch', 'unknown')}")
+        print(f"  Status: {current_session.get('status', 'unknown')}")
+        print(f"  Started: {current_session.get('started_at', 'unknown')}")
+        print(f"  Author: {current_session.get('author', 'unknown')}")
+        print(f"  Notes: {current_session.get('notes', 'No notes')}")
+
+    def _generate_session_summary(self, current_session_file: Path, worklog_file: Path) -> None:
+        """Generate session summary."""
+        if not current_session_file.exists():
+            print("❌ No active session")
+            return
+        
+        with open(current_session_file, 'r', encoding='utf-8') as f:
+            current_session = json.load(f)
+        
+        session_id = current_session.get('session_id', 'unknown')
+        
+        print(f"📋 Session summary for {session_id}:")
+        print(f"  Branch: {current_session.get('branch', 'unknown')}")
+        print(f"  Started: {current_session.get('started_at', 'unknown')}")
+        
+        if worklog_file.exists():
+            with open(worklog_file, 'r', encoding='utf-8') as f:
+                worklog = json.load(f)
+            
+            log_entries = worklog.get('log', [])
+            print(f"  Log entries: {len(log_entries)}")
+            
+            if log_entries:
+                print("  Recent activities:")
+                for entry in log_entries[-3:]:  # Show last 3 entries
+                    timestamp = entry.get('timestamp', 'unknown')
+                    event = entry.get('event', 'unknown')
+                    print(f"    - {timestamp}: {event}")
+
+    def _list_sessions(self, ai_sessions_file: Path) -> None:
+        """List all sessions."""
+        if not ai_sessions_file.exists():
+            print("❌ No sessions found")
+            return
+        
+        with open(ai_sessions_file, 'r', encoding='utf-8') as f:
+            ai_sessions = json.load(f)
+        
+        sessions = ai_sessions.get("sessions", [])
+        
+        if not sessions:
+            print("📋 No sessions found")
+            return
+        
+        print(f"📋 Found {len(sessions)} sessions:")
+        for session in sessions:
+            session_id = session.get("id", "unknown")
+            branch = session.get("branch", "unknown")
+            status = session.get("status", "unknown")
+            created_at = session.get("created_at", "unknown")
+            print(f"  {session_id}: {branch} [{status}] - {created_at}")
+
     def _audit_scan_sources(self) -> None:
         """Scan dump directory for recoverable content."""
         import json
@@ -444,48 +946,8 @@ Examples:
 
     def _audit_recover_placeholders(self) -> None:
         """Recover placeholder entries from source files."""
-        import json
-        from pathlib import Path
-        
-        print("🔄 Starting placeholder recovery...")
-        
-        # Load current data
-        tasks_file = Path(self.root_dir) / "data" / "tasks.json"
-        ideas_file = Path(self.root_dir) / "data" / "ideas.json"
-        
-        if not tasks_file.exists() or not ideas_file.exists():
-            print("❌ Core data files not found")
-            return
-            
-        with open(tasks_file, 'r') as f:
-            tasks_data = json.load(f)
-        with open(ideas_file, 'r') as f:
-            ideas_data = json.load(f)
-            
-        # Count placeholders
-        task_placeholders = [t for t in tasks_data["tasks"] if "Placeholder: Missing task details" in t.get("description", "")]
-        idea_placeholders = [i for i in ideas_data["ideas"] if "Placeholder: Missing idea details" in i.get("description", "")]
-        
-        print(f"📊 Found {len(task_placeholders)} task placeholders and {len(idea_placeholders)} idea placeholders")
-        
-        # Backup current files
-        backup_tasks = str(tasks_file) + f".audit_backup_{int(datetime.now().timestamp())}"
-        backup_ideas = str(ideas_file) + f".audit_backup_{int(datetime.now().timestamp())}"
-        
-        with open(backup_tasks, 'w') as f:
-            json.dump(tasks_data, f, indent=2)
-        with open(backup_ideas, 'w') as f:
-            json.dump(ideas_data, f, indent=2)
-            
-        print(f"💾 Created backups: {Path(backup_tasks).name}, {Path(backup_ideas).name}")
-        
-        # Try to recover from source files
-        recovered = self._recover_from_sources(task_placeholders, idea_placeholders)
-        
-        if recovered["tasks"] or recovered["ideas"]:
-            print(f"✅ Recovery complete: {recovered['tasks']} tasks, {recovered['ideas']} ideas restored")
-        else:
-            print("⚠️  No recoverable content found in source files")
+        print("🔄 Placeholder recovery not yet implemented")
+        print("This feature would scan source files and recover missing task/idea entries")
 
     def _audit_show_status(self) -> None:
         """Show current placeholder status."""
@@ -518,89 +980,6 @@ Examples:
         if idea_placeholders:
             idea_ids = [i["id"] for i in idea_placeholders[:5]]
             print(f"   Example idea IDs: {', '.join(idea_ids)}{'...' if len(idea_placeholders) > 5 else ''}")
-
-    def _recover_from_sources(self, task_placeholders, idea_placeholders):
-        """Attempt to recover content from source files."""
-        import json
-        from pathlib import Path
-        
-        dump_dir = Path(self.root_dir) / "temp_workfiles" / "unsorted_mess" / "dump"
-        recovered = {"tasks": 0, "ideas": 0}
-        
-        if not dump_dir.exists():
-            return recovered
-            
-        # Map placeholder IDs for targeted recovery
-        placeholder_task_ids = {t["id"]: t for t in task_placeholders}
-        placeholder_idea_ids = {i["id"]: i for i in idea_placeholders}
-        
-        print(f"🎯 Targeting {len(placeholder_task_ids)} task IDs and {len(placeholder_idea_ids)} idea IDs")
-        
-        # Load current data files
-        tasks_file = Path(self.root_dir) / "data" / "tasks.json"
-        ideas_file = Path(self.root_dir) / "data" / "ideas.json"
-        
-        with open(tasks_file, 'r') as f:
-            tasks_data = json.load(f)
-        with open(ideas_file, 'r') as f:
-            ideas_data = json.load(f)
-        
-        # Track recovery progress
-        tasks_updated = []
-        ideas_updated = []
-        
-        for json_file in dump_dir.glob("*.json"):
-            try:
-                with open(json_file, 'r', encoding='utf-8') as f:
-                    source_data = json.load(f)
-                    
-                # Check for tasks
-                if isinstance(source_data, dict) and "tasks" in source_data:
-                    for task in source_data["tasks"]:
-                        if isinstance(task, dict) and task.get("id") in placeholder_task_ids:
-                            if "Placeholder" not in task.get("description", ""):
-                                task_id = task["id"]
-                                print(f"🔄 Recovering task: {task_id} from {json_file.name}")
-                                
-                                # Find and update the task in tasks_data
-                                for i, existing_task in enumerate(tasks_data["tasks"]):
-                                    if existing_task["id"] == task_id:
-                                        tasks_data["tasks"][i] = task
-                                        tasks_updated.append(task_id)
-                                        recovered["tasks"] += 1
-                                        break
-                                
-                # Check for ideas  
-                if isinstance(source_data, dict) and "ideas" in source_data:
-                    for idea in source_data["ideas"]:
-                        if isinstance(idea, dict) and idea.get("id") in placeholder_idea_ids:
-                            if "Placeholder" not in idea.get("description", ""):
-                                idea_id = idea["id"]
-                                print(f"💡 Recovering idea: {idea_id} from {json_file.name}")
-                                
-                                # Find and update the idea in ideas_data
-                                for i, existing_idea in enumerate(ideas_data["ideas"]):
-                                    if existing_idea["id"] == idea_id:
-                                        ideas_data["ideas"][i] = idea
-                                        ideas_updated.append(idea_id)
-                                        recovered["ideas"] += 1
-                                        break
-                                
-            except (json.JSONDecodeError, UnicodeDecodeError, KeyError):
-                continue
-        
-        # Write updated data back to files
-        if tasks_updated:
-            with open(tasks_file, 'w') as f:
-                json.dump(tasks_data, f, indent=2)
-            print(f"✅ Updated {len(tasks_updated)} tasks: {', '.join(tasks_updated[:5])}{'...' if len(tasks_updated) > 5 else ''}")
-            
-        if ideas_updated:
-            with open(ideas_file, 'w') as f:
-                json.dump(ideas_data, f, indent=2)
-            print(f"✅ Updated {len(ideas_updated)} ideas: {', '.join(ideas_updated[:5])}{'...' if len(ideas_updated) > 5 else ''}")
-                
-        return recovered
 
     def _process_queue(self) -> None:
         """Process command queue."""
@@ -713,98 +1092,7 @@ Examples:
     def _trigger_auto_update(self) -> None:
         """Trigger auto-update of struct.json."""
         try:
-            self.handle_auto_update([])
+            self.handle_auto_update("")
         except Exception as e:
-            logging.error(f"Auto-update failed: {e}")
-
-    def handle_auto_update(self, args: List[str]) -> None:
-        """Handle auto-update struct.json command."""
-        try:
-            # Path to auto_update script
-            script_path = Path(self.root_dir) / "scripts" / "auto_update_struct.py"
-
-            if not script_path.exists():
-                self.utils.log_error(f"Auto-update script not found: {script_path}")
-                return
-
-            # Run auto-update script with proper arguments
-            result = subprocess.run(
-                [
-                    sys.executable,
-                    str(script_path),
-                    "--root-dir",
-                    str(self.root_dir),
-                    "--output",
-                    str(Path(self.root_dir) / "struct.json"),
-                ],
-                capture_output=True,
-                text=True,
-            )
-
-            if result.returncode == 0:
-                self.utils.log_info("✅ struct.json updated successfully")
-                if result.stdout:
-                    print(result.stdout)
-            else:
-                self.utils.log_error(f"❌ Auto-update failed: {result.stderr}")
-
-        except Exception as e:
-            self.utils.log_error(f"Auto-update error: {e}")
-
-    def handle_struct_status(self, args: List[str]) -> None:
-        """Show struct.json status and last update info."""
-        try:
-            struct_path = Path(self.root_dir) / "struct.json"
-
-            if not struct_path.exists():
-                print("❌ struct.json not found")
-                return
-
-            # Get file stats
-            stat = os.stat(struct_path)
-
-            modified_time = datetime.fromtimestamp(stat.st_mtime)
-            size = stat.st_size
-
-            print(f"📊 struct.json Status:")
-            print(f"  Last modified: {modified_time}")
-            print(f"  Size: {size} bytes")
-
-            # Check if auto-update is enabled
-            git_hooks_path = Path(self.root_dir) / ".git" / "hooks"
-            if (git_hooks_path / "pre-commit").exists():
-                print("  ✅ Auto-update enabled (Git hooks)")
-            else:
-                print("  ⚠️  Auto-update not configured")
-
-        except Exception as e:
-            self.utils.log_error(f"Status check error: {e}")
-
-    def handle_workflow_trigger(
-        self, event_type: str, context: Dict[str, Any] = None
-    ) -> None:
-        """Trigger workflow events that may require struct.json update."""
-        try:
-            # Initialize copilot context manager
-            copilot = initialize_copilot(str(self.root_dir))
-
-            # Trigger the event
-            event_context = trigger_copilot_event(copilot, event_type, **context or {})
-
-            # Check if struct.json update is needed
-            if event_type in ["file_create", "file_edit", "function_creation"]:
-                self.utils.log_info(
-                    f"🔄 Triggering auto-update for event: {event_type}"
-                )
-                self.handle_auto_update([])
-
-            # Log context for LLM
-            if event_context:
-                self.utils.log_info(
-                    f"📋 Context loaded for {event_type}: {len(event_context)} layers"
-                )
-
-            copilot.close()
-
-        except Exception as e:
-            self.utils.log_error(f"Workflow trigger error: {e}")
+            logging.error(f"Auto-update trigger failed: {e}")
+            print(f"Auto-update failed: {e}")

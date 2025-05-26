@@ -1,4 +1,5 @@
 {
+  "version": "0.3.0",
   "metadata": {
     "project_name": "llmstruct",
     "description": "Universal JSON format for codebases with advanced LLM integration",
