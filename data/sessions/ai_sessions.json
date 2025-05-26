@@ -1,0 +1,26 @@
+{
+  "version": "0.1.0",
+  "sessions": [
+    {
+      "id": "SES-001",
+      "branch": "feature/json-script-abstraction",
+      "title": "JSON script abstraction for all modes",
+      "status": "planned",
+      "created_at": "2025-05-25T22:00:00Z",
+      "author": "@kpblcaoo",
+      "type": "ai-helped",
+      "related_tasks": ["TSK-145"],
+      "related_ideas": ["IDEA-153"],
+      "related_insights": ["INS-003"],
+      "related_docs": ["docs/gh_view.md"],
+      "knowledge_cache": [
+        "schema/core.json",
+        "scripts/json_crud.py",
+        "README.md"
+      ],
+      "context_notes": "В этой сессии реализуем переход на работу с JSON только через скрипты. В knowledge_cache — всё, что нужно для быстрой работы.",
+      "results": [],
+      "summary": ""
+    }
+  ]
+}
