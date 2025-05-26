@@ -18,10 +18,20 @@ logging.basicConfig(
 
 
 class JSONCache:
-    def __init__(self, db_path: str = "cache.db"):
+    def __init__(self, db_path: str = "cache.db", cache_dir: str = None, max_size: int = 100, ttl: int = 3600):
         """Initialize SQLite cache for JSON files."""
-        self.db_path = db_path
-        self.conn = sqlite3.connect(db_path)
+        # Handle legacy parameter compatibility
+        if cache_dir is not None:
+            # If cache_dir is provided, use it to construct db_path
+            cache_path = Path(cache_dir)
+            cache_path.mkdir(exist_ok=True)
+            self.db_path = str(cache_path / "cache.db")
+        else:
+            self.db_path = db_path
+            
+        self.max_size = max_size
+        self.ttl = ttl
+        self.conn = sqlite3.connect(self.db_path)
         self.create_tables()
 
     def create_tables(self):
@@ -124,6 +134,35 @@ class JSONCache:
             except Exception as e:
                 logging.error(f"Failed to load JSON {file_path}: {e}")
         return None
+
+    def get_stats(self) -> Dict[str, Any]:
+        """Get cache statistics."""
+        cursor = self.conn.execute("SELECT COUNT(*) FROM json_metadata")
+        total_entries = cursor.fetchone()[0]
+        
+        cursor = self.conn.execute("SELECT COUNT(*) FROM json_files")
+        total_files = cursor.fetchone()[0]
+        
+        # Get database file size
+        db_path = Path(self.db_path)
+        db_size = db_path.stat().st_size if db_path.exists() else 0
+        
+        return {
+            "total_entries": total_entries,
+            "total_files": total_files,
+            "max_size": self.max_size,
+            "ttl": self.ttl,
+            "db_path": self.db_path,
+            "db_size_bytes": db_size,
+            "db_size_mb": round(db_size / (1024 * 1024), 2)
+        }
+
+    def clear(self):
+        """Clear all cache entries."""
+        with self.conn:
+            self.conn.execute("DELETE FROM json_files")
+            self.conn.execute("DELETE FROM json_metadata")
+        logging.info("Cache cleared")
 
     def close(self):
         """Close database connection."""

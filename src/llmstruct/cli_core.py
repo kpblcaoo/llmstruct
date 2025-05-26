@@ -57,7 +57,7 @@ class CLICore:
         copilot_config = self.config.get_copilot_config()
         if copilot_config.get("enabled", False):
             try:
-                self.copilot_manager = initialize_copilot(self.root_dir, copilot_config)
+                self.copilot_manager = initialize_copilot(self.root_dir)
                 logging.info("Copilot integration initialized")
             except Exception as e:
                 logging.warning(f"Failed to initialize Copilot: {e}")

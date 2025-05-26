@@ -54,6 +54,28 @@
     "max_context_age_hours": 24,
     "cache_optimization_results": true
   },
+  "scenarios": {
+    "cli_direct": {
+      "mode": "full",
+      "budget": {"max_tokens": 50000}
+    },
+    "cli_interactive": {
+      "mode": "full", 
+      "budget": {"max_tokens": 50000}
+    },
+    "vscode_copilot": {
+      "mode": "focused",
+      "budget": {"max_tokens": 2000}
+    },
+    "session_work": {
+      "mode": "session",
+      "budget": {"max_tokens": 4000}
+    },
+    "quick_operation": {
+      "mode": "minimal",
+      "budget": {"max_tokens": 1000}
+    }
+  },
   "scenario_mappings": {
     "cli_query": "FOCUSED",
     "cli_interactive": "FULL",

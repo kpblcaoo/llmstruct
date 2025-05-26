@@ -606,6 +606,27 @@ class CopilotContextManager:
 
         return status
 
+    def get_status(self) -> Dict[str, Any]:
+        """
+        Get comprehensive status of the copilot manager.
+        
+        Returns:
+            Dict with status information
+        """
+        context_status = self.get_context_status()
+        
+        return {
+            "initialized": True,
+            "project_root": str(self.project_root),
+            "config_path": str(self.config_path),
+            "context_orchestrator_enabled": self.context_orchestrator is not None,
+            "loaded_layers": context_status["loaded_layers"],
+            "available_layers": context_status["available_layers"],
+            "total_layers": len(self.context_layers),
+            "active_contexts": len(self.active_contexts),
+            "cache_enabled": self.cache is not None
+        }
+
     def export_context(self, layers: List[str] = None, format: str = "json") -> str:
         """
         Export context in specified format.
