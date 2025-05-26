@@ -27,3 +27,8 @@
 2025-05-26 02:47:13,232 - ERROR - Failed to parse /home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/llm_client (2).py: invalid syntax (llm_client (2).py, line 1)
 2025-05-26 02:47:13,248 - ERROR - Failed to parse /home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/json_selector.py: expected 'except' or 'finally' block (json_selector.py, line 32)
 2025-05-26 02:47:13,264 - ERROR - Failed to parse /home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/src_llmstruct_scripts_doc_generator.py: invalid syntax (src_llmstruct_scripts_doc_generator.py, line 1)
+2025-05-26 05:58:51,764 - ERROR - Failed to parse /home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files (2).py: illegal target for annotation (deploy_embedded_files (2).py, line 1)
+2025-05-26 05:58:51,904 - ERROR - Failed to parse /home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/llm_client (1).py: invalid syntax (llm_client (1).py, line 3)
+2025-05-26 05:58:51,904 - ERROR - Failed to parse /home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/llm_client (2).py: invalid syntax (llm_client (2).py, line 1)
+2025-05-26 05:58:51,919 - ERROR - Failed to parse /home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/json_selector.py: expected 'except' or 'finally' block (json_selector.py, line 32)
+2025-05-26 05:58:51,932 - ERROR - Failed to parse /home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/src_llmstruct_scripts_doc_generator.py: invalid syntax (src_llmstruct_scripts_doc_generator.py, line 1)
