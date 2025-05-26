@@ -65,3 +65,9 @@ use_gitignore = true
 ollama_host = "http://192.168.88.50:11434"
 model = "mixtral"
 retry_count = 3
+
+[gh_view]
+enabled = true
+# Optional: Add GitHub API token or repo config here
+# api_token = ""
+# repo = "kpblcaoo/llmstruct"

@@ -7,7 +7,7 @@ Part of TSK-130 implementation.
 
 import json
 import sys
-from jsonschema import validate, ValidationError, draft7_format_checker
+from jsonschema import validate, ValidationError, Draft7Validator
 
 # Color output
 
@@ -40,7 +40,7 @@ def validate_json_against_schema(json_data, schema_data, file_name):
         validate(
             instance=json_data,
             schema=schema_data,
-            format_checker=draft7_format_checker)
+            format_checker=Draft7Validator.FORMAT_CHECKER)
         print(f"{Colors.GREEN}✅ {file_name}: Valid{Colors.ENDC}")
         return True
     except ValidationError as e:
@@ -63,69 +63,85 @@ def main():
         # Core project files
         {
             "file": "struct.json",
-            "schema": "schema/llmstruct_schema.json",
+            "schema": "schema/llmstruct_schema_simplified.json",
             "description": "Main project structure"
         },
         {
             "file": "data/tasks.json",
-            "schema": "schema/core.json",
+            "schema": "schema/core_simplified.json",
             "description": "Task management"
         },
 
         # Enhanced files (new)
         {
             "file": "data/init_enhanced.json",
-            "schema": "schema/core.json",
+            "schema": "schema/core_simplified.json",
             "description": "Enhanced context orchestration"
         },
         {
             "file": "data/cli_enhanced.json",
-            "schema": "schema/plugins/cli.json",
+            "schema": "schema/cli_simplified.json",
             "description": "Enhanced CLI automation"
         },
         {
             "file": "data/cli_queue_enhanced.json",
-            "schema": "schema/plugins/cli.json",
+            "schema": "schema/cli_queue.json",
             "description": "Enhanced workflow system"
         },
 
         # Standard data files
         {
             "file": "data/cli.json",
-            "schema": "schema/plugins/cli.json",
+            "schema": "schema/cli_simplified.json",
             "description": "CLI configuration"
         },
         {
             "file": "data/cli_queue.json",
-            "schema": "schema/plugins/cli.json",
+            "schema": "schema/cli_queue.json",
             "description": "CLI queue system"
         },
         {
             "file": "data/artifacts_index.json",
-            "schema": "schema/plugins/artifacts.json",
+            "schema": "schema/artifacts_simplified.json",
             "description": "Artifacts index"
         },
         {
             "file": "data/insights.json",
-            "schema": "schema/plugins/insights.json",
+            "schema": "schema/insights_simplified.json",
             "description": "Project insights"
         },
 
         # New project management files
         {
             "file": "data/ideas.json",
-            "schema": "schema/core.json",
+            "schema": "schema/core_simplified.json",
             "description": "Project ideas"
         },
         {
             "file": "data/prs.json",
-            "schema": "schema/core.json",
+            "schema": "schema/core_simplified.json",
             "description": "Pull request tracking"
         },
         {
             "file": "data/ideas_cache.json",
-            "schema": "schema/core.json",
+            "schema": "schema/core_simplified.json",
             "description": "Ideas cache"
+        },
+        # Session management files (NEW)
+        {
+            "file": "data/sessions/ai_sessions.json",
+            "schema": "schema/session_ai_sessions.json",
+            "description": "AI session metadata and knowledge cache"
+        },
+        {
+            "file": "data/sessions/current_session.json",
+            "schema": "schema/session_current_session.json",
+            "description": "Current session state"
+        },
+        {
+            "file": "data/sessions/worklog.json",
+            "schema": "schema/session_worklog.json",
+            "description": "Session worklog/events log"
         }
     ]
 

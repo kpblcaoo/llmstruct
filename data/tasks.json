@@ -1089,7 +1089,7 @@
     {
       "id": "TSK-136",
       "description": "Test and document modular CLI system",
-      "status": "proposed",
+      "status": "in_progress",
       "priority": "medium",
       "estimated_effort": "3d",
       "dependencies": [
@@ -1340,26 +1340,28 @@
     {
       "id": "TSK-144",
       "description": "Оформить и заполнить документацию по gh_view.md (GitHub Projects Integration)",
-      "status": "planned",
+      "status": "completed",
       "priority": "medium",
       "estimated_effort": "1d",
       "dependencies": ["TSK-143"],
       "assignee": "@kpblcaoo",
       "created_at": "2025-05-24T21:40:00Z",
+      "completed_at": "2025-05-26T10:30:00Z",
       "author": "@kpblcaoo",
       "ai-generated": true,
       "target_release": "v0.4.1",
       "related_idea": "IDEA-052",
-      "confirmation_status": "pending",
+      "confirmation_status": "confirmed",
       "source": "auto_doc_task",
       "details": {
         "scope": "Заполнить подробную документацию по интеграции с GitHub Projects в docs/gh_view.md, включая примеры CLI, фильтрацию, dry-run, описание структуры и troubleshooting.",
         "success_criteria": [
-          "Документ gh_view.md содержит подробное описание всех возможностей экспорта задач/идей в GitHub Projects",
-          "Есть примеры CLI-команд и bash-обёртки",
-          "Описаны фильтры, dry-run, mapping и troubleshooting",
-          "Документация зарегистрирована в docs.json и связана с задачей"
-        ]
+          "✅ Документ gh_view.md содержит подробное описание всех возможностей экспорта задач/идей в GitHub Projects",
+          "✅ Есть примеры CLI-команд и bash-обёртки",
+          "✅ Описаны фильтры, dry-run, mapping и troubleshooting",
+          "✅ Документация зарегистрирована в docs.json и связана с задачей"
+        ],
+        "completion_notes": "Создана исчерпывающая документация на 415 строк с полным покрытием функций, включая архитектуру, примеры использования, отображение данных, систему ID mapping, рабочие процессы интеграции, обработку ошибок, API reference, соображения безопасности, оптимизацию производительности и руководство по устранению неполадок."
       }
     },
     {
@@ -1407,6 +1409,31 @@
           "Action or webhook implemented",
           "Custom fields set automatically after export",
           "Manual work minimized"
+        ]
+      }
+    },
+    {
+      "id": "TSK-147",
+      "description": "Интегрировать систему сессий (ai_sessions.json, current_session.json, worklog.json) в рабочий процесс и автоматизировать подгрузку контекста для LLM и пользователя.",
+      "status": "in_progress",
+      "priority": "high",
+      "estimated_effort": "3d",
+      "dependencies": ["TSK-145"],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-26T00:00:00Z",
+      "author": "@ai-copilot",
+      "ai-generated": true,
+      "target_release": "v0.4.2",
+      "related_idea": "IDEA-153",
+      "confirmation_status": "pending",
+      "source": "ai-session-integration",
+      "details": {
+        "scope": "Внедрить автоматическую работу сессий: переключение, логирование, подгрузка knowledge_cache и инструкций для LLM, интеграция с ветками и задачами.",
+        "success_criteria": [
+          "current_session.json всегда отражает активную ветку/сессию",
+          "worklog.json содержит историю событий и решений",
+          "ai_sessions.json позволяет быстро переключаться между сессиями и видеть summary",
+          "LLM и пользователь получают нужные инструкции и контекст при старте сессии"
         ]
       }
     }

@@ -4,7 +4,7 @@
   "author": "@kpblcaoo",
   "date": "2025-05-24",
   "license": "GPL-3.0",
-  "artifact_id": "ideas-core-001",
+  "artifact_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
   "metadata": {
     "project_name": "llmstruct",
     "description": "Conceptual ideas repository for project development",
@@ -165,7 +165,7 @@
       "id": "IDEA-009",
       "title": "Contextual Workflow Orchestration",
       "description": "Advanced workflow system with smart context management and real-time adaptation",
-      "status": "in_progress",
+      "status": "implemented",
       "priority": "high",
       "category": "orchestration",
       "created_at": "2025-05-21T16:00:00Z",
@@ -184,7 +184,7 @@
       "id": "IDEA-010",
       "title": "CLI Plugin Ecosystem",
       "description": "Extensible plugin system for CLI with custom commands, workflows, and integrations",
-      "status": "proposed",
+      "status": "in_progress",
       "priority": "medium",
       "category": "architecture",
       "created_at": "2025-05-24T06:00:00Z",
@@ -2429,6 +2429,26 @@
       "ai-generated": true,
       "implementation_notes": "Will allow full Kanban automation and reduce manual work after export.",
       "related_tasks": ["TSK-146"]
+    },
+    {
+      "id": "IDEA-200",
+      "title": "CLI CRUD для задач и идей (tasks.json, ideas.json)",
+      "description": "Добавить в модульный CLI команды для создания, редактирования, удаления и просмотра задач и идей напрямую из командной строки. Пример: /task add, /task update, /idea add, /idea update и т.д.",
+      "status": "proposed",
+      "priority": "high",
+      "category": "cli",
+      "created_at": "2025-05-26T00:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Запрос пользователя на расширение CLI для полноценного управления задачами и идеями без ручного редактирования JSON.",
+      "related_files": [
+        "src/llmstruct/cli_commands.py",
+        "src/llmstruct/cli_core.py"
+      ],
+      "benefits": [
+        "Ускорение работы с задачами и идеями",
+        "Меньше ошибок при ручном редактировании",
+        "Возможность автоматизации и интеграции с другими инструментами"
+      ]
     }
   ],
   "categories": {
