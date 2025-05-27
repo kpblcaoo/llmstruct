@@ -339,11 +339,13 @@ Examples:
             if self.copilot_manager:
                 test_event = CopilotEvent(
                     event_type="test_event",
-                    data={"message": "Test from CLI"},
-                    source="cli_test",
+                    file_path=None,
+                    scope="cli_test",
+                    metadata={"message": "Test from CLI"}
                 )
-                self.copilot_manager.emit_event(test_event)
-                print("Test event sent to Copilot manager")
+                context = self.copilot_manager.get_context_for_event(test_event)
+                print("Test event processed by Copilot manager")
+                print(f"Context retrieved with {len(context)} sections")
             else:
                 print("Copilot is not initialized")
         else:

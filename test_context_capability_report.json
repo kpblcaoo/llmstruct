@@ -1,0 +1,162 @@
+{
+  "test_summary": {
+    "total_tests": 8,
+    "successful_tests": 8,
+    "success_rate": 1.0,
+    "avg_loading_time_ms": 6.224095821380615,
+    "avg_quality_score": 0.7499999999999999
+  },
+  "mode_analysis": {
+    "FULL": {
+      "total_tests": 2,
+      "success_rate": 1.0,
+      "avg_loading_time_ms": 13.559818267822266,
+      "avg_quality_score": 0.95,
+      "avg_tokens_used": 44439.0
+    },
+    "FOCUSED": {
+      "total_tests": 2,
+      "success_rate": 1.0,
+      "avg_loading_time_ms": 10.124921798706055,
+      "avg_quality_score": 0.75,
+      "avg_tokens_used": 24.0
+    },
+    "MINIMAL": {
+      "total_tests": 2,
+      "success_rate": 1.0,
+      "avg_loading_time_ms": 0.43654441833496094,
+      "avg_quality_score": 0.6,
+      "avg_tokens_used": 53.0
+    },
+    "SESSION": {
+      "total_tests": 2,
+      "success_rate": 1.0,
+      "avg_loading_time_ms": 0.7750988006591797,
+      "avg_quality_score": 0.7,
+      "avg_tokens_used": 1013.0
+    }
+  },
+  "detailed_results": [
+    {
+      "test_name": "context_mode_FULL_project-analysis",
+      "context_mode": "FULL",
+      "token_budget": 50000,
+      "tokens_used": 44439,
+      "response_quality_score": 1.0,
+      "loading_time_ms": 13.350486755371094,
+      "success": true,
+      "error_message": null,
+      "context_sources": [
+        "tasks.json",
+        "ideas.json",
+        "docs",
+        "src",
+        "readme"
+      ]
+    },
+    {
+      "test_name": "context_mode_FOCUSED_copilot-integration",
+      "context_mode": "FOCUSED",
+      "token_budget": 16000,
+      "tokens_used": 24,
+      "response_quality_score": 0.75,
+      "loading_time_ms": 10.572433471679688,
+      "success": true,
+      "error_message": null,
+      "context_sources": [
+        "tasks.json"
+      ]
+    },
+    {
+      "test_name": "context_mode_MINIMAL_quick-query",
+      "context_mode": "MINIMAL",
+      "token_budget": 8000,
+      "tokens_used": 53,
+      "response_quality_score": 0.6,
+      "loading_time_ms": 0.41985511779785156,
+      "success": true,
+      "error_message": null,
+      "context_sources": [
+        "summary",
+        "current_task"
+      ]
+    },
+    {
+      "test_name": "context_mode_SESSION_ai-session-work",
+      "context_mode": "SESSION",
+      "token_budget": 4000,
+      "tokens_used": 1013,
+      "response_quality_score": 0.7,
+      "loading_time_ms": 0.7734298706054688,
+      "success": true,
+      "error_message": null,
+      "context_sources": [
+        "session_data",
+        "worklog",
+        "current_session"
+      ]
+    },
+    {
+      "test_name": "context_mode_FULL_documentation-generation",
+      "context_mode": "FULL",
+      "token_budget": 50000,
+      "tokens_used": 44439,
+      "response_quality_score": 0.9,
+      "loading_time_ms": 13.769149780273438,
+      "success": true,
+      "error_message": null,
+      "context_sources": [
+        "tasks.json",
+        "ideas.json",
+        "docs",
+        "src",
+        "readme"
+      ]
+    },
+    {
+      "test_name": "context_mode_FOCUSED_task-planning",
+      "context_mode": "FOCUSED",
+      "token_budget": 16000,
+      "tokens_used": 24,
+      "response_quality_score": 0.75,
+      "loading_time_ms": 9.677410125732422,
+      "success": true,
+      "error_message": null,
+      "context_sources": [
+        "tasks.json"
+      ]
+    },
+    {
+      "test_name": "context_mode_MINIMAL_status-check",
+      "context_mode": "MINIMAL",
+      "token_budget": 8000,
+      "tokens_used": 53,
+      "response_quality_score": 0.6,
+      "loading_time_ms": 0.4532337188720703,
+      "success": true,
+      "error_message": null,
+      "context_sources": [
+        "summary",
+        "current_task"
+      ]
+    },
+    {
+      "test_name": "context_mode_SESSION_long-running-work",
+      "context_mode": "SESSION",
+      "token_budget": 4000,
+      "tokens_used": 1013,
+      "response_quality_score": 0.7,
+      "loading_time_ms": 0.7767677307128906,
+      "success": true,
+      "error_message": null,
+      "context_sources": [
+        "session_data",
+        "worklog",
+        "current_session"
+      ]
+    }
+  ],
+  "recommendations": [
+    "All tests performing well - system ready for production use"
+  ]
+}

@@ -339,9 +339,6 @@
       "created_at": "2025-05-24T19:00:00Z",
       "completed_at": "2025-05-26T10:30:00Z"
     },
-      "created_at": "2025-05-24T21:40:00Z",
-      "updated_at": "2025-05-25T21:00:00Z"
-    },
     {
       "path": "data/insights.json",
       "title": "Project Insights (insights.json)",
@@ -356,6 +353,160 @@
       "related_ideas": ["IDEA-153"],
       "doc_type": "data",
       "created_at": "2025-05-25T21:00:00Z"
+    },
+    {
+      "path": "docs/context_orchestration_architecture.md",
+      "title": "Context Orchestration Architecture",
+      "version": "1.0.0",
+      "status": "Completed",
+      "author": "@kpblcaoo",
+      "artifact_id": "context-orchestration-arch-20250526",
+      "description": "Comprehensive documentation of the smart context orchestration system with SmartContextOrchestrator and CopilotContextManager components, multi-mode context loading, event-driven architecture, and VS Code Copilot integration.",
+      "quality_assessment": "Excellent - 275 lines of detailed architecture documentation with complete technical specifications",
+      "content_status": "Complete architecture documentation with component diagrams, configuration examples, and integration patterns",
+      "sections": [
+        "Smart Context Orchestration Overview",
+        "Core Components (SmartContextOrchestrator, CopilotContextManager)",
+        "Context Modes and Scenarios",
+        "Event-Driven Context Loading",
+        "Context Validation and Safety",
+        "Performance Optimization",
+        "Configuration and Integration Examples"
+      ],
+      "related_components": ["SmartContextOrchestrator", "CopilotContextManager", "VS Code Copilot"],
+      "technical_features": ["Token budgeting", "Progressive context loading", "Event-driven architecture", "Session management"],
+      "doc_type": "architecture",
+      "created_at": "2025-05-26T12:00:00Z"
+    },
+    {
+      "path": "docs/github_projects_export.md",
+      "title": "GitHub Projects Export System",
+      "version": "1.0.0",
+      "status": "Completed",
+      "author": "@kpblcaoo",
+      "artifact_id": "github-projects-export-20250526",
+      "description": "Complete documentation for the GitHub Projects export system including architecture, CLI commands, automation scripts, configuration, usage patterns, CI/CD integration, and performance optimization.",
+      "quality_assessment": "Excellent - 537 lines of comprehensive technical documentation with complete implementation guide",
+      "content_status": "Complete export system documentation with architectural overview, command reference, automation workflows, and troubleshooting guide",
+      "sections": [
+        "System Architecture and Data Flow",
+        "Configuration and Setup",
+        "CLI Command Reference",
+        "Export Formats and Templates",
+        "Integration Workflows",
+        "Automation and CI/CD",
+        "Performance Optimization",
+        "Security and Error Handling"
+      ],
+      "related_components": ["gh-view CLI", "Export Pipeline", "GitHub API", "CI/CD Integration"],
+      "technical_features": ["Multi-format export", "Automated workflows", "Template system", "Performance monitoring"],
+      "doc_type": "system",
+      "created_at": "2025-05-26T12:30:00Z"
+    },
+    {
+      "path": "docs/integration.md",
+      "title": "Comprehensive Integration Documentation",
+      "version": "0.1.0",
+      "status": "Planned",
+      "author": "@kpblcaoo",
+      "issue": "#TBD",
+      "artifact_id": "integration-docs-planning-20250526",
+      "description": "Comprehensive integration documentation covering VS Code Copilot, context orchestration, GitHub Projects, CLI workflows, and API interfaces.",
+      "quality_assessment": "Planned - Will provide complete integration patterns and workflows",
+      "content_status": "Planned - Comprehensive coverage of all integration scenarios",
+      "related_tasks": ["TSK-150"],
+      "related_ideas": ["IDEA-150"],
+      "sections": [
+        "VS Code Copilot Integration Patterns",
+        "Context Orchestration Workflows",
+        "GitHub Projects Synchronization",
+        "API Integration Examples",
+        "CLI Workflow Automation",
+        "Multi-tool Integration Scenarios",
+        "Troubleshooting and Best Practices"
+      ]
+    },
+    {
+      "path": "docs/onboarding/",
+      "title": "Teaching and Onboarding Process Documentation",
+      "version": "0.1.0",
+      "status": "Planned",
+      "author": "@kpblcaoo",
+      "artifact_id": "onboarding-system-planning-20250526",
+      "description": "Systematic teaching materials and onboarding processes for both human contributors and AI agents.",
+      "quality_assessment": "Planned - Will provide structured learning and onboarding experience",
+      "content_status": "Planned - Comprehensive teaching and training materials",
+      "related_tasks": ["TSK-152"],
+      "related_ideas": ["IDEA-152"],
+      "components": [
+        "Step-by-step onboarding guide",
+        "Video tutorial scripts and materials",
+        "Interactive learning modules",
+        "AI agent training protocols",
+        "Best practices documentation",
+        "Common pitfalls and solutions"
+      ]
+    },
+    {
+      "path": "docs/pr_process.md",
+      "title": "Pull Request Process and Best Practices",
+      "version": "0.1.0",
+      "status": "Planned",
+      "author": "@kpblcaoo",
+      "artifact_id": "pr-process-docs-20250526",
+      "description": "Comprehensive PR process documentation with templates, review procedures, and practical demonstrations.",
+      "quality_assessment": "Planned - Will provide clear collaboration and review workflows",
+      "content_status": "Planned - Complete PR process with templates and examples",
+      "related_tasks": ["TSK-156"],
+      "related_ideas": ["IDEA-156"],
+      "sections": [
+        "PR Creation Guidelines and Templates",
+        "Code Review Process Documentation",
+        "Branch Management Best Practices",
+        "Merge Strategies and Policies",
+        "Conflict Resolution Procedures"
+      ]
+    },
+    {
+      "path": "docs/project_structure.md",
+      "title": "Project Structure and Navigation Documentation",
+      "version": "0.2.0",
+      "status": "Planned Overhaul",
+      "author": "@kpblcaoo",
+      "artifact_id": "project-structure-overhaul-20250526",
+      "description": "Comprehensive project structure documentation with visual diagrams, component mapping, and navigation guides.",
+      "quality_assessment": "Planned - Will provide clear structure understanding and navigation",
+      "content_status": "Needs Major Update - Current file exists but needs comprehensive overhaul",
+      "related_tasks": ["TSK-157"],
+      "related_ideas": ["IDEA-157"],
+      "sections": [
+        "Directory Structure Explanation",
+        "File Naming Conventions",
+        "Architecture Component Mapping",
+        "Development Workflow Integration",
+        "Configuration File Relationships",
+        "Data Flow and Dependencies"
+      ]
+    },
+    {
+      "path": "docs/security_audit.md",
+      "title": "Security Audit and Compliance Framework",
+      "version": "0.1.0",
+      "status": "Planned",
+      "author": "@kpblcaoo",
+      "artifact_id": "security-audit-framework-20250526",
+      "description": "Comprehensive security audit framework with automated compliance checking and incident response procedures.",
+      "quality_assessment": "Planned - Will provide robust security and compliance framework",
+      "content_status": "Planned - Complete security audit and compliance system",
+      "related_tasks": ["TSK-159"],
+      "related_ideas": ["IDEA-159"],
+      "sections": [
+        "Security Policy Enforcement Automation",
+        "Vulnerability Scanning Integration",
+        "Compliance Checking Workflows",
+        "Incident Response Procedures",
+        "Regular Security Review Processes"
+      ]
     }
   ],
   "automation": [

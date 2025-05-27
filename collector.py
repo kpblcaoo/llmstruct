@@ -42,9 +42,9 @@ def collect_project():
         if file_path.is_file() and not any(
             ignore_dir in str(file_path) for ignore_dir in ignore_dirs
         ):
-            if (not gitignore(file_path) or
-                file_path.name == output_json or
-                    file_path.name == ".gitignore"):
+            if (not gitignore(file_path) or 
+                file_path.name == output_json or 
+                file_path.name == ".gitignore"):
                 if is_text_file(file_path):
                     try:
                         with open(file_path, "r", encoding="utf-8") as f:
@@ -61,7 +61,7 @@ def collect_project():
     with open(output_json, "w", encoding="utf-8") as f:
         json.dump(
             {"files": [{"path": k, "content": v}
-             for k, v in doc_files.items()]},
+             for k, v in doc_files.items()]}, 
             f, ensure_ascii=False)
         logger.info(f"Generated {output_json} with {len(doc_files)} files")
 

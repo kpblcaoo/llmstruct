@@ -2449,6 +2449,174 @@
         "Меньше ошибок при ручном редактировании",
         "Возможность автоматизации и интеграции с другими инструментами"
       ]
+    },
+    {
+      "id": "IDEA-150",
+      "title": "Comprehensive Integration Documentation System",
+      "description": "Create unified documentation covering all integration patterns including VS Code Copilot, context orchestration, GitHub Projects, CLI workflows, and API interfaces",
+      "status": "planned",
+      "priority": "high",
+      "category": "documentation",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Support for TSK-150 - comprehensive integration.md creation",
+      "related_files": [
+        "docs/integration.md",
+        "docs/context_orchestration_architecture.md",
+        "docs/github_projects_export.md"
+      ],
+      "tags": ["documentation", "integration", "workflows", "best-practices"]
+    },
+    {
+      "id": "IDEA-151",
+      "title": "Automated Project Maintenance and Cleanup Framework",
+      "description": "Develop intelligent cleanup utilities for ongoing project maintenance including duplicate detection, backup management, and development artifact organization",
+      "status": "planned",
+      "priority": "medium",
+      "category": "automation",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Support for TSK-151 - automated cleanup utilities development",
+      "related_files": [
+        "scripts/cleanup_utilities.py",
+        "temp_workfiles/cleanup_policies.json"
+      ],
+      "tags": ["automation", "maintenance", "cleanup", "organization"]
+    },
+    {
+      "id": "IDEA-152",
+      "title": "Systematic Teaching and Onboarding Process",
+      "description": "Create comprehensive teaching materials and onboarding processes for both human contributors and AI agents working with the project",
+      "status": "planned",
+      "priority": "high",
+      "category": "documentation",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Support for TSK-152 - teaching and onboarding documentation",
+      "related_files": [
+        "docs/onboarding/",
+        "docs/teaching_materials/",
+        "docs/ai_training_protocols.md"
+      ],
+      "tags": ["documentation", "onboarding", "teaching", "ai-training"]
+    },
+    {
+      "id": "IDEA-153",
+      "title": "Tasks and Ideas Lifecycle Management System",
+      "description": "Implement comprehensive system for managing task completion, idea implementation tracking, and lifecycle automation with quality assurance workflows",
+      "status": "planned",
+      "priority": "high",
+      "category": "data_management",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Support for TSK-153 - tasks and ideas revision system",
+      "related_files": [
+        "data/tasks.json",
+        "data/ideas.json",
+        "scripts/lifecycle_management.py"
+      ],
+      "tags": ["data-management", "lifecycle", "quality-assurance", "automation"]
+    },
+    {
+      "id": "IDEA-154",
+      "title": "API Architecture Evaluation and Selection Framework",
+      "description": "Comprehensive evaluation framework for choosing optimal API architecture including REST vs GraphQL, framework comparison, and performance analysis",
+      "status": "planned",
+      "priority": "medium",
+      "category": "architecture",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Support for TSK-154 - API-mode evaluation framework",
+      "related_files": [
+        "docs/api_evaluation_report.md",
+        "benchmarks/api_performance.json"
+      ],
+      "tags": ["architecture", "api", "evaluation", "performance"]
+    },
+    {
+      "id": "IDEA-155",
+      "title": "Advanced CI/CD and Workflow Automation Enhancement",
+      "description": "Design next-generation automation workflows for development, testing, deployment, and maintenance with zero-touch deployment capabilities",
+      "status": "planned",
+      "priority": "medium",
+      "category": "automation",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Support for TSK-155 - advanced workflow automation planning",
+      "related_files": [
+        ".github/workflows/",
+        "scripts/automation/",
+        "docs/ci_cd_architecture.md"
+      ],
+      "tags": ["automation", "ci-cd", "deployment", "quality-gates"]
+    },
+    {
+      "id": "IDEA-156",
+      "title": "Pull Request Process Documentation and Best Practices",
+      "description": "Comprehensive PR process documentation with templates, review procedures, and practical demonstration using cleanup branch",
+      "status": "planned",
+      "priority": "high",
+      "category": "documentation",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Support for TSK-156 - PR process documentation and demo",
+      "related_files": [
+        "docs/pr_process.md",
+        ".github/pull_request_template.md",
+        "docs/branch_management.md"
+      ],
+      "tags": ["documentation", "process", "collaboration", "git-workflow"]
+    },
+    {
+      "id": "IDEA-157",
+      "title": "Project Structure Documentation and Navigation System",
+      "description": "Create comprehensive project structure documentation with visual diagrams, component mapping, and clear navigation guides",
+      "status": "planned",
+      "priority": "medium",
+      "category": "documentation",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Support for TSK-157 - project_structure.md overhaul",
+      "related_files": [
+        "docs/project_structure.md",
+        "docs/architecture_diagrams/",
+        "docs/navigation_guide.md"
+      ],
+      "tags": ["documentation", "structure", "navigation", "architecture"]
+    },
+    {
+      "id": "IDEA-158",
+      "title": "Comprehensive Metrics and Analytics Framework",
+      "description": "Design advanced metrics collection and analytics system for performance monitoring, usage patterns, and development productivity insights",
+      "status": "planned",
+      "priority": "low",
+      "category": "optimization",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Support for TSK-158 - metrics and analytics expansion",
+      "related_files": [
+        "data/metrics.json",
+        "src/llmstruct/analytics/",
+        "docs/metrics_framework.md"
+      ],
+      "tags": ["analytics", "metrics", "monitoring", "insights"]
+    },
+    {
+      "id": "IDEA-159",
+      "title": "Security Audit and Compliance Framework",
+      "description": "Comprehensive security audit framework with automated compliance checking, vulnerability scanning, and incident response procedures",
+      "status": "planned",
+      "priority": "high",
+      "category": "validation",
+      "created_at": "2025-05-26T14:00:00Z",
+      "author": "@kpblcaoo",
+      "implementation_notes": "Support for TSK-159 - security audit and compliance framework",
+      "related_files": [
+        "docs/security_audit.md",
+        "scripts/security_checks.py",
+        "docs/incident_response.md"
+      ],
+      "tags": ["security", "compliance", "audit", "validation"]
     }
   ],
   "categories": {
