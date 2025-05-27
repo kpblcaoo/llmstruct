@@ -2617,6 +2617,56 @@
         "docs/incident_response.md"
       ],
       "tags": ["security", "compliance", "audit", "validation"]
+    },
+    {
+      "id": "IDEA-160",
+      "title": "[META] AI System Self-Awareness Enhancement",
+      "description": "Comprehensive AI system self-awareness framework enabling real-time capability discovery, adaptive context management, historical learning integration, and performance self-assessment for enhanced VS Code Copilot integration",
+      "status": "proposed",
+      "priority": "high",
+      "category": "ai_enhancement",
+      "created_at": "2025-05-26T21:45:00Z",
+      "author": "@kpblcaoo with Claude (Anthropic)",
+      "ai_generated": true,
+      "meta_type": "[META]",
+      "implementation_notes": "Support for TSK-160 - META session for AI system self-awareness enhancement",
+      "components": [
+        "SystemCapabilityDiscovery - Real-time system introspection",
+        "AdaptiveContextEngine - Dynamic context awareness",
+        "ToolHealthMonitor - Tool status monitoring", 
+        "HistoricalContextWeaver - Historical context integration",
+        "AIPerformanceAnalyzer - Self-assessment capabilities"
+      ],
+      "vs_code_integration": {
+        "copilot_enhancements": [
+          "Real-time capability discovery for VS Code environment",
+          "Adaptive context switching based on user activity",
+          "Tool health monitoring for extension ecosystem",
+          "Historical session learning and pattern recognition",
+          "Performance optimization recommendations"
+        ],
+        "cli_differences": [
+          "GUI-based status indicators vs CLI text output",
+          "Extension-aware capability discovery",
+          "VS Code workspace context integration",
+          "Interactive feedback mechanisms",
+          "Visual performance dashboards"
+        ]
+      },
+      "related_files": [
+        "META_SESSION_PLAN.md",
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/copilot.py",
+        "docs/context_orchestration_architecture.md"
+      ],
+      "success_metrics": [
+        "Discovery Accuracy: >95%",
+        "Context Adaptation Speed: <2sec", 
+        "Tool Health Detection: >90%",
+        "Historical Relevance: >80%",
+        "Task Completion Efficiency: +20%"
+      ],
+      "tags": ["ai", "meta", "self-awareness", "copilot", "context", "orchestration", "enhancement"]
     }
   ],
   "categories": {
@@ -2659,6 +2709,10 @@
     "optimization": {
       "description": "Efficiency and resource optimization",
       "color": "#6C5CE7"
+    },
+    "ai_enhancement": {
+      "description": "AI system improvements and self-awareness",
+      "color": "#E17055"
     }
   },
   "workflow": {

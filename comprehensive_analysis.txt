@@ -1,0 +1,209 @@
+🔍 LLMSTRUCT COMPREHENSIVE ANALYSIS
+============================================================
+
+🔎 DETAILED UNUSED FUNCTION ANALYSIS:
+Total functions analyzed: 227
+Total called functions: 474
+Potentially unused functions: 115
+
+collector (1 unused):
+  • collect_project
+
+examples.python_project_main (1 unused):
+  • run
+
+examples.python_project_utils (1 unused):
+  • helper
+
+final_system_check (1 unused):
+  • check_system_status
+
+scripts.deploy_embedded_files (1 unused):
+  • main
+
+scripts.export_to_github_projects (6 unused):
+  • check_github_cli
+  • create_project_item
+  • export_ideas_to_project
+  • export_tasks_to_project
+  • filter_data
+  • list_projects
+
+src.llmstruct.cache (5 unused):
+  • cache_json
+  • close
+  • create_tables
+  • get_full_json
+  • get_metadata
+
+src.llmstruct.cli_commands (21 unused):
+  • cmd_audit
+  • cmd_backup
+  • cmd_cache
+  • cmd_config
+  • cmd_context
+  • cmd_copilot
+  • cmd_help
+  • cmd_mode
+  • cmd_parse
+  • cmd_queue
+  • cmd_session
+  • cmd_status
+  • cmd_view
+  • cmd_workspace
+  • cmd_write
+  • handle_auto_update
+  • handle_struct_status
+  • process_command
+  • process_prompt
+  • set_cache
+  • set_copilot
+
+src.llmstruct.cli_config (16 unused):
+  • get_auto_update_config
+  • get_cache_config
+  • get_context_config
+  • get_context_file_path
+  • get_copilot_config
+  • get_exclude_dirs
+  • get_exclude_patterns
+  • get_gitignore_patterns
+  • get_include_patterns
+  • get_max_file_size
+  • get_queue_config
+  • get_struct_file_path
+  • is_auto_update_enabled
+  • reload_config
+  • save_config
+  • update_config
+
+src.llmstruct.cli_core (4 unused):
+  • cleanup
+  • run_interactive_mode
+  • setup_cache
+  • setup_copilot
+
+src.llmstruct.cli_utils (10 unused):
+  • backup_file
+  • cleanup_old_backups
+  • dir_exists
+  • file_exists
+  • format_json
+  • generate_unique_id
+  • get_directory_structure
+  • get_file_size
+  • safe_path_join
+  • write_file_content
+
+src.llmstruct.context_orchestrator (3 unused):
+  • get_context_for_scenario
+  • get_metrics_summary
+  • save_metrics
+
+src.llmstruct.copilot (12 unused):
+  • export_context
+  • get_context_for_event
+  • get_context_for_vscode
+  • get_context_status
+  • get_optimized_context_for_scenario
+  • get_workflow_suggestions
+  • load_context_layer
+  • refresh_all_contexts
+  • suggest_completion
+  • trigger_copilot_event
+  • unload_context_layer
+  • validate_change
+
+src.llmstruct.gh_view (3 unused):
+  • format_idea_for_github
+  • format_task_for_github
+  • load_official_data
+
+src.llmstruct.grok (1 unused):
+  • generate
+
+src.llmstruct.parsers.javascript_parser (4 unused):
+  • compute_file_metadata
+  • extract_signature
+  • file_hash
+  • parse_module
+
+src.llmstruct.parsers.python_parser (5 unused):
+  • visit_AsyncFunctionDef
+  • visit_Call
+  • visit_FunctionDef
+  • visit_Import
+  • visit_ImportFrom
+
+src.llmstruct.validators.json_validator (1 unused):
+  • validate_directory
+
+src.llmstruct.workspace (9 unused):
+  • add_decision_workflow
+  • check_permission
+  • create_workspace_manager
+  • get_current_state
+  • get_mode_status
+  • get_workspace_status
+  • integrate_strict_mode
+  • set_emergency_override
+  • set_mode
+
+test_audit (1 unused):
+  • test_audit_status
+
+test_cli_demo (1 unused):
+  • test_interactive_cli
+
+test_cli_integration (1 unused):
+  • test_modular_cli_commands
+
+test_modular_cli (2 unused):
+  • test_copilot_integration
+  • test_modular_cli
+
+tests.test_self_run (5 unused):
+  • test_attach_to_llm_request_init_json
+  • test_attach_to_llm_request_missing_file
+  • test_cache_json
+  • test_filter_json_init_json
+  • test_select_json_partial
+
+🏗️ MODULE SIZE ANALYSIS:
+  src.llmstruct.copilot: 26 functions
+  src.llmstruct.cli_commands: 22 functions
+  src.llmstruct.workspace: 20 functions
+  src.llmstruct.context_orchestrator: 19 functions
+  src.llmstruct.cli_config: 18 functions
+  src.llmstruct.cli: 17 functions
+
+📁 EMPTY MODULE ANALYSIS:
+  • scripts.validate_json
+  • scripts.validate_schemas
+  • src.llmstruct.__init__
+  • src.llmstruct.__main__
+  • src.llmstruct.generators.__init__
+  • src.llmstruct.parsers.__init__
+  • src.llmstruct.templates.__init__
+  • src.llmstruct.validators.__init__
+  • test_cli
+  • test_export
+  • tests.__init__
+
+📊 SUMMARY STATISTICS:
+  Total modules: 55
+  Empty modules: 11
+  Large modules (15+ functions): 6
+  Potentially unused functions: 115
+  Total functions: 227
+  Usage rate: 49.3%
+
+🎯 PRIORITY CLEANUP RECOMMENDATIONS:
+1. HIGH PRIORITY - Review unused functions in core modules:
+   • add_decision_workflow
+   • check_permission
+   • cleanup
+   • create_workspace_manager
+   • get_current_state
+2. MEDIUM PRIORITY - Clean up empty modules
+3. LOW PRIORITY - Consider refactoring large modules

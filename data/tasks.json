@@ -1767,50 +1767,7 @@
         ]
       }
     },
-    {
-      "id": "TSK-160",
-      "description": "Plan and execute comprehensive branch cleanup strategy",
-      "status": "planned",
-      "priority": "high",
-      "estimated_effort": "2-3d",
-      "dependencies": ["TSK-156"],
-      "assignee": "@kpblcaoo",
-      "created_at": "2025-05-26T14:30:00Z",
-      "author": "@kpblcaoo",
-      "ai-generated": false,
-      "target_release": "v0.2.1",
-      "related_idea": "IDEA-160",
-      "confirmation_status": "pending",
-      "source": "branch_management",
-      "details": {
-        "scope": "Systematically clean up obsolete branches and establish branch management policies",
-        "current_branches": [
-          "ai-helped/feature/cli-context-sessions",
-          "chore/docs-cleanup-and-organization (current)",
-          "dev/0.1.1",
-          "dev/v0.1.2", 
-          "dev/v0.2.0",
-          "feature/docs-cleanup-and-organization",
-          "main",
-          "temp/unsaved-v0.1.1-changes",
-          "testing/v0.2.0",
-          "v0.1.0"
-        ],
-        "cleanup_strategy": [
-          "Merge/archive completed feature branches",
-          "Remove obsolete development branches",
-          "Consolidate version branches",
-          "Establish naming conventions",
-          "Document branch lifecycle policies"
-        ],
-        "success_criteria": [
-          "Clean branch structure with clear purposes",
-          "Documented branch management guidelines", 
-          "Merged important features into main",
-          "Archived obsolete branches safely"
-        ]
-      }
-    },
+
     {
       "id": "TSK-161",
       "description": "Design and plan CI/CD process architecture for @momai implementation",
@@ -1901,6 +1858,99 @@
           "Automated validation scripts created"
         ]
       }
+    },
+    {
+      "id": "TSK-160",
+      "description": "[META] AI System Self-Awareness Enhancement",
+      "status": "proposed",
+      "priority": "high",
+      "estimated_effort": "8-12d",
+      "dependencies": [],
+      "assignee": "@kpblcaoo",
+      "created_at": "2025-05-26T21:45:00Z",
+      "author": "@kpblcaoo with Claude (Anthropic)",
+      "ai-generated": true,
+      "target_release": "v0.3.0",
+      "related_idea": "IDEA-160",
+      "confirmation_status": "pending",
+      "source": "meta_session_planning",
+      "meta_type": "[META]",
+      "phases": [
+        {
+          "phase": "Core Self-Awareness Infrastructure",
+          "duration": "1-2d",
+          "deliverables": [
+            "SystemCapabilityDiscovery service",
+            "ToolHealthMonitor component",
+            "CLI commands: /system status, /capabilities scan"
+          ]
+        },
+        {
+          "phase": "Adaptive Context Engine",
+          "duration": "2-3d", 
+          "deliverables": [
+            "AdaptiveContextEngine implementation",
+            "AI Intent Analysis module",
+            "Dynamic Context Adaptation system"
+          ]
+        },
+        {
+          "phase": "Historical Integration",
+          "duration": "1-2d",
+          "deliverables": [
+            "HistoricalContextWeaver implementation",
+            "Pattern Learning system",
+            "Timeline Context integration"
+          ]
+        },
+        {
+          "phase": "Performance & Self-Assessment",
+          "duration": "2-3d",
+          "deliverables": [
+            "AIPerformanceAnalyzer component",
+            "Self-Improvement Engine",
+            "Feedback Integration system"
+          ]
+        },
+        {
+          "phase": "Integration & Testing",
+          "duration": "1-2d",
+          "deliverables": [
+            "System Integration complete",
+            "Comprehensive Testing suite",
+            "Updated Documentation"
+          ]
+        }
+      ],
+      "acceptance_criteria": [
+        "Real-time system capability discovery works",
+        "Tool health monitoring detects issues >90% accuracy",
+        "Adaptive context engine adjusts context <2sec",
+        "Historical context weaver provides relevant history >80%",
+        "AI performance analyzer gives actionable recommendations",
+        "All new CLI commands are functional and documented",
+        "Integration with existing systems is seamless",
+        "Comprehensive test suite covers all components"
+      ],
+      "technical_requirements": [
+        "Python 3.8+ compatibility",
+        "Integration with existing SmartContextOrchestrator",
+        "Compatibility with CopilotContextManager",
+        "CLI command integration",
+        "JSON configuration support",
+        "Performance metrics collection",
+        "Error handling and graceful degradation"
+      ],
+      "success_metrics": [
+        "Discovery Accuracy: >95%",
+        "Context Adaptation Speed: <2sec",
+        "Tool Health Detection: >90%",
+        "Historical Relevance: >80%",
+        "Task Completion Efficiency: +20%",
+        "Context Utilization: +30%",
+        "Self-Correction Rate: +25%",
+        "Learning Speed: +15%"
+      ]
     }
   ]
 }
