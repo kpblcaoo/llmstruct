@@ -116,6 +116,18 @@ def parse_files_from_response(response: str) -> List[tuple[str, str]]:
 
 async def interactive(args: argparse.Namespace):
     """Run interactive CLI with modular structure if available, fallback to legacy."""
+    # If context path is not specified, use .llmstruct/general-struct.json in root_dir
+    if not args.context or args.context == "struct.json":
+        default_context = os.path.join(args.root_dir, ".llmstruct", "general-struct.json")
+        if os.path.exists(default_context):
+            args.context = default_context
+        else:
+            logging.warning(
+                f"Context file {default_context} does not exist, generating new struct.json"
+            )
+            parse(args)
+            args.context = default_context
+
     if MODULAR_CLI_AVAILABLE:
         try:
             await interactive_modular(args)
@@ -741,16 +753,24 @@ def parse(args: argparse.Namespace):
             goals=goals,
             exclude_dirs=exclude_dirs,
         )
-        with Path(args.output).open("w", encoding="utf-8") as f:
+        
+        # Create .llmstruct directory if it doesn't exist
+        llmstruct_dir = os.path.join(root_dir, ".llmstruct")
+        os.makedirs(llmstruct_dir, exist_ok=True)
+        
+        # Save JSON to .llmstruct/general-struct.json
+        output_path = os.path.join(llmstruct_dir, "general-struct.json")
+        with open(output_path, "w", encoding="utf-8") as f:
             json.dump(struct_data, f, indent=2)
-        logging.info(f"Generated {args.output}")
-        # Cache the generated JSON
+        logging.info(f"Generated {output_path}")
+        
+        # Cache the generated JSON if caching is enabled
         if args.use_cache:
             cache = JSONCache()
             cache.cache_json(
-                args.output,
-                args.output,
-                summary="Generated struct.json",
+                output_path,
+                output_path,
+                summary="Generated general-struct.json",
                 tags=["struct"],
             )
             cache.close()
@@ -761,6 +781,15 @@ def parse(args: argparse.Namespace):
 
 async def query(args: argparse.Namespace):
     """Query LLMs with prompt and context."""
+    # If context path is not specified, use .llmstruct/general-struct.json in the current directory
+    if not args.context or args.context == "struct.json":
+        default_context = os.path.join(os.getcwd(), ".llmstruct", "general-struct.json")
+        if os.path.exists(default_context):
+            args.context = default_context
+        else:
+            logging.error(f"Default context file {default_context} does not exist")
+            return
+
     if not Path(args.context).exists():
         logging.error(f"Context file {args.context} does not exist")
         return
@@ -994,7 +1023,7 @@ def main():
     )
     parse_parser.add_argument("root_dir", help="Root directory of the project")
     parse_parser.add_argument(
-        "-o", "--output", default="struct.json", help="Output JSON file"
+        "-o", "--output", help="Optional: Output JSON file (default: .llmstruct/general-struct.json in root_dir)"
     )
     parse_parser.add_argument(
         "--language", choices=["python", "javascript"], help="Programming language"
@@ -1023,7 +1052,9 @@ def main():
     )
     query_parser.add_argument("--prompt", required=True, help="Prompt for LLM")
     query_parser.add_argument(
-        "--context", default="struct.json", help="Context JSON file"
+        "--context",
+        default="struct.json",
+        help="Context JSON file (default: .llmstruct/general-struct.json in current directory)"
     )
     query_parser.add_argument(
         "--mode",
@@ -1056,7 +1087,9 @@ def main():
     )
     interactive_parser.add_argument("root_dir", help="Root directory of the project")
     interactive_parser.add_argument(
-        "--context", default="struct.json", help="Context JSON file"
+        "--context",
+        default="struct.json",
+        help="Context JSON file (default: .llmstruct/general-struct.json in root_dir)"
     )
     interactive_parser.add_argument(
         "--mode",
