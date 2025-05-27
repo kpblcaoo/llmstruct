@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-05-27T23:26:23.585960",
+  "timestamp": "2025-05-27T23:34:18.331752",
   "tools": {
     "cli_processor": {
       "name": "cli_processor",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-27T23:26:23.587273",
-      "response_time": 0.0013113021850585938,
+      "last_check": "2025-05-27T23:34:18.333921",
+      "response_time": 0.002164602279663086,
       "error_message": null,
       "capabilities": [
         "command_processing",
@@ -22,32 +22,32 @@
     "copilot_manager": {
       "name": "copilot_manager",
       "status": "CapabilityStatus.UNAVAILABLE",
-      "last_check": "2025-05-27T23:26:23.587966",
-      "response_time": 0.0006837844848632812,
+      "last_check": "2025-05-27T23:34:18.337645",
+      "response_time": 0.0037107467651367188,
       "error_message": "'CopilotContextManager' object has no attribute 'get_status'",
       "capabilities": null
     },
     "context_orchestrator": {
       "name": "context_orchestrator",
       "status": "CapabilityStatus.UNAVAILABLE",
-      "last_check": "2025-05-27T23:26:23.588158",
-      "response_time": 0.00016355514526367188,
+      "last_check": "2025-05-27T23:34:18.337984",
+      "response_time": 0.00028586387634277344,
       "error_message": "'scenarios'",
       "capabilities": null
     },
     "cache_system": {
       "name": "cache_system",
       "status": "CapabilityStatus.UNAVAILABLE",
-      "last_check": "2025-05-27T23:26:23.588427",
-      "response_time": 0.0002613067626953125,
+      "last_check": "2025-05-27T23:34:18.338634",
+      "response_time": 0.0006406307220458984,
       "error_message": "'JSONCache' object has no attribute 'set'",
       "capabilities": null
     },
     "struct_parser": {
       "name": "struct_parser",
       "status": "CapabilityStatus.DEGRADED",
-      "last_check": "2025-05-27T23:26:23.591205",
-      "response_time": 0.0027818679809570312,
+      "last_check": "2025-05-27T23:34:18.342620",
+      "response_time": 0.0039899349212646484,
       "error_message": "Missing keys: ['summary']",
       "capabilities": [
         "project_structure_analysis",
@@ -59,8 +59,8 @@
     "docs_system": {
       "name": "docs_system",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-27T23:26:23.592015",
-      "response_time": 0.00045752525329589844,
+      "last_check": "2025-05-27T23:34:18.343770",
+      "response_time": 0.0005300045013427734,
       "error_message": null,
       "capabilities": [
         "documentation_management",
@@ -101,12 +101,12 @@
     ]
   },
   "integrations": {
-    "copilot_manager": "CapabilityStatus.UNAVAILABLE",
-    "context_orchestrator": "CapabilityStatus.UNAVAILABLE",
-    "cli_integration": "CapabilityStatus.AVAILABLE",
-    "cache_system": "CapabilityStatus.UNAVAILABLE",
-    "struct_json_status": "CapabilityStatus.DEGRADED",
-    "docs_json_status": "CapabilityStatus.AVAILABLE"
+    "copilot_manager": "CapabilityStatus.UNKNOWN",
+    "context_orchestrator": "CapabilityStatus.UNKNOWN",
+    "cli_integration": "CapabilityStatus.UNKNOWN",
+    "cache_system": "CapabilityStatus.UNKNOWN",
+    "struct_json_status": "CapabilityStatus.UNKNOWN",
+    "docs_json_status": "CapabilityStatus.UNKNOWN"
   },
   "vscode": {
     "copilot_integration": true,
@@ -125,7 +125,7 @@
     "error": "'list' object has no attribute 'values'"
   },
   "performance_metrics": {
-    "discovery_time": 0.008963346481323242,
+    "discovery_time": 0.018056154251098633,
     "cache_hit_rate": 0.85,
     "system_load": 0.4,
     "unused_function_integration": {
