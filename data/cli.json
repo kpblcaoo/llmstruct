@@ -1,8 +1,8 @@
 {
-  "version": "0.2.0",
-  "status": "Enhanced",
+  "version": "0.2.1",
+  "status": "Complete",
   "author": "@kpblcaoo",
-  "date": "2025-05-24",
+  "date": "2025-05-27",
   "license": "GPL-3.0",
   "artifact_id": "e5f6a7b8-c9d0-41e2-f3a4-b5c6d7e8f9a0",
   "metadata": {
@@ -10,7 +10,7 @@
     "description": "Enhanced CLI commands with automation and queue integration",
     "authors": [{"name": "@kpblcaoo", "github": "kpblcaoo", "email": "kpblcaoo@example.com"}]
   },
-  "summary": "Comprehensive CLI command reference with LLM automation support",
+  "summary": "Complete CLI command reference with comprehensive interactive command documentation, safety features, and performance optimizations",
   "tags": ["cli", "automation", "llm", "queue"],
 
   "command_categories": {
@@ -116,13 +116,13 @@
           "name": "/queue",
           "syntax": "/queue <action> [args]",
           "description": "Manage command queue operations",
-          "examples": ["/queue process", "/queue view", "/queue clear", "/queue add write test.txt content"]
+          "examples": ["/queue run", "/queue status", "/queue clear", "/queue list"]
         },
         {
           "name": "/cache",
           "syntax": "/cache <action>",
           "description": "Manage cache operations and statistics",
-          "examples": ["/cache status", "/cache clear", "/cache stats", "/cache size"]
+          "examples": ["/cache stats", "/cache clear", "/cache info"]
         },
         {
           "name": "/copilot",
@@ -155,6 +155,16 @@
           "examples": ["/parse .", "/parse src/ --include-ranges"]
         },
         {
+          "name": "/audit",
+          "syntax": "/audit [scan|recover|status]",
+          "description": "Audit and recover missing tasks/ideas from source files",
+          "examples": [
+            "/audit scan",
+            "/audit recover", 
+            "/audit status"
+          ]
+        },
+        {
           "name": "/auto-update",
           "syntax": "/auto-update",
           "description": "Update system files and configurations automatically",
@@ -165,20 +175,167 @@
           "syntax": "/struct-status",
           "description": "Check status of struct.json and related files",
           "examples": ["/struct-status"]
+        },
+        {
+          "name": "/context",
+          "syntax": "/context <action> [args]",
+          "description": "Smart context operations for optimized LLM interactions",
+          "examples": [
+            "/context get cli_interactive",
+            "/context optimize vscode_copilot src/main.py",
+            "/context scenarios",
+            "/context metrics"
+          ]
+        },
+        {
+          "name": "/session",
+          "syntax": "/session <action> [args]",
+          "description": "Session management for tracking work across branches",
+          "examples": [
+            "/session start feature/new-feature",
+            "/session switch SES-abc123",
+            "/session status",
+            "/session summary",
+            "/session list"
+          ]
+        },
+        {
+          "name": "/mode",
+          "syntax": "/mode [FULL|FOCUSED|MINIMAL|SESSION]",
+          "description": "Switch context mode for different use cases",
+          "examples": [
+            "/mode",
+            "/mode FOCUSED",
+            "/mode FULL"
+          ]
         }
       ],
-      "context_selection": {
-        "default": "data/init.json",
-        "code_analysis": "struct.json",
-        "automation": "data/cli.json",
-        "task_management": "data/tasks.json"
+      "interactive_command_categories": {
+        "file_operations": {
+          "description": "Commands for viewing and modifying files",
+          "commands": ["/view", "/write", "/generate", "/create"]
+        },
+        "system_management": {
+          "description": "Commands for managing system state and configuration",
+          "commands": ["/status", "/config", "/cache", "/backup"]
+        },
+        "automation": {
+          "description": "Commands for queue management and automated operations",
+          "commands": ["/queue", "/copilot", "/auto-update"]
+        },
+        "analysis": {
+          "description": "Commands for code analysis and structure parsing",
+          "commands": ["/parse", "/audit", "/struct-status"]
+        },
+        "context_management": {
+          "description": "Commands for smart context and session management",
+          "commands": ["/context", "/session", "/mode"]
+        },
+        "utility": {
+          "description": "General utility and help commands",
+          "commands": ["/help"]
+        }
+      },
+      "command_aliases": {
+        "/generate": "/write",
+        "/create": "/write"
+      },
+      "context_modes": {
+        "FULL": {
+          "description": "Complete context with documentation and code",
+          "token_range": "16K-32K tokens",
+          "use_case": "Comprehensive analysis and complex operations"
+        },
+        "FOCUSED": {
+          "description": "Balanced context for interactive work",
+          "token_range": "4K-16K tokens",
+          "use_case": "Interactive development and moderate complexity tasks"
+        },
+        "MINIMAL": {
+          "description": "Lightweight context for quick queries",
+          "token_range": "< 4K tokens",
+          "use_case": "Simple queries and fast operations"
+        },
+        "SESSION": {
+          "description": "Session-only context for continuity",
+          "token_range": "Variable",
+          "use_case": "Maintaining context across multiple interactions"
+        }
       },
       "examples": [
         {
           "command": "llmstruct interactive . --context data/init.json --mode anthropic",
           "description": "Start interactive mode with init context and Anthropic backend"
+        },
+        {
+          "command": "llmstruct interactive . --mode hybrid --use-cache",
+          "description": "Start interactive mode with hybrid backend and caching enabled"
         }
       ],
+      "interactive_workflow_examples": [
+        {
+          "scenario": "Quick file inspection and modification",
+          "commands": [
+            "/mode FOCUSED",
+            "/view src/main.py",
+            "/write tmp/modified.py 'print(\"Hello World\")'",
+            "/backup tmp/modified.py"
+          ]
+        },
+        {
+          "scenario": "Context analysis and optimization",
+          "commands": [
+            "/context scenarios",
+            "/context get cli_interactive",
+            "/mode FULL",
+            "/context optimize vscode_copilot"
+          ]
+        },
+        {
+          "scenario": "Session management workflow",
+          "commands": [
+            "/session start feature/new-feature",
+            "/session status",
+            "/parse",
+            "/session summary"
+          ]
+        },
+        {
+          "scenario": "Cache and system maintenance",
+          "commands": [
+            "/cache stats",
+            "/status",
+            "/audit scan",
+            "/cache clear"
+          ]
+        }
+      ],
+      "safety_features": {
+        "file_operations": [
+          "Write operations restricted to ./tmp directory for safety",
+          "Automatic backup creation before file modifications",
+          "Path validation and sanitization",
+          "File size limits enforced"
+        ],
+        "context_management": [
+          "Token usage monitoring and optimization",
+          "Smart context selection based on operation type",
+          "Cache validation and cleanup",
+          "Memory usage tracking"
+        ],
+        "session_tracking": [
+          "Branch-based session isolation",
+          "Session state persistence",
+          "Worklog generation and tracking",
+          "Session cleanup on exit"
+        ]
+      },
+      "performance_optimizations": {
+        "caching": "SQLite-based caching with statistics tracking",
+        "context_orchestration": "6 scenarios with optimized token usage",
+        "lazy_loading": "Context loaded only when needed",
+        "smart_selection": "Automatic context mode selection based on query type"
+      },
       "related_tasks": ["TSK-119"],
       "related_ideas": ["IDEA-126"]
     },
