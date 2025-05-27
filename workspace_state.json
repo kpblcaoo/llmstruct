@@ -1,0 +1,36 @@
+{
+  "current_mode": [],
+  "active_session": null,
+  "permissions": {
+    "capabilities": [],
+    "file_restrictions": [],
+    "safe_operations": true
+  },
+  "context_boundaries": {
+    "focus_files": [],
+    "related_files": [],
+    "restricted_areas": [
+      "config/",
+      ".env",
+      "*.key",
+      "*.secret"
+    ]
+  },
+  "mode_history": [],
+  "emergency_overrides": {
+    "active": false,
+    "level": 0,
+    "expires_at": null,
+    "reason": null
+  },
+  "strict_mode_integration": {
+    "enabled": true,
+    "current_strict_tags": []
+  },
+  "decision_workflow": {
+    "active_decisions": [],
+    "pending_implementations": []
+  },
+  "created_at": "2025-05-27T11:37:09.650237+00:00",
+  "last_updated": "2025-05-27T11:37:09.650267+00:00"
+}
