@@ -40,6 +40,48 @@ llmstruct is an open-source project for universal codebase introspection, contex
 
 See [docs/struct_security.md](docs/struct_security.md) for complete security documentation.
 
+### 🐹 Go Language Support
+
+llmstruct includes advanced Go language support with full AST analysis through Docker:
+
+**Features:**
+- **Full AST parsing** using `golang.org/x/tools/go/packages`
+- **128+ functions** and **36+ structs** extraction from real projects
+- **Type analysis**: Parameters, return values, receivers, embedded fields
+- **Documentation extraction**: Comments and docstrings
+- **Package dependency mapping**: Import analysis and module relationships
+- **Docker containerized**: No local Go installation required
+
+**Usage:**
+```bash
+# Build the Go analyzer Docker image
+cd llmstruct
+docker build -f docker/parser_go/Dockerfile -t go-analyzer-improved .
+
+# Analyze a Go project
+docker run --rm \
+  -v /path/to/go/project:/workspace:ro \
+  -v /path/to/output:/output \
+  go-analyzer-improved /workspace --output /output/result.json
+```
+
+```bash
+# example
+docker run --rm \
+  --name go-analyzer-container \
+  -v /home/user/go-project:/workspace:ro \
+  -v /home/user/llmstruct/docker/parser_go:/output \
+  go-analyzer-improved /workspace --output /output/go_analysis_result.json
+
+```
+
+**Architecture:**
+- `src/llmstruct/parsers/go_analyzer.py` - Python orchestrator and llmstruct format converter
+- `src/llmstruct/parsers/analyzer.go` - Go AST analyzer using go/packages
+- `docker/parser_go/Dockerfile` - Multi-stage Docker build with Go 1.24+
+
+The Go analyzer automatically handles version compatibility, dependency resolution, and converts raw AST data into llmstruct's standardized JSON format.
+
 ## Installation
 
 ```bash
