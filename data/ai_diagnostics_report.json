@@ -1,10 +1,10 @@
 {
-  "timestamp": "2025-05-28 18:51:49",
+  "timestamp": "2025-05-28 19:54:29",
   "tests_run": [],
   "performance_metrics": {
-    "discovery_time": 0.08466458320617676,
+    "discovery_time": 0.020245790481567383,
     "cache_hit_rate": 0.0,
-    "system_load": 0.2980460823474756,
+    "system_load": 0.35343657523837335,
     "available_tools": 6,
     "total_tools": 6
   },
