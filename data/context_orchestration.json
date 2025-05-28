@@ -55,17 +55,57 @@
     "cache_optimization_results": true
   },
   "scenario_mappings": {
-    "cli_query": "FOCUSED",
-    "cli_interactive": "FULL",
-    "vscode_copilot": "MINIMAL",
-    "batch_processing": "SESSION",
-    "code_analysis": "FOCUSED",
-    "documentation_generation": "FULL"
+    "cli_query": "focused",
+    "cli_interactive": "full",
+    "vscode_copilot": "minimal",
+    "batch_processing": "session",
+    "code_analysis": "focused",
+    "documentation_generation": "full"
   },
   "performance_thresholds": {
     "token_efficiency_target": 0.85,
     "context_relevance_target": 0.9,
     "load_time_ms_target": 500,
     "memory_usage_mb_limit": 100
+  },
+  "scenarios": {
+    "cli_direct": {
+      "mode": "full",
+      "budget": {"max_tokens": null}
+    },
+    "cli_query": {
+      "mode": "focused",
+      "budget": {"max_tokens": 8000}
+    },
+    "vscode_copilot": {
+      "mode": "focused", 
+      "budget": {"max_tokens": 2000}
+    },
+    "session_work": {
+      "mode": "session",
+      "budget": {"max_tokens": 4000}
+    },
+    "quick_operation": {
+      "mode": "minimal",
+      "budget": {"max_tokens": 500}
+    }
+  },
+  "context_levels": {
+    "CORE": {
+      "sources": ["init", "current_session"],
+      "sections": ["summary", "goals", "current_focus"]
+    },
+    "ESSENTIAL": {
+      "sources": ["init", "struct", "current_session", "tasks"],
+      "sections": ["summary", "structure", "active_tasks", "current_session"]
+    },
+    "COMPREHENSIVE": {
+      "sources": ["init", "struct", "tasks", "ideas", "current_session"],
+      "sections": ["all"]
+    },
+    "FULL": {
+      "sources": ["all"],
+      "sections": ["all"]
+    }
   }
 }

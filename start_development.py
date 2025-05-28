@@ -2,7 +2,7 @@
 """
 LLMStruct Development Startup Script
 Convenient one-command startup for daily development workflow.
-Enhanced with WorkflowOrchestrator integration for comprehensive context management.
+Enhanced with AI Workflow Middleware and Self-Monitoring for seamless llmstruct integration.
 """
 
 import sys
@@ -19,6 +19,58 @@ def print_header():
     print("🚀 LLMStruct Development Environment Startup")
     print("=" * 50)
     print()
+
+def initialize_ai_integration_layer():
+    """Initialize AI integration layer - this is the NEW seamless integration"""
+    print("🤖 Initializing AI Integration Layer...")
+    
+    try:
+        # Import our AI middleware and monitoring components
+        from llmstruct.ai_workflow_middleware import initialize_ai_middleware, AIWorkflowMode
+        from llmstruct.ai_self_monitor import initialize_ai_monitor, record_ai_usage
+        
+        project_root = str(Path(__file__).parent)
+        
+        # 1. Initialize middleware in GUIDED mode for development (not STRICT to avoid blocking)
+        print("   🎯 Activating AI Workflow Middleware (GUIDED mode)...")
+        middleware = initialize_ai_middleware(project_root, AIWorkflowMode.GUIDED)
+        
+        # 2. Initialize monitoring system
+        print("   📊 Activating AI Self-Monitor...")
+        monitor = initialize_ai_monitor(project_root)
+        
+        # 3. Quick integration test
+        test_response = middleware.process_ai_request("[startup] Initialize development environment")
+        
+        print(f"   ✅ AI Integration Layer active")
+        print(f"   📈 Middleware ready: {test_response.used_llmstruct}")
+        print(f"   🧠 Context optimization: {test_response.context_optimization.get('optimization_successful', False)}")
+        
+        # 4. Record the startup event
+        record_ai_usage(
+            query="development_environment_startup",
+            tools_used=["ai_workflow_middleware", "ai_self_monitor", "context_orchestrator"],
+            used_llmstruct=True,
+            context_tags=["startup"],
+            metadata={"environment": "development", "auto_init": True}
+        )
+        
+        return {
+            "middleware": middleware,
+            "monitor": monitor,
+            "integration_active": True,
+            "startup_test_successful": test_response.used_llmstruct
+        }
+        
+    except Exception as e:
+        print(f"   ⚠️ AI Integration Layer initialization failed: {e}")
+        print("   💡 Continuing without AI integration enforcement")
+        return {
+            "middleware": None,
+            "monitor": None,
+            "integration_active": False,
+            "error": str(e)
+        }
 
 def check_environment():
     """Check if development environment is properly set up."""
@@ -37,7 +89,8 @@ def check_environment():
         "data/cursor/cursor_context_config.json", 
         "data/cursor/cursor_personal_bridge.json",
         "run_ai_diagnostics.py",
-        "struct.json"  # Essential for WorkflowOrchestrator
+        "struct.json",  # Essential for WorkflowOrchestrator
+        "force_ai_integration.py"  # AI integration components
     ]
     
     missing_files = []
@@ -144,22 +197,43 @@ def initialize_cursor_ai_bridge():
         print(f"❌ CursorAIBridge initialization failed: {e}")
         return None
 
-def sync_architecture_components(orchestrator):
-    """Sync with existing llmstruct architecture components."""
+def sync_architecture_components(orchestrator, ai_integration):
+    """Sync with existing llmstruct architecture components and AI integration."""
     print("\n🔄 Syncing architecture components...")
     
     try:
+        sync_success = True
+        
+        # Sync workflow orchestrator
         if orchestrator:
             sync_results = orchestrator.sync_with_existing_architecture()
             
             for component, success in sync_results.items():
                 status = "✅" if success else "❌"
                 print(f"   {status} {component}")
-            
-            return all(sync_results.values())
+                if not success:
+                    sync_success = False
         else:
-            print("❌ No orchestrator available for sync")
-            return False
+            print("   ❌ WorkflowOrchestrator not available for sync")
+            sync_success = False
+        
+        # Sync AI integration layer
+        if ai_integration and ai_integration.get('integration_active'):
+            middleware = ai_integration.get('middleware')
+            monitor = ai_integration.get('monitor')
+            
+            if middleware:
+                stats = middleware.get_middleware_stats()
+                print(f"   ✅ AI Middleware (mode: {stats['current_mode']})")
+            
+            if monitor:
+                print("   ✅ AI Self-Monitor")
+            
+            print("   ✅ AI Integration Layer synced")
+        else:
+            print("   ⚠️  AI Integration Layer not active")
+        
+        return sync_success
             
     except Exception as e:
         print(f"❌ Architecture sync failed: {e}")
@@ -346,6 +420,12 @@ def show_useful_commands():
     print("   python run_ai_diagnostics.py monitor   - Continuous monitoring")
     print("   python -m llmstruct.cli --help         - CLI help")
     print()
+    print("🤖 AI Integration Commands (NEW - SEAMLESS LLMSTRUCT):")
+    print("   python force_ai_integration.py          - Force STRICT AI integration mode")
+    print("   python force_ai_integration.py status   - Check AI integration status")
+    print("   python -c \"from llmstruct.ai_workflow_middleware import get_ai_middleware; print(get_ai_middleware().get_middleware_stats())\" - Get AI usage stats")
+    print("   python -c \"from llmstruct.ai_self_monitor import get_ai_monitor; print(get_ai_monitor().get_monitoring_report())\" - Get AI behavior report")
+    print()
     print("🎼 Workflow Orchestrator commands:")
     print("   python -m llmstruct analyze-duplicates  - Analyze code duplication")
     print("   python -m llmstruct audit --include-duplicates - Full project audit")
@@ -360,7 +440,17 @@ def show_useful_commands():
     print("   python test_ai_bridge.py context                                   - Quick context check")
     print("   python test_ai_bridge.py analyze \"task description\"                - Quick task analysis")
     print()
-    print("🎯 AI Integration commands:")
+    print("🎯 AI Integration Testing & Monitoring:")
+    print("   # Test AI middleware integration")
+    print("   python -c \"from llmstruct.ai_workflow_middleware import process_ai_query; print(process_ai_query('[test] Check llmstruct integration'))\"")
+    print()
+    print("   # Get real-time AI guidance")
+    print("   python -c \"from llmstruct.ai_self_monitor import get_ai_monitor; print(get_ai_monitor().get_real_time_guidance('implement new feature'))\"")
+    print()
+    print("   # Force strict AI integration")
+    print("   python -c \"from llmstruct.ai_workflow_middleware import get_ai_middleware; get_ai_middleware().force_llmstruct_mode(); print('STRICT mode activated')\"")
+    print()
+    print("🎯 Legacy AI Integration commands:")
     print("   # Get comprehensive AI status")
     print("   python -c \"from llmstruct.ai_self_awareness import SystemCapabilityDiscovery; print(SystemCapabilityDiscovery('.').get_cursor_status_report())\"")
     print()
@@ -370,20 +460,36 @@ def show_useful_commands():
     print("   # Get current workflow context")
     print("   python -c \"from llmstruct.workflow_orchestrator import WorkflowOrchestrator; print(WorkflowOrchestrator('.').get_current_context())\"")
     print()
-    print("💡 Quick AI assistance:")
+    print("💡 AI Assistant Workflow (ENHANCED):")
+    print("   🎯 Context Tags: Use [code], [debug], [discuss], [review], [meta] in queries")
+    print("   🧠 AI Delegation: System automatically routes tasks to optimal AI")
+    print("   📊 Context Optimization: Automatic context enhancement for all requests")
+    print("   📈 Usage Monitoring: Real-time feedback on AI interaction patterns")
     print("   For new AI: Read docs/CURSOR_AI_INTEGRATION.md and use AI Bridge")
     print("   Start with: python test_ai_bridge.py context")
+    print()
+    print("🔄 Quick AI Integration Test:")
+    print("   python -c \"from llmstruct.ai_workflow_middleware import process_ai_query; result = process_ai_query('[test] analyze project architecture'); print('✅ AI Integration Working' if result.used_llmstruct else '❌ AI Integration Failed')\"")
 
 def main():
-    """Main startup routine with WorkflowOrchestrator integration."""
+    """Main startup routine with AI Workflow Middleware and WorkflowOrchestrator integration."""
     print_header()
     
-    # Track overall success
+    # Track overall success and component states
     all_checks_passed = True
     orchestrator = None
     ai_bridge = None
+    ai_integration = None
     
-    # Run startup checks
+    # === CRITICAL: Initialize AI Integration Layer FIRST ===
+    # This ensures ALL AI interactions from this point forward use llmstruct
+    ai_integration = initialize_ai_integration_layer()
+    if not ai_integration.get('integration_active'):
+        print("   ⚠️  Continuing without AI enforcement (development mode)")
+    else:
+        print("   🎯 AI Integration Layer: ACTIVE - all AI requests will use llmstruct")
+    
+    # Run environment checks
     if not check_environment():
         all_checks_passed = False
     
@@ -397,27 +503,58 @@ def main():
     if ai_bridge is None:
         all_checks_passed = False
     
-    # Sync architecture components
-    if orchestrator and not sync_architecture_components(orchestrator):
+    # Sync all architecture components including AI integration
+    if not sync_architecture_components(orchestrator, ai_integration):
         all_checks_passed = False
     
+    # Run system health check
     if not run_system_health_check():
         all_checks_passed = False
     
+    # Get optimization suggestions
     if not get_optimization_suggestions(orchestrator):
         all_checks_passed = False
     
+    # Check git status
     if not check_git_status():
         all_checks_passed = False
     
+    # Show current project context
     if not show_current_context():
         all_checks_passed = False
+    
+    # === AI INTEGRATION STATUS REPORT ===
+    print("\n🤖 AI Integration Status Report:")
+    if ai_integration and ai_integration.get('integration_active'):
+        middleware = ai_integration.get('middleware')
+        monitor = ai_integration.get('monitor')
+        
+        if middleware:
+            stats = middleware.get_middleware_stats()
+            print(f"   ✅ AI Middleware: {stats['current_mode']} mode")
+            print(f"   📊 Requests processed: {stats['total_requests']}")
+            print(f"   🎯 LLMStruct usage rate: {stats['llmstruct_usage_rate']:.1%}")
+        
+        if monitor:
+            analysis = monitor.analyze_behavior_trends(days=1)
+            print(f"   ✅ AI Monitor: Active")
+            print(f"   🧠 Context awareness: {analysis.context_awareness_score:.1%}")
+            print(f"   💡 Real-time guidance: Available")
+        
+        print("   🎉 AI Integration: SEAMLESSLY ACTIVE")
+        print("   💬 All AI interactions will now use enhanced llmstruct context!")
+    else:
+        print("   ⚠️  AI Integration: Not active (fallback mode)")
+        error = ai_integration.get('error') if ai_integration else 'Unknown'
+        print(f"   🔧 Issue: {error}")
     
     # Show summary
     print("\n" + "=" * 50)
     if all_checks_passed:
         print("🎉 Development environment ready!")
         print("✅ All systems operational")
+        if ai_integration and ai_integration.get('integration_active'):
+            print("🤖 AI Integration: SEAMLESSLY ENFORCED")
         if orchestrator:
             print("🎼 WorkflowOrchestrator: Active and integrated")
         if ai_bridge:
@@ -428,11 +565,32 @@ def main():
     
     show_useful_commands()
     
+    # Final AI integration message
     print("\n🚀 Happy coding with AI-enhanced development!")
+    if ai_integration and ai_integration.get('integration_active'):
+        print("🎯 AI INTEGRATION: All AI interactions now use llmstruct system automatically!")
+        print("📝 Use context tags: [code], [debug], [discuss], [review] for optimal results")
+        print("🧠 AI assistants will receive enhanced context and guidance")
+    else:
+        print("💡 To activate AI integration later, run: python force_ai_integration.py")
+    
     print("🎼 WorkflowOrchestrator provides comprehensive context management")
     if ai_bridge:
         print("🤖 CursorAIBridge enables seamless AI integration")
     print("=" * 50)
+
+    # Return status for scripting/testing
+    return {
+        "success": all_checks_passed,
+        "ai_integration_active": ai_integration.get('integration_active', False) if ai_integration else False,
+        "orchestrator_ready": orchestrator is not None,
+        "ai_bridge_ready": ai_bridge is not None,
+        "components": {
+            "ai_integration": ai_integration,
+            "orchestrator": orchestrator,
+            "ai_bridge": ai_bridge
+        }
+    }
 
 if __name__ == "__main__":
     main() 
