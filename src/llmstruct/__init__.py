@@ -31,7 +31,6 @@ __all__ = [
     "parsers",
     "validators",
     "templates",
-meta/ai-system-self-awareness-enhancement
     # AI Self-Awareness modules
     "SystemCapabilityDiscovery",
     "AISelfAwarenessCLIIntegration",
