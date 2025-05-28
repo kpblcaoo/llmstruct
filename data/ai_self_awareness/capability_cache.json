@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-05-28T09:26:56.933796",
+  "timestamp": "2025-05-28T19:07:47.951118",
   "tools": {
     "cli_processor": {
       "name": "cli_processor",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-28T09:26:56.935343",
-      "response_time": 0.0015330314636230469,
+      "last_check": "2025-05-28T19:07:47.952785",
+      "response_time": 0.0016524791717529297,
       "error_message": null,
       "capabilities": [
         "command_processing",
@@ -22,8 +22,8 @@
     "copilot_manager": {
       "name": "copilot_manager",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-28T09:26:56.936152",
-      "response_time": 0.0007960796356201172,
+      "last_check": "2025-05-28T19:07:47.954069",
+      "response_time": 0.001276254653930664,
       "error_message": null,
       "capabilities": [
         "context_management",
@@ -37,8 +37,8 @@
     "context_orchestrator": {
       "name": "context_orchestrator",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-28T09:26:56.936475",
-      "response_time": 0.0002944469451904297,
+      "last_check": "2025-05-28T19:07:47.954989",
+      "response_time": 0.0008950233459472656,
       "error_message": null,
       "capabilities": [
         "context_optimization",
@@ -51,8 +51,8 @@
     "cache_system": {
       "name": "cache_system",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-28T09:26:56.995467",
-      "response_time": 0.05899930000305176,
+      "last_check": "2025-05-28T19:07:48.053833",
+      "response_time": 0.09881210327148438,
       "error_message": null,
       "capabilities": [
         "data_caching",
@@ -63,8 +63,8 @@
     "struct_parser": {
       "name": "struct_parser",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-28T09:26:56.999633",
-      "response_time": 0.00366973876953125,
+      "last_check": "2025-05-28T19:07:48.057766",
+      "response_time": 0.003305673599243164,
       "error_message": null,
       "capabilities": [
         "project_structure_analysis",
@@ -76,8 +76,8 @@
     "docs_system": {
       "name": "docs_system",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-28T09:26:57.000479",
-      "response_time": 0.00042939186096191406,
+      "last_check": "2025-05-28T19:07:48.058547",
+      "response_time": 0.0004317760467529297,
       "error_message": null,
       "capabilities": [
         "documentation_management",
@@ -142,9 +142,9 @@
     "error": "'list' object has no attribute 'values'"
   },
   "performance_metrics": {
-    "discovery_time": 0.07160305976867676,
-    "cache_hit_rate": 0.85,
-    "system_load": 0.4,
+    "discovery_time": 0.11166191101074219,
+    "cache_hit_rate": 0.0,
+    "system_load": 0.5873014769966024,
     "unused_function_integration": {
       "integration_rate": 0.0,
       "enhanced_categories": 0,

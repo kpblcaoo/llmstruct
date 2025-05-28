@@ -1,0 +1,14 @@
+{
+  "timestamp": "2025-05-28 18:51:49",
+  "tests_run": [],
+  "performance_metrics": {
+    "discovery_time": 0.08466458320617676,
+    "cache_hit_rate": 0.0,
+    "system_load": 0.2980460823474756,
+    "available_tools": 6,
+    "total_tools": 6
+  },
+  "recommendations": [
+    "Consider optimizing cache usage for better performance"
+  ]
+}

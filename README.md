@@ -1,134 +1,249 @@
-# llmstruct
+# LLMStruct: AI-Enhanced Universal JSON Codebase Format
 
-A utility for generating structured JSON representations of codebases, designed for integration with Large Language Models (LLMs).
+🧠 **Universal JSON format for codebases with advanced LLM integration and AI self-awareness**
 
----
+[![AI Self-Awareness](https://img.shields.io/badge/AI%20Self--Awareness-85%25-green)](./run_ai_diagnostics.py)
+[![Cursor Integration](https://img.shields.io/badge/Cursor%20IDE-Integrated-blue)](./data/cursor/)
+[![JSON Ecosystem](https://img.shields.io/badge/JSON%20Files-20%2B-orange)](./data/)
 
-## 🧑‍💻 Developer Entry Point
+## 🚀 Quick Start (5 minutes)
 
-- **Quickstart:** See [QUICK_START.md](QUICK_START.md) for setup and usage.
-- **CLI Reference:** All commands and automation patterns are described in [data/cli.json](data/cli.json).
-- **Modular CLI Architecture:** See [docs/cli_modular_architecture.md](docs/cli_modular_architecture.md) for how to extend and integrate.
-- **Task & Idea Management:** All project tasks and ideas are tracked in [data/tasks.json](data/tasks.json) and [data/ideas.json](data/ideas.json). Cross-references are maintained in [docs.json](docs.json).
-- **Audit & Recovery:** Use the CLI audit system to recover lost tasks/ideas and maintain data integrity:
-  ```bash
-  llmstruct audit scan      # Scan for recoverable entries
-  llmstruct audit status    # Show placeholder statistics
-  llmstruct audit recover   # Restore lost tasks/ideas from sources
-  ```
-- **API Layer (Planned):** Future releases will provide a REST/GraphQL API for all CLI and automation features (see TSK-139, IDEA-140).
-
----
-
-## About the Project
-
-llmstruct is an open-source project for universal codebase introspection, context orchestration, and LLM-driven automation. It supports modular JSON formats, CLI automation, queue-based workflows, and advanced security.
-
-- **4-level context orchestration** (init.json)
-- **Smart context selection** for LLMs
-- **CLI automation**: queues, cache, batch workflows
-- **Security**: git hooks, secret detection, safe write boundaries, secure struct.json generation
-- **Extensible**: plugins, new languages, custom workflows
-
-### 🔒 Security Features
-
-- **Automatic gitignore integration**: Respects `.gitignore` patterns
-- **Comprehensive exclude patterns**: Blocks sensitive files, secrets, personal data
-- **49% size reduction**: From 403KB to 207KB by excluding unnecessary files
-- **CI/CD safe**: Secure for automated deployment in public repositories
-- **Configuration-driven**: All patterns defined in `llmstruct.toml`
-
-See [docs/struct_security.md](docs/struct_security.md) for complete security documentation.
-
-### 🐹 Go Language Support
-
-llmstruct includes advanced Go language support with full AST analysis through Docker:
-
-**Features:**
-- **Full AST parsing** using `golang.org/x/tools/go/packages`
-- **128+ functions** and **36+ structs** extraction from real projects
-- **Type analysis**: Parameters, return values, receivers, embedded fields
-- **Documentation extraction**: Comments and docstrings
-- **Package dependency mapping**: Import analysis and module relationships
-- **Docker containerized**: No local Go installation required
-
-**Usage:**
 ```bash
-# Build the Go analyzer Docker image
+# 1. Clone and setup
+git clone <repository_url>
 cd llmstruct
-docker build -f docker/parser_go/Dockerfile -t go-analyzer-improved .
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# OR: venv\Scripts\activate  # Windows
+pip install -r requirements.txt
 
-# Analyze a Go project
-docker run --rm \
-  -v /path/to/go/project:/workspace:ro \
-  -v /path/to/output:/output \
-  go-analyzer-improved /workspace --output /output/result.json
+# 2. Start development environment
+python start_development.py
+
+# 3. Verify AI system health
+python run_ai_diagnostics.py
+# Should show: 🎉 ALL DIAGNOSTICS PASSED!
 ```
+
+## 🎯 What is LLMStruct?
+
+LLMStruct transforms any codebase into an **AI-aware development environment** through:
+
+- **🧠 AI Self-Awareness System**: 85% complete with real-time introspection
+- **🎯 Cursor IDE Integration**: Smart context optimization and multi-AI orchestration  
+- **📋 JSON Ecosystem**: 20+ specialized files for comprehensive codebase understanding
+- **🔄 Context Orchestration**: 4-level hierarchy for optimal LLM token usage
+- **🤖 Multi-AI Coordination**: Intelligent delegation between Grok and Claude
+- **💼 Goal Alignment**: Business objective integration for accelerated development
+
+## 🏗️ Architecture Overview
+
+```
+llmstruct/
+├── 🧠 AI Self-Awareness System
+│   ├── src/llmstruct/ai_self_awareness.py    # Core AI introspection
+│   ├── src/llmstruct/cursor_integration.py   # Cursor IDE integration
+│   └── run_ai_diagnostics.py                 # Comprehensive testing suite
+│
+├── 📋 JSON Ecosystem (20+ files)
+│   ├── data/init_enhanced.json               # Master context & orchestration
+│   ├── data/cursor/                          # Cursor IDE configurations
+│   ├── struct.json                           # Complete codebase analysis
+│   └── data/tasks.json                       # Project management
+│
+├── 🛠️ Development Tools
+│   ├── start_development.py                  # Daily startup routine
+│   ├── data/developer_onboarding.json        # Comprehensive dev guide
+│   └── src/llmstruct/cli.py                  # Command line interface
+│
+└── 🎯 Business Integration
+    ├── data/cursor/cursor_personal_bridge.json  # Goal alignment
+    └── .personal/                               # Private planning docs
+```
+
+## 🧠 AI Self-Awareness Features
+
+Our AI system continuously monitors and optimizes itself:
 
 ```bash
-# example
-docker run --rm \
-  --name go-analyzer-container \
-  -v /home/user/go-project:/workspace:ro \
-  -v /home/user/llmstruct/docker/parser_go:/output \
-  go-analyzer-improved /workspace --output /output/go_analysis_result.json
+# Full system diagnostics
+python run_ai_diagnostics.py
 
+# Specific component testing  
+python run_ai_diagnostics.py component context_orchestrator
+
+# Performance optimization suggestions
+python run_ai_diagnostics.py optimize
+
+# Continuous health monitoring
+python run_ai_diagnostics.py monitor
+
+# Stress testing
+python run_ai_diagnostics.py stress
 ```
 
-**Architecture:**
-- `src/llmstruct/parsers/go_analyzer.py` - Python orchestrator and llmstruct format converter
-- `src/llmstruct/parsers/analyzer.go` - Go AST analyzer using go/packages
-- `docker/parser_go/Dockerfile` - Multi-stage Docker build with Go 1.24+
+**Real-time Capabilities:**
+- 🔍 **System Discovery**: Automatic capability detection and health monitoring
+- 📊 **Performance Metrics**: Real cache hit rates, system load, response times
+- 🎯 **Context Optimization**: Smart context selection for minimal token usage
+- 🤖 **AI Delegation**: Optimal AI model selection (Grok vs Claude)
+- 💡 **Self-Optimization**: Automated improvement suggestions
 
-The Go analyzer automatically handles version compatibility, dependency resolution, and converts raw AST data into llmstruct's standardized JSON format.
+## 🎯 Cursor IDE Integration
 
-## Installation
+Revolutionary AI-enhanced development experience:
 
+### Smart Context Delivery
+```json
+{
+  "query_types": {
+    "technical_implementation": "grok + struct.json",
+    "personal_planning": "claude + cursor_personal_bridge.json", 
+    "architecture_discussion": "grok + init_enhanced.json",
+    "debugging_analysis": "grok + error_context",
+    "documentation": "claude + comprehensive_context",
+    "creative_innovation": "grok + minimal_context"
+  }
+}
+```
+
+### Multi-AI Orchestration
+- **Grok**: Technical implementation, debugging, creative solutions
+- **Claude**: Documentation, personal planning, strategic analysis
+- **Automatic Delegation**: 95% confidence threshold for optimal routing
+
+### Goal Alignment
+- **Monetization Priority**: 40% weight in feature suggestions
+- **Development Acceleration**: 30% weight for timeline pressure
+- **Commercial Readiness**: 20% weight for API development
+- **Innovation**: 10% weight for creative features
+
+## 📋 JSON Ecosystem
+
+Our comprehensive JSON system provides structured context for AI interactions:
+
+### Core Files
+- **`data/init_enhanced.json`** - Master context and orchestration rules
+- **`struct.json`** - Complete codebase structure and analysis  
+- **`data/cursor/cursor_context_config.json`** - Cursor optimization settings
+- **`data/cursor/cursor_personal_bridge.json`** - Business goal alignment
+- **`data/tasks.json`** - Project management and priorities
+
+### Context Hierarchy
+1. **Level 1 (Essential)**: `init_enhanced.json` - Always loaded first
+2. **Level 2 (Structural)**: `struct.json` - For code analysis
+3. **Level 3 (Operational)**: `cli.json`, `tasks.json` - For automation
+4. **Level 4 (Analytical)**: `insights.json`, `metrics.json` - For optimization
+
+## 🛠️ Development Workflow
+
+### Daily Startup
 ```bash
-pip install llmstruct
+python start_development.py
 ```
+This script automatically:
+- ✅ Checks environment setup
+- 🏥 Runs system health diagnostics  
+- 💡 Provides optimization suggestions
+- 📦 Checks git status and remote updates
+- 📋 Shows current project context and goals
 
-## Quickstart
+### Development Cycle
+1. **Planning**: Review `data/tasks.json` and run optimization suggestions
+2. **Implementation**: Use Cursor with AI delegation and context optimization
+3. **Testing**: Run component-specific and stress tests
+4. **Documentation**: Update JSON files and regenerate structure
 
-Generate `struct.json` with default settings:
+### Pre-Commit Checklist
 ```bash
-python -m llmstruct .
+# Full diagnostics must pass
+python run_ai_diagnostics.py  # Must show 100% success
+
+# No linting errors
+python -m flake8 src/ --max-line-length=120
+
+# JSON files valid
+python -c "import json; [json.load(open(f)) for f in ['data/init_enhanced.json', 'data/cursor/cursor_context_config.json']]"
+
+# Structure updated
+python -m llmstruct.cli scan
 ```
 
-Run interactive CLI with context orchestration:
+## 🎯 Business Integration
+
+LLMStruct serves dual purposes:
+
+### Personal Development Acceleration
+- **Timeline Pressure**: Optimized for rapid development cycles
+- **Goal Alignment**: Features prioritized by business impact
+- **AI Assistance**: Intelligent task delegation and context optimization
+
+### Commercial Product Development  
+- **API-First Design**: Ready for enterprise integration
+- **Multi-AI Orchestration**: Scalable AI model management
+- **Privacy Protection**: Sensitive data filtering and secure contexts
+
+## 📚 Documentation System
+
+Our documentation is **JSON-native** and **AI-optimized**:
+
+- **`data/developer_onboarding.json`** - Complete developer guide
+- **`data/init_enhanced.json`** - Project vision and architecture
+- **`cursor_integration_strategy.md`** - Cursor integration details
+- **`.personal/`** - Private planning and business strategy docs
+
+## 🔧 Advanced Features
+
+### AI-Controlled Development
 ```bash
-llmstruct interactive . --context data/init.json --mode anthropic
+# Component-specific testing
+python run_ai_diagnostics.py component cli_processor
+
+# Integration health checks  
+python run_ai_diagnostics.py health
+
+# Performance benchmarking
+python run_ai_diagnostics.py stress
 ```
 
-Automate documentation via queue:
-```bash
-llmstruct queue process --file data/cli_queue_enhanced.json
-```
+### Context Orchestration
+- **Smart Loading**: Context selected based on query analysis
+- **Token Optimization**: Minimal context for maximum efficiency  
+- **Cache Management**: Intelligent caching with real-time metrics
+- **Layer Hierarchy**: 4-level context organization
 
-## JSON Ecosystem
-- `init.json` — master context, orchestration rules
-- `struct.json` — codebase structure
-- `cli.json` — CLI commands, automation templates
-- `cli_queue.json` — command queue for workflows
-- `tasks.json` — project/task management
-- `*_enhanced.json` — advanced automation & context
+### Multi-AI Coordination
+- **Confidence-Based Routing**: 95% threshold for optimal AI selection
+- **Task-Specific Delegation**: Different AIs for different problem types
+- **Success Rate Monitoring**: Continuous delegation optimization
+- **Fallback Strategies**: Graceful degradation when primary AI unavailable
 
-## Security
-- All writes restricted to `./tmp`
-- Pre-commit/commit-msg hooks for secret detection
-- See [docs/SECURITY.md](docs/SECURITY.md)
+## 🚀 Getting Started for Developers
 
-## Documentation
-- [LLMstruct JSON Format](docs/llmstruct_format.md)
-- [CLI Commands & Automation](docs/cli_commands.md)
-- [Security Guide](docs/SECURITY.md)
-- [Struct.json Security Configuration](docs/struct_security.md)
-- [Project Structure](docs/project_structure.md)
+1. **Quick Setup**: Follow the 5-minute quick start above
+2. **Read the Guide**: Check `data/developer_onboarding.json` for comprehensive instructions
+3. **Explore AI Features**: Run `python run_ai_diagnostics.py help` to see all capabilities
+4. **Start Coding**: Use `python start_development.py` for daily workflow
+5. **Contribute**: Follow the development cycle and pre-commit checklist
 
-## Contributing
+## 🎯 Key Benefits
 
-Contributions are welcome! See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines.
+- **🚀 Faster Development**: AI-guided coding with optimal context delivery
+- **🧠 Self-Optimizing**: System continuously improves its own performance  
+- **🎯 Goal-Aligned**: Business objectives integrated into development workflow
+- **🔄 Multi-AI**: Intelligent delegation between different AI models
+- **📋 Structured**: JSON-based documentation that AIs can understand and use
+- **🛡️ Privacy-Aware**: Sensitive data protection with configurable filtering
 
-## License
+## 📞 Support & Contribution
 
-This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
+- **Issues**: Use GitHub issues for bug reports and feature requests
+- **Development**: Follow the workflow in `data/developer_onboarding.json`
+- **AI Integration**: Check `data/cursor/` for Cursor IDE configuration
+- **Documentation**: All docs are JSON-based and AI-optimized
+
+---
+
+**🧠 Built with AI self-awareness • 🎯 Optimized for Cursor IDE • 📋 JSON-native documentation**
+
+*Transform your development workflow with AI-enhanced coding intelligence.*

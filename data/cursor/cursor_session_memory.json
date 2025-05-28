@@ -1,0 +1,25 @@
+{
+  "last_session_id": "test_session_001",
+  "carry_over_context": {
+    "recent_queries": [
+      "test query 1",
+      "test query 2"
+    ],
+    "active_goals": [
+      "improve AI integration"
+    ],
+    "preferred_ai_models": {
+      "technical": "grok",
+      "planning": "claude"
+    },
+    "context_preferences": {}
+  },
+  "learning_data": {
+    "successful_patterns": [
+      "context_optimization"
+    ],
+    "optimization_preferences": {},
+    "delegation_success_rate": 0.85
+  },
+  "timestamp": "/home/kpblc/projects/github/llmstruct"
+}
