@@ -1,0 +1,240 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "description": "Cursor-optimized context configuration for llmstruct",
+    "created_at": "2025-05-28T00:00:00Z",
+    "integration_type": "cursor_ide",
+    "privacy_level": "filtered"
+  },
+  
+  "context_optimization": {
+    "query_analysis_patterns": {
+      "personal_planning": {
+        "keywords": ["personal", "planning", "goals", "relocation", "family", "timeline"],
+        "context_files": ["init_enhanced.json", "cursor_personal_bridge.json"],
+        "token_budget": 8000,
+        "privacy_filter": "high",
+        "ai_preference": "claude",
+        "response_style": "strategic_guidance"
+      },
+      "technical_implementation": {
+        "keywords": ["implement", "code", "function", "class", "module", "feature"],
+        "context_files": ["struct.json", "cli.json", "tasks.json"],
+        "token_budget": 16000,
+        "privacy_filter": "none",
+        "ai_preference": "grok",
+        "response_style": "detailed_technical"
+      },
+      "architecture_discussion": {
+        "keywords": ["architecture", "design", "pattern", "structure", "system"],
+        "context_files": ["init_enhanced.json", "vision.json", "insights.json"],
+        "token_budget": 12000,
+        "privacy_filter": "medium",
+        "ai_preference": "claude",
+        "response_style": "comprehensive_analysis"
+      },
+      "debugging_analysis": {
+        "keywords": ["error", "bug", "debug", "fix", "issue", "problem"],
+        "context_files": ["struct.json", "cli.json"],
+        "token_budget": 10000,
+        "privacy_filter": "none",
+        "ai_preference": "grok",
+        "response_style": "solution_focused"
+      },
+      "documentation": {
+        "keywords": ["document", "explain", "describe", "readme", "guide"],
+        "context_files": ["init_enhanced.json", "docs.json"],
+        "token_budget": 6000,
+        "privacy_filter": "low",
+        "ai_preference": "claude",
+        "response_style": "clear_explanation"
+      },
+      "creative_innovation": {
+        "keywords": ["idea", "creative", "innovation", "experiment", "new"],
+        "context_files": ["ideas.json", "vision.json"],
+        "token_budget": 14000,
+        "privacy_filter": "medium",
+        "ai_preference": "grok",
+        "response_style": "innovative_thinking"
+      }
+    }
+  },
+  
+  "ai_delegation_rules": {
+    "grok_optimal_tasks": [
+      "code_analysis",
+      "performance_optimization", 
+      "creative_solutions",
+      "complex_debugging",
+      "architecture_innovation",
+      "technical_implementation"
+    ],
+    "claude_optimal_tasks": [
+      "documentation",
+      "personal_planning",
+      "strategic_analysis",
+      "privacy_sensitive_tasks",
+      "comprehensive_explanations",
+      "architecture_discussion"
+    ],
+    "fallback_strategy": "claude_for_safety",
+    "delegation_confidence_threshold": 0.8,
+    "multi_ai_scenarios": [
+      "complex_architecture_decisions",
+      "creative_technical_solutions",
+      "strategic_implementation_planning"
+    ]
+  },
+  
+  "session_continuity": {
+    "enabled": true,
+    "memory_retention": {
+      "current_goals": "permanent",
+      "recent_decisions": "7_days",
+      "context_preferences": "30_days",
+      "interaction_patterns": "permanent"
+    },
+    "context_carry_over": [
+      "active_project_focus",
+      "current_implementation_phase",
+      "recent_architectural_decisions",
+      "personal_goal_alignment"
+    ],
+    "learning_adaptation": {
+      "track_successful_patterns": true,
+      "adjust_token_allocation": true,
+      "optimize_ai_delegation": true,
+      "improve_response_relevance": true
+    }
+  },
+  
+  "privacy_protection": {
+    "high_filter": {
+      "remove_patterns": [
+        "personal_financial_details",
+        "family_specific_information",
+        "location_specific_data",
+        "private_communications"
+      ],
+      "sanitize_goals": true,
+      "abstract_timelines": true
+    },
+    "medium_filter": {
+      "remove_patterns": [
+        "specific_financial_amounts",
+        "exact_locations"
+      ],
+      "sanitize_goals": false,
+      "abstract_timelines": false
+    },
+    "low_filter": {
+      "remove_patterns": [],
+      "sanitize_goals": false,
+      "abstract_timelines": false
+    }
+  },
+  
+  "performance_optimization": {
+    "token_management": {
+      "smart_chunking": true,
+      "context_compression": true,
+      "relevance_filtering": true,
+      "adaptive_sizing": true
+    },
+    "caching_strategy": {
+      "cache_frequent_contexts": true,
+      "cache_ai_responses": true,
+      "cache_delegation_decisions": true,
+      "cache_invalidation_triggers": [
+        "file_system_changes",
+        "context_file_updates",
+        "user_preference_changes"
+      ]
+    },
+    "response_optimization": {
+      "target_response_time": "< 3 seconds",
+      "max_context_size": 32000,
+      "preferred_context_size": 16000,
+      "emergency_fallback_size": 8000
+    }
+  },
+  
+  "goal_alignment": {
+    "business_objectives": {
+      "financial_independence": {
+        "priority": "critical",
+        "influence_on_suggestions": "high",
+        "monetization_focus": true
+      },
+      "relocation_timeline": {
+        "priority": "critical", 
+        "influence_on_suggestions": "high",
+        "accelerated_development": true
+      },
+      "commercial_readiness": {
+        "priority": "high",
+        "influence_on_suggestions": "medium",
+        "enterprise_features": true
+      }
+    },
+    "technical_priorities": {
+      "ai_self_awareness": {
+        "priority": "critical",
+        "current_completion": "85%",
+        "next_milestones": ["cursor_integration", "real_metrics"]
+      },
+      "personal_planning": {
+        "priority": "high",
+        "current_completion": "30%",
+        "next_milestones": ["privacy_bridge", "goal_tracking"]
+      },
+      "multi_ai_orchestration": {
+        "priority": "high",
+        "current_completion": "20%",
+        "next_milestones": ["delegation_system", "consensus_framework"]
+      }
+    }
+  },
+  
+  "cursor_specific_features": {
+    "ide_integration": {
+      "file_context_awareness": true,
+      "cursor_position_context": true,
+      "selection_context_optimization": true,
+      "multi_file_context_correlation": true
+    },
+    "real_time_assistance": {
+      "typing_context_analysis": true,
+      "proactive_suggestions": true,
+      "error_prevention": true,
+      "goal_aligned_recommendations": true
+    },
+    "workflow_enhancement": {
+      "task_automation_suggestions": true,
+      "refactoring_guidance": true,
+      "architecture_validation": true,
+      "personal_goal_progress_tracking": true
+    }
+  },
+  
+  "metrics_tracking": {
+    "effectiveness_metrics": [
+      "context_relevance_score",
+      "response_accuracy",
+      "task_completion_acceleration",
+      "goal_alignment_score"
+    ],
+    "performance_metrics": [
+      "average_response_time",
+      "token_efficiency",
+      "cache_hit_rate",
+      "ai_delegation_accuracy"
+    ],
+    "user_satisfaction_metrics": [
+      "suggestion_acceptance_rate",
+      "workflow_improvement_score",
+      "goal_progress_acceleration",
+      "overall_productivity_gain"
+    ]
+  }
+} 

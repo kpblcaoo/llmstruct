@@ -44,7 +44,7 @@ poetry.lock  # Optional: include if committing lock file
 
 # Generated JSON outputs (optional)
 filtered_struct.json
-# struct.json - now included in repo for CI/CD and user reference
+struct.json  # Generated file - excluded from repo as it's created by CI/CD
 
 # Logs and temporary data
 *.log

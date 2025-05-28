@@ -1,0 +1,200 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "description": "Privacy-safe bridge between personal planning and Cursor integration",
+    "privacy_level": "sanitized_business_goals_only",
+    "created_at": "2025-05-28T00:00:00Z",
+    "last_updated": "2025-05-28T00:00:00Z"
+  },
+  
+  "business_objectives": {
+    "primary_goal": "financial_independence_through_ai_tools",
+    "timeline": "accelerated_development_phase",
+    "focus_areas": [
+      "llm_optimization_and_automation",
+      "commercial_api_development", 
+      "enterprise_feature_implementation",
+      "monetization_ready_features"
+    ],
+    "success_metrics": [
+      "revenue_generation_capability",
+      "commercial_api_readiness",
+      "enterprise_adoption_potential",
+      "sustainable_business_model"
+    ]
+  },
+  
+  "technical_priorities": {
+    "immediate_focus": [
+      "ai_self_awareness_completion",
+      "cursor_integration_optimization",
+      "real_metrics_implementation",
+      "multi_ai_orchestration"
+    ],
+    "short_term_goals": [
+      "personal_planning_module",
+      "ai_controlled_branches",
+      "commercial_api_prototype",
+      "enterprise_security_features"
+    ],
+    "medium_term_vision": [
+      "full_multi_ai_coordination",
+      "advanced_automation_workflows",
+      "commercial_product_launch",
+      "market_expansion_readiness"
+    ]
+  },
+  
+  "development_philosophy": {
+    "core_principles": [
+      "transform_rather_than_delete",
+      "ai_human_collaboration",
+      "privacy_by_design",
+      "commercial_viability_focus"
+    ],
+    "innovation_approach": [
+      "dogfooding_excellence",
+      "wild_ai_experimentation",
+      "systematic_creativity",
+      "goal_aligned_development"
+    ]
+  },
+  
+  "project_context": {
+    "current_phase": "ai_integration_and_optimization",
+    "completion_status": {
+      "ai_self_awareness": "85%",
+      "context_orchestration": "90%",
+      "cli_integration": "80%",
+      "personal_planning": "30%",
+      "cursor_integration": "15%",
+      "commercial_readiness": "40%"
+    },
+    "next_milestones": [
+      "cursor_context_optimization",
+      "real_time_metrics_implementation",
+      "personal_planning_privacy_bridge",
+      "ai_delegation_system"
+    ]
+  },
+  
+  "decision_guidance": {
+    "feature_prioritization": {
+      "monetization_potential": "weight: 0.4",
+      "development_acceleration": "weight: 0.3", 
+      "commercial_readiness": "weight: 0.2",
+      "innovation_value": "weight: 0.1"
+    },
+    "technology_choices": {
+      "prefer_proven_solutions": true,
+      "balance_innovation_stability": true,
+      "optimize_for_scalability": true,
+      "maintain_privacy_standards": true
+    },
+    "resource_allocation": {
+      "focus_on_core_features": true,
+      "minimize_technical_debt": true,
+      "prepare_for_team_expansion": true,
+      "build_for_maintainability": true
+    }
+  },
+  
+  "strategic_constraints": {
+    "timeline_pressure": {
+      "accelerated_development_required": true,
+      "milestone_driven_approach": true,
+      "mvp_over_perfection": true,
+      "iterative_improvement_strategy": true
+    },
+    "resource_limitations": {
+      "solo_development_optimization": true,
+      "automation_over_manual_work": true,
+      "leverage_ai_assistance": true,
+      "smart_tool_selection": true
+    },
+    "market_considerations": {
+      "enterprise_market_focus": true,
+      "api_first_approach": true,
+      "scalability_requirements": true,
+      "competitive_differentiation": true
+    }
+  },
+  
+  "success_indicators": {
+    "technical_achievements": [
+      "ai_self_awareness_system_operational",
+      "multi_ai_coordination_functional",
+      "cursor_integration_seamless",
+      "real_time_metrics_accurate"
+    ],
+    "business_milestones": [
+      "commercial_api_prototype_ready",
+      "enterprise_features_implemented",
+      "monetization_strategy_validated",
+      "market_readiness_achieved"
+    ],
+    "innovation_breakthroughs": [
+      "ai_controlled_development_working",
+      "context_orchestration_optimized",
+      "personal_planning_integrated",
+      "wild_dogfooding_successful"
+    ]
+  },
+  
+  "risk_mitigation": {
+    "technical_risks": [
+      "over_engineering_prevention",
+      "scope_creep_management",
+      "technical_debt_monitoring",
+      "performance_optimization_focus"
+    ],
+    "business_risks": [
+      "market_timing_awareness",
+      "competitive_analysis_ongoing",
+      "customer_validation_early",
+      "revenue_model_validation"
+    ],
+    "personal_risks": [
+      "burnout_prevention_strategies",
+      "work_life_balance_maintenance",
+      "stress_management_protocols",
+      "sustainable_development_pace"
+    ]
+  },
+  
+  "integration_guidelines": {
+    "cursor_optimization": {
+      "context_relevance_maximization": true,
+      "token_efficiency_focus": true,
+      "response_speed_optimization": true,
+      "goal_alignment_integration": true
+    },
+    "ai_delegation": {
+      "task_appropriate_ai_selection": true,
+      "multi_ai_consensus_for_decisions": true,
+      "human_oversight_for_critical_choices": true,
+      "learning_from_delegation_outcomes": true
+    },
+    "privacy_protection": {
+      "sensitive_data_filtering": true,
+      "business_goal_abstraction": true,
+      "secure_context_handling": true,
+      "audit_trail_maintenance": true
+    }
+  },
+  
+  "feedback_loops": {
+    "continuous_improvement": {
+      "track_suggestion_effectiveness": true,
+      "monitor_goal_alignment_accuracy": true,
+      "measure_development_acceleration": true,
+      "assess_commercial_readiness_progress": true
+    },
+    "adaptation_mechanisms": {
+      "adjust_priorities_based_on_progress": true,
+      "refine_ai_delegation_based_on_results": true,
+      "optimize_context_based_on_usage": true,
+      "evolve_strategy_based_on_learnings": true
+    }
+  }
+} 
