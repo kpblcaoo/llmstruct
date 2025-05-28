@@ -186,46 +186,91 @@ class SmartContextOrchestrator:
         
         return context
     
+    def _extract_relationship_summary(self, max_modules: int = 15) -> Dict[str, Any]:
+        """
+        Извлекает краткий граф связей между модулями из struct.json:
+        - module_id, path
+        - dependencies (только имена модулей)
+        - публичные классы/функции
+        """
+        struct_path = self.project_root / "struct.json"
+        if not struct_path.exists():
+            return {}
+        try:
+            with open(struct_path, "r", encoding="utf-8") as f:
+                struct = json.load(f)
+            modules = struct.get("modules", [])
+            summary = []
+            for m in modules[:max_modules]:
+                entry = {
+                    "module_id": m.get("module_id"),
+                    "path": m.get("path"),
+                    "dependencies": m.get("dependencies", [])[:8],
+                    "public_functions": [fn["name"] for fn in m.get("functions", []) if not fn["name"].startswith("_")][:5],
+                    "public_classes": [cl["name"] for cl in m.get("classes", []) if not cl["name"].startswith("_")][:3]
+                }
+                summary.append(entry)
+            return {"modules": summary}
+        except Exception as e:
+            logger.warning(f"Failed to extract relationship summary: {e}")
+            return {}
+
     def _load_focused_context(
         self, 
         file_path: str = None, 
         budget: ContextBudget = None
     ) -> Dict[str, Any]:
-        """Load focused context optimized for VS Code Copilot."""
+        """
+        Load focused context optimized for VS Code Copilot.
+        - Всегда включает summary из init.json (уровень 1)
+        - relationship_context (structural) добавляется только если file_path указывает на исходный код или явно structural запрос
+        """
         context = {"mode": "focused", "sources": {}, "focus_file": file_path}
-        
-        # Priority order for focused context
-        priority_sources = ["init", "current_session", "struct"]
-        
-        # Add file-specific context if provided
-        if file_path:
-            context["file_context"] = self._get_file_context(file_path)
-        
-        # Load sources in priority order within budget
         tokens_used = 0
         max_tokens = budget.max_tokens if budget else 2000
-        
-        for source_name in priority_sources:
-            if max_tokens and tokens_used >= max_tokens:
-                break
-                
-            source_data = self._load_source_with_filtering(source_name, budget)
-            if source_data:
-                # Estimate tokens (rough approximation: 1 token ≈ 4 characters)
-                estimated_tokens = len(json.dumps(source_data)) // 4
-                
-                if not max_tokens or tokens_used + estimated_tokens <= max_tokens:
-                    context["sources"][source_name] = source_data
-                    tokens_used += estimated_tokens
-                else:
-                    # Try to include essential parts only
-                    essential_data = self._extract_essential_parts(source_data)
-                    essential_tokens = len(json.dumps(essential_data)) // 4
-                    
-                    if tokens_used + essential_tokens <= max_tokens:
-                        context["sources"][source_name] = essential_data
-                        tokens_used += essential_tokens
-        
+
+        # 1. Всегда добавляем summary из init.json
+        init_path = self.project_root / self.context_sources["init"]
+        if init_path.exists():
+            try:
+                with open(init_path, 'r', encoding='utf-8') as f:
+                    init_data = json.load(f)
+                summary = self._extract_summary(init_data)
+                context["sources"]["init"] = summary
+                tokens_used += len(json.dumps(summary)) // 4
+            except Exception as e:
+                logger.warning(f"Failed to load init.json: {e}")
+
+        # 2. Добавляем file_context если есть file_path
+        if file_path:
+            context["file_context"] = self._get_file_context(file_path)
+            tokens_used += len(json.dumps(context["file_context"])) // 4
+
+        # 3. Добавляем relationship_context только если file_path явно указывает на исходный код (src/ или .py/.js/.ts)
+        add_structural = False
+        if file_path and ("src/" in file_path or file_path.endswith(('.py', '.js', '.ts'))):
+            add_structural = True
+        # Можно добавить дополнительные условия для structural запроса
+        if add_structural:
+            rel = self._extract_relationship_summary()
+            context["relationship_context"] = rel
+            tokens_used += len(json.dumps(rel)) // 4
+
+        # 4. Добавляем current_session summary если помещается
+        if tokens_used < max_tokens:
+            session_path = self.project_root / self.context_sources["current_session"]
+            if session_path.exists():
+                try:
+                    with open(session_path, 'r', encoding='utf-8') as f:
+                        session_data = json.load(f)
+                    session_summary = self._extract_summary(session_data)
+                    est = len(json.dumps(session_summary)) // 4
+                    if tokens_used + est <= max_tokens:
+                        context["sources"]["current_session"] = session_summary
+                        tokens_used += est
+                except Exception as e:
+                    logger.warning(f"Failed to load current_session: {e}")
+
         context["tokens_used"] = tokens_used
         return context
     
