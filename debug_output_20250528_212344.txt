@@ -1,0 +1,1916 @@
+
+=== DEBUG TERMINAL OUTPUT ===
+Command: python -m llmstruct analyze-duplicates --format json
+Description: Duplication Analysis
+Timestamp: 2025-05-28T21:23:45.498177
+Exit Code: 0
+
+=== STDOUT ===
+🔍 Analyzing Function Duplication...
+{
+  "analysis": {
+    "total_unique_functions": 533,
+    "duplicated_functions": 103,
+    "duplication_details": {
+      "main": [
+        "test_duplication_analysis.py",
+        "test_final_validation.py",
+        "test_efficiency.py",
+        "start_development.py",
+        "run_ai_diagnostics.py",
+        "test_ai_cli_integration.py",
+        "debug_terminal.py",
+        "test_debug_analysis.py",
+        "monitor_system.py",
+        "board_cli.py",
+        "final_system_validation.py",
+        "validate_schemas.py",
+        "test_context_orchestration.py",
+        "validate_sessions.py",
+        "verify_llm_response.py",
+        "test_transpiler_demo.py",
+        "examples/python_project_main.py",
+        "docs/cli.py",
+        "temp/quick_restore.py",
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/gh_view.py",
+        "src/llmstruct/transpiler.py",
+        "src/llmstruct/cli.py",
+        "src/llmstruct/parsers/universal_converter.py",
+        "src/llmstruct/parsers/go_analyzer.py",
+        "temp_workfiles/run_duplicate_analysis.py",
+        "temp_workfiles/duplicate_detector.py",
+        "temp_workfiles/struct_based_cleanup_analyzer_complete.py",
+        "temp_workfiles/struct_based_cleanup_analyzer.py",
+        "temp_workfiles/final_system_validation.py",
+        "temp_workfiles/unsorted_mess/22.05.25/collector (1).py",
+        "temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files (1).py",
+        "temp_workfiles/unsorted_mess/22.05.25/scripts_validate_refs.py",
+        "temp_workfiles/unsorted_mess/22.05.25/scripts_collector.py",
+        "temp_workfiles/unsorted_mess/22.05.25/cache.py",
+        "temp_workfiles/unsorted_mess/22.05.25/validate_refs.py",
+        "temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/extract_artifacts.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency1.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/refactored_structure.py",
+        "temp_workfiles/unsorted_mess/dump/examples_python_project_main.py",
+        "temp_workfiles/unsorted_mess/dump/filter_llmstruct_json.py",
+        "temp_workfiles/unsorted_mess/dump/check_docs.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_cli (1).py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency_proxybypass.py",
+        "temp_workfiles/unsorted_mess/dump/scripts_setup_github.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_cli.py",
+        "temp_workfiles/dev_utils/test_efficiency.py",
+        "bak/20250522_102827/scripts/collector.py",
+        "bak/20250522_102827/scripts/validate_refs.py",
+        "bak/20250522_102827/scripts/deploy_embedded_files.py",
+        "bak/20250522_131121/scripts/collector.py",
+        "bak/20250522_131121/scripts/validate_refs.py",
+        "bak/20250522_131121/scripts/deploy_embedded_files.py",
+        "sorting_workspace/smart_consolidator.py",
+        "sorting_workspace/debug_sort.py",
+        "sorting_workspace/manual_consolidator.py",
+        "scripts/collector.py",
+        "scripts/session_cli.py",
+        "scripts/auto_update_struct.py",
+        "scripts/export_to_github_projects.py",
+        "scripts/validate_refs.py",
+        "scripts/deploy_embedded_files.py"
+      ],
+      "test_modular_cli_commands": [
+        "test_cli_integration.py",
+        "temp_workfiles/test_cli_integration.py"
+      ],
+      "get_system_metrics": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency1.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency_proxybypass.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "is_local_address": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency_proxybypass.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "setup_proxy": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency1.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency_proxybypass.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "check_ollama": [
+        "test_efficiency.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "optimize_prompt": [
+        "test_efficiency.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "run_llm_request": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency1.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency_proxybypass.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "check_llmstruct_cli": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "test_with_llmstruct": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency1.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency_proxybypass.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "test_without_llmstruct": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency1.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency_proxybypass.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "test_with_grok": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "evaluate_accuracy": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency1.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency_proxybypass.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "print_header": [
+        "start_development.py",
+        "temp/quick_restore.py"
+      ],
+      "test_cli_commands": [
+        "run_ai_diagnostics.py",
+        "temp_workfiles/test_cli.py"
+      ],
+      "__init__": [
+        "test_ai_cli_integration.py",
+        "test_context_orchestration.py",
+        "docs/cache.py",
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/cli_config.py",
+        "src/llmstruct/grok.py",
+        "src/llmstruct/cli_commands.py",
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/ai_cli_integration.py",
+        "src/llmstruct/cli_utils.py",
+        "src/llmstruct/copilot.py",
+        "src/llmstruct/gh_view.py",
+        "src/llmstruct/llm_client.py",
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cache.py",
+        "src/llmstruct/transpiler.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cli_core.py",
+        "src/llmstruct/workspace.py",
+        "src/llmstruct/parsers/javascript_parser.py",
+        "src/llmstruct/parsers/universal_converter.py",
+        "src/llmstruct/parsers/go_analyzer.py",
+        "src/llmstruct/parsers/python_parser.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cache.py",
+        "temp_workfiles/unsorted_mess/22.05.25/cache.py",
+        "temp_workfiles/unsorted_mess/dump/grok.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser (1).py",
+        "temp_workfiles/unsorted_mess/dump/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client (3).py",
+        "temp_workfiles/unsorted_mess/dump/javascript_parser.py",
+        "temp_workfiles/unsorted_mess/dump/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py",
+        "sorting_workspace/consolidate_changelog.py",
+        "sorting_workspace/validate_project_state.py",
+        "sorting_workspace/sort_data.py",
+        "sorting_workspace/smart_consolidator.py",
+        "sorting_workspace/comprehensive_consolidator.py",
+        "sorting_workspace/manual_consolidator.py",
+        "scripts/export_to_github_projects.py"
+      ],
+      "setup_logging": [
+        "test_ai_cli_integration.py",
+        "test_context_orchestration.py"
+      ],
+      "load_json_files": [
+        "collect_json.py",
+        "scripts/collect_json.py"
+      ],
+      "test_audit_status": [
+        "test_audit.py",
+        "temp_workfiles/dev_utils/test_audit.py"
+      ],
+      "load_gitignore": [
+        "collector.py",
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/collector.py",
+        "temp_workfiles/unsorted_mess/dump/collect_docs (1).py",
+        "temp_workfiles/unsorted_mess/dump/filter_llmstruct_json.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_cli (1).py",
+        "temp_workfiles/unsorted_mess/dump/cli.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_cli.py",
+        "scripts/auto_update_struct.py"
+      ],
+      "collect_project": [
+        "collector.py",
+        "temp_workfiles/unsorted_mess/dump/collector.py"
+      ],
+      "check_system_status": [
+        "final_system_check.py",
+        "temp_workfiles/final_system_check.py"
+      ],
+      "load_json": [
+        "board_cli.py",
+        "validate_schemas.py",
+        "validate_sessions.py",
+        "temp_workfiles/unsorted_mess/dump/scripts_setup_github.py",
+        "scripts/validate_json.py"
+      ],
+      "validate_json_against_schema": [
+        "validate_schemas.py",
+        "validate_sessions.py"
+      ],
+      "load_json_file": [
+        "test_context_orchestration.py",
+        "verify_llm_response.py",
+        "scripts/session_cli.py"
+      ],
+      "test_modular_cli": [
+        "test_modular_cli.py",
+        "temp_workfiles/test_modular_cli.py"
+      ],
+      "test_copilot_integration": [
+        "test_modular_cli.py",
+        "temp_workfiles/test_modular_cli.py"
+      ],
+      "test_interactive_cli": [
+        "test_cli_demo.py",
+        "temp_workfiles/test_cli_demo.py"
+      ],
+      "helper": [
+        "examples/python_project_utils.py",
+        "temp_workfiles/unsorted_mess/dump/examples_python_project_utils.py"
+      ],
+      "log": [
+        "examples/python_project_utils.py",
+        "temp_workfiles/unsorted_mess/dump/examples_python_project_utils.py"
+      ],
+      "run": [
+        "examples/python_project_main.py",
+        "temp_workfiles/unsorted_mess/dump/examples_python_project_main.py"
+      ],
+      "test_filter_json_init_json": [
+        "docs/test_self_run.py",
+        "temp_workfiles/unsorted_mess/22.05.25/test_self_run.py",
+        "tests/test_self_run.py"
+      ],
+      "test_select_json_partial": [
+        "docs/test_self_run.py",
+        "temp_workfiles/unsorted_mess/22.05.25/test_self_run.py",
+        "tests/test_self_run.py"
+      ],
+      "test_cache_json": [
+        "docs/test_self_run.py",
+        "temp_workfiles/unsorted_mess/22.05.25/test_self_run.py",
+        "tests/test_self_run.py"
+      ],
+      "test_attach_to_llm_request_init_json": [
+        "docs/test_self_run.py",
+        "temp_workfiles/unsorted_mess/22.05.25/test_self_run.py",
+        "tests/test_self_run.py"
+      ],
+      "test_attach_to_llm_request_missing_file": [
+        "docs/test_self_run.py",
+        "temp_workfiles/unsorted_mess/22.05.25/test_self_run.py",
+        "tests/test_self_run.py"
+      ],
+      "create_tables": [
+        "docs/cache.py",
+        "src/llmstruct/cache.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cache.py"
+      ],
+      "cache_json": [
+        "docs/cache.py",
+        "src/llmstruct/cache.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cache.py"
+      ],
+      "get_metadata": [
+        "docs/cache.py",
+        "src/llmstruct/cache.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cache.py"
+      ],
+      "get_full_json": [
+        "docs/cache.py",
+        "src/llmstruct/cache.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cache.py"
+      ],
+      "close": [
+        "docs/cache.py",
+        "src/llmstruct/copilot.py",
+        "src/llmstruct/cache.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cache.py"
+      ],
+      "filter_struct": [
+        "docs/self_run.py",
+        "src/llmstruct/self_run.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_self_run.py",
+        "temp_workfiles/unsorted_mess/dump/self_run.py"
+      ],
+      "attach_to_llm_request": [
+        "docs/self_run.py",
+        "src/llmstruct/self_run.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_self_run.py",
+        "temp_workfiles/unsorted_mess/dump/refactored_structure.py",
+        "temp_workfiles/unsorted_mess/dump/self_run.py"
+      ],
+      "filter_json": [
+        "docs/json_selector.py",
+        "src/llmstruct/json_selector.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_json_selector.py",
+        "temp_workfiles/unsorted_mess/dump/filter_llmstruct_json.py"
+      ],
+      "select_json": [
+        "docs/json_selector.py",
+        "src/llmstruct/json_selector.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_json_selector.py"
+      ],
+      "load_config": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py",
+        "scripts/auto_update_struct.py"
+      ],
+      "read_file_content": [
+        "docs/cli.py",
+        "src/llmstruct/cli_utils.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "write_to_file": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "parse_files_from_response": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "interactive": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "parse": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "query": [
+        "docs/cli.py",
+        "src/llmstruct/llm_client.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client (3).py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "context": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "dogfood": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "review": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "__post_init__": [
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/parsers/universal_converter.py"
+      ],
+      "_load_config": [
+        "src/llmstruct/cli_config.py",
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/copilot.py",
+        "src/llmstruct/gh_view.py"
+      ],
+      "test_grok": [
+        "src/llmstruct/grok.py",
+        "temp_workfiles/unsorted_mess/dump/grok.py"
+      ],
+      "generate": [
+        "src/llmstruct/grok.py",
+        "temp_workfiles/unsorted_mess/dump/grok.py",
+        "temp_workfiles/unsorted_mess/dump/refactored_structure.py"
+      ],
+      "get_optimized_context": [
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/copilot.py"
+      ],
+      "_load_session_context": [
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "validate_json": [
+        "src/llmstruct/cli_utils.py",
+        "temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files (1).py",
+        "temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files.py",
+        "bak/20250522_102827/scripts/deploy_embedded_files.py",
+        "bak/20250522_131121/scripts/deploy_embedded_files.py",
+        "scripts/deploy_embedded_files.py",
+        "scripts/validate_json.py"
+      ],
+      "_query_grok": [
+        "src/llmstruct/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client (3).py"
+      ],
+      "_query_anthropic": [
+        "src/llmstruct/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client (3).py"
+      ],
+      "_query_ollama": [
+        "src/llmstruct/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client (3).py"
+      ],
+      "_query_hybrid": [
+        "src/llmstruct/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client (3).py"
+      ],
+      "get_goal_aligned_suggestions": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "_load_cursor_config": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "_load_personal_bridge": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "_apply_privacy_filter": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "_filter_sensitive_dict": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "analyze_duplicates": [
+        "src/llmstruct/cli.py",
+        "temp_workfiles/duplicate_detector.py"
+      ],
+      "file_hash": [
+        "src/llmstruct/parsers/javascript_parser.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/javascript_parser.py",
+        "temp_workfiles/unsorted_mess/dump/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "compute_file_metadata": [
+        "src/llmstruct/parsers/javascript_parser.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/javascript_parser.py",
+        "temp_workfiles/unsorted_mess/dump/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "parse_module": [
+        "src/llmstruct/parsers/javascript_parser.py",
+        "temp_workfiles/unsorted_mess/dump/refactored_structure.py",
+        "temp_workfiles/unsorted_mess/dump/refactored_structure.py",
+        "temp_workfiles/unsorted_mess/dump/javascript_parser.py",
+        "temp_workfiles/unsorted_mess/dump/python_parser.py"
+      ],
+      "extract_signature": [
+        "src/llmstruct/parsers/javascript_parser.py",
+        "temp_workfiles/unsorted_mess/dump/javascript_parser.py"
+      ],
+      "infer_category": [
+        "src/llmstruct/parsers/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser (1).py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "analyze_module": [
+        "src/llmstruct/parsers/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser (1).py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "visit_Import": [
+        "src/llmstruct/parsers/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "visit_ImportFrom": [
+        "src/llmstruct/parsers/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "visit_Call": [
+        "src/llmstruct/parsers/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser (1).py",
+        "temp_workfiles/unsorted_mess/dump/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "validate_struct_json": [
+        "src/llmstruct/validators/json_validator.py",
+        "temp_workfiles/unsorted_mess/dump/json_validator.py",
+        "temp_workfiles/unsorted_mess/dump/validate_json.py",
+        "scripts/auto_update_struct.py"
+      ],
+      "validate_directory": [
+        "src/llmstruct/validators/json_validator.py",
+        "temp_workfiles/unsorted_mess/dump/json_validator.py"
+      ],
+      "get_folder_structure": [
+        "src/llmstruct/generators/json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_generators_json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_generators_json_generator (1).py"
+      ],
+      "build_toc_and_modules": [
+        "src/llmstruct/generators/json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_generators_json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_generators_json_generator (1).py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "generate_json": [
+        "src/llmstruct/generators/json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_generators_json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_generators_json_generator (1).py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py",
+        "scripts/auto_update_struct.py"
+      ],
+      "find_duplicates": [
+        "temp_workfiles/run_duplicate_analysis.py",
+        "temp_workfiles/duplicate_detector.py"
+      ],
+      "load_struct_json": [
+        "temp_workfiles/struct_based_cleanup_analyzer_complete.py",
+        "temp_workfiles/struct_based_cleanup_analyzer.py",
+        "temp_workfiles/unsorted_mess/dump/generate_docs (1).py"
+      ],
+      "analyze_root_files": [
+        "temp_workfiles/struct_based_cleanup_analyzer_complete.py",
+        "temp_workfiles/struct_based_cleanup_analyzer.py"
+      ],
+      "generate_cleanup_recommendations": [
+        "temp_workfiles/struct_based_cleanup_analyzer_complete.py",
+        "temp_workfiles/struct_based_cleanup_analyzer.py"
+      ],
+      "apply_filters": [
+        "temp_workfiles/unsorted_mess/22.05.25/collector (1).py",
+        "temp_workfiles/unsorted_mess/22.05.25/scripts_collector.py",
+        "bak/20250522_102827/scripts/collector.py",
+        "bak/20250522_131121/scripts/collector.py",
+        "scripts/collector.py"
+      ],
+      "collect_files": [
+        "temp_workfiles/unsorted_mess/22.05.25/collector (1).py",
+        "temp_workfiles/unsorted_mess/22.05.25/scripts_collector.py",
+        "bak/20250522_102827/scripts/collector.py",
+        "bak/20250522_131121/scripts/collector.py",
+        "scripts/collector.py"
+      ],
+      "generate_struct": [
+        "temp_workfiles/unsorted_mess/22.05.25/collector (1).py",
+        "temp_workfiles/unsorted_mess/22.05.25/scripts_collector.py",
+        "bak/20250522_102827/scripts/collector.py",
+        "bak/20250522_131121/scripts/collector.py",
+        "scripts/collector.py"
+      ],
+      "backup_files": [
+        "temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files (1).py",
+        "temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files.py",
+        "bak/20250522_102827/scripts/deploy_embedded_files.py",
+        "bak/20250522_131121/scripts/deploy_embedded_files.py",
+        "scripts/deploy_embedded_files.py"
+      ],
+      "deploy_embedded_files": [
+        "temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files (1).py",
+        "temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files.py",
+        "bak/20250522_102827/scripts/deploy_embedded_files.py",
+        "bak/20250522_131121/scripts/deploy_embedded_files.py",
+        "scripts/deploy_embedded_files.py"
+      ],
+      "validate_references": [
+        "temp_workfiles/unsorted_mess/22.05.25/scripts_validate_refs.py",
+        "temp_workfiles/unsorted_mess/22.05.25/validate_refs.py",
+        "bak/20250522_102827/scripts/validate_refs.py",
+        "bak/20250522_131121/scripts/validate_refs.py",
+        "scripts/validate_refs.py"
+      ],
+      "extract_comments": [
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "get_signature": [
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "extract_dependencies": [
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "load_goals": [
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_cli (1).py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_cli.py"
+      ],
+      "collect_docs": [
+        "temp_workfiles/unsorted_mess/dump/collect_docs (1).py",
+        "temp_workfiles/unsorted_mess/dump/collect_docs.py"
+      ],
+      "test_end_to_end": [
+        "temp_workfiles/unsorted_mess/dump/test_end_to_end (1).py",
+        "temp_workfiles/unsorted_mess/dump/test_end_to_end.py"
+      ],
+      "run_consolidation": [
+        "sorting_workspace/comprehensive_consolidator.py",
+        "sorting_workspace/manual_consolidator.py"
+      ]
+    },
+    "duplication_percentage": 19.324577861163228
+  },
+  "recommendations": [
+    {
+      "function": "main",
+      "duplicated_in": [
+        "test_duplication_analysis.py",
+        "test_final_validation.py",
+        "test_efficiency.py",
+        "start_development.py",
+        "run_ai_diagnostics.py",
+        "test_ai_cli_integration.py",
+        "debug_terminal.py",
+        "test_debug_analysis.py",
+        "monitor_system.py",
+        "board_cli.py",
+        "final_system_validation.py",
+        "validate_schemas.py",
+        "test_context_orchestration.py",
+        "validate_sessions.py",
+        "verify_llm_response.py",
+        "test_transpiler_demo.py",
+        "examples/python_project_main.py",
+        "docs/cli.py",
+        "temp/quick_restore.py",
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/gh_view.py",
+        "src/llmstruct/transpiler.py",
+        "src/llmstruct/cli.py",
+        "src/llmstruct/parsers/universal_converter.py",
+        "src/llmstruct/parsers/go_analyzer.py",
+        "temp_workfiles/run_duplicate_analysis.py",
+        "temp_workfiles/duplicate_detector.py",
+        "temp_workfiles/struct_based_cleanup_analyzer_complete.py",
+        "temp_workfiles/struct_based_cleanup_analyzer.py",
+        "temp_workfiles/final_system_validation.py",
+        "temp_workfiles/unsorted_mess/22.05.25/collector (1).py",
+        "temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files (1).py",
+        "temp_workfiles/unsorted_mess/22.05.25/scripts_validate_refs.py",
+        "temp_workfiles/unsorted_mess/22.05.25/scripts_collector.py",
+        "temp_workfiles/unsorted_mess/22.05.25/cache.py",
+        "temp_workfiles/unsorted_mess/22.05.25/validate_refs.py",
+        "temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/extract_artifacts.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency1.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/refactored_structure.py",
+        "temp_workfiles/unsorted_mess/dump/examples_python_project_main.py",
+        "temp_workfiles/unsorted_mess/dump/filter_llmstruct_json.py",
+        "temp_workfiles/unsorted_mess/dump/check_docs.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_cli (1).py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency_proxybypass.py",
+        "temp_workfiles/unsorted_mess/dump/scripts_setup_github.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_cli.py",
+        "temp_workfiles/dev_utils/test_efficiency.py",
+        "bak/20250522_102827/scripts/collector.py",
+        "bak/20250522_102827/scripts/validate_refs.py",
+        "bak/20250522_102827/scripts/deploy_embedded_files.py",
+        "bak/20250522_131121/scripts/collector.py",
+        "bak/20250522_131121/scripts/validate_refs.py",
+        "bak/20250522_131121/scripts/deploy_embedded_files.py",
+        "sorting_workspace/smart_consolidator.py",
+        "sorting_workspace/debug_sort.py",
+        "sorting_workspace/manual_consolidator.py",
+        "scripts/collector.py",
+        "scripts/session_cli.py",
+        "scripts/auto_update_struct.py",
+        "scripts/export_to_github_projects.py",
+        "scripts/validate_refs.py",
+        "scripts/deploy_embedded_files.py"
+      ],
+      "recommendation": "Consider consolidating main into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "test_modular_cli_commands",
+      "duplicated_in": [
+        "test_cli_integration.py",
+        "temp_workfiles/test_cli_integration.py"
+      ],
+      "recommendation": "Consider consolidating test_modular_cli_commands into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "get_system_metrics",
+      "duplicated_in": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency1.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency_proxybypass.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "recommendation": "Consider consolidating get_system_metrics into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "is_local_address",
+      "duplicated_in": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency_proxybypass.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "recommendation": "Consider consolidating is_local_address into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "setup_proxy",
+      "duplicated_in": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency1.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency_proxybypass.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "recommendation": "Consider consolidating setup_proxy into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "check_ollama",
+      "duplicated_in": [
+        "test_efficiency.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "recommendation": "Consider consolidating check_ollama into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "optimize_prompt",
+      "duplicated_in": [
+        "test_efficiency.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "recommendation": "Consider consolidating optimize_prompt into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "run_llm_request",
+      "duplicated_in": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency1.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency_proxybypass.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "recommendation": "Consider consolidating run_llm_request into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "check_llmstruct_cli",
+      "duplicated_in": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "recommendation": "Consider consolidating check_llmstruct_cli into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "test_with_llmstruct",
+      "duplicated_in": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency1.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency_proxybypass.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "recommendation": "Consider consolidating test_with_llmstruct into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "test_without_llmstruct",
+      "duplicated_in": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency1.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency_proxybypass.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "recommendation": "Consider consolidating test_without_llmstruct into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "test_with_grok",
+      "duplicated_in": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "recommendation": "Consider consolidating test_with_grok into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "evaluate_accuracy",
+      "duplicated_in": [
+        "test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency1.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency.py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency (1).py",
+        "temp_workfiles/unsorted_mess/dump/test_efficiency_proxybypass.py",
+        "temp_workfiles/dev_utils/test_efficiency.py"
+      ],
+      "recommendation": "Consider consolidating evaluate_accuracy into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "print_header",
+      "duplicated_in": [
+        "start_development.py",
+        "temp/quick_restore.py"
+      ],
+      "recommendation": "Consider consolidating print_header into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "test_cli_commands",
+      "duplicated_in": [
+        "run_ai_diagnostics.py",
+        "temp_workfiles/test_cli.py"
+      ],
+      "recommendation": "Consider consolidating test_cli_commands into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "__init__",
+      "duplicated_in": [
+        "test_ai_cli_integration.py",
+        "test_context_orchestration.py",
+        "docs/cache.py",
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/cli_config.py",
+        "src/llmstruct/grok.py",
+        "src/llmstruct/cli_commands.py",
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/ai_cli_integration.py",
+        "src/llmstruct/cli_utils.py",
+        "src/llmstruct/copilot.py",
+        "src/llmstruct/gh_view.py",
+        "src/llmstruct/llm_client.py",
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cache.py",
+        "src/llmstruct/transpiler.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cli_core.py",
+        "src/llmstruct/workspace.py",
+        "src/llmstruct/parsers/javascript_parser.py",
+        "src/llmstruct/parsers/universal_converter.py",
+        "src/llmstruct/parsers/go_analyzer.py",
+        "src/llmstruct/parsers/python_parser.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cache.py",
+        "temp_workfiles/unsorted_mess/22.05.25/cache.py",
+        "temp_workfiles/unsorted_mess/dump/grok.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser (1).py",
+        "temp_workfiles/unsorted_mess/dump/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client (3).py",
+        "temp_workfiles/unsorted_mess/dump/javascript_parser.py",
+        "temp_workfiles/unsorted_mess/dump/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py",
+        "sorting_workspace/consolidate_changelog.py",
+        "sorting_workspace/validate_project_state.py",
+        "sorting_workspace/sort_data.py",
+        "sorting_workspace/smart_consolidator.py",
+        "sorting_workspace/comprehensive_consolidator.py",
+        "sorting_workspace/manual_consolidator.py",
+        "scripts/export_to_github_projects.py"
+      ],
+      "recommendation": "Consider consolidating __init__ into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "setup_logging",
+      "duplicated_in": [
+        "test_ai_cli_integration.py",
+        "test_context_orchestration.py"
+      ],
+      "recommendation": "Consider consolidating setup_logging into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "load_json_files",
+      "duplicated_in": [
+        "collect_json.py",
+        "scripts/collect_json.py"
+      ],
+      "recommendation": "Consider consolidating load_json_files into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "test_audit_status",
+      "duplicated_in": [
+        "test_audit.py",
+        "temp_workfiles/dev_utils/test_audit.py"
+      ],
+      "recommendation": "Consider consolidating test_audit_status into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "load_gitignore",
+      "duplicated_in": [
+        "collector.py",
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/collector.py",
+        "temp_workfiles/unsorted_mess/dump/collect_docs (1).py",
+        "temp_workfiles/unsorted_mess/dump/filter_llmstruct_json.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_cli (1).py",
+        "temp_workfiles/unsorted_mess/dump/cli.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_cli.py",
+        "scripts/auto_update_struct.py"
+      ],
+      "recommendation": "Consider consolidating load_gitignore into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "collect_project",
+      "duplicated_in": [
+        "collector.py",
+        "temp_workfiles/unsorted_mess/dump/collector.py"
+      ],
+      "recommendation": "Consider consolidating collect_project into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "check_system_status",
+      "duplicated_in": [
+        "final_system_check.py",
+        "temp_workfiles/final_system_check.py"
+      ],
+      "recommendation": "Consider consolidating check_system_status into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "load_json",
+      "duplicated_in": [
+        "board_cli.py",
+        "validate_schemas.py",
+        "validate_sessions.py",
+        "temp_workfiles/unsorted_mess/dump/scripts_setup_github.py",
+        "scripts/validate_json.py"
+      ],
+      "recommendation": "Consider consolidating load_json into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "validate_json_against_schema",
+      "duplicated_in": [
+        "validate_schemas.py",
+        "validate_sessions.py"
+      ],
+      "recommendation": "Consider consolidating validate_json_against_schema into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "load_json_file",
+      "duplicated_in": [
+        "test_context_orchestration.py",
+        "verify_llm_response.py",
+        "scripts/session_cli.py"
+      ],
+      "recommendation": "Consider consolidating load_json_file into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "test_modular_cli",
+      "duplicated_in": [
+        "test_modular_cli.py",
+        "temp_workfiles/test_modular_cli.py"
+      ],
+      "recommendation": "Consider consolidating test_modular_cli into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "test_copilot_integration",
+      "duplicated_in": [
+        "test_modular_cli.py",
+        "temp_workfiles/test_modular_cli.py"
+      ],
+      "recommendation": "Consider consolidating test_copilot_integration into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "test_interactive_cli",
+      "duplicated_in": [
+        "test_cli_demo.py",
+        "temp_workfiles/test_cli_demo.py"
+      ],
+      "recommendation": "Consider consolidating test_interactive_cli into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "helper",
+      "duplicated_in": [
+        "examples/python_project_utils.py",
+        "temp_workfiles/unsorted_mess/dump/examples_python_project_utils.py"
+      ],
+      "recommendation": "Consider consolidating helper into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "log",
+      "duplicated_in": [
+        "examples/python_project_utils.py",
+        "temp_workfiles/unsorted_mess/dump/examples_python_project_utils.py"
+      ],
+      "recommendation": "Consider consolidating log into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "run",
+      "duplicated_in": [
+        "examples/python_project_main.py",
+        "temp_workfiles/unsorted_mess/dump/examples_python_project_main.py"
+      ],
+      "recommendation": "Consider consolidating run into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "test_filter_json_init_json",
+      "duplicated_in": [
+        "docs/test_self_run.py",
+        "temp_workfiles/unsorted_mess/22.05.25/test_self_run.py",
+        "tests/test_self_run.py"
+      ],
+      "recommendation": "Consider consolidating test_filter_json_init_json into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "test_select_json_partial",
+      "duplicated_in": [
+        "docs/test_self_run.py",
+        "temp_workfiles/unsorted_mess/22.05.25/test_self_run.py",
+        "tests/test_self_run.py"
+      ],
+      "recommendation": "Consider consolidating test_select_json_partial into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "test_cache_json",
+      "duplicated_in": [
+        "docs/test_self_run.py",
+        "temp_workfiles/unsorted_mess/22.05.25/test_self_run.py",
+        "tests/test_self_run.py"
+      ],
+      "recommendation": "Consider consolidating test_cache_json into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "test_attach_to_llm_request_init_json",
+      "duplicated_in": [
+        "docs/test_self_run.py",
+        "temp_workfiles/unsorted_mess/22.05.25/test_self_run.py",
+        "tests/test_self_run.py"
+      ],
+      "recommendation": "Consider consolidating test_attach_to_llm_request_init_json into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "test_attach_to_llm_request_missing_file",
+      "duplicated_in": [
+        "docs/test_self_run.py",
+        "temp_workfiles/unsorted_mess/22.05.25/test_self_run.py",
+        "tests/test_self_run.py"
+      ],
+      "recommendation": "Consider consolidating test_attach_to_llm_request_missing_file into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "create_tables",
+      "duplicated_in": [
+        "docs/cache.py",
+        "src/llmstruct/cache.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cache.py"
+      ],
+      "recommendation": "Consider consolidating create_tables into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "cache_json",
+      "duplicated_in": [
+        "docs/cache.py",
+        "src/llmstruct/cache.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cache.py"
+      ],
+      "recommendation": "Consider consolidating cache_json into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "get_metadata",
+      "duplicated_in": [
+        "docs/cache.py",
+        "src/llmstruct/cache.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cache.py"
+      ],
+      "recommendation": "Consider consolidating get_metadata into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "get_full_json",
+      "duplicated_in": [
+        "docs/cache.py",
+        "src/llmstruct/cache.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cache.py"
+      ],
+      "recommendation": "Consider consolidating get_full_json into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "close",
+      "duplicated_in": [
+        "docs/cache.py",
+        "src/llmstruct/copilot.py",
+        "src/llmstruct/cache.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cache.py"
+      ],
+      "recommendation": "Consider consolidating close into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "filter_struct",
+      "duplicated_in": [
+        "docs/self_run.py",
+        "src/llmstruct/self_run.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_self_run.py",
+        "temp_workfiles/unsorted_mess/dump/self_run.py"
+      ],
+      "recommendation": "Consider consolidating filter_struct into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "attach_to_llm_request",
+      "duplicated_in": [
+        "docs/self_run.py",
+        "src/llmstruct/self_run.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_self_run.py",
+        "temp_workfiles/unsorted_mess/dump/refactored_structure.py",
+        "temp_workfiles/unsorted_mess/dump/self_run.py"
+      ],
+      "recommendation": "Consider consolidating attach_to_llm_request into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "filter_json",
+      "duplicated_in": [
+        "docs/json_selector.py",
+        "src/llmstruct/json_selector.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_json_selector.py",
+        "temp_workfiles/unsorted_mess/dump/filter_llmstruct_json.py"
+      ],
+      "recommendation": "Consider consolidating filter_json into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "select_json",
+      "duplicated_in": [
+        "docs/json_selector.py",
+        "src/llmstruct/json_selector.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_json_selector.py"
+      ],
+      "recommendation": "Consider consolidating select_json into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "load_config",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py",
+        "scripts/auto_update_struct.py"
+      ],
+      "recommendation": "Consider consolidating load_config into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "read_file_content",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli_utils.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "recommendation": "Consider consolidating read_file_content into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "write_to_file",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "recommendation": "Consider consolidating write_to_file into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "parse_files_from_response",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "recommendation": "Consider consolidating parse_files_from_response into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "interactive",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "recommendation": "Consider consolidating interactive into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "parse",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "recommendation": "Consider consolidating parse into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "query",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/llm_client.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client (3).py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "recommendation": "Consider consolidating query into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "context",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "recommendation": "Consider consolidating context into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "dogfood",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "recommendation": "Consider consolidating dogfood into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "review",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "temp_workfiles/unsorted_mess/22.05.25/src_llmstruct_cli.py",
+        "temp_workfiles/unsorted_mess/dump/cli.py"
+      ],
+      "recommendation": "Consider consolidating review into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "__post_init__",
+      "duplicated_in": [
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/parsers/universal_converter.py"
+      ],
+      "recommendation": "Consider consolidating __post_init__ into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "_load_config",
+      "duplicated_in": [
+        "src/llmstruct/cli_config.py",
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/copilot.py",
+        "src/llmstruct/gh_view.py"
+      ],
+      "recommendation": "Consider consolidating _load_config into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "test_grok",
+      "duplicated_in": [
+        "src/llmstruct/grok.py",
+        "temp_workfiles/unsorted_mess/dump/grok.py"
+      ],
+      "recommendation": "Consider consolidating test_grok into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "generate",
+      "duplicated_in": [
+        "src/llmstruct/grok.py",
+        "temp_workfiles/unsorted_mess/dump/grok.py",
+        "temp_workfiles/unsorted_mess/dump/refactored_structure.py"
+      ],
+      "recommendation": "Consider consolidating generate into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "get_optimized_context",
+      "duplicated_in": [
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/copilot.py"
+      ],
+      "recommendation": "Consider consolidating get_optimized_context into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "_load_session_context",
+      "duplicated_in": [
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "recommendation": "Consider consolidating _load_session_context into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "validate_json",
+      "duplicated_in": [
+        "src/llmstruct/cli_utils.py",
+        "temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files (1).py",
+        "temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files.py",
+        "bak/20250522_102827/scripts/deploy_embedded_files.py",
+        "bak/20250522_131121/scripts/deploy_embedded_files.py",
+        "scripts/deploy_embedded_files.py",
+        "scripts/validate_json.py"
+      ],
+      "recommendation": "Consider consolidating validate_json into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "_query_grok",
+      "duplicated_in": [
+        "src/llmstruct/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client (3).py"
+      ],
+      "recommendation": "Consider consolidating _query_grok into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "_query_anthropic",
+      "duplicated_in": [
+        "src/llmstruct/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client (3).py"
+      ],
+      "recommendation": "Consider consolidating _query_anthropic into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "_query_ollama",
+      "duplicated_in": [
+        "src/llmstruct/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client (3).py"
+      ],
+      "recommendation": "Consider consolidating _query_ollama into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "_query_hybrid",
+      "duplicated_in": [
+        "src/llmstruct/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client.py",
+        "temp_workfiles/unsorted_mess/dump/llm_client (3).py"
+      ],
+      "recommendation": "Consider consolidating _query_hybrid into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "get_goal_aligned_suggestions",
+      "duplicated_in": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "recommendation": "Consider consolidating get_goal_aligned_suggestions into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "_load_cursor_config",
+      "duplicated_in": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "recommendation": "Consider consolidating _load_cursor_config into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "_load_personal_bridge",
+      "duplicated_in": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "recommendation": "Consider consolidating _load_personal_bridge into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "_apply_privacy_filter",
+      "duplicated_in": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "recommendation": "Consider consolidating _apply_privacy_filter into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "_filter_sensitive_dict",
+      "duplicated_in": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "recommendation": "Consider consolidating _filter_sensitive_dict into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "analyze_duplicates",
+      "duplicated_in": [
+        "src/llmstruct/cli.py",
+        "temp_workfiles/duplicate_detector.py"
+      ],
+      "recommendation": "Consider consolidating analyze_duplicates into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "file_hash",
+      "duplicated_in": [
+        "src/llmstruct/parsers/javascript_parser.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/javascript_parser.py",
+        "temp_workfiles/unsorted_mess/dump/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "recommendation": "Consider consolidating file_hash into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "compute_file_metadata",
+      "duplicated_in": [
+        "src/llmstruct/parsers/javascript_parser.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/javascript_parser.py",
+        "temp_workfiles/unsorted_mess/dump/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "recommendation": "Consider consolidating compute_file_metadata into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "parse_module",
+      "duplicated_in": [
+        "src/llmstruct/parsers/javascript_parser.py",
+        "temp_workfiles/unsorted_mess/dump/refactored_structure.py",
+        "temp_workfiles/unsorted_mess/dump/refactored_structure.py",
+        "temp_workfiles/unsorted_mess/dump/javascript_parser.py",
+        "temp_workfiles/unsorted_mess/dump/python_parser.py"
+      ],
+      "recommendation": "Consider consolidating parse_module into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "extract_signature",
+      "duplicated_in": [
+        "src/llmstruct/parsers/javascript_parser.py",
+        "temp_workfiles/unsorted_mess/dump/javascript_parser.py"
+      ],
+      "recommendation": "Consider consolidating extract_signature into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "infer_category",
+      "duplicated_in": [
+        "src/llmstruct/parsers/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser (1).py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "recommendation": "Consider consolidating infer_category into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "analyze_module",
+      "duplicated_in": [
+        "src/llmstruct/parsers/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser (1).py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "recommendation": "Consider consolidating analyze_module into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "visit_Import",
+      "duplicated_in": [
+        "src/llmstruct/parsers/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "recommendation": "Consider consolidating visit_Import into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "visit_ImportFrom",
+      "duplicated_in": [
+        "src/llmstruct/parsers/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "recommendation": "Consider consolidating visit_ImportFrom into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "visit_Call",
+      "duplicated_in": [
+        "src/llmstruct/parsers/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser (1).py",
+        "temp_workfiles/unsorted_mess/dump/python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "recommendation": "Consider consolidating visit_Call into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "validate_struct_json",
+      "duplicated_in": [
+        "src/llmstruct/validators/json_validator.py",
+        "temp_workfiles/unsorted_mess/dump/json_validator.py",
+        "temp_workfiles/unsorted_mess/dump/validate_json.py",
+        "scripts/auto_update_struct.py"
+      ],
+      "recommendation": "Consider consolidating validate_struct_json into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "validate_directory",
+      "duplicated_in": [
+        "src/llmstruct/validators/json_validator.py",
+        "temp_workfiles/unsorted_mess/dump/json_validator.py"
+      ],
+      "recommendation": "Consider consolidating validate_directory into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "get_folder_structure",
+      "duplicated_in": [
+        "src/llmstruct/generators/json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_generators_json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_generators_json_generator (1).py"
+      ],
+      "recommendation": "Consider consolidating get_folder_structure into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "build_toc_and_modules",
+      "duplicated_in": [
+        "src/llmstruct/generators/json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_generators_json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_generators_json_generator (1).py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "recommendation": "Consider consolidating build_toc_and_modules into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "generate_json",
+      "duplicated_in": [
+        "src/llmstruct/generators/json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_generators_json_generator.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_generators_json_generator (1).py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py",
+        "scripts/auto_update_struct.py"
+      ],
+      "recommendation": "Consider consolidating generate_json into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "find_duplicates",
+      "duplicated_in": [
+        "temp_workfiles/run_duplicate_analysis.py",
+        "temp_workfiles/duplicate_detector.py"
+      ],
+      "recommendation": "Consider consolidating find_duplicates into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "load_struct_json",
+      "duplicated_in": [
+        "temp_workfiles/struct_based_cleanup_analyzer_complete.py",
+        "temp_workfiles/struct_based_cleanup_analyzer.py",
+        "temp_workfiles/unsorted_mess/dump/generate_docs (1).py"
+      ],
+      "recommendation": "Consider consolidating load_struct_json into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "analyze_root_files",
+      "duplicated_in": [
+        "temp_workfiles/struct_based_cleanup_analyzer_complete.py",
+        "temp_workfiles/struct_based_cleanup_analyzer.py"
+      ],
+      "recommendation": "Consider consolidating analyze_root_files into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "generate_cleanup_recommendations",
+      "duplicated_in": [
+        "temp_workfiles/struct_based_cleanup_analyzer_complete.py",
+        "temp_workfiles/struct_based_cleanup_analyzer.py"
+      ],
+      "recommendation": "Consider consolidating generate_cleanup_recommendations into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "apply_filters",
+      "duplicated_in": [
+        "temp_workfiles/unsorted_mess/22.05.25/collector (1).py",
+        "temp_workfiles/unsorted_mess/22.05.25/scripts_collector.py",
+        "bak/20250522_102827/scripts/collector.py",
+        "bak/20250522_131121/scripts/collector.py",
+        "scripts/collector.py"
+      ],
+      "recommendation": "Consider consolidating apply_filters into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "collect_files",
+      "duplicated_in": [
+        "temp_workfiles/unsorted_mess/22.05.25/collector (1).py",
+        "temp_workfiles/unsorted_mess/22.05.25/scripts_collector.py",
+        "bak/20250522_102827/scripts/collector.py",
+        "bak/20250522_131121/scripts/collector.py",
+        "scripts/collector.py"
+      ],
+      "recommendation": "Consider consolidating collect_files into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "generate_struct",
+      "duplicated_in": [
+        "temp_workfiles/unsorted_mess/22.05.25/collector (1).py",
+        "temp_workfiles/unsorted_mess/22.05.25/scripts_collector.py",
+        "bak/20250522_102827/scripts/collector.py",
+        "bak/20250522_131121/scripts/collector.py",
+        "scripts/collector.py"
+      ],
+      "recommendation": "Consider consolidating generate_struct into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "backup_files",
+      "duplicated_in": [
+        "temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files (1).py",
+        "temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files.py",
+        "bak/20250522_102827/scripts/deploy_embedded_files.py",
+        "bak/20250522_131121/scripts/deploy_embedded_files.py",
+        "scripts/deploy_embedded_files.py"
+      ],
+      "recommendation": "Consider consolidating backup_files into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "deploy_embedded_files",
+      "duplicated_in": [
+        "temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files (1).py",
+        "temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files.py",
+        "bak/20250522_102827/scripts/deploy_embedded_files.py",
+        "bak/20250522_131121/scripts/deploy_embedded_files.py",
+        "scripts/deploy_embedded_files.py"
+      ],
+      "recommendation": "Consider consolidating deploy_embedded_files into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "validate_references",
+      "duplicated_in": [
+        "temp_workfiles/unsorted_mess/22.05.25/scripts_validate_refs.py",
+        "temp_workfiles/unsorted_mess/22.05.25/validate_refs.py",
+        "bak/20250522_102827/scripts/validate_refs.py",
+        "bak/20250522_131121/scripts/validate_refs.py",
+        "scripts/validate_refs.py"
+      ],
+      "recommendation": "Consider consolidating validate_references into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "extract_comments",
+      "duplicated_in": [
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "recommendation": "Consider consolidating extract_comments into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "get_signature",
+      "duplicated_in": [
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "recommendation": "Consider consolidating get_signature into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "extract_dependencies",
+      "duplicated_in": [
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_parsers_python_parser.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py"
+      ],
+      "recommendation": "Consider consolidating extract_dependencies into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "load_goals",
+      "duplicated_in": [
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct.py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_cli (1).py",
+        "temp_workfiles/unsorted_mess/dump/generate_llmstruct (1).py",
+        "temp_workfiles/unsorted_mess/dump/src_llmstruct_cli.py"
+      ],
+      "recommendation": "Consider consolidating load_goals into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "collect_docs",
+      "duplicated_in": [
+        "temp_workfiles/unsorted_mess/dump/collect_docs (1).py",
+        "temp_workfiles/unsorted_mess/dump/collect_docs.py"
+      ],
+      "recommendation": "Consider consolidating collect_docs into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "test_end_to_end",
+      "duplicated_in": [
+        "temp_workfiles/unsorted_mess/dump/test_end_to_end (1).py",
+        "temp_workfiles/unsorted_mess/dump/test_end_to_end.py"
+      ],
+      "recommendation": "Consider consolidating test_end_to_end into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "run_consolidation",
+      "duplicated_in": [
+        "sorting_workspace/comprehensive_consolidator.py",
+        "sorting_workspace/manual_consolidator.py"
+      ],
+      "recommendation": "Consider consolidating run_consolidation into a shared utility module",
+      "priority": "medium"
+    }
+  ],
+  "next_steps": [
+    "Review high-priority duplicates first",
+    "Create shared utility modules for common functions",
+    "Update imports after consolidation",
+    "Re-run struct analysis to verify improvements"
+  ]
+}
+
+
+=== STDERR ===
+2025-05-28 21:23:45,220 - INFO - Loaded copilot config from /home/kpblc/projects/github/llmstruct/data/copilot_init.json
+
+
+=== END ===
