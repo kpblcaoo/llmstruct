@@ -114,4 +114,40 @@ temp_workfiles/
 personal_*.json
 session_*.json
 llmstruct_personal.toml
-local_config.*
+local_config.*.personal/
+
+# Personal directory with private files (T-Pot configs, etc.)
+.personal/
+
+# Personal/Private documentation files (moved to .personal/)
+FINANCIAL_LEGAL_PLANNING.md
+PERSONAL_MODULE_DESIGN.md
+*_PERSONAL.md
+*_PRIVATE.md
+commercial_planning.py
+planning_*.md
+
+# Temporary analysis and experimental files
+analysis_*.txt
+analyzer_*.txt
+*_analysis_*.txt
+analyze_*.py
+quick_*.py
+simple_*.py
+smart_*.py
+interactive_*.py
+test_*.py
+usage_*.py
+init_*.py
+
+# Cache and temporary data
+cache/
+*.db
+analysis_output.txt
+analysis_results.txt
+
+# Emergency and internal planning docs that should stay private
+docs/internal/*emergency*
+docs/internal/*strategic*
+docs/internal/*commercial*
+docs/internal/*planning*
