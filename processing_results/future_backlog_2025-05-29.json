@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "category": "future_backlog",
+    "processed_at": "2025-05-29T12:37:48.527229",
+    "total_items": 0,
+    "confidence_level": 90,
+    "description": "Хорошие идеи на потом",
+    "cross_references": {
+      "t_pot_duplicates": [],
+      "dependencies": [],
+      "related_categories": []
+    },
+    "processing_stats": {
+      "auto_categorized": 0,
+      "manual_reviewed": 0,
+      "github_ready_items": 0
+    }
+  },
+  "items": []
+}
