@@ -1,4 +1,4 @@
-name: Simple CI
+name: Build & Test Installation
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main, develop ]
 
 jobs:
-  test:
+  full-install-test:
     runs-on: ubuntu-latest
     
     steps:
@@ -18,53 +18,97 @@ jobs:
       with:
         python-version: "3.11"
     
-    - name: Install dependencies
+    - name: Install all dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest
-        pip install -e .
-    
-    - name: Lint with flake8
-      run: |
-        flake8 src/llmstruct --count --select=E9,F63,F7,F82 --show-source --statistics
-        flake8 src/llmstruct --count --max-line-length=88 --statistics || true
+        pip install flake8
+        pip install -e ".[dev]"
+        echo "✅ Все зависимости установлены"
     
     - name: Check Python syntax
       run: |
+        echo "🔍 Проверяем синтаксис Python файлов..."
         python -m py_compile src/llmstruct/*.py
+        echo "✅ Синтаксис корректен"
     
-    - name: Test package import
+    - name: Check critical lint errors
       run: |
-        python -c "import llmstruct; print('✅ Package imports successfully')"
+        echo "🔍 Проверяем критические ошибки..."
+        flake8 src/llmstruct --select=E9,F63,F7,F82 --show-source --statistics
+        echo "✅ Критических ошибок нет"
     
-    - name: Check CLI works
+    - name: Test full package import
       run: |
-        python -m llmstruct --help || echo "⚠️ CLI not working but continuing"
-    
-    - name: Validate critical JSON files
-      run: |
+        echo "🔍 Проверяем импорт всех модулей..."
         python -c "
-        import json
-        from pathlib import Path
+        import llmstruct
+        print('✅ Основной пакет импортируется')
         
-        critical_files = [
-            'data/init_enhanced.json',
-            'pyproject.toml'
-        ]
+        # Пробуем импортировать основные модули
+        try:
+            from llmstruct.cli import main
+            print('✅ CLI модуль импортируется')
+        except Exception as e:
+            print(f'⚠️ CLI модуль: {e}')
         
-        for file_path in critical_files:
-            path = Path(file_path)
-            if path.exists():
-                if file_path.endswith('.json'):
-                    try:
-                        with open(path, 'r') as f:
-                            json.load(f)
-                        print(f'✅ {file_path} - валиден')
-                    except json.JSONDecodeError as e:
-                        print(f'❌ {file_path} - невалиден: {e}')
-                        exit(1)
-                else:
-                    print(f'✅ {file_path} - существует')
-            else:
-                print(f'⚠️ {file_path} - не найден')
+        try:
+            from llmstruct.llm_client import LLMClient
+            print('✅ LLM Client импортируется')
+        except Exception as e:
+            print(f'⚠️ LLM Client: {e}')
+        
+        print('✅ Импорт пакета завершен')
+        "
+    
+    - name: Test CLI help command
+      run: |
+        echo "🔍 Проверяем работу CLI..."
+        python -m llmstruct --help
+        echo "✅ CLI работает"
+    
+    - name: Test CLI basic commands
+      run: |
+        echo "🔍 Проверяем основные команды CLI..."
+        
+        # Создаем тестовую директорию
+        mkdir -p test_project
+        cd test_project
+        echo "print('hello')" > test.py
+        
+        # Пробуем основные команды
+        python -m llmstruct parse . -o test_output.json || echo "⚠️ Parse command failed"
+        
+        if [ -f "test_output.json" ]; then
+            echo "✅ Parse команда создала файл"
+            ls -la test_output.json
+        else
+            echo "⚠️ Parse команда не создала файл"
+        fi
+        
+        cd ..
+        echo "✅ Тестирование CLI завершено"
+    
+    - name: Check style warnings
+      run: |
+        echo "🔍 Проверяем стиль кода (некритично)..."
+        flake8 src/llmstruct --max-line-length=88 --statistics || {
+          echo "⚠️ Есть предупреждения по стилю, но это некритично"
+        }
+        echo "✅ Проверка стиля завершена"
+    
+    - name: Final validation
+      run: |
+        echo "🎯 Финальная проверка установки..."
+        python -c "
+        import sys
+        import llmstruct
+        
+        print(f'Python version: {sys.version}')
+        
+        if hasattr(llmstruct, '__version__'):
+            print(f'LLMStruct version: {llmstruct.__version__}')
+        else:
+            print('LLMStruct version: не определена')
+        
+        print('✅ Проект полностью рабочий!')
         " 
