@@ -63,11 +63,13 @@ app.middleware("http")(api_key_middleware)
 
 # Import and include routers (will be created next)
 from .routes import system
+from .routes import chat
 # from .routes import project, context, tasks
 # app.include_router(project.router, prefix="/api/v1/project", tags=["project"])
 # app.include_router(context.router, prefix="/api/v1/context", tags=["context"])  
 # app.include_router(tasks.router, prefix="/api/v1/tasks", tags=["tasks"])
 app.include_router(system.router, prefix="/api/v1/system", tags=["system"])
+app.include_router(chat.router, prefix="/api/v1", tags=["chat"])
 
 
 @app.get("/", tags=["root"])

@@ -214,4 +214,13 @@ class ErrorResponse(BaseModel):
                 "timestamp": "2024-03-26T12:00:00Z",
                 "request_id": "req_001"
             }
-        } 
+        }
+
+
+class ChatResponse(BaseModel):
+    """Chat response"""
+    content: str = Field(..., description="AI response content")
+    session_id: Optional[str] = Field(None, description="Session ID")
+    context_info: Dict[str, Any] = Field({}, description="Information about context used")
+    token_usage: Dict[str, int] = Field({}, description="Token usage statistics")
+    timestamp: str = Field(default_factory=lambda: datetime.now().isoformat(), description="Response timestamp") 

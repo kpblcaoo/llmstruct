@@ -1,19 +1,29 @@
 {
-  "timestamp": "2025-05-30T01:15:36.454273",
+  "timestamp": "2025-05-30T01:24:51.812883",
   "tools": {
     "cli_processor": {
       "name": "cli_processor",
-      "status": "CapabilityStatus.UNAVAILABLE",
-      "last_check": "2025-05-30T01:15:36.455104",
-      "response_time": 0.0008268356323242188,
-      "error_message": "No module named 'esprima'",
-      "capabilities": null
+      "status": "CapabilityStatus.AVAILABLE",
+      "last_check": "2025-05-30T01:24:51.814501",
+      "response_time": 0.0016109943389892578,
+      "error_message": null,
+      "capabilities": [
+        "command_processing",
+        "file_operations",
+        "queue_management",
+        "session_management",
+        "backup_creation",
+        "auto_update",
+        "context_commands",
+        "audit_commands",
+        "workspace_commands"
+      ]
     },
     "copilot_manager": {
       "name": "copilot_manager",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-30T01:15:36.458827",
-      "response_time": 0.0036935806274414062,
+      "last_check": "2025-05-30T01:24:51.815592",
+      "response_time": 0.0010776519775390625,
       "error_message": null,
       "capabilities": [
         "context_management",
@@ -27,8 +37,8 @@
     "context_orchestrator": {
       "name": "context_orchestrator",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-30T01:15:36.459628",
-      "response_time": 0.0006730556488037109,
+      "last_check": "2025-05-30T01:24:51.816062",
+      "response_time": 0.0004227161407470703,
       "error_message": null,
       "capabilities": [
         "context_optimization",
@@ -41,8 +51,8 @@
     "cache_system": {
       "name": "cache_system",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-30T01:15:36.520490",
-      "response_time": 0.06085968017578125,
+      "last_check": "2025-05-30T01:24:51.847310",
+      "response_time": 0.03125190734863281,
       "error_message": null,
       "capabilities": [
         "data_caching",
@@ -53,8 +63,8 @@
     "struct_parser": {
       "name": "struct_parser",
       "status": "CapabilityStatus.DEGRADED",
-      "last_check": "2025-05-30T01:15:36.552057",
-      "response_time": 0.02972722053527832,
+      "last_check": "2025-05-30T01:24:51.863229",
+      "response_time": 0.014114856719970703,
       "error_message": "Missing keys: ['summary']",
       "capabilities": [
         "project_structure_analysis",
@@ -66,8 +76,8 @@
     "docs_system": {
       "name": "docs_system",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-30T01:15:36.553752",
-      "response_time": 0.0004241466522216797,
+      "last_check": "2025-05-30T01:24:51.864776",
+      "response_time": 0.000469207763671875,
       "error_message": null,
       "capabilities": [
         "documentation_management",
@@ -132,11 +142,11 @@
     "error": "'list' object has no attribute 'values'"
   },
   "performance_metrics": {
-    "discovery_time": 0.13481688499450684,
+    "discovery_time": 0.13607048988342285,
     "cache_hit_rate": 1.0,
-    "system_load": 0.4797823586394607,
+    "system_load": 0.6123504077643332,
     "unused_function_integration": {
-      "integration_rate": 0,
+      "integration_rate": 0.0,
       "enhanced_categories": 0,
       "ai_capability_improvement": "basic"
     }

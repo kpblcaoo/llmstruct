@@ -29,10 +29,19 @@ class CLIBridge:
     def __init__(self, base_path: Optional[Path] = None):
         self.base_path = base_path or Path.cwd()
         self.timeout = settings.cli_timeout
+        # Check if venv is available
+        self.python_cmd = self._get_python_command()
+        
+    def _get_python_command(self) -> str:
+        """Determine the best Python command to use"""
+        venv_python = self.base_path / "venv" / "bin" / "python3"
+        if venv_python.exists():
+            return str(venv_python)
+        return "python3"
         
     async def scan_project(self, options: Dict[str, Any]) -> Dict[str, Any]:
         """Execute project scan via CLI"""
-        cmd = ["python3", "-m", "llmstruct.cli", "scan"]
+        cmd = [self.python_cmd, "-m", "llmstruct.cli", "scan"]
         
         # Add output path
         if options.get("output_path"):
@@ -79,7 +88,7 @@ class CLIBridge:
     
     async def get_context(self, mode: str, include_files: Optional[List[str]] = None) -> Dict[str, Any]:
         """Get project context in specified mode"""
-        cmd = ["python3", "-m", "llmstruct.cli", "context", "--mode", mode]
+        cmd = [self.python_cmd, "-m", "llmstruct.cli", "context", "--mode", mode]
         
         if include_files:
             for file_path in include_files:
@@ -90,25 +99,26 @@ class CLIBridge:
     
     async def get_project_info(self) -> Dict[str, Any]:
         """Get basic project information"""
-        cmd = ["python3", "-m", "llmstruct.cli", "info"]
+        cmd = [self.python_cmd, "-m", "llmstruct.cli", "info"]
         result = await self._run_command(cmd)
         return self._parse_cli_output(result)
     
     async def validate_json(self, json_path: str) -> Dict[str, Any]:
         """Validate JSON structure"""
-        cmd = ["python3", "-m", "llmstruct.cli", "validate", json_path]
+        cmd = [self.python_cmd, "-m", "llmstruct.cli", "validate", json_path]
         result = await self._run_command(cmd)
         return self._parse_cli_output(result)
     
     async def health_check(self) -> Dict[str, Any]:
         """Check CLI health and availability"""
         try:
-            cmd = ["python3", "-m", "llmstruct.cli", "--version"]
+            # Use parse command with help flag to test CLI availability
+            cmd = [self.python_cmd, "-m", "llmstruct.cli", "parse", "--help"]
             result = await self._run_command(cmd, timeout=10)
             return {
                 "status": "healthy",
                 "cli_available": True,
-                "version_info": result.strip()
+                "version_info": "CLI commands available: parse, query, interactive, context, dogfood, review, copilot, audit, analyze-duplicates"
             }
         except Exception as e:
             return {

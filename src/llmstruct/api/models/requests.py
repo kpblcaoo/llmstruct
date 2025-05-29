@@ -121,4 +121,12 @@ class ValidationRequest(BaseModel):
                 "json_path": "output/project_structure.json",
                 "schema_path": "schema/custom.json"
             }
-        } 
+        }
+
+
+class ChatMessage(BaseModel):
+    """Chat message request"""
+    content: str = Field(..., description="Message content")
+    session_id: Optional[str] = Field(None, description="Optional session ID for conversation history")
+    context_mode: str = Field("focused", description="Context mode: full, focused, minimal, session")
+    metadata: Optional[Dict[str, Any]] = Field(None, description="Optional message metadata") 
