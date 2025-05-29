@@ -1,9 +1,17 @@
 {
   "version": "0.1.0",
-  "session_id": "TEST-001",
-  "branch": "feature/json-script-abstraction",
+  "session_id": "SES-E5-001",
+  "epic_id": "epic_5_fastapi_implementation",
+  "title": "Basic FastAPI structure & CLI bridge",
+  "branch": "feature/fastapi-implementation",
   "status": "active",
-  "started_at": "2024-03-26T12:00:00Z",
+  "started_at": "2025-05-30T01:00:00Z",
   "author": "AI Assistant",
-  "notes": "Testing context preservation and system capabilities"
+  "target_issues": ["TSK-119"],
+  "progress": {
+    "phase": "Basic implementation",
+    "completion": "40%",
+    "next_milestone": "Project scanning endpoints"
+  },
+  "notes": "FastAPI basic structure implemented and tested. CLI bridge working. Next: core endpoints."
 }

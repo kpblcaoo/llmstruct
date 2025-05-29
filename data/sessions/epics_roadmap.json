@@ -3,9 +3,9 @@
   "updated_at": "2025-05-29T15:30:00Z",
   "description": "Master план сессий по эпикам - связка между найденными эпиками и активными сессиями",
   "metadata": {
-    "source": "processing_results/github_epics_2025-05-29.json",
-    "total_epics": 22,
-    "planned_sessions": 8,
+    "source": "processing_results/github_epics_2025-05-29.json + manual FastAPI epic",
+    "total_epics": 23,
+    "planned_sessions": 9,
     "active_sessions": 1
   },
   "epics": {
@@ -198,6 +198,79 @@
         "Controlled rollout для dangerous частей",
         "Automated testing для safety критической функциональности"
       ]
+    },
+    "epic_5_fastapi_implementation": {
+      "id": "epic_5",
+      "name": "FastAPI HTTP API Implementation",
+      "status": "in_progress",
+      "priority": "high",
+      "github_epic_issue": "#TBD",
+      "estimated_sessions": 4,
+      "estimated_duration": "4 weeks",
+      "branch_pattern": "feature/fastapi-implementation",
+      "description": "REST API implementation для LLMStruct с CLI bridge интеграцией",
+      "current_session": "SES-E5-001",
+      "planned_sessions": [
+        {
+          "session_id": "SES-E5-001",
+          "title": "Basic FastAPI structure & CLI bridge",
+          "type": "epic_work",
+          "target_issues": ["TSK-119"],
+          "estimated_duration": "1 week",
+          "branch": "feature/fastapi-implementation",
+          "status": "in_progress",
+          "progress": {
+            "completed": [
+              "FastAPI app structure",
+              "CLI bridge service",
+              "Pydantic models",
+              "System routes (health, status)",
+              "Authentication middleware",
+              "Logging middleware",
+              "Configuration management"
+            ],
+            "next": [
+              "Project scanning endpoints",
+              "Context generation endpoints",
+              "Validation endpoints"
+            ]
+          }
+        },
+        {
+          "session_id": "SES-E5-002",
+          "title": "Core project endpoints (scan, context, validate)",
+          "type": "epic_work",
+          "target_issues": ["TSK-119-SCAN", "TSK-119-CONTEXT"],
+          "estimated_duration": "1 week",
+          "branch": "feature/fastapi-core-endpoints",
+          "status": "planned"
+        },
+        {
+          "session_id": "SES-E5-003",
+          "title": "Advanced features (tasks, websockets, caching)",
+          "type": "epic_work",
+          "target_issues": ["TSK-119-ADVANCED"],
+          "estimated_duration": "1 week",
+          "branch": "feature/fastapi-advanced",
+          "status": "planned"
+        },
+        {
+          "session_id": "SES-E5-004",
+          "title": "Production ready (monitoring, docs, deployment)",
+          "type": "epic_work",
+          "target_issues": ["TSK-119-PROD"],
+          "estimated_duration": "1 week",
+          "branch": "feature/fastapi-production",
+          "status": "planned"
+        }
+      ],
+      "success_criteria": [
+        "Full HTTP API для всех CLI команд",
+        "Async CLI bridge работает стабильно",
+        "Authentication & security implemented",
+        "OpenAPI documentation complete",
+        "Production deployment ready"
+      ]
     }
   },
   "session_management": {
@@ -237,10 +310,11 @@
     }
   },
   "statistics": {
-    "total_epics": 4,
-    "total_planned_sessions": 12,
-    "estimated_total_duration": "7 weeks",
+    "total_epics": 5,
+    "total_planned_sessions": 16,
+    "estimated_total_duration": "11 weeks",
     "critical_path": ["epic_1", "epic_2", "epic_3"],
-    "parallel_possible": ["epic_4"]
+    "parallel_possible": ["epic_4", "epic_5_fastapi_implementation"],
+    "in_progress": ["epic_5_fastapi_implementation"]
   }
 } 
