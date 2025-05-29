@@ -82,7 +82,7 @@ class GrokClient:
     def __init__(self, api_key: Optional[str] = None):
         self.api_key = api_key or os.getenv("GROK_API_KEY") or os.getenv("XAI_API_KEY")
         self.base_url = "https://api.x.ai/v1"
-        self.model = "grok-beta"
+        self.model = "grok-2-1212"
         
     async def chat_completion(self, messages: List[Dict[str, str]], temperature: float = 0.7) -> Dict[str, Any]:
         """Send chat completion request to Grok"""
@@ -99,6 +99,7 @@ class GrokClient:
             "model": self.model,
             "messages": messages,
             "temperature": temperature,
+            "max_tokens": 1000,
             "stream": False
         }
         
