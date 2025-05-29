@@ -63,7 +63,27 @@ jobs:
     - name: Test CLI help command
       run: |
         echo "🔍 Проверяем работу CLI..."
-        python -m llmstruct --help
+        
+        # Проверяем что CLI модуль импортируется
+        python -c "from llmstruct.cli import main; print('✅ CLI модуль импортируется')"
+        
+        # Проверяем команду help
+        python -m llmstruct --help || {
+          echo "❌ CLI --help failed, диагностика:"
+          python -c "
+          try:
+              import llmstruct
+              print('✅ llmstruct импортируется')
+              from llmstruct.cli import main
+              print('✅ CLI main импортируется')
+          except Exception as e:
+              print(f'❌ Ошибка импорта: {e}')
+              import traceback
+              traceback.print_exc()
+          "
+          exit 1
+        }
+        
         echo "✅ CLI работает"
     
     - name: Test CLI basic commands
