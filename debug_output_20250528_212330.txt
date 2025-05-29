@@ -1,0 +1,124 @@
+
+=== DEBUG TERMINAL OUTPUT ===
+Command: python start_development.py
+Description: Start Development Script
+Timestamp: 2025-05-28T21:23:44.337456
+Exit Code: 0
+
+=== STDOUT ===
+🚀 LLMStruct Development Environment Startup
+==================================================
+
+🔍 Checking development environment...
+✅ Virtual environment active
+✅ data/init_enhanced.json
+✅ data/cursor/cursor_context_config.json
+✅ data/cursor/cursor_personal_bridge.json
+✅ run_ai_diagnostics.py
+✅ struct.json
+✅ All required files present
+
+🎼 Initializing Workflow Orchestrator...
+✅ WorkflowOrchestrator initialized
+🔍 Loading comprehensive context...
+✅ Workspace State Manager initialized
+✅ Context loaded successfully
+   📊 Copilot layers: 0
+   🧠 AI capabilities: 0
+   📁 Modules: 56
+   ⚙️  Functions: 455
+   🔄 Duplication: 10.6%
+
+🔄 Syncing architecture components...
+   ✅ struct_update
+   ✅ copilot_refresh
+
+🏥 Running system health check...
+✅ System health check passed
+
+💡 Getting optimization suggestions...
+🎼 Using WorkflowOrchestrator for enhanced analysis...
+🔴 High Priority Code Improvements:
+   • main: Consider consolidating main into a shared utility module
+   • get_system_metrics: Consider consolidating get_system_metrics into a shared utility module
+   • setup_proxy: Consider consolidating setup_proxy into a shared utility module
+🎯 Recommended Actions:
+   1. Review high-priority duplicates first
+   2. Create shared utility modules for common functions
+
+📦 Checking git status...
+📝 Uncommitted changes detected:
+   M data/ai_diagnostics_report.json
+    M data/ai_self_awareness/capability_cache.json
+    M src/llmstruct/cli.py
+    M start_development.py
+    M struct.json
+   ... and 10 more
+⚠️  Could not check remote status
+
+📋 Current project context...
+🎯 Project Vision:
+   Create a universal, LLM-optimized JSON format for codebase understanding and automation
+📌 Current Goals:
+   1. Universal JSON format for any codebase structure
+   2. Seamless LLM integration with context optimization
+   3. Queue-based automation for LLM-driven workflows
+💼 Primary Business Goal: financial_independence_through_ai_tools
+🔍 Focus Areas:
+   • llm_optimization_and_automation
+   • commercial_api_development
+   • enterprise_feature_implementation
+
+==================================================
+🎉 Development environment ready!
+✅ All systems operational
+🎼 WorkflowOrchestrator: Active and integrated
+
+🛠️  Useful development commands:
+   python run_ai_diagnostics.py           - Full system diagnostics
+   python run_ai_diagnostics.py health    - Quick health check
+   python run_ai_diagnostics.py optimize  - Get optimization suggestions
+   python run_ai_diagnostics.py stress    - Performance stress test
+   python run_ai_diagnostics.py monitor   - Continuous monitoring
+   python -m llmstruct.cli --help         - CLI help
+
+🎼 Workflow Orchestrator commands:
+   python -m llmstruct analyze-duplicates  - Analyze code duplication
+   python -m llmstruct audit --include-duplicates - Full project audit
+   python -c "from llmstruct.workflow_orchestrator import WorkflowOrchestrator; print(WorkflowOrchestrator('.').get_ai_onboarding_guide())" - AI onboarding guide
+
+🎯 AI Integration commands:
+   # Get comprehensive AI status
+   python -c "from llmstruct.ai_self_awareness import SystemCapabilityDiscovery; print(SystemCapabilityDiscovery('.').get_cursor_status_report())"
+
+   # Test Cursor integration
+   python -c "from llmstruct.cursor_integration import create_cursor_integration; ci = create_cursor_integration('.'); print(ci.get_comprehensive_cursor_response('system status'))"
+
+   # Get current workflow context
+   python -c "from llmstruct.workflow_orchestrator import WorkflowOrchestrator; print(WorkflowOrchestrator('.').get_current_context())"
+
+🚀 Happy coding with AI-enhanced development!
+🎼 WorkflowOrchestrator provides comprehensive context management
+==================================================
+
+
+=== STDERR ===
+2025-05-28 21:23:31,446 - INFO - Loaded copilot config from /home/kpblc/projects/github/llmstruct/data/copilot_init.json
+2025-05-28 21:23:31,454 - INFO - Performing fresh capability discovery with unused function integration...
+2025-05-28 21:23:31,530 - INFO - Loaded copilot config from /home/kpblc/projects/github/llmstruct/data/copilot_init.json
+2025-05-28 21:23:31,531 - WARNING - Context test failed: 'scenarios'
+2025-05-28 21:23:31,535 - INFO - Cached JSON: /home/kpblc/projects/github/llmstruct/struct.json with artifact_id: test_ai_key
+2025-05-28 21:23:31,647 - INFO - Enhanced capability discovery completed in 0.09s
+2025-05-28 21:23:31,671 - INFO - Auto-detected primary language: python
+2025-05-28 21:23:31,672 - INFO - Converting Python project...
+2025-05-28 21:23:31,857 - ERROR - Failed to parse /home/kpblc/projects/github/llmstruct/deploy_llmstruct.py: invalid syntax (deploy_llmstruct.py, line 23)
+2025-05-28 21:23:32,231 - ERROR - Failed to parse /home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/22.05.25/deploy_embedded_files (2).py: illegal target for annotation (deploy_embedded_files (2).py, line 1)
+2025-05-28 21:23:32,386 - ERROR - Failed to parse /home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/llm_client (1).py: invalid syntax (llm_client (1).py, line 3)
+2025-05-28 21:23:32,387 - ERROR - Failed to parse /home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/llm_client (2).py: invalid syntax (llm_client (2).py, line 1)
+2025-05-28 21:23:32,402 - ERROR - Failed to parse /home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/json_selector.py: expected 'except' or 'finally' block (json_selector.py, line 32)
+2025-05-28 21:23:32,415 - ERROR - Failed to parse /home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/deploy_llmstruct.py: invalid syntax (deploy_llmstruct.py, line 12)
+2025-05-28 21:23:32,416 - ERROR - Failed to parse /home/kpblc/projects/github/llmstruct/temp_workfiles/unsorted_mess/dump/src_llmstruct_scripts_doc_generator.py: invalid syntax (src_llmstruct_scripts_doc_generator.py, line 1)
+2025-05-28 21:23:32,774 - INFO - Refreshed all context layers
+
+
+=== END ===

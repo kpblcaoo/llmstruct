@@ -29,10 +29,10 @@ class CapabilityStatus(Enum):
 
 class ContextMode(Enum):
     """Available context modes."""
-    FULL = "FULL"
-    FOCUSED = "FOCUSED"
-    MINIMAL = "MINIMAL"
-    SESSION = "SESSION"
+    FULL = "full"
+    FOCUSED = "focused"
+    MINIMAL = "minimal"
+    SESSION = "session"
 
 
 @dataclass
@@ -531,13 +531,13 @@ AI Enhancement Level: SIGNIFICANT IMPROVEMENT ACHIEVED
                 scenarios = list(scenario_mappings.keys())
             
             return ContextCapabilities(
-                available_modes=["FULL", "FOCUSED", "MINIMAL", "SESSION"],
-                current_mode="FOCUSED",  # Default
+                available_modes=["full", "focused", "minimal", "session"],
+                current_mode="focused",  # Default
                 token_budgets={
-                    "FULL": config.get("modes", {}).get("FULL", {}).get("max_tokens", 150000),
-                    "FOCUSED": config.get("modes", {}).get("FOCUSED", {}).get("max_tokens", 50000),
-                    "MINIMAL": config.get("modes", {}).get("MINIMAL", {}).get("max_tokens", 15000),
-                    "SESSION": config.get("modes", {}).get("SESSION", {}).get("max_tokens", 30000)
+                    "full": config.get("modes", {}).get("full", {}).get("max_tokens", 150000),
+                    "focused": config.get("modes", {}).get("focused", {}).get("max_tokens", 50000),
+                    "minimal": config.get("modes", {}).get("minimal", {}).get("max_tokens", 15000),
+                    "session": config.get("modes", {}).get("session", {}).get("max_tokens", 30000)
                 },
                 loaded_layers=[],
                 available_layers=["essential", "structural", "operational", "analytical"],
@@ -548,7 +548,7 @@ AI Enhancement Level: SIGNIFICANT IMPROVEMENT ACHIEVED
             logger.error(f"Failed to discover context capabilities: {e}")
             return ContextCapabilities(
                 available_modes=[],
-                current_mode="UNKNOWN",
+                current_mode="unknown",
                 token_budgets={},
                 loaded_layers=[],
                 available_layers=[],

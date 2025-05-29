@@ -1,0 +1,246 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2025-05-29T15:30:00Z",
+  "description": "Master план сессий по эпикам - связка между найденными эпиками и активными сессиями",
+  "metadata": {
+    "source": "processing_results/github_epics_2025-05-29.json",
+    "total_epics": 22,
+    "planned_sessions": 8,
+    "active_sessions": 1
+  },
+  "epics": {
+    "epic_1_ai_branch_safety": {
+      "id": "epic_1",
+      "name": "AI Branch Safety System",
+      "status": "planned",
+      "priority": "critical",
+      "github_epic_issue": "#TBD",
+      "estimated_sessions": 4,
+      "estimated_duration": "2 weeks",
+      "branch_pattern": "ai/epic-1-safety-system",
+      "description": "Система строгого контроля AI операций через ветки",
+      "current_session": null,
+      "planned_sessions": [
+        {
+          "session_id": "SES-E1-001",
+          "title": "AIBranchSafetyManager implementation",
+          "type": "epic_work",
+          "target_issues": ["ISSUE-001", "ISSUE-002"],
+          "estimated_duration": "3 days",
+          "branch": "ai/epic-1-session-001-safety-manager",
+          "status": "planned"
+        },
+        {
+          "session_id": "SES-E1-002", 
+          "title": "Whitelist & dangerous operations blocking",
+          "type": "epic_work",
+          "target_issues": ["ISSUE-003", "ISSUE-004"],
+          "estimated_duration": "3 days",
+          "branch": "ai/epic-1-session-002-operations",
+          "status": "planned"
+        },
+        {
+          "session_id": "SES-E1-003",
+          "title": "AI middleware integration",
+          "type": "epic_work", 
+          "target_issues": ["ISSUE-005"],
+          "estimated_duration": "2 days",
+          "branch": "ai/epic-1-session-003-middleware",
+          "status": "planned"
+        },
+        {
+          "session_id": "SES-E1-004",
+          "title": "Testing & validation",
+          "type": "epic_work",
+          "target_issues": ["ISSUE-006"],
+          "estimated_duration": "2 days", 
+          "branch": "ai/epic-1-session-004-testing",
+          "status": "planned"
+        }
+      ],
+      "success_criteria": [
+        "AI блокируется без ai-ветки на 100%",
+        "Whitelist операций работает корректно",
+        "Все тесты проходят",
+        "Документация написана"
+      ]
+    },
+    "epic_2_session_management": {
+      "id": "epic_2",
+      "name": "AI Session Management", 
+      "status": "planned",
+      "priority": "high",
+      "github_epic_issue": "#TBD",
+      "estimated_sessions": 3,
+      "estimated_duration": "2 weeks",
+      "branch_pattern": "ai/epic-2-session-management",
+      "description": "Управление AI сессиями с привязкой к веткам",
+      "current_session": null,
+      "planned_sessions": [
+        {
+          "session_id": "SES-E2-001",
+          "title": "AISessionManager core implementation",
+          "type": "epic_work",
+          "target_issues": ["ISSUE-007"],
+          "estimated_duration": "2 days",
+          "branch": "ai/epic-2-session-001-core",
+          "status": "planned"
+        },
+        {
+          "session_id": "SES-E2-002",
+          "title": "Session-branch binding & integrity",
+          "type": "epic_work",
+          "target_issues": ["ISSUE-008", "ISSUE-009"],
+          "estimated_duration": "4 days",
+          "branch": "ai/epic-2-session-002-binding",
+          "status": "planned"
+        },
+        {
+          "session_id": "SES-E2-003",
+          "title": "Session CLI commands",
+          "type": "epic_work",
+          "target_issues": ["ISSUE-010"],
+          "estimated_duration": "2 days",
+          "branch": "ai/epic-2-session-003-cli",
+          "status": "planned"
+        }
+      ],
+      "success_criteria": [
+        "Сессии привязываются к веткам",
+        "Нарушения целостности детектируются",
+        "Session recovery работает",
+        "AI знает контекст текущей сессии"
+      ]
+    },
+    "epic_3_enhanced_dogfood": {
+      "id": "epic_3",
+      "name": "Enhanced Dogfood Command",
+      "status": "planned", 
+      "priority": "high",
+      "github_epic_issue": "#TBD",
+      "estimated_sessions": 3,
+      "estimated_duration": "2 weeks",
+      "branch_pattern": "ai/epic-3-dogfood-command",
+      "description": "Безопасная команда AI-dogfooding с проверками",
+      "dependencies": ["epic_1", "epic_2"],
+      "current_session": null,
+      "planned_sessions": [
+        {
+          "session_id": "SES-E3-001",
+          "title": "Basic dogfood command (TSK-095)",
+          "type": "epic_work",
+          "target_issues": ["ISSUE-011"],
+          "estimated_duration": "3 days",
+          "branch": "ai/epic-3-session-001-basic",
+          "status": "planned"
+        },
+        {
+          "session_id": "SES-E3-002",
+          "title": "Safety & session integration",
+          "type": "epic_work",
+          "target_issues": ["ISSUE-012", "ISSUE-013"],
+          "estimated_duration": "4 days",
+          "branch": "ai/epic-3-session-002-integration",
+          "status": "planned"
+        },
+        {
+          "session_id": "SES-E3-003",
+          "title": "Metrics & monitoring",
+          "type": "epic_work",
+          "target_issues": ["ISSUE-014", "ISSUE-015"],
+          "estimated_duration": "3 days",
+          "branch": "ai/epic-3-session-003-metrics",
+          "status": "planned"
+        }
+      ],
+      "success_criteria": [
+        "dogfood команда работает безопасно",
+        "Интеграция с safety system",
+        "Метрики собираются",
+        "Session management интегрирован"
+      ]
+    },
+    "epic_4_risk_based_development": {
+      "id": "epic_4",
+      "name": "Risk-Based Development Workflow",
+      "status": "planned",
+      "priority": "medium",
+      "github_epic_issue": "#TBD", 
+      "estimated_sessions": 2,
+      "estimated_duration": "1 week",
+      "branch_pattern": "ai/epic-4-risk-development",
+      "description": "Risk assessment и controlled rollout система",
+      "dependencies": ["epic_1"],
+      "current_session": null,
+      "planned_sessions": [
+        {
+          "session_id": "SES-E4-001",
+          "title": "Risk assessment framework",
+          "type": "epic_work",
+          "target_issues": ["ISSUE-016"],
+          "estimated_duration": "3 days",
+          "branch": "ai/epic-4-session-001-risk",
+          "status": "planned"
+        },
+        {
+          "session_id": "SES-E4-002",
+          "title": "Controlled rollout & fast iterations",
+          "type": "epic_work",
+          "target_issues": ["ISSUE-017", "ISSUE-018", "ISSUE-019"],
+          "estimated_duration": "4 days",
+          "branch": "ai/epic-4-session-002-rollout",
+          "status": "planned"
+        }
+      ],
+      "success_criteria": [
+        "Risk assessment автоматизирован",
+        "Быстрые итерации для safe частей",
+        "Controlled rollout для dangerous частей",
+        "Automated testing для safety критической функциональности"
+      ]
+    }
+  },
+  "session_management": {
+    "naming_conventions": {
+      "epic_sessions": "SES-E{epic_number}-{session_number}",
+      "epic_branches": "ai/epic-{number}-session-{session_number}-{description}",
+      "single_task_sessions": "SES-T{task_number}",
+      "single_task_branches": "ai/task-{task_number}-{description}"
+    },
+    "workflow": {
+      "session_start": [
+        "1. Choose epic or single task",
+        "2. Create appropriate branch",
+        "3. Update current_session.json", 
+        "4. Prepare AI context",
+        "5. Start work session"
+      ],
+      "session_end": [
+        "1. Complete target issues",
+        "2. Create PR with references",
+        "3. Update session status",
+        "4. Archive session data",
+        "5. Switch to next session"
+      ]
+    }
+  },
+  "integration": {
+    "github_sync": {
+      "epic_issues_source": "processing_results/github_epics_2025-05-29.json",
+      "sync_script": "scripts/github_sync_manager_enhanced.py",
+      "last_sync": null
+    },
+    "active_sessions": {
+      "current_file": "data/sessions/current_session.json",
+      "sessions_log": "data/sessions/ai_sessions.json", 
+      "worklog": "data/sessions/worklog.json"
+    }
+  },
+  "statistics": {
+    "total_epics": 4,
+    "total_planned_sessions": 12,
+    "estimated_total_duration": "7 weeks",
+    "critical_path": ["epic_1", "epic_2", "epic_3"],
+    "parallel_possible": ["epic_4"]
+  }
+} 

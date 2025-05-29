@@ -1,0 +1,625 @@
+{
+  "analysis": {
+    "total_unique_functions": 360,
+    "duplicated_functions": 38,
+    "duplication_details": {
+      "main": [
+        "start_development.py",
+        "run_ai_diagnostics.py",
+        "board_cli.py",
+        "final_system_validation.py",
+        "validate_schemas.py",
+        "validate_sessions.py",
+        "verify_llm_response.py",
+        "examples/python_project_main.py",
+        "docs/cli.py",
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/gh_view.py",
+        "src/llmstruct/transpiler.py",
+        "src/llmstruct/cli.py",
+        "src/llmstruct/parsers/universal_converter.py",
+        "src/llmstruct/parsers/go_analyzer.py",
+        "scripts/collector.py",
+        "scripts/session_cli.py",
+        "scripts/auto_update_struct.py",
+        "scripts/export_to_github_projects.py",
+        "scripts/validate_refs.py",
+        "scripts/deploy_embedded_files.py"
+      ],
+      "load_gitignore": [
+        "collector.py",
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "scripts/auto_update_struct.py"
+      ],
+      "load_json": [
+        "board_cli.py",
+        "validate_schemas.py",
+        "validate_sessions.py",
+        "src/llmstruct/workflow_orchestrator.py",
+        "scripts/validate_json.py"
+      ],
+      "validate_json_against_schema": [
+        "validate_schemas.py",
+        "validate_sessions.py"
+      ],
+      "load_json_file": [
+        "verify_llm_response.py",
+        "scripts/session_cli.py"
+      ],
+      "__init__": [
+        "docs/cache.py",
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/cli_config.py",
+        "src/llmstruct/grok.py",
+        "src/llmstruct/cli_commands.py",
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/ai_cli_integration.py",
+        "src/llmstruct/cli_utils.py",
+        "src/llmstruct/copilot.py",
+        "src/llmstruct/gh_view.py",
+        "src/llmstruct/llm_client.py",
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cache.py",
+        "src/llmstruct/transpiler.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cli_core.py",
+        "src/llmstruct/workspace.py",
+        "src/llmstruct/parsers/javascript_parser.py",
+        "src/llmstruct/parsers/universal_converter.py",
+        "src/llmstruct/parsers/go_analyzer.py",
+        "src/llmstruct/parsers/python_parser.py",
+        "scripts/export_to_github_projects.py"
+      ],
+      "create_tables": [
+        "docs/cache.py",
+        "src/llmstruct/cache.py"
+      ],
+      "cache_json": [
+        "docs/cache.py",
+        "src/llmstruct/cache.py"
+      ],
+      "get_metadata": [
+        "docs/cache.py",
+        "src/llmstruct/cache.py"
+      ],
+      "get_full_json": [
+        "docs/cache.py",
+        "src/llmstruct/cache.py"
+      ],
+      "close": [
+        "docs/cache.py",
+        "src/llmstruct/copilot.py",
+        "src/llmstruct/cache.py"
+      ],
+      "filter_struct": [
+        "docs/self_run.py",
+        "src/llmstruct/self_run.py"
+      ],
+      "attach_to_llm_request": [
+        "docs/self_run.py",
+        "src/llmstruct/self_run.py"
+      ],
+      "filter_json": [
+        "docs/json_selector.py",
+        "src/llmstruct/json_selector.py"
+      ],
+      "select_json": [
+        "docs/json_selector.py",
+        "src/llmstruct/json_selector.py"
+      ],
+      "load_config": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "scripts/auto_update_struct.py"
+      ],
+      "read_file_content": [
+        "docs/cli.py",
+        "src/llmstruct/cli_utils.py",
+        "src/llmstruct/cli.py"
+      ],
+      "write_to_file": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py"
+      ],
+      "parse_files_from_response": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py"
+      ],
+      "interactive": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py"
+      ],
+      "parse": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py"
+      ],
+      "query": [
+        "docs/cli.py",
+        "src/llmstruct/llm_client.py",
+        "src/llmstruct/cli.py"
+      ],
+      "context": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py"
+      ],
+      "dogfood": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py"
+      ],
+      "review": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py"
+      ],
+      "__post_init__": [
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/parsers/universal_converter.py"
+      ],
+      "start_session": [
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "_load_config": [
+        "src/llmstruct/cli_config.py",
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/copilot.py",
+        "src/llmstruct/gh_view.py"
+      ],
+      "get_optimized_context": [
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/copilot.py"
+      ],
+      "_load_session_context": [
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "validate_json": [
+        "src/llmstruct/cli_utils.py",
+        "scripts/deploy_embedded_files.py",
+        "scripts/validate_json.py"
+      ],
+      "get_goal_aligned_suggestions": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "_load_cursor_config": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "_load_personal_bridge": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "_apply_privacy_filter": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "_filter_sensitive_dict": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "validate_struct_json": [
+        "src/llmstruct/validators/json_validator.py",
+        "scripts/auto_update_struct.py"
+      ],
+      "generate_json": [
+        "src/llmstruct/generators/json_generator.py",
+        "scripts/auto_update_struct.py"
+      ]
+    },
+    "duplication_percentage": 10.555555555555555
+  },
+  "recommendations": [
+    {
+      "function": "main",
+      "duplicated_in": [
+        "start_development.py",
+        "run_ai_diagnostics.py",
+        "board_cli.py",
+        "final_system_validation.py",
+        "validate_schemas.py",
+        "validate_sessions.py",
+        "verify_llm_response.py",
+        "examples/python_project_main.py",
+        "docs/cli.py",
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/gh_view.py",
+        "src/llmstruct/transpiler.py",
+        "src/llmstruct/cli.py",
+        "src/llmstruct/parsers/universal_converter.py",
+        "src/llmstruct/parsers/go_analyzer.py",
+        "scripts/collector.py",
+        "scripts/session_cli.py",
+        "scripts/auto_update_struct.py",
+        "scripts/export_to_github_projects.py",
+        "scripts/validate_refs.py",
+        "scripts/deploy_embedded_files.py"
+      ],
+      "recommendation": "Consider consolidating main into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "load_gitignore",
+      "duplicated_in": [
+        "collector.py",
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "scripts/auto_update_struct.py"
+      ],
+      "recommendation": "Consider consolidating load_gitignore into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "load_json",
+      "duplicated_in": [
+        "board_cli.py",
+        "validate_schemas.py",
+        "validate_sessions.py",
+        "src/llmstruct/workflow_orchestrator.py",
+        "scripts/validate_json.py"
+      ],
+      "recommendation": "Consider consolidating load_json into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "validate_json_against_schema",
+      "duplicated_in": [
+        "validate_schemas.py",
+        "validate_sessions.py"
+      ],
+      "recommendation": "Consider consolidating validate_json_against_schema into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "load_json_file",
+      "duplicated_in": [
+        "verify_llm_response.py",
+        "scripts/session_cli.py"
+      ],
+      "recommendation": "Consider consolidating load_json_file into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "__init__",
+      "duplicated_in": [
+        "docs/cache.py",
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/cli_config.py",
+        "src/llmstruct/grok.py",
+        "src/llmstruct/cli_commands.py",
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/ai_cli_integration.py",
+        "src/llmstruct/cli_utils.py",
+        "src/llmstruct/copilot.py",
+        "src/llmstruct/gh_view.py",
+        "src/llmstruct/llm_client.py",
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cache.py",
+        "src/llmstruct/transpiler.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cli_core.py",
+        "src/llmstruct/workspace.py",
+        "src/llmstruct/parsers/javascript_parser.py",
+        "src/llmstruct/parsers/universal_converter.py",
+        "src/llmstruct/parsers/go_analyzer.py",
+        "src/llmstruct/parsers/python_parser.py",
+        "scripts/export_to_github_projects.py"
+      ],
+      "recommendation": "Consider consolidating __init__ into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "create_tables",
+      "duplicated_in": [
+        "docs/cache.py",
+        "src/llmstruct/cache.py"
+      ],
+      "recommendation": "Consider consolidating create_tables into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "cache_json",
+      "duplicated_in": [
+        "docs/cache.py",
+        "src/llmstruct/cache.py"
+      ],
+      "recommendation": "Consider consolidating cache_json into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "get_metadata",
+      "duplicated_in": [
+        "docs/cache.py",
+        "src/llmstruct/cache.py"
+      ],
+      "recommendation": "Consider consolidating get_metadata into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "get_full_json",
+      "duplicated_in": [
+        "docs/cache.py",
+        "src/llmstruct/cache.py"
+      ],
+      "recommendation": "Consider consolidating get_full_json into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "close",
+      "duplicated_in": [
+        "docs/cache.py",
+        "src/llmstruct/copilot.py",
+        "src/llmstruct/cache.py"
+      ],
+      "recommendation": "Consider consolidating close into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "filter_struct",
+      "duplicated_in": [
+        "docs/self_run.py",
+        "src/llmstruct/self_run.py"
+      ],
+      "recommendation": "Consider consolidating filter_struct into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "attach_to_llm_request",
+      "duplicated_in": [
+        "docs/self_run.py",
+        "src/llmstruct/self_run.py"
+      ],
+      "recommendation": "Consider consolidating attach_to_llm_request into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "filter_json",
+      "duplicated_in": [
+        "docs/json_selector.py",
+        "src/llmstruct/json_selector.py"
+      ],
+      "recommendation": "Consider consolidating filter_json into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "select_json",
+      "duplicated_in": [
+        "docs/json_selector.py",
+        "src/llmstruct/json_selector.py"
+      ],
+      "recommendation": "Consider consolidating select_json into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "load_config",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py",
+        "scripts/auto_update_struct.py"
+      ],
+      "recommendation": "Consider consolidating load_config into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "read_file_content",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli_utils.py",
+        "src/llmstruct/cli.py"
+      ],
+      "recommendation": "Consider consolidating read_file_content into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "write_to_file",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py"
+      ],
+      "recommendation": "Consider consolidating write_to_file into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "parse_files_from_response",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py"
+      ],
+      "recommendation": "Consider consolidating parse_files_from_response into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "interactive",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py"
+      ],
+      "recommendation": "Consider consolidating interactive into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "parse",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py"
+      ],
+      "recommendation": "Consider consolidating parse into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "query",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/llm_client.py",
+        "src/llmstruct/cli.py"
+      ],
+      "recommendation": "Consider consolidating query into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "context",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py"
+      ],
+      "recommendation": "Consider consolidating context into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "dogfood",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py"
+      ],
+      "recommendation": "Consider consolidating dogfood into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "review",
+      "duplicated_in": [
+        "docs/cli.py",
+        "src/llmstruct/cli.py"
+      ],
+      "recommendation": "Consider consolidating review into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "__post_init__",
+      "duplicated_in": [
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/parsers/universal_converter.py"
+      ],
+      "recommendation": "Consider consolidating __post_init__ into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "start_session",
+      "duplicated_in": [
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "recommendation": "Consider consolidating start_session into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "_load_config",
+      "duplicated_in": [
+        "src/llmstruct/cli_config.py",
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/copilot.py",
+        "src/llmstruct/gh_view.py"
+      ],
+      "recommendation": "Consider consolidating _load_config into a shared utility module",
+      "priority": "high"
+    },
+    {
+      "function": "get_optimized_context",
+      "duplicated_in": [
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/copilot.py"
+      ],
+      "recommendation": "Consider consolidating get_optimized_context into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "_load_session_context",
+      "duplicated_in": [
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "recommendation": "Consider consolidating _load_session_context into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "validate_json",
+      "duplicated_in": [
+        "src/llmstruct/cli_utils.py",
+        "scripts/deploy_embedded_files.py",
+        "scripts/validate_json.py"
+      ],
+      "recommendation": "Consider consolidating validate_json into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "get_goal_aligned_suggestions",
+      "duplicated_in": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "recommendation": "Consider consolidating get_goal_aligned_suggestions into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "_load_cursor_config",
+      "duplicated_in": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "recommendation": "Consider consolidating _load_cursor_config into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "_load_personal_bridge",
+      "duplicated_in": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "recommendation": "Consider consolidating _load_personal_bridge into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "_apply_privacy_filter",
+      "duplicated_in": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "recommendation": "Consider consolidating _apply_privacy_filter into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "_filter_sensitive_dict",
+      "duplicated_in": [
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cursor_integration.py"
+      ],
+      "recommendation": "Consider consolidating _filter_sensitive_dict into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "validate_struct_json",
+      "duplicated_in": [
+        "src/llmstruct/validators/json_validator.py",
+        "scripts/auto_update_struct.py"
+      ],
+      "recommendation": "Consider consolidating validate_struct_json into a shared utility module",
+      "priority": "medium"
+    },
+    {
+      "function": "generate_json",
+      "duplicated_in": [
+        "src/llmstruct/generators/json_generator.py",
+        "scripts/auto_update_struct.py"
+      ],
+      "recommendation": "Consider consolidating generate_json into a shared utility module",
+      "priority": "medium"
+    }
+  ],
+  "next_steps": [
+    "Review high-priority duplicates first",
+    "Create shared utility modules for common functions",
+    "Update imports after consolidation",
+    "Re-run struct analysis to verify improvements"
+  ]
+}

@@ -1,0 +1,1583 @@
+{
+  "metadata": {
+    "category": "duplicates_review",
+    "processed_at": "2025-05-29T12:37:48.527229",
+    "total_items": 31,
+    "confidence_level": 90,
+    "description": "Дубликаты для ручного разбора",
+    "cross_references": {
+      "t_pot_duplicates": [],
+      "dependencies": [],
+      "related_categories": []
+    },
+    "processing_stats": {
+      "auto_categorized": 0,
+      "manual_reviewed": 31,
+      "github_ready_items": 0
+    }
+  },
+  "items": [
+    {
+      "item1": {
+        "id": "innovation_STRATEGIC_ROADMAP_2025_72",
+        "title": "priority: \"MEDIUM - Innovation showcase\"",
+        "description": "pabilities (47 tasks)\n  - Mobile control interfaces (9 tasks)\n  - Seamless AI integration (7 tasks)\n  priority: \"MEDIUM - Innovation showcase\"\n  timeline: \"Q3-Q4 2025\"\n  \nAnalytics_Optimization:\n  - P",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/STRATEGIC_ROADMAP_2025.md",
+        "line_number": 73,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "  priority: \"MEDIUM - Innovation showcase\"",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "innovation_COMPREHENSIVE_ANALYSIS_56",
+        "title": "### priority: \"MEDIUM - Innovation showcase\"",
+        "description": "DMAP_2025.md (line 19)\n- **Preview**: Innovation: \"Multi-interface auto-discovery architecture\"...\n\n### priority: \"MEDIUM - Innovation showcase\"\n- **Type**: concept | **Priority**: high | **Strategic",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/COMPREHENSIVE_ANALYSIS.md",
+        "line_number": 57,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "### priority: \"MEDIUM - Innovation showcase\"",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "similarity": 0.8333333333333334,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": true
+    },
+    {
+      "item1": {
+        "id": "innovation_STRATEGIC_ROADMAP_2025_87",
+        "title": "### **Phase 1: Security Pioneer (Q2 2025)** 🛡️",
+        "description": "priority: \"LOW - Future enhancement\"\n  timeline: \"Q4 2025\"\n```\n\n---\n\n## 💎 STRATEGIC EVOLUTION PATH\n\n### **Phase 1: Security Pioneer (Q2 2025)** 🛡️\n```yaml\nT_Pot_Success_Story:\n  outcome: \"Enterprise-g",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/STRATEGIC_ROADMAP_2025.md",
+        "line_number": 88,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "### **Phase 1: Security Pioneer (Q2 2025)** 🛡️",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "innovation_COMPREHENSIVE_ANALYSIS_61",
+        "title": "### ### **Phase 1: Security Pioneer (Q2 2025)** 🛡️",
+        "description": "s/STRATEGIC_ROADMAP_2025.md (line 73)\n- **Preview**:   priority: \"MEDIUM - Innovation showcase\"...\n\n### ### **Phase 1: Security Pioneer (Q2 2025)** 🛡️\n- **Type**: concept | **Priority**: high | **Stra",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/COMPREHENSIVE_ANALYSIS.md",
+        "line_number": 62,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "### ### **Phase 1: Security Pioneer (Q2 2025)** 🛡️",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_simple_t_pot",
+      "t_pot_duplicate": true,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "innovation_STRATEGIC_ROADMAP_2025_91",
+        "title": "innovation: \"Automated interface discovery & configuration\"",
+        "description": "(Q2 2025)** 🛡️\n```yaml\nT_Pot_Success_Story:\n  outcome: \"Enterprise-grade multi-interface honeypot\"\n  innovation: \"Automated interface discovery & configuration\"\n  market_position: \"Security automatio",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/STRATEGIC_ROADMAP_2025.md",
+        "line_number": 92,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "  innovation: \"Automated interface discovery & configuration\"",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "innovation_COMPREHENSIVE_ANALYSIS_66",
+        "title": "### innovation: \"Automated interface discovery & configuration\"",
+        "description": "RATEGIC_ROADMAP_2025.md (line 88)\n- **Preview**: ### **Phase 1: Security Pioneer (Q2 2025)** 🛡️...\n\n### innovation: \"Automated interface discovery & configuration\"\n- **Type**: concept | **Priority**:",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/COMPREHENSIVE_ANALYSIS.md",
+        "line_number": 67,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "### innovation: \"Automated interface discovery & configuration\"",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "similarity": 0.8571428571428571,
+      "merge_strategy": "keep_simple_t_pot",
+      "t_pot_duplicate": true,
+      "requires_manual_review": true
+    },
+    {
+      "item1": {
+        "id": "innovation_STRATEGIC_ROADMAP_2025_105",
+        "title": "innovation: \"Context orchestration + self-awareness\"",
+        "description": "rm Dominance (Q3 2025)** 🤖\n```yaml\nLLMStruct_Maturity:\n  outcome: \"Leading AI development platform\"\n  innovation: \"Context orchestration + self-awareness\"\n  market_position: \"Developer productivity le",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/STRATEGIC_ROADMAP_2025.md",
+        "line_number": 106,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "  innovation: \"Context orchestration + self-awareness\"",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "innovation_COMPREHENSIVE_ANALYSIS_76",
+        "title": "### innovation: \"Context orchestration + self-awareness\"",
+        "description": "TEGIC_ROADMAP_2025.md (line 93)\n- **Preview**:   market_position: \"Security automation pioneer\"...\n\n### innovation: \"Context orchestration + self-awareness\"\n- **Type**: concept | **Priority**: high |",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/COMPREHENSIVE_ANALYSIS.md",
+        "line_number": 77,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "### innovation: \"Context orchestration + self-awareness\"",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "similarity": 0.9333333333333333,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": true
+    },
+    {
+      "item1": {
+        "id": "innovation_STRATEGIC_ROADMAP_2025_111",
+        "title": "moat: \"First-mover advantage in AI self-awareness\"",
+        "description": "k platform licenses\"\n  \nDifferentiation:\n  unique_value: \"AI that understands its own capabilities\"\n  moat: \"First-mover advantage in AI self-awareness\"\n  defense: \"Patent pending innovations\"\n```\n\n##",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/STRATEGIC_ROADMAP_2025.md",
+        "line_number": 112,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "  moat: \"First-mover advantage in AI self-awareness\"",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "innovation_COMPREHENSIVE_ANALYSIS_81",
+        "title": "### moat: \"First-mover advantage in AI self-awareness\"",
+        "description": "OADMAP_2025.md (line 106)\n- **Preview**:   innovation: \"Context orchestration + self-awareness\"...\n\n### moat: \"First-mover advantage in AI self-awareness\"\n- **Type**: concept | **Priority**: high | **",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/COMPREHENSIVE_ANALYSIS.md",
+        "line_number": 82,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "### moat: \"First-mover advantage in AI self-awareness\"",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "innovation_STRATEGIC_ROADMAP_2025_143",
+        "title": "4. **Patent AI self-awareness concepts** → IP protection",
+        "description": "uct MVP** → Developer market validation  \n3. **Build first customer pipeline** → Revenue generation\n4. **Patent AI self-awareness concepts** → IP protection\n\n### **Sprint 2: Platform Scaling (Q3 2025)",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/STRATEGIC_ROADMAP_2025.md",
+        "line_number": 144,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "4. **Patent AI self-awareness concepts** → IP protection",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "innovation_COMPREHENSIVE_ANALYSIS_91",
+        "title": "### 4. **Patent AI self-awareness concepts** → IP protection",
+        "description": "ocs/STRATEGIC_ROADMAP_2025.md (line 113)\n- **Preview**:   defense: \"Patent pending innovations\"...\n\n### 4. **Patent AI self-awareness concepts** → IP protection\n- **Type**: concept | **Priority**: hig",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/COMPREHENSIVE_ANALYSIS.md",
+        "line_number": 92,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "### 4. **Patent AI self-awareness concepts** → IP protection",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "innovation_STRATEGIC_ROADMAP_2025_143",
+        "title": "4. **Patent AI self-awareness concepts** → IP protection",
+        "description": "uct MVP** → Developer market validation  \n3. **Build first customer pipeline** → Revenue generation\n4. **Patent AI self-awareness concepts** → IP protection\n\n### **Sprint 2: Platform Scaling (Q3 2025)",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/STRATEGIC_ROADMAP_2025.md",
+        "line_number": 144,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "4. **Patent AI self-awareness concepts** → IP protection",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "innovation_COMPREHENSIVE_ANALYSIS_94",
+        "title": "- **Preview**: 4. **Patent AI self-awareness concepts** → IP protection...",
+        "description": ": high | **Strategic Value**: revolutionary\n- **Source**: docs/STRATEGIC_ROADMAP_2025.md (line 144)\n- **Preview**: 4. **Patent AI self-awareness concepts** → IP protection...\n\n### advantage: \"First-mo",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/COMPREHENSIVE_ANALYSIS.md",
+        "line_number": 95,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "- **Preview**: 4. **Patent AI self-awareness concepts** → IP protection...",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "similarity": 0.8363636363636364,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": true
+    },
+    {
+      "item1": {
+        "id": "innovation_STRATEGIC_ROADMAP_2025_201",
+        "title": "advantage: \"First-mover in AI self-awareness\"",
+        "description": "reat: \"Google/Microsoft/OpenAI creates competitor\"\n  defense: \"Open-source pivot strategy prepared\"\n  advantage: \"First-mover in AI self-awareness\"\n  fallback: \"Expert consulting & implementation serv",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/STRATEGIC_ROADMAP_2025.md",
+        "line_number": 202,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "  advantage: \"First-mover in AI self-awareness\"",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "innovation_COMPREHENSIVE_ANALYSIS_96",
+        "title": "### advantage: \"First-mover in AI self-awareness\"",
+        "description": "DMAP_2025.md (line 144)\n- **Preview**: 4. **Patent AI self-awareness concepts** → IP protection...\n\n### advantage: \"First-mover in AI self-awareness\"\n- **Type**: concept | **Priority**: high | **Strat",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/COMPREHENSIVE_ANALYSIS.md",
+        "line_number": 97,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "### advantage: \"First-mover in AI self-awareness\"",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "innovation_COMPREHENSIVE_ANALYSIS_84",
+        "title": "- **Preview**:   moat: \"First-mover advantage in AI self-awareness\"...",
+        "description": ": high | **Strategic Value**: revolutionary\n- **Source**: docs/STRATEGIC_ROADMAP_2025.md (line 112)\n- **Preview**:   moat: \"First-mover advantage in AI self-awareness\"...\n\n### defense: \"Patent pending",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/COMPREHENSIVE_ANALYSIS.md",
+        "line_number": 85,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "- **Preview**:   moat: \"First-mover advantage in AI self-awareness\"...",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "innovation_COMPREHENSIVE_ANALYSIS_99",
+        "title": "- **Preview**:   advantage: \"First-mover in AI self-awareness\"...",
+        "description": ": high | **Strategic Value**: revolutionary\n- **Source**: docs/STRATEGIC_ROADMAP_2025.md (line 202)\n- **Preview**:   advantage: \"First-mover in AI self-awareness\"...\n\n\n---\n\n## 💎 HIGH-VALUE ITEMS (75)",
+        "type": "concept",
+        "status": "proposed",
+        "priority": "high",
+        "category": "innovation",
+        "file_source": "docs/COMPREHENSIVE_ANALYSIS.md",
+        "line_number": 100,
+        "estimated_effort": "large",
+        "tags": [
+          "innovation",
+          "breakthrough",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_innovation_scan",
+        "content_preview": "- **Preview**:   advantage: \"First-mover in AI self-awareness\"...",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "similarity": 0.8666666666666667,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": true
+    },
+    {
+      "item1": {
+        "id": "checkbox_cursor_integration_strategy_265",
+        "title": "Performance optimization",
+        "description": "ion\n- [ ] Multi-AI coordination testing\n- [ ] Ideas management integration\n- [ ] Performance optimization\n\n### **Week 5-8 (Advanced):**\n- [ ] AI-contr",
+        "type": "task",
+        "status": "planned",
+        "priority": "low",
+        "category": "general",
+        "file_source": "cursor_integration_strategy.md",
+        "line_number": 265,
+        "estimated_effort": "large",
+        "tags": [
+          "root"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "root_scan",
+        "content_preview": "Performance optimization",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "checkbox_statistical_analysis_foundations_456",
+        "title": "Performance optimization",
+        "description": "- [ ] Privacy and security implementation\n- [ ] Automated reporting system\n- [ ] Performance optimization\n- [ ] User interface polish\n\n### 8. Success",
+        "type": "task",
+        "status": "planned",
+        "priority": "critical",
+        "category": "general",
+        "file_source": ".personal/statistical_analysis_foundations.md",
+        "line_number": 456,
+        "estimated_effort": "quick",
+        "tags": [
+          "personal"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": ".personal_scan",
+        "content_preview": "Performance optimization",
+        "related_items": [],
+        "strategic_value": "high",
+        "source_category": "high_value_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "checkbox_cursor_integration_strategy_265",
+        "title": "Performance optimization",
+        "description": "ion\n- [ ] Multi-AI coordination testing\n- [ ] Ideas management integration\n- [ ] Performance optimization\n\n### **Week 5-8 (Advanced):**\n- [ ] AI-contr",
+        "type": "task",
+        "status": "planned",
+        "priority": "low",
+        "category": "general",
+        "file_source": "cursor_integration_strategy.md",
+        "line_number": 265,
+        "estimated_effort": "large",
+        "tags": [
+          "root"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "root_scan",
+        "content_preview": "Performance optimization",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "checkbox_grok_delegation_implementation_215",
+        "title": "Performance optimization",
+        "description": "tion\n- [ ] Documentation generation workflows\n- [ ] Code review automation\n- [ ] Performance optimization\n\n#### Phase 3 (Week 5-6): Production Feature",
+        "type": "task",
+        "status": "planned",
+        "priority": "critical",
+        "category": "general",
+        "file_source": ".personal/grok_delegation_implementation.md",
+        "line_number": 215,
+        "estimated_effort": "large",
+        "tags": [
+          "personal"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": ".personal_scan",
+        "content_preview": "Performance optimization",
+        "related_items": [],
+        "strategic_value": "high",
+        "source_category": "high_value_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "task_COMPREHENSIVE_ANALYSIS_196",
+        "title": "System (TSK-003 through TSK-137)",
+        "description": "o_feature_modular_cli.md (line 76)\n- **Preview**: tecture 📊\n**Major Evolution in JSON Structure:**\n\n#### Task System (TSK-003 through TSK-137)\n- **Pri...\n\n### s System (IDEA-001 through IDEA-127)\n- **",
+        "type": "task",
+        "status": "planned",
+        "priority": "critical",
+        "category": "general",
+        "file_source": "docs/COMPREHENSIVE_ANALYSIS.md",
+        "line_number": 196,
+        "estimated_effort": "quick",
+        "tags": [
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "tecture 📊\n**Major Evolution in JSON Structure:**\n\n#### Task System (TSK-003 through TSK-137)\n- **Pri",
+        "related_items": [
+          "TSK-003",
+          "TSK-137",
+          "TSK-003",
+          "TSK-137",
+          "IDEA-001"
+        ],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "task_branch_differences_dev_v0.2.0_to_feature_modular_cli_76",
+        "title": "System (TSK-003 through TSK-137)",
+        "description": "ion and monitoring\n```\n\n### 3. Enhanced Data Architecture 📊\n**Major Evolution in JSON Structure:**\n\n#### Task System (TSK-003 through TSK-137)\n- **Priority Distribution:** 137 tasks across critical, h",
+        "type": "task",
+        "status": "planned",
+        "priority": "critical",
+        "category": "general",
+        "file_source": "temp_workfiles/branch_differences_dev_v0.2.0_to_feature_modular_cli.md",
+        "line_number": 76,
+        "estimated_effort": "quick",
+        "tags": [
+          "temp-workfiles"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "temp_workfiles_scan",
+        "content_preview": "tecture 📊\n**Major Evolution in JSON Structure:**\n\n#### Task System (TSK-003 through TSK-137)\n- **Pri",
+        "related_items": [
+          "TSK-003",
+          "TSK-137",
+          "TSK-003",
+          "TSK-137",
+          "TSK-003"
+        ],
+        "strategic_value": "high",
+        "source_category": "high_value_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "idea_COMPREHENSIVE_ANALYSIS_204",
+        "title": "s System (IDEA-001 through IDEA-127)",
+        "description": "to_feature_modular_cli.md (line 82)\n- **Preview**: Tasks:** Mix of manual and AI-generated entries\n\n#### Ideas System (IDEA-001 through IDEA-127) \n- *...\n\n### Notes & Analysis\n- **Type**: session | **",
+        "type": "idea",
+        "status": "planned",
+        "priority": "critical",
+        "category": "general",
+        "file_source": "docs/COMPREHENSIVE_ANALYSIS.md",
+        "line_number": 204,
+        "estimated_effort": "quick",
+        "tags": [
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "Tasks:** Mix of manual and AI-generated entries\n\n#### Ideas System (IDEA-001 through IDEA-127) \n- *",
+        "related_items": [
+          "IDEA-001",
+          "IDEA-127",
+          "IDEA-001",
+          "IDEA-127",
+          "IDEA-001"
+        ],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "idea_branch_differences_dev_v0.2.0_to_feature_modular_cli_82",
+        "title": "s System (IDEA-001 through IDEA-127)",
+        "description": "Complex inter-task relationships\n- **AI-Generated Tasks:** Mix of manual and AI-generated entries\n\n#### Ideas System (IDEA-001 through IDEA-127) \n- **Categories:** Architecture, automation, transpare",
+        "type": "idea",
+        "status": "planned",
+        "priority": "critical",
+        "category": "general",
+        "file_source": "temp_workfiles/branch_differences_dev_v0.2.0_to_feature_modular_cli.md",
+        "line_number": 82,
+        "estimated_effort": "quick",
+        "tags": [
+          "temp-workfiles"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "temp_workfiles_scan",
+        "content_preview": "Tasks:** Mix of manual and AI-generated entries\n\n#### Ideas System (IDEA-001 through IDEA-127) \n- *",
+        "related_items": [
+          "IDEA-001",
+          "IDEA-127",
+          "IDEA-001",
+          "IDEA-127",
+          "IDEA-001"
+        ],
+        "strategic_value": "high",
+        "source_category": "high_value_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "checkbox_grok_research_tasks_15",
+        "title": "Тест-кейсы**:",
+        "description": "- [ ] **Метод**: Поэтапное увеличение размера промпта до получения ошибки\n- [ ] **Тест-кейсы**:\n  - Отправка промптов 1K, 5K, 10K, 20K, 50K, 100K+ то",
+        "type": "task",
+        "status": "planned",
+        "priority": "critical",
+        "category": "general",
+        "file_source": ".personal/grok_research_tasks.md",
+        "line_number": 15,
+        "estimated_effort": "large",
+        "tags": [
+          "personal"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": ".personal_scan",
+        "content_preview": "Тест-кейсы**:",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "unaccounted_discoveries/personal_folder"
+      },
+      "item2": {
+        "id": "checkbox_grok_research_tasks_65",
+        "title": "Тест-кейсы**:",
+        "description": "(1-10)\n- [ ] **Сравнение с другими LLM**: Anthropic, OpenAI, local Ollama\n- [ ] **Тест-кейсы**:\n  - Анализ кода\n  - Генерация документации\n  - Планир",
+        "type": "task",
+        "status": "planned",
+        "priority": "critical",
+        "category": "general",
+        "file_source": ".personal/grok_research_tasks.md",
+        "line_number": 65,
+        "estimated_effort": "large",
+        "tags": [
+          "personal"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": ".personal_scan",
+        "content_preview": "Тест-кейсы**:",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "unaccounted_discoveries/personal_folder"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "checkbox_grok_research_tasks_28",
+        "title": "Дедлайн**: 3 дня",
+        "description": "Размер данных в запросе/ответе\n  - Время ответа в зависимости от нагрузки\n- [ ] **Дедлайн**: 3 дня\n\n#### 1.3 Исследование ценообразования\n- [ ] **Зад",
+        "type": "task",
+        "status": "planned",
+        "priority": "critical",
+        "category": "general",
+        "file_source": ".personal/grok_research_tasks.md",
+        "line_number": 28,
+        "estimated_effort": "large",
+        "tags": [
+          "personal"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": ".personal_scan",
+        "content_preview": "Дедлайн**: 3 дня",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "unaccounted_discoveries/personal_folder"
+      },
+      "item2": {
+        "id": "checkbox_grok_research_tasks_80",
+        "title": "Дедлайн**: 3 дня",
+        "description": "xAI API\n  - Интеграция с llmstruct workflow\n  - Автоматизация API testing\n- [ ] **Дедлайн**: 3 дня\n\n#### 3.2 GitHub Actions интеграция\n- [ ] **Задача",
+        "type": "task",
+        "status": "planned",
+        "priority": "critical",
+        "category": "general",
+        "file_source": ".personal/grok_research_tasks.md",
+        "line_number": 80,
+        "estimated_effort": "large",
+        "tags": [
+          "personal"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": ".personal_scan",
+        "content_preview": "Дедлайн**: 3 дня",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "unaccounted_discoveries/personal_folder"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "checkbox_cursor_integration_strategy_265",
+        "title": "Performance optimization",
+        "description": "ion\n- [ ] Multi-AI coordination testing\n- [ ] Ideas management integration\n- [ ] Performance optimization\n\n### **Week 5-8 (Advanced):**\n- [ ] AI-contr",
+        "type": "task",
+        "status": "planned",
+        "priority": "low",
+        "category": "general",
+        "file_source": "cursor_integration_strategy.md",
+        "line_number": 265,
+        "estimated_effort": "large",
+        "tags": [
+          "root"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "root_scan",
+        "content_preview": "Performance optimization",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "checkbox_MODULAR_CLI_COMPLETION_REPORT_261",
+        "title": "Performance optimization",
+        "description": "] Zero breaking changes\n- [x] Full test coverage\n- [x] Security validation\n- [x] Performance optimization\n\n### User Experience ✅\n- [x] Intuitive comma",
+        "type": "task",
+        "status": "completed",
+        "priority": "high",
+        "category": "general",
+        "file_source": "temp_workfiles/MODULAR_CLI_COMPLETION_REPORT.md",
+        "line_number": 261,
+        "estimated_effort": "large",
+        "tags": [
+          "temp-workfiles"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "temp_workfiles_scan",
+        "content_preview": "Performance optimization",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "unaccounted_discoveries/temp_workfiles"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "todo_TASKS_SUMMARY_144",
+        "title": "** (1):",
+        "description": "(2):\n- 📋 s only with filters\n- 📋 Export Format\n\n**TODO** (1):\n- 📋 TODO: \"\n\n### TASK_IDEA_CONSOLIDATI",
+        "type": "todo",
+        "status": "planned",
+        "priority": "high",
+        "category": "todo",
+        "file_source": "docs/TASKS_SUMMARY.md",
+        "line_number": 144,
+        "estimated_effort": "quick",
+        "tags": [
+          "todo",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "** (1):",
+        "related_items": [],
+        "strategic_value": "low",
+        "source_category": "all_items"
+      },
+      "item2": {
+        "id": "todo_TASKS_SUMMARY_175",
+        "title": "** (1):",
+        "description": "HUB_PROJECTS_README.md`  \n**Tasks**: 1 items  \n\n**TODO** (1):\n- 📋 TODO: , completed → Done, etc.)\n\n#",
+        "type": "todo",
+        "status": "planned",
+        "priority": "high",
+        "category": "todo",
+        "file_source": "docs/TASKS_SUMMARY.md",
+        "line_number": 175,
+        "estimated_effort": "quick",
+        "tags": [
+          "todo",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "** (1):",
+        "related_items": [],
+        "strategic_value": "low",
+        "source_category": "all_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "task_gh_view_128",
+        "title": "Format Conversion",
+        "description": "cts\n  sync        Synchronize existing cards\n  help        Show detailed help\n```\n\n## Data Mapping\n\n### Task Format Conversion\n\n**Local Task Structure**:\n```json\n{\n  \"id\": \"TSK-001\",\n  \"description\":",
+        "type": "task",
+        "status": "in_progress",
+        "priority": "high",
+        "category": "general",
+        "file_source": "docs/gh_view.md",
+        "line_number": 128,
+        "estimated_effort": "quick",
+        "tags": [
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "p        Show detailed help\n```\n\n## Data Mapping\n\n### Task Format Conversion\n\n**Local Task Structure",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "all_items"
+      },
+      "item2": {
+        "id": "idea_gh_view_161",
+        "title": "Format Conversion",
+        "description": "dencies:** TSK-002\n**Target Release:** v0.3.0\n\nLabels: task, priority-high\nStatus: In Progress\n```\n\n### Idea Format Conversion\n\n**Local Idea Structure**:\n```json\n{\n  \"id\": \"IDEA-001\",\n  \"title\": \"New",
+        "type": "idea",
+        "status": "in_progress",
+        "priority": "high",
+        "category": "general",
+        "file_source": "docs/gh_view.md",
+        "line_number": 161,
+        "estimated_effort": "quick",
+        "tags": [
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "els: task, priority-high\nStatus: In Progress\n```\n\n### Idea Format Conversion\n\n**Local Idea Structure",
+        "related_items": [
+          "IDEA-001"
+        ],
+        "strategic_value": "medium",
+        "source_category": "all_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "todo_TASKS_SUMMARY_61",
+        "title": "```",
+        "description": "SK** (1):\n- 📋 Format Conversion\n\n**TODO** (2):\n- 📋 TODO: ```\n- 📋 TODO: |\n\n### TPOT_DEPLOYMENT_WORK_P",
+        "type": "todo",
+        "status": "planned",
+        "priority": "high",
+        "category": "todo",
+        "file_source": "docs/TASKS_SUMMARY.md",
+        "line_number": 61,
+        "estimated_effort": "quick",
+        "tags": [
+          "todo",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "```",
+        "related_items": [],
+        "strategic_value": "low",
+        "source_category": "all_items"
+      },
+      "item2": {
+        "id": "todo_gh_view_193",
+        "title": "```",
+        "description": "dea, category-enhancement, priority-medium\nStatus: Todo\n```\n\n### Status Mapping\n\n| Local Status | Gi",
+        "type": "todo",
+        "status": "planned",
+        "priority": "high",
+        "category": "todo",
+        "file_source": "docs/gh_view.md",
+        "line_number": 193,
+        "estimated_effort": "quick",
+        "tags": [
+          "todo",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "```",
+        "related_items": [],
+        "strategic_value": "low",
+        "source_category": "all_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "todo_TASKS_SUMMARY_62",
+        "title": "|",
+        "description": "Format Conversion\n\n**TODO** (2):\n- 📋 TODO: ```\n- 📋 TODO: |\n\n### TPOT_DEPLOYMENT_WORK_PLAN.md\n**Locat",
+        "type": "todo",
+        "status": "planned",
+        "priority": "high",
+        "category": "todo",
+        "file_source": "docs/TASKS_SUMMARY.md",
+        "line_number": 62,
+        "estimated_effort": "quick",
+        "tags": [
+          "todo",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "|",
+        "related_items": [],
+        "strategic_value": "low",
+        "source_category": "all_items"
+      },
+      "item2": {
+        "id": "todo_gh_view_200",
+        "title": "|",
+        "description": "|\n|-------------|---------------|\n| proposed    | Todo          |\n| in_progress | In Progress   |\n|",
+        "type": "todo",
+        "status": "planned",
+        "priority": "high",
+        "category": "todo",
+        "file_source": "docs/gh_view.md",
+        "line_number": 200,
+        "estimated_effort": "quick",
+        "tags": [
+          "todo",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "|",
+        "related_items": [],
+        "strategic_value": "low",
+        "source_category": "all_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "task_github_projects_export_179",
+        "title": "s only with filters",
+        "description": "status proposed in_progress \\\n  --priority high medium\n```\n\n#### Export Specific Data Types\n```bash\n# Tasks only with filters\npython scripts/export_to_github_projects.py 1 --execute \\\n  --tasks-only -",
+        "type": "task",
+        "status": "in_progress",
+        "priority": "critical",
+        "category": "general",
+        "file_source": "docs/github_projects_export.md",
+        "line_number": 179,
+        "estimated_effort": "quick",
+        "tags": [
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "dium\n```\n\n#### Export Specific Data Types\n```bash\n# Tasks only with filters\npython scripts/export_to",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "all_items"
+      },
+      "item2": {
+        "id": "idea_github_projects_export_183",
+        "title": "s only with filters",
+        "description": "ters\npython scripts/export_to_github_projects.py 1 --execute \\\n  --tasks-only --status in_progress\n\n# Ideas only with filters  \npython scripts/export_to_github_projects.py 1 --execute \\\n  --ideas-only",
+        "type": "idea",
+        "status": "in_progress",
+        "priority": "high",
+        "category": "general",
+        "file_source": "docs/github_projects_export.md",
+        "line_number": 183,
+        "estimated_effort": "quick",
+        "tags": [
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "--execute \\\n  --tasks-only --status in_progress\n\n# Ideas only with filters  \npython scripts/export_",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "all_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "task_github_projects_export_211",
+        "title": "Export Format",
+        "description": "cho \"Ideas: $(cat data/gh_mapping.json | jq '.ideas | length')\"\n```\n\n## Data Format Specifications\n\n### Task Export Format\n\n**GitHub Card Title**: `[TSK-001] Implement user authentication`\n\n**GitHub C",
+        "type": "task",
+        "status": "in_progress",
+        "priority": "high",
+        "category": "general",
+        "file_source": "docs/github_projects_export.md",
+        "line_number": 211,
+        "estimated_effort": "quick",
+        "tags": [
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "s | length')\"\n```\n\n## Data Format Specifications\n\n### Task Export Format\n\n**GitHub Card Title**: `[T",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "all_items"
+      },
+      "item2": {
+        "id": "idea_github_projects_export_236",
+        "title": "Export Format",
+        "description": "management\n- Role-based permissions\n```\n\n**Labels**: `task`, `priority-high`, `status-in_progress`\n\n### Idea Export Format\n\n**GitHub Card Title**: `[IDEA-001] Smart Context Orchestration`\n\n**GitHub Ca",
+        "type": "idea",
+        "status": "in_progress",
+        "priority": "high",
+        "category": "general",
+        "file_source": "docs/github_projects_export.md",
+        "line_number": 236,
+        "estimated_effort": "quick",
+        "tags": [
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "*: `task`, `priority-high`, `status-in_progress`\n\n### Idea Export Format\n\n**GitHub Card Title**: `[I",
+        "related_items": [
+          "IDEA-001"
+        ],
+        "strategic_value": "medium",
+        "source_category": "all_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "todo_TASKS_SUMMARY_145",
+        "title": "\"",
+        "description": "with filters\n- 📋 Export Format\n\n**TODO** (1):\n- 📋 TODO: \"\n\n### TASK_IDEA_CONSOLIDATION_WORK_NOTE.md",
+        "type": "todo",
+        "status": "planned",
+        "priority": "high",
+        "category": "todo",
+        "file_source": "docs/TASKS_SUMMARY.md",
+        "line_number": 145,
+        "estimated_effort": "quick",
+        "tags": [
+          "todo",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "\"",
+        "related_items": [],
+        "strategic_value": "low",
+        "source_category": "all_items"
+      },
+      "item2": {
+        "id": "todo_github_projects_export_59",
+        "title": "\"",
+        "description": "atus mapping\n[gh_view.status_mapping]\nproposed = \"Todo\"\nin_progress = \"In Progress\"\ncompleted = \"Don",
+        "type": "todo",
+        "status": "planned",
+        "priority": "high",
+        "category": "todo",
+        "file_source": "docs/github_projects_export.md",
+        "line_number": 59,
+        "estimated_effort": "quick",
+        "tags": [
+          "todo",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "\"",
+        "related_items": [],
+        "strategic_value": "low",
+        "source_category": "all_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "checkbox_cursor_integration_strategy_265",
+        "title": "Performance optimization",
+        "description": "ion\n- [ ] Multi-AI coordination testing\n- [ ] Ideas management integration\n- [ ] Performance optimization\n\n### **Week 5-8 (Advanced):**\n- [ ] AI-contr",
+        "type": "task",
+        "status": "planned",
+        "priority": "low",
+        "category": "general",
+        "file_source": "cursor_integration_strategy.md",
+        "line_number": 265,
+        "estimated_effort": "large",
+        "tags": [
+          "root"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "root_scan",
+        "content_preview": "Performance optimization",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "checkbox_JSON_OPTIMIZATION_FINAL_PLAN_193",
+        "title": "Performance optimization",
+        "description": "t loading\n- [ ] Progressive context expansion\n- [ ] Context caching system\n- [ ] Performance optimization\n\n---\n\n### **ФАЗА 3: GITHUB DISCUSSIONS & WOR",
+        "type": "task",
+        "status": "planned",
+        "priority": "high",
+        "category": "general",
+        "file_source": "docs/JSON_OPTIMIZATION_FINAL_PLAN.md",
+        "line_number": 193,
+        "estimated_effort": "quick",
+        "tags": [
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "Performance optimization",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "all_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "checkbox_JSON_OPTIMIZATION_FINAL_PLAN_229",
+        "title": "Conversion workflow",
+        "description": "pass\n```\n\n**DELIVERABLES ФАЗЫ 3:**\n- [ ] GitHub Discussions setup\n- [ ] Conversion workflow\n- [ ] Migration existing ideas\n\n---\n\n### **ФАЗА 4",
+        "type": "task",
+        "status": "planned",
+        "priority": "high",
+        "category": "general",
+        "file_source": "docs/JSON_OPTIMIZATION_FINAL_PLAN.md",
+        "line_number": 229,
+        "estimated_effort": "quick",
+        "tags": [
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "Conversion workflow",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "all_items"
+      },
+      "item2": {
+        "id": "checkbox_JSON_OPTIMIZATION_FINAL_PLAN_374",
+        "title": "Conversion workflow",
+        "description": "text caching\n\n### **НЕДЕЛЯ 3: GitHub Integration**\n- [ ] Discussions setup\n- [ ] Conversion workflow\n- [ ] Migration process\n\n### **НЕДЕЛЯ 4-5: Advanc",
+        "type": "task",
+        "status": "planned",
+        "priority": "high",
+        "category": "general",
+        "file_source": "docs/JSON_OPTIMIZATION_FINAL_PLAN.md",
+        "line_number": 374,
+        "estimated_effort": "quick",
+        "tags": [
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "Conversion workflow",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "all_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "checkbox_JSON_OPTIMIZATION_FINAL_PLAN_274",
+        "title": "Dynamic context assembly",
+        "description": "y\n        pass\n```\n\n**DELIVERABLES ФАЗЫ 4:**\n- [ ] Context feedback system\n- [ ] Dynamic context assembly\n- [ ] Advanced LLM integration features\n\n---",
+        "type": "task",
+        "status": "planned",
+        "priority": "high",
+        "category": "general",
+        "file_source": "docs/JSON_OPTIMIZATION_FINAL_PLAN.md",
+        "line_number": 274,
+        "estimated_effort": "quick",
+        "tags": [
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "Dynamic context assembly",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "all_items"
+      },
+      "item2": {
+        "id": "checkbox_JSON_OPTIMIZATION_FINAL_PLAN_379",
+        "title": "Dynamic context assembly",
+        "description": "ion process\n\n### **НЕДЕЛЯ 4-5: Advanced Features**\n- [ ] LLM feedback loop\n- [ ] Dynamic context assembly\n- [ ] Performance optimization\n\n### **НЕДЕЛЯ",
+        "type": "task",
+        "status": "planned",
+        "priority": "high",
+        "category": "general",
+        "file_source": "docs/JSON_OPTIMIZATION_FINAL_PLAN.md",
+        "line_number": 379,
+        "estimated_effort": "quick",
+        "tags": [
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "Dynamic context assembly",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "all_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "checkbox_cursor_integration_strategy_265",
+        "title": "Performance optimization",
+        "description": "ion\n- [ ] Multi-AI coordination testing\n- [ ] Ideas management integration\n- [ ] Performance optimization\n\n### **Week 5-8 (Advanced):**\n- [ ] AI-contr",
+        "type": "task",
+        "status": "planned",
+        "priority": "low",
+        "category": "general",
+        "file_source": "cursor_integration_strategy.md",
+        "line_number": 265,
+        "estimated_effort": "large",
+        "tags": [
+          "root"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "root_scan",
+        "content_preview": "Performance optimization",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "checkbox_JSON_OPTIMIZATION_FINAL_PLAN_380",
+        "title": "Performance optimization",
+        "description": "Advanced Features**\n- [ ] LLM feedback loop\n- [ ] Dynamic context assembly\n- [ ] Performance optimization\n\n### **НЕДЕЛЯ 6: Testing & Refinement**\n- [",
+        "type": "task",
+        "status": "planned",
+        "priority": "high",
+        "category": "general",
+        "file_source": "docs/JSON_OPTIMIZATION_FINAL_PLAN.md",
+        "line_number": 380,
+        "estimated_effort": "quick",
+        "tags": [
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "Performance optimization",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "all_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "checkbox_TPOT_DEPLOYMENT_WORK_PLAN_133",
+        "title": "Performance validation",
+        "description": "otocol**\n- [ ] Functional testing script\n- [ ] Attack simulation scenarios\n- [ ] Performance validation\n\n**4.2 Documentation Package**\n- [ ] Deploymen",
+        "type": "task",
+        "status": "planned",
+        "priority": "high",
+        "category": "general",
+        "file_source": "docs/TPOT_DEPLOYMENT_WORK_PLAN.md",
+        "line_number": 133,
+        "estimated_effort": "large",
+        "tags": [
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "Performance validation",
+        "related_items": [],
+        "strategic_value": "high",
+        "source_category": "high_value_items"
+      },
+      "item2": {
+        "id": "checkbox_JSON_OPTIMIZATION_FINAL_PLAN_384",
+        "title": "Performance validation",
+        "description": "imization\n\n### **НЕДЕЛЯ 6: Testing & Refinement**\n- [ ] End-to-end testing\n- [ ] Performance validation\n- [ ] Documentation update\n\n---\n\n## 🤖 LLM-ENGI",
+        "type": "task",
+        "status": "planned",
+        "priority": "high",
+        "category": "general",
+        "file_source": "docs/JSON_OPTIMIZATION_FINAL_PLAN.md",
+        "line_number": 384,
+        "estimated_effort": "quick",
+        "tags": [
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": "Performance validation",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "all_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "todo_TASKS_SUMMARY_176",
+        "title": ", completed → Done, etc.)",
+        "description": "ADME.md`  \n**Tasks**: 1 items  \n\n**TODO** (1):\n- 📋 TODO: , completed → Done, etc.)\n\n### CURSOR_EVALU",
+        "type": "todo",
+        "status": "planned",
+        "priority": "high",
+        "category": "todo",
+        "file_source": "docs/TASKS_SUMMARY.md",
+        "line_number": 176,
+        "estimated_effort": "quick",
+        "tags": [
+          "todo",
+          "docs"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "docs_scan",
+        "content_preview": ", completed → Done, etc.)",
+        "related_items": [],
+        "strategic_value": "low",
+        "source_category": "all_items"
+      },
+      "item2": {
+        "id": "todo_GITHUB_PROJECTS_README_36",
+        "title": ", completed → Done, etc.)",
+        "description": "oject cards\n- ✅ Сопоставление статусов (proposed → Todo, completed → Done, etc.)\n- ✅ Фильтрация по с",
+        "type": "todo",
+        "status": "planned",
+        "priority": "low",
+        "category": "todo",
+        "file_source": "GITHUB_PROJECTS_README.md",
+        "line_number": 36,
+        "estimated_effort": "quick",
+        "tags": [
+          "todo",
+          "root"
+        ],
+        "created_date": "2025-05-29",
+        "discovery_method": "root_scan",
+        "content_preview": ", completed → Done, etc.)",
+        "related_items": [],
+        "strategic_value": "low",
+        "source_category": "all_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "IDEA-154",
+        "title": "Automate custom field assignment in GitHub Projects via Actions/API",
+        "description": "Implement GitHub Action or webhook to automatically set custom fields (e.g., Type: Task/Idea) for new project items using GraphQL API.",
+        "type": "idea",
+        "status": "planned",
+        "priority": "medium",
+        "category": "automation",
+        "file_source": "data/ideas.json",
+        "line_number": 0,
+        "estimated_effort": "medium",
+        "tags": [],
+        "created_date": "2025-05-25T21:00:00Z",
+        "discovery_method": "json_parse",
+        "content_preview": "Implement GitHub Action or webhook to automatically set custom fields (e.g., Type: Task/Idea) for ne",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "all_items"
+      },
+      "item2": {
+        "id": "TSK-146",
+        "title": "Automate custom field assignment in GitHub Projects via Actions/API",
+        "description": "Automate custom field assignment in GitHub Projects via Actions/API",
+        "type": "task",
+        "status": "planned",
+        "priority": "medium",
+        "category": "general",
+        "file_source": "data/tasks.json",
+        "line_number": 0,
+        "estimated_effort": "2d",
+        "tags": [],
+        "created_date": "2025-05-25T21:00:00Z",
+        "discovery_method": "json_parse",
+        "content_preview": "Automate custom field assignment in GitHub Projects via Actions/API",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "all_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    },
+    {
+      "item1": {
+        "id": "IDEA-160",
+        "title": "[META] AI System Self-Awareness Enhancement",
+        "description": "Comprehensive AI system self-awareness framework enabling real-time capability discovery, adaptive context management, historical learning integration, and performance self-assessment for enhanced VS Code Copilot integration",
+        "type": "idea",
+        "status": "proposed",
+        "priority": "high",
+        "category": "ai_enhancement",
+        "file_source": "data/ideas.json",
+        "line_number": 0,
+        "estimated_effort": "medium",
+        "tags": [
+          "ai",
+          "meta",
+          "self-awareness",
+          "copilot",
+          "context",
+          "orchestration",
+          "enhancement"
+        ],
+        "created_date": "2025-05-26T21:45:00Z",
+        "discovery_method": "json_parse",
+        "content_preview": "Comprehensive AI system self-awareness framework enabling real-time capability discovery, adaptive c",
+        "related_items": [],
+        "strategic_value": "revolutionary",
+        "source_category": "revolutionary_innovations"
+      },
+      "item2": {
+        "id": "TSK-160",
+        "title": "[META] AI System Self-Awareness Enhancement",
+        "description": "[META] AI System Self-Awareness Enhancement",
+        "type": "task",
+        "status": "proposed",
+        "priority": "high",
+        "category": "general",
+        "file_source": "data/tasks.json",
+        "line_number": 0,
+        "estimated_effort": "8-12d",
+        "tags": [],
+        "created_date": "2025-05-26T21:45:00Z",
+        "discovery_method": "json_parse",
+        "content_preview": "[META] AI System Self-Awareness Enhancement",
+        "related_items": [],
+        "strategic_value": "medium",
+        "source_category": "all_items"
+      },
+      "similarity": 1.0,
+      "merge_strategy": "keep_older",
+      "t_pot_duplicate": false,
+      "requires_manual_review": false
+    }
+  ]
+}

@@ -151,3 +151,26 @@ docs/internal/*emergency*
 docs/internal/*strategic*
 docs/internal/*commercial*
 docs/internal/*planning*
+# Project backups
+backup_*/
+*.backup
+
+# Boss-only directories and business data
+.personal/boss/
+
+# Business data patterns
+*business*.json
+*financial*.json
+*strategic*.json
+*team_evaluation*
+*hiring_plan*
+*competitive*
+*acquisition*
+
+# HR and sensitive data
+*team_strategy.json
+*hr_*.json
+*salary*.json
+*compensation*.json
+
+# Backup directories (from separation work)

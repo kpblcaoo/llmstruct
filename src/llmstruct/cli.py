@@ -955,29 +955,130 @@ def copilot(args):
 
 
 def audit(args):
-    """Handle audit command for recovering lost ideas/tasks."""
-    from .cli_commands import CommandProcessor
-    from .cli_config import CLIConfig
-    from .cli_utils import CLIUtils
-    import os
+    """Audit project structure and generate reports."""
+    print("🔍 Auditing project structure...")
     
+    # Basic audit functionality
+    root_dir = os.path.abspath(args.root_dir)
+    print(f"📁 Project root: {root_dir}")
+    
+    # Check for key files
+    key_files = ["struct.json", "llmstruct.toml", ".gitignore"]
+    for file in key_files:
+        file_path = Path(root_dir) / file
+        status = "✅" if file_path.exists() else "❌"
+        print(f"  {status} {file}")
+    
+    # If duplication analysis is requested, run it
+    if hasattr(args, 'include_duplicates') and args.include_duplicates:
+        print("\n" + "="*50)
+        analyze_duplicates(args)
+
+
+def analyze_duplicates(args):
+    """Analyze function duplication using struct.json deep analysis."""
     try:
-        # Get the root directory from environment or current directory
-        root_dir = os.getcwd()
+        from .workflow_orchestrator import WorkflowOrchestrator
         
-        # Initialize config and utils
-        config = CLIConfig(root_dir)
-        utils = CLIUtils(root_dir)
+        # Enable debug mode if requested
+        debug = getattr(args, 'debug', False)
         
-        # Initialize command processor
-        processor = CommandProcessor(root_dir, config, utils)
+        if debug:
+            print("🔧 [DEBUG] Starting analyze_duplicates with debug mode")
         
-        # Execute audit command
-        processor.cmd_audit(args.action)
+        print("🔍 Analyzing Function Duplication...")
+        orchestrator = WorkflowOrchestrator(".", debug=debug)
+        
+        # Get duplication analysis
+        if debug:
+            print("🔧 [DEBUG] Calling analyze_codebase_for_duplicates...")
+        
+        analysis = orchestrator.analyze_codebase_for_duplicates()
+        
+        if 'error' in analysis:
+            print(f"❌ Error: {analysis['error']}")
+            return
+        
+        if hasattr(args, 'format') and args.format == 'json':
+            print(json.dumps(analysis, indent=2))
+            return
+        
+        # Text format output
+        duplication_data = analysis.get('analysis', {})
+        recommendations = analysis.get('recommendations', [])
+        
+        if debug:
+            print(f"🔧 [DEBUG] Processing {len(recommendations)} recommendations")
+        
+        # Summary
+        print(f"\n📊 Duplication Analysis Summary:")
+        print(f"  Total Functions: {duplication_data.get('total_unique_functions', 0)}")
+        print(f"  Duplicated: {duplication_data.get('duplicated_functions', 0)}")
+        print(f"  Percentage: {duplication_data.get('duplication_percentage', 0):.1f}%")
+        
+        # Filter recommendations by priority
+        if hasattr(args, 'priority') and args.priority != 'all':
+            recommendations = [r for r in recommendations if r.get('priority') == args.priority]
+            if debug:
+                print(f"🔧 [DEBUG] Filtered to {len(recommendations)} {args.priority} priority recommendations")
+        
+        # Filter by threshold
+        threshold = getattr(args, 'threshold', 2)
+        duplicates = duplication_data.get('duplication_details', {})
+        filtered_duplicates = {k: v for k, v in duplicates.items() if len(v) >= threshold}
+        
+        if debug:
+            print(f"🔧 [DEBUG] Filtered duplicates by threshold {threshold}: {len(filtered_duplicates)} functions")
+        
+        if filtered_duplicates:
+            print(f"\n🚨 Duplicated Functions (≥{threshold} copies):")
+            sorted_duplicates = sorted(filtered_duplicates.items(), key=lambda x: len(x[1]), reverse=True)
+            
+            for func_name, paths in sorted_duplicates[:10]:
+                priority_emoji = "🔴" if len(paths) > 3 else "🟡"
+                print(f"  {priority_emoji} {func_name} ({len(paths)} copies)")
+                for path in paths[:3]:
+                    print(f"     - {path}")
+                if len(paths) > 3:
+                    print(f"     ... and {len(paths) - 3} more")
+        
+        # Recommendations
+        if recommendations:
+            print(f"\n💡 Recommendations:")
+            for rec in recommendations[:10]:
+                priority_emoji = "🔴" if rec.get('priority') == 'high' else "🟡"
+                print(f"  {priority_emoji} {rec['function']}")
+                print(f"     {rec['recommendation']}")
+        
+        # Save detailed report if requested
+        if hasattr(args, 'save_report') and args.save_report:
+            if debug:
+                print(f"🔧 [DEBUG] Saving report to {args.save_report}")
+            with open(args.save_report, 'w') as f:
+                json.dump(analysis, f, indent=2)
+            print(f"\n💾 Detailed report saved to: {args.save_report}")
+        
+        # Next steps
+        next_steps = analysis.get('next_steps', [])
+        if next_steps:
+            print(f"\n🎯 Recommended Actions:")
+            for i, step in enumerate(next_steps, 1):
+                print(f"  {i}. {step}")
+        
+        print(f"\n✅ Analysis uses existing llmstruct architecture:")
+        print(f"   - struct.json for deep codebase analysis")
+        print(f"   - CopilotContextManager for context loading")
+        print(f"   - No duplication of existing functions")
+        
+        if debug:
+            print("🔧 [DEBUG] analyze_duplicates completed successfully")
         
     except Exception as e:
-        logging.error(f"Audit command failed: {e}")
-        raise
+        print(f"❌ Failed to analyze duplicates: {e}")
+        if getattr(args, 'debug', False):
+            import traceback
+            print(f"🔧 [DEBUG] Full traceback:")
+            traceback.print_exc()
 
 
 def main():
@@ -1164,18 +1265,31 @@ def main():
 
     # Audit command parser
     audit_parser = subparsers.add_parser(
-        "audit", help="Audit and recover lost ideas/tasks from source files"
+        "audit", help="Audit project structure and check for issues"
     )
+    audit_parser.add_argument("root_dir", help="Root directory of the project")
     audit_parser.add_argument(
-        "action",
-        choices=["scan", "recover", "status"],
-        help="Audit action to perform"
+        "--include-duplicates", action="store_true", help="Include duplication analysis"
     )
-    audit_parser.add_argument(
-        "--dry-run", action="store_true", help="Show what would be done without making changes"
+
+    # Duplication analysis command parser
+    duplicates_parser = subparsers.add_parser(
+        "analyze-duplicates", help="Analyze function duplication using struct.json deep analysis"
     )
-    audit_parser.add_argument(
-        "--backup", action="store_true", default=True, help="Create backup before recovery"
+    duplicates_parser.add_argument(
+        "--format", choices=["text", "json"], default="text", help="Output format"
+    )
+    duplicates_parser.add_argument(
+        "--priority", choices=["all", "high", "medium"], default="all", help="Filter by priority"
+    )
+    duplicates_parser.add_argument(
+        "--threshold", type=int, default=2, help="Minimum copies to consider duplication"
+    )
+    duplicates_parser.add_argument(
+        "--save-report", type=str, help="Save detailed report to file"
+    )
+    duplicates_parser.add_argument(
+        "--debug", action="store_true", help="Enable verbose debug output"
     )
 
     args = parser.parse_args()
@@ -1196,6 +1310,8 @@ def main():
         copilot(args)
     elif args.command == "audit":
         audit(args)
+    elif args.command == "analyze-duplicates":
+        analyze_duplicates(args)
 
 
 if __name__ == "__main__":
