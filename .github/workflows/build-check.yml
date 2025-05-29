@@ -22,14 +22,11 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install flake8 pytest
-        # Устанавливаем проект
         pip install -e .
     
     - name: Lint with flake8
       run: |
-        # Останавливаемся на синтаксических ошибках
         flake8 src/llmstruct --count --select=E9,F63,F7,F82 --show-source --statistics
-        # Предупреждения но не останавливаемся
         flake8 src/llmstruct --count --max-line-length=88 --statistics || true
     
     - name: Check Python syntax
