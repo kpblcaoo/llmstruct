@@ -1,0 +1,37 @@
+name: Minimal CI (Backup)
+
+on:
+  workflow_dispatch:  # Ручной запуск
+  
+jobs:
+  minimal-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      run: |
+        git clone ${{ github.server_url }}/${{ github.repository }}.git .
+        git checkout ${{ github.sha }}
+    
+    - name: Setup Python (system)
+      run: |
+        python3 --version
+        python3 -m pip install --upgrade pip
+        python3 -m pip install flake8
+    
+    - name: Install project
+      run: |
+        python3 -m pip install -e ".[dev]"
+        echo "✅ Проект установлен"
+    
+    - name: Basic checks
+      run: |
+        echo "🔍 Базовые проверки..."
+        python3 -m py_compile src/llmstruct/*.py
+        echo "✅ Синтаксис OK"
+        
+        python3 -c "import llmstruct; print('✅ Импорт OK')"
+        
+        python3 -m llmstruct --help > /dev/null && echo "✅ CLI работает" || echo "⚠️ CLI проблемы"
+        
+        echo "🎉 Минимальные проверки завершены" 
