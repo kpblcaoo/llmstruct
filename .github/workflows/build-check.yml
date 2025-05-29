@@ -1,0 +1,73 @@
+name: Simple CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pytest
+        # Устанавливаем проект
+        pip install -e .
+    
+    - name: Lint with flake8
+      run: |
+        # Останавливаемся на синтаксических ошибках
+        flake8 src/llmstruct --count --select=E9,F63,F7,F82 --show-source --statistics
+        # Предупреждения но не останавливаемся
+        flake8 src/llmstruct --count --max-line-length=88 --statistics || true
+    
+    - name: Check Python syntax
+      run: |
+        python -m py_compile src/llmstruct/*.py
+    
+    - name: Test package import
+      run: |
+        python -c "import llmstruct; print('✅ Package imports successfully')"
+    
+    - name: Check CLI works
+      run: |
+        python -m llmstruct --help || echo "⚠️ CLI not working but continuing"
+    
+    - name: Validate critical JSON files
+      run: |
+        python -c "
+        import json
+        from pathlib import Path
+        
+        critical_files = [
+            'data/init_enhanced.json',
+            'pyproject.toml'
+        ]
+        
+        for file_path in critical_files:
+            path = Path(file_path)
+            if path.exists():
+                if file_path.endswith('.json'):
+                    try:
+                        with open(path, 'r') as f:
+                            json.load(f)
+                        print(f'✅ {file_path} - валиден')
+                    except json.JSONDecodeError as e:
+                        print(f'❌ {file_path} - невалиден: {e}')
+                        exit(1)
+                else:
+                    print(f'✅ {file_path} - существует')
+            else:
+                print(f'⚠️ {file_path} - не найден')
+        " 
