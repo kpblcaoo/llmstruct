@@ -152,5 +152,71 @@
       "environment": "development",
       "auto_init": true
     }
+  },
+  {
+    "timestamp": "2025-05-29T21:52:08.861334",
+    "query": "development_environment_startup",
+    "used_llmstruct": true,
+    "tools_used": [
+      "ai_workflow_middleware",
+      "ai_self_monitor",
+      "context_orchestrator"
+    ],
+    "context_tags": [
+      "startup"
+    ],
+    "behavior_patterns": [
+      "proper_llmstruct_usage",
+      "context_tag_usage"
+    ],
+    "effectiveness_score": 1.0,
+    "metadata": {
+      "environment": "development",
+      "auto_init": true
+    }
+  },
+  {
+    "timestamp": "2025-05-29T21:55:58.046933",
+    "query": "development_environment_startup",
+    "used_llmstruct": true,
+    "tools_used": [
+      "ai_workflow_middleware",
+      "ai_self_monitor",
+      "context_orchestrator"
+    ],
+    "context_tags": [
+      "startup"
+    ],
+    "behavior_patterns": [
+      "proper_llmstruct_usage",
+      "context_tag_usage"
+    ],
+    "effectiveness_score": 1.0,
+    "metadata": {
+      "environment": "development",
+      "auto_init": true
+    }
+  },
+  {
+    "timestamp": "2025-05-29T23:55:46.763004",
+    "query": "development_environment_startup",
+    "used_llmstruct": true,
+    "tools_used": [
+      "ai_workflow_middleware",
+      "ai_self_monitor",
+      "context_orchestrator"
+    ],
+    "context_tags": [
+      "startup"
+    ],
+    "behavior_patterns": [
+      "proper_llmstruct_usage",
+      "context_tag_usage"
+    ],
+    "effectiveness_score": 1.0,
+    "metadata": {
+      "environment": "development",
+      "auto_init": true
+    }
   }
 ]
