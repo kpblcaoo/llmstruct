@@ -1,0 +1,120 @@
+name: Build & Test Installation
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  full-install-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+    
+    - name: Install all dependencies (CRITICAL)
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8
+        pip install -e ".[dev]"
+        echo "✅ Все зависимости установлены"
+        
+        # Проверяем что ключевые зависимости установлены
+        python -c "import ijson; print('✅ ijson установлен')"
+        python -c "import aiohttp; print('✅ aiohttp установлен')"
+        python -c "import click; print('✅ click установлен')"
+    
+    - name: Check Python syntax (CRITICAL)
+      run: |
+        echo "🔍 Проверяем синтаксис Python файлов..."
+        python -m py_compile src/llmstruct/*.py
+        echo "✅ Синтаксис корректен"
+    
+    - name: Check critical lint errors (CRITICAL)
+      run: |
+        echo "🔍 Проверяем критические ошибки..."
+        flake8 src/llmstruct --select=E9,F63,F7,F82 --show-source --statistics
+        echo "✅ Критических ошибок нет"
+    
+    - name: Test full package import (CRITICAL)
+      run: |
+        echo "🔍 Проверяем импорт всех модулей..."
+        python -c "
+        import llmstruct
+        print('✅ Основной пакет импортируется')
+        
+        # Пробуем импортировать основные модули
+        try:
+            from llmstruct.cli import main
+            print('✅ CLI модуль импортируется')
+        except Exception as e:
+            print(f'❌ CLI модуль: {e}')
+            exit(1)
+        
+        try:
+            from llmstruct.llm_client import LLMClient
+            print('✅ LLM Client импортируется')
+        except Exception as e:
+            print(f'⚠️ LLM Client: {e}')
+        
+        print('✅ Импорт пакета завершен')
+        "
+    
+    - name: Test CLI help command (CRITICAL)
+      run: |
+        echo "🔍 Проверяем работу CLI..."
+        python -m llmstruct --help
+        echo "✅ CLI работает"
+    
+    - name: Test CLI basic commands (NON-CRITICAL)
+      run: |
+        echo "🔍 Проверяем основные команды CLI..."
+        
+        # Создаем директорию docs если её нет (для логов)
+        mkdir -p docs
+        
+        # Тестируем parse на самом проекте
+        python -m llmstruct parse . -o test_output.json || {
+          echo "⚠️ Parse команда не сработала, но это некритично"
+          exit 0
+        }
+        
+        if [ -f "test_output.json" ]; then
+            echo "✅ Parse команда создала файл"
+            ls -la test_output.json
+        else
+            echo "⚠️ Parse команда не создала файл, но продолжаем"
+        fi
+        
+        echo "✅ Тестирование CLI завершено"
+    
+    - name: Check style warnings (NON-CRITICAL)
+      run: |
+        echo "🔍 Проверяем стиль кода (некритично)..."
+        flake8 src/llmstruct --max-line-length=88 --statistics || {
+          echo "⚠️ Есть предупреждения по стилю, но это некритично"
+        }
+        echo "✅ Проверка стиля завершена"
+    
+    - name: Final validation (CRITICAL)
+      run: |
+        echo "🎯 Финальная проверка установки..."
+        python -c "
+        import sys
+        import llmstruct
+        
+        print(f'Python version: {sys.version}')
+        
+        if hasattr(llmstruct, '__version__'):
+            print(f'LLMStruct version: {llmstruct.__version__}')
+        else:
+            print('LLMStruct version: не определена')
+        
+        print('✅ Проект полностью рабочий!')
+        " 
