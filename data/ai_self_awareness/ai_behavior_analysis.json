@@ -1,15 +1,18 @@
 {
   "llmstruct_usage_rate": 1.0,
-  "context_awareness_score": 1.0,
-  "tool_usage_diversity": 0.3,
+  "context_awareness_score": 0.25,
+  "tool_usage_diversity": 0.5,
   "guidance_adherence": 1.0,
-  "improvement_needed": [],
+  "improvement_needed": [
+    "Use more context tags and semantic search"
+  ],
   "strengths": [
     "Excellent llmstruct system integration",
-    "Good context awareness and tool usage",
     "High effectiveness in task completion"
   ],
   "recommendations": [
+    "\ud83d\udd0d Use codebase_search for semantic exploration",
+    "\ud83d\udcca Reference struct.json for project understanding",
     "\ud83d\udca1 Start every complex task with system capability discovery",
     "\ud83c\udfa8 Use workflow patterns: [discuss] \u2192 [code] \u2192 [review]",
     "\ud83d\udcc8 Monitor effectiveness scores and adjust approach"

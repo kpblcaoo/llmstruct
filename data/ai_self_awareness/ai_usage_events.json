@@ -20,5 +20,137 @@
       "environment": "development",
       "auto_init": true
     }
+  },
+  {
+    "timestamp": "2025-05-28T23:39:06.750989",
+    "query": "[meta] What are the main modules in this codebase?",
+    "used_llmstruct": true,
+    "tools_used": [
+      "ollama_api",
+      "ai_middleware"
+    ],
+    "context_tags": [],
+    "behavior_patterns": [
+      "proper_llmstruct_usage",
+      "delegation_awareness"
+    ],
+    "effectiveness_score": 1.0,
+    "metadata": {
+      "test": true,
+      "model": "mistral:latest"
+    }
+  },
+  {
+    "timestamp": "2025-05-28T23:39:18.494644",
+    "query": "[code] How would you implement a new parser?",
+    "used_llmstruct": true,
+    "tools_used": [
+      "ollama_api",
+      "ai_middleware"
+    ],
+    "context_tags": [],
+    "behavior_patterns": [
+      "proper_llmstruct_usage"
+    ],
+    "effectiveness_score": 1.0,
+    "metadata": {
+      "test": true,
+      "model": "mistral:latest"
+    }
+  },
+  {
+    "timestamp": "2025-05-28T23:39:33.817944",
+    "query": "[debug] Analyze potential performance issues",
+    "used_llmstruct": true,
+    "tools_used": [
+      "ollama_api",
+      "ai_middleware"
+    ],
+    "context_tags": [],
+    "behavior_patterns": [
+      "proper_llmstruct_usage"
+    ],
+    "effectiveness_score": 1.0,
+    "metadata": {
+      "test": true,
+      "model": "mistral:latest"
+    }
+  },
+  {
+    "timestamp": "2025-05-28T23:43:02.278162",
+    "query": "[meta] What are the main modules in this codebase?",
+    "used_llmstruct": true,
+    "tools_used": [
+      "ollama_api",
+      "ai_middleware"
+    ],
+    "context_tags": [],
+    "behavior_patterns": [
+      "proper_llmstruct_usage",
+      "delegation_awareness"
+    ],
+    "effectiveness_score": 1.0,
+    "metadata": {
+      "test": true,
+      "model": "mistral:latest"
+    }
+  },
+  {
+    "timestamp": "2025-05-28T23:43:15.848526",
+    "query": "[code] How would you implement a new parser?",
+    "used_llmstruct": true,
+    "tools_used": [
+      "ollama_api",
+      "ai_middleware"
+    ],
+    "context_tags": [],
+    "behavior_patterns": [
+      "proper_llmstruct_usage"
+    ],
+    "effectiveness_score": 1.0,
+    "metadata": {
+      "test": true,
+      "model": "mistral:latest"
+    }
+  },
+  {
+    "timestamp": "2025-05-28T23:43:26.170571",
+    "query": "[debug] Analyze potential performance issues",
+    "used_llmstruct": true,
+    "tools_used": [
+      "ollama_api",
+      "ai_middleware"
+    ],
+    "context_tags": [],
+    "behavior_patterns": [
+      "proper_llmstruct_usage"
+    ],
+    "effectiveness_score": 1.0,
+    "metadata": {
+      "test": true,
+      "model": "mistral:latest"
+    }
+  },
+  {
+    "timestamp": "2025-05-29T12:45:12.225962",
+    "query": "development_environment_startup",
+    "used_llmstruct": true,
+    "tools_used": [
+      "ai_workflow_middleware",
+      "ai_self_monitor",
+      "context_orchestrator"
+    ],
+    "context_tags": [
+      "startup"
+    ],
+    "behavior_patterns": [
+      "proper_llmstruct_usage",
+      "context_tag_usage"
+    ],
+    "effectiveness_score": 1.0,
+    "metadata": {
+      "environment": "development",
+      "auto_init": true
+    }
   }
 ]
