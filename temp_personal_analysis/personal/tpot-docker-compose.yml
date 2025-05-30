@@ -1,0 +1,193 @@
+version: '3.8'
+
+services:
+  # Elasticsearch для логов
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.9
+    container_name: tpot_elasticsearch
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
+      - xpack.security.enabled=false
+      - cluster.name=tpot-cluster
+      - node.name=tpot-node
+      - bootstrap.memory_lock=true
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - tpot_es_data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+    restart: unless-stopped
+    networks:
+      - tpot_network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9200/_cluster/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Kibana для визуализации
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.17.9
+    container_name: tpot_kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - SERVER_NAME=tpot-kibana
+      - SERVER_BASEPATH=/kibana
+      - SERVER_REWRITEBASEPATH=true
+    ports:
+      - "64295:5601"
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - tpot_network
+
+  # Logstash для обработки логов
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.17.9
+    container_name: tpot_logstash
+    volumes:
+      - ./conf/logstash:/usr/share/logstash/pipeline:ro
+      - tpot_logs:/opt/tpot/logs
+    environment:
+      - "LS_JAVA_OPTS=-Xmx1g -Xms1g"
+      - PIPELINE_WORKERS=2
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - tpot_network
+    ports:
+      - "5044:5044"
+
+  # Cowrie SSH/Telnet honeypot
+  cowrie:
+    image: cowrie/cowrie:latest
+    container_name: tpot_cowrie
+    ports:
+      - "22:2222"
+      - "23:2223"
+    volumes:
+      - tpot_cowrie_data:/cowrie/var
+      - tpot_logs:/opt/tpot/logs
+      - ./conf/cowrie:/cowrie/etc:ro
+    environment:
+      - COWRIE_LOG_FILE=/opt/tpot/logs/cowrie.log
+    restart: unless-stopped
+    networks:
+      - tpot_network
+
+  # Dionaea для различных протоколов
+  dionaea:
+    image: dinotools/dionaea:latest
+    container_name: tpot_dionaea
+    ports:
+      - "21:21"     # FTP
+      - "25:25"     # SMTP
+      - "80:8080"   # HTTP (внутренний порт 8080, внешний 80)
+      - "443:8443"  # HTTPS
+      - "993:993"   # IMAPS
+      - "995:995"   # POP3S
+      - "1433:1433" # MSSQL
+      - "3306:3306" # MySQL
+      - "5432:5432" # PostgreSQL
+    volumes:
+      - tpot_dionaea_data:/opt/dionaea/var
+      - tpot_logs:/opt/tpot/logs
+      - ./conf/dionaea:/opt/dionaea/etc:ro
+    environment:
+      - DIONAEA_LOG_FILE=/opt/tpot/logs/dionaea.log
+    restart: unless-stopped
+    networks:
+      - tpot_network
+
+  # Honeytrap для неизвестных протоколов
+  honeytrap:
+    image: armedpot/honeytrap:latest
+    container_name: tpot_honeytrap
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      - "2222:2222"  # Дополнительный SSH
+      - "5555:5555"  # Дополнительный порт
+    volumes:
+      - ./conf/honeytrap:/etc/honeytrap:ro
+      - tpot_logs:/opt/tpot/logs
+    restart: unless-stopped
+    networks:
+      - tpot_network
+
+  # Filebeat для отправки логов
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:7.17.9
+    container_name: tpot_filebeat
+    user: root
+    volumes:
+      - ./conf/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - tpot_logs:/opt/tpot/logs:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /proc:/hostfs/proc:ro
+      - /sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro
+      - /:/hostfs:ro
+    environment:
+      - BEAT_STRICT_PERMS=false
+    depends_on:
+      logstash:
+        condition: service_started
+    restart: unless-stopped
+    networks:
+      - tpot_network
+
+  # Nginx для веб-интерфейса
+  nginx:
+    image: nginx:alpine
+    container_name: tpot_nginx
+    ports:
+      - "64294:80"
+    volumes:
+      - ./conf/nginx:/etc/nginx/conf.d:ro
+      - ./web:/var/www/html:ro
+    depends_on:
+      - kibana
+      - elasticsearch
+    restart: unless-stopped
+    networks:
+      - tpot_network
+
+  # Redis для кэширования (опционально)
+  redis:
+    image: redis:alpine
+    container_name: tpot_redis
+    volumes:
+      - tpot_redis_data:/data
+    restart: unless-stopped
+    networks:
+      - tpot_network
+
+volumes:
+  tpot_es_data:
+    driver: local
+  tpot_logs:
+    driver: local
+  tpot_cowrie_data:
+    driver: local
+  tpot_dionaea_data:
+    driver: local
+  tpot_redis_data:
+    driver: local
+
+networks:
+  tpot_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
+          gateway: 172.20.0.1

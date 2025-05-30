@@ -174,3 +174,6 @@ backup_*/
 *compensation*.json
 
 # Backup directories (from separation work)temp/update-singbox/
+
+# Boss private data - exclude from commits
+.personal/

@@ -1,0 +1,235 @@
+{
+  "_meta": {
+    "template_version": "1.0.0",
+    "description": "Personal Grok delegation configuration template",
+    "last_updated": "2025-01-28",
+    "author": "llmstruct system"
+  },
+  
+  "user_profile": {
+    "user_id": "{{USER_ID}}",
+    "display_name": "{{DISPLAY_NAME}}",
+    "role": "{{USER_ROLE}}", 
+    "preferences": {
+      "timezone": "{{TIMEZONE}}",
+      "language": "{{LANGUAGE}}",
+      "notification_level": "{{NOTIFICATION_LEVEL}}"
+    }
+  },
+
+  "grok_configuration": {
+    "api_settings": {
+      "model": "grok-3",
+      "max_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "timeout_seconds": 60
+    },
+    "context_preferences": {
+      "default_mode": "FOCUSED",
+      "max_context_size": 50000,
+      "priority_boost": 1.2,
+      "cache_responses": true,
+      "cache_ttl_hours": 24
+    },
+    "quality_control": {
+      "min_response_quality": 0.8,
+      "retry_on_failure": true,
+      "max_retries": 3,
+      "fallback_models": ["anthropic", "ollama"]
+    }
+  },
+
+  "delegation_rules": {
+    "auto_approve": {
+      "commands": ["parse", "validate", "audit scan", "context get"],
+      "max_batch_size": 10,
+      "require_confirmation": false
+    },
+    "require_approval": {
+      "commands": ["write", "generate", "create", "review --focus security"],
+      "reason": "Potentially destructive or sensitive operations"
+    },
+    "resource_limits": {
+      "max_concurrent_requests": 3,
+      "daily_token_budget": 100000,
+      "hourly_request_limit": 50
+    }
+  },
+
+  "personal_workflows": [
+    {
+      "id": "daily_project_health",
+      "name": "Daily Project Health Check",
+      "description": "Automated daily analysis of project status",
+      "schedule": {
+        "type": "cron",
+        "expression": "0 9 * * 1-5",
+        "timezone": "{{TIMEZONE}}"
+      },
+      "commands": [
+        {
+          "type": "parse",
+          "args": ["."],
+          "options": {"use_cache": true}
+        },
+        {
+          "type": "audit", 
+          "args": ["scan"],
+          "options": {"dry_run": false}
+        },
+        {
+          "type": "query",
+          "prompt": "Summarize project changes and highlight important updates",
+          "context_mode": "FOCUSED"
+        }
+      ],
+      "output": {
+        "format": "summary_report",
+        "destination": "{{PERSONAL_DIR}}/reports/daily_{{DATE}}.json"
+      }
+    },
+
+    {
+      "id": "weekly_strategic_review",
+      "name": "Weekly Strategic Analysis",
+      "description": "Comprehensive weekly review for strategic planning",
+      "schedule": {
+        "type": "weekly", 
+        "day": "friday",
+        "time": "17:00"
+      },
+      "commands": [
+        {
+          "type": "review",
+          "args": ["src/"],
+          "options": {"focus": "maintainability"}
+        },
+        {
+          "type": "query",
+          "prompt": "Analyze progress toward strategic goals and recommend adjustments",
+          "context_mode": "SESSION",
+          "include_personal": true
+        }
+      ]
+    }
+  ],
+
+  "context_personalization": {
+    "priority_files": [
+      "{{PERSONAL_DIR}}/personal_life_planning_concept.md",
+      "{{PERSONAL_DIR}}/exit_strategy_and_investment_scenarios.md",
+      "data/tasks.json",
+      "data/ideas.json"
+    ],
+    "excluded_patterns": [
+      "tests/**",
+      "build/**", 
+      "node_modules/**",
+      "*.log",
+      ".git/**"
+    ],
+    "custom_scenarios": {
+      "life_planning": {
+        "description": "Personal life and relocation planning context",
+        "token_budget": 25000,
+        "include_sections": ["personal_strategy", "financial_planning", "exit_scenarios"],
+        "focus_areas": ["relocation", "financial_independence", "risk_management"]
+      },
+      "business_development": {
+        "description": "Business strategy and development context", 
+        "token_budget": 20000,
+        "include_sections": ["market_analysis", "competitive_intelligence", "product_strategy"],
+        "focus_areas": ["revenue_growth", "market_expansion", "competitive_positioning"]
+      },
+      "technical_excellence": {
+        "description": "Technical architecture and code quality",
+        "token_budget": 15000,
+        "include_sections": ["code_structure", "architecture_decisions", "performance_metrics"],
+        "focus_areas": ["scalability", "maintainability", "security"]
+      }
+    }
+  },
+
+  "notification_settings": {
+    "channels": {
+      "email": "{{USER_EMAIL}}",
+      "telegram": "{{TELEGRAM_CHAT_ID}}",
+      "slack": "{{SLACK_WEBHOOK}}"
+    },
+    "triggers": [
+      {
+        "event": "workflow_completion",
+        "channels": ["telegram"],
+        "template": "Workflow '{{workflow_name}}' completed with {{status}}"
+      },
+      {
+        "event": "error_threshold_exceeded", 
+        "channels": ["email", "telegram"],
+        "template": "⚠️ Error rate exceeded threshold: {{error_rate}}%"
+      },
+      {
+        "event": "strategic_milestone",
+        "channels": ["email"],
+        "template": "🎯 Strategic milestone reached: {{milestone}}"
+      }
+    ]
+  },
+
+  "security_settings": {
+    "data_encryption": {
+      "enabled": true,
+      "algorithm": "AES-256-GCM",
+      "key_rotation_days": 90
+    },
+    "access_control": {
+      "require_2fa": true,
+      "session_timeout_minutes": 60,
+      "allowed_ip_ranges": ["{{TRUSTED_IP_RANGE}}"]
+    },
+    "audit_logging": {
+      "enabled": true,
+      "log_level": "INFO",
+      "retention_days": 365,
+      "include_request_payloads": false
+    }
+  },
+
+  "integration_hooks": {
+    "github": {
+      "enabled": true,
+      "repo": "{{GITHUB_REPO}}",
+      "webhook_url": "{{GITHUB_WEBHOOK}}",
+      "events": ["push", "pull_request", "issues"]
+    },
+    "telegram": {
+      "enabled": true,
+      "bot_token": "{{TELEGRAM_BOT_TOKEN}}",
+      "chat_id": "{{TELEGRAM_CHAT_ID}}",
+      "commands": ["/status", "/progress", "/help"]
+    },
+    "external_apis": {
+      "financial_data": "{{FINANCIAL_API_KEY}}",
+      "market_research": "{{MARKET_API_KEY}}",
+      "news_monitoring": "{{NEWS_API_KEY}}"
+    }
+  },
+
+  "fallback_configuration": {
+    "on_grok_failure": {
+      "strategy": "cascade",
+      "alternatives": ["anthropic", "local_ollama"],
+      "notify_user": true
+    },
+    "on_rate_limit": {
+      "strategy": "queue_and_retry",
+      "retry_after_minutes": 15,
+      "max_queue_size": 100
+    },
+    "on_context_overflow": {
+      "strategy": "intelligent_truncation",
+      "preserve_sections": ["personal_priorities", "current_goals"],
+      "truncation_algorithm": "semantic_importance"
+    }
+  }
+}

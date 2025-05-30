@@ -1,0 +1,331 @@
+{
+  "_meta": {
+    "template_version": "1.0.0",
+    "description": "Personal workflow automation templates",
+    "target_use_case": "Life planning and business development automation",
+    "created": "2025-01-28"
+  },
+
+  "relocation_planning_workflows": {
+    "financial_progress_tracker": {
+      "name": "Financial Progress Tracker",
+      "description": "Track progress toward $2M ARR goal for relocation funding",
+      "schedule": "weekly",
+      "automation_level": "high",
+      
+      "data_sources": [
+        "{{PERSONAL_DIR}}/financial_planning.json",
+        "{{PERSONAL_DIR}}/exit_strategy_and_investment_scenarios.md",
+        "data/metrics.json"
+      ],
+      
+      "grok_tasks": [
+        {
+          "prompt": "Analyze current revenue trends and project path to $2M ARR",
+          "context": "financial_planning",
+          "output_format": "progress_report",
+          "frequency": "weekly"
+        },
+        {
+          "prompt": "Identify revenue acceleration opportunities and risks",
+          "context": "business_development", 
+          "output_format": "strategic_recommendations",
+          "frequency": "bi-weekly"
+        },
+        {
+          "prompt": "Evaluate if exit strategy triggers should be activated",
+          "context": "life_planning",
+          "output_format": "decision_matrix",
+          "frequency": "monthly"
+        }
+      ],
+
+      "notification_rules": [
+        {
+          "condition": "revenue_growth_rate < 20%",
+          "action": "alert_strategic_review",
+          "urgency": "high"
+        },
+        {
+          "condition": "approaching_milestone",
+          "action": "prepare_next_phase",
+          "urgency": "medium"
+        }
+      ]
+    },
+
+    "market_intelligence": {
+      "name": "Competitive Intelligence Monitor",
+      "description": "Monitor BigTech threats and market opportunities",
+      "schedule": "daily",
+      "automation_level": "medium",
+
+      "monitoring_targets": [
+        "BigTech LLM developments",
+        "EU visa policy changes",
+        "Tech job markets in Montenegro/Spain/Portugal",
+        "Competitive llmstruct alternatives"
+      ],
+
+      "grok_tasks": [
+        {
+          "prompt": "Scan latest AI/LLM industry news for competitive threats",
+          "context": "minimal",
+          "output_format": "threat_assessment",
+          "frequency": "daily"
+        },
+        {
+          "prompt": "Research EU tech visa requirements and policy changes",
+          "context": "relocation_planning",
+          "output_format": "policy_update",
+          "frequency": "weekly"
+        },
+        {
+          "prompt": "Analyze job market conditions in target EU countries",
+          "context": "life_planning",
+          "output_format": "market_report",
+          "frequency": "monthly"
+        }
+      ],
+
+      "decision_triggers": [
+        {
+          "condition": "major_bigtech_announcement",
+          "action": "evaluate_exit_strategy",
+          "automation": "semi_automatic"
+        },
+        {
+          "condition": "visa_policy_favorable_change",
+          "action": "accelerate_relocation_timeline",
+          "automation": "notify_only"
+        }
+      ]
+    },
+
+    "product_development_optimization": {
+      "name": "Product Development Optimizer",
+      "description": "Optimize llmstruct development for market fit and revenue",
+      "schedule": "daily",
+      "automation_level": "high",
+
+      "focus_areas": [
+        "Feature prioritization for EU market",
+        "API monetization opportunities", 
+        "Enterprise customer requirements",
+        "Open-source vs proprietary balance"
+      ],
+
+      "grok_tasks": [
+        {
+          "prompt": "Analyze user feedback and prioritize features for EU enterprise customers",
+          "context": "business_development",
+          "output_format": "feature_backlog",
+          "frequency": "weekly"
+        },
+        {
+          "prompt": "Evaluate API pricing strategies and revenue models",
+          "context": "financial_planning",
+          "output_format": "pricing_analysis",
+          "frequency": "bi-weekly"
+        },
+        {
+          "prompt": "Review code quality and technical debt impact on scalability",
+          "context": "technical_excellence",
+          "output_format": "tech_health_report",
+          "frequency": "weekly"
+        }
+      ]
+    }
+  },
+
+  "life_planning_automations": {
+    "relocation_readiness_assessment": {
+      "name": "Relocation Readiness Calculator",
+      "description": "Continuous assessment of readiness to execute relocation plan",
+      "schedule": "weekly",
+      
+      "assessment_criteria": [
+        "Financial threshold achievement ($2M ARR)",
+        "Legal requirements completion",
+        "Family readiness factors",
+        "Business sustainability without physical presence"
+      ],
+
+      "grok_analysis": [
+        {
+          "prompt": "Calculate relocation readiness score based on current financial and legal status",
+          "context": "life_planning",
+          "include_data": ["financial_status", "visa_progress", "family_factors"],
+          "output_format": "readiness_score"
+        },
+        {
+          "prompt": "Identify blockers and recommend accelerated path to relocation",
+          "context": "strategic_planning",
+          "output_format": "action_plan"
+        }
+      ]
+    },
+
+    "risk_monitoring": {
+      "name": "Personal and Business Risk Monitor",
+      "description": "Monitor risks that could impact relocation timeline",
+      "schedule": "daily",
+
+      "risk_categories": [
+        "Political/economic instability in target countries",
+        "Technology industry disruption",
+        "Personal health/family factors",
+        "Business execution risks"
+      ],
+
+      "grok_analysis": [
+        {
+          "prompt": "Assess geopolitical and economic risks in Montenegro, Spain, Portugal",
+          "context": "minimal",
+          "frequency": "weekly",
+          "output_format": "risk_report"
+        },
+        {
+          "prompt": "Evaluate business continuity risks and mitigation strategies",
+          "context": "business_development",
+          "frequency": "bi-weekly",
+          "output_format": "contingency_plan"
+        }
+      ]
+    }
+  },
+
+  "personal_productivity_workflows": {
+    "daily_planning_assistant": {
+      "name": "Intelligent Daily Planner",
+      "description": "AI-assisted daily planning aligned with strategic goals",
+      "schedule": "daily_morning",
+
+      "planning_inputs": [
+        "Strategic goal progress",
+        "Current project priorities", 
+        "Personal energy levels",
+        "External commitments"
+      ],
+
+      "grok_assistance": [
+        {
+          "prompt": "Generate optimized daily schedule based on strategic priorities and current context",
+          "context": "personal_productivity",
+          "output_format": "daily_plan"
+        },
+        {
+          "prompt": "Identify potential conflicts and suggest schedule adjustments",
+          "context": "time_management",
+          "output_format": "schedule_optimization"
+        }
+      ]
+    },
+
+    "decision_support_system": {
+      "name": "Strategic Decision Assistant",
+      "description": "AI-powered decision support for complex choices",
+      "trigger": "on_demand",
+
+      "decision_types": [
+        "Investment opportunities",
+        "Business partnerships",
+        "Technology choices",
+        "Personal life decisions"
+      ],
+
+      "grok_analysis": [
+        {
+          "prompt": "Analyze decision options using decision matrix framework from personal planning system",
+          "context": "decision_making",
+          "output_format": "decision_analysis"
+        },
+        {
+          "prompt": "Evaluate alignment with long-term strategic goals and risk tolerance",
+          "context": "strategic_alignment",
+          "output_format": "alignment_assessment"
+        }
+      ]
+    }
+  },
+
+  "integration_workflows": {
+    "github_project_sync": {
+      "name": "GitHub Project Synchronization",
+      "description": "Sync project progress with GitHub issues and milestones",
+      "schedule": "daily",
+
+      "sync_targets": [
+        "Personal planning tasks → GitHub issues",
+        "Financial milestones → GitHub milestones",
+        "Strategic decisions → GitHub project boards"
+      ],
+
+      "automation_rules": [
+        {
+          "trigger": "new_financial_milestone_reached",
+          "action": "create_github_milestone",
+          "grok_task": "Generate milestone description and success criteria"
+        },
+        {
+          "trigger": "strategic_decision_made",
+          "action": "update_project_roadmap",
+          "grok_task": "Update roadmap documentation with decision rationale"
+        }
+      ]
+    },
+
+    "telegram_notification_system": {
+      "name": "Intelligent Telegram Notifications",
+      "description": "Smart notification system via Telegram with context awareness",
+      "trigger": "event_driven",
+
+      "notification_types": [
+        "Financial milestone updates",
+        "Competitive threat alerts",
+        "Relocation opportunity notifications",
+        "Daily progress summaries"
+      ],
+
+      "grok_processing": [
+        {
+          "task": "summarize_daily_progress",
+          "prompt": "Create concise daily progress summary for mobile notification",
+          "context": "daily_summary",
+          "max_length": "telegram_message"
+        },
+        {
+          "task": "alert_formatting",
+          "prompt": "Format alert with appropriate urgency level and action items",
+          "context": "alert_processing",
+          "output_format": "telegram_alert"
+        }
+      ]
+    }
+  },
+
+  "template_configuration": {
+    "variable_substitution": {
+      "{{PERSONAL_DIR}}": ".personal",
+      "{{USER_ID}}": "kpblcaoo",
+      "{{TIMEZONE}}": "Europe/Moscow",
+      "{{TELEGRAM_CHAT_ID}}": "{{TO_BE_CONFIGURED}}",
+      "{{GITHUB_REPO}}": "kpblc/llmstruct"
+    },
+
+    "customization_points": [
+      "Financial thresholds and targets",
+      "Relocation timeline preferences",
+      "Risk tolerance levels",
+      "Notification frequency preferences",
+      "Integration service credentials"
+    ],
+
+    "validation_rules": [
+      "All financial targets must be realistic and time-bound",
+      "Risk thresholds must align with personal risk tolerance",
+      "Automation levels must not exceed user comfort zone",
+      "Privacy settings must protect sensitive personal data"
+    ]
+  }
+}

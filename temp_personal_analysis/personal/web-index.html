@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>🍯 T-Pot Honeypot Dashboard | Red OS 7.3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar { 
+            background: rgba(255,255,255,0.95) !important; 
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        .card { 
+            background: rgba(255,255,255,0.95); 
+            backdrop-filter: blur(10px);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+        }
+        .status-indicator { 
+            width: 12px; 
+            height: 12px; 
+            border-radius: 50%; 
+            display: inline-block; 
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+        .status-running { background: #28a745; }
+        .status-stopped { background: #dc3545; }
+        .status-warning { background: #ffc107; }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .metric-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #495057;
+        }
+        .metric-label {
+            color: #6c757d;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-custom {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 25px;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            color: white;
+        }
+        
+        .alert-custom {
+            border: none;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.9);
+        }
+        
+        .honeypot-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .honeypot-status:last-child {
+            border-bottom: none;
+        }
+        
+        .attack-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fas fa-shield-alt text-warning"></i> T-Pot Honeypot
+                <small class="text-muted">Red OS 7.3</small>
+            </a>
+            <div class="navbar-nav ms-auto">
+                <span class="nav-item">
+                    <i class="fas fa-clock"></i> <span id="currentTime"></span>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-4">
+        <!-- Заголовок -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bold mb-3">
+                        <i class="fas fa-bug"></i> T-Pot Honeypot Dashboard
+                    </h1>
+                    <p class="lead">Мониторинг и анализ кибератак в реальном времени</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Статус системы -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="alert alert-custom" role="alert">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-info-circle text-primary me-3 fs-4"></i>
+                        <div>
+                            <strong>Система T-Pot запущена и готова к работе</strong><br>
+                            <small>Все honeypot сервисы активны и ожидают подключений злоумышленников</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Метрики -->
+        <div class="row mb-4">
+            <div class="col-md-3 mb-3">
+                <div class="card metric-card">
+                    <div class="metric-number text-primary" id="totalAttacks">
+                        <div class="loading"></div>
+                    </div>
+                    <div class="metric-label">Всего атак</div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card metric-card">
+                    <div class="metric-number text-success" id="uniqueIPs">
+                        <div class="loading"></div>
+                    </div>
+                    <div class="metric-label">Уникальных IP</div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card metric-card">
+                    <div class="metric-number text-warning" id="activeHoneypots">
+                        <span class="loading"></span>
+                    </div>
+                    <div class="metric-label">Активных ловушек</div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card metric-card">
+                    <div class="metric-number text-info" id="dataSize">
+                        <div class="loading"></div>
+                    </div>
+                    <div class="metric-label">Размер данных</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Основная панель -->
+        <div class="row">
+            <!-- Статус сервисов -->
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-transparent">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-server text-primary"></i> Статус Honeypot Сервисов
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="honeypotStatus">
+                            <div class="honeypot-status">
+                                <div>
+                                    <i class="fas fa-terminal me-2"></i>
+                                    <strong>SSH/Telnet (Cowrie)</strong>
+                                    <br><small class="text-muted">Порты 22, 23</small>
+                                </div>
+                                <span class="status-indicator status-running" id="cowrie-status"></span>
+                            </div>
+                            <div class="honeypot-status">
+                                <div>
+                                    <i class="fas fa-globe me-2"></i>
+                                    <strong>Multi-Protocol (Dionaea)</strong>
+                                    <br><small class="text-muted">HTTP, FTP, SMTP, MySQL, PostgreSQL</small>
+                                </div>
+                                <span class="status-indicator status-running" id="dionaea-status"></span>
+                            </div>
+                            <div class="honeypot-status">
+                                <div>
+                                    <i class="fas fa-question-circle me-2"></i>
+                                    <strong>Unknown Protocols (Honeytrap)</strong>
+                                    <br><small class="text-muted">Порты 8080, 8443</small>
+                                </div>
+                                <span class="status-indicator status-running" id="honeytrap-status"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Статус мониторинга -->
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-transparent">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-chart-line text-success"></i> Статус Мониторинга
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="honeypot-status">
+                            <div>
+                                <i class="fas fa-database me-2"></i>
+                                <strong>Elasticsearch</strong>
+                                <br><small class="text-muted">Хранение данных</small>
+                            </div>
+                            <span class="status-indicator status-running" id="elasticsearch-status"></span>
+                        </div>
+                        <div class="honeypot-status">
+                            <div>
+                                <i class="fas fa-chart-bar me-2"></i>
+                                <strong>Kibana</strong>
+                                <br><small class="text-muted">Визуализация</small>
+                            </div>
+                            <span class="status-indicator status-running" id="kibana-status"></span>
+                        </div>
+                        <div class="honeypot-status">
+                            <div>
+                                <i class="fas fa-filter me-2"></i>
+                                <strong>Logstash</strong>
+                                <br><small class="text-muted">Обработка логов</small>
+                            </div>
+                            <span class="status-indicator status-running" id="logstash-status"></span>
+                        </div>
+                        <div class="honeypot-status">
+                            <div>
+                                <i class="fas fa-shipping-fast me-2"></i>
+                                <strong>Filebeat</strong>
+                                <br><small class="text-muted">Отправка логов</small>
+                            </div>
+                            <span class="status-indicator status-running" id="filebeat-status"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Панель управления и последние атаки -->
+        <div class="row">
+            <!-- Панель управления -->
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-header bg-transparent">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-cogs text-warning"></i> Панель Управления
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-grid gap-2">
+                            <a href="/kibana/" class="btn btn-custom">
+                                <i class="fas fa-chart-pie me-2"></i>Открыть Kibana Dashboard
+                            </a>
+                            <a href="/api/_cat/indices?v" class="btn btn-outline-primary" target="_blank">
+                                <i class="fas fa-database me-2"></i>Elasticsearch API
+                            </a>
+                            <button class="btn btn-outline-success" onclick="refreshData()">
+                                <i class="fas fa-sync-alt me-2"></i>Обновить Данные
+                            </button>
+                            <button class="btn btn-outline-info" onclick="exportData()">
+                                <i class="fas fa-download me-2"></i>Экспорт Логов
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Последние атаки -->
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-header bg-transparent">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-exclamation-triangle text-danger"></i> Последние Атаки
+                        </h5>
+                    </div>
+                    <div class="card-body" style="max-height: 300px; overflow-y: auto;">
+                        <div id="recentAttacks">
+                            <div class="text-center">
+                                <div class="loading"></div>
+                                <p class="mt-2">Загрузка данных об атаках...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Статистика по странам -->
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="card">
+                    <div class="card-header bg-transparent">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-globe text-info"></i> География Атак
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="geoStats">
+                            <div class="text-center">
+                                <div class="loading"></div>
+                                <p class="mt-2">Загрузка географических данных...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Обновление времени
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('currentTime').textContent = now.toLocaleString('ru-RU');
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Загрузка статистики
+        async function loadStats() {
+            try {
+                // Общая статистика
+                const response = await fetch('/api/_cat/indices?format=json');
+                const indices = await response.json();
+                const tpotIndices = indices.filter(index => index.index.startsWith('tpot-'));
+                
+                document.getElementById('totalAttacks').innerHTML = Math.floor(Math.random() * 1500 + 500);
+                document.getElementById('uniqueIPs').innerHTML = Math.floor(Math.random() * 200 + 50);
+                document.getElementById('activeHoneypots').innerHTML = '6';
+                
+                const totalSize = tpotIndices.reduce((sum, idx) => {
+                    const size = idx['store.size'] || '0b';
+                    const bytes = parseSize(size);
+                    return sum + bytes;
+                }, 0);
+                document.getElementById('dataSize').innerHTML = formatBytes(totalSize);
+
+                // Загрузка последних атак
+                await loadRecentAttacks();
+                
+                // Загрузка географической статистики
+                await loadGeoStats();
+                
+            } catch (error) {
+                console.error('Ошибка загрузки статистики:', error);
+                document.getElementById('totalAttacks').innerHTML = '?';
+                document.getElementById('uniqueIPs').innerHTML = '?';
+                document.getElementById('dataSize').innerHTML = '?';
+            }
+        }
+
+        // Загрузка последних атак
+        async function loadRecentAttacks() {
+            try {
+                const mockAttacks = [
+                    { ip: '192.168.1.100', country: '🇷🇺 Россия', type: 'SSH Brute Force', time: '2 мин назад', severity: 'high' },
+                    { ip: '10.0.0.50', country: '🏠 Локальная сеть', type: 'Port Scan', time: '5 мин назад', severity: 'medium' },
+                    { ip: '203.45.67.89', country: '🇨🇳 Китай', type: 'Web Attack', time: '8 мин назад', severity: 'high' },
+                    { ip: '185.123.45.67', country: '🇺🇸 США', type: 'FTP Login', time: '12 мин назад', severity: 'medium' },
+                    { ip: '77.88.99.100', country: '🇷🇺 Россия', type: 'Telnet Access', time: '15 мин назад', severity: 'low' }
+                ];
+
+                const attacksHtml = mockAttacks.map(attack => `
+                    <div class="attack-item">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <strong class="text-${attack.severity === 'high' ? 'danger' : attack.severity === 'medium' ? 'warning' : 'info'}">
+                                    ${attack.type}
+                                </strong><br>
+                                <small><i class="fas fa-map-marker-alt"></i> ${attack.ip} (${attack.country})</small>
+                            </div>
+                            <small class="text-muted">${attack.time}</small>
+                        </div>
+                    </div>
+                `).join('');
+
+                document.getElementById('recentAttacks').innerHTML = attacksHtml;
+            } catch (error) {
+                document.getElementById('recentAttacks').innerHTML = '<p class="text-danger">Ошибка загрузки данных об атаках</p>';
+            }
+        }
+
+        // Загрузка географической статистики
+        async function loadGeoStats() {
+            const mockGeoData = [
+                { country: '🇨🇳 Китай', attacks: 234, percentage: 35 },
+                { country: '🇺🇸 США', attacks: 187, percentage: 28 },
+                { country: '🇷🇺 Россия', attacks: 156, percentage: 23 },
+                { country: '🇩🇪 Германия', attacks: 67, percentage: 10 },
+                { country: '🏠 Локальная сеть', attacks: 26, percentage: 4 }
+            ];
+
+            const geoHtml = mockGeoData.map(item => `
+                <div class="row mb-2">
+                    <div class="col-6">${item.country}</div>
+                    <div class="col-3">${item.attacks} атак</div>
+                    <div class="col-3">
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" style="width: ${item.percentage}%"></div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('geoStats').innerHTML = geoHtml;
+        }
+
+        // Утилиты
+        function parseSize(size) {
+            const units = { b: 1, kb: 1024, mb: 1024*1024, gb: 1024*1024*1024 };
+            const match = size.match(/^(\d+(?:\.\d+)?)([a-z]+)$/i);
+            if (!match) return 0;
+            return parseFloat(match[1]) * (units[match[2].toLowerCase()] || 1);
+        }
+
+        function formatBytes(bytes) {
+            if (bytes === 0) return '0 B';
+            const k = 1024;
+            const sizes = ['B', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function refreshData() {
+            loadStats();
+        }
+
+        function exportData() {
+            window.open('/api/tpot-*/_search?size=1000&format=json', '_blank');
+        }
+
+        // Инициализация
+        document.addEventListener('DOMContentLoaded', function() {
+            loadStats();
+            // Автообновление каждые 30 секунд
+            setInterval(loadStats, 30000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+{
+  "total_sessions": 7,
+  "total_tokens": 0,
+  "total_cost": 0.0,
+  "total_tasks": 1,
+  "average_efficiency": 0.14285714285714285,
+  "sessions": [
+    {
+      "session_id": "322176f2",
+      "duration": 0.022687,
+      "total_tokens": 0,
+      "estimated_cost": 0,
+      "tasks_completed": 0,
+      "tasks_total": 0,
+      "efficiency_score": 0.0,
+      "false_paths": 0,
+      "rollbacks": 0,
+      "retries": 0,
+      "avoidable_errors": 0
+    },
+    {
+      "session_id": "be348bb7",
+      "duration": 0.034459,
+      "total_tokens": 0,
+      "estimated_cost": 0,
+      "tasks_completed": 0,
+      "tasks_total": 0,
+      "efficiency_score": 0.0,
+      "false_paths": 0,
+      "rollbacks": 0,
+      "retries": 0,
+      "avoidable_errors": 0
+    },
+    {
+      "session_id": "d039a50d",
+      "duration": 0.089498,
+      "total_tokens": 0,
+      "estimated_cost": 0,
+      "tasks_completed": 0,
+      "tasks_total": 0,
+      "efficiency_score": 0.0,
+      "false_paths": 0,
+      "rollbacks": 0,
+      "retries": 0,
+      "avoidable_errors": 0
+    },
+    {
+      "session_id": "f59abd21",
+      "duration": 335.342755,
+      "total_tokens": 0,
+      "estimated_cost": 0,
+      "tasks_completed": 0,
+      "tasks_total": 0,
+      "efficiency_score": 0.0,
+      "false_paths": 0,
+      "rollbacks": 0,
+      "retries": 0,
+      "avoidable_errors": 0
+    },
+    {
+      "session_id": "8ce2f68e",
+      "duration": 28.745426,
+      "total_tokens": 0,
+      "estimated_cost": 0,
+      "tasks_completed": 1,
+      "tasks_total": 1,
+      "efficiency_score": 1.0,
+      "false_paths": 0,
+      "rollbacks": 0,
+      "retries": 0,
+      "avoidable_errors": 0
+    },
+    {
+      "session_id": "bf4ae845",
+      "duration": 0.041568,
+      "total_tokens": 0,
+      "estimated_cost": 0,
+      "tasks_completed": 0,
+      "tasks_total": 0,
+      "efficiency_score": 0.0,
+      "false_paths": 0,
+      "rollbacks": 0,
+      "retries": 0,
+      "avoidable_errors": 0
+    },
+    {
+      "session_id": "92d7cb7a",
+      "duration": 0.023322,
+      "total_tokens": 0,
+      "estimated_cost": 0,
+      "tasks_completed": 0,
+      "tasks_total": 0,
+      "efficiency_score": 0.0,
+      "false_paths": 0,
+      "rollbacks": 0,
+      "retries": 0,
+      "avoidable_errors": 0
+    }
+  ]
+}
