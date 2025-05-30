@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-05-30T01:24:51.812883",
+  "timestamp": "2025-05-30T03:45:21.229169",
   "tools": {
     "cli_processor": {
       "name": "cli_processor",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-30T01:24:51.814501",
-      "response_time": 0.0016109943389892578,
+      "last_check": "2025-05-30T03:45:21.231089",
+      "response_time": 0.0019173622131347656,
       "error_message": null,
       "capabilities": [
         "command_processing",
@@ -22,8 +22,8 @@
     "copilot_manager": {
       "name": "copilot_manager",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-30T01:24:51.815592",
-      "response_time": 0.0010776519775390625,
+      "last_check": "2025-05-30T03:45:21.232381",
+      "response_time": 0.0012805461883544922,
       "error_message": null,
       "capabilities": [
         "context_management",
@@ -37,8 +37,8 @@
     "context_orchestrator": {
       "name": "context_orchestrator",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-30T01:24:51.816062",
-      "response_time": 0.0004227161407470703,
+      "last_check": "2025-05-30T03:45:21.233645",
+      "response_time": 0.001199960708618164,
       "error_message": null,
       "capabilities": [
         "context_optimization",
@@ -51,8 +51,8 @@
     "cache_system": {
       "name": "cache_system",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-30T01:24:51.847310",
-      "response_time": 0.03125190734863281,
+      "last_check": "2025-05-30T03:45:21.263618",
+      "response_time": 0.02995920181274414,
       "error_message": null,
       "capabilities": [
         "data_caching",
@@ -63,8 +63,8 @@
     "struct_parser": {
       "name": "struct_parser",
       "status": "CapabilityStatus.DEGRADED",
-      "last_check": "2025-05-30T01:24:51.863229",
-      "response_time": 0.014114856719970703,
+      "last_check": "2025-05-30T03:45:21.287025",
+      "response_time": 0.02221393585205078,
       "error_message": "Missing keys: ['summary']",
       "capabilities": [
         "project_structure_analysis",
@@ -76,8 +76,8 @@
     "docs_system": {
       "name": "docs_system",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-30T01:24:51.864776",
-      "response_time": 0.000469207763671875,
+      "last_check": "2025-05-30T03:45:21.291684",
+      "response_time": 0.0029625892639160156,
       "error_message": null,
       "capabilities": [
         "documentation_management",
@@ -142,9 +142,9 @@
     "error": "'list' object has no attribute 'values'"
   },
   "performance_metrics": {
-    "discovery_time": 0.13607048988342285,
-    "cache_hit_rate": 1.0,
-    "system_load": 0.6123504077643332,
+    "discovery_time": 0.150376558303833,
+    "cache_hit_rate": 0.0,
+    "system_load": 0.6826561736250087,
     "unused_function_integration": {
       "integration_rate": 0.0,
       "enhanced_categories": 0,
