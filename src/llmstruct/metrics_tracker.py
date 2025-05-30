@@ -386,4 +386,85 @@ def track_false_path(task_id: str, description: str):
 
 def track_workflow_event(event_type: str, details: Optional[str] = None):
     """Удобная функция для отслеживания workflow событий"""
-    return get_metrics_tracker().track_workflow_event(event_type, details) 
+    return get_metrics_tracker().track_workflow_event(event_type, details)
+
+def track_telegram_interaction(user_message: str, bot_response: str, context_size: int = 0):
+    """Отслеживание взаимодействия через Telegram с полным контекстом"""
+    try:
+        tracker = get_metrics_tracker()
+        
+        # Примерный подсчет токенов (1 токен ≈ 4 символа для русского)
+        user_tokens = len(user_message) // 3  # Более точно для русского
+        bot_tokens = len(bot_response) // 3
+        total_tokens = user_tokens + bot_tokens + context_size
+        
+        interaction_data = {
+            'timestamp': datetime.now().isoformat(),
+            'user_message_length': len(user_message),
+            'user_tokens_estimate': user_tokens,
+            'bot_response_length': len(bot_response),
+            'bot_tokens_estimate': bot_tokens,
+            'context_tokens': context_size,
+            'total_tokens_estimate': total_tokens,
+            'cost_estimate_usd': total_tokens * 0.000001  # Примерная стоимость
+        }
+        
+        if 'telegram_interactions' not in tracker.session_data:
+            tracker.session_data['telegram_interactions'] = []
+        
+        tracker.session_data['telegram_interactions'].append(interaction_data)
+        tracker.session_data['total_telegram_tokens'] = tracker.session_data.get('total_telegram_tokens', 0) + total_tokens
+        
+        logger.info(f"📱 Telegram interaction: {user_tokens}+{bot_tokens}+{context_size}={total_tokens} tokens")
+        
+    except Exception as e:
+        logger.error(f"Failed to track telegram interaction: {e}")
+
+def track_api_interaction(endpoint: str, request_tokens: int, response_tokens: int, context_tokens: int = 0):
+    """Отслеживание API взаимодействия с полным контекстом"""
+    try:
+        tracker = get_metrics_tracker()
+        
+        total_tokens = request_tokens + response_tokens + context_tokens
+        
+        interaction_data = {
+            'timestamp': datetime.now().isoformat(),
+            'endpoint': endpoint,
+            'request_tokens': request_tokens,
+            'response_tokens': response_tokens,
+            'context_tokens': context_tokens,
+            'total_tokens': total_tokens,
+            'cost_estimate_usd': total_tokens * 0.000001
+        }
+        
+        if 'api_interactions' not in tracker.session_data:
+            tracker.session_data['api_interactions'] = []
+            
+        tracker.session_data['api_interactions'].append(interaction_data)
+        tracker.session_data['total_api_tokens'] = tracker.session_data.get('total_api_tokens', 0) + total_tokens
+        
+        logger.info(f"🔌 API interaction: {request_tokens}+{response_tokens}+{context_tokens}={total_tokens} tokens")
+        
+    except Exception as e:
+        logger.error(f"Failed to track API interaction: {e}")
+
+def get_token_summary():
+    """Получить сводку по токенам"""
+    try:
+        tracker = get_metrics_tracker()
+        
+        telegram_tokens = tracker.session_data.get('total_telegram_tokens', 0)
+        api_tokens = tracker.session_data.get('total_api_tokens', 0)
+        total_tokens = telegram_tokens + api_tokens
+        
+        return {
+            'telegram_tokens': telegram_tokens,
+            'api_tokens': api_tokens,
+            'total_tokens': total_tokens,
+            'estimated_cost_usd': total_tokens * 0.000001,
+            'telegram_interactions_count': len(tracker.session_data.get('telegram_interactions', [])),
+            'api_interactions_count': len(tracker.session_data.get('api_interactions', []))
+        }
+    except Exception as e:
+        logger.error(f"Failed to get token summary: {e}")
+        return {} 
