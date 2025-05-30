@@ -12,6 +12,19 @@
 - **Контекстные режимы**: full, focused, minimal, session
 - **🎭 WORKFLOW ИНТЕГРАЦИЯ**: АКТИВНА
 
+## 🧠 Meta-Learning System
+
+**СИСТЕМА МЕТАОБУЧЕНИЯ АКТИВНА**: Непрерывное улучшение workflow через анализ опыта
+- **Logs**: `.private/workflow_meta_learning.md` - подробный анализ сессий
+- **Insights**: `.private/context_insights.json` - структурированная база инсайтов
+- **Quick log**: `python3 .private/log_insight.py category type "insight"`
+- **Review cycle**: Еженедельное обновление .cursorrules на основе накопленного опыта
+
+### **Pre-flight Checks (новое!):**
+- ✅ **Dependencies**: Проверяй pydantic-settings, CLI доступность перед началом
+- ✅ **CLI Integration**: Тестируй CLI bridge с fallbacks при недоступности модуля
+- ✅ **Session Sync**: Синхронизируй workspace state с git branch при переключениях
+
 ## 🎭 Workflow System Integration
 
 ### **Context Tags System (используй в работе!):**

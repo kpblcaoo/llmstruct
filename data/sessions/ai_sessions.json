@@ -2,25 +2,26 @@
   "version": "0.1.0",
   "sessions": [
     {
-      "id": "SES-001",
+      "id": "TEST-001",
+      "title": "Context and Capabilities Testing",
+      "description": "Testing session for context preservation and system capabilities",
       "branch": "feature/json-script-abstraction",
-      "title": "JSON script abstraction for all modes",
-      "status": "planned",
-      "created_at": "2025-05-25T22:00:00Z",
-      "author": "@kpblcaoo",
-      "type": "ai-helped",
-      "related_tasks": ["TSK-145"],
-      "related_ideas": ["IDEA-153"],
-      "related_insights": ["INS-003"],
-      "related_docs": ["docs/gh_view.md"],
-      "knowledge_cache": [
-        "schema/core.json",
-        "scripts/json_crud.py",
-        "README.md"
-      ],
-      "context_notes": "В этой сессии реализуем переход на работу с JSON только через скрипты. В knowledge_cache — всё, что нужно для быстрой работы.",
-      "results": [],
-      "summary": ""
+      "status": "active",
+      "author": "AI Assistant",
+      "created_at": "2024-03-26T12:00:00Z",
+      "mode": ["test", "code"],
+      "tasks": [
+        {
+          "id": "TSK-001",
+          "title": "Test Context Preservation",
+          "status": "in-progress"
+        },
+        {
+          "id": "TSK-002",
+          "title": "Test System Capabilities",
+          "status": "pending"
+        }
+      ]
     }
   ]
 }

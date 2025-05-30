@@ -1,21 +1,25 @@
 {
   "current_mode": [
-    "discuss",
-    "meta"
+    "code",
+    "debug"
   ],
   "active_session": "SES-004A-TEST",
   "permissions": {
     "capabilities": [
-      "filesystem"
+      "filesystem",
+      "execution",
+      "network:local",
+      "debugging"
     ],
     "file_restrictions": [
+      "!config/",
       "!.env"
     ],
     "safe_operations": [
-      "planning_and_documentation",
-      "read_docs",
-      "write_docs",
-      "analyze_structure"
+      "enhanced_debugging_in_development",
+      "write_code",
+      "run_tests",
+      "run_debug_commands"
     ]
   },
   "context_boundaries": {
@@ -48,6 +52,21 @@
       ],
       "session": "SES-004A-TEST",
       "ended_at": "2025-05-29T20:22:00.602256+00:00"
+    },
+    {
+      "mode": [
+        "discuss",
+        "meta"
+      ],
+      "session": "SES-004A-TEST",
+      "ended_at": "2025-05-29T21:55:43.976394+00:00"
+    },
+    {
+      "mode": [
+        "debug"
+      ],
+      "session": "SES-004A-TEST",
+      "ended_at": "2025-05-29T22:15:36.692676+00:00"
     }
   ],
   "emergency_overrides": {
@@ -68,5 +87,5 @@
     "pending_implementations": []
   },
   "created_at": "2024-12-19T12:00:00Z",
-  "last_updated": "2025-05-29T20:22:00.602192+00:00"
+  "last_updated": "2025-05-29T22:15:36.692665+00:00"
 }
