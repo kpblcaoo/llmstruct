@@ -135,6 +135,18 @@ source ./venv/bin/activate && python start_development.py
 - Оптимизация производительности
 - Метрики в реальном времени
 
+### **🆕 НОВОЕ: Metrics System Integration:**
+- `src/llmstruct/metrics_tracker.py` - система объективных метрик
+- `python -m llmstruct.cli metrics status/summary/analytics` - CLI команды метрик
+- Отслеживание: токены, эффективность, ложные пути, стоимость
+- Интеграция с API и Telegram ботом
+
+### **🆕 НОВОЕ: API & Bot Services:**
+- `test_api_simple.py` - упрощенный API с метриками
+- `integrations/telegram_bot/simple_bot.py` - Telegram бот
+- Команды CLI: `api start/stop/status`, `bot start/stop/status`
+- Health checks и системный мониторинг
+
 ## 🎮 Команды для пользователя
 
 Предлагай пользователю эти команды:
@@ -157,6 +169,19 @@ python scripts/epic_roadmap_manager.py overview
 
 # Инициализация полной системы
 python start_development.py
+
+# Метрики текущей сессии
+python -m llmstruct.cli metrics status
+python -m llmstruct.cli metrics summary
+
+# Аналитика для графиков
+python -m llmstruct.cli metrics analytics --output data.csv --format csv
+
+# Запуск API с метриками
+source venv/bin/activate && python test_api_simple.py
+
+# Telegram бот (требует TELEGRAM_BOT_TOKEN)
+export TELEGRAM_BOT_TOKEN='token' && python integrations/telegram_bot/simple_bot.py
 ```
 
 ## 🎯 **VS Code Tasks Integration**
