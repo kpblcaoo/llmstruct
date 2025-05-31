@@ -97,6 +97,31 @@ python -m llmstruct.cli copilot . status
 python -m llmstruct.cli copilot . suggest --query "Как улучшить архитектуру?"
 ```
 
+### Фильтрация файлов и директорий
+
+- Включить только Python-файлы:
+  ```bash
+  python -m llmstruct.cli parse . --include '*.py'
+  ```
+- Исключить архив и тесты:
+  ```bash
+  python -m llmstruct.cli parse . --exclude-dir .ARCHIVE/,tests/
+  ```
+- Исключить все markdown-файлы и директорию docs:
+  ```bash
+  python -m llmstruct.cli parse . --exclude '*.md' --exclude-dir docs/
+  ```
+- Включить только src/llmstruct и scripts:
+  ```bash
+  python -m llmstruct.cli parse . --include-dir src/llmstruct/,scripts/
+  ```
+- Можно комбинировать:
+  ```bash
+  python -m llmstruct.cli parse . --include '*.py,*.md' --exclude-dir .ARCHIVE/ --exclude 'test_*'
+  ```
+
+> Аргументы можно указывать несколько раз или через запятую. Директории фильтруются независимо от паттернов файлов.
+
 ---
 
 ## Best Practices

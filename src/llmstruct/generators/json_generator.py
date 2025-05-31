@@ -97,8 +97,9 @@ def build_toc_and_modules(
     include_ranges: bool,
     include_hashes: bool,
     exclude_dirs: Optional[List[str]],
+    include_dirs: Optional[List[str]] = None,
 ) -> tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
-    """Build TOC and modules with artifact_id and robust filtering."""
+    """Build TOC and modules with artifact_id and robust filtering. Поддержка include_dirs."""
     toc = []
     modules = []
     default_exclude_dirs = {
@@ -109,18 +110,29 @@ def build_toc_and_modules(
         "build",
         "dist",
     }
-    exclude_dirs_set = set(exclude_dirs or []) | default_exclude_dirs
+    # Нормализуем имена директорий: только имя, без слэшей и точек в начале/конце
+    def norm_dirname(d):
+        return os.path.basename(os.path.normpath(d))
+    exclude_dirs_set = set(norm_dirname(d) for d in (exclude_dirs or [])) | set(norm_dirname(d) for d in default_exclude_dirs)
+    include_dirs_set = set(norm_dirname(d) for d in (include_dirs or [])) if include_dirs else set()
 
     gitignore_patterns = gitignore_patterns or []
     normalized_gitignore = [
         p.rstrip("/") + "/*" if p.endswith("/") else p for p in gitignore_patterns
     ]
 
+    def is_included_dir(f: Path) -> bool:
+        if not include_dirs_set:
+            return True
+        # Файл включается только если хотя бы одна часть пути совпадает с include_dirs_set
+        return any(norm_dirname(part) in include_dirs_set for part in f.parts)
+
     files = [
         f
         for f in Path(root_dir).rglob("*.py")
         if not any(f.match(p) for p in (exclude_patterns or []) + normalized_gitignore)
-        and not any(d in exclude_dirs_set for d in f.parts)
+        and not any(norm_dirname(d) in exclude_dirs_set for d in f.parts)
+        and is_included_dir(f)
     ]
 
     for file_path in files:
@@ -158,8 +170,9 @@ def generate_json(
     include_hashes: bool,
     goals: Optional[List[str]],
     exclude_dirs: Optional[List[str]],
+    include_dirs: Optional[List[str]] = None,
 ) -> Dict[str, Any]:
-    """Generate JSON structure for project with artifact_id, summary, and tags."""
+    """Generate JSON structure for project with artifact_id, summary, and tags. Поддержка include_dirs."""
     Path(root_dir).resolve()
     toc, modules = build_toc_and_modules(
         root_dir,
@@ -169,6 +182,7 @@ def generate_json(
         include_ranges,
         include_hashes,
         exclude_dirs,
+        include_dirs,
     )
 
     stats = {

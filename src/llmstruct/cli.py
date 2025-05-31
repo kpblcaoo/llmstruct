@@ -71,10 +71,24 @@ def main():
         "--language", choices=["python", "javascript"], help="Programming language"
     )
     parse_parser.add_argument(
-        "--include", action="append", help="Include patterns (e.g., '*.py')"
+        "--include",
+        action="append",
+        help="Include patterns (e.g., '*.py' или несколько через запятую: '*.py,*.md')"
     )
     parse_parser.add_argument(
-        "--exclude", action="append", help="Exclude patterns (e.g., 'tests/*')"
+        "--exclude",
+        action="append",
+        help="Exclude patterns (e.g., 'tests/*' или несколько через запятую: 'tests/*,*.md')"
+    )
+    parse_parser.add_argument(
+        "--include-dir",
+        action="append",
+        help="Include directories (e.g., 'src/llmstruct/')"
+    )
+    parse_parser.add_argument(
+        "--exclude-dir",
+        action="append",
+        help="Exclude directories (e.g., '.ARCHIVE/' или несколько через запятую: '.ARCHIVE/,tests/')"
     )
     parse_parser.add_argument(
         "--include-ranges",
@@ -231,6 +245,29 @@ def main():
     )
 
     args = parser.parse_args()
+
+    # Нормализация include/exclude паттернов и директорий
+    def normalize_patterns(arglist):
+        if not arglist:
+            return []
+        result = []
+        for item in arglist:
+            if not item:
+                continue
+            if "," in item:
+                result.extend([p.strip() for p in item.split(",") if p.strip()])
+            else:
+                result.append(item.strip())
+        return result
+
+    if hasattr(args, "include"):
+        args.include = normalize_patterns(args.include)
+    if hasattr(args, "exclude"):
+        args.exclude = normalize_patterns(args.exclude)
+    if hasattr(args, "include_dir"):
+        args.include_dir = normalize_patterns(args.include_dir)
+    if hasattr(args, "exclude_dir"):
+        args.exclude_dir = normalize_patterns(args.exclude_dir)
 
     if args.command == "parse":
         parse(args)
