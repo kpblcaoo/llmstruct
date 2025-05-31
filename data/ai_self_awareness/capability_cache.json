@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-05-30T03:45:21.229169",
+  "timestamp": "2025-05-31T17:47:42.009598",
   "tools": {
     "cli_processor": {
       "name": "cli_processor",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-30T03:45:21.231089",
-      "response_time": 0.0019173622131347656,
+      "last_check": "2025-05-31T17:47:42.010862",
+      "response_time": 0.0012600421905517578,
       "error_message": null,
       "capabilities": [
         "command_processing",
@@ -22,8 +22,8 @@
     "copilot_manager": {
       "name": "copilot_manager",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-30T03:45:21.232381",
-      "response_time": 0.0012805461883544922,
+      "last_check": "2025-05-31T17:47:42.011637",
+      "response_time": 0.000766754150390625,
       "error_message": null,
       "capabilities": [
         "context_management",
@@ -37,8 +37,8 @@
     "context_orchestrator": {
       "name": "context_orchestrator",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-30T03:45:21.233645",
-      "response_time": 0.001199960708618164,
+      "last_check": "2025-05-31T17:47:42.012285",
+      "response_time": 0.0006010532379150391,
       "error_message": null,
       "capabilities": [
         "context_optimization",
@@ -51,8 +51,8 @@
     "cache_system": {
       "name": "cache_system",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-30T03:45:21.263618",
-      "response_time": 0.02995920181274414,
+      "last_check": "2025-05-31T17:47:42.031402",
+      "response_time": 0.019124984741210938,
       "error_message": null,
       "capabilities": [
         "data_caching",
@@ -62,10 +62,10 @@
     },
     "struct_parser": {
       "name": "struct_parser",
-      "status": "CapabilityStatus.DEGRADED",
-      "last_check": "2025-05-30T03:45:21.287025",
-      "response_time": 0.02221393585205078,
-      "error_message": "Missing keys: ['summary']",
+      "status": "CapabilityStatus.AVAILABLE",
+      "last_check": "2025-05-31T17:47:42.041067",
+      "response_time": 0.008567333221435547,
+      "error_message": null,
       "capabilities": [
         "project_structure_analysis",
         "dependency_mapping",
@@ -76,8 +76,8 @@
     "docs_system": {
       "name": "docs_system",
       "status": "CapabilityStatus.AVAILABLE",
-      "last_check": "2025-05-30T03:45:21.291684",
-      "response_time": 0.0029625892639160156,
+      "last_check": "2025-05-31T17:47:42.042139",
+      "response_time": 0.0004076957702636719,
       "error_message": null,
       "capabilities": [
         "documentation_management",
@@ -142,9 +142,9 @@
     "error": "'list' object has no attribute 'values'"
   },
   "performance_metrics": {
-    "discovery_time": 0.150376558303833,
-    "cache_hit_rate": 0.0,
-    "system_load": 0.6826561736250087,
+    "discovery_time": 0.0434417724609375,
+    "cache_hit_rate": 0.25,
+    "system_load": 0.6697920712581716,
     "unused_function_integration": {
       "integration_rate": 0.0,
       "enhanced_categories": 0,

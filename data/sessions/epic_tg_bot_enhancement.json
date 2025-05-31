@@ -1,0 +1,90 @@
+{
+  "epic_id": "epic_tg_bot_enhancement",
+  "title": "Advanced Telegram Bot Features",
+  "description": "Развитие функциональности Telegram бота: улучшения памяти, группового взаимодействия, интеграции с эпиками и мультимедиа поддержки",
+  "status": "planned",
+  "priority": "high",
+  "estimated_duration": "3 weeks",
+  "base_branch": "develop",
+  "depends_on": ["epic_5_fastapi_implementation"],
+  "goals": [
+    "Улучшение системы памяти - долгосрочная память, теги, умные резюме",
+    "Расширение группового функционала - роли, permissions, модерация",
+    "Глубокая интеграция с эпиками - управление задачами через бота",
+    "Мультимедиа поддержка - файлы, изображения, голосовые сообщения",
+    "AI-powered функции - анализ кода, рекомендации, контекстная помощь"
+  ],
+  "sessions": [
+    {
+      "session_id": "SES-TG-001",
+      "title": "Enhanced Memory System",
+      "description": "Долгосрочная память, теги сообщений, интеллектуальные резюме",
+      "estimated_hours": 8,
+      "status": "planned",
+      "tasks": [
+        "Добавить долгосрочную память (30+ дней)",
+        "Система тегов для сообщений",
+        "Интеллектуальные резюме разговоров",
+        "Поиск по истории сообщений",
+        "Экспорт данных пользователя"
+      ]
+    },
+    {
+      "session_id": "SES-TG-002", 
+      "title": "Advanced Group Features",
+      "description": "Роли пользователей, permissions, модерация, групповая аналитика",
+      "estimated_hours": 10,
+      "status": "planned",
+      "tasks": [
+        "Система ролей и permissions",
+        "Автомодерация сообщений",
+        "Групповая аналитика и статистика",
+        "Приватные команды для админов",
+        "Интеграция с Telegram админ-панелью"
+      ]
+    },
+    {
+      "session_id": "SES-TG-003",
+      "title": "Epic Management Integration", 
+      "description": "Полная интеграция с системой эпиков - создание, управление, отчеты",
+      "estimated_hours": 12,
+      "status": "planned",
+      "tasks": [
+        "Создание эпиков через бота",
+        "Управление задачами в эпиках",
+        "Автоматические отчеты по прогрессу",
+        "Уведомления о дедлайнах",
+        "Интеграция с git workflow"
+      ]
+    },
+    {
+      "session_id": "SES-TG-004",
+      "title": "Multimedia & AI Features",
+      "description": "Поддержка файлов, изображений, AI-анализ кода",
+      "estimated_hours": 15,
+      "status": "planned", 
+      "tasks": [
+        "Загрузка и анализ файлов кода",
+        "OCR для изображений с кодом",
+        "Голосовые сообщения с транскрипцией",
+        "AI код-ревью через бота",
+        "Интеграция с Continue для кода"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "Память бота работает 30+ дней без потерь",
+    "Группы используют бота для управления проектами",
+    "50%+ команд проекта созданы через бота",
+    "AI функции активно используются разработчиками"
+  ],
+  "git_workflow": {
+    "base_branch": "develop",
+    "feature_branch_pattern": "feature/tg-bot-{session_id}",
+    "pr_target": "develop",
+    "merge_after_review": true
+  },
+  "context_tags": ["code", "integration", "telegram", "ai"],
+  "created_at": "2025-05-30T12:50:00Z",
+  "updated_at": "2025-05-30T12:50:00Z"
+} 

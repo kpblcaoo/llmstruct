@@ -1,0 +1,5987 @@
+{
+  "load_json": {
+    "module": "unknown",
+    "path": "scripts/validate_json.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "validate_json_against_schema": {
+    "module": "unknown",
+    "path": "validate_schemas.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "main": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/scripts/install_ai_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "parse_ollama_models": {
+    "module": "unknown",
+    "path": "parse_ollama_models.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "parse_model_block": {
+    "module": "unknown",
+    "path": "parse_ollama_models.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "categorize_models": {
+    "module": "unknown",
+    "path": "parse_ollama_models.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "analyze_for_rtx3060ti": {
+    "module": "unknown",
+    "path": "parse_ollama_models.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "parse_ollama_list": {
+    "module": "unknown",
+    "path": "parse_ollama_full.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "convert_md_to_json": {
+    "module": "unknown",
+    "path": "parse_ollama_improved.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_flattened_models_structure": {
+    "module": "unknown",
+    "path": "parse_ollama_full.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "parse_pulls": {
+    "module": "unknown",
+    "path": "parse_ollama_improved.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "force_ai_integration": {
+    "module": "unknown",
+    "path": "force_ai_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_integration_status": {
+    "module": "unknown",
+    "path": "force_ai_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "auto_initialize_ai_system": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/files/auto_init_ai_system.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_current_workflow_context": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/files/auto_init_ai_system.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_workflow_status": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/files/auto_init_ai_system.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "switch_workspace_mode": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/files/auto_init_ai_system.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_ai_status": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/files/auto_init_ai_system.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "search_ai_capabilities": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/files/auto_init_ai_system.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_ai_context": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/files/auto_init_ai_system.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_epic_sessions_status": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/files/auto_init_ai_system.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_epic_session": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/files/auto_init_ai_system.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "switch_to_session": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/files/auto_init_ai_system.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_available_sessions": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/files/auto_init_ai_system.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "session_management_commands": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/files/auto_init_ai_system.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_system_status": {
+    "module": "unknown",
+    "path": "final_system_check.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "__init__": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/telegram_cursor_master.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_session": {
+    "module": "unknown",
+    "path": "telegram_bot_test.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "api_call": {
+    "module": "unknown",
+    "path": "telegram_bot_test.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "save_user_message": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/fastapi_ollama_server.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_user_history": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/fastapi_ollama_server.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "chat_with_ollama": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_system_status": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "setup_handlers": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/telegram_cursor_master.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "start_command": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/chat_bot_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "status_command": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/chat_bot_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "memory_command": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "help_command": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/chat_bot_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "handle_message": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/telegram_cursor_master.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "error_handler": {
+    "module": "unknown",
+    "path": "telegram_bot_final.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cleanup": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_core.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "install_ai_integration": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/scripts/install_ai_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "adapt_cursorrules": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/scripts/install_ai_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "adapt_auto_init": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/scripts/install_ai_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_simplified_auto_init": {
+    "module": "unknown",
+    "path": "cursor_workflow_integration/scripts/install_ai_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "run_with_output_capture": {
+    "module": "unknown",
+    "path": "debug_terminal.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "print_section": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "print_subsection": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "test_basic_ai_awareness": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "test_cursor_integration": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "test_real_time_metrics": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "test_personal_planning_bridge": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "test_session_management": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "test_configuration_loading": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "run_performance_benchmark": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "generate_diagnostic_report": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "continuous_monitoring_mode": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "test_specific_component": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "test_cli_commands": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "test_context_scenarios": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "test_copilot_features": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "run_integration_health_check": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "generate_optimization_suggestions": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "run_stress_test": {
+    "module": "unknown",
+    "path": "run_ai_diagnostics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "print_header": {
+    "module": "unknown",
+    "path": "start_development.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "initialize_ai_integration_layer": {
+    "module": "unknown",
+    "path": "start_development.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_environment": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/start_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "initialize_workflow_orchestrator": {
+    "module": "unknown",
+    "path": "start_development.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "initialize_cursor_ai_bridge": {
+    "module": "unknown",
+    "path": "start_development.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "sync_architecture_components": {
+    "module": "unknown",
+    "path": "start_development.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "run_system_health_check": {
+    "module": "unknown",
+    "path": "start_development.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_optimization_suggestions": {
+    "module": "unknown",
+    "path": "start_development.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_git_status": {
+    "module": "unknown",
+    "path": "start_development.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "show_current_context": {
+    "module": "unknown",
+    "path": "start_development.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "show_useful_commands": {
+    "module": "unknown",
+    "path": "start_development.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "load_json_file": {
+    "module": "unknown",
+    "path": "scripts/session_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "verify_response_with_struct": {
+    "module": "unknown",
+    "path": "verify_llm_response.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "verify_response_without_struct": {
+    "module": "unknown",
+    "path": "verify_llm_response.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "generate_metrics": {
+    "module": "unknown",
+    "path": "verify_llm_response.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "update_tasks_json": {
+    "module": "unknown",
+    "path": "verify_llm_response.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "parse_ollama_minimal": {
+    "module": "unknown",
+    "path": "parse_ollama_minimal.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_compact_json": {
+    "module": "unknown",
+    "path": "parse_ollama_minimal.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "test_cache_performance": {
+    "module": "unknown",
+    "path": "struct_cache_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_file_hash": {
+    "module": "unknown",
+    "path": "struct_cache_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "is_cache_valid": {
+    "module": "unknown",
+    "path": "struct_cache_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "build_cache": {
+    "module": "unknown",
+    "path": "struct_cache_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "search_modules": {
+    "module": "unknown",
+    "path": "struct_cache_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "search_functions": {
+    "module": "unknown",
+    "path": "struct_cache_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "search_classes": {
+    "module": "unknown",
+    "path": "struct_cache_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_module_details": {
+    "module": "unknown",
+    "path": "struct_cache_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_cache_stats": {
+    "module": "unknown",
+    "path": "struct_cache_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "invalidate_cache": {
+    "module": "unknown",
+    "path": "struct_cache_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "smart_search": {
+    "module": "unknown",
+    "path": "struct_cache_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_http_session": {
+    "module": "unknown",
+    "path": "chat_bot_final.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "save_user_memory": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/fastapi_ollama_server.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_available_models": {
+    "module": "unknown",
+    "path": "chat_bot_final.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "log_user_message": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/chat_bot_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "models_command": {
+    "module": "unknown",
+    "path": "chat_bot_final.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "signal_handler": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/chat_bot_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "log_system_status": {
+    "module": "unknown",
+    "path": "monitor_system.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "chat_command": {
+    "module": "unknown",
+    "path": "telegram_bot_test.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "parse_ollama_list_fixed": {
+    "module": "unknown",
+    "path": "parse_ollama_fixed.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_smart_categorization": {
+    "module": "unknown",
+    "path": "parse_ollama_fixed.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "parse_pulls_number": {
+    "module": "unknown",
+    "path": "parse_ollama_fixed.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_max_size_gb": {
+    "module": "unknown",
+    "path": "parse_ollama_fixed.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "group_by_status_and_priority": {
+    "module": "unknown",
+    "path": "board_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "render_board": {
+    "module": "unknown",
+    "path": "board_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "parse_ollama_list_improved": {
+    "module": "unknown",
+    "path": "parse_ollama_improved.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_better_flattened_structure": {
+    "module": "unknown",
+    "path": "parse_ollama_improved.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_file_ops": {
+    "module": "unknown",
+    "path": "bot_api_server.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_cache_manager": {
+    "module": "unknown",
+    "path": "bot_api_server.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "root": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/fastapi_ollama_server.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "health_check": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "list_files": {
+    "module": "unknown",
+    "path": "bot_file_operations.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "read_file": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "write_file": {
+    "module": "unknown",
+    "path": "bot_file_operations.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "edit_file": {
+    "module": "unknown",
+    "path": "bot_file_operations.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_directory": {
+    "module": "unknown",
+    "path": "bot_file_operations.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "delete_file": {
+    "module": "unknown",
+    "path": "bot_file_operations.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "search_struct": {
+    "module": "unknown",
+    "path": "bot_file_operations.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_struct_stats": {
+    "module": "unknown",
+    "path": "bot_file_operations.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "invalidate_struct_cache": {
+    "module": "unknown",
+    "path": "bot_file_operations.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "rebuild_struct_cache": {
+    "module": "unknown",
+    "path": "bot_api_server.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_workspace_status": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "send_message_to_claude": {
+    "module": "unknown",
+    "path": "bot_api_server.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "run_full_test": {
+    "module": "unknown",
+    "path": "bot_api_server.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "startup_event": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/fastapi_ollama_server.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "shutdown_event": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/fastapi_ollama_server.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "load_gitignore": {
+    "module": "unknown",
+    "path": "scripts/auto_update_struct.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "is_text_file": {
+    "module": "unknown",
+    "path": "collector.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "collect_project": {
+    "module": "unknown",
+    "path": "collector.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "test_file_operations": {
+    "module": "unknown",
+    "path": "bot_file_operations.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "setup_simulated_environment": {
+    "module": "unknown",
+    "path": "bot_file_operations.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "copy_file": {
+    "module": "unknown",
+    "path": "bot_file_operations.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "setup_session": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "close_session": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "health_check_api": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "save_user_message_via_api": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_user_history_via_api": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "chat_with_ollama_via_api": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_system_metrics_via_api": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "history_command": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "health_command": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "metrics_command": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "ollama_command": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "run": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/telegram_cursor_master.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "load_ollama_config": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/fastapi_ollama_server.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "query_ollama": {
+    "module": "unknown",
+    "path": "chat_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cursor_command": {
+    "module": "unknown",
+    "path": "chat_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "logs_command": {
+    "module": "unknown",
+    "path": "chat_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "dev_command": {
+    "module": "unknown",
+    "path": "chat_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "model_command": {
+    "module": "unknown",
+    "path": "chat_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "run_sync": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/chat_bot_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "load_user_memory": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/fastapi_ollama_server.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "system_status": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_ollama_models": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/fastapi_ollama_server.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "memory_stats": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/fastapi_ollama_server.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "clear_user_memory": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/fastapi_ollama_server.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "read_project_file": {
+    "module": "unknown",
+    "path": "fastapi_ollama_server_working.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "list_available_files": {
+    "module": "unknown",
+    "path": "fastapi_ollama_server_working.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_cli_core": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_core.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "setup_cache": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_core.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "setup_copilot": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_core.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "run_interactive_mode": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_core.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_workspace_manager": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_or_create_state": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_permission_templates": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "set_mode": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_parse_modes_from_string": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_combine_mode_permissions": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_mode_combination_name": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_current_state": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_permission": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_required_capability": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_is_restricted_target": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "set_emergency_override": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_check_emergency_override": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "integrate_strict_mode": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "add_decision_workflow": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_override_time_remaining": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_save_state": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_mode_status": {
+    "module": "unknown",
+    "path": "src/llmstruct/workspace.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_tables": {
+    "module": "unknown",
+    "path": "docs/cache.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cache_json": {
+    "module": "unknown",
+    "path": "docs/cache.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_metadata": {
+    "module": "unknown",
+    "path": "docs/cache.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_full_json": {
+    "module": "unknown",
+    "path": "docs/cache.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "close": {
+    "module": "unknown",
+    "path": "docs/cache.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "filter_json": {
+    "module": "unknown",
+    "path": "docs/json_selector.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "select_json": {
+    "module": "unknown",
+    "path": "docs/json_selector.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "__post_init__": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/universal_converter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_ai_onboarding_guide": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_project_overview_from_struct": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_existing_architecture_guide": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_copilot_integration_guide": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_context_orchestration_guide": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_struct_analysis_guide": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_current_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_struct_analysis": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_analyze_architecture_from_struct": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_analyze_function_duplication": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_calculate_complexity_metrics": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_calculate_complexity_score": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_orchestrator_state": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "analyze_codebase_for_duplicates": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "sync_with_existing_architecture": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_task": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_active_tasks": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_json_safe": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_save_json_safe": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_active_session_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_identify_key_components": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_workflow_patterns": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_available_commands": {
+    "module": "unknown",
+    "path": "src/llmstruct/workflow_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_config": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_mapping": {
+    "module": "unknown",
+    "path": "src/llmstruct/gh_view.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_save_mapping": {
+    "module": "unknown",
+    "path": "src/llmstruct/gh_view.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_run_gh_command": {
+    "module": "unknown",
+    "path": "src/llmstruct/gh_view.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "load_official_data": {
+    "module": "unknown",
+    "path": "src/llmstruct/gh_view.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "format_task_for_github": {
+    "module": "unknown",
+    "path": "src/llmstruct/gh_view.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "format_idea_for_github": {
+    "module": "unknown",
+    "path": "src/llmstruct/gh_view.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "filter_struct": {
+    "module": "unknown",
+    "path": "docs/self_run.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "attach_to_llm_request": {
+    "module": "unknown",
+    "path": "docs/self_run.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "initialize_copilot": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "trigger_copilot_event": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "smart_suggest": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_optimized_context_for_scenario": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_initialize_layers": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "load_context_layer": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "unload_context_layer": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_optimized_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_legacy_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_context_for_vscode": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_context_for_event": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_legacy_event_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "suggest_completion": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "validate_change": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_matches_scope": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_matches_trigger": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_validate_json_schema": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_check_circular_dependencies": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_validate_task_references": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_workflow_suggestions": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "refresh_all_contexts": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_context_status": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "export_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/copilot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "initialize_ai_middleware": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_ai_middleware": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "process_ai_query": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "ensure_llmstruct_integration": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_middleware_config": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "process_ai_request": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_parse_ai_request": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_should_use_llmstruct": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_process_with_llmstruct": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_process_bypass": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_optimize_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_analyze_ai_delegation": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_enhanced_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_capability_summary": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_generate_usage_guidance": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_map_tags_to_scenario": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_default_ai_processing": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_middleware_stats": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "force_llmstruct_mode": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "enable_guidance_mode": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "wrapper": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_workflow_middleware.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_ai_cli_integration": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_cli_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_ai_enhanced_cli_summary": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_cli_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_discover_available_commands": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_cli_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "integrate_ai_status_command": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_cli_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "integrate_ai_audit_command": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_cli_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "integrate_ai_context_command": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_cli_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "integrate_ai_queue_command": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_cli_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_integration_summary": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_cli_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_calculate_ai_enhancement_impact": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_cli_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_create_fallback_status": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_cli_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_create_fallback_audit": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_cli_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_create_fallback_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_cli_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_create_fallback_queue": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_cli_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_cache_config": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_config.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_copilot_config": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_config.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_queue_config": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_config.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_context_config": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_config.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_gitignore_patterns": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_config.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_exclude_dirs": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_config.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_include_patterns": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_config.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_exclude_patterns": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_config.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_max_file_size": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_config.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_auto_update_config": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_config.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "is_auto_update_enabled": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_config.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_struct_file_path": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_config.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_context_file_path": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_config.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "save_config": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_config.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "update_config": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_config.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "reload_config": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_config.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_cursor_integration": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_cursor_optimized_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_cursor_config": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_apply_privacy_filter": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_filter_sensitive_dict": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "delegate_to_optimal_ai": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_calculate_delegation_confidence": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_goal_aligned_suggestions": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_priority_guidance": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_calculate_feature_score": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_scoring_reasoning": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_personal_bridge": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "start_session": {
+    "module": "unknown",
+    "path": "scripts/epic_roadmap_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "save_session_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_session_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_comprehensive_cursor_response": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "test_grok": {
+    "module": "unknown",
+    "path": "src/llmstruct/grok.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "generate": {
+    "module": "unknown",
+    "path": "src/llmstruct/grok.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "analyze_source_project": {
+    "module": "unknown",
+    "path": "src/llmstruct/transpiler.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_target_project_structure": {
+    "module": "unknown",
+    "path": "src/llmstruct/transpiler.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_generate_structure_info": {
+    "module": "unknown",
+    "path": "src/llmstruct/transpiler.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "transpile_module": {
+    "module": "unknown",
+    "path": "src/llmstruct/transpiler.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_format_functions": {
+    "module": "unknown",
+    "path": "src/llmstruct/transpiler.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_format_classes": {
+    "module": "unknown",
+    "path": "src/llmstruct/transpiler.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "determine_target_path": {
+    "module": "unknown",
+    "path": "src/llmstruct/transpiler.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "transpile_project": {
+    "module": "unknown",
+    "path": "src/llmstruct/transpiler.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "query": {
+    "module": "unknown",
+    "path": "docs/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_query_grok": {
+    "module": "unknown",
+    "path": "src/llmstruct/llm_client.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_query_anthropic": {
+    "module": "unknown",
+    "path": "src/llmstruct/llm_client.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_query_ollama": {
+    "module": "unknown",
+    "path": "src/llmstruct/llm_client.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_query_hybrid": {
+    "module": "unknown",
+    "path": "src/llmstruct/llm_client.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_metrics_tracker": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "track_token_usage": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "track_task_start": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "track_task_complete": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "track_false_path": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "track_workflow_event": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "track_telegram_interaction": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "track_api_interaction": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_token_summary": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_generate_session_id": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_current_branch": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_commit_hash": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_struct_json_hash": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "start_task": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "complete_task": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "track_rollback": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "track_retry": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "calculate_efficiency_score": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_session_summary": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_session_duration": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "save_session": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_update_aggregate_metrics": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_analytics_data": {
+    "module": "unknown",
+    "path": "src/llmstruct/metrics_tracker.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "load_config": {
+    "module": "unknown",
+    "path": "scripts/auto_update_struct.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "read_file_content": {
+    "module": "unknown",
+    "path": "docs/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "write_to_file": {
+    "module": "unknown",
+    "path": "docs/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "parse_files_from_response": {
+    "module": "unknown",
+    "path": "docs/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "interactive": {
+    "module": "unknown",
+    "path": "docs/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "interactive_modular": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "interactive_legacy": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "process_cli_queue_enhanced": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "parse": {
+    "module": "unknown",
+    "path": "docs/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "context": {
+    "module": "unknown",
+    "path": "docs/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "dogfood": {
+    "module": "unknown",
+    "path": "docs/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "review": {
+    "module": "unknown",
+    "path": "docs/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "copilot": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "audit": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "analyze_duplicates": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "add_api_bot_commands": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_api_management": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_bot_management": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_services": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_metrics": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "metrics_status": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "metrics_summary": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "metrics_analytics": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "metrics_report": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "metrics_track": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "metrics_tokens": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_context_orchestrator": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_context_for_scenario": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_budget_for_scenario": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_full_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_relationship_summary": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_focused_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_minimal_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_source_with_filtering": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_file_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_essential_parts": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_filter_for_current_session": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_summary": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_apply_section_filtering": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_update_metrics": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_metrics_summary": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "save_metrics": {
+    "module": "unknown",
+    "path": "src/llmstruct/context_orchestrator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "initialize_ai_monitor": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_monitor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_ai_monitor": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_monitor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "record_ai_usage": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_monitor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "record_ai_interaction": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_monitor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_analyze_interaction_patterns": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_monitor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_calculate_effectiveness_score": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_monitor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_check_immediate_feedback": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_monitor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_log_immediate_feedback": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_monitor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "analyze_behavior_trends": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_monitor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_generate_recommendations": {
+    "module": "unknown",
+    "path": "temp_personal_analysis/personal/boss/scripts/team_management.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_real_time_guidance": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_monitor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_events": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_monitor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_save_events": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_monitor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_save_analysis": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_monitor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_monitoring_report": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_monitor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "ai_get_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "ai_analyze_task": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "ai_create_task": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "ai_get_onboarding_guide": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "ai_check_duplicates": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "ai_suggest": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_estimate_task_complexity": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_suggest_approach": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_find_relevant_modules": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_check_potential_duplicates": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_recommend_ai_for_task": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_generate_workflow_steps": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_determine_context_requirements": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_workflow_suggestions": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_available_ai_commands": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_identify_high_priority_duplicates": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_generate_refactoring_suggestions": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_classify_task_type": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_generate_next_steps": {
+    "module": "unknown",
+    "path": "src/llmstruct/cursor_ai_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_ensure_directories": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "discover_all_capabilities": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_integration_metrics": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_enhanced_capabilities_summary": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_comprehensive_ai_status": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_discover_tools": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_check_cli_processor": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_check_copilot_manager": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_check_context_orchestrator": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_check_cache_system": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_check_struct_parser": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_check_docs_system": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_discover_context_capabilities": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_check_integration_health": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_check_component_status": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_discover_vscode_capabilities": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_calculate_cache_hit_rate": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_estimate_system_load": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_is_cache_valid": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_cached_capabilities": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_cache_capabilities": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_capabilities_summary": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_analyze_project_structure": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_enhanced_directory_structure": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_analyze_unused_capabilities": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_discover_config_capabilities": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_discover_context_scenarios": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_is_ai_useful_command": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_is_ai_useful_config": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_is_ai_useful_utility": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_prioritize_integrations": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_basic_directory_scan": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_cursor_status_report": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "optimize_context_for_cursor": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_calculate_real_cache_hit_rate": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_real_system_load": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_analyze_query_type": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_overall_health_emoji": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_context_status_emoji": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_ai_integration_emoji": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_goal_alignment_status": {
+    "module": "unknown",
+    "path": "src/llmstruct/ai_self_awareness.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "write_file_content": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_utils.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_directory_structure": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_utils.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "validate_json": {
+    "module": "unknown",
+    "path": "scripts/deploy_embedded_files.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "format_json": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_utils.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "generate_unique_id": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_utils.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "safe_path_join": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_utils.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "file_exists": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_utils.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "dir_exists": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_utils.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_file_size": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_utils.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "backup_file": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_utils.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cleanup_old_backups": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_utils.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "set_cache": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "set_copilot": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "process_command": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "process_prompt": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_help": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/telegram_cursor_master.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_workspace": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_mode": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_view": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_write": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_queue": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_cache": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_copilot": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_config": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_status": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/telegram_cursor_master.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_backup": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_parse": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_audit": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "handle_auto_update": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "handle_struct_status": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_session": {
+    "module": "unknown",
+    "path": "src/llmstruct/cli_commands.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "continue_chat_completion": {
+    "module": "unknown",
+    "path": "src/llmstruct/api/routes/continue_adapter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "continue_models": {
+    "module": "unknown",
+    "path": "src/llmstruct/api/routes/continue_adapter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "continue_embeddings": {
+    "module": "unknown",
+    "path": "src/llmstruct/api/routes/continue_adapter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "chat_completion": {
+    "module": "unknown",
+    "path": "src/llmstruct/api/services/llm_service.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_initialize_components": {
+    "module": "unknown",
+    "path": "src/llmstruct/api/services/llm_service.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "process_message": {
+    "module": "unknown",
+    "path": "src/llmstruct/api/services/llm_service.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_try_llm_providers": {
+    "module": "unknown",
+    "path": "src/llmstruct/api/services/llm_service.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/api/services/llm_service.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_full_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/api/services/llm_service.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_focused_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/api/services/llm_service.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_get_minimal_context": {
+    "module": "unknown",
+    "path": "src/llmstruct/api/services/llm_service.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_generate_grok_response": {
+    "module": "unknown",
+    "path": "src/llmstruct/api/services/llm_service.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_generate_anthropic_response": {
+    "module": "unknown",
+    "path": "src/llmstruct/api/services/llm_service.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_build_system_prompt": {
+    "module": "unknown",
+    "path": "src/llmstruct/api/services/llm_service.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_generate_mock_response": {
+    "module": "unknown",
+    "path": "src/llmstruct/api/services/llm_service.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_folder_structure": {
+    "module": "unknown",
+    "path": "src/llmstruct/generators/json_generator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "build_toc_and_modules": {
+    "module": "unknown",
+    "path": "src/llmstruct/generators/json_generator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "generate_json": {
+    "module": "unknown",
+    "path": "scripts/auto_update_struct.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_go_folder_structure": {
+    "module": "unknown",
+    "path": "src/llmstruct/generators/go_json_generator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "build_go_toc_and_modules": {
+    "module": "unknown",
+    "path": "src/llmstruct/generators/go_json_generator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "extract_go_mod_info": {
+    "module": "unknown",
+    "path": "src/llmstruct/generators/go_json_generator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "generate_go_json": {
+    "module": "unknown",
+    "path": "src/llmstruct/generators/go_json_generator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "validate_struct_json": {
+    "module": "unknown",
+    "path": "scripts/auto_update_struct.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "validate_directory": {
+    "module": "unknown",
+    "path": "src/llmstruct/validators/json_validator.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "detect_language": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/universal_converter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "detect_project_languages": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/universal_converter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_project_files": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/universal_converter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "convert_python_project": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/universal_converter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "convert_go_project": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/universal_converter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "convert_javascript_project": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/universal_converter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "convert_project": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/universal_converter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "convert_multi_language_project": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/universal_converter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_build_project_structure": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/universal_converter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_build_empty_project_structure": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/universal_converter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_merge_language_results": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/universal_converter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "convert_to_llmstruct_format": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/go_analyzer.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_compute_file_hash": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/go_analyzer.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_setup_analyzer": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/go_analyzer.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_cleanup": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/go_analyzer.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "analyze_project": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/go_analyzer.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_fallback_analysis": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/go_analyzer.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "file_hash": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/javascript_parser.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "compute_file_metadata": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/javascript_parser.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "parse_module": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/javascript_parser.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "extract_signature": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/javascript_parser.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "infer_category": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/python_parser.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "compute_file_hash": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/python_parser.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "analyze_module": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/python_parser.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "visit_Import": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/python_parser.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "visit_ImportFrom": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/python_parser.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "visit_FunctionDef": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/python_parser.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "visit_AsyncFunctionDef": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/python_parser.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "visit_Call": {
+    "module": "unknown",
+    "path": "src/llmstruct/parsers/python_parser.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_business_planning_manager": {
+    "module": "unknown",
+    "path": "temp_personal_analysis/personal/boss/scripts/business_planning.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_business_roadmap": {
+    "module": "unknown",
+    "path": "temp_personal_analysis/personal/boss/scripts/business_planning.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_financial_plan": {
+    "module": "unknown",
+    "path": "temp_personal_analysis/personal/boss/scripts/business_planning.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "record_strategic_decision": {
+    "module": "unknown",
+    "path": "temp_personal_analysis/personal/boss/scripts/business_planning.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "analyze_business_metrics": {
+    "module": "unknown",
+    "path": "temp_personal_analysis/personal/boss/scripts/business_planning.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_business_summary": {
+    "module": "unknown",
+    "path": "temp_personal_analysis/personal/boss/scripts/business_planning.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_data": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_save_data": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_team_management_system": {
+    "module": "unknown",
+    "path": "temp_personal_analysis/personal/boss/scripts/team_management.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_team_strategy": {
+    "module": "unknown",
+    "path": "temp_personal_analysis/personal/boss/scripts/team_management.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "record_team_evaluation": {
+    "module": "unknown",
+    "path": "temp_personal_analysis/personal/boss/scripts/team_management.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_hiring_plan": {
+    "module": "unknown",
+    "path": "temp_personal_analysis/personal/boss/scripts/team_management.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "analyze_team_performance": {
+    "module": "unknown",
+    "path": "temp_personal_analysis/personal/boss/scripts/team_management.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_team_summary": {
+    "module": "unknown",
+    "path": "temp_personal_analysis/personal/boss/scripts/team_management.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "generate_team_report": {
+    "module": "unknown",
+    "path": "temp_personal_analysis/personal/boss/scripts/team_management.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_summarize_strategy": {
+    "module": "unknown",
+    "path": "temp_personal_analysis/personal/boss/scripts/team_management.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_summarize_evaluations": {
+    "module": "unknown",
+    "path": "temp_personal_analysis/personal/boss/scripts/team_management.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "run_interactive": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_ai_status": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_ai_audit": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_ai_context": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_ai_queue": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_ai_summary": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_business_roadmap": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_financial_plan": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_strategic_decision": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_business_analysis": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_business_summary": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_team_strategy": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_team_evaluation": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_hiring_plan": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_team_analysis": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_team_report": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_technical": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_context_full": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_workspace_override": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_capabilities": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_boss_status": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "helper": {
+    "module": "unknown",
+    "path": "examples/python_project_utils.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "log": {
+    "module": "unknown",
+    "path": "examples/python_project_utils.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "start_mp002_bot": {
+    "module": "unknown",
+    "path": "integrations/telegram_bot/mp002_progress_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "init_progress_tracking": {
+    "module": "unknown",
+    "path": "integrations/telegram_bot/mp002_progress_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "load_progress": {
+    "module": "unknown",
+    "path": "integrations/telegram_bot/mp002_progress_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "save_progress": {
+    "module": "unknown",
+    "path": "integrations/telegram_bot/mp002_progress_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "send_message": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "report_phase_start": {
+    "module": "unknown",
+    "path": "integrations/telegram_bot/mp002_progress_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "report_task_completion": {
+    "module": "unknown",
+    "path": "integrations/telegram_bot/mp002_progress_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "request_phase_approval": {
+    "module": "unknown",
+    "path": "integrations/telegram_bot/mp002_progress_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "report_issue": {
+    "module": "unknown",
+    "path": "integrations/telegram_bot/mp002_progress_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_overall_status": {
+    "module": "unknown",
+    "path": "integrations/telegram_bot/mp002_progress_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "handle_command": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "send_welcome": {
+    "module": "unknown",
+    "path": "integrations/telegram_bot/mp002_progress_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "approve_phase": {
+    "module": "unknown",
+    "path": "integrations/telegram_bot/mp002_progress_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "handle_feedback": {
+    "module": "unknown",
+    "path": "integrations/telegram_bot/mp002_progress_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_current_branch": {
+    "module": "unknown",
+    "path": "scripts/session_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "save_json_file": {
+    "module": "unknown",
+    "path": "scripts/session_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_current_timestamp": {
+    "module": "unknown",
+    "path": "scripts/session_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "log_event": {
+    "module": "unknown",
+    "path": "scripts/session_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "switch_session": {
+    "module": "unknown",
+    "path": "scripts/session_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "list_sessions": {
+    "module": "unknown",
+    "path": "scripts/session_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "show_current_session": {
+    "module": "unknown",
+    "path": "scripts/session_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "show_worklog": {
+    "module": "unknown",
+    "path": "scripts/session_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "detect_project_changes": {
+    "module": "unknown",
+    "path": "scripts/auto_update_struct.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "backup_struct_json": {
+    "module": "unknown",
+    "path": "scripts/auto_update_struct.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "update_struct_json": {
+    "module": "unknown",
+    "path": "scripts/auto_update_struct.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_detect_user_info": {
+    "module": "unknown",
+    "path": "scripts/fix_hardcoded_usernames.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_from_env": {
+    "module": "unknown",
+    "path": "scripts/fix_hardcoded_usernames.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_from_git": {
+    "module": "unknown",
+    "path": "scripts/fix_hardcoded_usernames.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_load_from_environment": {
+    "module": "unknown",
+    "path": "scripts/fix_hardcoded_usernames.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_user_info": {
+    "module": "unknown",
+    "path": "scripts/fix_hardcoded_usernames.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "scan_files": {
+    "module": "unknown",
+    "path": "scripts/fix_hardcoded_usernames.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "fix_file": {
+    "module": "unknown",
+    "path": "scripts/fix_hardcoded_usernames.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "fix_all_files": {
+    "module": "unknown",
+    "path": "scripts/fix_hardcoded_usernames.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "generate_env_template": {
+    "module": "unknown",
+    "path": "scripts/fix_hardcoded_usernames.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "load_env_file": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "load_epics_data": {
+    "module": "unknown",
+    "path": "scripts/create_github_issues.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_epic_issue": {
+    "module": "unknown",
+    "path": "scripts/create_github_issues.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_task_issue": {
+    "module": "unknown",
+    "path": "scripts/create_github_issues.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_create_issue_via_api": {
+    "module": "unknown",
+    "path": "scripts/create_github_issues.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_create_issue_via_cli": {
+    "module": "unknown",
+    "path": "scripts/create_github_issues.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_format_criteria": {
+    "module": "unknown",
+    "path": "scripts/create_github_issues.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_format_tasks": {
+    "module": "unknown",
+    "path": "scripts/create_github_issues.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_format_metrics": {
+    "module": "unknown",
+    "path": "scripts/create_github_issues.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_github_cli": {
+    "module": "unknown",
+    "path": "scripts/export_to_github_projects.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "list_projects": {
+    "module": "unknown",
+    "path": "scripts/export_to_github_projects.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_project_item": {
+    "module": "unknown",
+    "path": "scripts/export_to_github_projects.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "export_tasks_to_project": {
+    "module": "unknown",
+    "path": "scripts/export_to_github_projects.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "export_ideas_to_project": {
+    "module": "unknown",
+    "path": "scripts/export_to_github_projects.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "filter_data": {
+    "module": "unknown",
+    "path": "scripts/export_to_github_projects.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "load_comprehensive_index": {
+    "module": "unknown",
+    "path": "scripts/process_926_items.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "calculate_confidence_score": {
+    "module": "unknown",
+    "path": "scripts/process_926_items.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_t_pot_related": {
+    "module": "unknown",
+    "path": "scripts/process_926_items.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_team_implementable": {
+    "module": "unknown",
+    "path": "scripts/process_926_items.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_personal_vs_team_vs_business": {
+    "module": "unknown",
+    "path": "scripts/process_926_items.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "identify_epic_candidates": {
+    "module": "unknown",
+    "path": "scripts/process_926_items.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "extract_epic_name": {
+    "module": "unknown",
+    "path": "scripts/process_926_items.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "categorize_item": {
+    "module": "unknown",
+    "path": "scripts/process_926_items.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "find_duplicates": {
+    "module": "unknown",
+    "path": "scripts/process_926_items.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "calculate_similarity": {
+    "module": "unknown",
+    "path": "scripts/process_926_items.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "suggest_merge_strategy": {
+    "module": "unknown",
+    "path": "scripts/process_926_items.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "process_items": {
+    "module": "unknown",
+    "path": "scripts/process_926_items.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "save_results": {
+    "module": "unknown",
+    "path": "scripts/process_926_items.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_category_description": {
+    "module": "unknown",
+    "path": "scripts/process_926_items.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "fix_json_loading": {
+    "module": "unknown",
+    "path": "scripts/fix_github_script.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "load_sync_log": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "save_sync_log": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "api_request": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_existing_issues": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_existing_discussions": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "item_already_synced": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "find_existing_by_title": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_github_issue": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_github_discussion": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_github_epic": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "sync_category": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "validate_before_sync": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_init_patterns": {
+    "module": "unknown",
+    "path": "scripts/create_tasks_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "scan_all_directories": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_scan_directory": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_scan_root_files": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_should_scan_file": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_scan_file": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_from_text": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_from_json": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_create_item_from_match": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_create_checkbox_item": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_create_simple_item": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_detect_status": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_detect_priority": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_assess_strategic_value": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_context": {
+    "module": "unknown",
+    "path": "scripts/create_tasks_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_detect_category": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_estimate_effort": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_tags": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_is_noise_checkbox": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_parse_json_files": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_process_structured_json": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_add_json_item": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_assess_json_strategic_value": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_innovation_concepts": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_enhance_items": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_find_related_items": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "generate_comprehensive_report": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "save_comprehensive_index": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_generate_analysis_report": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_format_dict": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_format_items_list": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_json_tasks": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_json_ideas": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_json_sessions": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_json_array": {
+    "module": "unknown",
+    "path": "scripts/create_comprehensive_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "validate_references": {
+    "module": "unknown",
+    "path": "scripts/validate_refs.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "extract_from_markdown": {
+    "module": "unknown",
+    "path": "scripts/create_tasks_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_status": {
+    "module": "unknown",
+    "path": "scripts/create_tasks_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_priority": {
+    "module": "unknown",
+    "path": "scripts/create_tasks_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_date": {
+    "module": "unknown",
+    "path": "scripts/create_tasks_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_epics": {
+    "module": "unknown",
+    "path": "scripts/create_tasks_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_tasks": {
+    "module": "unknown",
+    "path": "scripts/create_tasks_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_todos": {
+    "module": "unknown",
+    "path": "scripts/create_tasks_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_phases": {
+    "module": "unknown",
+    "path": "scripts/create_tasks_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_extract_checkboxes": {
+    "module": "unknown",
+    "path": "scripts/create_tasks_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "scan_documentation": {
+    "module": "unknown",
+    "path": "scripts/create_tasks_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "generate_index": {
+    "module": "unknown",
+    "path": "scripts/create_tasks_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "generate_summary_report": {
+    "module": "unknown",
+    "path": "scripts/create_tasks_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "save_index": {
+    "module": "unknown",
+    "path": "scripts/create_tasks_index.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "print_info": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "print_success": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "print_warning": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "print_error": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "print_step": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "test_github_token": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_gh_cli": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_token_from_gh_cli": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_github_token": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "detect_repo_from_git": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_api_request_direct": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_api_request_via_cli": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_github_issue_enhanced": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_format_acceptance_criteria": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_format_implementation_notes": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "run_enhanced_sync": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "sync_category_enhanced": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_github_epic_enhanced": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "create_github_discussion_enhanced": {
+    "module": "unknown",
+    "path": "scripts/github_sync_manager_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "apply_filters": {
+    "module": "unknown",
+    "path": "scripts/collector.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "collect_files": {
+    "module": "unknown",
+    "path": "scripts/collector.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "generate_struct": {
+    "module": "unknown",
+    "path": "scripts/collector.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "validate_epic_structure": {
+    "module": "unknown",
+    "path": "scripts/validate_epics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "validate_task_structure": {
+    "module": "unknown",
+    "path": "scripts/validate_epics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "validate_priorities": {
+    "module": "unknown",
+    "path": "scripts/validate_epics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "validate_task_ids": {
+    "module": "unknown",
+    "path": "scripts/validate_epics.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "load_roadmap": {
+    "module": "unknown",
+    "path": "scripts/epic_roadmap_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "save_roadmap": {
+    "module": "unknown",
+    "path": "scripts/epic_roadmap_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "show_overview": {
+    "module": "unknown",
+    "path": "scripts/epic_roadmap_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "show_epic_details": {
+    "module": "unknown",
+    "path": "scripts/epic_roadmap_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "complete_session": {
+    "module": "unknown",
+    "path": "scripts/epic_roadmap_manager.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "backup_files": {
+    "module": "unknown",
+    "path": "scripts/deploy_embedded_files.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "deploy_embedded_files": {
+    "module": "unknown",
+    "path": "scripts/deploy_embedded_files.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_init_ai_integration": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_init_command_processor": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_init_business_manager": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_init_team_manager": {
+    "module": "unknown",
+    "path": ".personal/boss/scripts/boss_cli.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "handle_cursor_command": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/cursor_telegram_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "read_cursor_commands": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_telegram_reader_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_parse_cursor_command": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_telegram_reader_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_recent_user_messages": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_telegram_reader_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_parse_user_message": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_telegram_reader_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "poll_for_commands": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_telegram_reader_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "add_memory_endpoints": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/api_memory_endpoints.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "search_user_memory": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/api_memory_endpoints.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_user_response": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/dummy_work_executor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "wait_for_user_input": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/dummy_work_executor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "dummy_phase_1": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/dummy_work_executor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "dummy_phase_2": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/dummy_work_executor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "execute_dummy_work": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/dummy_work_executor.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_latest_messages": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_telegram_reader.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_cursor_commands": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_telegram_reader.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "watch_new_messages": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_telegram_reader.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "print_status": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_telegram_reader.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "send_to_user": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_bot_messenger.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "wait_for_response": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_bot_messenger.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "interactive_communication": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_bot_messenger.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_user_chat_id": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_bot_messenger.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "wait_for_user_response": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/send_test_message.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "send_test_message": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/send_test_message.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_telegram_commands": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "send_telegram_message": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/cursor_telegram_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "update_telegram_status": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "send_progress": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "send_completion": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "ask_confirmation": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_for_commands": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "send_response": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/telegram_cursor_master.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "update_status": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/telegram_cursor_master.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "send_progress_update": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "ask_for_confirmation": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "ensure_data_dir": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_simple_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_user_messages": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_simple_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "send_to_telegram": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_simple_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_new_messages": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_simple_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_last_message": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_simple_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "show_conversation_status": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_simple_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "start_conversation_monitor": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_simple_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "quick_reply": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_simple_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "quick_status": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_simple_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "quick_notification": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_simple_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "list_recent_messages": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/cursor_simple_integration.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "test_integration": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/start_simple_telegram.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_token": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/start_simple_telegram.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_dependencies": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/start_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "start_bot": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/start_simple_telegram.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "show_status": {
+    "module": "unknown",
+    "path": "archive/telegram_experiments/start_simple_telegram.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "log_cursor_command": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/chat_bot_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "ollama_chat": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/chat_bot_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "grok_chat": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/chat_bot_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "anthropic_chat": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/chat_bot_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "llm_chain_response": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/chat_bot_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "run_with_timeout": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/chat_bot_enhanced.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "process_cursor_command": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/cursor_telegram_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "simulate_cursor_processing": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/cursor_telegram_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "start_bridge": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/cursor_telegram_bridge.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_services": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/start_ollama_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_ollama": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/start_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "chat_with_grok": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_chat_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "chat_with_anthropic": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_chat_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "list_directory": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_chat_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "run_cli_command": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_chat_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_or_create_session": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "add_message": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_conversation_context": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_chat_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_send_single_message": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_chat_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_updates": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "send_task_report": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_chat_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "chat_with_ai": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "demo_task_reporting": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/demo_bot_features.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "show_bot_commands": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/demo_bot_features.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "show_architecture": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/demo_bot_features.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "report_task_started": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/cursor_reporter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "report_task_progress": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/cursor_reporter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "report_task_completed": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/cursor_reporter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "report_task_failed": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/cursor_reporter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "report_started": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/cursor_reporter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "report_progress": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/cursor_reporter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "report_completed": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/cursor_reporter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "report_failed": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/cursor_reporter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "send_report": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/cursor_reporter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "escape_markdown": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/cursor_reporter.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "__aenter__": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "__aexit__": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "chat_message": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "execute_cli_command": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "get_metrics": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "chat_with_api_fallback": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "_signal_handler": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/ollama_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "check_api_server": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/start_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "start_api_server": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/start_api_bot.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_start": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/telegram_cursor_master.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_master": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/telegram_cursor_master.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "cmd_stop": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/telegram_cursor_master.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "write_command": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/telegram_cursor_master.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "read_status": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/telegram_cursor_master.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "start_response_watcher": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/telegram_cursor_master.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "process_responses": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/telegram_cursor_master.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  },
+  "run_in_thread": {
+    "module": "unknown",
+    "path": "archive/telegram_bots/telegram_cursor_master.py",
+    "line": 0,
+    "args": [],
+    "description": ""
+  }
+}

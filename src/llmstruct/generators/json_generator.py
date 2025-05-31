@@ -38,12 +38,13 @@ def get_folder_structure(
     ]
 
     for dir_path, dirnames, filenames in os.walk(root_dir):
-        rel_dir = str(Path(dir_path).relative_to(root_path))
+        abs_dir_path = Path(dir_path).resolve()
+        rel_dir = str(abs_dir_path.relative_to(root_path))
         if rel_dir == ".":
             rel_dir = ""
 
-        if any(Path(dir_path).match(p) for p in normalized_gitignore) or any(
-            d in exclude_dirs_set for d in Path(dir_path).parts
+        if any(abs_dir_path.match(p) for p in normalized_gitignore) or any(
+            d in exclude_dirs_set for d in abs_dir_path.parts
         ):
             dirnames[:] = []
             continue
@@ -53,7 +54,7 @@ def get_folder_structure(
             for d in dirnames
             if d not in exclude_dirs_set
             and not any(
-                Path(dir_path).joinpath(d).match(p)
+                abs_dir_path.joinpath(d).match(p)
                 for p in normalized_gitignore + (exclude_patterns or [])
             )
         ]
@@ -67,7 +68,7 @@ def get_folder_structure(
             }
         )
         for fname in sorted(filenames):
-            file_path = Path(dir_path) / fname
+            file_path = abs_dir_path / fname
             if any(
                 file_path.match(p)
                 for p in (include_patterns or ["*.py"])
@@ -216,3 +217,31 @@ def generate_json(
         "toc": toc,
         "modules": modules,
     }
+
+
+def generate_json_with_output_file(
+    root_dir: str,
+    output_file: str = None,
+    gitignore_patterns=None,
+    include_patterns=None,
+    exclude_patterns=None,
+    exclude_dirs=None,
+    include_ranges=True,
+    include_hashes=False,
+    goals=None,
+):
+    result = generate_json(
+        root_dir=root_dir,
+        include_patterns=include_patterns,
+        exclude_patterns=exclude_patterns,
+        gitignore_patterns=gitignore_patterns,
+        include_ranges=include_ranges,
+        include_hashes=include_hashes,
+        goals=goals,
+        exclude_dirs=exclude_dirs,
+    )
+    if output_file:
+        import json
+        with open(output_file, "w", encoding="utf-8") as f:
+            json.dump(result, f, indent=2, ensure_ascii=False)
+    return result

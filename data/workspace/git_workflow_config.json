@@ -1,0 +1,42 @@
+{
+  "git_workflow": {
+    "base_branch": "develop",
+    "main_branch": "main", 
+    "pr_target": "develop",
+    "feature_prefix": "feature/",
+    "hotfix_prefix": "hotfix/",
+    "release_prefix": "release/"
+  },
+  "branch_rules": {
+    "develop": {
+      "description": "Базовая ветка разработки",
+      "protected": true,
+      "merge_strategy": "merge_commit",
+      "auto_delete_feature_branches": true
+    },
+    "main": {
+      "description": "Production ветка", 
+      "protected": true,
+      "merge_strategy": "merge_commit",
+      "only_from": ["develop", "hotfix/*"]
+    }
+  },
+  "pr_workflow": {
+    "default_base": "develop",
+    "require_review": true,
+    "auto_merge": false,
+    "squash_commits": false
+  },
+  "session_integration": {
+    "track_branch_changes": true,
+    "auto_create_feature_branch": true,
+    "link_sessions_to_branches": true
+  },
+  "reminders": {
+    "check_base_branch": true,
+    "warn_on_wrong_target": true,
+    "suggest_branch_names": true
+  },
+  "created_at": "2025-05-30T12:45:00Z",
+  "updated_at": "2025-05-30T12:45:00Z"
+} 

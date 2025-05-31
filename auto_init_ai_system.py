@@ -10,6 +10,7 @@ import sys
 import json
 import logging
 from pathlib import Path
+import time
 
 # Setup logging (Grok suggestion)
 logging.basicConfig(
@@ -128,13 +129,40 @@ def get_current_workflow_context():
         return {"session": "none", "mode": "[discuss]", "branch": "main", "epic": None}
 
 def get_workflow_status():
-    """Получить полный статус workflow системы"""
-    if not AI_STATUS["initialized"]:
-        auto_initialize_ai_system()
-    
+    """Получить статус workflow с интеграцией метрик"""
     try:
-        context = get_current_workflow_context()
-        project_root = Path(__file__).parent
+        # Импорт метрик системы
+        from src.llmstruct.metrics_tracker import get_metrics_tracker, track_workflow_event
+        from src.llmstruct.workspace import WorkspaceStateManager
+        
+        # Отслеживаем событие запроса статуса
+        track_workflow_event("workflow_status_check")
+        
+        workspace_manager = WorkspaceStateManager()
+        current_mode = workspace_manager.get_current_mode()
+        session_info = workspace_manager.get_session_info()
+        
+        # Получение метрик текущей сессии
+        metrics_tracker = get_metrics_tracker()
+        session_summary = metrics_tracker.get_session_summary()
+        
+        # Проверка актуальности struct.json
+        struct_file = Path("struct.json")
+        struct_status = "missing"
+        if struct_file.exists():
+            import os
+            mod_time = os.path.getmtime(struct_file)
+            import time
+            age_hours = (time.time() - mod_time) / 3600
+            
+            if age_hours < 1:
+                struct_status = "fresh"
+                track_workflow_event("struct_json_used")
+            elif age_hours < 6:
+                struct_status = "recent"
+            else:
+                struct_status = "outdated"
+                track_workflow_event("avoidable_error", "Using outdated struct.json")
         
         # Статус эпиков
         epic_status = "No active epics"
@@ -156,25 +184,34 @@ def get_workflow_status():
         except:
             pass
         
-        status = f"""🎭 WORKFLOW STATUS REPORT
+        return f"""🎭 WORKFLOW STATUS REPORT (Session: {session_summary['session_id']})
 =============================================
 
-📅 Session: {context['session']}
-🎯 Epic: {context.get('epic', 'None')}
-🎭 Mode: {context['mode']}
-🌿 Branch: {context['branch']}
-📊 Epic Status: {epic_status}
-⚙️  Workspace: {workspace_status}
+📅 Session: {session_info.get('session_id', 'SES-001')}
+🎯 Epic: {session_info.get('epic', 'None')}
+🎭 Mode: {current_mode}
+🌿 Branch: {workspace_manager._get_git_branch()}
+📊 Epic Status: {len(workspace_manager.get_epic_summaries())}/4 epics active
+⚙️  Workspace: {workspace_manager.get_mode_description(current_mode)}
+
+📊 SESSION METRICS:
+- Duration: {session_summary['duration']:.0f}s
+- Efficiency Score: {session_summary['efficiency_score']:.2f}
+- Total Tokens: {session_summary['total_tokens']}
+- Tasks: {session_summary['tasks_completed']}/{session_summary['tasks_total']}
+- False Paths: {session_summary['false_paths']}
+
+📁 STRUCT.JSON STATUS: {struct_status.upper()}
+- Hash: {metrics_tracker.session_data['metadata']['struct_json_hash']}
+- Usage Count: {metrics_tracker.session_data['workflow_metrics']['struct_json_usage']}
 
 🔧 Available Commands:
 - python scripts/epic_roadmap_manager.py overview
 - /workspace mode [code][debug] (if in CLI)
 - python -c "from auto_init_ai_system import switch_workspace_mode; switch_workspace_mode('[code]')"
+- python -c "from src.llmstruct.metrics_tracker import get_metrics_tracker; print(get_metrics_tracker().get_session_summary())"
 """
-        return status
-        
     except Exception as e:
-        logger.error(f"Failed to get workflow status: {e}")
         return f"❌ Workflow status error: {e}"
 
 def switch_workspace_mode(mode_string: str):
@@ -207,68 +244,74 @@ def get_ai_status():
     else:
         return f"❌ AI System not available: {AI_STATUS.get('error', 'Unknown error')}"
 
-def search_ai_capabilities(query: str):
-    """Поиск в возможностях AI системы (Enhanced with caching optimization)"""
-    if not AI_STATUS["initialized"]:
-        auto_initialize_ai_system()
-    
-    if not AI_CAPABILITIES:
-        return "❌ AI System not available"
-    
+def search_ai_capabilities(query):
+    """Поиск возможностей AI с интеграцией актуального struct.json и метрик"""
     try:
-        # Загружаем struct.json для поиска с кешированием (Grok suggestion)
-        project_root = Path(__file__).parent
-        struct_file = project_root / 'struct.json'
-        cache_file = project_root / 'data' / 'ai_self_awareness' / 'search_cache.json'
+        # Трекинг метрик
+        from src.llmstruct.metrics_tracker import track_workflow_event, track_task_start, track_task_complete
         
-        # Check cache validity (Grok suggestion)
-        data = None
-        if cache_file.exists() and cache_file.stat().st_mtime > struct_file.stat().st_mtime:
-            try:
-                with open(cache_file, 'r') as f:
-                    data = json.load(f)
-                logger.info("Using cached struct.json data")
-            except:
-                pass
+        task_id = f"search_capabilities_{int(time.time())}"
+        track_task_start(task_id, "capability_search")
+        track_workflow_event("struct_json_used")
         
-        if not data:
-            with open(struct_file, 'r') as f:
-                data = json.load(f)
-            # Cache the data
-            cache_file.parent.mkdir(parents=True, exist_ok=True)
-            with open(cache_file, 'w') as f:
-                json.dump(data, f)
-            logger.info("Cached fresh struct.json data")
+        # Проверка актуальности struct.json
+        struct_file = Path("struct.json")
+        if not struct_file.exists():
+            track_workflow_event("avoidable_error", "struct.json missing during capability search")
+            track_task_complete(task_id, "failed", "struct.json not found")
+            return "❌ struct.json not found. Run: python -m llmstruct.cli parse . -o struct.json"
+        
+        # Загрузка struct.json для поиска
+        with open(struct_file, 'r', encoding='utf-8') as f:
+            struct_data = json.load(f)
         
         results = []
-        modules = data.get('modules', [])
+        query_lower = query.lower()
         
-        for module in modules:
-            # Поиск в функциях
-            for func in module.get('functions', []):
-                if query.lower() in func.get('name', '').lower():
-                    results.append(f"📝 {func['name']}() в {module.get('path', '').split('/')[-1]}")
-                elif query.lower() in func.get('docstring', '').lower():
-                    results.append(f"💭 {func['name']}() (упоминание в описании)")
-            
-            # Поиск в модулях
-            if query.lower() in module.get('path', '').lower():
-                results.append(f"📁 {module.get('path', '').split('/')[-1]} ({len(module.get('functions', []))} функций)")
+        # Поиск в функциях
+        for file_info in struct_data.get('files', []):
+            for func in file_info.get('functions', []):
+                if (query_lower in func.get('name', '').lower() or 
+                    query_lower in func.get('docstring', '').lower()):
+                    results.append({
+                        'type': 'function',
+                        'name': func['name'],
+                        'file': file_info['path'],
+                        'docstring': func.get('docstring', 'No description')[:100]
+                    })
+        
+        # Поиск в классах
+        for file_info in struct_data.get('files', []):
+            for cls in file_info.get('classes', []):
+                if (query_lower in cls.get('name', '').lower() or 
+                    query_lower in cls.get('docstring', '').lower()):
+                    results.append({
+                        'type': 'class',
+                        'name': cls['name'],
+                        'file': file_info['path'],
+                        'docstring': cls.get('docstring', 'No description')[:100]
+                    })
+        
+        track_task_complete(task_id, "success")
         
         if results:
-            response = f"🔍 Найдено {len(results)} результатов для '{query}':\n"
-            for r in results[:10]:  # Показываем первые 10
-                response += f"   {r}\n"
+            output = f"🔍 Found {len(results)} capabilities matching '{query}':\n\n"
+            for i, result in enumerate(results[:10], 1):  # Limit to 10 results
+                output += f"{i}. **{result['name']}** ({result['type']})\n"
+                output += f"   📁 {result['file']}\n"
+                output += f"   📝 {result['docstring']}\n\n"
+            
             if len(results) > 10:
-                response += f"   ... и ещё {len(results) - 10} результатов"
-            logger.info(f"Search completed for '{query}': {len(results)} results")
-            return response
+                output += f"... and {len(results) - 10} more results\n"
+            
+            return output
         else:
-            return f"❌ Ничего не найдено для '{query}'"
+            track_workflow_event("avoidable_error", f"No results for query: {query}")
+            return f"❌ No capabilities found matching '{query}'. Try broader terms."
             
     except Exception as e:
-        logger.error(f"Search error for '{query}': {e}")
-        return f"❌ Ошибка поиска: {e}"
+        track_task_complete(task_id, "failed", str(e))
+        return f"❌ Search error: {e}"
 
 def get_ai_context(mode: str = "focused"):
     """Получить контекст для AI в указанном режиме"""

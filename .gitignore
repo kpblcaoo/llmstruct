@@ -105,7 +105,7 @@ workflow_archive/
 collect_json.py
 merged.json
 proj
-
+.ARCHIVE/
 # Personal workfiles - fully excluded
 temp_workfiles/
 
@@ -174,3 +174,6 @@ backup_*/
 *compensation*.json
 
 # Backup directories (from separation work)temp/update-singbox/
+
+# Boss private data - exclude from commits
+.personal/

@@ -1,0 +1,22 @@
+{
+  "unknown": {
+    "path": "cursor_workflow_integration/files/auto_init_ai_system.py",
+    "functions": [
+      "auto_initialize_ai_system",
+      "get_current_workflow_context",
+      "get_workflow_status",
+      "switch_workspace_mode",
+      "get_ai_status",
+      "search_ai_capabilities",
+      "get_ai_context",
+      "get_epic_sessions_status",
+      "create_epic_session",
+      "switch_to_session",
+      "get_available_sessions",
+      "session_management_commands"
+    ],
+    "classes": [],
+    "imports": [],
+    "exports": []
+  }
+}
