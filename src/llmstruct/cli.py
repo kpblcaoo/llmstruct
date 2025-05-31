@@ -223,6 +223,12 @@ def main():
     audit_parser.add_argument(
         "--include-duplicates", action="store_true", help="Include duplication analysis"
     )
+    audit_parser.add_argument(
+        "--deep-duplicates",
+        choices=["same-name", "any-name"],
+        default="same-name",
+        help="Duplicate analysis mode: 'same-name' (default) or 'any-name' (compare all function bodies regardless of name; slow!)"
+    )
 
     # Duplication analysis command parser
     duplicates_parser = subparsers.add_parser(
@@ -242,6 +248,12 @@ def main():
     )
     duplicates_parser.add_argument(
         "--debug", action="store_true", help="Enable verbose debug output"
+    )
+    duplicates_parser.add_argument(
+        "--deep-duplicates",
+        choices=["same-name", "any-name"],
+        default="same-name",
+        help="Duplicate analysis mode: 'same-name' (default) or 'any-name' (compare all function bodies regardless of name; slow!)"
     )
 
     args = parser.parse_args()
