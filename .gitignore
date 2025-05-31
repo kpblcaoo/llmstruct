@@ -105,7 +105,7 @@ workflow_archive/
 collect_json.py
 merged.json
 proj
-
+.ARCHIVE/
 # Personal workfiles - fully excluded
 temp_workfiles/
 
