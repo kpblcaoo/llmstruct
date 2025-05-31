@@ -2,6 +2,8 @@
   "current_mode": [
     "code",
     "debug"
+    "code",
+    "debug"
   ],
   "active_session": "SES-004A-TEST",
   "permissions": {
@@ -10,12 +12,21 @@
       "execution",
       "network:local",
       "debugging"
+      "filesystem",
+      "execution",
+      "network:local",
+      "debugging"
     ],
     "file_restrictions": [
+      "!config/",
       "!config/",
       "!.env"
     ],
     "safe_operations": [
+      "enhanced_debugging_in_development",
+      "write_code",
+      "run_tests",
+      "run_debug_commands"
       "enhanced_debugging_in_development",
       "write_code",
       "run_tests",
