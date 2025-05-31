@@ -1,0 +1,500 @@
+{
+  "analysis": {
+    "total_unique_functions": 855,
+    "duplicated_functions": 175,
+    "duplication_details": {
+      "load_json": [
+        "validate_sessions.py",
+        "validate_schemas.py",
+        "board_cli.py",
+        "scripts/validate_json.py"
+      ],
+      "validate_json_against_schema": [
+        "validate_sessions.py",
+        "validate_schemas.py"
+      ],
+      "main": [
+        "validate_sessions.py",
+        "parse_ollama_full.py",
+        "validate_schemas.py",
+        "telegram_bot_final.py",
+        "final_system_validation.py",
+        "install_ai_integration.py",
+        "debug_terminal.py",
+        "run_ai_diagnostics.py",
+        "start_development.py",
+        "verify_llm_response.py",
+        "parse_ollama_minimal.py",
+        "monitor_system.py",
+        "telegram_bot_test.py",
+        "parse_ollama_fixed.py",
+        "board_cli.py",
+        "parse_ollama_improved.py",
+        "chat_bot_working.py",
+        "chat_bot.py",
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/gh_view.py",
+        "src/llmstruct/transpiler.py",
+        "src/llmstruct/cli.py",
+        "src/llmstruct/cursor_ai_bridge.py",
+        "src/llmstruct/parsers/universal_converter.py",
+        "src/llmstruct/parsers/go_analyzer.py",
+        "temp_boss_missing/scripts/boss_cli.py",
+        "examples/python_project_main.py",
+        "docs/cli.py",
+        "scripts/session_cli.py",
+        "scripts/auto_update_struct.py",
+        "scripts/fix_hardcoded_usernames.py",
+        "scripts/create_github_issues.py",
+        "scripts/export_to_github_projects.py",
+        "scripts/github_sync_manager.py",
+        "scripts/create_comprehensive_index.py",
+        "scripts/validate_refs.py",
+        "scripts/create_tasks_index.py",
+        "scripts/github_sync_manager_enhanced.py",
+        "scripts/collector.py",
+        "scripts/validate_epics.py",
+        "scripts/epic_roadmap_manager.py",
+        "scripts/deploy_embedded_files.py",
+        "temp_personal_analysis/personal/boss/scripts/boss_cli.py",
+        ".personal/boss/scripts/boss_cli.py",
+        "archive/telegram_experiments/send_cursor_response.py",
+        "archive/telegram_experiments/cursor_telegram_reader_enhanced.py",
+        "archive/telegram_experiments/dummy_work_executor.py",
+        "archive/telegram_experiments/cursor_telegram_reader.py",
+        "archive/telegram_experiments/cursor_bot_messenger.py",
+        "archive/telegram_experiments/send_test_message.py",
+        "archive/telegram_experiments/start_simple_telegram.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+        "archive/telegram_bots/chat_bot_enhanced.py",
+        "archive/telegram_bots/cursor_telegram_bridge.py",
+        "archive/telegram_bots/start_ollama_bot.py",
+        "archive/telegram_bots/ollama_chat_bot.py",
+        "archive/telegram_bots/demo_bot_features.py",
+        "archive/telegram_bots/ollama_api_bot.py",
+        "archive/telegram_bots/start_api_bot.py",
+        "archive/telegram_bots/telegram_cursor_master.py",
+        "cursor_workflow_integration/scripts/install_ai_integration.py"
+      ],
+      "convert_md_to_json": [
+        "parse_ollama_full.py",
+        "parse_ollama_fixed.py",
+        "parse_ollama_improved.py"
+      ],
+      "parse_pulls": [
+        "parse_ollama_full.py",
+        "parse_ollama_improved.py"
+      ],
+      "auto_initialize_ai_system": [
+        "auto_init_ai_system.py",
+        "cursor_workflow_integration/files/auto_init_ai_system.py"
+      ],
+      "get_current_workflow_context": [
+        "auto_init_ai_system.py",
+        "cursor_workflow_integration/files/auto_init_ai_system.py"
+      ],
+      "get_workflow_status": [
+        "auto_init_ai_system.py",
+        "cursor_workflow_integration/files/auto_init_ai_system.py"
+      ],
+      "switch_workspace_mode": [
+        "auto_init_ai_system.py",
+        "cursor_workflow_integration/files/auto_init_ai_system.py"
+      ],
+      "get_ai_status": [
+        "auto_init_ai_system.py",
+        "cursor_workflow_integration/files/auto_init_ai_system.py"
+      ],
+      "search_ai_capabilities": [
+        "auto_init_ai_system.py",
+        "cursor_workflow_integration/files/auto_init_ai_system.py"
+      ],
+      "get_ai_context": [
+        "auto_init_ai_system.py",
+        "cursor_workflow_integration/files/auto_init_ai_system.py"
+      ],
+      "get_epic_sessions_status": [
+        "auto_init_ai_system.py",
+        "cursor_workflow_integration/files/auto_init_ai_system.py"
+      ],
+      "create_epic_session": [
+        "auto_init_ai_system.py",
+        "cursor_workflow_integration/files/auto_init_ai_system.py"
+      ],
+      "switch_to_session": [
+        "auto_init_ai_system.py",
+        "cursor_workflow_integration/files/auto_init_ai_system.py"
+      ],
+      "get_available_sessions": [
+        "auto_init_ai_system.py",
+        "cursor_workflow_integration/files/auto_init_ai_system.py"
+      ],
+      "session_management_commands": [
+        "auto_init_ai_system.py",
+        "cursor_workflow_integration/files/auto_init_ai_system.py"
+      ],
+      "__init__": [
+        "telegram_bot_final.py",
+        "struct_cache_manager.py",
+        "chat_bot_final.py",
+        "telegram_bot_test.py",
+        "bot_file_operations.py",
+        "chat_bot_working.py",
+        "chat_bot.py",
+        "src/llmstruct/cli_core.py",
+        "src/llmstruct/workspace.py",
+        "src/llmstruct/cache.py",
+        "src/llmstruct/workflow_orchestrator.py",
+        "src/llmstruct/gh_view.py",
+        "src/llmstruct/copilot.py",
+        "src/llmstruct/ai_workflow_middleware.py",
+        "src/llmstruct/ai_cli_integration.py",
+        "src/llmstruct/cli_config.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/cursor_integration.py",
+        "src/llmstruct/grok.py",
+        "src/llmstruct/transpiler.py",
+        "src/llmstruct/llm_client.py",
+        "src/llmstruct/metrics_tracker.py",
+        "src/llmstruct/context_orchestrator.py",
+        "src/llmstruct/ai_self_monitor.py",
+        "src/llmstruct/cursor_ai_bridge.py",
+        "src/llmstruct/ai_self_awareness.py",
+        "src/llmstruct/cli_utils.py",
+        "src/llmstruct/cli_commands.py",
+        "src/llmstruct/api/routes/continue_adapter.py",
+        "src/llmstruct/api/routes/continue_adapter.py",
+        "src/llmstruct/api/services/llm_service.py",
+        "src/llmstruct/api/services/llm_service.py",
+        "src/llmstruct/api/services/llm_service.py",
+        "src/llmstruct/api/services/llm_service.py",
+        "src/llmstruct/parsers/universal_converter.py",
+        "src/llmstruct/parsers/go_analyzer.py",
+        "src/llmstruct/parsers/javascript_parser.py",
+        "src/llmstruct/parsers/python_parser.py",
+        "temp_boss_missing/scripts/business_planning.py",
+        "temp_boss_missing/scripts/team_management.py",
+        "temp_boss_missing/scripts/boss_cli.py",
+        "integrations/telegram_bot/mp002_progress_bot.py",
+        "docs/cache.py",
+        "scripts/fix_hardcoded_usernames.py",
+        "scripts/fix_hardcoded_usernames.py",
+        "scripts/create_github_issues.py",
+        "scripts/export_to_github_projects.py",
+        "scripts/process_926_items.py",
+        "scripts/github_sync_manager.py",
+        "scripts/create_comprehensive_index.py",
+        "scripts/create_tasks_index.py",
+        "scripts/create_tasks_index.py",
+        "scripts/github_sync_manager_enhanced.py",
+        "scripts/github_sync_manager_enhanced.py",
+        "scripts/epic_roadmap_manager.py",
+        "temp_personal_analysis/personal/boss/scripts/business_planning.py",
+        "temp_personal_analysis/personal/boss/scripts/team_management.py",
+        "temp_personal_analysis/personal/boss/scripts/boss_cli.py",
+        ".personal/boss/scripts/boss_cli.py",
+        "archive/telegram_experiments/cursor_telegram_reader_enhanced.py",
+        "archive/telegram_experiments/dummy_work_executor.py",
+        "archive/telegram_experiments/cursor_telegram_reader.py",
+        "archive/telegram_experiments/cursor_bot_messenger.py",
+        "archive/telegram_experiments/cursor_integration.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+        "archive/telegram_bots/chat_bot_enhanced.py",
+        "archive/telegram_bots/cursor_telegram_bridge.py",
+        "archive/telegram_bots/ollama_chat_bot.py",
+        "archive/telegram_bots/ollama_chat_bot.py",
+        "archive/telegram_bots/ollama_chat_bot.py",
+        "archive/telegram_bots/ollama_chat_bot.py",
+        "archive/telegram_bots/cursor_reporter.py",
+        "archive/telegram_bots/ollama_api_bot.py",
+        "archive/telegram_bots/ollama_api_bot.py",
+        "archive/telegram_bots/ollama_api_bot.py",
+        "archive/telegram_bots/ollama_api_bot.py",
+        "archive/telegram_bots/ollama_api_bot.py",
+        "archive/telegram_bots/telegram_cursor_master.py"
+      ],
+      "get_session": [
+        "telegram_bot_final.py",
+        "telegram_bot_test.py"
+      ],
+      "api_call": [
+        "telegram_bot_final.py",
+        "chat_bot_final.py",
+        "telegram_bot_test.py"
+      ],
+      "save_user_message": [
+        "telegram_bot_final.py",
+        "telegram_bot_test.py",
+        "fastapi_ollama_server_working.py",
+        "archive/telegram_experiments/api_memory_endpoints.py",
+        "archive/telegram_experiments/fastapi_ollama_server.py"
+      ],
+      "get_user_history": [
+        "telegram_bot_final.py",
+        "chat_bot_final.py",
+        "telegram_bot_test.py",
+        "fastapi_ollama_server_working.py",
+        "archive/telegram_experiments/api_memory_endpoints.py",
+        "archive/telegram_experiments/fastapi_ollama_server.py"
+      ],
+      "chat_with_ollama": [
+        "telegram_bot_final.py",
+        "chat_bot_final.py",
+        "telegram_bot_test.py",
+        "fastapi_ollama_server_working.py",
+        "archive/telegram_experiments/api_memory_endpoints.py",
+        "archive/telegram_experiments/fastapi_ollama_server.py",
+        "archive/telegram_bots/ollama_chat_bot.py",
+        "archive/telegram_bots/ollama_api_bot.py"
+      ],
+      "get_system_status": [
+        "telegram_bot_final.py",
+        "chat_bot_final.py",
+        "telegram_bot_test.py",
+        "archive/telegram_bots/ollama_api_bot.py"
+      ],
+      "setup_handlers": [
+        "telegram_bot_final.py",
+        "chat_bot_final.py",
+        "telegram_bot_test.py",
+        "chat_bot_working.py",
+        "chat_bot.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+        "archive/telegram_bots/chat_bot_enhanced.py",
+        "archive/telegram_bots/telegram_cursor_master.py"
+      ],
+      "start_command": [
+        "telegram_bot_final.py",
+        "chat_bot_final.py",
+        "telegram_bot_test.py",
+        "chat_bot_working.py",
+        "chat_bot.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+        "archive/telegram_bots/chat_bot_enhanced.py"
+      ],
+      "status_command": [
+        "telegram_bot_final.py",
+        "chat_bot_final.py",
+        "telegram_bot_test.py",
+        "chat_bot.py",
+        "archive/telegram_bots/chat_bot_enhanced.py"
+      ],
+      "memory_command": [
+        "telegram_bot_final.py",
+        "chat_bot_final.py",
+        "telegram_bot_test.py",
+        "chat_bot_working.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py"
+      ],
+      "help_command": [
+        "telegram_bot_final.py",
+        "chat_bot_final.py",
+        "chat_bot.py",
+        "archive/telegram_bots/chat_bot_enhanced.py"
+      ],
+      "handle_message": [
+        "telegram_bot_final.py",
+        "chat_bot_final.py",
+        "telegram_bot_test.py",
+        "chat_bot_working.py",
+        "chat_bot.py",
+        "integrations/telegram_bot/mp002_progress_bot.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+        "archive/telegram_bots/chat_bot_enhanced.py",
+        "archive/telegram_bots/ollama_chat_bot.py",
+        "archive/telegram_bots/ollama_api_bot.py",
+        "archive/telegram_bots/telegram_cursor_master.py"
+      ],
+      "cleanup": [
+        "telegram_bot_final.py",
+        "chat_bot_final.py",
+        "telegram_bot_test.py",
+        "src/llmstruct/cli_core.py"
+      ],
+      "install_ai_integration": [
+        "install_ai_integration.py",
+        "cursor_workflow_integration/scripts/install_ai_integration.py"
+      ],
+      "adapt_cursorrules": [
+        "install_ai_integration.py",
+        "cursor_workflow_integration/scripts/install_ai_integration.py"
+      ],
+      "adapt_auto_init": [
+        "install_ai_integration.py",
+        "cursor_workflow_integration/scripts/install_ai_integration.py"
+      ],
+      "create_simplified_auto_init": [
+        "install_ai_integration.py",
+        "cursor_workflow_integration/scripts/install_ai_integration.py"
+      ],
+      "check_environment": [
+        "start_development.py",
+        "archive/telegram_bots/start_api_bot.py"
+      ],
+      "load_json_file": [
+        "verify_llm_response.py",
+        "scripts/session_cli.py"
+      ],
+      "save_user_memory": [
+        "chat_bot_final.py",
+        "fastapi_ollama_server_working.py",
+        "archive/telegram_experiments/api_memory_endpoints.py",
+        "archive/telegram_experiments/fastapi_ollama_server.py"
+      ],
+      "log_user_message": [
+        "chat_bot_final.py",
+        "chat_bot.py",
+        "archive/telegram_bots/chat_bot_enhanced.py"
+      ],
+      "signal_handler": [
+        "chat_bot_final.py",
+        "archive/telegram_bots/chat_bot_enhanced.py"
+      ],
+      "root": [
+        "bot_api_server.py",
+        "fastapi_ollama_server_working.py",
+        "src/llmstruct/api/app.py",
+        "archive/telegram_experiments/fastapi_ollama_server.py"
+      ],
+      "health_check": [
+        "bot_api_server.py",
+        "fastapi_ollama_server_working.py",
+        "archive/telegram_experiments/fastapi_ollama_server.py",
+        "archive/telegram_bots/ollama_api_bot.py"
+      ],
+      "list_files": [
+        "bot_api_server.py",
+        "bot_file_operations.py"
+      ],
+      "read_file": [
+        "bot_api_server.py",
+        "bot_file_operations.py",
+        "archive/telegram_bots/ollama_chat_bot.py",
+        "archive/telegram_bots/ollama_api_bot.py"
+      ],
+      "write_file": [
+        "bot_api_server.py",
+        "bot_file_operations.py"
+      ],
+      "edit_file": [
+        "bot_api_server.py",
+        "bot_file_operations.py"
+      ],
+      "create_directory": [
+        "bot_api_server.py",
+        "bot_file_operations.py"
+      ],
+      "delete_file": [
+        "bot_api_server.py",
+        "bot_file_operations.py"
+      ],
+      "search_struct": [
+        "bot_api_server.py",
+        "bot_file_operations.py"
+      ],
+      "get_struct_stats": [
+        "bot_api_server.py",
+        "bot_file_operations.py"
+      ],
+      "invalidate_struct_cache": [
+        "bot_api_server.py",
+        "bot_file_operations.py"
+      ],
+      "get_workspace_status": [
+        "bot_api_server.py",
+        "bot_file_operations.py",
+        "src/llmstruct/workspace.py"
+      ],
+      "startup_event": [
+        "bot_api_server.py",
+        "fastapi_ollama_server_working.py",
+        "archive/telegram_experiments/fastapi_ollama_server.py"
+      ],
+      "shutdown_event": [
+        "bot_api_server.py",
+        "fastapi_ollama_server_working.py",
+        "archive/telegram_experiments/fastapi_ollama_server.py"
+      ],
+      "load_gitignore": [
+        "collector.py",
+        "src/llmstruct/cli.py",
+        "docs/cli.py",
+        "scripts/auto_update_struct.py"
+      ],
+      "setup_session": [
+        "chat_bot_working.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py"
+      ],
+      "close_session": [
+        "chat_bot_working.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py"
+      ],
+      "health_check_api": [
+        "chat_bot_working.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py"
+      ],
+      "save_user_message_via_api": [
+        "chat_bot_working.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py"
+      ],
+      "get_user_history_via_api": [
+        "chat_bot_working.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py"
+      ],
+      "chat_with_ollama_via_api": [
+        "chat_bot_working.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py"
+      ],
+      "get_system_metrics_via_api": [
+        "chat_bot_working.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py"
+      ],
+      "history_command": [
+        "chat_bot_working.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py"
+      ],
+      "health_command": [
+        "chat_bot_working.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py"
+      ],
+      "metrics_command": [
+        "chat_bot_working.py",
+        "chat_bot.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py"
+      ],
+      "ollama_command": [
+        "chat_bot_working.py",
+        "chat_bot.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py"
+      ],
+      "run": [
+        "chat_bot_working.py",
+        "examples/python_project_main.py",
+        "scripts/process_926_items.py",
+        "archive/telegram_experiments/chat_bot_fastapi_enhanced.py",
+        "archive/telegram_bots/ollama_chat_bot.py",
+        "archive/telegram_bots/ollama_api_bot.py",
+        "archive/telegram_bots/telegram_cursor_master.py"
+      ],
+      "load_ollama_config": [
+        "chat_bot.py",
+        "fastapi_ollama_server_working.py",
+        "archive/telegram_experiments/fastapi_ollama_server.py"
+      ],
+      "run_sync": [
+        "chat_bot.py",
+        "scripts/github_sync_manager.py",
+        "archive/telegram_bots/chat_bot_enhanced.py"
+      ],
+      "load_user_memory": [
+        "fastapi_ollama_server_working.py",
+        "archive/telegram_experiments/api_memory_endpoints.py",
+        "archive/telegram_experiments/fastapi_ollama_server.py"
+      ],
+      "system_status": [
+        "fastapi_ollama_server_working.py",
+        "archive/telegram_experiments/fastapi_ollama_server.py",
+        "archive/telegram_bots/ollama_api_bot.py"

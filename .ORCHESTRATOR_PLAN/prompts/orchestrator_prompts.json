@@ -1,0 +1,103 @@
+{
+  "orchestrator_prompts": {
+    "system_prompt": "You are an expert LLM orchestrator managing the Phoenix restructuring project. Your goal is to automate the transformation of a chaotic 272-module codebase into a clean, LLM-first architecture. You have access to local Ollama models for technical work and external APIs for strategic decisions. Execute the plan with minimal human intervention while maintaining full traceability.",
+    
+    "phase_prompts": {
+      "phase_0": {
+        "title": "Preparation and Analysis",
+        "objective": "Set up workspace, analyze duplicates, create consolidation strategy",
+        "prompt": "Execute Phase 0 of Phoenix restructuring: 1) Create .PHOENIX directory structure 2) Run duplicate analysis using llmstruct CLI 3) Generate consolidation strategy using Ollama wizardlm2:7b model 4) Validate all files are created and readable. Use the executable_phoenix_plan.py as base but enhance with better error handling.",
+        "success_criteria": [
+          ".PHOENIX directory structure exists",
+          "duplicates_report.json contains valid analysis",
+          "consolidation_strategy.md provides actionable plan",
+          "All validation checks pass"
+        ],
+        "fallback_strategy": "If Ollama fails, use Anthropic API for strategy generation"
+      },
+      
+      "phase_1": {
+        "title": "Consolidation and Archiving", 
+        "objective": "Remove duplicates, consolidate 8 bot versions into 1, archive safely",
+        "prompt": "Execute Phase 1 consolidation: 1) Identify all bot files (*bot*.py) 2) Select integrations/telegram_bot.py as master (or best alternative) 3) Move other bots to .PHOENIX/archive/bots/ with documentation 4) Create feature matrix comparing all bots 5) Ensure no functionality is lost. Document all moves in archive README.",
+        "success_criteria": [
+          "Only 1 main bot file remains active",
+          "All other bots archived with documentation", 
+          "Feature matrix shows no lost functionality",
+          "Archive structure is clean and documented"
+        ],
+        "fallback_strategy": "Manual review if automated consolidation uncertain"
+      },
+      
+      "phase_2": {
+        "title": "Schema Creation",
+        "objective": "Generate comprehensive Mermaid diagrams for LLM understanding",
+        "prompt": "Execute Phase 2 schema generation: 1) Create high-level workflow diagram using Ollama 2) Generate component internal diagrams for major subsystems 3) Create data flow diagrams 4) Generate LLM integration guide 5) Validate all schemas are syntactically correct Mermaid. Focus on making schemas LLM-readable with clear annotations.",
+        "success_criteria": [
+          "workflow_high_level.mmd created and valid",
+          "Component diagrams for all major subsystems", 
+          "LLM_INTEGRATION_GUIDE.md exists",
+          "All Mermaid syntax is valid"
+        ],
+        "fallback_strategy": "Use external API if Ollama produces invalid Mermaid syntax"
+      },
+      
+      "phase_3": {
+        "title": "LLM-First Refactoring",
+        "objective": "Restructure code for optimal LLM understanding and interaction",
+        "prompt": "Execute Phase 3 refactoring: 1) Create new src/llmstruct/ hierarchy 2) Add comprehensive docstrings to all functions 3) Implement clear type hints 4) Add context comments for LLM understanding 5) Split giant files into logical modules 6) Ensure all code passes syntax checks. Use deepseek-coder:6.7b for technical analysis.",
+        "success_criteria": [
+          "New src/ hierarchy exists and is populated",
+          "All Python files have comprehensive docstrings",
+          "Type hints coverage >80%",
+          "No files >10MB remain",
+          "All code passes py_compile checks"
+        ],
+        "fallback_strategy": "Use external API for complex refactoring decisions"
+      },
+      
+      "phase_4": {
+        "title": "Documentation Generation", 
+        "objective": "Create comprehensive, LLM-optimized documentation",
+        "prompt": "Execute Phase 4 documentation: 1) Generate professional README.md with architecture overview 2) Create LLM_INTEGRATION_GUIDE.md with best practices 3) Generate API documentation 4) Create examples and tutorials 5) Update all schema references. Use qwen2.5:7b for creative documentation tasks.",
+        "success_criteria": [
+          "Professional README.md with badges and overview",
+          "Complete LLM_INTEGRATION_GUIDE.md",
+          "API documentation covers all endpoints",
+          "Examples are working and tested"
+        ],
+        "fallback_strategy": "Use external API for creative content generation"
+      }
+    },
+    
+    "validation_prompts": {
+      "checkpoint_validation": "Analyze the current phase results: {phase_results}. Check if all success criteria are met: {success_criteria}. Provide detailed validation report with pass/fail for each criterion. If any criterion fails, suggest specific remediation steps.",
+      
+      "quality_assessment": "Assess the quality of generated content: {content_type} at {file_path}. Rate on: 1) Completeness 2) LLM-readability 3) Technical accuracy 4) Professional presentation. Provide score 1-10 and specific improvement suggestions.",
+      
+      "error_recovery": "An error occurred during {phase}: {error_details}. Analyze the error and suggest: 1) Root cause 2) Immediate fix 3) Prevention strategy 4) Alternative approach. Provide step-by-step recovery plan."
+    },
+    
+    "decision_prompts": {
+      "llm_selection": "Choose optimal LLM for task: {task_description}. Consider: 1) Task complexity 2) Context size 3) Required accuracy 4) Cost constraints. Available: Ollama models (free, local) vs External APIs (paid, powerful). Provide recommendation with reasoning.",
+      
+      "consolidation_decision": "Review bot consolidation options: {bot_analysis}. Determine: 1) Which bot to keep as master 2) Which features to preserve 3) Safe archival strategy 4) Risk assessment. Provide detailed decision matrix.",
+      
+      "refactoring_strategy": "Analyze code refactoring needs for: {file_path}. Determine: 1) Splitting strategy for large files 2) Optimal module structure 3) Docstring requirements 4) Type hint priorities. Provide concrete refactoring plan."
+    }
+  },
+  
+  "execution_templates": {
+    "phase_execution": {
+      "pre_phase": "Before executing Phase {phase_number}: 1) Validate prerequisites 2) Create backup checkpoint 3) Log phase start 4) Set up monitoring",
+      "during_phase": "During Phase {phase_number}: 1) Execute tasks sequentially 2) Log each step 3) Validate intermediate results 4) Handle errors gracefully",
+      "post_phase": "After Phase {phase_number}: 1) Run validation checks 2) Generate phase report 3) Create git commit 4) Prepare for next phase"
+    },
+    
+    "error_handling": {
+      "detection": "Monitor for: 1) CLI command failures 2) API timeouts 3) Invalid outputs 4) File operation errors",
+      "response": "On error: 1) Log detailed error info 2) Attempt automatic recovery 3) Escalate if needed 4) Provide human-readable status",
+      "recovery": "Recovery steps: 1) Assess error severity 2) Try alternative approach 3) Rollback if necessary 4) Update strategy"
+    }
+  }
+}

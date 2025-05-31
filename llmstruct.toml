@@ -63,7 +63,7 @@ use_gitignore = true
 
 [api]
 ollama_host = "http://192.168.88.50:11434"
-model = "mixtral"
+model = "mistral:latest"
 retry_count = 3
 
 [gh_view]
