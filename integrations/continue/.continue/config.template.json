@@ -4,11 +4,11 @@
       "title": "LLMStruct Claude",
       "provider": "openai",
       "model": "claude-3-haiku",
-      "apiKey": "custom-key-123",
-      "apiBase": "https://my-custom-api.com/api/continue",
+      "apiKey": "${LLMSTRUCT_API_KEY:-dev-key}",
+      "apiBase": "${LLMSTRUCT_API_BASE:-http://localhost:8000}/api/continue",
       "requestOptions": {
         "headers": {
-          "X-API-Key": "custom-key-123"
+          "X-API-Key": "${LLMSTRUCT_API_KEY:-dev-key}"
         }
       }
     }
@@ -97,7 +97,7 @@
     "title": "LLMStruct Autocomplete",
     "provider": "openai",
     "model": "claude-3-haiku",
-    "apiKey": "custom-key-123",
-    "apiBase": "https://my-custom-api.com/api/continue"
+    "apiKey": "${LLMSTRUCT_API_KEY:-dev-key}",
+    "apiBase": "${LLMSTRUCT_API_BASE:-http://localhost:8000}/api/continue"
   }
-}
+} 
