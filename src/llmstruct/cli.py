@@ -102,6 +102,11 @@ def main():
     parse_parser.add_argument(
         "--use-cache", action="store_true", help="Cache generated JSON"
     )
+    parse_parser.add_argument(
+        "--modular-index",
+        action="store_true",
+        help="Save struct and AST index per file/module in .llmstruct_index/ (модульный индекс для ускоренного анализа)"
+    )
 
     query_parser = subparsers.add_parser(
         "query", help="Query LLMs with prompt and context"
@@ -229,6 +234,11 @@ def main():
         default="same-name",
         help="Duplicate analysis mode: 'same-name' (default) or 'any-name' (compare all function bodies regardless of name; slow!)"
     )
+    audit_parser.add_argument(
+        "--no-prod-filter",
+        action="store_true",
+        help="Show ALL duplicates, including those only in archive/tests (by default только production-код)"
+    )
 
     # Duplication analysis command parser
     duplicates_parser = subparsers.add_parser(
@@ -254,6 +264,11 @@ def main():
         choices=["same-name", "any-name"],
         default="same-name",
         help="Duplicate analysis mode: 'same-name' (default) or 'any-name' (compare all function bodies regardless of name; slow!)"
+    )
+    duplicates_parser.add_argument(
+        "--no-prod-filter",
+        action="store_true",
+        help="Show ALL duplicates, including those only in archive/tests (by default только production-код)"
     )
 
     args = parser.parse_args()

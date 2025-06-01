@@ -59,6 +59,35 @@ def parse(args):
                 tags=["struct"],
             )
             cache.close()
+        # --- Модульный индекс ---
+        if getattr(args, 'modular_index', False):
+            index_root = Path(root_dir) / ".llmstruct_index"
+            for module in struct_data.get("modules", []):
+                mod_path = Path(module["path"])
+                mod_dir = index_root / mod_path.parent
+                mod_dir.mkdir(parents=True, exist_ok=True)
+                # Сохраняем struct.json для модуля
+                struct_path = mod_dir / (mod_path.stem + ".struct.json")
+                with struct_path.open("w", encoding="utf-8") as f:
+                    json.dump(module, f, indent=2, ensure_ascii=False)
+                # Сохраняем ast.json (только AST-хеши и исходники функций)
+                ast_data = {
+                    "module": module["path"],
+                    "functions": [
+                        {
+                            "name": func["name"],
+                            "ast_hash": func.get("ast_hash"),
+                            "source": func.get("source"),
+                            "start_line": func.get("start_line"),
+                            "end_line": func.get("end_line"),
+                        }
+                        for func in module.get("functions", [])
+                    ],
+                }
+                ast_path = mod_dir / (mod_path.stem + ".ast.json")
+                with ast_path.open("w", encoding="utf-8") as f:
+                    json.dump(ast_data, f, indent=2, ensure_ascii=False)
+            logging.info(f"Модульный индекс сохранён в {index_root}")
     except Exception as e:
         logging.error(f"Failed to generate JSON: {e}")
         raise 
