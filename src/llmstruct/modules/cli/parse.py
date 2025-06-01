@@ -22,14 +22,17 @@ def parse(args):
     parsing_config = config.get("parsing", {})
     cli_config = config.get("cli", {})
     
-    include_patterns = args.include or parsing_config.get("include_patterns") or cli_config.get("include_patterns")
-    exclude_patterns = args.exclude or parsing_config.get("exclude_patterns") or cli_config.get("exclude_patterns")
+    include_patterns = (args.include or parsing_config.get("include_patterns") or cli_config.get("include_patterns"))
+    exclude_patterns = (args.exclude or parsing_config.get("exclude_patterns") or cli_config.get("exclude_patterns"))
     include_ranges = args.include_ranges or parsing_config.get("include_ranges") or cli_config.get("include_ranges", False)
     include_hashes = args.include_hashes or parsing_config.get("include_hashes") or cli_config.get("include_hashes", False)
     use_gitignore = parsing_config.get("use_gitignore", cli_config.get("use_gitignore", True))
-    exclude_dirs = parsing_config.get("exclude_dirs") or cli_config.get("exclude_dirs", [])
+    exclude_dirs = (args.exclude_dir or parsing_config.get("exclude_dirs") or cli_config.get("exclude_dirs", []))
+    include_dirs = args.include_dir or []
 
     gitignore_patterns = load_config(root_dir) if use_gitignore else []
+
+    # Комментарий: include_dirs пока не используется в генераторе, но можно добавить фильтрацию по ним при необходимости
 
     try:
         struct_data = generate_json(
@@ -41,6 +44,7 @@ def parse(args):
             include_hashes=include_hashes,
             goals=goals,
             exclude_dirs=exclude_dirs,
+            include_dirs=include_dirs,
         )
         with Path(args.output).open("w", encoding="utf-8") as f:
             json.dump(struct_data, f, indent=2)
@@ -55,6 +59,35 @@ def parse(args):
                 tags=["struct"],
             )
             cache.close()
+        # --- Модульный индекс ---
+        if getattr(args, 'modular_index', False):
+            index_root = Path(root_dir) / ".llmstruct_index"
+            for module in struct_data.get("modules", []):
+                mod_path = Path(module["path"])
+                mod_dir = index_root / mod_path.parent
+                mod_dir.mkdir(parents=True, exist_ok=True)
+                # Сохраняем struct.json для модуля
+                struct_path = mod_dir / (mod_path.stem + ".struct.json")
+                with struct_path.open("w", encoding="utf-8") as f:
+                    json.dump(module, f, indent=2, ensure_ascii=False)
+                # Сохраняем ast.json (только AST-хеши и исходники функций)
+                ast_data = {
+                    "module": module["path"],
+                    "functions": [
+                        {
+                            "name": func["name"],
+                            "ast_hash": func.get("ast_hash"),
+                            "source": func.get("source"),
+                            "start_line": func.get("start_line"),
+                            "end_line": func.get("end_line"),
+                        }
+                        for func in module.get("functions", [])
+                    ],
+                }
+                ast_path = mod_dir / (mod_path.stem + ".ast.json")
+                with ast_path.open("w", encoding="utf-8") as f:
+                    json.dump(ast_data, f, indent=2, ensure_ascii=False)
+            logging.info(f"Модульный индекс сохранён в {index_root}")
     except Exception as e:
         logging.error(f"Failed to generate JSON: {e}")
         raise 

@@ -128,17 +128,7 @@ commercial_planning.py
 planning_*.md
 
 # Temporary analysis and experimental files
-analysis_*.txt
-analyzer_*.txt
-*_analysis_*.txt
-analyze_*.py
-quick_*.py
-simple_*.py
-smart_*.py
-interactive_*.py
-test_*.py
-usage_*.py
-init_*.py
+
 
 # Cache and temporary data
 cache/
@@ -177,3 +167,6 @@ backup_*/
 
 # Boss private data - exclude from commits
 .personal/
+
+# LLMStruct indexes and caches
+.llmstruct_*

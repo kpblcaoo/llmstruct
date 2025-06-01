@@ -14,13 +14,19 @@ from dataclasses import dataclass, asdict
 from enum import Enum
 import uuid
 import time
+import ast
+import hashlib
 
 # Import existing llmstruct components instead of duplicating
 from .ai_self_awareness import SystemCapabilityDiscovery
 from .copilot import CopilotContextManager
 from .context_orchestrator import SmartContextOrchestrator
-from .cli_config import CLIConfig
 from .parsers.universal_converter import UniversalConverter
+from llmstruct.modules.cli.utils import (
+    load_config, get_exclude_dirs, get_include_patterns, get_exclude_patterns,
+    get_max_file_size, get_struct_file_path, get_context_file_path,
+    get_cache_config, get_copilot_config, get_queue_config, get_context_config, save_config
+)
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -130,8 +136,8 @@ class WorkflowOrchestrator:
         self.context_orchestrator = SmartContextOrchestrator(str(self.project_root))
         
         if self.debug:
-            print(f"🔧 [DEBUG] Loading CLIConfig...")
-        self.cli_config = CLIConfig(str(self.project_root))
+            print(f"🔧 [DEBUG] Loading config via load_config...")
+        self.config = load_config(str(self.project_root))
         
         if self.debug:
             print(f"🔧 [DEBUG] Loading UniversalConverter...")
@@ -444,54 +450,110 @@ class WorkflowOrchestrator:
         except Exception as e:
             return {"error": str(e)}
     
-    def analyze_codebase_for_duplicates(self) -> Dict[str, Any]:
-        """Analyze codebase for duplicate functions using struct.json"""
+    def analyze_codebase_for_duplicates(self, deep_duplicates: str = 'same-name') -> Dict[str, Any]:
+        """Analyze codebase for duplicate functions using struct.json (AST/hash analysis by mode)."""
         if self.debug:
-            print(f"🔧 [DEBUG] Starting duplication analysis...")
-        
+            print(f"🔧 [DEBUG] Starting duplication analysis... (deep_mode={deep_duplicates})")
         start_time = time.time()
-        
         struct_analysis = self._get_struct_analysis()
-        
         if "error" in struct_analysis:
             return struct_analysis
-        
         duplication = struct_analysis.get("duplication_analysis", {})
-        
-        if self.debug:
-            total_funcs = duplication.get("total_unique_functions", 0)
-            dup_funcs = duplication.get("duplicated_functions", 0)
-            print(f"🔧 [DEBUG] Found {dup_funcs}/{total_funcs} duplicated functions")
-        
-        # Provide actionable recommendations
+        whitelist = {"main", "__init__", "__post_init__", "run", "setup", "teardown"}
         recommendations = []
-        for func_name, paths in duplication.get("duplication_details", {}).items():
-            if len(paths) > 1:
+        func_bodies = {}  # (func_name, file_path) -> ast_hash
+        all_func_bodies = []  # For any-name mode: list of (name, file_path, ast_hash)
+        if deep_duplicates in ("same-name", "any-name"):
+            for module in struct_analysis.get("modules", []):
+                file_path = module.get("path")
+                for func in module.get("functions", []):
+                    name = func["name"]
+                    code = func.get("source")
+                    if code:
+                        try:
+                            tree = ast.parse(code)
+                            ast_hash = hashlib.md5(ast.dump(tree).encode()).hexdigest()
+                        except Exception:
+                            ast_hash = None
+                    else:
+                        ast_hash = None
+                    func_bodies[(name, file_path)] = ast_hash
+                    if deep_duplicates == "any-name":
+                        all_func_bodies.append((name, file_path, ast_hash))
+        if deep_duplicates == "any-name":
+            # Группируем все функции по ast_hash независимо от имени
+            hash_to_funcs = {}
+            for name, file_path, ast_hash in all_func_bodies:
+                if not ast_hash:
+                    continue
+                hash_to_funcs.setdefault(ast_hash, []).append((name, file_path))
+            for ast_hash, funcs in hash_to_funcs.items():
+                if len(funcs) < 2:
+                    continue
+                func_names = [f[0] for f in funcs]
+                paths = [f[1] for f in funcs]
+                dirs = set(p.split(os.sep)[0] for p in paths)
+                is_prod = any(d in {"src", "llmstruct"} for d in dirs)
+                is_only_tests_or_archive = all(d in {"tests", ".ARCHIVE", "test", "archive"} for d in dirs)
+                if is_only_tests_or_archive:
+                    continue
+                recommendations.append({
+                    "function": ", ".join(sorted(set(func_names))),
+                    "duplicated_in": paths,
+                    "directories": list(dirs),
+                    "match_type": "identical_body_any_name",
+                    "recommendation": (
+                        f"Consider consolidating functions with identical bodies (different names) into a shared utility module"
+                        if is_prod else
+                        "Duplicate only in tests/archive, refactor if needed"
+                    ),
+                    "priority": "high" if len(paths) > 3 and is_prod else "medium",
+                })
+        else:
+            for func_name, paths in duplication.get("duplication_details", {}).items():
+                dirs = set(p.split(os.sep)[0] for p in paths)
+                is_prod = any(d in {"src", "llmstruct"} for d in dirs)
+                is_only_tests_or_archive = all(d in {"tests", ".ARCHIVE", "test", "archive"} for d in dirs)
+                if func_name in whitelist or is_only_tests_or_archive:
+                    continue
+                # deep_duplicates: группируем по ast_hash
+                if deep_duplicates == "same-name":
+                    ast_hashes = [func_bodies.get((func_name, p)) for p in paths]
+                    unique_hashes = set(h for h in ast_hashes if h)
+                    if len(unique_hashes) == 1 and len(ast_hashes) > 1:
+                        match_type = "identical_body"
+                    else:
+                        match_type = "name_only"
+                else:
+                    match_type = "name_only"
                 recommendations.append({
                     "function": func_name,
                     "duplicated_in": paths,
-                    "recommendation": f"Consider consolidating {func_name} into a shared utility module",
-                    "priority": "high" if len(paths) > 3 else "medium",
+                    "directories": list(dirs),
+                    "match_type": match_type,
+                    "recommendation": (
+                        f"Consider consolidating {func_name} into a shared utility module (identical bodies)"
+                        if match_type == "identical_body" and is_prod else
+                        ("Duplicate only in tests/archive, refactor if needed" if not is_prod else "Check if consolidation is needed (name only)")
+                    ),
+                    "priority": "high" if len(paths) > 3 and is_prod and match_type == "identical_body" else "medium",
                 })
-        
         if self.debug:
-            print(f"🔧 [DEBUG] Generated {len(recommendations)} recommendations")
-        
+            print(f"🔧 [DEBUG] Generated {len(recommendations)} recommendations (filtered)")
         result = {
             "analysis": duplication,
             "recommendations": recommendations,
             "next_steps": [
                 "Review high-priority duplicates first",
-                "Create shared utility modules for common functions",
+                "Create shared utility modules for common functions (если match_type == 'identical_body' or 'identical_body_any_name')",
                 "Update imports after consolidation",
                 "Re-run struct analysis to verify improvements",
-            ]
+            ],
+            "warning": "⚠️ Анализ дубликатов может содержать ложноположительные срабатывания: совпадение только по имени не всегда означает дублирование кода. Для точного анализа используйте deep_duplicates='same-name' или 'any-name' (AST/хеш-анализ), но даже он не гарантирует 100% точность (например, если код отличается незначительно или есть динамические конструкции)."
         }
-        
         total_time = time.time() - start_time
         if self.debug:
             print(f"🔧 [DEBUG] Duplication analysis completed in {total_time:.2f}s")
-        
         return result
     
     def sync_with_existing_architecture(self) -> Dict[str, bool]:
@@ -655,6 +717,7 @@ def main():
     parser.add_argument("command", choices=[
         "onboard", "context", "analyze-duplicates", "sync", "status"
     ])
+    parser.add_argument("--deep-duplicates", action="store_true", help="Use AST/хеш-анализ для глубокого поиска дубликатов")
     
     args = parser.parse_args()
     
@@ -669,7 +732,7 @@ def main():
         print(json.dumps(context, indent=2, ensure_ascii=False))
     
     elif args.command == "analyze-duplicates":
-        analysis = orchestrator.analyze_codebase_for_duplicates()
+        analysis = orchestrator.analyze_codebase_for_duplicates(deep_duplicates=getattr(args, "deep_duplicates", False))
         print(json.dumps(analysis, indent=2, ensure_ascii=False))
     
     elif args.command == "sync":

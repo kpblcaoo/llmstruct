@@ -71,10 +71,24 @@ def main():
         "--language", choices=["python", "javascript"], help="Programming language"
     )
     parse_parser.add_argument(
-        "--include", action="append", help="Include patterns (e.g., '*.py')"
+        "--include",
+        action="append",
+        help="Include patterns (e.g., '*.py' или несколько через запятую: '*.py,*.md')"
     )
     parse_parser.add_argument(
-        "--exclude", action="append", help="Exclude patterns (e.g., 'tests/*')"
+        "--exclude",
+        action="append",
+        help="Exclude patterns (e.g., 'tests/*' или несколько через запятую: 'tests/*,*.md')"
+    )
+    parse_parser.add_argument(
+        "--include-dir",
+        action="append",
+        help="Include directories (e.g., 'src/llmstruct/')"
+    )
+    parse_parser.add_argument(
+        "--exclude-dir",
+        action="append",
+        help="Exclude directories (e.g., '.ARCHIVE/' или несколько через запятую: '.ARCHIVE/,tests/')"
     )
     parse_parser.add_argument(
         "--include-ranges",
@@ -87,6 +101,11 @@ def main():
     parse_parser.add_argument("--goals", nargs="*", help="Custom project goals")
     parse_parser.add_argument(
         "--use-cache", action="store_true", help="Cache generated JSON"
+    )
+    parse_parser.add_argument(
+        "--modular-index",
+        action="store_true",
+        help="Save struct and AST index per file/module in .llmstruct_index/ (модульный индекс для ускоренного анализа)"
     )
 
     query_parser = subparsers.add_parser(
@@ -209,6 +228,17 @@ def main():
     audit_parser.add_argument(
         "--include-duplicates", action="store_true", help="Include duplication analysis"
     )
+    audit_parser.add_argument(
+        "--deep-duplicates",
+        choices=["same-name", "any-name"],
+        default="same-name",
+        help="Duplicate analysis mode: 'same-name' (default) or 'any-name' (compare all function bodies regardless of name; slow!)"
+    )
+    audit_parser.add_argument(
+        "--no-prod-filter",
+        action="store_true",
+        help="Show ALL duplicates, including those only in archive/tests (by default только production-код)"
+    )
 
     # Duplication analysis command parser
     duplicates_parser = subparsers.add_parser(
@@ -229,8 +259,42 @@ def main():
     duplicates_parser.add_argument(
         "--debug", action="store_true", help="Enable verbose debug output"
     )
+    duplicates_parser.add_argument(
+        "--deep-duplicates",
+        choices=["same-name", "any-name"],
+        default="same-name",
+        help="Duplicate analysis mode: 'same-name' (default) or 'any-name' (compare all function bodies regardless of name; slow!)"
+    )
+    duplicates_parser.add_argument(
+        "--no-prod-filter",
+        action="store_true",
+        help="Show ALL duplicates, including those only in archive/tests (by default только production-код)"
+    )
 
     args = parser.parse_args()
+
+    # Нормализация include/exclude паттернов и директорий
+    def normalize_patterns(arglist):
+        if not arglist:
+            return []
+        result = []
+        for item in arglist:
+            if not item:
+                continue
+            if "," in item:
+                result.extend([p.strip() for p in item.split(",") if p.strip()])
+            else:
+                result.append(item.strip())
+        return result
+
+    if hasattr(args, "include"):
+        args.include = normalize_patterns(args.include)
+    if hasattr(args, "exclude"):
+        args.exclude = normalize_patterns(args.exclude)
+    if hasattr(args, "include_dir"):
+        args.include_dir = normalize_patterns(args.include_dir)
+    if hasattr(args, "exclude_dir"):
+        args.exclude_dir = normalize_patterns(args.exclude_dir)
 
     if args.command == "parse":
         parse(args)
