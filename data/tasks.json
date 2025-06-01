@@ -101,6 +101,18 @@
       "priority": "low",
       "tags": ["status", "refactor", "workflow", "automation"],
       "created": "2025-05-26T00:20:00Z"
+    },
+    {
+      "id": "TSK-010",
+      "title": "Внедрение и стандартизация логирования эпиков (event_log, tech_log, CLI, best practices)",
+      "description": "Создать эпик для внедрения event_log и tech_log, определить структуру логов, реализовать CLI-команды для фильтрации, подготовить best practices и промпты для прозрачной работы с логами.",
+      "epic": "logging_transparency_audit",
+      "status": "done",
+      "priority": "high",
+      "tags": ["logging", "transparency", "workflow", "cli", "best_practices"],
+      "created": "2025-05-27T00:00:00Z",
+      "completed": "2025-05-27T12:45:00Z",
+      "related_files": ["scripts/log_viewer.py"]
     }
   ]
 }

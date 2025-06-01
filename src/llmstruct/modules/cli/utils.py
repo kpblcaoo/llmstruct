@@ -69,4 +69,53 @@ def parse_files_from_response(response: str) -> List[tuple[str, str]]:
     matches = re.findall(pattern, response, re.DOTALL)
     for filename, content in matches:
         files.append((filename.strip(), content.strip()))
-    return files 
+    return files
+
+def get_cache_config(config: dict) -> dict:
+    return config.get("cache", {})
+
+def get_copilot_config(config: dict) -> dict:
+    return config.get("copilot", {})
+
+def get_queue_config(config: dict) -> dict:
+    return config.get("queue", {})
+
+def get_context_config(config: dict) -> dict:
+    return config.get("context", {})
+
+def get_exclude_dirs(config: dict) -> list:
+    default_excludes = [
+        "venv", "build", "tmp", ".git", "__pycache__", "node_modules"
+    ]
+    parsing_config = config.get("parsing", {})
+    cli_config = config.get("cli", {})
+    config_excludes = parsing_config.get("exclude_dirs") or cli_config.get("exclude_dirs", [])
+    return list(set(default_excludes + config_excludes))
+
+def get_include_patterns(config: dict) -> list:
+    parsing_config = config.get("parsing", {})
+    cli_config = config.get("cli", {})
+    return parsing_config.get("include_patterns") or cli_config.get("include_patterns", [])
+
+def get_exclude_patterns(config: dict) -> list:
+    parsing_config = config.get("parsing", {})
+    cli_config = config.get("cli", {})
+    return parsing_config.get("exclude_patterns") or cli_config.get("exclude_patterns", [])
+
+def get_max_file_size(config: dict) -> int:
+    return config.get("max_file_size", 1024 * 1024)
+
+def get_struct_file_path(config: dict) -> str:
+    return config.get("struct_file", "struct.json")
+
+def get_context_file_path(config: dict) -> str:
+    return config.get("context_file", "data/init.json")
+
+def save_config(config: dict, root_dir: str) -> None:
+    import toml
+    config_path = Path(root_dir) / "llmstruct.toml"
+    try:
+        with config_path.open("w", encoding="utf-8") as f:
+            toml.dump(config, f)
+    except Exception as e:
+        logging.error(f"Failed to save configuration: {e}") 

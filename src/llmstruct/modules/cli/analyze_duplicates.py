@@ -12,13 +12,14 @@ def analyze_duplicates(args):
         orchestrator = WorkflowOrchestrator(".", debug=debug)
         if debug:
             print("🔧 [DEBUG] Calling analyze_codebase_for_duplicates...")
-        analysis = orchestrator.analyze_codebase_for_duplicates(deep_duplicates=deep_mode)
+        no_prod_filter = getattr(args, 'no_prod_filter', False)
+        analysis = orchestrator.analyze_codebase_for_duplicates(deep_duplicates=deep_mode, no_prod_filter=no_prod_filter)
         if 'error' in analysis:
             print(f"❌ Error: {analysis['error']}")
             return
         if hasattr(args, 'format') and args.format == 'json':
             import json
-            print(json.dumps(analysis, indent=2))
+            print(json.dumps(analysis, indent=2, ensure_ascii=False))
             return
         duplication_data = analysis.get('analysis', {})
         recommendations = analysis.get('recommendations', [])
@@ -69,6 +70,7 @@ def analyze_duplicates(args):
         print(f"   - struct.json for deep codebase analysis")
         print(f"   - CopilotContextManager for context loading")
         print(f"   - No duplication of existing functions")
+        print(f"\nℹ️  Production filter: {'OFF (все дубликаты, включая архив/тесты)' if no_prod_filter else 'ON (только production-код)'}")
         if debug:
             print("🔧 [DEBUG] analyze_duplicates completed successfully")
     except Exception as e:

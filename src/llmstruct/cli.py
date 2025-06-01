@@ -50,6 +50,7 @@ from llmstruct.modules.cli.review import review
 from llmstruct.modules.cli.copilot import copilot
 from llmstruct.modules.cli.audit import audit
 from llmstruct.modules.cli.analyze_duplicates import analyze_duplicates
+from llmstruct.modules.cli import epic
 
 def main():
     """Command-line interface for LLMstruct."""
@@ -270,6 +271,9 @@ def main():
         action="store_true",
         help="Show ALL duplicates, including those only in archive/tests (by default только production-код)"
     )
+
+    # Epic management
+    epic.add_epic_cli_subparser(subparsers)
 
     args = parser.parse_args()
 

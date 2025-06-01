@@ -64,6 +64,33 @@
       "status": "implemented",
       "tags": ["prompts", "llm", "workflow", "automation", "best_practices"],
       "created": "2025-05-26T00:25:00Z"
+    },
+    {
+      "id": "IDEA-008",
+      "title": "Предобработка пользовательских запросов через grok (браузерный парсер)",
+      "description": "Рассмотреть внедрение grok для структурирования и предобработки пользовательских запросов перед отправкой в LLM. Оценить влияние на качество интерпретации и workflow.",
+      "epic": "logging_transparency_audit",
+      "status": "future",
+      "tags": ["grok", "preprocessing", "workflow", "ai"],
+      "created": "2025-05-27T00:10:00Z"
+    },
+    {
+      "id": "IDEA-009",
+      "title": "Интеграция Ollama для гибридного AI-оркестратора",
+      "description": "Рассмотреть возможность интеграции Ollama для локального inference и гибридной AI-оркестрации. Оценить плюсы/минусы, сценарии использования и влияние на workflow.",
+      "epic": "logging_transparency_audit",
+      "status": "future",
+      "tags": ["ollama", "ai", "integration", "workflow"],
+      "created": "2025-05-27T00:10:00Z"
+    },
+    {
+      "id": "IDEA-011",
+      "title": "Масштабируемая структура хранения логов с каталогами и файлами-ссылками",
+      "description": "Реализовать для каждого эпика отдельную папку с event_log, tech_log и подкаталогом context для хранения больших reasoning, diff, input_context. В логах хранить только ссылки на файлы.",
+      "epic": "logging_transparency_audit",
+      "status": "planned",
+      "tags": ["logging", "scaling", "workflow", "architecture"],
+      "created": "2025-05-27T00:30:00Z"
     }
   ]
 }
