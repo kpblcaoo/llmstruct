@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2025-05-26T00:00:00Z",
+  "updated": "2025-05-26T00:50:00Z",
   "prs": [
     {
       "id": "PR-001",
@@ -29,7 +29,7 @@
       "title": "Внедрение меток и связей для LLM-оркестрации",
       "description": "Добавление массива tags и служебных полей для поддержки фильтрации, автоматизации и удержания контекста LLM во всех project data JSON.",
       "epic": "meta_workflow_management",
-      "status": "open",
+      "status": "merged",
       "tags": ["tags", "llm_context", "workflow", "meta"],
       "created": "2025-05-26T00:00:00Z",
       "related_tasks": ["TSK-004"],

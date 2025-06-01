@@ -3,7 +3,7 @@
 
 {
   "version": "1.0.0",
-  "updated": "2025-05-26T00:00:00Z",
+  "updated": "2025-05-26T00:50:00Z",
   "tasks": [
     {
       "id": "TSK-001",
@@ -43,11 +43,64 @@
       "title": "Рефакторинг структуры project data для поддержки эпиков и связей",
       "description": "Обеспечить поддержку связей между задачами, идеями, инсайтами и PR через поля epic, tags и т.д.",
       "epic": "meta_workflow_management",
-      "status": "in_progress",
+      "status": "done",
       "priority": "high",
       "tags": ["refactor", "epic", "relations", "workflow"],
       "created": "2025-05-26T00:00:00Z",
       "updated": "2025-05-26T00:00:00Z"
+    },
+    {
+      "id": "TSK-005",
+      "title": "Стандарт: всегда предлагать CLI-команды пользователю для проверки и автоматизации",
+      "description": "Внедрить практику: при любом изменении project data AI всегда предлагает CLI-команды для проверки и автоматизации пользователю.",
+      "epic": "meta_workflow_management",
+      "status": "done",
+      "priority": "high",
+      "tags": ["cli", "user_experience", "workflow", "standard"],
+      "created": "2025-05-26T00:15:00Z",
+      "related_insights": ["INS-002"]
+    },
+    {
+      "id": "TSK-006",
+      "title": "Стандарт: логировать все действия AI и изменения project data для прозрачности и ретроспективы",
+      "description": "Внедрить практику: все действия AI и изменения project data логируются в meta-log или insights.json для прозрачности и ретроспективы.",
+      "epic": "meta_workflow_management",
+      "status": "done",
+      "priority": "high",
+      "tags": ["logging", "ai", "workflow", "standard"],
+      "created": "2025-05-26T00:15:00Z",
+      "related_insights": ["INS-003", "INS-004"]
+    },
+    {
+      "id": "TSK-007",
+      "title": "Документировать best practices по работе AI в Cursor и взаимодействию с пользователем",
+      "description": "Создать раздел в README или отдельный файл с best practices по работе AI в Cursor, логированию, взаимодействию с пользователем и использованию CLI-команд.",
+      "epic": "meta_workflow_management",
+      "status": "done",
+      "priority": "medium",
+      "tags": ["documentation", "ai", "cli", "workflow", "best_practices"],
+      "created": "2025-05-26T00:15:00Z",
+      "related_insights": ["INS-002", "INS-003", "INS-004"]
+    },
+    {
+      "id": "TSK-008",
+      "title": "Разработка набора промтов и best practices для работы с project data и LLM-оркестрацией",
+      "description": "Создать коллекцию промтов и практик для эффективной работы с задачами, идеями, инсайтами и PR, а также для взаимодействия с LLM и автоматизации workflow.",
+      "epic": "meta_workflow_management",
+      "status": "done",
+      "priority": "medium",
+      "tags": ["prompts", "best_practices", "llm", "workflow", "documentation"],
+      "created": "2025-05-26T00:20:00Z"
+    },
+    {
+      "id": "TSK-009",
+      "title": "Оценить и спроектировать централизованное хранение статусов project data (tasks, ideas, prs, insights)",
+      "description": "Провести анализ: нужно ли выносить статусы задач/идей/PR в отдельный реестр для автоматизации и интеграции с Kanban/CLI. При необходимости — реализовать прототип.",
+      "epic": "meta_workflow_management",
+      "status": "planned",
+      "priority": "low",
+      "tags": ["status", "refactor", "workflow", "automation"],
+      "created": "2025-05-26T00:20:00Z"
     }
   ]
 }

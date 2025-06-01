@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
-  "updated": "2025-05-26T00:00:00Z",
+  "updated": "2025-05-26T00:50:00Z",
   "ideas": [
     {
       "id": "IDEA-001",
       "title": "Единый стандарт архивирования project data JSON",
       "description": "Ввести обязательное архивирование всех project data JSON-файлов перед изменениями, с хранением в отдельной папке и автоматизацией через CLI/бота.",
       "epic": "meta_workflow_management",
-      "status": "proposed",
+      "status": "implemented",
       "tags": ["archive", "workflow", "data_safety", "llm_context"],
       "created": "2025-05-26T00:00:00Z"
     },
@@ -16,7 +16,7 @@
       "title": "Метки и служебные поля для LLM-оркестрации и фокуса",
       "description": "Добавить массив tags и, при необходимости, служебные поля (например, llm_context) во все project data JSON для поддержки фильтрации, автоматизации и удержания контекста LLM.",
       "epic": "meta_workflow_management",
-      "status": "proposed",
+      "status": "implemented",
       "tags": ["tags", "llm_context", "workflow", "meta"],
       "created": "2025-05-26T00:00:00Z"
     },
@@ -25,7 +25,7 @@
       "title": "Lessons learned и автоматизация ретроспективы",
       "description": "Автоматически добавлять инсайты и lessons learned по workflow/ошибкам в insights.json и использовать их для улучшения процессов.",
       "epic": "meta_workflow_management",
-      "status": "proposed",
+      "status": "implemented",
       "tags": ["lessons_learned", "automation", "workflow", "retrospective"],
       "created": "2025-05-26T00:00:00Z"
     },
@@ -34,9 +34,36 @@
       "title": "Документирование ключевых меток и workflow",
       "description": "Создать справочник по используемым tags/labels для project data JSON и описать best practices в README или отдельном файле.",
       "epic": "meta_workflow_management",
-      "status": "proposed",
+      "status": "implemented",
       "tags": ["tags", "documentation", "workflow", "best_practices"],
       "created": "2025-05-26T00:00:00Z"
+    },
+    {
+      "id": "IDEA-005",
+      "title": "Справочник по меткам (tags_reference.json) и best practices использования",
+      "description": "Создать отдельный файл tags_reference.json с описанием ключевых меток, их назначения и best practices для фильтрации, автоматизации и LLM-оркестрации.",
+      "epic": "meta_workflow_management",
+      "status": "implemented",
+      "tags": ["tags", "documentation", "workflow", "best_practices"],
+      "created": "2025-05-26T00:25:00Z"
+    },
+    {
+      "id": "IDEA-006",
+      "title": "Централизованный статус project data для масштабирования и интеграции",
+      "description": "Рассмотреть внедрение централизованного хранения статусов задач, идей, инсайтов и PR для интеграции с Kanban, API и CLI-дашбордами.",
+      "epic": "meta_workflow_management",
+      "status": "proposed",
+      "tags": ["status", "refactor", "workflow", "automation"],
+      "created": "2025-05-26T00:25:00Z"
+    },
+    {
+      "id": "IDEA-007",
+      "title": "Коллекция промтов для LLM-оркестрации и автоматизации project data",
+      "description": "Собрать и структурировать эффективные промты для LLM, которые ускоряют работу с задачами, идеями, инсайтами и PR, а также автоматизируют типовые workflow.",
+      "epic": "meta_workflow_management",
+      "status": "implemented",
+      "tags": ["prompts", "llm", "workflow", "automation", "best_practices"],
+      "created": "2025-05-26T00:25:00Z"
     }
   ]
 }
