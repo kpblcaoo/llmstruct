@@ -91,6 +91,46 @@
       "status": "planned",
       "tags": ["logging", "scaling", "workflow", "architecture"],
       "created": "2025-05-27T00:30:00Z"
+    },
+    {
+      "id": "IDEA-013",
+      "title": "Автоматизация выявления инсайтов и lessons learned по логам",
+      "description": "Реализовать скрипт/функцию для поиска аномалий, ошибок, повторяющихся паттернов в логах и автоматического предложения инсайтов для insights.json.",
+      "epic": "logging_transparency_audit",
+      "status": "planned",
+      "priority": "medium",
+      "tags": ["logging", "insights", "automation", "workflow"],
+      "created": "2025-05-27T13:30:00Z"
+    },
+    {
+      "id": "IDEA-014",
+      "title": "Автоматизация ретроспективы и summary по эпику на основе логов",
+      "description": "Генерировать summary по эпику на основе event_log/tech_log: ключевые события, ошибки, выводы, рекомендации.",
+      "epic": "logging_transparency_audit",
+      "status": "planned",
+      "priority": "medium",
+      "tags": ["logging", "retrospective", "automation", "workflow"],
+      "created": "2025-05-27T13:30:00Z"
+    },
+    {
+      "id": "IDEA-015",
+      "title": "Расширенная агрегация событий в логах (по author, дате, epic)",
+      "description": "Добавить в CLI log_viewer.py возможность агрегации по другим полям: author, date, epic, а также группировку по дням/неделям.",
+      "epic": "logging_transparency_audit",
+      "status": "future",
+      "priority": "low",
+      "tags": ["logging", "aggregation", "cli", "workflow"],
+      "created": "2025-05-27T13:30:00Z"
+    },
+    {
+      "id": "IDEA-016",
+      "title": "Интеграция логирования с внутренними инструментами (автообновление статусов)",
+      "description": "Автоматически обновлять статусы задач/идей на основе событий в логах (например, завершение задачи при фиксации определённого события).",
+      "epic": "logging_transparency_audit",
+      "status": "future",
+      "priority": "low",
+      "tags": ["logging", "integration", "automation", "workflow"],
+      "created": "2025-05-27T13:30:00Z"
     }
   ]
 }
