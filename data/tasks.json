@@ -114,6 +114,16 @@
       "created": "2025-05-27T00:00:00Z",
       "completed": "2025-05-27T12:45:00Z",
       "related_files": ["scripts/log_viewer.py"]
+    },
+    {
+      "id": "TSK-011",
+      "title": "Стандартизация процесса завершения эпика и обновление промптов/шаблонов",
+      "description": "Внедрить новый стандарт: финальный коммит, summary, анализ процесса, предложения по улучшениям, оформление PR, отдельная ветка на эпик, гарантия лог+действие, отдельный лог и архивация на эпик. Обновить prompts_collection.json, onboarding, документацию.",
+      "epic": "meta_epic_process_improvement",
+      "status": "in_progress",
+      "priority": "high",
+      "tags": ["meta", "workflow", "standards", "prompts", "documentation", "logging"],
+      "created": "2025-05-27T14:00:00Z"
     }
   ]
 }

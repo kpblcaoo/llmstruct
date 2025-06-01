@@ -38,11 +38,39 @@
       "template": "После добавления новой метки или практики обнови tags_reference.json: {\"tag\": \"new_tag\", ...} и/или раздел best practices в документации."
     },
     {
-      "id": "feature_justification_and_suggestion",
-      "purpose": "Оценка целесообразности внедрения новых функций и предложение их к исполнению только при необходимости.",
-      "template": "Перед реализацией новой функции (например, экспорт в CSV) AI анализирует, нужен ли этот функционал в текущем workflow. Если есть явный запрос или сценарий — предлагает немедленное внедрение. Если нет — фиксирует идею в ideas.json и выносит на согласование с человеком.",
-      "best_practices": "Не реализовывать опциональные функции без явной необходимости. Всегда обсуждать с пользователем или фиксировать как идею для будущего.",
-      "tags": ["workflow", "feature_analysis", "best_practices", "automation"]
+      "id": "epic_completion_standard",
+      "title": "Стандартизированный процесс завершения эпика",
+      "description": "Перед завершением эпика: финальный коммит, summary, анализ процесса, предложения по улучшениям, оформление PR по шаблону, архивация логов. Все действия фиксируются в event_log и tech_log.",
+      "tags": ["meta", "workflow", "epic", "standards"],
+      "template": "1. Финальный коммит\n2. Summary (что реализовано, ключевые файлы, lessons learned, рекомендации)\n3. Анализ процесса\n4. Оформление PR по шаблону\n5. Архивация логов эпика (перемещение/zip)\n6. Все действия фиксируются в event_log и tech_log."
+    },
+    {
+      "id": "feature_justification_and_suggestion_v2",
+      "title": "Обновлённый анализ целесообразности новых функций",
+      "description": "AI не реализует новые функции без согласования, если нет явного запроса или сценария. В случае сомнений — фиксирует идею и выносит на согласование.",
+      "tags": ["workflow", "feature_analysis", "best_practices", "automation"],
+      "template": "Перед реализацией новой функции AI анализирует её необходимость. Если нет явного запроса — фиксирует идею в ideas.json и выносит на согласование с человеком."
+    },
+    {
+      "id": "epic_retrospective_automation",
+      "title": "Автоматизация ретроспективы по завершении эпика",
+      "description": "AI по завершении каждого эпика обязан предложить summary, lessons learned, рекомендации и оформить их в insights.json.",
+      "tags": ["workflow", "retrospective", "automation", "epic"],
+      "template": "После завершения эпика AI формирует summary, lessons learned, рекомендации и добавляет их в insights.json."
+    },
+    {
+      "id": "epic_pr_template",
+      "title": "Шаблон оформления PR по эпику",
+      "description": "В summary PR включать: что реализовано, ссылки на ключевые файлы, lessons learned, рекомендации.",
+      "tags": ["workflow", "pr", "epic", "documentation"],
+      "template": "epic(<epic_id>): summary изменений\n- Что реализовано\n- Ключевые файлы\n- Lessons learned\n- Рекомендации\n- (Опционально) ссылки на инсайты, идеи, задачи"
+    },
+    {
+      "id": "epic_full_setup_standard",
+      "title": "Стандарт оформления эпика (ветка, логи, инициирующая идея и задача)",
+      "description": "При старте эпика: создать отдельную ветку от develop, оформить event_log и tech_log, добавить инициирующую идею и задачу в ideas.json и tasks.json.",
+      "tags": ["meta", "workflow", "epic", "standards"],
+      "template": "1. Создать ветку epic/<epic_id>-to-develop от develop\n2. Оформить event_log и tech_log для эпика\n3. Добавить инициирующую идею в ideas.json\n4. Добавить задачу в tasks.json\n5. Все действия фиксировать в логах"
     }
   ]
 } 
