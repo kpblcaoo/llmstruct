@@ -33,7 +33,6 @@
       "description": "Зафиксировать в insights.json уроки и выводы по ошибке с удалением данных и последующим восстановлением.",
       "epic": "meta_workflow_management",
       "status": "done",
-
       "priority": "medium",
       "tags": ["insights", "lessons_learned", "workflow"],
       "created": "2025-05-26T00:00:00Z",
@@ -124,6 +123,42 @@
       "priority": "high",
       "tags": ["meta", "workflow", "standards", "prompts", "documentation", "logging"],
       "created": "2025-05-27T14:00:00Z"
+    },
+    {
+      "id": "TSK-2024-06-11-01",
+      "title": "Ревизия src/llmstruct/scripts, experimental и docs для разделения проекта",
+      "description": "Провести ревизию содержимого src/llmstruct/scripts, экспериментальных модулей и структуры docs. Зафиксировать решения: что оставить в llmstruct, что вынести в ARCHIVE, что рекомендовать для llmgenie. Все перемещения и выводы оформить в tasks/ideas/insights (draft, с тегами).",
+      "epic": "epic_project_split_2024",
+      "status": "draft",
+      "tags": ["split", "archive", "review", "llmstruct", "llmgenie", "docs"],
+      "created": "2024-06-11T00:00:00Z"
+    },
+    {
+      "id": "TSK-2024-06-11-02",
+      "title": "Интеграция валидатора в CLI llmstruct после разделения проектов",
+      "description": "После финального разделения проектов интегрировать валидатор (validate_json.py и аналоги) в CLI llmstruct для удобства проверки структуры и данных. Оформить как отдельную CLI-команду или подкоманду.",
+      "epic": "epic_project_split_2024",
+      "status": "draft",
+      "tags": ["split", "llmstruct", "cli", "validator"],
+      "created": "2024-06-11T01:00:00Z"
+    },
+    {
+      "id": "TSK-2024-06-11-03",
+      "title": "Реализовать draft ai_workflow.json с ролями, версионированием и чек-листами",
+      "description": "Создать draft-файл ai_workflow.json с описанием этапов ассистентского workflow, поддержкой версионирования, ролями (developer, librarian, llm_engineer и др.), чек-листами для каждого этапа. Для developer-ролей добавить напоминания о возможностях llmstruct и его парсинга/JSON-выводе. В будущем — интеграция с CLI и docs.json, поддержка динамического переключения ролей.",
+      "epic": "epic_project_split_2024",
+      "status": "draft",
+      "tags": ["workflow", "ai", "roles", "llmstruct", "developer", "cli", "docs", "task"],
+      "created": "2024-06-11T01:30:00Z"
+    },
+    {
+      "id": "TSK-2024-06-11-04",
+      "title": "Оформить ветку, логи и структуру для эпика AI workflow/rules",
+      "description": "Создать ветку epic/ai-workflow-rules-to-develop, инициализировать event_log и tech_log, добавить стартовую идею и задачу, подготовить структуру файлов (.cursorrules, .cursor/rules/, ai_workflow.json, docs/AI_WORKFLOW_ARCHITECTURE.md). Все действия фиксировать в логах и согласовывать этапы с пользователем.",
+      "epic": "epic_ai_workflow_rules_2024",
+      "status": "draft",
+      "tags": ["workflow", "rules", "architecture", "ai", "llmstruct", "cursor"],
+      "created": "2024-06-11T02:00:00Z"
     }
   ]
 }

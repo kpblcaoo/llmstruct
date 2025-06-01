@@ -141,6 +141,61 @@
       "priority": "high",
       "tags": ["meta", "workflow", "standards", "prompts", "documentation", "logging"],
       "created": "2025-05-27T14:05:00Z"
+    },
+    {
+      "id": "IDEA-2024-06-10-01",
+      "title": "Раздел про режимы работы и best practices в roadmap",
+      "description": "Добавить раздел про режимы работы ([discuss], [meta], [code], [debug]) в roadmap и best practices. Описать сценарии использования режимов для разных этапов работы и автоматизации.",
+      "epic": "epic_modes_and_workflow",
+      "status": "draft",
+      "tags": ["workflow", "modes", "roadmap"],
+      "created": "2024-06-10T00:00:00Z",
+      "related_insights": ["INS-2024-06-10-01"]
+    },
+    {
+      "id": "EPIC-2024-06-llmstruct-split",
+      "title": "Разделение проекта на llmstruct (ядро) и llmgenie (оркестратор)",
+      "description": "Стратегическое разделение проекта на два самостоятельных репозитория: llmstruct (open-source парсер/анализатор) и llmgenie (оркестратор/workflow/интеграции). Цели: повысить модульность, упростить поддержку, стандартизировать интеграцию.",
+      "epic": "epic_project_split_2024",
+      "status": "draft",
+      "tags": ["split", "architecture", "modularity", "llmstruct", "llmgenie"],
+      "created": "2024-06-11T00:00:00Z"
+    },
+    {
+      "id": "IDEA-2024-06-11-01",
+      "title": "Стандартизировать CLI/API-интерфейс для интеграции llmstruct и llmgenie",
+      "description": "Определить и реализовать стандартные команды и API для seamless integration между llmstruct и llmgenie, чтобы обеспечить простоту использования и обновления.",
+      "epic": "epic_project_split_2024",
+      "status": "draft",
+      "tags": ["cli", "api", "integration", "llmstruct", "llmgenie"],
+      "created": "2024-06-11T00:00:00Z"
+    },
+    {
+      "id": "IDEA-2024-06-11-02",
+      "title": "Структурировать документацию в виде дерева с референсами и best practices",
+      "description": "Создать для llmstruct и llmgenie отдельные деревья документации (md/html), с референсами на ключевые понятия, best practices и примеры интеграции.",
+      "epic": "epic_project_split_2024",
+      "status": "draft",
+      "tags": ["docs", "best_practices", "structure", "llmstruct", "llmgenie"],
+      "created": "2024-06-11T00:00:00Z"
+    },
+    {
+      "id": "IDEA-2024-06-11-03",
+      "title": "Вынести ассистентский workflow в отдельный ai_workflow.json с ролями и версионированием",
+      "description": "Создать отдельный файл ai_workflow.json, где будут описаны все этапы ассистентского workflow, поддержка версионирования, роли (developer, librarian, llm_engineer и др.), чек-листы для каждого этапа. Для developer-ролей добавить напоминания о возможностях llmstruct и его парсинга/JSON-выводе. В будущем — интеграция с CLI и docs.json, поддержка динамического переключения ролей.",
+      "epic": "epic_project_split_2024",
+      "status": "draft",
+      "tags": ["workflow", "ai", "roles", "llmstruct", "developer", "cli", "docs", "idea"],
+      "created": "2024-06-11T01:30:00Z"
+    },
+    {
+      "id": "EPIC-2024-06-ai-workflow-rules",
+      "title": "Внедрение архитектуры AI workflow и системы правил в llmstruct",
+      "description": "Реализация архитектуры управления правилами и workflow для AI и человека: настройка .cursorrules, .cursor/rules/, ai_workflow.json, интеграция с документацией и логами, минимизация деградации контекста.",
+      "epic": "epic_ai_workflow_rules_2024",
+      "status": "draft",
+      "tags": ["workflow", "rules", "architecture", "ai", "llmstruct", "cursor"],
+      "created": "2024-06-11T02:00:00Z"
     }
   ]
 }
