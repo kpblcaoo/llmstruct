@@ -141,6 +141,24 @@
       "status": "draft",
       "tags": ["split", "llmstruct", "cli", "validator"],
       "created": "2024-06-11T01:00:00Z"
+    },
+    {
+      "id": "TSK-2024-06-11-03",
+      "title": "Реализовать draft ai_workflow.json с ролями, версионированием и чек-листами",
+      "description": "Создать draft-файл ai_workflow.json с описанием этапов ассистентского workflow, поддержкой версионирования, ролями (developer, librarian, llm_engineer и др.), чек-листами для каждого этапа. Для developer-ролей добавить напоминания о возможностях llmstruct и его парсинга/JSON-выводе. В будущем — интеграция с CLI и docs.json, поддержка динамического переключения ролей.",
+      "epic": "epic_project_split_2024",
+      "status": "draft",
+      "tags": ["workflow", "ai", "roles", "llmstruct", "developer", "cli", "docs", "task"],
+      "created": "2024-06-11T01:30:00Z"
+    },
+    {
+      "id": "TSK-2024-06-11-04",
+      "title": "Оформить ветку, логи и структуру для эпика AI workflow/rules",
+      "description": "Создать ветку epic/ai-workflow-rules-to-develop, инициализировать event_log и tech_log, добавить стартовую идею и задачу, подготовить структуру файлов (.cursorrules, .cursor/rules/, ai_workflow.json, docs/AI_WORKFLOW_ARCHITECTURE.md). Все действия фиксировать в логах и согласовывать этапы с пользователем.",
+      "epic": "epic_ai_workflow_rules_2024",
+      "status": "draft",
+      "tags": ["workflow", "rules", "architecture", "ai", "llmstruct", "cursor"],
+      "created": "2024-06-11T02:00:00Z"
     }
   ]
 }

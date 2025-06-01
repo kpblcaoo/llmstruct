@@ -178,6 +178,24 @@
       "status": "draft",
       "tags": ["docs", "best_practices", "structure", "llmstruct", "llmgenie"],
       "created": "2024-06-11T00:00:00Z"
+    },
+    {
+      "id": "IDEA-2024-06-11-03",
+      "title": "Вынести ассистентский workflow в отдельный ai_workflow.json с ролями и версионированием",
+      "description": "Создать отдельный файл ai_workflow.json, где будут описаны все этапы ассистентского workflow, поддержка версионирования, роли (developer, librarian, llm_engineer и др.), чек-листы для каждого этапа. Для developer-ролей добавить напоминания о возможностях llmstruct и его парсинга/JSON-выводе. В будущем — интеграция с CLI и docs.json, поддержка динамического переключения ролей.",
+      "epic": "epic_project_split_2024",
+      "status": "draft",
+      "tags": ["workflow", "ai", "roles", "llmstruct", "developer", "cli", "docs", "idea"],
+      "created": "2024-06-11T01:30:00Z"
+    },
+    {
+      "id": "EPIC-2024-06-ai-workflow-rules",
+      "title": "Внедрение архитектуры AI workflow и системы правил в llmstruct",
+      "description": "Реализация архитектуры управления правилами и workflow для AI и человека: настройка .cursorrules, .cursor/rules/, ai_workflow.json, интеграция с документацией и логами, минимизация деградации контекста.",
+      "epic": "epic_ai_workflow_rules_2024",
+      "status": "draft",
+      "tags": ["workflow", "rules", "architecture", "ai", "llmstruct", "cursor"],
+      "created": "2024-06-11T02:00:00Z"
     }
   ]
 }

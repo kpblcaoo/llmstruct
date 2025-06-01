@@ -1,0 +1,40 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# CLI Commands Reference
+
+## Назначение
+- Быстрый доступ к данным, связям, логам и автоматизации через CLI.
+- Используйте для поиска, фильтрации, анализа связей между задачами, идеями, инсайтами, PR.
+
+## Workflow & Status
+- python -c "from auto_init_ai_system import get_workflow_status; print(get_workflow_status())"
+- python scripts/epic_roadmap_manager.py overview
+- python scripts/epic_roadmap_manager.py epic --epic-id <epic_id>
+
+## Session Management
+- python scripts/session_cli.py switch <session_id>
+- python scripts/session_cli.py log "Event message"
+
+## Metrics & Analytics
+- python -m llmstruct.cli metrics status
+- python -m llmstruct.cli metrics summary
+- python -m llmstruct.cli metrics analytics --output data.csv --format csv
+
+## API & Bot
+- python test_api_simple.py
+- python integrations/telegram_bot/simple_bot.py
+
+## Примеры команд
+
+```bash
+python scripts/epic_roadmap_manager.py epic --epic-id meta_workflow_management
+python scripts/epic_roadmap_manager.py show-links --epic-id meta_workflow_management
+python scripts/epic_roadmap_manager.py tasks --filter-tag workflow
+python scripts/log_viewer.py --epic logging_transparency_audit --format table
+```
+
+## Ссылки
+- Подробности и новые примеры: docs/ONBOARDING_LLMSTRUCT.md, docs/BEST_PRACTICES_LLMSTRUCT.md

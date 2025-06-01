@@ -137,6 +137,40 @@
       "description": "Валидатор (validate_json.py и аналоги) остаётся в llmstruct как базовый инструмент для проверки структуры и данных. В дальнейшем возможно интегрировать его в CLI. Все скрипты, связанные с оркестрацией, workflow, мета-управлением и интеграциями (например, session_cli.py, epic_roadmap_manager.py, workflow_orchestrator.py), переносятся в llmgenie. Пример: если скрипт работает только с анализом структуры или валидацией — он остаётся в llmstruct; если сессии, workflow, интеграции — в llmgenie.",
       "tags": ["split", "decision", "llmstruct", "llmgenie", "validator", "cli", "workflow"],
       "impact": "Чёткое разделение: llmstruct — только парсинг, анализ, валидация; llmgenie — оркестрация, workflow, интеграции." 
+    },
+    {
+      "id": "INS-2024-06-11-04",
+      "date": "2024-06-11T01:30:00Z",
+      "type": "decision_insight",
+      "epic": "epic_project_split_2024",
+      "description": "Принято решение вынести ассистентский (AI) workflow в отдельный файл ai_workflow.json с версионированием, ролями (developer, librarian, llm_engineer и др.) и чек-листами для каждого этапа. Для developer-ролей добавить напоминания о возможностях llmstruct и его парсинга/JSON-выводе. В будущем — интеграция с CLI и docs.json, поддержка динамического переключения ролей и расширяемость под новые сценарии.",
+      "tags": ["workflow", "ai", "roles", "llmstruct", "developer", "modularity", "decision"],
+      "impact": "Упрощает восстановление фокуса, автоматизацию, масштабирование и прозрачность работы с ассистентом. Позволяет быстро адаптировать workflow под разные роли и задачи." 
+    },
+    {
+      "id": "INS-2024-06-11-001",
+      "type": "workflow_lesson",
+      "epic": "epic_ai_workflow_rules_2024",
+      "tags": ["lessons_learned", "workflow", "rules", "onboarding"],
+      "date": "2024-06-11",
+      "summary": "Стандартизация структуры .cursor/rules/ и согласование с ai_workflow.json и документацией минимизирует дублирование, ускоряет онбординг и облегчает автоматизацию. Все детали и best practices вынесены по ссылкам, базовые правила — в настройках AI." 
+    },
+    {
+      "id": "INS-2024-06-11-002",
+      "type": "epic_retrospective",
+      "epic": "epic_ai_workflow_rules_2024",
+      "date": "2024-06-11",
+      "description": "Эпик завершён: реализованы стандартизация и заполнение структуры .cursor/rules/, согласование с ai_workflow.json и документацией, фиксация best practices и ссылок. Все действия и reasoning зафиксированы в event_log и meta_log. Ключевые выводы: 1) Формализация структуры и ссылок минимизирует дублирование и ускоряет онбординг; 2) Lessons learned и best practices должны фиксироваться сразу; 3) Все детали вынесены по ссылкам, базовые правила — в настройках AI. Рекомендации: поддерживать структуру и ссылки в актуальном состоянии, регулярно проводить ретроспективу и обновлять best practices.",
+      "tags": ["epic", "retrospective", "workflow", "rules", "best_practices", "onboarding"],
+      "impact": "Система готова к масштабированию, интеграции с CLI/ботами и эффективной работе с LLM и командой. Подход будет корректироваться по результатам ретроспектив в будущих эпиках."
+    },
+    {
+      "id": "INS-2024-06-11-003",
+      "type": "workflow_lesson",
+      "epic": "epic_ai_workflow_rules_2024",
+      "date": "2024-06-11",
+      "summary": "Внедрён стандарт завершения эпика: финальный коммит, PR через gh, возврат в develop, шаблон описания PR. Это ускоряет интеграцию, повышает прозрачность и снижает вероятность ошибок при слиянии веток.",
+      "tags": ["workflow", "epic_finish", "pr", "best_practices", "automation"]
     }
   ]
 }

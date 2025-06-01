@@ -1,0 +1,151 @@
+{
+  "workflow_version": "0.2.0",
+  "changelog": [
+    {"version": "0.2.0", "date": "2024-06-11", "changes": "Добавлены шаблоны промтов для AI-автоматизации, ссылки на документацию, удалены промты для человека."}
+  ],
+  "roles": {
+    "developer": {
+      "description": "Профессиональный программист, работает с кодом, тестами, архитектурой, CLI. Должен помнить о возможностях llmstruct и его парсинга/JSON-выводе.",
+      "key_features": [
+        "Использует CLI и парсер llmstruct для анализа и генерации структуры проекта.",
+        "Может инициировать парсинг, валидацию, экспорт JSON-структур.",
+        "Видит связи между сущностями (tasks, ideas, insights) через llmstruct."
+      ]
+    },
+    "librarian": {
+      "description": "Библиотекарь, отвечает за документацию, структуру, метаданные, связи. Не обязан помнить детали кода, но знает структуру и референсы.",
+      "key_features": [
+        "Фокус на docs, best practices, связях между сущностями.",
+        "Может быстро находить и структурировать информацию."
+      ]
+    },
+    "llm_engineer": {
+      "description": "LLM-инженер, планирует мета-обсуждения, разрабатывает промты, интеграции, следит за общей картиной.",
+      "key_features": [
+        "Фокус на промтах, интеграциях, мета-уровне.",
+        "Видит связи между эпиками, задачами, инсайтами."
+      ]
+    }
+  },
+  "stages": {
+    "epic_start": {
+      "description": "Старт нового эпика",
+      "checklist": [
+        "Создать ветку от develop: git checkout -b epic/<epic_id>-to-develop",
+        "Инициализировать event_log и tech_log",
+        "Добавить идею и задачу в ideas.json и tasks.json",
+        "Зафиксировать старт в meta-log"
+      ]
+    },
+    "epic_work": {
+      "description": "Ведение эпика",
+      "checklist": [
+        "Вести работу только в своей ветке",
+        "Фиксировать все действия в логах",
+        "Обновлять llm_context и attention_marker",
+        "Подгружать связанные задачи/идеи/инсайты/PR по id"
+      ]
+    },
+    "epic_finish": {
+      "description": "Завершение эпика",
+      "checklist": [
+        "Финальный коммит и summary",
+        "Оформить PR по шаблону (через gh или вручную)",
+        "В описании PR: summary, ключевые файлы, lessons learned, рекомендации, ссылки на инсайты/логи",
+        "После создания PR — вернуться в develop: git checkout develop; git pull",
+        "Архивировать логи эпика (по необходимости)",
+        "Добавить lessons learned и рекомендации в insights.json"
+      ]
+    },
+    "pause_restore": {
+      "description": "Пауза и восстановление",
+      "checklist": [
+        "Фиксировать паузы и восстановление в meta-log",
+        "Восстанавливать контекст по meta-log при возврате"
+      ]
+    }
+  },
+  "logging": {
+    "event_log": {
+      "description": "Фиксировать все ключевые действия и решения в event_log для прозрачности и ретроспективы.",
+      "best_practices": [
+        "Записывать каждое действие с timestamp, автором, типом события.",
+        "Использовать event_log для аудита и анализа."
+      ]
+    },
+    "tech_log": {
+      "description": "Фиксировать технические детали, ошибки, reasoning и архитектурные решения в tech_log.",
+      "best_practices": [
+        "Логировать технические детали реализации, архитектурные решения, ошибки и их исправления.",
+        "Использовать tech_log для ретроспективы и анализа качества решений."
+      ]
+    },
+    "meta_log": {
+      "description": "История событий, контрольные метки для LLM, эффективность восстановления контекста.",
+      "best_practices": [
+        "Фиксировать старт, паузы, переключения задач, восстановление контекста, завершение.",
+        "Использовать llm_context и attention_marker для удержания фокуса."
+      ]
+    }
+  },
+  "context_restore": {
+    "description": "Восстанавливать фокус по meta-log, отмечать восстановление в истории.",
+    "steps": [
+      "Прочитать последние события meta-log",
+      "Восстановить llm_context",
+      "Отметить восстановление в истории"
+    ]
+  },
+  "retrospective": {
+    "description": "Оформлять summary, lessons learned, рекомендации по завершении эпика.",
+    "steps": [
+      "Сформировать summary",
+      "Добавить lessons learned и рекомендации в insights.json",
+      "Обновить best practices при необходимости"
+    ]
+  },
+  "prompts": [
+    {
+      "id": "epic_full_setup_standard",
+      "title": "Стандарт оформления эпика (ветка, логи, инициирующая идея и задача)",
+      "template": "1. Создать ветку epic/<epic_id>-to-develop от develop\n2. Оформить event_log и tech_log для эпика\n3. Добавить инициирующую идею в ideas.json\n4. Добавить задачу в tasks.json\n5. Все действия фиксировать в логах"
+    },
+    {
+      "id": "PROMPT-001",
+      "title": "Архивирование project data перед изменениями",
+      "template": "Перед изменением файла {file} создай архивную копию в data/archived_jsons/. Если архив отсутствует, предложи команду для восстановления из git: git show HEAD:{file} > data/archived_jsons/{file}.archived.json"
+    },
+    {
+      "id": "PROMPT-002",
+      "title": "Добавление lessons learned и инсайтов по workflow",
+      "template": "Если обнаружена ошибка или улучшение в процессе работы, добавь запись в insights.json: {\"id\": \"INS-XXX\", \"type\": \"workflow_lesson\", ...} с тегами lessons_learned, workflow."
+    },
+    {
+      "id": "PROMPT-003",
+      "title": "Связывание задач, идей, инсайтов и PR",
+      "template": "Добавь к объекту поля: \"epic\": \"meta_workflow_management\", \"tags\": [...], \"related_tasks\": [...], \"related_ideas\": [...], \"related_insights\": [...], \"related_prs\": [...] (по необходимости)."
+    },
+    {
+      "id": "feature_justification_and_suggestion_v2",
+      "title": "Обновлённый анализ целесообразности новых функций",
+      "template": "Перед реализацией новой функции AI анализирует её необходимость. Если нет явного запроса — фиксирует идею в ideas.json и выносит на согласование с человеком."
+    },
+    {
+      "id": "epic_completion_standard",
+      "title": "Стандартизированный процесс завершения эпика",
+      "template": "1. Финальный коммит\n2. Summary (что реализовано, ключевые файлы, lessons learned, рекомендации)\n3. Анализ процесса\n4. Оформление PR по шаблону\n5. Архивация логов эпика (перемещение/zip)\n6. Все действия фиксируются в event_log и tech_log."
+    },
+    {
+      "id": "epic_retrospective_automation",
+      "title": "Автоматизация ретроспективы по завершении эпика",
+      "template": "После завершения эпика AI формирует summary, lessons learned, рекомендации и добавляет их в insights.json."
+    }
+  ],
+  "references": {
+    "onboarding": "docs/ONBOARDING_LLMSTRUCT.md",
+    "best_practices": "docs/BEST_PRACTICES_LLMSTRUCT.md",
+    "workflow": "docs/WORKFLOW_LLMSTRUCT_EPIC_MANAGEMENT.md",
+    "prompts_for_human": "docs/PROMPTS_FOR_HUMANS.md (создать при необходимости)",
+    "prompts_collection": "prompts_collection.json"
+  }
+} 
