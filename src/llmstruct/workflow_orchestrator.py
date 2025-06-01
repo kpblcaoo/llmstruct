@@ -450,10 +450,10 @@ class WorkflowOrchestrator:
         except Exception as e:
             return {"error": str(e)}
     
-    def analyze_codebase_for_duplicates(self, deep_duplicates: str = 'same-name') -> Dict[str, Any]:
+    def analyze_codebase_for_duplicates(self, deep_duplicates: str = 'same-name', no_prod_filter: bool = False) -> Dict[str, Any]:
         """Analyze codebase for duplicate functions using struct.json (AST/hash analysis by mode)."""
         if self.debug:
-            print(f"🔧 [DEBUG] Starting duplication analysis... (deep_mode={deep_duplicates})")
+            print(f"🔧 [DEBUG] Starting duplication analysis... (deep_mode={deep_duplicates}, no_prod_filter={no_prod_filter})")
         start_time = time.time()
         struct_analysis = self._get_struct_analysis()
         if "error" in struct_analysis:
@@ -480,8 +480,16 @@ class WorkflowOrchestrator:
                     func_bodies[(name, file_path)] = ast_hash
                     if deep_duplicates == "any-name":
                         all_func_bodies.append((name, file_path, ast_hash))
+        # --- Фильтрация production/архив ---
+        def is_prod_func(paths):
+            dirs = set(p.split(os.sep)[0] for p in paths)
+            return any(d in {"src", "llmstruct"} for d in dirs)
+        def is_only_tests_or_archive(paths):
+            dirs = set(p.split(os.sep)[0] for p in paths)
+            return all(d in {"tests", ".ARCHIVE", "test", "archive"} for d in dirs)
+        # ---
+        filtered_duplication_details = {}
         if deep_duplicates == "any-name":
-            # Группируем все функции по ast_hash независимо от имени
             hash_to_funcs = {}
             for name, file_path, ast_hash in all_func_bodies:
                 if not ast_hash:
@@ -492,10 +500,12 @@ class WorkflowOrchestrator:
                     continue
                 func_names = [f[0] for f in funcs]
                 paths = [f[1] for f in funcs]
+                if not no_prod_filter and is_only_tests_or_archive(paths):
+                    continue
+                filtered_duplication_details[", ".join(sorted(set(func_names)))] = paths
                 dirs = set(p.split(os.sep)[0] for p in paths)
-                is_prod = any(d in {"src", "llmstruct"} for d in dirs)
-                is_only_tests_or_archive = all(d in {"tests", ".ARCHIVE", "test", "archive"} for d in dirs)
-                if is_only_tests_or_archive:
+                is_prod = is_prod_func(paths)
+                if not no_prod_filter and is_only_tests_or_archive(paths):
                     continue
                 recommendations.append({
                     "function": ", ".join(sorted(set(func_names))),
@@ -511,10 +521,14 @@ class WorkflowOrchestrator:
                 })
         else:
             for func_name, paths in duplication.get("duplication_details", {}).items():
+                if func_name in whitelist:
+                    continue
+                if not no_prod_filter and is_only_tests_or_archive(paths):
+                    continue
+                filtered_duplication_details[func_name] = paths
                 dirs = set(p.split(os.sep)[0] for p in paths)
-                is_prod = any(d in {"src", "llmstruct"} for d in dirs)
-                is_only_tests_or_archive = all(d in {"tests", ".ARCHIVE", "test", "archive"} for d in dirs)
-                if func_name in whitelist or is_only_tests_or_archive:
+                is_prod = is_prod_func(paths)
+                if not no_prod_filter and is_only_tests_or_archive(paths):
                     continue
                 # deep_duplicates: группируем по ast_hash
                 if deep_duplicates == "same-name":
@@ -541,7 +555,10 @@ class WorkflowOrchestrator:
         if self.debug:
             print(f"🔧 [DEBUG] Generated {len(recommendations)} recommendations (filtered)")
         result = {
-            "analysis": duplication,
+            "analysis": {
+                **duplication,
+                "duplication_details": filtered_duplication_details
+            },
             "recommendations": recommendations,
             "next_steps": [
                 "Review high-priority duplicates first",
@@ -549,6 +566,7 @@ class WorkflowOrchestrator:
                 "Update imports after consolidation",
                 "Re-run struct analysis to verify improvements",
             ],
+            "prod_filter_enabled": not no_prod_filter,
             "warning": "⚠️ Анализ дубликатов может содержать ложноположительные срабатывания: совпадение только по имени не всегда означает дублирование кода. Для точного анализа используйте deep_duplicates='same-name' или 'any-name' (AST/хеш-анализ), но даже он не гарантирует 100% точность (например, если код отличается незначительно или есть динамические конструкции)."
         }
         total_time = time.time() - start_time
