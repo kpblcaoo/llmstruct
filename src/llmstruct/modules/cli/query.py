@@ -3,6 +3,7 @@ import logging
 from pathlib import Path
 from llmstruct.cache import JSONCache
 from llmstruct import LLMClient
+import os
 
 def query(args):
     """Query LLMs with prompt and context."""

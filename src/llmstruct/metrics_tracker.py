@@ -13,6 +13,8 @@ from typing import Dict, List, Optional, Any
 from dataclasses import dataclass, asdict
 import logging
 
+logger = logging.getLogger(__name__)
+
 @dataclass
 class TokenUsage:
     """Метрики использования токенов"""
