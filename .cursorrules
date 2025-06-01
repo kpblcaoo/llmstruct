@@ -25,4 +25,14 @@
 ## Ссылки:
 - Основной workflow: data/ai_workflow.json
 - Тематические правила: .cursor/rules/
-- Документация: docs/ONBOARDING_LLMSTRUCT.md, docs/BEST_PRACTICES_LLMSTRUCT.md 
+- Документация: docs/ONBOARDING_LLMSTRUCT.md, docs/BEST_PRACTICES_LLMSTRUCT.md
+
+# Known AI Pitfalls (Ошибки и ограничения AI)
+
+- Не проверяй/не архивируй файлы до merge PR и git pull develop — иначе можно потерять данные или работать с устаревшими файлами.
+- Всегда сверяйся с ai_workflow.json и meta-log перед анализом структуры или логов.
+- Если не уверен в актуальности файлов — сначала делай git pull и сверяйся с develop.
+- Lessons learned по ошибкам фиксируй в insights.json и event_log.
+- Все новые ошибки/ограничения AI должны фиксироваться здесь и в соответствующих логах/insights.
+
+(Подробнее — см. insights.json, ai_workflow.json, event_log) 
