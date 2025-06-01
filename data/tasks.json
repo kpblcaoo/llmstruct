@@ -33,7 +33,6 @@
       "description": "Зафиксировать в insights.json уроки и выводы по ошибке с удалением данных и последующим восстановлением.",
       "epic": "meta_workflow_management",
       "status": "done",
-
       "priority": "medium",
       "tags": ["insights", "lessons_learned", "workflow"],
       "created": "2025-05-26T00:00:00Z",
@@ -124,6 +123,24 @@
       "priority": "high",
       "tags": ["meta", "workflow", "standards", "prompts", "documentation", "logging"],
       "created": "2025-05-27T14:00:00Z"
+    },
+    {
+      "id": "TSK-2024-06-11-01",
+      "title": "Ревизия src/llmstruct/scripts, experimental и docs для разделения проекта",
+      "description": "Провести ревизию содержимого src/llmstruct/scripts, экспериментальных модулей и структуры docs. Зафиксировать решения: что оставить в llmstruct, что вынести в ARCHIVE, что рекомендовать для llmgenie. Все перемещения и выводы оформить в tasks/ideas/insights (draft, с тегами).",
+      "epic": "epic_project_split_2024",
+      "status": "draft",
+      "tags": ["split", "archive", "review", "llmstruct", "llmgenie", "docs"],
+      "created": "2024-06-11T00:00:00Z"
+    },
+    {
+      "id": "TSK-2024-06-11-02",
+      "title": "Интеграция валидатора в CLI llmstruct после разделения проектов",
+      "description": "После финального разделения проектов интегрировать валидатор (validate_json.py и аналоги) в CLI llmstruct для удобства проверки структуры и данных. Оформить как отдельную CLI-команду или подкоманду.",
+      "epic": "epic_project_split_2024",
+      "status": "draft",
+      "tags": ["split", "llmstruct", "cli", "validator"],
+      "created": "2024-06-11T01:00:00Z"
     }
   ]
 }
