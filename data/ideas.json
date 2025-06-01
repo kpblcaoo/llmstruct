@@ -131,6 +131,16 @@
       "priority": "low",
       "tags": ["logging", "integration", "automation", "workflow"],
       "created": "2025-05-27T13:30:00Z"
+    },
+    {
+      "id": "IDEA-017",
+      "title": "Стандартизация процесса завершения эпика и обновление мета-процесса",
+      "description": "Внедрить стандарт: финальный коммит, summary, анализ процесса, предложения по улучшениям, оформление PR, отдельная ветка на эпик, гарантия лог+действие, отдельный лог и архивация на эпик. Обновить prompts_collection.json, onboarding, документацию. Зафиксировать best practices для AI и команды.",
+      "epic": "meta_epic_process_improvement",
+      "status": "in_progress",
+      "priority": "high",
+      "tags": ["meta", "workflow", "standards", "prompts", "documentation", "logging"],
+      "created": "2025-05-27T14:05:00Z"
     }
   ]
 }
