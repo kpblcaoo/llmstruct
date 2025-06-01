@@ -1,0 +1,41 @@
+{
+  "version": "1.0.0",
+  "updated": "2025-05-26T00:35:00Z",
+  "prompts": [
+    {
+      "id": "PROMPT-001",
+      "title": "Архивирование project data перед изменениями",
+      "description": "Проверь, что перед изменением любого project data JSON-файла создана архивная копия в data/archived_jsons/ и предложи команду для восстановления из git, если архив отсутствует.",
+      "tags": ["archive", "workflow", "llm_context"],
+      "template": "Перед изменением файла {file} создай архивную копию в data/archived_jsons/. Если архив отсутствует, предложи команду для восстановления из git: git show HEAD:{file} > data/archived_jsons/{file}.archived.json"
+    },
+    {
+      "id": "PROMPT-002",
+      "title": "Добавление lessons learned и инсайтов по workflow",
+      "description": "После любого нештатного события или улучшения workflow зафиксируй инсайт в insights.json с тегами lessons_learned и workflow.",
+      "tags": ["lessons_learned", "workflow", "automation"],
+      "template": "Если обнаружена ошибка или улучшение в процессе работы, добавь запись в insights.json: {\"id\": \"INS-XXX\", \"type\": \"workflow_lesson\", ...} с тегами lessons_learned, workflow."
+    },
+    {
+      "id": "PROMPT-003",
+      "title": "Связывание задач, идей, инсайтов и PR",
+      "description": "При добавлении новой задачи, идеи, инсайта или PR обязательно указывай поля epic, tags и related_* для сквозной навигации и автоматизации.",
+      "tags": ["workflow", "llm_context", "automation"],
+      "template": "Добавь к объекту поля: \"epic\": \"meta_workflow_management\", \"tags\": [...], \"related_tasks\": [...], \"related_ideas\": [...], \"related_insights\": [...], \"related_prs\": [...] (по необходимости)."
+    },
+    {
+      "id": "PROMPT-004",
+      "title": "Генерация CLI-команд для пользователя",
+      "description": "После любого изменения project data предложи пользователю CLI-команды для проверки, фильтрации или автоматизации.",
+      "tags": ["cli", "user_experience", "workflow"],
+      "template": "После изменения файла {file} предложи команду для проверки: python scripts/epic_roadmap_manager.py epic --epic-id meta_workflow_management или аналогичную для фильтрации/отображения."
+    },
+    {
+      "id": "PROMPT-005",
+      "title": "Документирование best practices и справочников",
+      "description": "При внедрении новых практик или меток обязательно обновляй tags_reference.json и/или раздел best practices в README.",
+      "tags": ["documentation", "best_practices", "tags"],
+      "template": "После добавления новой метки или практики обнови tags_reference.json: {\"tag\": \"new_tag\", ...} и/или раздел best practices в документации."
+    }
+  ]
+} 
