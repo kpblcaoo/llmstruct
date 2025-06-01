@@ -33,6 +33,7 @@
       "description": "Зафиксировать в insights.json уроки и выводы по ошибке с удалением данных и последующим восстановлением.",
       "epic": "meta_workflow_management",
       "status": "done",
+
       "priority": "medium",
       "tags": ["insights", "lessons_learned", "workflow"],
       "created": "2025-05-26T00:00:00Z",

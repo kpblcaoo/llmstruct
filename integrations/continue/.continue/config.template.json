@@ -1,0 +1,103 @@
+{
+  "models": [
+    {
+      "title": "LLMStruct Claude",
+      "provider": "openai",
+      "model": "claude-3-haiku",
+      "apiKey": "${LLMSTRUCT_API_KEY:-dev-key}",
+      "apiBase": "${LLMSTRUCT_API_BASE:-http://localhost:8000}/api/continue",
+      "requestOptions": {
+        "headers": {
+          "X-API-Key": "${LLMSTRUCT_API_KEY:-dev-key}"
+        }
+      }
+    }
+  ],
+  "customCommands": [
+    {
+      "name": "analyze-structure",
+      "prompt": "Analyze the code structure and suggest improvements using LLMStruct patterns. Focus on modularity and maintainability.",
+      "description": "Analyze code structure with LLMStruct expertise"
+    },
+    {
+      "name": "add-context",
+      "prompt": "Add proper context orchestration to this code. Use SmartContextOrchestrator patterns and add relevant imports.",
+      "description": "Add LLMStruct context integration"
+    },
+    {
+      "name": "fastapi-endpoint",
+      "prompt": "Create a FastAPI endpoint for this functionality. Include proper error handling, logging, and authentication using our existing patterns.",
+      "description": "Generate FastAPI endpoint with LLMStruct patterns"
+    },
+    {
+      "name": "websocket-handler",
+      "prompt": "Convert this to a WebSocket handler with proper session management and real-time communication patterns from our chat system.",
+      "description": "Create WebSocket handler"
+    },
+    {
+      "name": "telegram-command",
+      "prompt": "Create a Telegram bot command handler using our memory system and epic integration patterns.",
+      "description": "Generate Telegram bot command"
+    },
+    {
+      "name": "memory-integration",
+      "prompt": "Add memory system integration with session management, user profiling, and context preservation.",
+      "description": "Add intelligent memory system"
+    }
+  ],
+  "contextProviders": [
+    {
+      "name": "file",
+      "params": {}
+    },
+    {
+      "name": "folder",
+      "params": {}
+    },
+    {
+      "name": "codebase",
+      "params": {}
+    },
+    {
+      "name": "terminal",
+      "params": {}
+    }
+  ],
+  "slashCommands": [
+    {
+      "name": "edit",
+      "description": "Edit code with AI assistance"
+    },
+    {
+      "name": "comment",
+      "description": "Add intelligent comments"
+    },
+    {
+      "name": "share",
+      "description": "Share code context"
+    },
+    {
+      "name": "cmd",
+      "description": "Generate terminal commands"
+    },
+    {
+      "name": "epic",
+      "description": "Generate epic/task management code"
+    },
+    {
+      "name": "memory",
+      "description": "Add memory system features"
+    }
+  ],
+  "allowAnonymousTelemetry": false,
+  "embeddingsProvider": {
+    "provider": "transformers.js"
+  },
+  "tabAutocompleteModel": {
+    "title": "LLMStruct Autocomplete",
+    "provider": "openai",
+    "model": "claude-3-haiku",
+    "apiKey": "${LLMSTRUCT_API_KEY:-dev-key}",
+    "apiBase": "${LLMSTRUCT_API_BASE:-http://localhost:8000}/api/continue"
+  }
+} 

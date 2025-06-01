@@ -1,0 +1,16 @@
+{
+  "session_id": "demo-session",
+  "created_at": "2025-05-30T02:19:07.282608",
+  "last_activity": "2025-05-30T02:19:07.285797",
+  "message_count": 1,
+  "messages": [
+    {
+      "id": 1,
+      "role": "user",
+      "content": "{\"message\": \"Hello WebSocket!\", \"context_mode\": \"focused\"}",
+      "timestamp": "2025-05-30T02:19:07.285797",
+      "metadata": {}
+    }
+  ],
+  "metadata": {}
+}

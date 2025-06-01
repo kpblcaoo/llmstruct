@@ -76,31 +76,41 @@ jobs:
       run: |
         echo "🔍 Проверяем основные команды CLI..."
         
-        # Создаем директорию docs если её нет (для логов)
-        mkdir -p docs
+        # Создаем директорию для логов
+        mkdir -p ci-logs
         
         # Тестируем parse на самом проекте
-        python -m llmstruct parse . -o test_output.json || {
-          echo "⚠️ Parse команда не сработала, но это некритично"
+        echo "=== CLI Parse Test ===" > ci-logs/cli-test.log
+        python -m llmstruct parse . -o test_output.json 2>&1 | tee -a ci-logs/cli-test.log || {
+          echo "⚠️ Parse команда не сработала, но это некритично" | tee -a ci-logs/cli-test.log
+          echo "FAILED" > ci-logs/cli-status.txt
           exit 0
         }
         
         if [ -f "test_output.json" ]; then
-            echo "✅ Parse команда создала файл"
-            ls -la test_output.json
+            echo "✅ Parse команда создала файл" | tee -a ci-logs/cli-test.log
+            ls -la test_output.json | tee -a ci-logs/cli-test.log
+            echo "SUCCESS" > ci-logs/cli-status.txt
         else
-            echo "⚠️ Parse команда не создала файл, но продолжаем"
+            echo "⚠️ Parse команда не создала файл, но продолжаем" | tee -a ci-logs/cli-test.log
+            echo "PARTIAL" > ci-logs/cli-status.txt
         fi
         
-        echo "✅ Тестирование CLI завершено"
+        echo "✅ Тестирование CLI завершено" | tee -a ci-logs/cli-test.log
     
     - name: Check style warnings (NON-CRITICAL)
       run: |
         echo "🔍 Проверяем стиль кода (некритично)..."
-        flake8 src/llmstruct --max-line-length=88 --statistics || {
-          echo "⚠️ Есть предупреждения по стилю, но это некритично"
+        
+        # Создаем лог файл для стиля
+        echo "=== Style Check ===" > ci-logs/style-check.log
+        flake8 src/llmstruct --max-line-length=88 --statistics 2>&1 | tee -a ci-logs/style-check.log || {
+          echo "⚠️ Есть предупреждения по стилю, но это некритично" | tee -a ci-logs/style-check.log
+          echo "WARNINGS" > ci-logs/style-status.txt
+          exit 0
         }
-        echo "✅ Проверка стиля завершена"
+        echo "SUCCESS" > ci-logs/style-status.txt
+        echo "✅ Проверка стиля завершена" | tee -a ci-logs/style-check.log
     
     - name: Final validation (CRITICAL)
       run: |
@@ -118,3 +128,38 @@ jobs:
         
         print('✅ Проект полностью рабочий!')
         " 
+    
+    # Сохраняем результаты некритичных тестов
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      if: always()  # Всегда выполняется, даже если что-то упало
+      with:
+        name: ci-test-results
+        path: |
+          ci-logs/
+          test_output.json
+        retention-days: 30
+    
+    # Показываем краткий отчет
+    - name: Summary of non-critical tests
+      if: always()
+      run: |
+        echo "📊 Краткий отчет по некритичным тестам:"
+        echo "=================================="
+        
+        if [ -f "ci-logs/cli-status.txt" ]; then
+          CLI_STATUS=$(cat ci-logs/cli-status.txt)
+          echo "🔧 CLI тесты: $CLI_STATUS"
+        else
+          echo "🔧 CLI тесты: НЕ ЗАПУСКАЛИСЬ"
+        fi
+        
+        if [ -f "ci-logs/style-status.txt" ]; then
+          STYLE_STATUS=$(cat ci-logs/style-status.txt)
+          echo "🎨 Проверка стиля: $STYLE_STATUS"
+        else
+          echo "🎨 Проверка стиля: НЕ ЗАПУСКАЛАСЬ"
+        fi
+        
+        echo "=================================="
+        echo "📁 Полные логи доступны в Artifacts" 
