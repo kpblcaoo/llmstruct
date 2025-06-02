@@ -1,0 +1,5 @@
+[2024-06-12TXX:XX:XXZ] [ai_assistant] [merge] idea IDEA-2024-06-12-001 из корня в data/ideas.json
+[2024-06-12TXX:XX:XXZ] [ai_assistant] [delete] удалён устаревший файл ideas.json из корня
+[2024-06-12TXX:XX:XXZ] [ai_assistant] [workflow_update] добавлен стандарт хранения project data JSON-файлов только в data/ (docs, ai_workflow.json)
+[2024-06-12TXX:XX:XXZ] [ai_assistant] [workflow_update] внедрён стандарт сессионного контроля и тотального логирования для всех рабочих ситуаций
+[2024-06-12TXX:XX:XXZ] [ai_assistant] [session_end] Все ключевые изменения по эпик session control, memo, workflow и правилам зафиксированы. Сессия завершена, можно безопасно выходить. 

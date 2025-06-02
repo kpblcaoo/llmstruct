@@ -196,6 +196,39 @@
       "status": "draft",
       "tags": ["workflow", "rules", "architecture", "ai", "llmstruct", "cursor"],
       "created": "2024-06-11T02:00:00Z"
+    },
+    {
+      "id": "IDEA-2024-06-12-001",
+      "epic": "epic_ai_planning_mode_2024",
+      "title": "AI Planning Mode & Context Aggregation",
+      "description": "Внедрить и протестировать механизм сбора и выдачи агрегированного summary/контекста (статусы, связи, lessons learned, roadmap) для режима планирования и передачи LLM только релевантной информации. Цель — повысить эффективность планирования, снизить перегрузку контекста и ускорить старт новых эпиков.",
+      "tags": ["planning", "context", "llm", "workflow", "summary"],
+      "related_tasks": [],
+      "related_ideas": [],
+      "related_insights": [],
+      "related_prs": [],
+      "date": "2024-06-12"
+    },
+    {
+      "id": "EPIC-2024-06-session-control",
+      "title": "Универсальный сессионный контроль и тотальное логирование",
+      "description": "Внедрение сессионного контроля и тотального логирования для всех рабочих ситуаций (эпики, планирование, обсуждение, debug, тесты и др.): отдельные event_log, tech_log, meta-log для каждой сессии, автоматизация создания и переключения, AI-рекомендации по смене типа сессии, фиксация workflow improvements.",
+      "epic": "epic_session_control_2024",
+      "status": "planned",
+      "tags": ["session_control", "logging", "workflow", "automation", "ai"],
+      "created": "2024-06-12T00:00:00Z",
+      "related_tasks": [],
+      "related_ideas": [],
+      "related_insights": ["INS-2024-06-12-02"],
+      "memo": "docs/internal/memos/session_control_epic_memo.md"
+    },
+    {
+      "id": "IDEA-2024-06-12-MANIFEST",
+      "epic": "epic_manifest_and_data_structure_2024",
+      "title": "Внедрение manifest-файла и стандартизация структуры project data",
+      "description": "Разработать и внедрить manifest-файл (data/project_manifest.json) с перечнем всех актуальных project data JSON-файлов, их типами, статусом и путями. Обновить ai_workflow.json, .cursor/rules/ и документацию. Ввести стандарты именования и хранения, интегрировать manifest в автоматизации AI.",
+      "tags": ["manifest", "workflow", "ai", "data_structure", "standardization"],
+      "date": "2024-06-12"
     }
   ]
 }
