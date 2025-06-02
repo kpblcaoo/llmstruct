@@ -170,3 +170,8 @@ backup_*/
 
 # LLMStruct indexes and caches
 .llmstruct_*
+
+data
+.cursor
+.cursorrules
+prompts_collection.json
