@@ -1,4 +1,6 @@
-# Восстановлено из ARCHIVE/to_review/cache.py
+# Восстановлено из ARCHIVE/to_review/cache.py 
+
+# cache.py
 # Copyright (C) 2025 Mikhail Stepanov
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -127,5 +129,4 @@ class JSONCache:
 
     def close(self):
         """Close database connection."""
-        self.conn.close()
- 
+        self.conn.close() 

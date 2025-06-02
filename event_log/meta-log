@@ -2,4 +2,18 @@
 [2024-06-12TXX:XX:XXZ] [ai_assistant] [delete] удалён устаревший файл ideas.json из корня
 [2024-06-12TXX:XX:XXZ] [ai_assistant] [workflow_update] добавлен стандарт хранения project data JSON-файлов только в data/ (docs, ai_workflow.json)
 [2024-06-12TXX:XX:XXZ] [ai_assistant] [workflow_update] внедрён стандарт сессионного контроля и тотального логирования для всех рабочих ситуаций
-[2024-06-12TXX:XX:XXZ] [ai_assistant] [session_end] Все ключевые изменения по эпик session control, memo, workflow и правилам зафиксированы. Сессия завершена, можно безопасно выходить. 
+[2024-06-12TXX:XX:XXZ] [ai_assistant] [session_end] Все ключевые изменения по эпик session control, memo, workflow и правилам зафиксированы. Сессия завершена, можно безопасно выходить.
+[2024-06-12T00:01:00Z] [ai_assistant] [split] Создана ветка split/initial-structure для изолированной работы над разделением проекта
+[2024-06-12T00:02:00Z] [ai_assistant] [split] cli.py и modules/ (включая modules/cli/) скопированы в новый проект llmgenie
+[2024-06-12T00:03:00Z] [ai_assistant] [split] .cursor, .cursorrules, data/, prompts_collection.json, docs/ скопированы в llmgenie
+[2024-06-12T00:04:00Z] [ai_assistant] [split] Создана папка docs/to_sort в llmgenie для временного хранения спорных файлов
+[2024-06-12T10:00:00Z] [ai_assistant] [split] Созданы директории src/llmgenie, docs/user-guide, docs/workflow, docs/to_sort, requirements, deployment в llmgenie
+[2024-06-12T10:05:00Z] [ai_assistant] [split] cli.py и modules/ перемещены в src/llmgenie/ для соблюдения структуры split 
+[2024-06-12T10:10:00Z] [ai_assistant] [split] requirements и deployment перенесены из llmgenie/llmgenie в корень llmgenie, так как не относятся к workflow и не используются агентом напрямую 
+[2024-06-12T10:15:00Z] [ai_assistant] [split] Скопированы data, .cursor, .cursorrules, prompts_collection.json, docs в llmgenie для дальнейшей сортировки и настройки симлинков 
+[2024-06-12T10:20:00Z] [ai_assistant] [split] Перемещены data, .cursor, .cursorrules, prompts_collection.json, docs в корень llmgenie для финализации структуры split 
+[2024-06-12T10:25:00Z] [ai_assistant] [split] Все неотсортированные и стыковые файлы/папки из docs/ перемещены в docs/to_sort для дальнейшего анализа и распределения
+[2024-06-12T10:30:00Z] [ai_assistant] [split] Содержимое перенесено в src/llmgenie/ в корне llmgenie, лишние директории удалены для соответствия best practices
+[2024-06-12T10:40:00Z] [ai_assistant] [split] pr_body.md и project_restructure_plan.md архивированы, служебные скрипты (run_ai_diagnostics.py, start_development.py, struct_cache_manager.py, validate_schemas.py, validate_sessions.py) перемещены в ARCHIVE/to_review для последующего ревью
+[2024-06-12T10:50:00Z] [ai_assistant] [split] Все неиспользуемые для core/parsing/cli/modules файлы из src/llmstruct/ перемещены в ARCHIVE/to_review для последующего ревью
+[2024-06-12T11:00:00Z] [ai_assistant] [split] Удалены дублирующиеся файлы и папки из docs/ llmstruct, workflow/data-файлы заменены на симлинки на ../llmgenie (data, .cursor, .cursorrules, prompts_collection.json)

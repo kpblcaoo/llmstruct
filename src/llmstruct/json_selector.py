@@ -128,4 +128,4 @@ if __name__ == "__main__":
     result = select_json(
         args.json_path, args.filter_key, args.filter_value, args.fields, args.partial
     )
-    print(json.dumps(result, indent=2))
+    print(json.dumps(result, indent=2)) 
