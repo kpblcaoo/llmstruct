@@ -1,0 +1,41 @@
+{
+  "epics_format": {
+    "fields": ["id", "name", "status", "priority", "github_epic_issue", "estimated_sessions", "estimated_duration", "branch_pattern", "description", "dependencies", "planned_sessions", "success_criteria"],
+    "planned_session_fields": ["session_id", "title", "type", "target_issues", "estimated_duration", "branch", "status", "progress"],
+    "naming_conventions": {
+      "epic_sessions": "SES-E{epic_number}-{session_number}",
+      "epic_branches": "ai/epic-{number}-session-{session_number}-{description}",
+      "single_task_sessions": "SES-T{task_number}",
+      "single_task_branches": "ai/task-{task_number}-{description}"
+    },
+    "workflow": {
+      "session_start": [
+        "1. Choose epic or single task",
+        "2. Create appropriate branch",
+        "3. Update current_session.json",
+        "4. Prepare AI context",
+        "5. Start work session"
+      ],
+      "session_end": [
+        "1. Complete target issues",
+        "2. Create PR with references",
+        "3. Update session status",
+        "4. Archive session data",
+        "5. Switch to next session"
+      ]
+    },
+    "critical_path": ["epic_1", "epic_2", "epic_3"],
+    "parallel_possible": ["epic_4", "epic_5_fastapi_implementation"],
+    "integration": {
+      "github_sync": {
+        "epic_issues_source": "processing_results/github_epics_2025-05-29.json",
+        "sync_script": "scripts/github_sync_manager_enhanced.py"
+      }
+    },
+    "statistics": {
+      "total_epics": 5,
+      "total_planned_sessions": 16,
+      "estimated_total_duration": "11 weeks"
+    }
+  }
+} 

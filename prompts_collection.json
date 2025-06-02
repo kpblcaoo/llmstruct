@@ -67,10 +67,39 @@
     },
     {
       "id": "epic_full_setup_standard",
-      "title": "Стандарт оформления эпика (ветка, логи, инициирующая идея и задача)",
-      "description": "При старте эпика: создать отдельную ветку от develop, оформить event_log и tech_log, добавить инициирующую идею и задачу в ideas.json и tasks.json.",
-      "tags": ["meta", "workflow", "epic", "standards"],
-      "template": "1. Создать ветку epic/<epic_id>-to-develop от develop\n2. Оформить event_log и tech_log для эпика\n3. Добавить инициирующую идею в ideas.json\n4. Добавить задачу в tasks.json\n5. Все действия фиксировать в логах"
+      "title": "Epic full setup (standard)",
+      "template": "1. Create branch epic/<epic_id>-to-develop from develop\n2. Initialize event_log and tech_log for the epic\n3. Add initiating idea to ideas.json\n4. Add task to tasks.json\n5. Log all actions",
+      "usage": "Used by AI and CLI to standardize epic setup."
+    },
+    {
+      "id": "epic_finish_standard",
+      "title": "Epic finish (standard)",
+      "template": "1. Final commit\n2. Write summary (implemented, key files, lessons learned, recommendations)\n3. Analyze process\n4. Create PR using template\n5. Archive epic logs (move/zip)\n6. Log all actions in event_log and tech_log.",
+      "usage": "Used by AI and CLI to standardize epic completion."
+    }
+  ],
+  "code": [
+    {
+      "id": "code_quality_check",
+      "title": "Code Quality Check",
+      "template": "Run flake8, mypy, black, isort on the codebase. Aggregate results and generate a summary report.",
+      "usage": "Used by AI to automate code quality analysis."
+    }
+  ],
+  "debug": [
+    {
+      "id": "debug_issue_template",
+      "title": "Debug Issue Template",
+      "template": "1. Describe the issue\n2. List steps to reproduce\n3. Attach logs and screenshots\n4. Suggest possible causes\n5. Propose next steps",
+      "usage": "Used by AI to structure bug reports and debugging sessions."
+    }
+  ],
+  "retrospective": [
+    {
+      "id": "retrospective_summary",
+      "title": "Retrospective Summary",
+      "template": "1. What went well?\n2. What could be improved?\n3. Lessons learned\n4. Action items for next time",
+      "usage": "Used by AI to generate retrospective summaries after epics or sprints."
     }
   ]
 } 

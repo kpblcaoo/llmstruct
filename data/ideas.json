@@ -164,7 +164,7 @@
     {
       "id": "IDEA-2024-06-11-01",
       "title": "Стандартизировать CLI/API-интерфейс для интеграции llmstruct и llmgenie",
-      "description": "Определить и реализовать стандартные команды и API для seamless integration между llmstruct и llmgenie, чтобы обеспечить простоту использования и обновления.",
+      "description": "Определить и реализовать стандартные команды и API для seamless integration between llmstruct and llmgenie, чтобы обеспечить простоту использования и обновления.",
       "epic": "epic_project_split_2024",
       "status": "draft",
       "tags": ["cli", "api", "integration", "llmstruct", "llmgenie"],
@@ -228,6 +228,22 @@
       "title": "Внедрение manifest-файла и стандартизация структуры project data",
       "description": "Разработать и внедрить manifest-файл (data/project_manifest.json) с перечнем всех актуальных project data JSON-файлов, их типами, статусом и путями. Обновить ai_workflow.json, .cursor/rules/ и документацию. Ввести стандарты именования и хранения, интегрировать manifest в автоматизации AI.",
       "tags": ["manifest", "workflow", "ai", "data_structure", "standardization"],
+      "date": "2024-06-12"
+    },
+    {
+      "id": "IDEA-2024-06-12-PROMPT-VALIDATOR",
+      "epic": "epic_manifest_and_data_structure_2024",
+      "title": "CLI validator for prompts_collection.json and attention_marker/llm_context",
+      "description": "Develop a CLI tool to validate the structure and completeness of prompts_collection.json and attention_marker/llm_context fields in project data. Automate manifest/prompts updates and provide user feedback.",
+      "tags": ["cli", "validator", "prompts", "manifest", "automation", "ai"],
+      "date": "2024-06-12"
+    },
+    {
+      "id": "IDEA-2024-06-12-RELATED-FILES",
+      "epic": "epic_manifest_and_data_structure_2024",
+      "title": "Standardize cross-references (related_files/references) between project data JSON files",
+      "description": "Add and enforce related_files/references fields in all project data JSON files (ideas, tasks, prompts, manifest, etc.) to explicitly document and automate their relationships. Update documentation and manifest accordingly.",
+      "tags": ["manifest", "references", "related_files", "automation", "ai", "data_structure"],
       "date": "2024-06-12"
     }
   ]

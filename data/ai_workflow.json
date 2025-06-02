@@ -171,5 +171,16 @@
     "best_practices": [
       "AI в первую очередь ориентируется на файлы, перечисленные в manifest, для автоматизации и поиска данных. При необходимости допускается работа с дополнительными файлами, если это явно указано пользователем или требуется по контексту задачи. Все новые или временные файлы рекомендуется оперативно добавлять в manifest для поддержания прозрачности и воспроизводимости."
     ]
+  },
+  "prompts_collection": {
+    "description": "All AI/LLM prompts are stored in prompts_collection.json (English, structured by section: workflow, code, debug, retrospective, etc.). AI uses prompt id from ai_workflow.json or project_manifest.json to find and apply the template. User can extend prompts_collection.json, AI will automatically use new prompts.",
+    "path": "prompts_collection.json",
+    "best_practices": [
+      "All prompts for AI/LLM must be in English for maximum compatibility.",
+      "Each workflow stage should have a dedicated prompt.",
+      "All changes to prompts_collection.json must be logged.",
+      "User can view, edit, and add prompts via CLI or editor.",
+      "If prompt is missing, AI should notify the user and suggest to add it."
+    ]
   }
 } 

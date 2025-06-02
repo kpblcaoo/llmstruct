@@ -1,5 +1,19 @@
 # Onboarding: llmstruct Workflow, Project Data & LLM-Orchestration
 
+---
+
+## Быстрый старт: промт для запуска AI/LLM-сессии
+
+Скопируйте и вставьте нижеследующий промт при запуске новой сессии или чата с AI — это обеспечит корректный старт работы по всем правилам проекта.
+
+```
+Restore the working context for the llmstruct project. Use user rules, .cursor/rules/, data/ai_workflow.json, project_manifest.json, and prompts_collection.json as your main references. Follow the branch policy: do not make any changes outside of tasks, epics, or ideas unless you are in an active session (a new branch for a task or epic). Log all key actions and warn about risks if working
+```
+
+- Этот промт предназначен передачи AI/LLM в начале работы.
+- Prompts for AI/LLM: English only
+- User-facing text: Russian (or user-selected language)
+
 Добро пожаловать в обновлённую экосистему llmstruct! Этот гайд поможет быстро освоить новые подходы к работе с задачами, идеями, инсайтами, PR и автоматизацией с помощью LLM.
 
 ---
@@ -166,3 +180,18 @@ epic(<epic_id>): summary изменений
 - Логируйте каждое взаимодействие: действия пользователя, AI, системные события.
 - AI обязан подмечать и фиксировать возможности улучшения workflow (insights.json или отдельный лог).
 - Регулярно анализируйте логи для выявления паттернов и улучшений. 
+
+## Language Policy for Prompts and Communication
+
+- All prompts intended for AI/LLM (prompts_collection.json, workflow, automation) must be written in English for maximum compatibility and reproducibility.
+- All communication, advice, and discussion for the user can be in Russian (or any language the user prefers).
+- This ensures LLM compatibility and user comfort.
+
+### Example: Start Prompt for New Session
+
+```
+Восстанови рабочий контекст по проекту llmstruct. Ориентируйся на user rules, .cursor/rules/, data/ai_workflow.json, project_manifest.json, prompts_collection.json. Соблюдай branch policy: не изменяй ничего вне сессии/ветки, логируй все действия, предупреждай о рисках вне сессии. Давай советы объективно, не подстраиваясь под мои ожидания. Общайся со мной на русском, но промты для AI используй на английском.
+```
+
+- Prompts for AI/LLM: English only
+- User-facing text: Russian (or user-selected language) 
