@@ -143,15 +143,7 @@ jobs:
         echo "## 📊 Краткий отчет по CI" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### 🧪 Выполненные тесты" >> $GITHUB_STEP_SUMMARY
-        echo "- Установка зависимостей" >> $GITHUB_STEP_SUMMARY
-        echo "- Проверка синтаксиса Python" >> $GITHUB_STEP_SUMMARY
-        echo "- Критический lint (flake8)" >> $GITHUB_STEP_SUMMARY
-        echo "- Импорт модулей" >> $GITHUB_STEP_SUMMARY
-        echo "- CLI help" >> $GITHUB_STEP_SUMMARY
-        echo "- CLI parse" >> $GITHUB_STEP_SUMMARY
         echo "- Проверка валидности JSON" >> $GITHUB_STEP_SUMMARY
-        echo "- Проверка стиля" >> $GITHUB_STEP_SUMMARY
-        echo "- Финальная валидация" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         if [ -f "ci-logs/cli-status.txt" ]; then
           CLI_STATUS=$(cat ci-logs/cli-status.txt)
@@ -179,8 +171,10 @@ jobs:
       if: always()
       run: |
         if [ -f "test_output.json" ]; then
-          python -c "import json;\nwith open('test_output.json') as f:\n    s = json.load(f).get('stats')\n    if s:\n        print('### 📈 Stats')\n        for k, v in s.items():\n            print(f'- {k}: {v}')\n" >> $GITHUB_STEP_SUMMARY
-        fi
+          echo "import json\nwith open('test_output.json') as f:\n    s = json.load(f).get('stats')\n    if s:\n        print('### 📈 Stats')\n        for k, v in s.items():\n            print('- {}: {}'.format(k, v))" > print_stats.py || true
+          python print_stats.py >> $GITHUB_STEP_SUMMARY || true
+          rm print_stats.py || true
+        fi || true
     
     # Сохраняем результаты некритичных тестов
     - name: Upload test results
