@@ -137,6 +137,32 @@ jobs:
         print('✅ Проект полностью рабочий!')
         " 
     
+    - name: Write job summary
+      if: always()
+      run: |
+        echo "## 📊 Краткий отчет по CI" >> $GITHUB_STEP_SUMMARY
+        if [ -f "ci-logs/cli-status.txt" ]; then
+          CLI_STATUS=$(cat ci-logs/cli-status.txt)
+          echo "- 🔧 CLI тесты: $CLI_STATUS" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "- �� CLI тесты: НЕ ЗАПУСКАЛИСЬ" >> $GITHUB_STEP_SUMMARY
+        fi
+        if [ -f "ci-logs/style-status.txt" ]; then
+          STYLE_STATUS=$(cat ci-logs/style-status.txt)
+          echo "- 🎨 Проверка стиля: $STYLE_STATUS" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "- 🎨 Проверка стиля: НЕ ЗАПУСКАЛАСЬ" >> $GITHUB_STEP_SUMMARY
+        fi
+        if [ -f "test_output.json" ]; then
+          python -c "import json; json.load(open('test_output.json'))" && \
+            echo '- 🗂️ test_output.json: ВАЛИДЕН' >> $GITHUB_STEP_SUMMARY || \
+            echo '- 🗂️ test_output.json: НЕВАЛИДЕН' >> $GITHUB_STEP_SUMMARY
+        else
+          echo '- 🗂️ test_output.json: НЕ СОЗДАН' >> $GITHUB_STEP_SUMMARY
+        fi
+        echo '' >> $GITHUB_STEP_SUMMARY
+        echo '📁 Полные логи доступны в Artifacts.' >> $GITHUB_STEP_SUMMARY
+    
     # Сохраняем результаты некритичных тестов
     - name: Upload test results
       uses: actions/upload-artifact@v4
