@@ -143,7 +143,6 @@ jobs:
         echo "## 📊 Краткий отчет по CI" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### 🧪 Выполненные тесты" >> $GITHUB_STEP_SUMMARY
-        echo "- Проверка валидности JSON" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         if [ -f "ci-logs/cli-status.txt" ]; then
           CLI_STATUS=$(cat ci-logs/cli-status.txt)
@@ -167,16 +166,6 @@ jobs:
         echo '' >> $GITHUB_STEP_SUMMARY
         echo '📁 Полные логи доступны в Artifacts.' >> $GITHUB_STEP_SUMMARY
 
-    - name: Write stats to summary
-      if: always()
-      run: |
-        if [ -f "test_output.json" ]; then
-          echo "import json\nwith open('test_output.json') as f:\n    s = json.load(f).get('stats')\n    if s:\n        print('### 📈 Stats')\n        for k, v in s.items():\n            print('- {}: {}'.format(k, v))" > print_stats.py || true
-          python print_stats.py >> $GITHUB_STEP_SUMMARY || true
-          rm print_stats.py || true
-        fi || true
-    
-    # Сохраняем результаты некритичных тестов
     - name: Upload test results
       uses: actions/upload-artifact@v4
       if: always()  # Всегда выполняется, даже если что-то упало
