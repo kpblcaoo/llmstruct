@@ -75,10 +75,8 @@ jobs:
     - name: Test CLI basic commands (NON-CRITICAL)
       run: |
         echo "🔍 Проверяем основные команды CLI..."
-        
         # Создаем директорию для логов
         mkdir -p ci-logs
-        
         # Тестируем parse на самом проекте
         echo "=== CLI Parse Test ===" > ci-logs/cli-test.log
         python -m llmstruct parse . -o test_output.json 2>&1 | tee -a ci-logs/cli-test.log || {
@@ -86,7 +84,6 @@ jobs:
           echo "FAILED" > ci-logs/cli-status.txt
           exit 0
         }
-        
         if [ -f "test_output.json" ]; then
             echo "✅ Parse команда создала файл" | tee -a ci-logs/cli-test.log
             ls -la test_output.json | tee -a ci-logs/cli-test.log
@@ -95,8 +92,19 @@ jobs:
             echo "⚠️ Parse команда не создала файл, но продолжаем" | tee -a ci-logs/cli-test.log
             echo "PARTIAL" > ci-logs/cli-status.txt
         fi
-        
         echo "✅ Тестирование CLI завершено" | tee -a ci-logs/cli-test.log
+
+    - name: Validate test_output.json (CRITICAL)
+      run: |
+        if [ -f "test_output.json" ]; then
+          echo "🔍 Проверяем валидность test_output.json..."
+          python -c "import json; json.load(open('test_output.json'))" && \
+            echo "✅ test_output.json валиден" || \
+            (echo "❌ test_output.json НЕвалиден" && exit 1)
+        else
+          echo "❌ test_output.json не найден, не могу проверить валидность"
+          exit 1
+        fi
     
     - name: Check style warnings (NON-CRITICAL)
       run: |
