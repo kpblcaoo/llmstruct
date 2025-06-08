@@ -12,16 +12,17 @@ class LLMStructAssistantViewProvider implements vscode.WebviewViewProvider {
   ) {
     const config = vscode.workspace.getConfiguration('llmstruct');
     const backendUrl = config.get<string>('backendUrl', 'http://localhost:8000');
+    const apiKey = config.get<string>('apiKey', '');
 
     webviewView.webview.options = {
       enableScripts: true,
       localResourceRoots: [this._extensionUri]
     };
 
-    webviewView.webview.html = this._getHtmlContent(webviewView.webview, backendUrl);
+    webviewView.webview.html = this._getHtmlContent(webviewView.webview, backendUrl, apiKey);
   }
 
-  private _getHtmlContent(webview: vscode.Webview, backendUrl: string): string {
+  private _getHtmlContent(webview: vscode.Webview, backendUrl: string, apiKey: string): string {
     const nonce = getNonce();
     return `<!DOCTYPE html>
       <html lang="en">
@@ -53,15 +54,7 @@ class LLMStructAssistantViewProvider implements vscode.WebviewViewProvider {
             const input = document.getElementById('user-input');
             const btn = document.getElementById('send-btn');
             const backendUrl = "${backendUrl}";
-            // Получаем apiKey из настроек расширения через postMessage
-            let apiKey = '';
-            window.addEventListener('message', event => {
-              if (event.data && event.data.type === 'llmstruct-api-key') {
-                apiKey = event.data.value || '';
-              }
-            });
-            // Запрашиваем apiKey у расширения
-            window.parent.postMessage({ type: 'llmstruct-get-api-key' }, '*');
+            const apiKey = "${apiKey}";
 
             function appendMsg(text, who) {
               const div = document.createElement('div');
