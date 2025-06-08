@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .routes import chat, health
+from .routes import chat, health, parse
 
 app = FastAPI(
     title="LLMStruct API",
@@ -17,4 +17,5 @@ app.add_middleware(
 )
 
 app.include_router(health.router, prefix="/api/v1", tags=["system"])
-app.include_router(chat.router, prefix="/api/v1", tags=["chat"]) 
+app.include_router(chat.router, prefix="/api/v1", tags=["chat"])
+app.include_router(parse.router, prefix="/api/v1", tags=["parse"]) 
