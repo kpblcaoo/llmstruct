@@ -242,6 +242,44 @@ python run_ai_diagnostics.py stress
 - **AI Integration**: Check `data/cursor/` for Cursor IDE configuration
 - **Documentation**: All docs are JSON-based and AI-optimized
 
+## Архитектура и интеграция (2024-06)
+
+### 1. Выделение бизнес-логики
+- Вся логика анализа структуры кода вынесена в `src/llmstruct/core/parse.py`.
+- CLI и API используют одну функцию `parse_codebase` — нет дублирования.
+
+### 2. FastAPI backend
+- Современный FastAPI backend с CORS, строгой типизацией, версионированием (`/api/v1`).
+- Эндпоинты:
+  - `/api/v1/health` — health-check
+  - `/api/v1/chat/message` — чат-заглушка
+  - `/api/v1/parse` — анализ структуры кода по локальному пути (root_dir)
+- Авторизация через API-ключ (заголовок `Authorization: Bearer ...`).
+
+### 3. Пример использования API
+
+```bash
+curl -X POST http://localhost:8000/api/v1/parse \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer dev-key" \
+  -d '{
+    "root_dir": "/path/to/your/project",
+    "include": ["*.py"],
+    "exclude": ["tests/*"],
+    "include_ranges": true,
+    "use_cache": false
+  }' | jq '.' > struct.json
+```
+
+### 4. Для локального использования
+- Нет необходимости загружать архивы или использовать session_id.
+- Анализ идёт напрямую по локальному пути.
+- Удобно интегрировать с VSCode, CLI, web.
+
+### 5. Рекомендации
+- Для облачного режима upload/session endpoints можно реализовать отдельно.
+- Для локального сценария — максимально простая архитектура.
+
 ---
 
 **🧠 Built with AI self-awareness • 🎯 Optimized for Cursor IDE • 📋 JSON-native documentation**
