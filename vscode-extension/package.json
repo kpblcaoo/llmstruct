@@ -1,0 +1,64 @@
+{
+  "name": "llmstruct-assistant",
+  "displayName": "llmstruct Assistant (private)",
+  "description": "AI-ассистент для работы с кодом на базе llmstruct. Чат, подсказки, автодополнение, навигация.",
+  "version": "0.1.0",
+  "publisher": "llmstruct-private",
+  "engines": {
+    "vscode": ">=1.70.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "llmstruct-assistant",
+          "title": "llmstruct Assistant",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "llmstruct-assistant": [
+        {
+          "type": "webview",
+          "id": "llmstruct-assistant-view",
+          "name": "llmstruct Assistant",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "llmstruct Assistant Settings",
+      "properties": {
+        "llmstruct.backendUrl": {
+          "type": "string",
+          "default": "http://localhost:8000",
+          "description": "Адрес backend llmstruct (например, http://localhost:8000)"
+        },
+        "llmstruct.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API-ключ для доступа к backend (если требуется)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.70.0",
+    "typescript": "^4.9.5",
+    "vsce": "^2.15.0"
+  },
+  "dependencies": {}
+}
