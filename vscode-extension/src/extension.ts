@@ -53,6 +53,15 @@ class LLMStructAssistantViewProvider implements vscode.WebviewViewProvider {
             const input = document.getElementById('user-input');
             const btn = document.getElementById('send-btn');
             const backendUrl = "${backendUrl}";
+            // Получаем apiKey из настроек расширения через postMessage
+            let apiKey = '';
+            window.addEventListener('message', event => {
+              if (event.data && event.data.type === 'llmstruct-api-key') {
+                apiKey = event.data.value || '';
+              }
+            });
+            // Запрашиваем apiKey у расширения
+            window.parent.postMessage({ type: 'llmstruct-get-api-key' }, '*');
 
             function appendMsg(text, who) {
               const div = document.createElement('div');
@@ -69,14 +78,20 @@ class LLMStructAssistantViewProvider implements vscode.WebviewViewProvider {
               input.value = '';
               btn.disabled = true;
               try {
-                const resp = await fetch(backendUrl + '/chat', {
+                const headers = { 'Content-Type': 'application/json' };
+                if (apiKey) headers['Authorization'] = 'Bearer ' + apiKey;
+                const resp = await fetch(backendUrl + '/api/v1/chat/message', {
                   method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({ message: msg })
+                  headers,
+                  body: JSON.stringify({ content: msg })
                 });
-                if (!resp.ok) throw new Error('Ошибка сети: ' + resp.status);
+                if (!resp.ok) {
+                  let errText = 'Ошибка сети: ' + resp.status;
+                  try { const err = await resp.json(); if (err.detail) errText += ' — ' + err.detail; } catch {}
+                  throw new Error(errText);
+                }
                 const data = await resp.json();
-                appendMsg('Ассистент: ' + (data.reply || '[нет ответа]'), 'bot');
+                appendMsg('Ассистент: ' + (data.content || '[нет ответа]'), 'bot');
               } catch (e) {
                 appendMsg('Ошибка: ' + e, 'bot');
               } finally {
