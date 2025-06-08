@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import { Buffer } from 'buffer';
 
 class LLMStructAssistantViewProvider implements vscode.WebviewViewProvider {
   public static readonly viewType = 'llmstruct-assistant-view';
@@ -20,6 +21,52 @@ class LLMStructAssistantViewProvider implements vscode.WebviewViewProvider {
     };
 
     webviewView.webview.html = this._getHtmlContent(webviewView.webview, backendUrl, apiKey);
+
+    // Обработка сообщений от webview
+    webviewView.webview.onDidReceiveMessage(async (msg: any) => {
+      if (msg.type === 'pickProjectDir') {
+        const folderUri = await vscode.window.showOpenDialog({
+          canSelectFolders: true,
+          canSelectFiles: false,
+          canSelectMany: false,
+          openLabel: 'Выбрать папку проекта'
+        });
+        if (folderUri && folderUri[0]) {
+          webviewView.webview.postMessage({ type: 'setProjectDir', dirPath: folderUri[0].fsPath });
+        }
+      }
+      if (msg.type === 'analyze') {
+        const dirPath = msg.dirPath;
+        if (!dirPath) {
+          webviewView.webview.postMessage({ type: 'analyzeResult', error: 'Не указан путь к проекту!' });
+          return;
+        }
+        try {
+          const resp = await fetch(`${backendUrl}/api/v1/parse`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${apiKey}`,
+            },
+            body: JSON.stringify({
+              root_dir: dirPath,
+              include: ['*.py'],
+              exclude: ['tests/*'],
+              include_ranges: true,
+              use_cache: false,
+            }),
+          });
+          if (!resp.ok) throw new Error(`Ошибка: ${resp.status}`);
+          const data = await resp.json();
+          const structJson = JSON.stringify(data.struct, null, 2);
+          const fileUri = vscode.Uri.joinPath(vscode.Uri.file(dirPath), 'struct.json');
+          await vscode.workspace.fs.writeFile(fileUri, Buffer.from(structJson, 'utf8'));
+          webviewView.webview.postMessage({ type: 'analyzeResult', success: true });
+        } catch (e) {
+          webviewView.webview.postMessage({ type: 'analyzeResult', error: String(e) });
+        }
+      }
+    });
   }
 
   private _getHtmlContent(webview: vscode.Webview, backendUrl: string, apiKey: string): string {
@@ -40,10 +87,19 @@ class LLMStructAssistantViewProvider implements vscode.WebviewViewProvider {
             #user-input { flex: 1; }
             button { background: #458588; color: #fff; border: none; padding: 6px 12px; border-radius: 3px; cursor: pointer; }
             button:disabled { opacity: 0.5; }
+            #analyze-btn { margin-bottom: 8px; width: 100%; }
+            #project-dir-row { display: flex; gap: 4px; margin-bottom: 8px; }
+            #project-dir { flex: 1; }
+            #pick-dir-btn { width: 32px; }
           </style>
         </head>
         <body>
           <h2>llmstruct Assistant</h2>
+          <div id="project-dir-row">
+            <input id="project-dir" type="text" placeholder="Путь к проекту..." />
+            <button id="pick-dir-btn" title="Выбрать папку">📁</button>
+          </div>
+          <button id="analyze-btn">Анализировать код (struct.json)</button>
           <div id="chat"></div>
           <div id="input-row">
             <input id="user-input" type="text" placeholder="Введите сообщение..." />
@@ -53,8 +109,12 @@ class LLMStructAssistantViewProvider implements vscode.WebviewViewProvider {
             const chat = document.getElementById('chat');
             const input = document.getElementById('user-input');
             const btn = document.getElementById('send-btn');
+            const analyzeBtn = document.getElementById('analyze-btn');
+            const projectDirInput = document.getElementById('project-dir');
+            const pickDirBtn = document.getElementById('pick-dir-btn');
             const backendUrl = "${backendUrl}";
             const apiKey = "${apiKey}";
+            const vscode = acquireVsCodeApi();
 
             function appendMsg(text, who) {
               const div = document.createElement('div');
@@ -92,6 +152,33 @@ class LLMStructAssistantViewProvider implements vscode.WebviewViewProvider {
               }
             };
             input.addEventListener('keydown', e => { if (e.key === 'Enter') btn.onclick(); });
+
+            analyzeBtn.onclick = () => {
+              const dirPath = projectDirInput.value.trim();
+              if (!dirPath) {
+                appendMsg('Укажите путь к проекту!', 'bot');
+                return;
+              }
+              vscode.postMessage({ type: 'analyze', dirPath });
+            };
+
+            pickDirBtn.onclick = () => {
+              vscode.postMessage({ type: 'pickProjectDir' });
+            };
+
+            window.addEventListener('message', event => {
+              const msg = event.data;
+              if (msg.type === 'setProjectDir') {
+                projectDirInput.value = msg.dirPath;
+              }
+              if (msg.type === 'analyzeResult') {
+                if (msg.success) {
+                  appendMsg('struct.json успешно создан!', 'bot');
+                } else {
+                  appendMsg('Ошибка анализа: ' + (msg.error || ''), 'bot');
+                }
+              }
+            });
           </script>
         </body>
       </html>`;
