@@ -5,8 +5,27 @@ from pathlib import Path
 from llmstruct.modules.cli.utils import load_config
 from llmstruct.generators.json_generator import generate_json
 from llmstruct.cache import JSONCache
+from llmstruct.core.parse import parse_codebase
 
 def parse(args):
+    """CLI-обёртка: вызывает core.parse_codebase с аргументами из argparse."""
+    struct_data = parse_codebase(
+        root_dir=args.root_dir,
+        output=args.output,
+        language=getattr(args, 'language', None),
+        include=getattr(args, 'include', None),
+        exclude=getattr(args, 'exclude', None),
+        include_dir=getattr(args, 'include_dir', None),
+        exclude_dir=getattr(args, 'exclude_dir', None),
+        include_ranges=getattr(args, 'include_ranges', False),
+        include_hashes=getattr(args, 'include_hashes', False),
+        goals=getattr(args, 'goals', None),
+        use_cache=getattr(args, 'use_cache', False),
+        modular_index=getattr(args, 'modular_index', False),
+    )
+    return struct_data
+
+def parse_old(args):
     """Parse codebase and generate struct.json."""
     root_dir = os.path.abspath(args.root_dir)
     config = load_config(root_dir)
