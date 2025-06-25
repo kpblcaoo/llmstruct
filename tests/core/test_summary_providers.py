@@ -10,8 +10,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 
 
-def test_heuristic_provider_docstring():
-    """Test heuristic provider with docstring extraction."""
+def test_heuristic_provider_extracts_docstrings():
     from llmstruct.core.summary_providers import HeuristicProvider
     
     heuristic = HeuristicProvider()
@@ -35,8 +34,7 @@ def example_function():
     assert "test function" in summary.text.lower(), "Should extract docstring content"
 
 
-def test_heuristic_provider_generation():
-    """Test heuristic provider with name-based generation."""
+def test_heuristic_provider_generates_from_names():
     from llmstruct.core.summary_providers import HeuristicProvider
     
     heuristic = HeuristicProvider()
@@ -53,8 +51,7 @@ def test_heuristic_provider_generation():
     assert "retrieves" in summary.text.lower(), "Should generate heuristic summary"
 
 
-def test_global_summary_system():
-    """Test global summary system integration."""
+def test_global_summary_system_integration():
     from llmstruct.core.summary_providers import generate_summary
     
     code_with_docstring = '''
@@ -75,12 +72,11 @@ def example_function():
 
 
 def test_summary_providers():
-    """Run all Summary Provider tests."""
     print("Testing Summary Providers...")
     
-    test_heuristic_provider_docstring()
-    test_heuristic_provider_generation()
-    test_global_summary_system()
+    test_heuristic_provider_extracts_docstrings()
+    test_heuristic_provider_generates_from_names()
+    test_global_summary_system_integration()
     
     print("✓ Summary Providers tests passed")
 

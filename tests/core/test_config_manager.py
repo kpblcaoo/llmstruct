@@ -11,8 +11,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 
 
-def test_default_configuration():
-    """Test that LLM is disabled by default for security."""
+def test_default_configuration_disables_llm():
     from llmstruct.core.config_manager import get_config_manager, is_llm_enabled
     
     # Test default configuration
@@ -25,8 +24,7 @@ def test_default_configuration():
     assert is_llm_enabled() == False, "is_llm_enabled() should return False by default"
 
 
-def test_offline_mode_environment():
-    """Test offline mode via environment variable."""
+def test_offline_mode_via_environment_variable():
     from llmstruct.core.config_manager import get_config_manager
     
     # Test offline mode environment variable
@@ -43,8 +41,7 @@ def test_offline_mode_environment():
         del os.environ["LLMSTRUCT_OFFLINE"]
 
 
-def test_llm_enable_environment():
-    """Test LLM enablement via environment variable."""
+def test_llm_enable_via_environment_variable():
     from llmstruct.core.config_manager import get_config_manager
     
     # Test LLM enable environment variable
@@ -62,12 +59,11 @@ def test_llm_enable_environment():
 
 
 def test_config_manager():
-    """Run all ConfigManager tests."""
     print("Testing Configuration Manager...")
     
-    test_default_configuration()
-    test_offline_mode_environment()
-    test_llm_enable_environment()
+    test_default_configuration_disables_llm()
+    test_offline_mode_via_environment_variable()
+    test_llm_enable_via_environment_variable()
     
     print("✓ Configuration Manager tests passed")
 

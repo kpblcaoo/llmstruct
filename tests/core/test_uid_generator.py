@@ -10,8 +10,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 
 
-def test_uid_generation():
-    """Test basic UID generation with FQNAME format."""
+def test_uid_generation_uses_fqname_format():
     from llmstruct.core.uid_generator import generate_uid, UIDType
     
     # Test UID generation
@@ -24,8 +23,7 @@ def test_uid_generation():
     assert uid == "llmstruct.core.test.test_function#function", f"Unexpected UID: {uid}"
 
 
-def test_uid_components_no_duplicates():
-    """Test UID components generation without duplicates."""
+def test_uid_components_have_no_duplicates():
     from llmstruct.core.uid_generator import generate_uid_components, UIDType
     
     # Test UID components without duplicates
@@ -39,8 +37,7 @@ def test_uid_components_no_duplicates():
     assert len(components) == len(set(components)), f"Found duplicates in components: {components}"
 
 
-def test_entity_enhancement():
-    """Test entity enhancement with UID system."""
+def test_entity_enhancement_adds_uid_fields():
     from llmstruct.core.uid_generator import enhance_entity_with_uid
     
     # Test entity enhancement
@@ -59,12 +56,11 @@ def test_entity_enhancement():
 
 
 def test_uid_generator():
-    """Run all UID Generator tests."""
     print("Testing UID Generator...")
     
-    test_uid_generation()
-    test_uid_components_no_duplicates()
-    test_entity_enhancement()
+    test_uid_generation_uses_fqname_format()
+    test_uid_components_have_no_duplicates()
+    test_entity_enhancement_adds_uid_fields()
     
     print("✓ UID Generator tests passed")
 

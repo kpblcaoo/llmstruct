@@ -12,8 +12,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 
 
-def test_content_hashing():
-    """Test consistent content hashing."""
+def test_content_hashing_is_consistent():
     from llmstruct.core.hash_utils import hash_content
     
     # Test content hashing
@@ -25,8 +24,7 @@ def test_content_hashing():
     assert len(hash1) == 64, "SHA-256 should produce 64 character hex string"
 
 
-def test_source_normalization():
-    """Test source code normalization for consistent hashing."""
+def test_source_normalization_produces_same_hash():
     from llmstruct.core.hash_utils import hash_source
     
     # Test source hashing (normalized)
@@ -39,8 +37,7 @@ def test_source_normalization():
     assert hash_source1 == hash_source2, "Normalized source should produce same hash"
 
 
-def test_entity_hashing():
-    """Test entity hashing with metadata."""
+def test_entity_hashing_includes_metadata():
     from llmstruct.core.hash_utils import hash_entity
     
     # Test entity hashing
@@ -54,8 +51,7 @@ def test_entity_hashing():
     assert len(entity_hash) == 64, "Entity hash should be SHA-256"
 
 
-def test_file_hashing():
-    """Test file hashing with temporary files."""
+def test_file_hashing_works_with_temp_files():
     from llmstruct.core.hash_utils import quick_file_hash
     
     # Test file hashing with temp file
@@ -72,13 +68,12 @@ def test_file_hashing():
 
 
 def test_hash_utils():
-    """Run all Hash Utilities tests."""
     print("Testing Hash Utilities...")
     
-    test_content_hashing()
-    test_source_normalization()
-    test_entity_hashing()
-    test_file_hashing()
+    test_content_hashing_is_consistent()
+    test_source_normalization_produces_same_hash()
+    test_entity_hashing_includes_metadata()
+    test_file_hashing_works_with_temp_files()
     
     print("✓ Hash Utilities tests passed")
 
