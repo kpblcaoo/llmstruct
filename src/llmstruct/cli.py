@@ -108,6 +108,26 @@ def main():
         action="store_true",
         help="Save struct and AST index per file/module in .llmstruct_index/ (модульный индекс для ускоренного анализа)"
     )
+    parse_parser.add_argument(
+        "--enable-llm",
+        action="store_true",
+        help="Enable LLM-powered features (summaries, advanced analysis). DISABLED by default for security."
+    )
+    parse_parser.add_argument(
+        "--config",
+        help="Path to configuration file (YAML format)"
+    )
+    parse_parser.add_argument(
+        "--summary-provider",
+        choices=["heuristic", "llm"],
+        default="heuristic",
+        help="Summary generation provider (default: heuristic)"
+    )
+    parse_parser.add_argument(
+        "--offline",
+        action="store_true",
+        help="Force offline mode - no network calls (overrides LLMSTRUCT_OFFLINE env var)"
+    )
 
     query_parser = subparsers.add_parser(
         "query", help="Query LLMs with prompt and context"

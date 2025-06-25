@@ -5,11 +5,44 @@ from pathlib import Path
 from llmstruct.modules.cli.utils import load_config
 from llmstruct.generators.json_generator import generate_json
 from llmstruct.cache import JSONCache
+from llmstruct.core.config_manager import get_config_manager, ConfigManager
 
 def parse(args):
     """Parse codebase and generate struct.json."""
     root_dir = os.path.abspath(args.root_dir)
     config = load_config(root_dir)
+    
+    # Initialize configuration manager with CLI overrides
+    config_manager = get_config_manager()
+    
+    # Load configuration file if specified
+    if hasattr(args, 'config') and args.config:
+        llm_config = config_manager.load_config(args.config)
+    else:
+        llm_config = config_manager.get_config()
+    
+    # Apply CLI overrides
+    if hasattr(args, 'enable_llm') and args.enable_llm:
+        llm_config.enable_llm = True
+        llm_config.llm.enabled = True
+        
+    if hasattr(args, 'offline') and args.offline:
+        llm_config.security.offline_mode = True
+        llm_config.security.allow_network_calls = False
+        llm_config.enable_llm = False
+        llm_config.llm.enabled = False
+        
+    if hasattr(args, 'summary_provider') and args.summary_provider:
+        llm_config.summary.provider = args.summary_provider
+        
+    # Log configuration status
+    if llm_config.enable_llm:
+        logging.info("LLM features ENABLED - AI-powered summaries and analysis available")
+    else:
+        logging.info("LLM features DISABLED - Using heuristic analysis only (default for security)")
+        
+    if llm_config.security.offline_mode:
+        logging.info("OFFLINE MODE - No network calls will be made")
 
     goals = args.goals if args.goals is not None else config.get("goals", [])
     if not goals:

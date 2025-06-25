@@ -1,0 +1,55 @@
+# LLMStruct Configuration Example
+# LLM support is DISABLED by default for security and cost reasons
+
+# Global LLM switch - set to true to enable AI-powered features
+enable_llm: false
+
+# LLM provider configuration
+llm:
+  enabled: false                    # Must be true along with enable_llm for LLM features
+  provider: "openai"               # openai | anthropic | local
+  model: "gpt-3.5-turbo"           # Model to use
+  max_tokens: 500                  # Maximum tokens per request
+  temperature: 0.3                 # Temperature for generation (0.0-1.0)
+  timeout: 30                      # Request timeout in seconds
+
+# Summary generation settings
+summary:
+  provider: "heuristic"            # heuristic (default) | llm
+  max_length: 120                  # Maximum summary length
+  confidence_threshold: 0.5        # Minimum confidence for LLM summaries
+  enable_caching: true             # Cache LLM responses
+
+# Code metrics configuration
+metrics:
+  calculate_complexity: true       # Calculate cyclomatic complexity
+  calculate_maintainability: true  # Calculate maintainability index
+  calculate_real_loc: true         # Calculate real lines of code
+  include_test_coverage: true      # Include test coverage data
+
+# Security and privacy settings
+security:
+  offline_mode: false              # Force offline mode (overrides enable_llm)
+  allow_network_calls: true        # Allow network calls
+  sanitize_code_snippets: true     # Sanitize code before sending to LLM
+  max_code_snippet_length: 500     # Maximum code snippet length
+
+# Environment variables that override config:
+# LLMSTRUCT_OFFLINE=1              - Forces offline mode
+# LLMSTRUCT_ENABLE_LLM=1           - Enables LLM features
+# OPENAI_API_KEY=your_key          - Sets OpenAI API key
+
+# Usage examples:
+# 
+# Default (secure, offline):
+# llmstruct parse ./src
+#
+# Enable LLM features:
+# llmstruct parse ./src --enable-llm
+#
+# Force offline mode:
+# llmstruct parse ./src --offline
+# or: LLMSTRUCT_OFFLINE=1 llmstruct parse ./src
+#
+# Use custom config:
+# llmstruct parse ./src --config my-config.yaml 

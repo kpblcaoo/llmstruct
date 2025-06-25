@@ -1,0 +1,1507 @@
+{
+  "metadata": {
+    "project_name": "llmstruct",
+    "description": "Utility for generating structured JSON for codebases",
+    "version": "2025-06-25T19:20:38.136444Z",
+    "authors": [
+      {
+        "name": "Mikhail Stepanov",
+        "github": "kpblcaoo",
+        "email": "kpblcaoo@gmail.com"
+      }
+    ],
+    "instructions": [
+      "Follow best practices, warn if instructions conflict with them",
+      "Preserve functionality, ensure idempotency",
+      "Use attached struct.json for context and navigation",
+      "Request missing modules or functions if needed",
+      "Regenerate JSON for significant changes, track via Git and artifacts",
+      "Use internal comments for descriptions, append brief summary"
+    ],
+    "goals": [],
+    "stats": {
+      "modules_count": 3,
+      "functions_count": 10,
+      "classes_count": 0,
+      "call_edges_count": 75
+    },
+    "artifact_id": "ad57263c-fb40-49ae-a4c0-e5e60d22910b",
+    "summary": "Structured JSON for llmstruct codebase",
+    "tags": [
+      "codebase",
+      "automation"
+    ],
+    "folder_structure": [
+      {
+        "path": ".",
+        "type": "directory",
+        "uid": "dir:.",
+        "uid_components": [
+          "dir:",
+          "dir:."
+        ],
+        "artifact_id": "750cd970-1fb3-9ec6-2b41-89d1eb8fa8fd",
+        "metadata": {}
+      },
+      {
+        "path": "__init__.py",
+        "type": "file",
+        "uid": "file:__init__.py",
+        "uid_components": [
+          "file:__init__",
+          "file:__init__.py"
+        ],
+        "artifact_id": "edc1f227-6180-ddd6-08d1-a68495af0dbe",
+        "metadata": {}
+      },
+      {
+        "path": "go_json_generator.py",
+        "type": "file",
+        "uid": "file:go_json_generator.py",
+        "uid_components": [
+          "file:go_json_generator",
+          "file:go_json_generator.py"
+        ],
+        "artifact_id": "5ba2e5f0-1047-ef93-4f8c-1688f55f39f9",
+        "metadata": {}
+      },
+      {
+        "path": "json_generator.py",
+        "type": "file",
+        "uid": "file:json_generator.py",
+        "uid_components": [
+          "file:json_generator",
+          "file:json_generator.py"
+        ],
+        "artifact_id": "53504df7-bf5e-3db9-8a7f-e6015bd76ca8",
+        "metadata": {}
+      }
+    ],
+    "structure_version": "2.1",
+    "enhancements": [
+      "hierarchical_organization",
+      "built_in_metrics",
+      "markdown_anchors",
+      "uid_system"
+    ]
+  },
+  "toc": [
+    {
+      "module_id": "go_json_generator",
+      "path": "go_json_generator.py",
+      "category": "core",
+      "functions": 4,
+      "classes": 0,
+      "summary": "",
+      "uid": "go_json_generator",
+      "uid_components": [
+        "go_json_generator"
+      ],
+      "uid_type": "module",
+      "artifact_id": "9e913b21-e331-1122-938d-b4ccfe6101b3",
+      "markdown_anchor": {
+        "id": "go_json_generator",
+        "title": "Module: go_json_generator",
+        "level": 2,
+        "type": "module",
+        "markdown_link": "[Module: go_json_generator](#go_json_generator)",
+        "html_anchor": "<a id=\"go_json_generator\"></a>"
+      }
+    },
+    {
+      "module_id": "__init__",
+      "path": "__init__.py",
+      "category": "cli",
+      "functions": 0,
+      "classes": 0,
+      "summary": "Generator modules for creating LLMStruct JSON outputs from parsed code data.",
+      "uid": "__init__",
+      "uid_components": [
+        "__init__"
+      ],
+      "uid_type": "module",
+      "artifact_id": "2eacefd9-a69c-9d85-8e68-ad3e94691bf9",
+      "markdown_anchor": {
+        "id": "__init__",
+        "title": "Module: __init__",
+        "level": 2,
+        "type": "module",
+        "markdown_link": "[Module: __init__](#__init__)",
+        "html_anchor": "<a id=\"__init__\"></a>"
+      }
+    },
+    {
+      "module_id": "json_generator",
+      "path": "json_generator.py",
+      "category": "core",
+      "functions": 6,
+      "classes": 0,
+      "summary": "",
+      "uid": "json_generator",
+      "uid_components": [
+        "json_generator"
+      ],
+      "uid_type": "module",
+      "artifact_id": "cb71c555-bb8e-a6f8-4d28-9f9d2820cf39",
+      "markdown_anchor": {
+        "id": "json_generator",
+        "title": "Module: json_generator",
+        "level": 2,
+        "type": "module",
+        "markdown_link": "[Module: json_generator](#json_generator)",
+        "html_anchor": "<a id=\"json_generator\"></a>"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "go_json_generator",
+      "path": "go_json_generator.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "get_go_folder_structure",
+          "docstring": "Capture directory and file structure for Go projects with artifact_id, respecting .gitignore and patterns.",
+          "line_range": [
+            23,
+            98
+          ],
+          "parameters": [
+            "root_dir",
+            "gitignore_patterns",
+            "include_patterns",
+            "exclude_patterns",
+            "exclude_dirs"
+          ],
+          "decorators": [],
+          "uid": "go_json_generator.get_go_folder_structure",
+          "uid_components": [
+            "go_json_generator",
+            "go_json_generator.get_go_folder_structure"
+          ],
+          "uid_type": "function",
+          "smart_summary": {
+            "summary": "Capture directory and file structure for Go projects with artifact_id, respecting .gitignore and patterns.",
+            "summary_generated": false,
+            "source": {
+              "source_type": "docstring",
+              "generated_at": "2025-06-25T19:20:38.135142",
+              "confidence": 0.9,
+              "cache_key": null
+            },
+            "tags": [
+              "function"
+            ]
+          }
+        },
+        {
+          "name": "build_go_toc_and_modules",
+          "docstring": "Build TOC and modules for Go projects with artifact_id and robust filtering.",
+          "line_range": [
+            101,
+            196
+          ],
+          "parameters": [
+            "root_dir",
+            "include_patterns",
+            "exclude_patterns",
+            "gitignore_patterns",
+            "include_ranges",
+            "include_hashes",
+            "exclude_dirs"
+          ],
+          "decorators": [],
+          "uid": "go_json_generator.build_go_toc_and_modules",
+          "uid_components": [
+            "go_json_generator",
+            "go_json_generator.build_go_toc_and_modules"
+          ],
+          "uid_type": "function",
+          "smart_summary": {
+            "summary": "Build TOC and modules for Go projects with artifact_id and robust filtering.",
+            "summary_generated": false,
+            "source": {
+              "source_type": "docstring",
+              "generated_at": "2025-06-25T19:20:38.135160",
+              "confidence": 0.9,
+              "cache_key": null
+            },
+            "tags": [
+              "function"
+            ]
+          }
+        },
+        {
+          "name": "extract_go_mod_info",
+          "docstring": "Extract information from go.mod file.",
+          "line_range": [
+            199,
+            235
+          ],
+          "parameters": [
+            "root_dir"
+          ],
+          "decorators": [],
+          "uid": "go_json_generator.extract_go_mod_info",
+          "uid_components": [
+            "go_json_generator",
+            "go_json_generator.extract_go_mod_info"
+          ],
+          "uid_type": "function",
+          "smart_summary": {
+            "summary": "Extract information from go.mod file.",
+            "summary_generated": false,
+            "source": {
+              "source_type": "docstring",
+              "generated_at": "2025-06-25T19:20:38.135175",
+              "confidence": 0.9,
+              "cache_key": null
+            },
+            "tags": [
+              "function"
+            ]
+          }
+        },
+        {
+          "name": "generate_go_json",
+          "docstring": "Generate JSON structure for Go project with artifact_id, summary, and tags.",
+          "line_range": [
+            238,
+            312
+          ],
+          "parameters": [
+            "root_dir",
+            "include_patterns",
+            "exclude_patterns",
+            "gitignore_patterns",
+            "include_ranges",
+            "include_hashes",
+            "goals",
+            "exclude_dirs"
+          ],
+          "decorators": [],
+          "uid": "go_json_generator.generate_go_json",
+          "uid_components": [
+            "go_json_generator",
+            "go_json_generator.generate_go_json"
+          ],
+          "uid_type": "function",
+          "smart_summary": {
+            "summary": "Generate JSON structure for Go project with artifact_id, summary, and tags.",
+            "summary_generated": false,
+            "source": {
+              "source_type": "docstring",
+              "generated_at": "2025-06-25T19:20:38.135188",
+              "confidence": 0.9,
+              "cache_key": null
+            },
+            "tags": [
+              "function",
+              "generation"
+            ]
+          }
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "get_go_folder_structure": [
+          "sorted",
+          "os.walk",
+          "p.rstrip",
+          "file_path.relative_to",
+          "generate_uid_components",
+          "set",
+          "uuid.uuid4",
+          "any",
+          "file_path.match",
+          "structure.append",
+          "create_legacy_artifact_id",
+          "Path",
+          "p.endswith",
+          "str"
+        ],
+        "build_go_toc_and_modules": [
+          "len",
+          "modules.append",
+          "p.rstrip",
+          "f.match",
+          "analyze_module",
+          "generate_uid_components",
+          "set",
+          "isinstance",
+          "generate_uid",
+          "cls.get",
+          "any",
+          "module.get",
+          "toc.append",
+          "create_legacy_artifact_id",
+          "Path",
+          "p.endswith",
+          "str"
+        ],
+        "extract_go_mod_info": [
+          "line.split",
+          "go_mod_path.exists",
+          "len",
+          "line.strip",
+          "logging.error",
+          "content.strip",
+          "f.read",
+          "open",
+          "dependencies.append",
+          "Path",
+          "line.startswith"
+        ],
+        "generate_go_json": [
+          "list",
+          "extract_go_mod_info",
+          "len",
+          "m.get",
+          "build_go_toc_and_modules",
+          "set",
+          "uuid.uuid4",
+          "sum",
+          "get_go_folder_structure",
+          "go_mod_info.get",
+          "Path",
+          "str"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "List",
+        "Optional",
+        "Path",
+        "UIDType",
+        "analyze_module",
+        "core.uid_generator",
+        "create_legacy_artifact_id",
+        "create_stable_uid",
+        "datetime",
+        "generate_uid",
+        "generate_uid_components",
+        "logging",
+        "normalize_path_to_module_id",
+        "os",
+        "parsers.go_parser",
+        "pathlib",
+        "typing",
+        "uuid"
+      ],
+      "hash": null,
+      "uid": "go_json_generator",
+      "uid_components": [
+        "go_json_generator"
+      ],
+      "uid_type": "module",
+      "artifact_id": "9e913b21-e331-1122-938d-b4ccfe6101b3",
+      "smart_summary": {
+        "summary": "\"Optimizes image loading and caching for improved website performance\"",
+        "summary_generated": true,
+        "source": {
+          "source_type": "llm_generated",
+          "generated_at": "2025-06-25T19:20:38.135094",
+          "confidence": 0.7,
+          "cache_key": "734501d0"
+        },
+        "tags": [
+          "module"
+        ]
+      },
+      "metrics": {
+        "cyclomatic_complexity": 4,
+        "lines_of_code": 40,
+        "call_depth": 0,
+        "parameter_count": 0,
+        "dependencies_count": 20,
+        "test_coverage": 0.0,
+        "maintainability_index": 80
+      },
+      "markdown_anchor": {
+        "id": "go_json_generator",
+        "title": "Module: go_json_generator",
+        "level": 2,
+        "type": "module",
+        "markdown_link": "[Module: go_json_generator](#go_json_generator)",
+        "html_anchor": "<a id=\"go_json_generator\"></a>"
+      }
+    },
+    {
+      "module_id": "__init__",
+      "path": "__init__.py",
+      "category": "cli",
+      "module_doc": "Generator modules for creating LLMStruct JSON outputs from parsed code data.",
+      "functions": [],
+      "classes": [],
+      "callgraph": {},
+      "dependencies": [
+        "generate_json",
+        "get_folder_structure",
+        "json_generator"
+      ],
+      "hash": null,
+      "uid": "__init__",
+      "uid_components": [
+        "__init__"
+      ],
+      "uid_type": "module",
+      "artifact_id": "2eacefd9-a69c-9d85-8e68-ad3e94691bf9",
+      "smart_summary": {
+        "summary": "Generator modules for creating LLMStruct JSON outputs from parsed code data.",
+        "summary_generated": false,
+        "source": {
+          "source_type": "docstring",
+          "generated_at": "2025-06-25T19:20:38.135215",
+          "confidence": 0.9,
+          "cache_key": null
+        },
+        "tags": [
+          "module"
+        ]
+      },
+      "metrics": {
+        "cyclomatic_complexity": 0,
+        "lines_of_code": 0,
+        "call_depth": 0,
+        "parameter_count": 0,
+        "dependencies_count": 3,
+        "test_coverage": 0.0,
+        "maintainability_index": 100
+      },
+      "markdown_anchor": {
+        "id": "__init__",
+        "title": "Module: __init__",
+        "level": 2,
+        "type": "module",
+        "markdown_link": "[Module: __init__](#__init__)",
+        "html_anchor": "<a id=\"__init__\"></a>"
+      }
+    },
+    {
+      "module_id": "json_generator",
+      "path": "json_generator.py",
+      "category": "core",
+      "module_doc": "",
+      "functions": [
+        {
+          "name": "get_folder_structure",
+          "docstring": "Capture directory and file structure with artifact_id, respecting .gitignore and patterns.",
+          "line_range": [
+            25,
+            108
+          ],
+          "parameters": [
+            "root_dir",
+            "gitignore_patterns",
+            "include_patterns",
+            "exclude_patterns",
+            "exclude_dirs"
+          ],
+          "decorators": [],
+          "uid": "json_generator.get_folder_structure",
+          "uid_components": [
+            "json_generator",
+            "json_generator.get_folder_structure"
+          ],
+          "uid_type": "function",
+          "smart_summary": {
+            "summary": "Capture directory and file structure with artifact_id, respecting .gitignore and patterns.",
+            "summary_generated": false,
+            "source": {
+              "source_type": "docstring",
+              "generated_at": "2025-06-25T19:20:38.135498",
+              "confidence": 0.9,
+              "cache_key": null
+            },
+            "tags": [
+              "function"
+            ]
+          }
+        },
+        {
+          "name": "build_toc_and_modules",
+          "docstring": "Build TOC and modules with artifact_id and robust filtering. Поддержка include_dirs.",
+          "line_range": [
+            111,
+            220
+          ],
+          "parameters": [
+            "root_dir",
+            "include_patterns",
+            "exclude_patterns",
+            "gitignore_patterns",
+            "include_ranges",
+            "include_hashes",
+            "exclude_dirs",
+            "include_dirs"
+          ],
+          "decorators": [],
+          "uid": "json_generator.build_toc_and_modules",
+          "uid_components": [
+            "json_generator",
+            "json_generator.build_toc_and_modules"
+          ],
+          "uid_type": "function",
+          "smart_summary": {
+            "summary": "Build TOC and modules with artifact_id and robust filtering. Поддержка include_dirs.",
+            "summary_generated": false,
+            "source": {
+              "source_type": "docstring",
+              "generated_at": "2025-06-25T19:20:38.135514",
+              "confidence": 0.9,
+              "cache_key": null
+            },
+            "tags": [
+              "function"
+            ]
+          }
+        },
+        {
+          "name": "generate_json",
+          "docstring": "Generate JSON structure for project with artifact_id, summary, and tags. Поддержка include_dirs.",
+          "line_range": [
+            223,
+            336
+          ],
+          "parameters": [
+            "root_dir",
+            "include_patterns",
+            "exclude_patterns",
+            "gitignore_patterns",
+            "include_ranges",
+            "include_hashes",
+            "goals",
+            "exclude_dirs",
+            "include_dirs",
+            "enable_smart_summaries",
+            "llm_config"
+          ],
+          "decorators": [],
+          "uid": "json_generator.generate_json",
+          "uid_components": [
+            "json_generator",
+            "json_generator.generate_json"
+          ],
+          "uid_type": "function",
+          "smart_summary": {
+            "summary": "Generate JSON structure for project with artifact_id, summary, and tags. Поддержка include_dirs.",
+            "summary_generated": false,
+            "source": {
+              "source_type": "docstring",
+              "generated_at": "2025-06-25T19:20:38.135530",
+              "confidence": 0.9,
+              "cache_key": null
+            },
+            "tags": [
+              "function",
+              "generation"
+            ]
+          }
+        },
+        {
+          "name": "generate_json_with_output_file",
+          "docstring": "",
+          "line_range": [
+            339,
+            364
+          ],
+          "parameters": [
+            "root_dir",
+            "output_file",
+            "gitignore_patterns",
+            "include_patterns",
+            "exclude_patterns",
+            "exclude_dirs",
+            "include_ranges",
+            "include_hashes",
+            "goals"
+          ],
+          "decorators": [],
+          "uid": "json_generator.generate_json_with_output_file",
+          "uid_components": [
+            "json_generator",
+            "json_generator.generate_json_with_output_file"
+          ],
+          "uid_type": "function",
+          "smart_summary": {
+            "summary": "\"Generates a JSON file with specified patterns and goals from a given directory.\"",
+            "summary_generated": true,
+            "source": {
+              "source_type": "llm_generated",
+              "generated_at": "2025-06-25T19:20:38.135801",
+              "confidence": 0.7,
+              "cache_key": "df498ca4"
+            },
+            "tags": [
+              "function",
+              "generation"
+            ]
+          }
+        },
+        {
+          "name": "norm_dirname",
+          "docstring": "",
+          "line_range": [
+            133,
+            134
+          ],
+          "parameters": [
+            "d"
+          ],
+          "decorators": [],
+          "uid": "json_generator.norm_dirname",
+          "uid_components": [
+            "json_generator",
+            "json_generator.norm_dirname"
+          ],
+          "uid_type": "function",
+          "smart_summary": {
+            "summary": "\"Normalizes directory path by removing redundant slashes and resolving relative paths\"",
+            "summary_generated": true,
+            "source": {
+              "source_type": "llm_generated",
+              "generated_at": "2025-06-25T19:20:38.136059",
+              "confidence": 0.7,
+              "cache_key": "b7c896c5"
+            },
+            "tags": [
+              "function"
+            ]
+          }
+        },
+        {
+          "name": "is_included_dir",
+          "docstring": "",
+          "line_range": [
+            143,
+            147
+          ],
+          "parameters": [
+            "f"
+          ],
+          "decorators": [],
+          "uid": "json_generator.is_included_dir",
+          "uid_components": [
+            "json_generator",
+            "json_generator.is_included_dir"
+          ],
+          "uid_type": "function",
+          "smart_summary": {
+            "summary": "Determines if a given directory is included in a specified file path.",
+            "summary_generated": true,
+            "source": {
+              "source_type": "llm_generated",
+              "generated_at": "2025-06-25T19:20:38.136371",
+              "confidence": 0.7,
+              "cache_key": "ca56f225"
+            },
+            "tags": [
+              "function"
+            ]
+          }
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "get_folder_structure": [
+          "abs_dir_path.relative_to",
+          "sorted",
+          "os.walk",
+          "p.rstrip",
+          "file_path.relative_to",
+          "generate_uid_components",
+          "set",
+          "create_legacy_artifact_id",
+          "abs_dir_path.match",
+          "any",
+          "file_path.match",
+          "structure.append",
+          "abs_dir_path.joinpath",
+          "Path",
+          "p.endswith",
+          "str"
+        ],
+        "build_toc_and_modules": [],
+        "norm_dirname": [],
+        "is_included_dir": [
+          "any",
+          "norm_dirname"
+        ],
+        "generate_json": [
+          "set",
+          "uuid.uuid4",
+          "sum",
+          "enhanced_modules.append",
+          "module.copy",
+          "enhance_entity_with_smart_summary",
+          "create_summary_system",
+          "enhanced_functions.append",
+          "enhanced_methods.append",
+          "module.get",
+          "Path",
+          "list",
+          "get_folder_structure",
+          "build_toc_and_modules",
+          "str",
+          "enhance_json_structure",
+          "enhanced_classes.append",
+          "len",
+          "cls.get"
+        ],
+        "generate_json_with_output_file": [
+          "open",
+          "json.dump",
+          "generate_json"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "List",
+        "Optional",
+        "Path",
+        "UIDType",
+        "analyze_module",
+        "core.json_structure",
+        "core.summary_system",
+        "core.uid_generator",
+        "create_legacy_artifact_id",
+        "create_stable_uid",
+        "create_summary_system",
+        "datetime",
+        "enhance_entity_with_smart_summary",
+        "enhance_json_structure",
+        "generate_uid",
+        "generate_uid_components",
+        "json",
+        "logging",
+        "normalize_path_to_module_id",
+        "os",
+        "parsers.python_parser",
+        "pathlib",
+        "typing",
+        "uuid"
+      ],
+      "hash": null,
+      "uid": "json_generator",
+      "uid_components": [
+        "json_generator"
+      ],
+      "uid_type": "module",
+      "artifact_id": "cb71c555-bb8e-a6f8-4d28-9f9d2820cf39",
+      "smart_summary": {
+        "summary": "\"Optimizes image loading and caching for improved website performance\"",
+        "summary_generated": true,
+        "source": {
+          "source_type": "llm_generated",
+          "generated_at": "2025-06-25T19:20:38.135475",
+          "confidence": 0.7,
+          "cache_key": "d5432a17"
+        },
+        "tags": [
+          "module"
+        ]
+      },
+      "metrics": {
+        "cyclomatic_complexity": 6,
+        "lines_of_code": 60,
+        "call_depth": 0,
+        "parameter_count": 0,
+        "dependencies_count": 26,
+        "test_coverage": 0.0,
+        "maintainability_index": 70
+      },
+      "markdown_anchor": {
+        "id": "json_generator",
+        "title": "Module: json_generator",
+        "level": 2,
+        "type": "module",
+        "markdown_link": "[Module: json_generator](#json_generator)",
+        "html_anchor": "<a id=\"json_generator\"></a>"
+      }
+    }
+  ],
+  "hierarchy": {
+    "root": {
+      "modules": [
+        {
+          "module_id": "go_json_generator",
+          "path": "go_json_generator.py",
+          "category": "core",
+          "module_doc": "",
+          "functions": [
+            {
+              "name": "get_go_folder_structure",
+              "docstring": "Capture directory and file structure for Go projects with artifact_id, respecting .gitignore and patterns.",
+              "line_range": [
+                23,
+                98
+              ],
+              "parameters": [
+                "root_dir",
+                "gitignore_patterns",
+                "include_patterns",
+                "exclude_patterns",
+                "exclude_dirs"
+              ],
+              "decorators": [],
+              "uid": "go_json_generator.get_go_folder_structure",
+              "uid_components": [
+                "go_json_generator",
+                "go_json_generator.get_go_folder_structure"
+              ],
+              "uid_type": "function",
+              "smart_summary": {
+                "summary": "Capture directory and file structure for Go projects with artifact_id, respecting .gitignore and patterns.",
+                "summary_generated": false,
+                "source": {
+                  "source_type": "docstring",
+                  "generated_at": "2025-06-25T19:20:38.135142",
+                  "confidence": 0.9,
+                  "cache_key": null
+                },
+                "tags": [
+                  "function"
+                ]
+              }
+            },
+            {
+              "name": "build_go_toc_and_modules",
+              "docstring": "Build TOC and modules for Go projects with artifact_id and robust filtering.",
+              "line_range": [
+                101,
+                196
+              ],
+              "parameters": [
+                "root_dir",
+                "include_patterns",
+                "exclude_patterns",
+                "gitignore_patterns",
+                "include_ranges",
+                "include_hashes",
+                "exclude_dirs"
+              ],
+              "decorators": [],
+              "uid": "go_json_generator.build_go_toc_and_modules",
+              "uid_components": [
+                "go_json_generator",
+                "go_json_generator.build_go_toc_and_modules"
+              ],
+              "uid_type": "function",
+              "smart_summary": {
+                "summary": "Build TOC and modules for Go projects with artifact_id and robust filtering.",
+                "summary_generated": false,
+                "source": {
+                  "source_type": "docstring",
+                  "generated_at": "2025-06-25T19:20:38.135160",
+                  "confidence": 0.9,
+                  "cache_key": null
+                },
+                "tags": [
+                  "function"
+                ]
+              }
+            },
+            {
+              "name": "extract_go_mod_info",
+              "docstring": "Extract information from go.mod file.",
+              "line_range": [
+                199,
+                235
+              ],
+              "parameters": [
+                "root_dir"
+              ],
+              "decorators": [],
+              "uid": "go_json_generator.extract_go_mod_info",
+              "uid_components": [
+                "go_json_generator",
+                "go_json_generator.extract_go_mod_info"
+              ],
+              "uid_type": "function",
+              "smart_summary": {
+                "summary": "Extract information from go.mod file.",
+                "summary_generated": false,
+                "source": {
+                  "source_type": "docstring",
+                  "generated_at": "2025-06-25T19:20:38.135175",
+                  "confidence": 0.9,
+                  "cache_key": null
+                },
+                "tags": [
+                  "function"
+                ]
+              }
+            },
+            {
+              "name": "generate_go_json",
+              "docstring": "Generate JSON structure for Go project with artifact_id, summary, and tags.",
+              "line_range": [
+                238,
+                312
+              ],
+              "parameters": [
+                "root_dir",
+                "include_patterns",
+                "exclude_patterns",
+                "gitignore_patterns",
+                "include_ranges",
+                "include_hashes",
+                "goals",
+                "exclude_dirs"
+              ],
+              "decorators": [],
+              "uid": "go_json_generator.generate_go_json",
+              "uid_components": [
+                "go_json_generator",
+                "go_json_generator.generate_go_json"
+              ],
+              "uid_type": "function",
+              "smart_summary": {
+                "summary": "Generate JSON structure for Go project with artifact_id, summary, and tags.",
+                "summary_generated": false,
+                "source": {
+                  "source_type": "docstring",
+                  "generated_at": "2025-06-25T19:20:38.135188",
+                  "confidence": 0.9,
+                  "cache_key": null
+                },
+                "tags": [
+                  "function",
+                  "generation"
+                ]
+              }
+            }
+          ],
+          "classes": [],
+          "callgraph": {
+            "get_go_folder_structure": [
+              "sorted",
+              "os.walk",
+              "p.rstrip",
+              "file_path.relative_to",
+              "generate_uid_components",
+              "set",
+              "uuid.uuid4",
+              "any",
+              "file_path.match",
+              "structure.append",
+              "create_legacy_artifact_id",
+              "Path",
+              "p.endswith",
+              "str"
+            ],
+            "build_go_toc_and_modules": [
+              "len",
+              "modules.append",
+              "p.rstrip",
+              "f.match",
+              "analyze_module",
+              "generate_uid_components",
+              "set",
+              "isinstance",
+              "generate_uid",
+              "cls.get",
+              "any",
+              "module.get",
+              "toc.append",
+              "create_legacy_artifact_id",
+              "Path",
+              "p.endswith",
+              "str"
+            ],
+            "extract_go_mod_info": [
+              "line.split",
+              "go_mod_path.exists",
+              "len",
+              "line.strip",
+              "logging.error",
+              "content.strip",
+              "f.read",
+              "open",
+              "dependencies.append",
+              "Path",
+              "line.startswith"
+            ],
+            "generate_go_json": [
+              "list",
+              "extract_go_mod_info",
+              "len",
+              "m.get",
+              "build_go_toc_and_modules",
+              "set",
+              "uuid.uuid4",
+              "sum",
+              "get_go_folder_structure",
+              "go_mod_info.get",
+              "Path",
+              "str"
+            ]
+          },
+          "dependencies": [
+            "Any",
+            "Dict",
+            "List",
+            "Optional",
+            "Path",
+            "UIDType",
+            "analyze_module",
+            "core.uid_generator",
+            "create_legacy_artifact_id",
+            "create_stable_uid",
+            "datetime",
+            "generate_uid",
+            "generate_uid_components",
+            "logging",
+            "normalize_path_to_module_id",
+            "os",
+            "parsers.go_parser",
+            "pathlib",
+            "typing",
+            "uuid"
+          ],
+          "hash": null,
+          "uid": "go_json_generator",
+          "uid_components": [
+            "go_json_generator"
+          ],
+          "uid_type": "module",
+          "artifact_id": "9e913b21-e331-1122-938d-b4ccfe6101b3",
+          "smart_summary": {
+            "summary": "\"Optimizes image loading and caching for improved website performance\"",
+            "summary_generated": true,
+            "source": {
+              "source_type": "llm_generated",
+              "generated_at": "2025-06-25T19:20:38.135094",
+              "confidence": 0.7,
+              "cache_key": "734501d0"
+            },
+            "tags": [
+              "module"
+            ]
+          },
+          "metrics": {
+            "cyclomatic_complexity": 4,
+            "lines_of_code": 40,
+            "call_depth": 0,
+            "parameter_count": 0,
+            "dependencies_count": 20,
+            "test_coverage": 0.0,
+            "maintainability_index": 80
+          },
+          "markdown_anchor": {
+            "id": "go_json_generator",
+            "title": "Module: go_json_generator",
+            "level": 2,
+            "type": "module",
+            "markdown_link": "[Module: go_json_generator](#go_json_generator)",
+            "html_anchor": "<a id=\"go_json_generator\"></a>"
+          }
+        },
+        {
+          "module_id": "__init__",
+          "path": "__init__.py",
+          "category": "cli",
+          "module_doc": "Generator modules for creating LLMStruct JSON outputs from parsed code data.",
+          "functions": [],
+          "classes": [],
+          "callgraph": {},
+          "dependencies": [
+            "generate_json",
+            "get_folder_structure",
+            "json_generator"
+          ],
+          "hash": null,
+          "uid": "__init__",
+          "uid_components": [
+            "__init__"
+          ],
+          "uid_type": "module",
+          "artifact_id": "2eacefd9-a69c-9d85-8e68-ad3e94691bf9",
+          "smart_summary": {
+            "summary": "Generator modules for creating LLMStruct JSON outputs from parsed code data.",
+            "summary_generated": false,
+            "source": {
+              "source_type": "docstring",
+              "generated_at": "2025-06-25T19:20:38.135215",
+              "confidence": 0.9,
+              "cache_key": null
+            },
+            "tags": [
+              "module"
+            ]
+          },
+          "metrics": {
+            "cyclomatic_complexity": 0,
+            "lines_of_code": 0,
+            "call_depth": 0,
+            "parameter_count": 0,
+            "dependencies_count": 3,
+            "test_coverage": 0.0,
+            "maintainability_index": 100
+          },
+          "markdown_anchor": {
+            "id": "__init__",
+            "title": "Module: __init__",
+            "level": 2,
+            "type": "module",
+            "markdown_link": "[Module: __init__](#__init__)",
+            "html_anchor": "<a id=\"__init__\"></a>"
+          }
+        },
+        {
+          "module_id": "json_generator",
+          "path": "json_generator.py",
+          "category": "core",
+          "module_doc": "",
+          "functions": [
+            {
+              "name": "get_folder_structure",
+              "docstring": "Capture directory and file structure with artifact_id, respecting .gitignore and patterns.",
+              "line_range": [
+                25,
+                108
+              ],
+              "parameters": [
+                "root_dir",
+                "gitignore_patterns",
+                "include_patterns",
+                "exclude_patterns",
+                "exclude_dirs"
+              ],
+              "decorators": [],
+              "uid": "json_generator.get_folder_structure",
+              "uid_components": [
+                "json_generator",
+                "json_generator.get_folder_structure"
+              ],
+              "uid_type": "function",
+              "smart_summary": {
+                "summary": "Capture directory and file structure with artifact_id, respecting .gitignore and patterns.",
+                "summary_generated": false,
+                "source": {
+                  "source_type": "docstring",
+                  "generated_at": "2025-06-25T19:20:38.135498",
+                  "confidence": 0.9,
+                  "cache_key": null
+                },
+                "tags": [
+                  "function"
+                ]
+              }
+            },
+            {
+              "name": "build_toc_and_modules",
+              "docstring": "Build TOC and modules with artifact_id and robust filtering. Поддержка include_dirs.",
+              "line_range": [
+                111,
+                220
+              ],
+              "parameters": [
+                "root_dir",
+                "include_patterns",
+                "exclude_patterns",
+                "gitignore_patterns",
+                "include_ranges",
+                "include_hashes",
+                "exclude_dirs",
+                "include_dirs"
+              ],
+              "decorators": [],
+              "uid": "json_generator.build_toc_and_modules",
+              "uid_components": [
+                "json_generator",
+                "json_generator.build_toc_and_modules"
+              ],
+              "uid_type": "function",
+              "smart_summary": {
+                "summary": "Build TOC and modules with artifact_id and robust filtering. Поддержка include_dirs.",
+                "summary_generated": false,
+                "source": {
+                  "source_type": "docstring",
+                  "generated_at": "2025-06-25T19:20:38.135514",
+                  "confidence": 0.9,
+                  "cache_key": null
+                },
+                "tags": [
+                  "function"
+                ]
+              }
+            },
+            {
+              "name": "generate_json",
+              "docstring": "Generate JSON structure for project with artifact_id, summary, and tags. Поддержка include_dirs.",
+              "line_range": [
+                223,
+                336
+              ],
+              "parameters": [
+                "root_dir",
+                "include_patterns",
+                "exclude_patterns",
+                "gitignore_patterns",
+                "include_ranges",
+                "include_hashes",
+                "goals",
+                "exclude_dirs",
+                "include_dirs",
+                "enable_smart_summaries",
+                "llm_config"
+              ],
+              "decorators": [],
+              "uid": "json_generator.generate_json",
+              "uid_components": [
+                "json_generator",
+                "json_generator.generate_json"
+              ],
+              "uid_type": "function",
+              "smart_summary": {
+                "summary": "Generate JSON structure for project with artifact_id, summary, and tags. Поддержка include_dirs.",
+                "summary_generated": false,
+                "source": {
+                  "source_type": "docstring",
+                  "generated_at": "2025-06-25T19:20:38.135530",
+                  "confidence": 0.9,
+                  "cache_key": null
+                },
+                "tags": [
+                  "function",
+                  "generation"
+                ]
+              }
+            },
+            {
+              "name": "generate_json_with_output_file",
+              "docstring": "",
+              "line_range": [
+                339,
+                364
+              ],
+              "parameters": [
+                "root_dir",
+                "output_file",
+                "gitignore_patterns",
+                "include_patterns",
+                "exclude_patterns",
+                "exclude_dirs",
+                "include_ranges",
+                "include_hashes",
+                "goals"
+              ],
+              "decorators": [],
+              "uid": "json_generator.generate_json_with_output_file",
+              "uid_components": [
+                "json_generator",
+                "json_generator.generate_json_with_output_file"
+              ],
+              "uid_type": "function",
+              "smart_summary": {
+                "summary": "\"Generates a JSON file with specified patterns and goals from a given directory.\"",
+                "summary_generated": true,
+                "source": {
+                  "source_type": "llm_generated",
+                  "generated_at": "2025-06-25T19:20:38.135801",
+                  "confidence": 0.7,
+                  "cache_key": "df498ca4"
+                },
+                "tags": [
+                  "function",
+                  "generation"
+                ]
+              }
+            },
+            {
+              "name": "norm_dirname",
+              "docstring": "",
+              "line_range": [
+                133,
+                134
+              ],
+              "parameters": [
+                "d"
+              ],
+              "decorators": [],
+              "uid": "json_generator.norm_dirname",
+              "uid_components": [
+                "json_generator",
+                "json_generator.norm_dirname"
+              ],
+              "uid_type": "function",
+              "smart_summary": {
+                "summary": "\"Normalizes directory path by removing redundant slashes and resolving relative paths\"",
+                "summary_generated": true,
+                "source": {
+                  "source_type": "llm_generated",
+                  "generated_at": "2025-06-25T19:20:38.136059",
+                  "confidence": 0.7,
+                  "cache_key": "b7c896c5"
+                },
+                "tags": [
+                  "function"
+                ]
+              }
+            },
+            {
+              "name": "is_included_dir",
+              "docstring": "",
+              "line_range": [
+                143,
+                147
+              ],
+              "parameters": [
+                "f"
+              ],
+              "decorators": [],
+              "uid": "json_generator.is_included_dir",
+              "uid_components": [
+                "json_generator",
+                "json_generator.is_included_dir"
+              ],
+              "uid_type": "function",
+              "smart_summary": {
+                "summary": "Determines if a given directory is included in a specified file path.",
+                "summary_generated": true,
+                "source": {
+                  "source_type": "llm_generated",
+                  "generated_at": "2025-06-25T19:20:38.136371",
+                  "confidence": 0.7,
+                  "cache_key": "ca56f225"
+                },
+                "tags": [
+                  "function"
+                ]
+              }
+            }
+          ],
+          "classes": [],
+          "callgraph": {
+            "get_folder_structure": [
+              "abs_dir_path.relative_to",
+              "sorted",
+              "os.walk",
+              "p.rstrip",
+              "file_path.relative_to",
+              "generate_uid_components",
+              "set",
+              "create_legacy_artifact_id",
+              "abs_dir_path.match",
+              "any",
+              "file_path.match",
+              "structure.append",
+              "abs_dir_path.joinpath",
+              "Path",
+              "p.endswith",
+              "str"
+            ],
+            "build_toc_and_modules": [],
+            "norm_dirname": [],
+            "is_included_dir": [
+              "any",
+              "norm_dirname"
+            ],
+            "generate_json": [
+              "set",
+              "uuid.uuid4",
+              "sum",
+              "enhanced_modules.append",
+              "module.copy",
+              "enhance_entity_with_smart_summary",
+              "create_summary_system",
+              "enhanced_functions.append",
+              "enhanced_methods.append",
+              "module.get",
+              "Path",
+              "list",
+              "get_folder_structure",
+              "build_toc_and_modules",
+              "str",
+              "enhance_json_structure",
+              "enhanced_classes.append",
+              "len",
+              "cls.get"
+            ],
+            "generate_json_with_output_file": [
+              "open",
+              "json.dump",
+              "generate_json"
+            ]
+          },
+          "dependencies": [
+            "Any",
+            "Dict",
+            "List",
+            "Optional",
+            "Path",
+            "UIDType",
+            "analyze_module",
+            "core.json_structure",
+            "core.summary_system",
+            "core.uid_generator",
+            "create_legacy_artifact_id",
+            "create_stable_uid",
+            "create_summary_system",
+            "datetime",
+            "enhance_entity_with_smart_summary",
+            "enhance_json_structure",
+            "generate_uid",
+            "generate_uid_components",
+            "json",
+            "logging",
+            "normalize_path_to_module_id",
+            "os",
+            "parsers.python_parser",
+            "pathlib",
+            "typing",
+            "uuid"
+          ],
+          "hash": null,
+          "uid": "json_generator",
+          "uid_components": [
+            "json_generator"
+          ],
+          "uid_type": "module",
+          "artifact_id": "cb71c555-bb8e-a6f8-4d28-9f9d2820cf39",
+          "smart_summary": {
+            "summary": "\"Optimizes image loading and caching for improved website performance\"",
+            "summary_generated": true,
+            "source": {
+              "source_type": "llm_generated",
+              "generated_at": "2025-06-25T19:20:38.135475",
+              "confidence": 0.7,
+              "cache_key": "d5432a17"
+            },
+            "tags": [
+              "module"
+            ]
+          },
+          "metrics": {
+            "cyclomatic_complexity": 6,
+            "lines_of_code": 60,
+            "call_depth": 0,
+            "parameter_count": 0,
+            "dependencies_count": 26,
+            "test_coverage": 0.0,
+            "maintainability_index": 70
+          },
+          "markdown_anchor": {
+            "id": "json_generator",
+            "title": "Module: json_generator",
+            "level": 2,
+            "type": "module",
+            "markdown_link": "[Module: json_generator](#json_generator)",
+            "html_anchor": "<a id=\"json_generator\"></a>"
+          }
+        }
+      ]
+    }
+  },
+  "global_metrics": {
+    "total_modules": 3,
+    "total_functions": 10,
+    "total_classes": 0,
+    "total_complexity": 10,
+    "average_complexity": 3.33
+  }
+}
