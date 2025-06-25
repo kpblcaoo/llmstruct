@@ -38,9 +38,11 @@ def test_integration():
         get_config, is_llm_enabled, generate_summary, 
         enhance_entity_with_uid, quick_content_hash
     )
+    from llmstruct.core.config_manager import get_config_manager as _gcm
+    _gcm()._config = None  # reset
+    config = get_config()
     
     # Test configuration
-    config = get_config()
     assert config.enable_llm == False, "Default config should disable LLM"
     
     # Test summary generation

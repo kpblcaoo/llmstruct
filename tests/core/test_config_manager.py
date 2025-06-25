@@ -14,8 +14,14 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 def test_default_configuration_disables_llm():
     from llmstruct.core.config_manager import get_config_manager, is_llm_enabled
     
-    # Test default configuration
+    # Ensure environment variables are clean
+    os.environ.pop("LLMSTRUCT_ENABLE_LLM", None)
+    os.environ.pop("LLMSTRUCT_OFFLINE", None)
+
+    # Reset global config to force fresh defaults
     config_manager = get_config_manager()
+    config_manager._config = None
+    
     config = config_manager.get_config()
     
     # LLM should be disabled by default

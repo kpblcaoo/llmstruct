@@ -1,0 +1,1009 @@
+{
+  "version": "2.1.0",
+  "generated": "2025-06-25T21:53:29.824230Z",
+  "source_file": "struct.json",
+  "total_entities": 107,
+  "entities_by_type": {
+    "module": 5,
+    "function": 61,
+    "class": 13,
+    "method": 28
+  },
+  "hash_sources": [
+    "file_content_v1",
+    "code_ast_v1"
+  ],
+  "entities": [
+    {
+      "uid": "hash_utils.hash_utils#module",
+      "hash": "a09dfbc3793462b66bfbb6489f69e55e430eb5ea5bce1679e1a365aeefcc2527",
+      "hash_source": "file_content_v1",
+      "hash_version": "2.1.0",
+      "type": "module",
+      "module": "hash_utils",
+      "path": "hash_utils.py"
+    },
+    {
+      "uid": "hash_utils.hash_content#function",
+      "hash": "fec4da722ef311003ac0c59137e980d83ecbc8daeb022d2b4841e235226c74b8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "hash_utils",
+      "name": "hash_content"
+    },
+    {
+      "uid": "hash_utils.hash_file#function",
+      "hash": "fa1b8c8680c3ad1b715764a1e407adf0b40e814ada9cb931d5fbca6b2e0c7720",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "hash_utils",
+      "name": "hash_file"
+    },
+    {
+      "uid": "hash_utils.hash_source#function",
+      "hash": "047feb051edaf01138da6efab3faee059413a02616891be861964083a92ca1dc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "hash_utils",
+      "name": "hash_source"
+    },
+    {
+      "uid": "hash_utils.normalize_source_for_hashing#function",
+      "hash": "6e9c92d688035487ec44b7e81ac537a1c4c5edaab0cf0ccbe04c4a7b1360bba1",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "hash_utils",
+      "name": "normalize_source_for_hashing"
+    },
+    {
+      "uid": "hash_utils.hash_entity#function",
+      "hash": "0ae6671255d0a6bfeb5cc7bbe210074c7e1537cc64c2a6aaa289169302104bfe",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "hash_utils",
+      "name": "hash_entity"
+    },
+    {
+      "uid": "hash_utils.create_file_hash_map#function",
+      "hash": "7393e9bdfc51dec6f8bdb42bd005f95e80e88249e98cdb1749fde1809365572f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "hash_utils",
+      "name": "create_file_hash_map"
+    },
+    {
+      "uid": "hash_utils.has_file_changed#function",
+      "hash": "67beb5e3aa78c4a9f9680f408b29e42664bed96d36b6a2b16e29e45dda87927b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "hash_utils",
+      "name": "has_file_changed"
+    },
+    {
+      "uid": "hash_utils.create_incremental_hash_database#function",
+      "hash": "4bd873231de2b77df775209fd8485fe1613dc7f6b29de94b3680450b0df3b2dc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "hash_utils",
+      "name": "create_incremental_hash_database"
+    },
+    {
+      "uid": "hash_utils.compare_hash_databases#function",
+      "hash": "24f3070c7d80788c96b28a6fbba953592f95683a1a0f269d4402bef08a99e4b7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "hash_utils",
+      "name": "compare_hash_databases"
+    },
+    {
+      "uid": "hash_utils.quick_file_hash#function",
+      "hash": "33ae6f768b288b556e0ae2bb14700e9f8c00b446c1e43747757d23ad4bcd4652",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "hash_utils",
+      "name": "quick_file_hash"
+    },
+    {
+      "uid": "hash_utils.quick_content_hash#function",
+      "hash": "93b10947b0b5caae4297b8476f326dc784a5f9961625402f05f2a4dc0da4a17d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "hash_utils",
+      "name": "quick_content_hash"
+    },
+    {
+      "uid": "hash_utils.quick_source_hash#function",
+      "hash": "0f5d8085a445868b9c8f42276d2850ade224a908e296ece8042fe7580acd07d2",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "hash_utils",
+      "name": "quick_source_hash"
+    },
+    {
+      "uid": "summary_providers.summary_providers#module",
+      "hash": "7716f37d41692cd86663d5d2091e1f9341b51f6a404ecbcaa5145ca7901f2a16",
+      "hash_source": "file_content_v1",
+      "hash_version": "2.1.0",
+      "type": "module",
+      "module": "summary_providers",
+      "path": "summary_providers.py"
+    },
+    {
+      "uid": "summary_providers.get_summary_system#function",
+      "hash": "cf17f96e29b1be4f78d7c22074397529dae0b7fb32fe6eefa889b102ad8cc0a9",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "get_summary_system"
+    },
+    {
+      "uid": "summary_providers.generate_summary#function",
+      "hash": "388395653f28a78d36d85c8d9be21dc2ecde9ca698772a73a2c68ff2898040ed",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "generate_summary"
+    },
+    {
+      "uid": "summary_providers.is_empty#function",
+      "hash": "bce618d90757bb6d789a8ee0723408594d3fa28a61feae442d1409f3956aaf39",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "is_empty"
+    },
+    {
+      "uid": "summary_providers.generate_summary#function",
+      "hash": "0ddc7dd82cb0672f6e09c88018d76c9e7352c3129675d93bb7b123ba437b9bc4",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "generate_summary"
+    },
+    {
+      "uid": "summary_providers.get_provider_name#function",
+      "hash": "f03830d0d1bf4599f6d186048da62cb046aac0abe52999ede0456508e3b8d0f8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "get_provider_name"
+    },
+    {
+      "uid": "summary_providers.__init__#function",
+      "hash": "43371322618f5dae110b9db73c9fce93bbff13f26e2415ba2d75364128c7038c",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "__init__"
+    },
+    {
+      "uid": "summary_providers.generate_summary#function",
+      "hash": "ab6119924425a943db35627bc9da54aae3245ba329162ace0427c0c36656bde4",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "generate_summary"
+    },
+    {
+      "uid": "summary_providers._clean_docstring#function",
+      "hash": "d93f6b948daf07e662f2e9d1837c84206dabf2ac62c3baad577731c858010ef3",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "_clean_docstring"
+    },
+    {
+      "uid": "summary_providers._generate_heuristic_summary#function",
+      "hash": "0bd48cad480fc5f6959754837237eb6c90a4ebd9c20d954f0ffb60fb72e3d038",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "_generate_heuristic_summary"
+    },
+    {
+      "uid": "summary_providers._humanize_name#function",
+      "hash": "eef5831388e276e0ac6bf70a593fee0da313262e1f8f17970b4d24edcc02a5dc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "_humanize_name"
+    },
+    {
+      "uid": "summary_providers._extract_tags_from_docstring#function",
+      "hash": "d266379303c0475c5de9742597aa48a9941eab74a98674497fd5e74fcabe37c6",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "_extract_tags_from_docstring"
+    },
+    {
+      "uid": "summary_providers._extract_tags_from_code#function",
+      "hash": "1568b60a5c9d3d618c9d7da8c1ebde75bb1f53d7a84876ffe6ea8bee9e6a0df0",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "_extract_tags_from_code"
+    },
+    {
+      "uid": "summary_providers.get_provider_name#function",
+      "hash": "9710c801444f1920a94894fe23bbe371bd996cff9aed5249cfbb147401cabb2f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "get_provider_name"
+    },
+    {
+      "uid": "summary_providers.__init__#function",
+      "hash": "d762b29cc3e492be87f93062b210158467409f37c800325c995dd251ec9d3a88",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "__init__"
+    },
+    {
+      "uid": "summary_providers.generate_summary#function",
+      "hash": "8aab5910ff13958c49ed2819a3bfc469c3f5d6a8e3def16b3a1eee91191df8e5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "generate_summary"
+    },
+    {
+      "uid": "summary_providers._create_cache_key#function",
+      "hash": "7184a8357f3531867ee8aab8513c3330187b2707ab2f4165058c4b542ee93206",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "_create_cache_key"
+    },
+    {
+      "uid": "summary_providers._call_llm_api#function",
+      "hash": "99393e3bc1dd5db6b07af95d1210a75c13debff262d51ea6700aa4dec15e66c4",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "_call_llm_api"
+    },
+    {
+      "uid": "summary_providers._create_prompt#function",
+      "hash": "c8c689b8a86484b19fff4084e207c760db5884fb90891ddb4bb2db44ee1f2f62",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "_create_prompt"
+    },
+    {
+      "uid": "summary_providers.get_provider_name#function",
+      "hash": "d7825d74c13182d57a6ab529df7cd0fa79a7f81309961ce5a58e9016d91e4497",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "get_provider_name"
+    },
+    {
+      "uid": "summary_providers.__init__#function",
+      "hash": "6505577ade9ac70cd86970fc2fe17456f95f1f2e9d76d40fda16a6405260852f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "__init__"
+    },
+    {
+      "uid": "summary_providers.generate_summary#function",
+      "hash": "fff44a860f6b7661bf4a0ca30760a836c810662be85f5e96415632de487b8322",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "generate_summary"
+    },
+    {
+      "uid": "summary_providers.get_active_provider#function",
+      "hash": "cedc1ffe93391197241182a73b9d0aab9885da903f6289fbf45955ed43e704f7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "summary_providers",
+      "name": "get_active_provider"
+    },
+    {
+      "uid": "summary_providers.SummarySource#class",
+      "hash": "a497862f1fdfdb34a252badec55ea034d4ca706b22f442a5671f064f1f57d801",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "class",
+      "module": "summary_providers",
+      "name": "SummarySource"
+    },
+    {
+      "uid": "summary_providers.CodeSummary#class",
+      "hash": "75cf2d3c41c0c6500344d9b8795dee1d260b5472ae48b120c757021101942b10",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "class",
+      "module": "summary_providers",
+      "name": "CodeSummary"
+    },
+    {
+      "uid": "summary_providers.CodeSummary.is_empty#method",
+      "hash": "7f9af407be92d4979ef19fbe28ab4001ed0f87e1d4bd5633e3476068d1e76014",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "CodeSummary",
+      "name": "is_empty"
+    },
+    {
+      "uid": "summary_providers.SummaryProvider#class",
+      "hash": "5c0b966ddf115c20b97a297926c54c0c28de9bbe0c154a20346527a39f2de96b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "class",
+      "module": "summary_providers",
+      "name": "SummaryProvider"
+    },
+    {
+      "uid": "summary_providers.SummaryProvider.generate_summary#method",
+      "hash": "879fdf5907f47e0e942751d170e4ceb33c2e9e9ab86d5857fef970fb565490da",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "SummaryProvider",
+      "name": "generate_summary"
+    },
+    {
+      "uid": "summary_providers.SummaryProvider.get_provider_name#method",
+      "hash": "f737b16e1d80939818aef4b674b2cf5aa67218025f64cc39ecc2d6bad0162423",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "SummaryProvider",
+      "name": "get_provider_name"
+    },
+    {
+      "uid": "summary_providers.HeuristicProvider#class",
+      "hash": "ee352ccec26adcf0dd02c6d7908d30721e0ceb4d8de1bbc0d0f8c47a48d05bda",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "class",
+      "module": "summary_providers",
+      "name": "HeuristicProvider"
+    },
+    {
+      "uid": "summary_providers.HeuristicProvider.__init__#method",
+      "hash": "b40c33310510144111555ddf4ea5f58d262d798972c2534d05bcb4032806ccd7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "HeuristicProvider",
+      "name": "__init__"
+    },
+    {
+      "uid": "summary_providers.HeuristicProvider.generate_summary#method",
+      "hash": "b372915e7ffdec09d912a943f8c17035f42b730c9d85fe7ea8040a73ec373672",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "HeuristicProvider",
+      "name": "generate_summary"
+    },
+    {
+      "uid": "summary_providers.HeuristicProvider._clean_docstring#method",
+      "hash": "a199e02182d46a08c05dced578490ae314e37f012c7eb33f9aca325e0bbc1c8d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "HeuristicProvider",
+      "name": "_clean_docstring"
+    },
+    {
+      "uid": "summary_providers.HeuristicProvider._generate_heuristic_summary#method",
+      "hash": "b0e963e48560359345bf20b6ffa5b89db6c9d7a010c991b4767e37c6f7b658cb",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "HeuristicProvider",
+      "name": "_generate_heuristic_summary"
+    },
+    {
+      "uid": "summary_providers.HeuristicProvider._humanize_name#method",
+      "hash": "6b751afa99cfa4ff36bf1c2ad13ae6ff9e818b4c587eac2d3ac5a543075b8996",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "HeuristicProvider",
+      "name": "_humanize_name"
+    },
+    {
+      "uid": "summary_providers.HeuristicProvider._extract_tags_from_docstring#method",
+      "hash": "08f692927b31c5f79e352d8b12226597fa54b2f602ae351cdda50a75e6a0900d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "HeuristicProvider",
+      "name": "_extract_tags_from_docstring"
+    },
+    {
+      "uid": "summary_providers.HeuristicProvider._extract_tags_from_code#method",
+      "hash": "55cf52d19bc667653dd05c0b0636de4a0f93bd7b3c162abd10c5c0564d92a879",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "HeuristicProvider",
+      "name": "_extract_tags_from_code"
+    },
+    {
+      "uid": "summary_providers.HeuristicProvider.get_provider_name#method",
+      "hash": "45a9471e16c2ff0d775f1abb8afc5d7abd8239274a320f4b05ef3b9865d9a403",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "HeuristicProvider",
+      "name": "get_provider_name"
+    },
+    {
+      "uid": "summary_providers.LLMProvider#class",
+      "hash": "eadf8f62f46507906a911e7f9d5892f4d01533f1cc213f7e82bc9408fa4abb5d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "class",
+      "module": "summary_providers",
+      "name": "LLMProvider"
+    },
+    {
+      "uid": "summary_providers.LLMProvider.__init__#method",
+      "hash": "ef68905c33365e95718999ac8ca9503ae0ca57bc5ab5925951631b6e7d0f2f4a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "LLMProvider",
+      "name": "__init__"
+    },
+    {
+      "uid": "summary_providers.LLMProvider.generate_summary#method",
+      "hash": "85b4645aa34e5b7e0344731129834a32cbde55bee60985e071e2d4616ba581ca",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "LLMProvider",
+      "name": "generate_summary"
+    },
+    {
+      "uid": "summary_providers.LLMProvider._create_cache_key#method",
+      "hash": "689fb58c083c373f722db807b8e60d7232bc705b911f49072cb332299d0e1845",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "LLMProvider",
+      "name": "_create_cache_key"
+    },
+    {
+      "uid": "summary_providers.LLMProvider._call_llm_api#method",
+      "hash": "f8c261c10010defb35b7c654aceedc28ea5b7146a72e01a2282fffb2fbc16cb0",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "LLMProvider",
+      "name": "_call_llm_api"
+    },
+    {
+      "uid": "summary_providers.LLMProvider._create_prompt#method",
+      "hash": "aaef37510fffd09773c0be60c09540a6dd4956f00834af40ad5eeb2711d39fce",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "LLMProvider",
+      "name": "_create_prompt"
+    },
+    {
+      "uid": "summary_providers.LLMProvider.get_provider_name#method",
+      "hash": "32a7117abaf86008ed262e386c2d870cb67a0d0cfeef182280a7786def66ec39",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "LLMProvider",
+      "name": "get_provider_name"
+    },
+    {
+      "uid": "summary_providers.SummarySystem#class",
+      "hash": "054029a85a27486d2af65cd63f8c2a0b20590a224032db657feaccc61f30dc34",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "class",
+      "module": "summary_providers",
+      "name": "SummarySystem"
+    },
+    {
+      "uid": "summary_providers.SummarySystem.__init__#method",
+      "hash": "87a611766d6fa870f1ff2be93dd2eb8d47a62a698dafcaedce42913ef3a7081a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "SummarySystem",
+      "name": "__init__"
+    },
+    {
+      "uid": "summary_providers.SummarySystem.generate_summary#method",
+      "hash": "a8de707c57f823270878880526694b40cfe97e9f033235a634f7d8e456355cf3",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "SummarySystem",
+      "name": "generate_summary"
+    },
+    {
+      "uid": "summary_providers.SummarySystem.get_active_provider#method",
+      "hash": "13766ac1b83c60fe733964d3a8eeebd821638f613fc564363876596e8aa22397",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "summary_providers",
+      "class": "SummarySystem",
+      "name": "get_active_provider"
+    },
+    {
+      "uid": "uid_generator.uid_generator#module",
+      "hash": "f3acc0549ce572bc0c42123080d2a6602d2ad97fbac0daa986cb97226483e932",
+      "hash_source": "file_content_v1",
+      "hash_version": "2.1.0",
+      "type": "module",
+      "module": "uid_generator",
+      "path": "uid_generator.py"
+    },
+    {
+      "uid": "uid_generator.normalize_path#function",
+      "hash": "780d3d1173a3d2e89e5d88af4d1c72d03d40358f9d4ed5637e808d14c9374349",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "uid_generator",
+      "name": "normalize_path"
+    },
+    {
+      "uid": "uid_generator.generate_uid#function",
+      "hash": "f281a627dcaa4f09161bce0306ff50f5df9caf0827e2de58f308b9ffa9d6b125",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "uid_generator",
+      "name": "generate_uid"
+    },
+    {
+      "uid": "uid_generator.generate_uid_components#function",
+      "hash": "3311e00d1d33a1f3da8da5e51c1a9193a31251e7c13549f83afe33f7c0dabc5f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "uid_generator",
+      "name": "generate_uid_components"
+    },
+    {
+      "uid": "uid_generator.create_stable_uid#function",
+      "hash": "a7e0745164214a65706526aa7511d758bfa17e216b636cd6bd6f8e2b4fdc9256",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "uid_generator",
+      "name": "create_stable_uid"
+    },
+    {
+      "uid": "uid_generator.create_legacy_artifact_id#function",
+      "hash": "977e7a007125799bc8e2ec7bb6fb5ed80b5e263d50cc8925c4f3dc2b273927fe",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "uid_generator",
+      "name": "create_legacy_artifact_id"
+    },
+    {
+      "uid": "uid_generator.enhance_entity_with_uid#function",
+      "hash": "54df053bb8b064f3fb3d6efe69c48184ba4fc41683c174286753620d96a256e8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "uid_generator",
+      "name": "enhance_entity_with_uid"
+    },
+    {
+      "uid": "uid_generator.validate_uid_uniqueness#function",
+      "hash": "08634b357cc86766e0e0107635f13bfa1b557cc43051a79e3cb712ed328b2d1a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "uid_generator",
+      "name": "validate_uid_uniqueness"
+    },
+    {
+      "uid": "uid_generator.create_module_uid#function",
+      "hash": "78a6139201fb016110552a2f16a1b676eb4df0982379bfa7b626e2c875032d6d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "uid_generator",
+      "name": "create_module_uid"
+    },
+    {
+      "uid": "uid_generator.create_function_uid#function",
+      "hash": "1bad93a530f99de51e1a76acc227e19d2b284812586e671a704819ad92959c91",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "uid_generator",
+      "name": "create_function_uid"
+    },
+    {
+      "uid": "uid_generator.create_class_uid#function",
+      "hash": "9e9a260bd9100a255e8a16c9a392584a8c531373e3df55b5c211ae2e2e30b62e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "uid_generator",
+      "name": "create_class_uid"
+    },
+    {
+      "uid": "uid_generator.create_method_uid#function",
+      "hash": "8e968c8f148a680dff56fb64b9cf3c15f77138b3325d257b17e477e9f33c5b99",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "uid_generator",
+      "name": "create_method_uid"
+    },
+    {
+      "uid": "uid_generator.generate_uid_legacy#function",
+      "hash": "2c35baedf78dce43915fe9b70627f86a1338e0346ade81c6a89071aaae1b43c9",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "uid_generator",
+      "name": "generate_uid_legacy"
+    },
+    {
+      "uid": "uid_generator.generate_uid_components_legacy#function",
+      "hash": "5bab3092533e9efcd4857c1cc0cb03078d2e8e728b5ae3621f755109116d7c72",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "uid_generator",
+      "name": "generate_uid_components_legacy"
+    },
+    {
+      "uid": "uid_generator.generate_uid_compat#function",
+      "hash": "5ec6b3061599ee63a84845e4e17f17d0f71867fa396db237aaa9beafce5a21fd",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "uid_generator",
+      "name": "generate_uid_compat"
+    },
+    {
+      "uid": "uid_generator.generate_uid_components_compat#function",
+      "hash": "4d5c1e6ebd32570f3122a82737c20d9acf2f5684075f480ddfea9610287e0a49",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "uid_generator",
+      "name": "generate_uid_components_compat"
+    },
+    {
+      "uid": "uid_generator.UIDType#class",
+      "hash": "f6ef36a90761b4842e608007476e6fc2561aedace6e12a22b2fb557db990d671",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "class",
+      "module": "uid_generator",
+      "name": "UIDType"
+    },
+    {
+      "uid": "__init__.__init__#module",
+      "hash": "f159a69b1326e8e1ac476ad78422534ca202972ef00c362d59e9fb319462dcbc",
+      "hash_source": "file_content_v1",
+      "hash_version": "2.1.0",
+      "type": "module",
+      "module": "__init__",
+      "path": "__init__.py"
+    },
+    {
+      "uid": "config_manager.config_manager#module",
+      "hash": "48402181f4ae2ca639e8f3f536266117621f603cd820a524a4bc84e12fc203bc",
+      "hash_source": "file_content_v1",
+      "hash_version": "2.1.0",
+      "type": "module",
+      "module": "config_manager",
+      "path": "config_manager.py"
+    },
+    {
+      "uid": "config_manager.get_config_manager#function",
+      "hash": "ccae3172baaba1b476f2fb699935ac2a0702bd04c672819b224c0948a6eb7577",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "config_manager",
+      "name": "get_config_manager"
+    },
+    {
+      "uid": "config_manager.get_config#function",
+      "hash": "ed17b278584474c6655dda7eefd3c2aad18d87e1dba68a0bae6fc1a99e94240e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "config_manager",
+      "name": "get_config"
+    },
+    {
+      "uid": "config_manager.is_llm_enabled#function",
+      "hash": "d04719dca42512d3de6f533a5a31654ba0b336c51ebab188a983a9cb9fe26757",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "config_manager",
+      "name": "is_llm_enabled"
+    },
+    {
+      "uid": "config_manager.get_summary_provider#function",
+      "hash": "d3cb348364e32d70ca393e59f2f4569c999bc911f649ff6aaa82ec407f7c537a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "config_manager",
+      "name": "get_summary_provider"
+    },
+    {
+      "uid": "config_manager.__post_init__#function",
+      "hash": "2f773667c86d9024f5cb251efe5d7697d5132f4cfef6f2e1c468d47e2e0238dc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "config_manager",
+      "name": "__post_init__"
+    },
+    {
+      "uid": "config_manager.__init__#function",
+      "hash": "855afcfcbc26d17ef511908f0c094ea503fb719ebcd842e3a4572368ab03aa45",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "config_manager",
+      "name": "__init__"
+    },
+    {
+      "uid": "config_manager.load_config#function",
+      "hash": "ffb910fd55457ea8cd9a08da9f80453251c457253bed7fa3569758a6ace4abb4",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "config_manager",
+      "name": "load_config"
+    },
+    {
+      "uid": "config_manager._create_config_from_dict#function",
+      "hash": "7cf478596b1c294a686be49624494c6b3308075a5bb5cf7baedc7bd559289ab4",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "config_manager",
+      "name": "_create_config_from_dict"
+    },
+    {
+      "uid": "config_manager.get_config#function",
+      "hash": "f769160fe21295fe8360a36dbd35a1b833546756a475c4c7dbb554aa77bdf6d7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "config_manager",
+      "name": "get_config"
+    },
+    {
+      "uid": "config_manager.is_llm_enabled#function",
+      "hash": "8f2063e7efcdf584bd4e344f1bba49e8690b7719bb342b8d4272d5f6c42d248a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "config_manager",
+      "name": "is_llm_enabled"
+    },
+    {
+      "uid": "config_manager.get_summary_provider#function",
+      "hash": "704ac3974e12a3ee15241d1a1891786d1291237f86579a29dfa119bef86fe137",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "config_manager",
+      "name": "get_summary_provider"
+    },
+    {
+      "uid": "config_manager.save_config_template#function",
+      "hash": "a266d91ce9fcf07a18787a6a3f54be5e1be60b4867b4379cb2da6210a17e282e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "function",
+      "module": "config_manager",
+      "name": "save_config_template"
+    },
+    {
+      "uid": "config_manager.LLMConfig#class",
+      "hash": "345da16afa7f698468b6412179fcf8d85c15636fc6518f8f5713c3309f329cc1",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "class",
+      "module": "config_manager",
+      "name": "LLMConfig"
+    },
+    {
+      "uid": "config_manager.SummaryConfig#class",
+      "hash": "41cbf67f60932cf431b8f2b0a4a41e86998bf99521ffcf02d53a4183e8fdec32",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "class",
+      "module": "config_manager",
+      "name": "SummaryConfig"
+    },
+    {
+      "uid": "config_manager.MetricsConfig#class",
+      "hash": "4f6f72a899c52ac892adf9e6bb19d4ffdf1ec9101894e0530ec07ead0e911848",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "class",
+      "module": "config_manager",
+      "name": "MetricsConfig"
+    },
+    {
+      "uid": "config_manager.SecurityConfig#class",
+      "hash": "870a74b18097d10ea0d4d2c21a439a4fb086f108ceddd0aa63c1b294499a4b22",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "class",
+      "module": "config_manager",
+      "name": "SecurityConfig"
+    },
+    {
+      "uid": "config_manager.LLMStructConfig#class",
+      "hash": "c3bfbc6f8a5a448cfcdb6227a1d1a037e6a9a16e5f9b67943d2bd0ba1d2213df",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "class",
+      "module": "config_manager",
+      "name": "LLMStructConfig"
+    },
+    {
+      "uid": "config_manager.LLMStructConfig.__post_init__#method",
+      "hash": "37ddc37c92ba219fc4827c5f59f0e3bf3407acc0f88cf0433cb0f9d2dc925bc8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "config_manager",
+      "class": "LLMStructConfig",
+      "name": "__post_init__"
+    },
+    {
+      "uid": "config_manager.ConfigManager#class",
+      "hash": "4fc310574a57eff742c940e502817a66ddfa5c60b44b2b66173206fcd134c6f5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "class",
+      "module": "config_manager",
+      "name": "ConfigManager"
+    },
+    {
+      "uid": "config_manager.ConfigManager.__init__#method",
+      "hash": "70f9c367d4ec7f136214aa9a2b09e04e8cd417386ec746414fdb8a9b3336bb2b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "config_manager",
+      "class": "ConfigManager",
+      "name": "__init__"
+    },
+    {
+      "uid": "config_manager.ConfigManager.load_config#method",
+      "hash": "bb860c91210bb8536df45ee96eacea69c89877af4a62917276a9ec1efa664ba7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "config_manager",
+      "class": "ConfigManager",
+      "name": "load_config"
+    },
+    {
+      "uid": "config_manager.ConfigManager._create_config_from_dict#method",
+      "hash": "ec82f9ac1623deb2ca2336e5c0f6c54f97f6eae66d265102a022b87781a42b3a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "config_manager",
+      "class": "ConfigManager",
+      "name": "_create_config_from_dict"
+    },
+    {
+      "uid": "config_manager.ConfigManager.get_config#method",
+      "hash": "878ab43c973cc22087da6c340079262bca60eae6c2c30c0d91e0f3463f7f2146",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "config_manager",
+      "class": "ConfigManager",
+      "name": "get_config"
+    },
+    {
+      "uid": "config_manager.ConfigManager.is_llm_enabled#method",
+      "hash": "0c53b0efcd962ac528480eff59c52fd83d96be386850e4f36be958f31e1dcffe",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "config_manager",
+      "class": "ConfigManager",
+      "name": "is_llm_enabled"
+    },
+    {
+      "uid": "config_manager.ConfigManager.get_summary_provider#method",
+      "hash": "ab50e501bedc9c0420d5e35e345f8380cc2d20ae507e84dce76bec9c6fccc8bb",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "config_manager",
+      "class": "ConfigManager",
+      "name": "get_summary_provider"
+    },
+    {
+      "uid": "config_manager.ConfigManager.save_config_template#method",
+      "hash": "9d56cddc3439f18f39ef37b0eb6f04cab0e354b061fa75266a95cb6cef21d6b4",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "type": "method",
+      "module": "config_manager",
+      "class": "ConfigManager",
+      "name": "save_config_template"
+    }
+  ]
+}

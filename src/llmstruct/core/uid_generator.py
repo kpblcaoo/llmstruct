@@ -295,4 +295,7 @@ def create_class_uid(module_path: str, class_name: str) -> str:
 
 def create_method_uid(module_path: str, class_name: str, method_name: str) -> str:
     """Create UID for method"""
-    return generate_uid(UIDType.METHOD, module_path, method_name, class_name) 
+    return generate_uid(UIDType.METHOD, module_path, method_name, class_name)
+
+
+# Legacy compatibility wrappers removed in v2.1.0 — new API is the single source of truth. 

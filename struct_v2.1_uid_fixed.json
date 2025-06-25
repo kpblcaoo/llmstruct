@@ -1,0 +1,3649 @@
+{
+  "metadata": {
+    "project_name": "llmstruct",
+    "description": "Utility for generating structured JSON for codebases",
+    "version": "2025-06-25T21:53:29.818209Z",
+    "schema_version": "2.1.0",
+    "$schema": "https://schemas.llmstruct.org/v2.1/struct.json",
+    "authors": [
+      {
+        "name": "Mikhail Stepanov",
+        "github": "kpblcaoo",
+        "email": "kpblcaoo@gmail.com"
+      }
+    ],
+    "instructions": [
+      "Follow best practices, warn if instructions conflict with them",
+      "Preserve functionality, ensure idempotency",
+      "Use attached struct.json for context and navigation",
+      "Request missing modules or functions if needed",
+      "Regenerate JSON for significant changes, track via Git and artifacts",
+      "Use internal comments for descriptions, append brief summary"
+    ],
+    "goals": [
+      "Phase 1.5 UID fix test"
+    ],
+    "stats": {
+      "modules_count": 5,
+      "functions_count": 61,
+      "classes_count": 13,
+      "call_edges_count": 133
+    },
+    "artifact_id": "29093afd-4b01-45d0-907c-e4b8eea89276",
+    "summary": "Structured JSON for llmstruct codebase",
+    "tags": [
+      "codebase",
+      "automation"
+    ],
+    "folder_structure": [
+      {
+        "path": ".",
+        "type": "directory",
+        "artifact_id": "ceb3a02c-9875-4ff9-af54-9fd77d175708",
+        "metadata": {}
+      },
+      {
+        "path": "__init__.py",
+        "type": "file",
+        "artifact_id": "c0522d70-aed8-4c26-b114-8f9b68c58668",
+        "metadata": {}
+      },
+      {
+        "path": "config_manager.py",
+        "type": "file",
+        "artifact_id": "4aab685a-8a95-4897-81c5-f1f38166e34d",
+        "metadata": {}
+      },
+      {
+        "path": "hash_utils.py",
+        "type": "file",
+        "artifact_id": "68e8e1c8-26d7-441a-bc92-8fd994b7be0a",
+        "metadata": {}
+      },
+      {
+        "path": "summary_providers.py",
+        "type": "file",
+        "artifact_id": "608b93a8-a83f-4f19-81dc-900a7afb8605",
+        "metadata": {}
+      },
+      {
+        "path": "uid_generator.py",
+        "type": "file",
+        "artifact_id": "c077a4e5-a849-4c36-84b9-0712829b34a5",
+        "metadata": {}
+      }
+    ]
+  },
+  "toc": [
+    {
+      "module_id": "hash_utils",
+      "path": "hash_utils.py",
+      "category": "core",
+      "functions": 12,
+      "classes": 0,
+      "summary": "Hash Utilities for LLMStruct",
+      "hash": "a09dfbc3793462b66bfbb6489f69e55e430eb5ea5bce1679e1a365aeefcc2527",
+      "artifact_id": "a027a44b-778d-4331-835f-7ceb6bc165e6"
+    },
+    {
+      "module_id": "summary_providers",
+      "path": "summary_providers.py",
+      "category": "core",
+      "functions": 22,
+      "classes": 6,
+      "summary": "Summary Providers System",
+      "hash": "7716f37d41692cd86663d5d2091e1f9341b51f6a404ecbcaa5145ca7901f2a16",
+      "artifact_id": "fdec7d72-2d4b-4d58-9dea-0d3a2a341c5b"
+    },
+    {
+      "module_id": "uid_generator",
+      "path": "uid_generator.py",
+      "category": "core",
+      "functions": 15,
+      "classes": 1,
+      "summary": "Advanced UID Generator System for LLMStruct v2.1",
+      "hash": "f3acc0549ce572bc0c42123080d2a6602d2ad97fbac0daa986cb97226483e932",
+      "artifact_id": "ceb4a69b-01b4-474a-a672-b31227265150"
+    },
+    {
+      "module_id": "__init__",
+      "path": "__init__.py",
+      "category": "cli",
+      "functions": 0,
+      "classes": 0,
+      "summary": "LLMStruct Core Module",
+      "hash": "f159a69b1326e8e1ac476ad78422534ca202972ef00c362d59e9fb319462dcbc",
+      "artifact_id": "7b1ac804-9635-4c32-8ecf-4e6c3392335a"
+    },
+    {
+      "module_id": "config_manager",
+      "path": "config_manager.py",
+      "category": "core",
+      "functions": 12,
+      "classes": 6,
+      "summary": "Configuration Management System for LLMStruct",
+      "hash": "48402181f4ae2ca639e8f3f536266117621f603cd820a524a4bc84e12fc203bc",
+      "artifact_id": "83869418-9a13-4d6c-862c-edee43ec3874"
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "hash_utils",
+      "path": "hash_utils.py",
+      "category": "core",
+      "module_doc": "Hash Utilities for LLMStruct\n\nProvides consistent hashing for files, functions, and code entities\nto support incremental builds and change detection.",
+      "functions": [
+        {
+          "name": "hash_content",
+          "docstring": "Generate hash for string content.\n\nArgs:\n    content: String content to hash\n    algorithm: Hash algorithm (sha256, md5, sha1)\n    \nReturns:\n    Hex digest of the hash",
+          "line_range": [
+            14,
+            30
+          ],
+          "parameters": [
+            "content",
+            "algorithm"
+          ],
+          "decorators": [],
+          "uid": "hash_utils.hash_content#function",
+          "uid_components": [
+            "hash_utils",
+            "hash_utils.hash_content"
+          ],
+          "hash": "fec4da722ef311003ac0c59137e980d83ecbc8daeb022d2b4841e235226c74b8",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#hash-utils-hash-content",
+          "summary": "Generate hash for string content",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "hasher.update",
+            "content.encode",
+            "hashlib.new",
+            "hasher.hexdigest"
+          ],
+          "called_by": [
+            "quick_content_hash",
+            "hash_source",
+            "hash_entity"
+          ]
+        },
+        {
+          "name": "hash_file",
+          "docstring": "Generate hash for file content.\n\nArgs:\n    file_path: Path to file\n    algorithm: Hash algorithm\n    \nReturns:\n    Hex digest of file hash, None if file doesn't exist",
+          "line_range": [
+            33,
+            56
+          ],
+          "parameters": [
+            "file_path",
+            "algorithm"
+          ],
+          "decorators": [],
+          "uid": "hash_utils.hash_file#function",
+          "uid_components": [
+            "hash_utils",
+            "hash_utils.hash_file"
+          ],
+          "hash": "fa1b8c8680c3ad1b715764a1e407adf0b40e814ada9cb931d5fbca6b2e0c7720",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#hash-utils-hash-file",
+          "summary": "Generate hash for file content",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "path.is_file",
+            "f.read",
+            "hasher.hexdigest",
+            "Path",
+            "iter",
+            "hasher.update",
+            "path.exists",
+            "open",
+            "hashlib.new"
+          ],
+          "called_by": [
+            "create_incremental_hash_database",
+            "create_file_hash_map",
+            "has_file_changed",
+            "quick_file_hash"
+          ]
+        },
+        {
+          "name": "hash_source",
+          "docstring": "Generate hash for source code content.\n\nNormalizes whitespace and removes comments for consistent hashing.\n\nArgs:\n    content: Source code content\n    algorithm: Hash algorithm\n    \nReturns:\n    Hex digest of normalized source hash",
+          "line_range": [
+            59,
+            77
+          ],
+          "parameters": [
+            "content",
+            "algorithm"
+          ],
+          "decorators": [],
+          "uid": "hash_utils.hash_source#function",
+          "uid_components": [
+            "hash_utils",
+            "hash_utils.hash_source"
+          ],
+          "hash": "047feb051edaf01138da6efab3faee059413a02616891be861964083a92ca1dc",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#hash-utils-hash-source",
+          "summary": "Generate hash for source code content",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "hash_content",
+            "normalize_source_for_hashing"
+          ],
+          "called_by": [
+            "quick_source_hash"
+          ]
+        },
+        {
+          "name": "normalize_source_for_hashing",
+          "docstring": "Normalize source code for consistent hashing.\n\n- Removes leading/trailing whitespace\n- Normalizes line endings\n- Removes empty lines\n- Strips inline comments (# comments)\n\nArgs:\n    content: Source code content\n    \nReturns:\n    Normalized content",
+          "line_range": [
+            80,
+            127
+          ],
+          "parameters": [
+            "content"
+          ],
+          "decorators": [],
+          "uid": "hash_utils.normalize_source_for_hashing#function",
+          "uid_components": [
+            "hash_utils",
+            "hash_utils.normalize_source_for_hashing"
+          ],
+          "hash": "6e9c92d688035487ec44b7e81ac537a1c4c5edaab0cf0ccbe04c4a7b1360bba1",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#hash-utils-normalize-source-for-hashing",
+          "summary": "Normalize source code for consistent hashing",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "line.strip",
+            "enumerate",
+            "lines.append",
+            "content.splitlines"
+          ],
+          "called_by": [
+            "hash_source",
+            "hash_entity"
+          ]
+        },
+        {
+          "name": "hash_entity",
+          "docstring": "Generate hash for a code entity (function, class, etc.).\n\nUses entity content and metadata for hashing.\n\nArgs:\n    entity: Entity dictionary with 'content', 'name', 'type' keys\n    algorithm: Hash algorithm\n    \nReturns:\n    Hex digest of entity hash",
+          "line_range": [
+            130,
+            171
+          ],
+          "parameters": [
+            "entity",
+            "algorithm"
+          ],
+          "decorators": [],
+          "uid": "hash_utils.hash_entity#function",
+          "uid_components": [
+            "hash_utils",
+            "hash_utils.hash_entity"
+          ],
+          "hash": "0ae6671255d0a6bfeb5cc7bbe210074c7e1537cc64c2a6aaa289169302104bfe",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#hash-utils-hash-entity",
+          "summary": "Generate hash for a code entity (function, class, etc.)",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "hash_content",
+            "hash_parts.append",
+            "normalize_source_for_hashing",
+            "p.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "create_file_hash_map",
+          "docstring": "Create hash map for multiple files.\n\nArgs:\n    file_paths: List of file paths\n    algorithm: Hash algorithm\n    \nReturns:\n    Dictionary mapping file paths to their hashes",
+          "line_range": [
+            174,
+            188
+          ],
+          "parameters": [
+            "file_paths",
+            "algorithm"
+          ],
+          "decorators": [],
+          "uid": "hash_utils.create_file_hash_map#function",
+          "uid_components": [
+            "hash_utils",
+            "hash_utils.create_file_hash_map"
+          ],
+          "hash": "7393e9bdfc51dec6f8bdb42bd005f95e80e88249e98cdb1749fde1809365572f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#hash-utils-create-file-hash-map",
+          "summary": "Create hash map for multiple files",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "hash_file"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "has_file_changed",
+          "docstring": "Check if file has changed since previous hash.\n\nArgs:\n    file_path: Path to file\n    previous_hash: Previously computed hash\n    algorithm: Hash algorithm\n    \nReturns:\n    True if file has changed, False otherwise",
+          "line_range": [
+            191,
+            204
+          ],
+          "parameters": [
+            "file_path",
+            "previous_hash",
+            "algorithm"
+          ],
+          "decorators": [],
+          "uid": "hash_utils.has_file_changed#function",
+          "uid_components": [
+            "hash_utils",
+            "hash_utils.has_file_changed"
+          ],
+          "hash": "67beb5e3aa78c4a9f9680f408b29e42664bed96d36b6a2b16e29e45dda87927b",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#hash-utils-has-file-changed",
+          "summary": "Check if file has changed since previous hash",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "hash_file"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "create_incremental_hash_database",
+          "docstring": "Create hash database for incremental builds.\n\nArgs:\n    base_path: Base directory to scan\n    file_patterns: List of glob patterns for files to include\n    algorithm: Hash algorithm\n    \nReturns:\n    Dictionary mapping file paths to hashes",
+          "line_range": [
+            207,
+            235
+          ],
+          "parameters": [
+            "base_path",
+            "file_patterns",
+            "algorithm"
+          ],
+          "decorators": [],
+          "uid": "hash_utils.create_incremental_hash_database#function",
+          "uid_components": [
+            "hash_utils",
+            "hash_utils.create_incremental_hash_database"
+          ],
+          "hash": "4bd873231de2b77df775209fd8485fe1613dc7f6b29de94b3680450b0df3b2dc",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#hash-utils-create-incremental-hash-database",
+          "summary": "Create hash database for incremental builds",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "file_path.relative_to",
+            "file_path.is_file",
+            "str",
+            "hash_file",
+            "Path",
+            "base_path.glob"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "compare_hash_databases",
+          "docstring": "Compare two hash databases to find changes.\n\nArgs:\n    old_db: Previous hash database\n    new_db: Current hash database\n    \nReturns:\n    Dictionary with 'added', 'modified', 'deleted' file lists",
+          "line_range": [
+            238,
+            265
+          ],
+          "parameters": [
+            "old_db",
+            "new_db"
+          ],
+          "decorators": [],
+          "uid": "hash_utils.compare_hash_databases#function",
+          "uid_components": [
+            "hash_utils",
+            "hash_utils.compare_hash_databases"
+          ],
+          "hash": "24f3070c7d80788c96b28a6fbba953592f95683a1a0f269d4402bef08a99e4b7",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#hash-utils-compare-hash-databases",
+          "summary": "Compare two hash databases to find changes",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "set",
+            "new_db.keys",
+            "modified.append",
+            "old_db.keys",
+            "sorted",
+            "list"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "quick_file_hash",
+          "docstring": "Quick SHA-256 hash of a file",
+          "line_range": [
+            270,
+            272
+          ],
+          "parameters": [
+            "file_path"
+          ],
+          "decorators": [],
+          "uid": "hash_utils.quick_file_hash#function",
+          "uid_components": [
+            "hash_utils",
+            "hash_utils.quick_file_hash"
+          ],
+          "hash": "33ae6f768b288b556e0ae2bb14700e9f8c00b446c1e43747757d23ad4bcd4652",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#hash-utils-quick-file-hash",
+          "summary": "Quick SHA-256 hash of a file",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "hash_file"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "quick_content_hash",
+          "docstring": "Quick SHA-256 hash of content",
+          "line_range": [
+            275,
+            277
+          ],
+          "parameters": [
+            "content"
+          ],
+          "decorators": [],
+          "uid": "hash_utils.quick_content_hash#function",
+          "uid_components": [
+            "hash_utils",
+            "hash_utils.quick_content_hash"
+          ],
+          "hash": "93b10947b0b5caae4297b8476f326dc784a5f9961625402f05f2a4dc0da4a17d",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#hash-utils-quick-content-hash",
+          "summary": "Quick SHA-256 hash of content",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "hash_content"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "quick_source_hash",
+          "docstring": "Quick SHA-256 hash of normalized source code",
+          "line_range": [
+            280,
+            282
+          ],
+          "parameters": [
+            "source_code"
+          ],
+          "decorators": [],
+          "uid": "hash_utils.quick_source_hash#function",
+          "uid_components": [
+            "hash_utils",
+            "hash_utils.quick_source_hash"
+          ],
+          "hash": "0f5d8085a445868b9c8f42276d2850ade224a908e296ece8042fe7580acd07d2",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#hash-utils-quick-source-hash",
+          "summary": "Quick SHA-256 hash of normalized source code",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "hash_source"
+          ],
+          "called_by": []
+        }
+      ],
+      "classes": [],
+      "callgraph": {
+        "hash_content": [
+          "hasher.update",
+          "content.encode",
+          "hashlib.new",
+          "hasher.hexdigest"
+        ],
+        "hash_file": [
+          "path.is_file",
+          "f.read",
+          "hasher.hexdigest",
+          "Path",
+          "iter",
+          "hasher.update",
+          "path.exists",
+          "open",
+          "hashlib.new"
+        ],
+        "hash_source": [
+          "hash_content",
+          "normalize_source_for_hashing"
+        ],
+        "normalize_source_for_hashing": [
+          "line.strip",
+          "enumerate",
+          "lines.append",
+          "content.splitlines"
+        ],
+        "hash_entity": [
+          "hash_content",
+          "hash_parts.append",
+          "normalize_source_for_hashing",
+          "p.get"
+        ],
+        "create_file_hash_map": [
+          "hash_file"
+        ],
+        "has_file_changed": [
+          "hash_file"
+        ],
+        "create_incremental_hash_database": [
+          "file_path.relative_to",
+          "file_path.is_file",
+          "str",
+          "hash_file",
+          "Path",
+          "base_path.glob"
+        ],
+        "compare_hash_databases": [
+          "set",
+          "new_db.keys",
+          "modified.append",
+          "old_db.keys",
+          "sorted",
+          "list"
+        ],
+        "quick_file_hash": [
+          "hash_file"
+        ],
+        "quick_content_hash": [
+          "hash_content"
+        ],
+        "quick_source_hash": [
+          "hash_source"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "Optional",
+        "Path",
+        "hashlib",
+        "os",
+        "pathlib",
+        "typing"
+      ],
+      "hash": "a09dfbc3793462b66bfbb6489f69e55e430eb5ea5bce1679e1a365aeefcc2527",
+      "hash_source": "file_content_v1",
+      "hash_version": "2.1.0",
+      "uid": "hash_utils.hash_utils#module",
+      "uid_components": [
+        "hash_utils",
+        "hash_utils.hash_utils"
+      ],
+      "summary": "Hash Utilities for LLMStruct\n\nProvides consistent hashing for files, functions, and code entities\nto support incremen...",
+      "summary_source": "docstring",
+      "tags": [],
+      "artifact_id": "a027a44b-778d-4331-835f-7ceb6bc165e6"
+    },
+    {
+      "module_id": "summary_providers",
+      "path": "summary_providers.py",
+      "category": "core",
+      "module_doc": "Summary Providers System\n\nProvides multiple strategies for generating code summaries:\n- HeuristicProvider: Fast, offline, deterministic (default)\n- LLMProvider: AI-powered but optional and disabled by default",
+      "functions": [
+        {
+          "name": "get_summary_system",
+          "docstring": "Get global summary system instance",
+          "line_range": [
+            386,
+            391
+          ],
+          "parameters": [],
+          "decorators": [],
+          "uid": "summary_providers.get_summary_system#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.get_summary_system"
+          ],
+          "hash": "cf17f96e29b1be4f78d7c22074397529dae0b7fb32fe6eefa889b102ad8cc0a9",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-get-summary-system",
+          "summary": "Get global summary system instance",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "SummarySystem"
+          ],
+          "called_by": [
+            "generate_summary"
+          ]
+        },
+        {
+          "name": "generate_summary",
+          "docstring": "Generate summary using the configured provider",
+          "line_range": [
+            394,
+            402
+          ],
+          "parameters": [
+            "code",
+            "entity_type",
+            "entity_name",
+            "docstring"
+          ],
+          "decorators": [],
+          "uid": "summary_providers.generate_summary#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.generate_summary"
+          ],
+          "hash": "388395653f28a78d36d85c8d9be21dc2ecde9ca698772a73a2c68ff2898040ed",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-generate-summary",
+          "summary": "Generate summary using the configured provider",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "get_summary_system"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "is_empty",
+          "docstring": "Check if summary is effectively empty",
+          "line_range": [
+            36,
+            38
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": [],
+          "uid": "summary_providers.is_empty#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.is_empty"
+          ],
+          "hash": "bce618d90757bb6d789a8ee0723408594d3fa28a61feae442d1409f3956aaf39",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-is-empty",
+          "summary": "Check if summary is effectively empty",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "generate_summary",
+          "docstring": "Generate summary for code entity",
+          "line_range": [
+            45,
+            52
+          ],
+          "parameters": [
+            "self",
+            "code",
+            "entity_type",
+            "entity_name",
+            "docstring"
+          ],
+          "decorators": [
+            "abstractmethod"
+          ],
+          "uid": "summary_providers.generate_summary#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.generate_summary"
+          ],
+          "hash": "0ddc7dd82cb0672f6e09c88018d76c9e7352c3129675d93bb7b123ba437b9bc4",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-generate-summary",
+          "summary": "Generate summary for code entity",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "get_summary_system"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_provider_name",
+          "docstring": "Get provider name",
+          "line_range": [
+            55,
+            57
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": [
+            "abstractmethod"
+          ],
+          "uid": "summary_providers.get_provider_name#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.get_provider_name"
+          ],
+          "hash": "f03830d0d1bf4599f6d186048da62cb046aac0abe52999ede0456508e3b8d0f8",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-get-provider-name",
+          "summary": "Get provider name",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            70,
+            71
+          ],
+          "parameters": [
+            "self",
+            "max_length"
+          ],
+          "decorators": [],
+          "uid": "summary_providers.__init__#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.__init__"
+          ],
+          "hash": "43371322618f5dae110b9db73c9fce93bbff13f26e2415ba2d75364128c7038c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers---init--",
+          "summary": "Function for init",
+          "summary_source": "heuristic",
+          "tags": [
+            "function",
+            "private"
+          ],
+          "calls": [
+            "HeuristicProvider",
+            "LLMProvider"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "generate_summary",
+          "docstring": "Generate heuristic summary",
+          "line_range": [
+            73,
+            111
+          ],
+          "parameters": [
+            "self",
+            "code",
+            "entity_type",
+            "entity_name",
+            "docstring"
+          ],
+          "decorators": [],
+          "uid": "summary_providers.generate_summary#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.generate_summary"
+          ],
+          "hash": "ab6119924425a943db35627bc9da54aae3245ba329162ace0427c0c36656bde4",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-generate-summary",
+          "summary": "Generate heuristic summary",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "get_summary_system"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_clean_docstring",
+          "docstring": "Clean and truncate docstring",
+          "line_range": [
+            113,
+            130
+          ],
+          "parameters": [
+            "self",
+            "docstring"
+          ],
+          "decorators": [],
+          "uid": "summary_providers._clean_docstring#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers._clean_docstring"
+          ],
+          "hash": "d93f6b948daf07e662f2e9d1837c84206dabf2ac62c3baad577731c858010ef3",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers--clean-docstring",
+          "summary": "Clean and truncate docstring",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "re.sub",
+            "len",
+            "re.split"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_generate_heuristic_summary",
+          "docstring": "Generate summary based on naming patterns and code structure",
+          "line_range": [
+            132,
+            170
+          ],
+          "parameters": [
+            "self",
+            "entity_type",
+            "entity_name",
+            "code"
+          ],
+          "decorators": [],
+          "uid": "summary_providers._generate_heuristic_summary#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers._generate_heuristic_summary"
+          ],
+          "hash": "0bd48cad480fc5f6959754837237eb6c90a4ebd9c20d954f0ffb60fb72e3d038",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers--generate-heuristic-summary",
+          "summary": "Generate summary based on naming patterns and code structure",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "self._humanize_name",
+            "name_lower.endswith",
+            "name_lower.startswith",
+            "entity_type.title",
+            "entity_name.lower"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_humanize_name",
+          "docstring": "Convert snake_case or CamelCase to human readable",
+          "line_range": [
+            172,
+            181
+          ],
+          "parameters": [
+            "self",
+            "name"
+          ],
+          "decorators": [],
+          "uid": "summary_providers._humanize_name#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers._humanize_name"
+          ],
+          "hash": "eef5831388e276e0ac6bf70a593fee0da313262e1f8f17970b4d24edcc02a5dc",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers--humanize-name",
+          "summary": "Convert snake_case or CamelCase to human readable",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "word.lower",
+            "re.findall",
+            "name.split"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_tags_from_docstring",
+          "docstring": "Extract tags from docstring content",
+          "line_range": [
+            183,
+            202
+          ],
+          "parameters": [
+            "self",
+            "docstring"
+          ],
+          "decorators": [],
+          "uid": "summary_providers._extract_tags_from_docstring#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers._extract_tags_from_docstring"
+          ],
+          "hash": "d266379303c0475c5de9742597aa48a9941eab74a98674497fd5e74fcabe37c6",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers--extract-tags-from-docstring",
+          "summary": "Extract tags from docstring content",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "any",
+            "tags.append",
+            "docstring.lower"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_tags_from_code",
+          "docstring": "Extract tags from code analysis",
+          "line_range": [
+            204,
+            229
+          ],
+          "parameters": [
+            "self",
+            "entity_type",
+            "entity_name",
+            "code"
+          ],
+          "decorators": [],
+          "uid": "summary_providers._extract_tags_from_code#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers._extract_tags_from_code"
+          ],
+          "hash": "1568b60a5c9d3d618c9d7da8c1ebde75bb1f53d7a84876ffe6ea8bee9e6a0df0",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers--extract-tags-from-code",
+          "summary": "Extract tags from code analysis",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "entity_name.startswith",
+            "tags.append"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_provider_name",
+          "docstring": "",
+          "line_range": [
+            231,
+            232
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": [],
+          "uid": "summary_providers.get_provider_name#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.get_provider_name"
+          ],
+          "hash": "9710c801444f1920a94894fe23bbe371bd996cff9aed5249cfbb147401cabb2f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-get-provider-name",
+          "summary": "Retrieves provider name",
+          "summary_source": "heuristic",
+          "tags": [
+            "function",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            242,
+            244
+          ],
+          "parameters": [
+            "self",
+            "api_key"
+          ],
+          "decorators": [],
+          "uid": "summary_providers.__init__#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.__init__"
+          ],
+          "hash": "d762b29cc3e492be87f93062b210158467409f37c800325c995dd251ec9d3a88",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers---init--",
+          "summary": "Function for init",
+          "summary_source": "heuristic",
+          "tags": [
+            "function",
+            "private"
+          ],
+          "calls": [
+            "HeuristicProvider",
+            "LLMProvider"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "generate_summary",
+          "docstring": "Generate LLM-powered summary",
+          "line_range": [
+            246,
+            284
+          ],
+          "parameters": [
+            "self",
+            "code",
+            "entity_type",
+            "entity_name",
+            "docstring"
+          ],
+          "decorators": [],
+          "uid": "summary_providers.generate_summary#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.generate_summary"
+          ],
+          "hash": "8aab5910ff13958c49ed2819a3bfc469c3f5d6a8e3def16b3a1eee91191df8e5",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-generate-summary",
+          "summary": "Generate LLM-powered summary",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "get_summary_system"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_create_cache_key",
+          "docstring": "Create cache key for LLM results",
+          "line_range": [
+            286,
+            289
+          ],
+          "parameters": [
+            "self",
+            "code",
+            "entity_type",
+            "entity_name"
+          ],
+          "decorators": [],
+          "uid": "summary_providers._create_cache_key#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers._create_cache_key"
+          ],
+          "hash": "7184a8357f3531867ee8aab8513c3330187b2707ab2f4165058c4b542ee93206",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers--create-cache-key",
+          "summary": "Create cache key for LLM results",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "content.encode",
+            "hashlib.md5"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_call_llm_api",
+          "docstring": "Call LLM API to generate summary",
+          "line_range": [
+            291,
+            307
+          ],
+          "parameters": [
+            "self",
+            "code",
+            "entity_type",
+            "entity_name",
+            "docstring"
+          ],
+          "decorators": [],
+          "uid": "summary_providers._call_llm_api#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers._call_llm_api"
+          ],
+          "hash": "99393e3bc1dd5db6b07af95d1210a75c13debff262d51ea6700aa4dec15e66c4",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers--call-llm-api",
+          "summary": "Call LLM API to generate summary",
+          "summary_source": "docstring",
+          "tags": [
+            "public"
+          ],
+          "calls": [
+            "self._create_prompt",
+            "CodeSummary",
+            "get_config"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_create_prompt",
+          "docstring": "Create LLM prompt for summary generation",
+          "line_range": [
+            309,
+            336
+          ],
+          "parameters": [
+            "self",
+            "code",
+            "entity_type",
+            "entity_name",
+            "docstring"
+          ],
+          "decorators": [],
+          "uid": "summary_providers._create_prompt#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers._create_prompt"
+          ],
+          "hash": "c8c689b8a86484b19fff4084e207c760db5884fb90891ddb4bb2db44ee1f2f62",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers--create-prompt",
+          "summary": "Create LLM prompt for summary generation",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "get_config"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_provider_name",
+          "docstring": "",
+          "line_range": [
+            338,
+            339
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": [],
+          "uid": "summary_providers.get_provider_name#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.get_provider_name"
+          ],
+          "hash": "d7825d74c13182d57a6ab529df7cd0fa79a7f81309961ce5a58e9016d91e4497",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-get-provider-name",
+          "summary": "Retrieves provider name",
+          "summary_source": "heuristic",
+          "tags": [
+            "function",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            345,
+            347
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": [],
+          "uid": "summary_providers.__init__#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.__init__"
+          ],
+          "hash": "6505577ade9ac70cd86970fc2fe17456f95f1f2e9d76d40fda16a6405260852f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers---init--",
+          "summary": "Function for init",
+          "summary_source": "heuristic",
+          "tags": [
+            "function",
+            "private"
+          ],
+          "calls": [
+            "HeuristicProvider",
+            "LLMProvider"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "generate_summary",
+          "docstring": "Generate summary using configured provider",
+          "line_range": [
+            349,
+            372
+          ],
+          "parameters": [
+            "self",
+            "code",
+            "entity_type",
+            "entity_name",
+            "docstring"
+          ],
+          "decorators": [],
+          "uid": "summary_providers.generate_summary#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.generate_summary"
+          ],
+          "hash": "fff44a860f6b7661bf4a0ca30760a836c810662be85f5e96415632de487b8322",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-generate-summary",
+          "summary": "Generate summary using configured provider",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "get_summary_system"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_active_provider",
+          "docstring": "Get name of currently active provider",
+          "line_range": [
+            374,
+            379
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": [],
+          "uid": "summary_providers.get_active_provider#function",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.get_active_provider"
+          ],
+          "hash": "cedc1ffe93391197241182a73b9d0aab9885da903f6289fbf45955ed43e704f7",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-get-active-provider",
+          "summary": "Get name of currently active provider",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "is_llm_enabled",
+            "get_config"
+          ],
+          "called_by": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "SummarySource",
+          "docstring": "Source of the summary",
+          "line_range": [
+            19,
+            24
+          ],
+          "methods": [],
+          "bases": [
+            "Enum"
+          ],
+          "uid": "summary_providers.SummarySource#class",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.SummarySource"
+          ],
+          "hash": "a497862f1fdfdb34a252badec55ea034d4ca706b22f442a5671f064f1f57d801",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-summarysource",
+          "summary": "Source of the summary",
+          "summary_source": "docstring",
+          "tags": []
+        },
+        {
+          "name": "CodeSummary",
+          "docstring": "Container for code summary with metadata",
+          "line_range": [
+            28,
+            38
+          ],
+          "methods": [
+            {
+              "name": "is_empty",
+              "docstring": "Check if summary is effectively empty",
+              "line_range": [
+                36,
+                38
+              ],
+              "parameters": [
+                "self"
+              ],
+              "uid": "summary_providers.CodeSummary.is_empty#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.CodeSummary",
+                "summary_providers.CodeSummary.is_empty"
+              ],
+              "hash": "7f9af407be92d4979ef19fbe28ab4001ed0f87e1d4bd5633e3476068d1e76014",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-codesummary-is-empty",
+              "summary": "Check if summary is effectively empty",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [],
+              "called_by": []
+            }
+          ],
+          "bases": [],
+          "uid": "summary_providers.CodeSummary#class",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.CodeSummary"
+          ],
+          "hash": "75cf2d3c41c0c6500344d9b8795dee1d260b5472ae48b120c757021101942b10",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-codesummary",
+          "summary": "Container for code summary with metadata",
+          "summary_source": "docstring",
+          "tags": []
+        },
+        {
+          "name": "SummaryProvider",
+          "docstring": "Abstract base class for summary providers",
+          "line_range": [
+            41,
+            57
+          ],
+          "methods": [
+            {
+              "name": "generate_summary",
+              "docstring": "Generate summary for code entity",
+              "line_range": [
+                45,
+                52
+              ],
+              "parameters": [
+                "self",
+                "code",
+                "entity_type",
+                "entity_name",
+                "docstring"
+              ],
+              "uid": "summary_providers.SummaryProvider.generate_summary#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.SummaryProvider",
+                "summary_providers.SummaryProvider.generate_summary"
+              ],
+              "hash": "879fdf5907f47e0e942751d170e4ceb33c2e9e9ab86d5857fef970fb565490da",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-summaryprovider-generate-summary",
+              "summary": "Generate summary for code entity",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "get_summary_system"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "get_provider_name",
+              "docstring": "Get provider name",
+              "line_range": [
+                55,
+                57
+              ],
+              "parameters": [
+                "self"
+              ],
+              "uid": "summary_providers.SummaryProvider.get_provider_name#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.SummaryProvider",
+                "summary_providers.SummaryProvider.get_provider_name"
+              ],
+              "hash": "f737b16e1d80939818aef4b674b2cf5aa67218025f64cc39ecc2d6bad0162423",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-summaryprovider-get-provider-name",
+              "summary": "Get provider name",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [],
+              "called_by": []
+            }
+          ],
+          "bases": [
+            "ABC"
+          ],
+          "uid": "summary_providers.SummaryProvider#class",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.SummaryProvider"
+          ],
+          "hash": "5c0b966ddf115c20b97a297926c54c0c28de9bbe0c154a20346527a39f2de96b",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-summaryprovider",
+          "summary": "Abstract base class for summary providers",
+          "summary_source": "docstring",
+          "tags": []
+        },
+        {
+          "name": "HeuristicProvider",
+          "docstring": "Fast, deterministic summary provider using heuristics.\n\nFallback chain:\n1. Extract and clean docstring (confidence: 0.9)\n2. Generate from function/class name (confidence: 0.3)\n3. Return empty (confidence: 0.0)",
+          "line_range": [
+            60,
+            232
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "docstring": "",
+              "line_range": [
+                70,
+                71
+              ],
+              "parameters": [
+                "self",
+                "max_length"
+              ],
+              "uid": "summary_providers.HeuristicProvider.__init__#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.HeuristicProvider",
+                "summary_providers.HeuristicProvider.__init__"
+              ],
+              "hash": "b40c33310510144111555ddf4ea5f58d262d798972c2534d05bcb4032806ccd7",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-heuristicprovider---init--",
+              "summary": "Method for heuristicprovider. init",
+              "summary_source": "heuristic",
+              "tags": [
+                "method",
+                "public"
+              ],
+              "calls": [
+                "HeuristicProvider",
+                "LLMProvider"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "generate_summary",
+              "docstring": "Generate heuristic summary",
+              "line_range": [
+                73,
+                111
+              ],
+              "parameters": [
+                "self",
+                "code",
+                "entity_type",
+                "entity_name",
+                "docstring"
+              ],
+              "uid": "summary_providers.HeuristicProvider.generate_summary#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.HeuristicProvider",
+                "summary_providers.HeuristicProvider.generate_summary"
+              ],
+              "hash": "b372915e7ffdec09d912a943f8c17035f42b730c9d85fe7ea8040a73ec373672",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-heuristicprovider-generate-summary",
+              "summary": "Generate heuristic summary",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "get_summary_system"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "_clean_docstring",
+              "docstring": "Clean and truncate docstring",
+              "line_range": [
+                113,
+                130
+              ],
+              "parameters": [
+                "self",
+                "docstring"
+              ],
+              "uid": "summary_providers.HeuristicProvider._clean_docstring#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.HeuristicProvider",
+                "summary_providers.HeuristicProvider._clean_docstring"
+              ],
+              "hash": "a199e02182d46a08c05dced578490ae314e37f012c7eb33f9aca325e0bbc1c8d",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-heuristicprovider--clean-docstring",
+              "summary": "Clean and truncate docstring",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "re.sub",
+                "len",
+                "re.split"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "_generate_heuristic_summary",
+              "docstring": "Generate summary based on naming patterns and code structure",
+              "line_range": [
+                132,
+                170
+              ],
+              "parameters": [
+                "self",
+                "entity_type",
+                "entity_name",
+                "code"
+              ],
+              "uid": "summary_providers.HeuristicProvider._generate_heuristic_summary#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.HeuristicProvider",
+                "summary_providers.HeuristicProvider._generate_heuristic_summary"
+              ],
+              "hash": "b0e963e48560359345bf20b6ffa5b89db6c9d7a010c991b4767e37c6f7b658cb",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-heuristicprovider--generate-heuristic-summary",
+              "summary": "Generate summary based on naming patterns and code structure",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "self._humanize_name",
+                "name_lower.endswith",
+                "name_lower.startswith",
+                "entity_type.title",
+                "entity_name.lower"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "_humanize_name",
+              "docstring": "Convert snake_case or CamelCase to human readable",
+              "line_range": [
+                172,
+                181
+              ],
+              "parameters": [
+                "self",
+                "name"
+              ],
+              "uid": "summary_providers.HeuristicProvider._humanize_name#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.HeuristicProvider",
+                "summary_providers.HeuristicProvider._humanize_name"
+              ],
+              "hash": "6b751afa99cfa4ff36bf1c2ad13ae6ff9e818b4c587eac2d3ac5a543075b8996",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-heuristicprovider--humanize-name",
+              "summary": "Convert snake_case or CamelCase to human readable",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "word.lower",
+                "re.findall",
+                "name.split"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "_extract_tags_from_docstring",
+              "docstring": "Extract tags from docstring content",
+              "line_range": [
+                183,
+                202
+              ],
+              "parameters": [
+                "self",
+                "docstring"
+              ],
+              "uid": "summary_providers.HeuristicProvider._extract_tags_from_docstring#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.HeuristicProvider",
+                "summary_providers.HeuristicProvider._extract_tags_from_docstring"
+              ],
+              "hash": "08f692927b31c5f79e352d8b12226597fa54b2f602ae351cdda50a75e6a0900d",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-heuristicprovider--extract-tags-from-docstring",
+              "summary": "Extract tags from docstring content",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "any",
+                "tags.append",
+                "docstring.lower"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "_extract_tags_from_code",
+              "docstring": "Extract tags from code analysis",
+              "line_range": [
+                204,
+                229
+              ],
+              "parameters": [
+                "self",
+                "entity_type",
+                "entity_name",
+                "code"
+              ],
+              "uid": "summary_providers.HeuristicProvider._extract_tags_from_code#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.HeuristicProvider",
+                "summary_providers.HeuristicProvider._extract_tags_from_code"
+              ],
+              "hash": "55cf52d19bc667653dd05c0b0636de4a0f93bd7b3c162abd10c5c0564d92a879",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-heuristicprovider--extract-tags-from-code",
+              "summary": "Extract tags from code analysis",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "entity_name.startswith",
+                "tags.append"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "get_provider_name",
+              "docstring": "",
+              "line_range": [
+                231,
+                232
+              ],
+              "parameters": [
+                "self"
+              ],
+              "uid": "summary_providers.HeuristicProvider.get_provider_name#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.HeuristicProvider",
+                "summary_providers.HeuristicProvider.get_provider_name"
+              ],
+              "hash": "45a9471e16c2ff0d775f1abb8afc5d7abd8239274a320f4b05ef3b9865d9a403",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-heuristicprovider-get-provider-name",
+              "summary": "Method for heuristicprovider.get provider name",
+              "summary_source": "heuristic",
+              "tags": [
+                "method",
+                "public"
+              ],
+              "calls": [],
+              "called_by": []
+            }
+          ],
+          "bases": [
+            "SummaryProvider"
+          ],
+          "uid": "summary_providers.HeuristicProvider#class",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.HeuristicProvider"
+          ],
+          "hash": "ee352ccec26adcf0dd02c6d7908d30721e0ceb4d8de1bbc0d0f8c47a48d05bda",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-heuristicprovider",
+          "summary": "Fast, deterministic summary provider using heuristics",
+          "summary_source": "docstring",
+          "tags": []
+        },
+        {
+          "name": "LLMProvider",
+          "docstring": "LLM-powered summary provider (optional, disabled by default).\n\nOnly works when LLM is explicitly enabled via configuration.",
+          "line_range": [
+            235,
+            339
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "docstring": "",
+              "line_range": [
+                242,
+                244
+              ],
+              "parameters": [
+                "self",
+                "api_key"
+              ],
+              "uid": "summary_providers.LLMProvider.__init__#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.LLMProvider",
+                "summary_providers.LLMProvider.__init__"
+              ],
+              "hash": "ef68905c33365e95718999ac8ca9503ae0ca57bc5ab5925951631b6e7d0f2f4a",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-llmprovider---init--",
+              "summary": "Method for llmprovider. init",
+              "summary_source": "heuristic",
+              "tags": [
+                "method",
+                "public"
+              ],
+              "calls": [
+                "HeuristicProvider",
+                "LLMProvider"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "generate_summary",
+              "docstring": "Generate LLM-powered summary",
+              "line_range": [
+                246,
+                284
+              ],
+              "parameters": [
+                "self",
+                "code",
+                "entity_type",
+                "entity_name",
+                "docstring"
+              ],
+              "uid": "summary_providers.LLMProvider.generate_summary#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.LLMProvider",
+                "summary_providers.LLMProvider.generate_summary"
+              ],
+              "hash": "85b4645aa34e5b7e0344731129834a32cbde55bee60985e071e2d4616ba581ca",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-llmprovider-generate-summary",
+              "summary": "Generate LLM-powered summary",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "get_summary_system"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "_create_cache_key",
+              "docstring": "Create cache key for LLM results",
+              "line_range": [
+                286,
+                289
+              ],
+              "parameters": [
+                "self",
+                "code",
+                "entity_type",
+                "entity_name"
+              ],
+              "uid": "summary_providers.LLMProvider._create_cache_key#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.LLMProvider",
+                "summary_providers.LLMProvider._create_cache_key"
+              ],
+              "hash": "689fb58c083c373f722db807b8e60d7232bc705b911f49072cb332299d0e1845",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-llmprovider--create-cache-key",
+              "summary": "Create cache key for LLM results",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "content.encode",
+                "hashlib.md5"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "_call_llm_api",
+              "docstring": "Call LLM API to generate summary",
+              "line_range": [
+                291,
+                307
+              ],
+              "parameters": [
+                "self",
+                "code",
+                "entity_type",
+                "entity_name",
+                "docstring"
+              ],
+              "uid": "summary_providers.LLMProvider._call_llm_api#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.LLMProvider",
+                "summary_providers.LLMProvider._call_llm_api"
+              ],
+              "hash": "f8c261c10010defb35b7c654aceedc28ea5b7146a72e01a2282fffb2fbc16cb0",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-llmprovider--call-llm-api",
+              "summary": "Call LLM API to generate summary",
+              "summary_source": "docstring",
+              "tags": [
+                "public"
+              ],
+              "calls": [
+                "self._create_prompt",
+                "CodeSummary",
+                "get_config"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "_create_prompt",
+              "docstring": "Create LLM prompt for summary generation",
+              "line_range": [
+                309,
+                336
+              ],
+              "parameters": [
+                "self",
+                "code",
+                "entity_type",
+                "entity_name",
+                "docstring"
+              ],
+              "uid": "summary_providers.LLMProvider._create_prompt#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.LLMProvider",
+                "summary_providers.LLMProvider._create_prompt"
+              ],
+              "hash": "aaef37510fffd09773c0be60c09540a6dd4956f00834af40ad5eeb2711d39fce",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-llmprovider--create-prompt",
+              "summary": "Create LLM prompt for summary generation",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "get_config"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "get_provider_name",
+              "docstring": "",
+              "line_range": [
+                338,
+                339
+              ],
+              "parameters": [
+                "self"
+              ],
+              "uid": "summary_providers.LLMProvider.get_provider_name#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.LLMProvider",
+                "summary_providers.LLMProvider.get_provider_name"
+              ],
+              "hash": "32a7117abaf86008ed262e386c2d870cb67a0d0cfeef182280a7786def66ec39",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-llmprovider-get-provider-name",
+              "summary": "Method for llmprovider.get provider name",
+              "summary_source": "heuristic",
+              "tags": [
+                "method",
+                "public"
+              ],
+              "calls": [],
+              "called_by": []
+            }
+          ],
+          "bases": [
+            "SummaryProvider"
+          ],
+          "uid": "summary_providers.LLMProvider#class",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.LLMProvider"
+          ],
+          "hash": "eadf8f62f46507906a911e7f9d5892f4d01533f1cc213f7e82bc9408fa4abb5d",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-llmprovider",
+          "summary": "LLM-powered summary provider (optional, disabled by default)",
+          "summary_source": "docstring",
+          "tags": []
+        },
+        {
+          "name": "SummarySystem",
+          "docstring": "Main summary system that orchestrates different providers",
+          "line_range": [
+            342,
+            379
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "docstring": "",
+              "line_range": [
+                345,
+                347
+              ],
+              "parameters": [
+                "self"
+              ],
+              "uid": "summary_providers.SummarySystem.__init__#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.SummarySystem",
+                "summary_providers.SummarySystem.__init__"
+              ],
+              "hash": "87a611766d6fa870f1ff2be93dd2eb8d47a62a698dafcaedce42913ef3a7081a",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-summarysystem---init--",
+              "summary": "Method for summarysystem. init",
+              "summary_source": "heuristic",
+              "tags": [
+                "method",
+                "public"
+              ],
+              "calls": [
+                "HeuristicProvider",
+                "LLMProvider"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "generate_summary",
+              "docstring": "Generate summary using configured provider",
+              "line_range": [
+                349,
+                372
+              ],
+              "parameters": [
+                "self",
+                "code",
+                "entity_type",
+                "entity_name",
+                "docstring"
+              ],
+              "uid": "summary_providers.SummarySystem.generate_summary#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.SummarySystem",
+                "summary_providers.SummarySystem.generate_summary"
+              ],
+              "hash": "a8de707c57f823270878880526694b40cfe97e9f033235a634f7d8e456355cf3",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-summarysystem-generate-summary",
+              "summary": "Generate summary using configured provider",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "get_summary_system"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "get_active_provider",
+              "docstring": "Get name of currently active provider",
+              "line_range": [
+                374,
+                379
+              ],
+              "parameters": [
+                "self"
+              ],
+              "uid": "summary_providers.SummarySystem.get_active_provider#method",
+              "uid_components": [
+                "summary_providers",
+                "summary_providers.SummarySystem",
+                "summary_providers.SummarySystem.get_active_provider"
+              ],
+              "hash": "13766ac1b83c60fe733964d3a8eeebd821638f613fc564363876596e8aa22397",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#summary-providers-summarysystem-get-active-provider",
+              "summary": "Get name of currently active provider",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "is_llm_enabled",
+                "get_config"
+              ],
+              "called_by": []
+            }
+          ],
+          "bases": [],
+          "uid": "summary_providers.SummarySystem#class",
+          "uid_components": [
+            "summary_providers",
+            "summary_providers.SummarySystem"
+          ],
+          "hash": "054029a85a27486d2af65cd63f8c2a0b20590a224032db657feaccc61f30dc34",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#summary-providers-summarysystem",
+          "summary": "Main summary system that orchestrates different providers",
+          "summary_source": "docstring",
+          "tags": []
+        }
+      ],
+      "callgraph": {
+        "is_empty": [],
+        "generate_summary": [
+          "get_summary_system"
+        ],
+        "get_provider_name": [],
+        "__init__": [
+          "HeuristicProvider",
+          "LLMProvider"
+        ],
+        "_clean_docstring": [
+          "re.sub",
+          "len",
+          "re.split"
+        ],
+        "_generate_heuristic_summary": [
+          "self._humanize_name",
+          "name_lower.endswith",
+          "name_lower.startswith",
+          "entity_type.title",
+          "entity_name.lower"
+        ],
+        "_humanize_name": [
+          "word.lower",
+          "re.findall",
+          "name.split"
+        ],
+        "_extract_tags_from_docstring": [
+          "any",
+          "tags.append",
+          "docstring.lower"
+        ],
+        "_extract_tags_from_code": [
+          "entity_name.startswith",
+          "tags.append"
+        ],
+        "_create_cache_key": [
+          "content.encode",
+          "hashlib.md5"
+        ],
+        "_call_llm_api": [
+          "self._create_prompt",
+          "CodeSummary",
+          "get_config"
+        ],
+        "_create_prompt": [
+          "get_config"
+        ],
+        "get_active_provider": [
+          "is_llm_enabled",
+          "get_config"
+        ],
+        "get_summary_system": [
+          "SummarySystem"
+        ]
+      },
+      "dependencies": [
+        "ABC",
+        "Any",
+        "Dict",
+        "Enum",
+        "List",
+        "Optional",
+        "abc",
+        "abstractmethod",
+        "config_manager",
+        "dataclass",
+        "dataclasses",
+        "enum",
+        "get_config",
+        "hashlib",
+        "is_llm_enabled",
+        "re",
+        "typing"
+      ],
+      "hash": "7716f37d41692cd86663d5d2091e1f9341b51f6a404ecbcaa5145ca7901f2a16",
+      "hash_source": "file_content_v1",
+      "hash_version": "2.1.0",
+      "uid": "summary_providers.summary_providers#module",
+      "uid_components": [
+        "summary_providers",
+        "summary_providers.summary_providers"
+      ],
+      "summary": "Summary Providers System\n\nProvides multiple strategies for generating code summaries:\n- HeuristicProvider: Fast, offl...",
+      "summary_source": "docstring",
+      "tags": [],
+      "artifact_id": "fdec7d72-2d4b-4d58-9dea-0d3a2a341c5b"
+    },
+    {
+      "module_id": "uid_generator",
+      "path": "uid_generator.py",
+      "category": "core",
+      "module_doc": "Advanced UID Generator System for LLMStruct v2.1\n\nGenerates stable, unique identifiers for code entities using FQNAME-based approach.\nFixes duplicate issues in uid_components array.",
+      "functions": [
+        {
+          "name": "normalize_path",
+          "docstring": "Normalize file path for consistent UID generation",
+          "line_range": [
+            25,
+            45
+          ],
+          "parameters": [
+            "path"
+          ],
+          "decorators": [],
+          "uid": "uid_generator.normalize_path#function",
+          "uid_components": [
+            "uid_generator",
+            "uid_generator.normalize_path"
+          ],
+          "hash": "780d3d1173a3d2e89e5d88af4d1c72d03d40358f9d4ed5637e808d14c9374349",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#uid-generator-normalize-path",
+          "summary": "Normalize file path for consistent UID generation",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "Path",
+            "normalized.endswith",
+            "list"
+          ],
+          "called_by": [
+            "create_legacy_artifact_id",
+            "generate_uid_components",
+            "generate_uid"
+          ]
+        },
+        {
+          "name": "generate_uid",
+          "docstring": "Generate stable UID using FQNAME approach.\n\nArgs:\n    entity_type: Type of entity\n    module_path: Path to module (e.g., 'src/llmstruct/core/uid_generator.py')\n    entity_name: Name of entity\n    parent_name: Parent entity name (for methods, nested classes)\n    \nReturns:\n    Stable UID string",
+          "line_range": [
+            48,
+            85
+          ],
+          "parameters": [
+            "entity_type",
+            "module_path",
+            "entity_name",
+            "parent_name"
+          ],
+          "decorators": [],
+          "uid": "uid_generator.generate_uid#function",
+          "uid_components": [
+            "uid_generator",
+            "uid_generator.generate_uid"
+          ],
+          "hash": "f281a627dcaa4f09161bce0306ff50f5df9caf0827e2de58f308b9ffa9d6b125",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#uid-generator-generate-uid",
+          "summary": "Generate stable UID using FQNAME approach",
+          "summary_source": "docstring",
+          "tags": [
+            "generator"
+          ],
+          "calls": [
+            "normalize_path",
+            "fqname_parts.append"
+          ],
+          "called_by": [
+            "create_method_uid",
+            "enhance_entity_with_uid",
+            "create_function_uid",
+            "generate_uid_compat",
+            "create_class_uid",
+            "create_module_uid",
+            "generate_uid_legacy"
+          ]
+        },
+        {
+          "name": "generate_uid_components",
+          "docstring": "Generate hierarchical UID components for navigation.\n\nFIXED: Removes duplicates and ensures each level is unique.\n\nArgs:\n    entity_type: Type of entity\n    module_path: Path to module\n    entity_name: Name of entity  \n    parent_name: Parent entity name\n    \nReturns:\n    List of hierarchical components without duplicates",
+          "line_range": [
+            88,
+            147
+          ],
+          "parameters": [
+            "entity_type",
+            "module_path",
+            "entity_name",
+            "parent_name"
+          ],
+          "decorators": [],
+          "uid": "uid_generator.generate_uid_components#function",
+          "uid_components": [
+            "uid_generator",
+            "uid_generator.generate_uid_components"
+          ],
+          "hash": "3311e00d1d33a1f3da8da5e51c1a9193a31251e7c13549f83afe33f7c0dabc5f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#uid-generator-generate-uid-components",
+          "summary": "Generate hierarchical UID components for navigation",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "set",
+            "normalize_path",
+            "part.strip",
+            "components.append",
+            "entity_name.strip",
+            "unique_components.append",
+            "current_path.append",
+            "seen.add",
+            "parent_name.strip",
+            "normalized_module.split"
+          ],
+          "called_by": [
+            "enhance_entity_with_uid",
+            "generate_uid_components_compat",
+            "generate_uid_components_legacy"
+          ]
+        },
+        {
+          "name": "create_stable_uid",
+          "docstring": "Create stable UID based on content hash (fallback method).\n\nArgs:\n    content: Entity content\n    entity_type: Type of entity\n    \nReturns:\n    Stable hash-based UID",
+          "line_range": [
+            150,
+            167
+          ],
+          "parameters": [
+            "content",
+            "entity_type"
+          ],
+          "decorators": [],
+          "uid": "uid_generator.create_stable_uid#function",
+          "uid_components": [
+            "uid_generator",
+            "uid_generator.create_stable_uid"
+          ],
+          "hash": "a7e0745164214a65706526aa7511d758bfa17e216b636cd6bd6f8e2b4fdc9256",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#uid-generator-create-stable-uid",
+          "summary": "Create stable UID based on content hash (fallback method)",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "content.encode",
+            "hashlib.sha256"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "create_legacy_artifact_id",
+          "docstring": "Create legacy artifact_id for backward compatibility.\n\nArgs:\n    entity: Entity dictionary\n    \nReturns:\n    Legacy artifact ID",
+          "line_range": [
+            170,
+            205
+          ],
+          "parameters": [
+            "entity"
+          ],
+          "decorators": [],
+          "uid": "uid_generator.create_legacy_artifact_id#function",
+          "uid_components": [
+            "uid_generator",
+            "uid_generator.create_legacy_artifact_id"
+          ],
+          "hash": "977e7a007125799bc8e2ec7bb6fb5ed80b5e263d50cc8925c4f3dc2b273927fe",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#uid-generator-create-legacy-artifact-id",
+          "summary": "Create legacy artifact_id for backward compatibility",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "normalize_path",
+            "entity.get",
+            "combined.encode",
+            "id_components.append",
+            "hashlib.md5",
+            "p.get"
+          ],
+          "called_by": [
+            "enhance_entity_with_uid"
+          ]
+        },
+        {
+          "name": "enhance_entity_with_uid",
+          "docstring": "Enhance entity with UID system components.\n\nArgs:\n    entity: Entity dictionary\n    \nReturns:\n    Enhanced entity with uid, uid_components, and artifact_id",
+          "line_range": [
+            208,
+            243
+          ],
+          "parameters": [
+            "entity"
+          ],
+          "decorators": [],
+          "uid": "uid_generator.enhance_entity_with_uid#function",
+          "uid_components": [
+            "uid_generator",
+            "uid_generator.enhance_entity_with_uid"
+          ],
+          "hash": "54df053bb8b064f3fb3d6efe69c48184ba4fc41683c174286753620d96a256e8",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#uid-generator-enhance-entity-with-uid",
+          "summary": "Enhance entity with UID system components",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "UIDType",
+            "create_legacy_artifact_id",
+            "entity.copy",
+            "entity.get",
+            "generate_uid_components",
+            "generate_uid"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "validate_uid_uniqueness",
+          "docstring": "Validate UID uniqueness across entities.\n\nArgs:\n    entities: List of entities with UIDs\n    \nReturns:\n    Dictionary with 'duplicates' and 'conflicts' lists",
+          "line_range": [
+            246,
+            276
+          ],
+          "parameters": [
+            "entities"
+          ],
+          "decorators": [],
+          "uid": "uid_generator.validate_uid_uniqueness#function",
+          "uid_components": [
+            "uid_generator",
+            "uid_generator.validate_uid_uniqueness"
+          ],
+          "hash": "08634b357cc86766e0e0107635f13bfa1b557cc43051a79e3cb712ed328b2d1a",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#uid-generator-validate-uid-uniqueness",
+          "summary": "Validate UID uniqueness across entities",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "duplicates.append",
+            "existing.get",
+            "entity.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "create_module_uid",
+          "docstring": "Create UID for module",
+          "line_range": [
+            281,
+            283
+          ],
+          "parameters": [
+            "module_path"
+          ],
+          "decorators": [],
+          "uid": "uid_generator.create_module_uid#function",
+          "uid_components": [
+            "uid_generator",
+            "uid_generator.create_module_uid"
+          ],
+          "hash": "78a6139201fb016110552a2f16a1b676eb4df0982379bfa7b626e2c875032d6d",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#uid-generator-create-module-uid",
+          "summary": "Create UID for module",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "Path",
+            "generate_uid"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "create_function_uid",
+          "docstring": "Create UID for function",
+          "line_range": [
+            286,
+            288
+          ],
+          "parameters": [
+            "module_path",
+            "function_name"
+          ],
+          "decorators": [],
+          "uid": "uid_generator.create_function_uid#function",
+          "uid_components": [
+            "uid_generator",
+            "uid_generator.create_function_uid"
+          ],
+          "hash": "1bad93a530f99de51e1a76acc227e19d2b284812586e671a704819ad92959c91",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#uid-generator-create-function-uid",
+          "summary": "Create UID for function",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "generate_uid"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "create_class_uid",
+          "docstring": "Create UID for class",
+          "line_range": [
+            291,
+            293
+          ],
+          "parameters": [
+            "module_path",
+            "class_name"
+          ],
+          "decorators": [],
+          "uid": "uid_generator.create_class_uid#function",
+          "uid_components": [
+            "uid_generator",
+            "uid_generator.create_class_uid"
+          ],
+          "hash": "9e9a260bd9100a255e8a16c9a392584a8c531373e3df55b5c211ae2e2e30b62e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#uid-generator-create-class-uid",
+          "summary": "Create UID for class",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "generate_uid"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "create_method_uid",
+          "docstring": "Create UID for method",
+          "line_range": [
+            296,
+            298
+          ],
+          "parameters": [
+            "module_path",
+            "class_name",
+            "method_name"
+          ],
+          "decorators": [],
+          "uid": "uid_generator.create_method_uid#function",
+          "uid_components": [
+            "uid_generator",
+            "uid_generator.create_method_uid"
+          ],
+          "hash": "8e968c8f148a680dff56fb64b9cf3c15f77138b3325d257b17e477e9f33c5b99",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#uid-generator-create-method-uid",
+          "summary": "Create UID for method",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "generate_uid"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "generate_uid_legacy",
+          "docstring": "Legacy interface wrapper for generate_uid.\nUsed by existing parser code.",
+          "line_range": [
+            304,
+            309
+          ],
+          "parameters": [
+            "module_path",
+            "entity_name",
+            "entity_type",
+            "parent_name"
+          ],
+          "decorators": [],
+          "uid": "uid_generator.generate_uid_legacy#function",
+          "uid_components": [
+            "uid_generator",
+            "uid_generator.generate_uid_legacy"
+          ],
+          "hash": "2c35baedf78dce43915fe9b70627f86a1338e0346ade81c6a89071aaae1b43c9",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#uid-generator-generate-uid-legacy",
+          "summary": "Legacy interface wrapper for generate_uid",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "generate_uid"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "generate_uid_components_legacy",
+          "docstring": "Legacy interface wrapper for generate_uid_components.\nUsed by existing parser code.",
+          "line_range": [
+            312,
+            317
+          ],
+          "parameters": [
+            "module_path",
+            "entity_name",
+            "entity_type",
+            "parent_name"
+          ],
+          "decorators": [],
+          "uid": "uid_generator.generate_uid_components_legacy#function",
+          "uid_components": [
+            "uid_generator",
+            "uid_generator.generate_uid_components_legacy"
+          ],
+          "hash": "5bab3092533e9efcd4857c1cc0cb03078d2e8e728b5ae3621f755109116d7c72",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#uid-generator-generate-uid-components-legacy",
+          "summary": "Legacy interface wrapper for generate_uid_components",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "generate_uid_components"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "generate_uid_compat",
+          "docstring": "Compatibility function that detects old vs new interface and routes accordingly.\n\nOld interface: generate_uid(module_path, entity_name, entity_type)\nNew interface: generate_uid(entity_type, module_path, entity_name, parent_name)",
+          "line_range": [
+            322,
+            343
+          ],
+          "parameters": [
+            "module_or_entity_type",
+            "entity_name_or_module_path",
+            "entity_type_or_entity_name",
+            "parent_name"
+          ],
+          "decorators": [],
+          "uid": "uid_generator.generate_uid_compat#function",
+          "uid_components": [
+            "uid_generator",
+            "uid_generator.generate_uid_compat"
+          ],
+          "hash": "5ec6b3061599ee63a84845e4e17f17d0f71867fa396db237aaa9beafce5a21fd",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#uid-generator-generate-uid-compat",
+          "summary": "Compatibility function that detects old vs new interface and routes accordingly",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "type",
+            "isinstance",
+            "ValueError",
+            "generate_uid"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "generate_uid_components_compat",
+          "docstring": "Compatibility function for generate_uid_components.",
+          "line_range": [
+            346,
+            364
+          ],
+          "parameters": [
+            "module_or_entity_type",
+            "entity_name_or_module_path",
+            "entity_type_or_entity_name",
+            "parent_name"
+          ],
+          "decorators": [],
+          "uid": "uid_generator.generate_uid_components_compat#function",
+          "uid_components": [
+            "uid_generator",
+            "uid_generator.generate_uid_components_compat"
+          ],
+          "hash": "4d5c1e6ebd32570f3122a82737c20d9acf2f5684075f480ddfea9610287e0a49",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#uid-generator-generate-uid-components-compat",
+          "summary": "Compatibility function for generate_uid_components.",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "ValueError",
+            "type",
+            "isinstance",
+            "generate_uid_components"
+          ],
+          "called_by": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "UIDType",
+          "docstring": "Types of entities that can have UIDs",
+          "line_range": [
+            14,
+            22
+          ],
+          "methods": [],
+          "bases": [
+            "Enum"
+          ],
+          "uid": "uid_generator.UIDType#class",
+          "uid_components": [
+            "uid_generator",
+            "uid_generator.UIDType"
+          ],
+          "hash": "f6ef36a90761b4842e608007476e6fc2561aedace6e12a22b2fb557db990d671",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#uid-generator-uidtype",
+          "summary": "Types of entities that can have UIDs",
+          "summary_source": "docstring",
+          "tags": []
+        }
+      ],
+      "callgraph": {
+        "normalize_path": [
+          "Path",
+          "normalized.endswith",
+          "list"
+        ],
+        "generate_uid": [
+          "normalize_path",
+          "fqname_parts.append"
+        ],
+        "generate_uid_components": [
+          "set",
+          "normalize_path",
+          "part.strip",
+          "components.append",
+          "entity_name.strip",
+          "unique_components.append",
+          "current_path.append",
+          "seen.add",
+          "parent_name.strip",
+          "normalized_module.split"
+        ],
+        "create_stable_uid": [
+          "content.encode",
+          "hashlib.sha256"
+        ],
+        "create_legacy_artifact_id": [
+          "normalize_path",
+          "entity.get",
+          "combined.encode",
+          "id_components.append",
+          "hashlib.md5",
+          "p.get"
+        ],
+        "enhance_entity_with_uid": [
+          "UIDType",
+          "create_legacy_artifact_id",
+          "entity.copy",
+          "entity.get",
+          "generate_uid_components",
+          "generate_uid"
+        ],
+        "validate_uid_uniqueness": [
+          "duplicates.append",
+          "existing.get",
+          "entity.get"
+        ],
+        "create_module_uid": [
+          "Path",
+          "generate_uid"
+        ],
+        "create_function_uid": [
+          "generate_uid"
+        ],
+        "create_class_uid": [
+          "generate_uid"
+        ],
+        "create_method_uid": [
+          "generate_uid"
+        ],
+        "generate_uid_legacy": [
+          "generate_uid"
+        ],
+        "generate_uid_components_legacy": [
+          "generate_uid_components"
+        ],
+        "generate_uid_compat": [
+          "type",
+          "isinstance",
+          "ValueError",
+          "generate_uid"
+        ],
+        "generate_uid_components_compat": [
+          "ValueError",
+          "type",
+          "isinstance",
+          "generate_uid_components"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "Enum",
+        "List",
+        "Optional",
+        "Path",
+        "enum",
+        "hashlib",
+        "pathlib",
+        "typing"
+      ],
+      "hash": "f3acc0549ce572bc0c42123080d2a6602d2ad97fbac0daa986cb97226483e932",
+      "hash_source": "file_content_v1",
+      "hash_version": "2.1.0",
+      "uid": "uid_generator.uid_generator#module",
+      "uid_components": [
+        "uid_generator",
+        "uid_generator.uid_generator"
+      ],
+      "summary": "Advanced UID Generator System for LLMStruct v2.1\n\nGenerates stable, unique identifiers for code entities using FQNAME...",
+      "summary_source": "docstring",
+      "tags": [
+        "generator"
+      ],
+      "artifact_id": "ceb4a69b-01b4-474a-a672-b31227265150"
+    },
+    {
+      "module_id": "__init__",
+      "path": "__init__.py",
+      "category": "cli",
+      "module_doc": "LLMStruct Core Module\n\nProvides core functionality for code analysis and structure generation.\nAll LLM-dependent features are optional and disabled by default.",
+      "functions": [],
+      "classes": [],
+      "callgraph": {},
+      "dependencies": [
+        "CodeSummary",
+        "ConfigManager",
+        "HeuristicProvider",
+        "LLMProvider",
+        "LLMStructConfig",
+        "SummarySource",
+        "SummarySystem",
+        "UIDType",
+        "config_manager",
+        "create_legacy_artifact_id",
+        "enhance_entity_with_uid",
+        "generate_summary",
+        "generate_uid_compat",
+        "generate_uid_components_compat",
+        "get_config",
+        "get_config_manager",
+        "get_summary_provider",
+        "get_summary_system",
+        "hash_content",
+        "hash_entity",
+        "hash_file",
+        "hash_source",
+        "hash_utils",
+        "is_llm_enabled",
+        "quick_content_hash",
+        "quick_file_hash",
+        "quick_source_hash",
+        "summary_providers",
+        "uid_generator"
+      ],
+      "hash": "f159a69b1326e8e1ac476ad78422534ca202972ef00c362d59e9fb319462dcbc",
+      "hash_source": "file_content_v1",
+      "hash_version": "2.1.0",
+      "uid": "__init__.__init__#module",
+      "uid_components": [
+        "__init__",
+        "__init__.__init__"
+      ],
+      "summary": "LLMStruct Core Module\n\nProvides core functionality for code analysis and structure generation",
+      "summary_source": "docstring",
+      "tags": [],
+      "artifact_id": "7b1ac804-9635-4c32-8ecf-4e6c3392335a"
+    },
+    {
+      "module_id": "config_manager",
+      "path": "config_manager.py",
+      "category": "core",
+      "module_doc": "Configuration Management System for LLMStruct\n\nManages global settings including LLM enablement, provider selection,\nand security controls for offline mode.",
+      "functions": [
+        {
+          "name": "get_config_manager",
+          "docstring": "Get global configuration manager instance",
+          "line_range": [
+            199,
+            204
+          ],
+          "parameters": [],
+          "decorators": [],
+          "uid": "config_manager.get_config_manager#function",
+          "uid_components": [
+            "config_manager",
+            "config_manager.get_config_manager"
+          ],
+          "hash": "ccae3172baaba1b476f2fb699935ac2a0702bd04c672819b224c0948a6eb7577",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager-get-config-manager",
+          "summary": "Get global configuration manager instance",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "ConfigManager"
+          ],
+          "called_by": [
+            "get_summary_provider",
+            "is_llm_enabled",
+            "get_config"
+          ]
+        },
+        {
+          "name": "get_config",
+          "docstring": "Get current configuration",
+          "line_range": [
+            207,
+            209
+          ],
+          "parameters": [],
+          "decorators": [],
+          "uid": "config_manager.get_config#function",
+          "uid_components": [
+            "config_manager",
+            "config_manager.get_config"
+          ],
+          "hash": "ed17b278584474c6655dda7eefd3c2aad18d87e1dba68a0bae6fc1a99e94240e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager-get-config",
+          "summary": "Get current configuration",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "get_config_manager"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "is_llm_enabled",
+          "docstring": "Check if LLM functionality is globally enabled",
+          "line_range": [
+            212,
+            214
+          ],
+          "parameters": [],
+          "decorators": [],
+          "uid": "config_manager.is_llm_enabled#function",
+          "uid_components": [
+            "config_manager",
+            "config_manager.is_llm_enabled"
+          ],
+          "hash": "d04719dca42512d3de6f533a5a31654ba0b336c51ebab188a983a9cb9fe26757",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager-is-llm-enabled",
+          "summary": "Check if LLM functionality is globally enabled",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "get_config_manager"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_summary_provider",
+          "docstring": "Get active summary provider (heuristic or llm)",
+          "line_range": [
+            217,
+            219
+          ],
+          "parameters": [],
+          "decorators": [],
+          "uid": "config_manager.get_summary_provider#function",
+          "uid_components": [
+            "config_manager",
+            "config_manager.get_summary_provider"
+          ],
+          "hash": "d3cb348364e32d70ca393e59f2f4569c999bc911f649ff6aaa82ec407f7c537a",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager-get-summary-provider",
+          "summary": "Get active summary provider (heuristic or llm)",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "get_config_manager"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "__post_init__",
+          "docstring": "Apply environment variable overrides",
+          "line_range": [
+            66,
+            82
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": [],
+          "uid": "config_manager.__post_init__#function",
+          "uid_components": [
+            "config_manager",
+            "config_manager.__post_init__"
+          ],
+          "hash": "2f773667c86d9024f5cb251efe5d7697d5132f4cfef6f2e1c468d47e2e0238dc",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager---post-init--",
+          "summary": "Apply environment variable overrides",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "os.getenv"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            88,
+            90
+          ],
+          "parameters": [
+            "self",
+            "config_path"
+          ],
+          "decorators": [],
+          "uid": "config_manager.__init__#function",
+          "uid_components": [
+            "config_manager",
+            "config_manager.__init__"
+          ],
+          "hash": "855afcfcbc26d17ef511908f0c094ea503fb719ebcd842e3a4572368ab03aa45",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager---init--",
+          "summary": "Function for init",
+          "summary_source": "heuristic",
+          "tags": [
+            "function",
+            "private"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "load_config",
+          "docstring": "Load configuration from file or create default",
+          "line_range": [
+            92,
+            110
+          ],
+          "parameters": [
+            "self",
+            "config_path"
+          ],
+          "decorators": [],
+          "uid": "config_manager.load_config#function",
+          "uid_components": [
+            "config_manager",
+            "config_manager.load_config"
+          ],
+          "hash": "ffb910fd55457ea8cd9a08da9f80453251c457253bed7fa3569758a6ace4abb4",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager-load-config",
+          "summary": "Load configuration from file or create default",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "self._create_config_from_dict",
+            "LLMStructConfig",
+            "Path",
+            "yaml.safe_load",
+            "print",
+            "open"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_create_config_from_dict",
+          "docstring": "Create configuration from dictionary",
+          "line_range": [
+            112,
+            138
+          ],
+          "parameters": [
+            "self",
+            "data"
+          ],
+          "decorators": [],
+          "uid": "config_manager._create_config_from_dict#function",
+          "uid_components": [
+            "config_manager",
+            "config_manager._create_config_from_dict"
+          ],
+          "hash": "7cf478596b1c294a686be49624494c6b3308075a5bb5cf7baedc7bd559289ab4",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager--create-config-from-dict",
+          "summary": "Create configuration from dictionary",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "data.get",
+            "LLMStructConfig",
+            "summary_data.get",
+            "security_data.get",
+            "llm_data.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_config",
+          "docstring": "Get current configuration, loading if necessary",
+          "line_range": [
+            140,
+            144
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": [],
+          "uid": "config_manager.get_config#function",
+          "uid_components": [
+            "config_manager",
+            "config_manager.get_config"
+          ],
+          "hash": "f769160fe21295fe8360a36dbd35a1b833546756a475c4c7dbb554aa77bdf6d7",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager-get-config",
+          "summary": "Get current configuration, loading if necessary",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "get_config_manager"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "is_llm_enabled",
+          "docstring": "Check if LLM functionality is enabled",
+          "line_range": [
+            146,
+            154
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": [],
+          "uid": "config_manager.is_llm_enabled#function",
+          "uid_components": [
+            "config_manager",
+            "config_manager.is_llm_enabled"
+          ],
+          "hash": "8f2063e7efcdf584bd4e344f1bba49e8690b7719bb342b8d4272d5f6c42d248a",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager-is-llm-enabled",
+          "summary": "Check if LLM functionality is enabled",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "get_config_manager"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_summary_provider",
+          "docstring": "Get active summary provider",
+          "line_range": [
+            156,
+            161
+          ],
+          "parameters": [
+            "self"
+          ],
+          "decorators": [],
+          "uid": "config_manager.get_summary_provider#function",
+          "uid_components": [
+            "config_manager",
+            "config_manager.get_summary_provider"
+          ],
+          "hash": "704ac3974e12a3ee15241d1a1891786d1291237f86579a29dfa119bef86fe137",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager-get-summary-provider",
+          "summary": "Get active summary provider",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "get_config_manager"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "save_config_template",
+          "docstring": "Save configuration template file",
+          "line_range": [
+            163,
+            192
+          ],
+          "parameters": [
+            "self",
+            "path"
+          ],
+          "decorators": [],
+          "uid": "config_manager.save_config_template#function",
+          "uid_components": [
+            "config_manager",
+            "config_manager.save_config_template"
+          ],
+          "hash": "a266d91ce9fcf07a18787a6a3f54be5e1be60b4867b4379cb2da6210a17e282e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager-save-config-template",
+          "summary": "Save configuration template file",
+          "summary_source": "docstring",
+          "tags": [],
+          "calls": [
+            "yaml.dump",
+            "open"
+          ],
+          "called_by": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "LLMConfig",
+          "docstring": "LLM-specific configuration",
+          "line_range": [
+            16,
+            25
+          ],
+          "methods": [],
+          "bases": [],
+          "uid": "config_manager.LLMConfig#class",
+          "uid_components": [
+            "config_manager",
+            "config_manager.LLMConfig"
+          ],
+          "hash": "345da16afa7f698468b6412179fcf8d85c15636fc6518f8f5713c3309f329cc1",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager-llmconfig",
+          "summary": "LLM-specific configuration",
+          "summary_source": "docstring",
+          "tags": []
+        },
+        {
+          "name": "SummaryConfig",
+          "docstring": "Summary generation configuration",
+          "line_range": [
+            29,
+            35
+          ],
+          "methods": [],
+          "bases": [],
+          "uid": "config_manager.SummaryConfig#class",
+          "uid_components": [
+            "config_manager",
+            "config_manager.SummaryConfig"
+          ],
+          "hash": "41cbf67f60932cf431b8f2b0a4a41e86998bf99521ffcf02d53a4183e8fdec32",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager-summaryconfig",
+          "summary": "Summary generation configuration",
+          "summary_source": "docstring",
+          "tags": []
+        },
+        {
+          "name": "MetricsConfig",
+          "docstring": "Code metrics configuration",
+          "line_range": [
+            39,
+            45
+          ],
+          "methods": [],
+          "bases": [],
+          "uid": "config_manager.MetricsConfig#class",
+          "uid_components": [
+            "config_manager",
+            "config_manager.MetricsConfig"
+          ],
+          "hash": "4f6f72a899c52ac892adf9e6bb19d4ffdf1ec9101894e0530ec07ead0e911848",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager-metricsconfig",
+          "summary": "Code metrics configuration",
+          "summary_source": "docstring",
+          "tags": []
+        },
+        {
+          "name": "SecurityConfig",
+          "docstring": "Security and privacy configuration",
+          "line_range": [
+            49,
+            54
+          ],
+          "methods": [],
+          "bases": [],
+          "uid": "config_manager.SecurityConfig#class",
+          "uid_components": [
+            "config_manager",
+            "config_manager.SecurityConfig"
+          ],
+          "hash": "870a74b18097d10ea0d4d2c21a439a4fb086f108ceddd0aa63c1b294499a4b22",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager-securityconfig",
+          "summary": "Security and privacy configuration",
+          "summary_source": "docstring",
+          "tags": []
+        },
+        {
+          "name": "LLMStructConfig",
+          "docstring": "Main LLMStruct configuration",
+          "line_range": [
+            58,
+            82
+          ],
+          "methods": [
+            {
+              "name": "__post_init__",
+              "docstring": "Apply environment variable overrides",
+              "line_range": [
+                66,
+                82
+              ],
+              "parameters": [
+                "self"
+              ],
+              "uid": "config_manager.LLMStructConfig.__post_init__#method",
+              "uid_components": [
+                "config_manager",
+                "config_manager.LLMStructConfig",
+                "config_manager.LLMStructConfig.__post_init__"
+              ],
+              "hash": "37ddc37c92ba219fc4827c5f59f0e3bf3407acc0f88cf0433cb0f9d2dc925bc8",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#config-manager-llmstructconfig---post-init--",
+              "summary": "Apply environment variable overrides",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "os.getenv"
+              ],
+              "called_by": []
+            }
+          ],
+          "bases": [],
+          "uid": "config_manager.LLMStructConfig#class",
+          "uid_components": [
+            "config_manager",
+            "config_manager.LLMStructConfig"
+          ],
+          "hash": "c3bfbc6f8a5a448cfcdb6227a1d1a037e6a9a16e5f9b67943d2bd0ba1d2213df",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager-llmstructconfig",
+          "summary": "Main LLMStruct configuration",
+          "summary_source": "docstring",
+          "tags": []
+        },
+        {
+          "name": "ConfigManager",
+          "docstring": "Manages LLMStruct configuration with security-first defaults",
+          "line_range": [
+            85,
+            192
+          ],
+          "methods": [
+            {
+              "name": "__init__",
+              "docstring": "",
+              "line_range": [
+                88,
+                90
+              ],
+              "parameters": [
+                "self",
+                "config_path"
+              ],
+              "uid": "config_manager.ConfigManager.__init__#method",
+              "uid_components": [
+                "config_manager",
+                "config_manager.ConfigManager",
+                "config_manager.ConfigManager.__init__"
+              ],
+              "hash": "70f9c367d4ec7f136214aa9a2b09e04e8cd417386ec746414fdb8a9b3336bb2b",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#config-manager-configmanager---init--",
+              "summary": "Method for configmanager. init",
+              "summary_source": "heuristic",
+              "tags": [
+                "method",
+                "public"
+              ],
+              "calls": [],
+              "called_by": []
+            },
+            {
+              "name": "load_config",
+              "docstring": "Load configuration from file or create default",
+              "line_range": [
+                92,
+                110
+              ],
+              "parameters": [
+                "self",
+                "config_path"
+              ],
+              "uid": "config_manager.ConfigManager.load_config#method",
+              "uid_components": [
+                "config_manager",
+                "config_manager.ConfigManager",
+                "config_manager.ConfigManager.load_config"
+              ],
+              "hash": "bb860c91210bb8536df45ee96eacea69c89877af4a62917276a9ec1efa664ba7",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#config-manager-configmanager-load-config",
+              "summary": "Load configuration from file or create default",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "self._create_config_from_dict",
+                "LLMStructConfig",
+                "Path",
+                "yaml.safe_load",
+                "print",
+                "open"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "_create_config_from_dict",
+              "docstring": "Create configuration from dictionary",
+              "line_range": [
+                112,
+                138
+              ],
+              "parameters": [
+                "self",
+                "data"
+              ],
+              "uid": "config_manager.ConfigManager._create_config_from_dict#method",
+              "uid_components": [
+                "config_manager",
+                "config_manager.ConfigManager",
+                "config_manager.ConfigManager._create_config_from_dict"
+              ],
+              "hash": "ec82f9ac1623deb2ca2336e5c0f6c54f97f6eae66d265102a022b87781a42b3a",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#config-manager-configmanager--create-config-from-dict",
+              "summary": "Create configuration from dictionary",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "data.get",
+                "LLMStructConfig",
+                "summary_data.get",
+                "security_data.get",
+                "llm_data.get"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "get_config",
+              "docstring": "Get current configuration, loading if necessary",
+              "line_range": [
+                140,
+                144
+              ],
+              "parameters": [
+                "self"
+              ],
+              "uid": "config_manager.ConfigManager.get_config#method",
+              "uid_components": [
+                "config_manager",
+                "config_manager.ConfigManager",
+                "config_manager.ConfigManager.get_config"
+              ],
+              "hash": "878ab43c973cc22087da6c340079262bca60eae6c2c30c0d91e0f3463f7f2146",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#config-manager-configmanager-get-config",
+              "summary": "Get current configuration, loading if necessary",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "get_config_manager"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "is_llm_enabled",
+              "docstring": "Check if LLM functionality is enabled",
+              "line_range": [
+                146,
+                154
+              ],
+              "parameters": [
+                "self"
+              ],
+              "uid": "config_manager.ConfigManager.is_llm_enabled#method",
+              "uid_components": [
+                "config_manager",
+                "config_manager.ConfigManager",
+                "config_manager.ConfigManager.is_llm_enabled"
+              ],
+              "hash": "0c53b0efcd962ac528480eff59c52fd83d96be386850e4f36be958f31e1dcffe",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#config-manager-configmanager-is-llm-enabled",
+              "summary": "Check if LLM functionality is enabled",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "get_config_manager"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "get_summary_provider",
+              "docstring": "Get active summary provider",
+              "line_range": [
+                156,
+                161
+              ],
+              "parameters": [
+                "self"
+              ],
+              "uid": "config_manager.ConfigManager.get_summary_provider#method",
+              "uid_components": [
+                "config_manager",
+                "config_manager.ConfigManager",
+                "config_manager.ConfigManager.get_summary_provider"
+              ],
+              "hash": "ab50e501bedc9c0420d5e35e345f8380cc2d20ae507e84dce76bec9c6fccc8bb",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#config-manager-configmanager-get-summary-provider",
+              "summary": "Get active summary provider",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "get_config_manager"
+              ],
+              "called_by": []
+            },
+            {
+              "name": "save_config_template",
+              "docstring": "Save configuration template file",
+              "line_range": [
+                163,
+                192
+              ],
+              "parameters": [
+                "self",
+                "path"
+              ],
+              "uid": "config_manager.ConfigManager.save_config_template#method",
+              "uid_components": [
+                "config_manager",
+                "config_manager.ConfigManager",
+                "config_manager.ConfigManager.save_config_template"
+              ],
+              "hash": "9d56cddc3439f18f39ef37b0eb6f04cab0e354b061fa75266a95cb6cef21d6b4",
+              "hash_source": "code_ast_v1",
+              "hash_version": "2.1.0",
+              "markdown_anchor": "#config-manager-configmanager-save-config-template",
+              "summary": "Save configuration template file",
+              "summary_source": "docstring",
+              "tags": [],
+              "calls": [
+                "yaml.dump",
+                "open"
+              ],
+              "called_by": []
+            }
+          ],
+          "bases": [],
+          "uid": "config_manager.ConfigManager#class",
+          "uid_components": [
+            "config_manager",
+            "config_manager.ConfigManager"
+          ],
+          "hash": "4fc310574a57eff742c940e502817a66ddfa5c60b44b2b66173206fcd134c6f5",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#config-manager-configmanager",
+          "summary": "Manages LLMStruct configuration with security-first defaults",
+          "summary_source": "docstring",
+          "tags": []
+        }
+      ],
+      "callgraph": {
+        "__post_init__": [
+          "os.getenv"
+        ],
+        "__init__": [],
+        "load_config": [
+          "self._create_config_from_dict",
+          "LLMStructConfig",
+          "Path",
+          "yaml.safe_load",
+          "print",
+          "open"
+        ],
+        "_create_config_from_dict": [
+          "data.get",
+          "LLMStructConfig",
+          "summary_data.get",
+          "security_data.get",
+          "llm_data.get"
+        ],
+        "get_config": [
+          "get_config_manager"
+        ],
+        "is_llm_enabled": [
+          "get_config_manager"
+        ],
+        "get_summary_provider": [
+          "get_config_manager"
+        ],
+        "save_config_template": [
+          "yaml.dump",
+          "open"
+        ],
+        "get_config_manager": [
+          "ConfigManager"
+        ]
+      },
+      "dependencies": [
+        "Any",
+        "Dict",
+        "Optional",
+        "Path",
+        "dataclass",
+        "dataclasses",
+        "field",
+        "os",
+        "pathlib",
+        "typing",
+        "yaml"
+      ],
+      "hash": "48402181f4ae2ca639e8f3f536266117621f603cd820a524a4bc84e12fc203bc",
+      "hash_source": "file_content_v1",
+      "hash_version": "2.1.0",
+      "uid": "config_manager.config_manager#module",
+      "uid_components": [
+        "config_manager",
+        "config_manager.config_manager"
+      ],
+      "summary": "Configuration Management System for LLMStruct\n\nManages global settings including LLM enablement, provider selection,\n...",
+      "summary_source": "docstring",
+      "tags": [],
+      "artifact_id": "83869418-9a13-4d6c-862c-edee43ec3874"
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import logging
 from pathlib import Path
 from llmstruct.modules.cli.utils import load_config
 from llmstruct.generators.json_generator import generate_json
+from llmstruct.generators.index_generator import save_index_json
 from llmstruct.cache import JSONCache
 from llmstruct.core.config_manager import get_config_manager, ConfigManager
 
@@ -57,7 +58,7 @@ def parse(args):
     
     include_patterns = (args.include or parsing_config.get("include_patterns") or cli_config.get("include_patterns"))
     exclude_patterns = (args.exclude or parsing_config.get("exclude_patterns") or cli_config.get("exclude_patterns"))
-    include_ranges = args.include_ranges or parsing_config.get("include_ranges") or cli_config.get("include_ranges", False)
+    include_ranges = args.include_ranges or parsing_config.get("include_ranges") or cli_config.get("include_ranges", True)
     include_hashes = args.include_hashes or parsing_config.get("include_hashes") or cli_config.get("include_hashes", False)
     use_gitignore = parsing_config.get("use_gitignore", cli_config.get("use_gitignore", True))
     exclude_dirs = (args.exclude_dir or parsing_config.get("exclude_dirs") or cli_config.get("exclude_dirs", []))
@@ -82,6 +83,13 @@ def parse(args):
         with Path(args.output).open("w", encoding="utf-8") as f:
             json.dump(struct_data, f, indent=2)
         logging.info(f"Generated {args.output}")
+        
+        # NEW: Generate index.json for Phase 1 completion
+        if include_hashes:
+            index_file = args.output.replace(".json", "_index.json") if args.output != "struct.json" else "index.json"
+            save_index_json(struct_data, index_file)
+            logging.info(f"Generated index file: {index_file}")
+            
         # Cache the generated JSON
         if args.use_cache:
             cache = JSONCache()
