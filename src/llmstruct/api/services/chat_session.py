@@ -5,7 +5,6 @@ Manages persistent chat sessions and conversation history
 """
 
 import json
-import asyncio
 from datetime import datetime
 from typing import Dict, List, Any, Optional
 from pathlib import Path

@@ -8,7 +8,6 @@
 """CLI argument parsing for LLMStruct."""
 
 import argparse
-from pathlib import Path
 
 
 def create_argument_parser():

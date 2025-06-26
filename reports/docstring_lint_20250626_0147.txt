@@ -1,0 +1,453 @@
+📝 Docstring Linter for src
+
+❌ Docstring violations:
+  - module src/llmstruct/json_selector.py missing Google docstring
+  - function src/llmstruct/json_selector.py:20 filter_json missing Google docstring
+  - function src/llmstruct/json_selector.py:49 select_json missing Google docstring
+  - module src/llmstruct/__main__.py missing Google docstring
+  - module src/llmstruct/cache.py missing Google docstring
+  - class src/llmstruct/cache.py:20 JSONCache missing Google docstring
+  - method src/llmstruct/cache.py:27 JSONCache.create_tables missing Google docstring
+  - method src/llmstruct/cache.py:51 JSONCache.cache_json missing Google docstring
+  - method src/llmstruct/cache.py:92 JSONCache.get_metadata missing Google docstring
+  - method src/llmstruct/cache.py:110 JSONCache.get_full_json missing Google docstring
+  - method src/llmstruct/cache.py:128 JSONCache.close missing Google docstring
+  - module src/llmstruct/self_run.py missing Google docstring
+  - function src/llmstruct/self_run.py:22 filter_struct missing Google docstring
+  - function src/llmstruct/self_run.py:76 attach_to_llm_request missing Google docstring
+  - module src/llmstruct/llm_client.py missing Google docstring
+  - class src/llmstruct/llm_client.py:27 LLMClient missing Google docstring
+  - method src/llmstruct/llm_client.py:38 LLMClient.query missing Google docstring
+  - module src/llmstruct/cli.py missing Google docstring
+  - function src/llmstruct/cli.py:55 main missing Google docstring
+  - module src/scripts/auto_update_struct.py missing Google docstring
+  - function src/scripts/auto_update_struct.py:44 detect_project_changes missing Google docstring
+  - function src/scripts/auto_update_struct.py:84 backup_struct_json missing Google docstring
+  - function src/scripts/auto_update_struct.py:100 validate_struct_json missing Google docstring
+  - function src/scripts/auto_update_struct.py:228 main missing Google docstring
+  - module src/scripts/validate_schemas.py missing Google docstring
+  - module src/scripts/github_sync_manager.py missing Google docstring
+  - class src/scripts/github_sync_manager.py:16 GitHubSyncManager missing Google docstring
+  - method src/scripts/github_sync_manager.py:50 GitHubSyncManager.load_sync_log missing Google docstring
+  - method src/scripts/github_sync_manager.py:62 GitHubSyncManager.save_sync_log missing Google docstring
+  - method src/scripts/github_sync_manager.py:67 GitHubSyncManager.api_request missing Google docstring
+  - method src/scripts/github_sync_manager.py:96 GitHubSyncManager.get_existing_issues missing Google docstring
+  - method src/scripts/github_sync_manager.py:114 GitHubSyncManager.get_existing_discussions missing Google docstring
+  - method src/scripts/github_sync_manager.py:120 GitHubSyncManager.item_already_synced missing Google docstring
+  - method src/scripts/github_sync_manager.py:127 GitHubSyncManager.find_existing_by_title missing Google docstring
+  - method src/scripts/github_sync_manager.py:145 GitHubSyncManager.create_github_issue missing Google docstring
+  - method src/scripts/github_sync_manager.py:184 GitHubSyncManager.create_github_discussion missing Google docstring
+  - method src/scripts/github_sync_manager.py:196 GitHubSyncManager.create_github_epic missing Google docstring
+  - method src/scripts/github_sync_manager.py:216 GitHubSyncManager.sync_category missing Google docstring
+  - method src/scripts/github_sync_manager.py:292 GitHubSyncManager.validate_before_sync missing Google docstring
+  - method src/scripts/github_sync_manager.py:324 GitHubSyncManager.run_sync missing Google docstring
+  - function src/scripts/github_sync_manager.py:375 main missing Google docstring
+  - module src/scripts/fix_github_script.py missing Google docstring
+  - function src/scripts/fix_github_script.py:11 fix_json_loading missing Google docstring
+  - module src/scripts/create_github_issues.py missing Google docstring
+  - function src/scripts/create_github_issues.py:16 load_env_file missing Google docstring
+  - class src/scripts/create_github_issues.py:33 GitHubIssuesCreator missing Google docstring
+  - method src/scripts/create_github_issues.py:45 GitHubIssuesCreator.create_epic_issue missing Google docstring
+  - method src/scripts/create_github_issues.py:85 GitHubIssuesCreator.create_task_issue missing Google docstring
+  - function src/scripts/create_github_issues.py:205 load_epics_data missing Google docstring
+  - function src/scripts/create_github_issues.py:215 main missing Google docstring
+  - module src/scripts/collector.py missing Google docstring
+  - function src/scripts/collector.py:13 apply_filters missing Google docstring
+  - function src/scripts/collector.py:32 collect_files missing Google docstring
+  - function src/scripts/collector.py:41 generate_struct missing Google docstring
+  - function src/scripts/collector.py:91 main missing Google docstring
+  - module src/scripts/validate_refs.py missing Google docstring
+  - function src/scripts/validate_refs.py:11 validate_references missing Google docstring
+  - function src/scripts/validate_refs.py:46 main missing Google docstring
+  - module src/scripts/epic_roadmap_manager.py missing Google docstring
+  - class src/scripts/epic_roadmap_manager.py:18 EpicRoadmapManager missing Google docstring
+  - method src/scripts/epic_roadmap_manager.py:24 EpicRoadmapManager.load_roadmap missing Google docstring
+  - method src/scripts/epic_roadmap_manager.py:33 EpicRoadmapManager.save_roadmap missing Google docstring
+  - method src/scripts/epic_roadmap_manager.py:42 EpicRoadmapManager.show_overview missing Google docstring
+  - method src/scripts/epic_roadmap_manager.py:82 EpicRoadmapManager.show_epic_details missing Google docstring
+  - method src/scripts/epic_roadmap_manager.py:127 EpicRoadmapManager.start_session missing Google docstring
+  - method src/scripts/epic_roadmap_manager.py:191 EpicRoadmapManager.complete_session missing Google docstring
+  - function src/scripts/epic_roadmap_manager.py:259 main missing Google docstring
+  - module src/scripts/process_926_items.py missing Google docstring
+  - class src/scripts/process_926_items.py:15 TaskProcessor926 missing Google docstring
+  - method src/scripts/process_926_items.py:53 TaskProcessor926.load_comprehensive_index missing Google docstring
+  - method src/scripts/process_926_items.py:113 TaskProcessor926.calculate_confidence_score missing Google docstring
+  - method src/scripts/process_926_items.py:148 TaskProcessor926.check_t_pot_related missing Google docstring
+  - method src/scripts/process_926_items.py:157 TaskProcessor926.check_team_implementable missing Google docstring
+  - method src/scripts/process_926_items.py:178 TaskProcessor926.check_personal_vs_team_vs_business missing Google docstring
+  - method src/scripts/process_926_items.py:216 TaskProcessor926.identify_epic_candidates missing Google docstring
+  - method src/scripts/process_926_items.py:235 TaskProcessor926.extract_epic_name missing Google docstring
+  - method src/scripts/process_926_items.py:243 TaskProcessor926.categorize_item missing Google docstring
+  - method src/scripts/process_926_items.py:280 TaskProcessor926.find_duplicates missing Google docstring
+  - method src/scripts/process_926_items.py:321 TaskProcessor926.calculate_similarity missing Google docstring
+  - method src/scripts/process_926_items.py:344 TaskProcessor926.suggest_merge_strategy missing Google docstring
+  - method src/scripts/process_926_items.py:361 TaskProcessor926.process_items missing Google docstring
+  - method src/scripts/process_926_items.py:470 TaskProcessor926.save_results missing Google docstring
+  - method src/scripts/process_926_items.py:548 TaskProcessor926.get_category_description missing Google docstring
+  - method src/scripts/process_926_items.py:564 TaskProcessor926.run missing Google docstring
+  - module src/scripts/session_cli.py missing Google docstring
+  - class src/scripts/session_cli.py:16 Colors missing Google docstring
+  - function src/scripts/session_cli.py:24 get_current_branch missing Google docstring
+  - function src/scripts/session_cli.py:33 load_json_file missing Google docstring
+  - function src/scripts/session_cli.py:42 save_json_file missing Google docstring
+  - function src/scripts/session_cli.py:53 get_current_timestamp missing Google docstring
+  - function src/scripts/session_cli.py:57 log_event missing Google docstring
+  - function src/scripts/session_cli.py:90 switch_session missing Google docstring
+  - function src/scripts/session_cli.py:143 list_sessions missing Google docstring
+  - function src/scripts/session_cli.py:168 show_current_session missing Google docstring
+  - function src/scripts/session_cli.py:185 show_worklog missing Google docstring
+  - function src/scripts/session_cli.py:205 main missing Google docstring
+  - module src/scripts/validate_epics.py missing Google docstring
+  - function src/scripts/validate_epics.py:12 validate_epic_structure missing Google docstring
+  - function src/scripts/validate_epics.py:37 validate_task_structure missing Google docstring
+  - function src/scripts/validate_epics.py:55 validate_priorities missing Google docstring
+  - function src/scripts/validate_epics.py:70 validate_task_ids missing Google docstring
+  - function src/scripts/validate_epics.py:84 main missing Google docstring
+  - module src/scripts/export_to_github_projects.py missing Google docstring
+  - class src/scripts/export_to_github_projects.py:20 GitHubProjectsExportScript missing Google docstring
+  - method src/scripts/export_to_github_projects.py:28 GitHubProjectsExportScript.check_github_cli missing Google docstring
+  - method src/scripts/export_to_github_projects.py:38 GitHubProjectsExportScript.list_projects missing Google docstring
+  - method src/scripts/export_to_github_projects.py:57 GitHubProjectsExportScript.create_project_item missing Google docstring
+  - method src/scripts/export_to_github_projects.py:84 GitHubProjectsExportScript.export_tasks_to_project missing Google docstring
+  - method src/scripts/export_to_github_projects.py:125 GitHubProjectsExportScript.export_ideas_to_project missing Google docstring
+  - method src/scripts/export_to_github_projects.py:166 GitHubProjectsExportScript.filter_data missing Google docstring
+  - function src/scripts/export_to_github_projects.py:183 main missing Google docstring
+  - module src/scripts/validate_json.py missing Google docstring
+  - function src/scripts/validate_json.py:13 load_json missing Google docstring
+  - function src/scripts/validate_json.py:26 validate_json missing Google docstring
+  - module src/scripts/create_comprehensive_index.py missing Google docstring
+  - class src/scripts/create_comprehensive_index.py:22 ProjectItem missing Google docstring
+  - class src/scripts/create_comprehensive_index.py:42 ComprehensiveIndexer missing Google docstring
+  - method src/scripts/create_comprehensive_index.py:94 ComprehensiveIndexer.scan_all_directories missing Google docstring
+  - method src/scripts/create_comprehensive_index.py:519 ComprehensiveIndexer.generate_comprehensive_report missing Google docstring
+  - method src/scripts/create_comprehensive_index.py:563 ComprehensiveIndexer.save_comprehensive_index missing Google docstring
+  - function src/scripts/create_comprehensive_index.py:714 main missing Google docstring
+  - module src/scripts/github_sync_manager_enhanced.py missing Google docstring
+  - class src/scripts/github_sync_manager_enhanced.py:18 Colors missing Google docstring
+  - function src/scripts/github_sync_manager_enhanced.py:25 print_info missing Google docstring
+  - function src/scripts/github_sync_manager_enhanced.py:28 print_success missing Google docstring
+  - function src/scripts/github_sync_manager_enhanced.py:31 print_warning missing Google docstring
+  - function src/scripts/github_sync_manager_enhanced.py:34 print_error missing Google docstring
+  - function src/scripts/github_sync_manager_enhanced.py:37 print_step missing Google docstring
+  - class src/scripts/github_sync_manager_enhanced.py:40 GitHubTokenManager missing Google docstring
+  - method src/scripts/github_sync_manager_enhanced.py:46 GitHubTokenManager.load_env_file missing Google docstring
+  - method src/scripts/github_sync_manager_enhanced.py:59 GitHubTokenManager.test_github_token missing Google docstring
+  - method src/scripts/github_sync_manager_enhanced.py:75 GitHubTokenManager.check_gh_cli missing Google docstring
+  - method src/scripts/github_sync_manager_enhanced.py:84 GitHubTokenManager.get_token_from_gh_cli missing Google docstring
+  - class src/scripts/github_sync_manager_enhanced.py:119 EnhancedGitHubSyncManager missing Google docstring
+  - method src/scripts/github_sync_manager_enhanced.py:166 EnhancedGitHubSyncManager.detect_repo_from_git missing Google docstring
+  - method src/scripts/github_sync_manager_enhanced.py:200 EnhancedGitHubSyncManager.load_sync_log missing Google docstring
+  - method src/scripts/github_sync_manager_enhanced.py:213 EnhancedGitHubSyncManager.save_sync_log missing Google docstring
+  - method src/scripts/github_sync_manager_enhanced.py:218 EnhancedGitHubSyncManager.api_request missing Google docstring
+  - method src/scripts/github_sync_manager_enhanced.py:295 EnhancedGitHubSyncManager.create_github_issue_enhanced missing Google docstring
+  - method src/scripts/github_sync_manager_enhanced.py:399 EnhancedGitHubSyncManager.validate_before_sync missing Google docstring
+  - method src/scripts/github_sync_manager_enhanced.py:436 EnhancedGitHubSyncManager.run_enhanced_sync missing Google docstring
+  - method src/scripts/github_sync_manager_enhanced.py:496 EnhancedGitHubSyncManager.sync_category_enhanced missing Google docstring
+  - method src/scripts/github_sync_manager_enhanced.py:556 EnhancedGitHubSyncManager.item_already_synced missing Google docstring
+  - method src/scripts/github_sync_manager_enhanced.py:562 EnhancedGitHubSyncManager.create_github_epic_enhanced missing Google docstring
+  - method src/scripts/github_sync_manager_enhanced.py:609 EnhancedGitHubSyncManager.create_github_discussion_enhanced missing Google docstring
+  - function src/scripts/github_sync_manager_enhanced.py:620 main missing Google docstring
+  - module src/scripts/deploy_embedded_files.py missing Google docstring
+  - function src/scripts/deploy_embedded_files.py:931 validate_json missing Google docstring
+  - function src/scripts/deploy_embedded_files.py:944 backup_files missing Google docstring
+  - function src/scripts/deploy_embedded_files.py:953 deploy_embedded_files missing Google docstring
+  - function src/scripts/deploy_embedded_files.py:1010 main missing Google docstring
+  - module src/scripts/fix_hardcoded_usernames.py missing Google docstring
+  - class src/scripts/fix_hardcoded_usernames.py:19 UserInfoDetector missing Google docstring
+  - method src/scripts/fix_hardcoded_usernames.py:130 UserInfoDetector.get_user_info missing Google docstring
+  - class src/scripts/fix_hardcoded_usernames.py:135 HardcodeFixer missing Google docstring
+  - method src/scripts/fix_hardcoded_usernames.py:150 HardcodeFixer.scan_files missing Google docstring
+  - method src/scripts/fix_hardcoded_usernames.py:174 HardcodeFixer.fix_file missing Google docstring
+  - method src/scripts/fix_hardcoded_usernames.py:202 HardcodeFixer.fix_all_files missing Google docstring
+  - method src/scripts/fix_hardcoded_usernames.py:216 HardcodeFixer.generate_env_template missing Google docstring
+  - function src/scripts/fix_hardcoded_usernames.py:234 main missing Google docstring
+  - module src/scripts/create_tasks_index.py missing Google docstring
+  - class src/scripts/create_tasks_index.py:21 Task missing Google docstring
+  - class src/scripts/create_tasks_index.py:39 TaskExtractor missing Google docstring
+  - method src/scripts/create_tasks_index.py:75 TaskExtractor.extract_from_markdown missing Google docstring
+  - class src/scripts/create_tasks_index.py:289 TaskIndexGenerator missing Google docstring
+  - method src/scripts/create_tasks_index.py:296 TaskIndexGenerator.scan_documentation missing Google docstring
+  - method src/scripts/create_tasks_index.py:316 TaskIndexGenerator.generate_index missing Google docstring
+  - method src/scripts/create_tasks_index.py:369 TaskIndexGenerator.generate_summary_report missing Google docstring
+  - method src/scripts/create_tasks_index.py:448 TaskIndexGenerator.save_index missing Google docstring
+  - function src/scripts/create_tasks_index.py:469 main missing Google docstring
+  - module src/llmstruct/ARCHIVE/cli_argument_parser.py missing Google docstring
+  - function src/llmstruct/ARCHIVE/cli_argument_parser.py:14 create_argument_parser missing Google docstring
+  - function src/llmstruct/ARCHIVE/cli_argument_parser.py:116 add_api_bot_commands missing Google docstring
+  - function src/llmstruct/ARCHIVE/cli_argument_parser.py:129 create_full_argument_parser missing Google docstring
+  - module src/llmstruct/ARCHIVE/cli_core.py missing Google docstring
+  - class src/llmstruct/ARCHIVE/cli_core.py:25 CLICore missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_core.py:37 CLICore.setup_cache missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_core.py:55 CLICore.setup_copilot missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_core.py:65 CLICore.run_interactive_mode missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_core.py:99 CLICore.cleanup missing Google docstring
+  - function src/llmstruct/ARCHIVE/cli_core.py:110 create_cli_core missing Google docstring
+  - module src/llmstruct/ARCHIVE/cli_utils.py missing Google docstring
+  - class src/llmstruct/ARCHIVE/cli_utils.py:21 CLIUtils missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_utils.py:28 CLIUtils.read_file_content missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_utils.py:52 CLIUtils.write_file_content missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_utils.py:72 CLIUtils.get_directory_structure missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_utils.py:117 CLIUtils.validate_json missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_utils.py:125 CLIUtils.format_json missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_utils.py:133 CLIUtils.generate_unique_id missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_utils.py:139 CLIUtils.safe_path_join missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_utils.py:151 CLIUtils.file_exists missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_utils.py:159 CLIUtils.dir_exists missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_utils.py:167 CLIUtils.get_file_size missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_utils.py:175 CLIUtils.backup_file missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_utils.py:193 CLIUtils.cleanup_old_backups missing Google docstring
+  - module src/llmstruct/ARCHIVE/cli_main_commands.py missing Google docstring
+  - function src/llmstruct/ARCHIVE/cli_main_commands.py:33 parse missing Google docstring
+  - function src/llmstruct/ARCHIVE/cli_main_commands.py:233 context missing Google docstring
+  - function src/llmstruct/ARCHIVE/cli_main_commands.py:238 dogfood missing Google docstring
+  - function src/llmstruct/ARCHIVE/cli_main_commands.py:243 review missing Google docstring
+  - function src/llmstruct/ARCHIVE/cli_main_commands.py:248 copilot missing Google docstring
+  - function src/llmstruct/ARCHIVE/cli_main_commands.py:369 audit missing Google docstring
+  - function src/llmstruct/ARCHIVE/cli_main_commands.py:390 analyze_duplicates missing Google docstring
+  - module src/llmstruct/ARCHIVE/cli_config.py missing Google docstring
+  - class src/llmstruct/ARCHIVE/cli_config.py:17 CLIConfig missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_config.py:36 CLIConfig.get_cache_config missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_config.py:40 CLIConfig.get_copilot_config missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_config.py:44 CLIConfig.get_queue_config missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_config.py:48 CLIConfig.get_context_config missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_config.py:52 CLIConfig.get_gitignore_patterns missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_config.py:68 CLIConfig.get_exclude_dirs missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_config.py:84 CLIConfig.get_include_patterns missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_config.py:91 CLIConfig.get_exclude_patterns missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_config.py:98 CLIConfig.get_max_file_size missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_config.py:102 CLIConfig.get_auto_update_config missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_config.py:106 CLIConfig.is_auto_update_enabled missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_config.py:110 CLIConfig.get_struct_file_path missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_config.py:114 CLIConfig.get_context_file_path missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_config.py:118 CLIConfig.save_config missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_config.py:126 CLIConfig.update_config missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_config.py:133 CLIConfig.reload_config missing Google docstring
+  - module src/llmstruct/ARCHIVE/cli_commands.py missing Google docstring
+  - class src/llmstruct/ARCHIVE/cli_commands.py:30 CommandProcessor missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:74 CommandProcessor.set_cache missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:78 CommandProcessor.set_copilot missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:82 CommandProcessor.process_command missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:100 CommandProcessor.process_prompt missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:154 CommandProcessor.cmd_help missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:219 CommandProcessor.cmd_workspace missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:336 CommandProcessor.cmd_mode missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:439 CommandProcessor.cmd_view missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:480 CommandProcessor.cmd_write missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:507 CommandProcessor.cmd_queue missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:551 CommandProcessor.cmd_cache missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:592 CommandProcessor.cmd_copilot missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:628 CommandProcessor.cmd_config missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:662 CommandProcessor.cmd_status missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:678 CommandProcessor.cmd_backup missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:695 CommandProcessor.cmd_parse missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:717 CommandProcessor.cmd_audit missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:745 CommandProcessor.handle_auto_update missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:767 CommandProcessor.handle_struct_status missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:793 CommandProcessor.cmd_context missing Google docstring
+  - method src/llmstruct/ARCHIVE/cli_commands.py:851 CommandProcessor.cmd_session missing Google docstring
+  - module src/llmstruct/api/config.py missing Google docstring
+  - class src/llmstruct/api/config.py:12 Settings missing Google docstring
+  - module src/llmstruct/api/app.py missing Google docstring
+  - module src/llmstruct/core/hash_utils.py missing Google docstring
+  - function src/llmstruct/core/hash_utils.py:270 quick_file_hash missing Google docstring
+  - function src/llmstruct/core/hash_utils.py:275 quick_content_hash missing Google docstring
+  - function src/llmstruct/core/hash_utils.py:280 quick_source_hash missing Google docstring
+  - module src/llmstruct/core/summary_providers.py missing Google docstring
+  - class src/llmstruct/core/summary_providers.py:19 SummarySource missing Google docstring
+  - class src/llmstruct/core/summary_providers.py:28 CodeSummary missing Google docstring
+  - method src/llmstruct/core/summary_providers.py:36 CodeSummary.is_empty missing Google docstring
+  - class src/llmstruct/core/summary_providers.py:41 SummaryProvider missing Google docstring
+  - method src/llmstruct/core/summary_providers.py:45 SummaryProvider.generate_summary missing Google docstring
+  - method src/llmstruct/core/summary_providers.py:55 SummaryProvider.get_provider_name missing Google docstring
+  - class src/llmstruct/core/summary_providers.py:60 HeuristicProvider missing Google docstring
+  - method src/llmstruct/core/summary_providers.py:73 HeuristicProvider.generate_summary missing Google docstring
+  - method src/llmstruct/core/summary_providers.py:231 HeuristicProvider.get_provider_name missing Google docstring
+  - class src/llmstruct/core/summary_providers.py:235 LLMProvider missing Google docstring
+  - method src/llmstruct/core/summary_providers.py:246 LLMProvider.generate_summary missing Google docstring
+  - method src/llmstruct/core/summary_providers.py:338 LLMProvider.get_provider_name missing Google docstring
+  - class src/llmstruct/core/summary_providers.py:342 SummarySystem missing Google docstring
+  - method src/llmstruct/core/summary_providers.py:349 SummarySystem.generate_summary missing Google docstring
+  - method src/llmstruct/core/summary_providers.py:374 SummarySystem.get_active_provider missing Google docstring
+  - function src/llmstruct/core/summary_providers.py:386 get_summary_system missing Google docstring
+  - function src/llmstruct/core/summary_providers.py:394 generate_summary missing Google docstring
+  - module src/llmstruct/core/uid_generator.py missing Google docstring
+  - class src/llmstruct/core/uid_generator.py:14 UIDType missing Google docstring
+  - function src/llmstruct/core/uid_generator.py:25 normalize_path missing Google docstring
+  - function src/llmstruct/core/uid_generator.py:281 create_module_uid missing Google docstring
+  - function src/llmstruct/core/uid_generator.py:286 create_function_uid missing Google docstring
+  - function src/llmstruct/core/uid_generator.py:291 create_class_uid missing Google docstring
+  - function src/llmstruct/core/uid_generator.py:296 create_method_uid missing Google docstring
+  - module src/llmstruct/core/config_manager.py missing Google docstring
+  - class src/llmstruct/core/config_manager.py:16 LLMConfig missing Google docstring
+  - class src/llmstruct/core/config_manager.py:29 SummaryConfig missing Google docstring
+  - class src/llmstruct/core/config_manager.py:39 MetricsConfig missing Google docstring
+  - class src/llmstruct/core/config_manager.py:49 SecurityConfig missing Google docstring
+  - class src/llmstruct/core/config_manager.py:58 LLMStructConfig missing Google docstring
+  - class src/llmstruct/core/config_manager.py:85 ConfigManager missing Google docstring
+  - method src/llmstruct/core/config_manager.py:92 ConfigManager.load_config missing Google docstring
+  - method src/llmstruct/core/config_manager.py:140 ConfigManager.get_config missing Google docstring
+  - method src/llmstruct/core/config_manager.py:146 ConfigManager.is_llm_enabled missing Google docstring
+  - method src/llmstruct/core/config_manager.py:156 ConfigManager.get_summary_provider missing Google docstring
+  - method src/llmstruct/core/config_manager.py:163 ConfigManager.save_config_template missing Google docstring
+  - function src/llmstruct/core/config_manager.py:199 get_config_manager missing Google docstring
+  - function src/llmstruct/core/config_manager.py:207 get_config missing Google docstring
+  - function src/llmstruct/core/config_manager.py:212 is_llm_enabled missing Google docstring
+  - function src/llmstruct/core/config_manager.py:217 get_summary_provider missing Google docstring
+  - module src/llmstruct/validators/json_validator.py missing Google docstring
+  - function src/llmstruct/validators/json_validator.py:12 validate_struct_json missing Google docstring
+  - function src/llmstruct/validators/json_validator.py:43 validate_directory missing Google docstring
+  - module src/llmstruct/parsers/universal_converter.py missing Google docstring
+  - class src/llmstruct/parsers/universal_converter.py:33 Language missing Google docstring
+  - class src/llmstruct/parsers/universal_converter.py:46 ConverterConfig missing Google docstring
+  - class src/llmstruct/parsers/universal_converter.py:65 UniversalConverter missing Google docstring
+  - method src/llmstruct/parsers/universal_converter.py:84 UniversalConverter.detect_language missing Google docstring
+  - method src/llmstruct/parsers/universal_converter.py:94 UniversalConverter.detect_project_languages missing Google docstring
+  - method src/llmstruct/parsers/universal_converter.py:111 UniversalConverter.get_project_files missing Google docstring
+  - method src/llmstruct/parsers/universal_converter.py:140 UniversalConverter.convert_python_project missing Google docstring
+  - method src/llmstruct/parsers/universal_converter.py:173 UniversalConverter.convert_go_project missing Google docstring
+  - method src/llmstruct/parsers/universal_converter.py:192 UniversalConverter.convert_javascript_project missing Google docstring
+  - method src/llmstruct/parsers/universal_converter.py:225 UniversalConverter.convert_project missing Google docstring
+  - method src/llmstruct/parsers/universal_converter.py:252 UniversalConverter.convert_multi_language_project missing Google docstring
+  - function src/llmstruct/parsers/universal_converter.py:375 main missing Google docstring
+  - module src/llmstruct/parsers/python_parser.py missing Google docstring
+  - function src/llmstruct/parsers/python_parser.py:23 infer_category missing Google docstring
+  - class src/llmstruct/parsers/python_parser.py:33 CallVisitor missing Google docstring
+  - method src/llmstruct/parsers/python_parser.py:42 CallVisitor.visit_Import missing Google docstring
+  - method src/llmstruct/parsers/python_parser.py:48 CallVisitor.visit_ImportFrom missing Google docstring
+  - method src/llmstruct/parsers/python_parser.py:56 CallVisitor.visit_FunctionDef missing Google docstring
+  - method src/llmstruct/parsers/python_parser.py:65 CallVisitor.visit_AsyncFunctionDef missing Google docstring
+  - method src/llmstruct/parsers/python_parser.py:74 CallVisitor.visit_Call missing Google docstring
+  - function src/llmstruct/parsers/python_parser.py:94 compute_file_hash missing Google docstring
+  - function src/llmstruct/parsers/python_parser.py:103 analyze_module missing Google docstring
+  - module src/llmstruct/parsers/go_analyzer.py missing Google docstring
+  - class src/llmstruct/parsers/go_analyzer.py:21 GoAnalyzer missing Google docstring
+  - method src/llmstruct/parsers/go_analyzer.py:74 GoAnalyzer.analyze_project missing Google docstring
+  - function src/llmstruct/parsers/go_analyzer.py:203 convert_to_llmstruct_format missing Google docstring
+  - function src/llmstruct/parsers/go_analyzer.py:347 main missing Google docstring
+  - module src/llmstruct/parsers/javascript_parser.py missing Google docstring
+  - class src/llmstruct/parsers/javascript_parser.py:8 JavaScriptParser missing Google docstring
+  - method src/llmstruct/parsers/javascript_parser.py:15 JavaScriptParser.file_hash missing Google docstring
+  - method src/llmstruct/parsers/javascript_parser.py:22 JavaScriptParser.compute_file_metadata missing Google docstring
+  - method src/llmstruct/parsers/javascript_parser.py:43 JavaScriptParser.parse_module missing Google docstring
+  - module src/llmstruct/generators/go_json_generator.py missing Google docstring
+  - function src/llmstruct/generators/go_json_generator.py:15 get_go_folder_structure missing Google docstring
+  - function src/llmstruct/generators/go_json_generator.py:88 build_go_toc_and_modules missing Google docstring
+  - function src/llmstruct/generators/go_json_generator.py:146 extract_go_mod_info missing Google docstring
+  - function src/llmstruct/generators/go_json_generator.py:185 generate_go_json missing Google docstring
+  - module src/llmstruct/generators/index_generator.py missing Google docstring
+  - module src/llmstruct/generators/json_generator.py missing Google docstring
+  - function src/llmstruct/generators/json_generator.py:16 get_folder_structure missing Google docstring
+  - function src/llmstruct/generators/json_generator.py:93 build_toc_and_modules missing Google docstring
+  - function src/llmstruct/generators/json_generator.py:166 generate_json missing Google docstring
+  - function src/llmstruct/generators/json_generator.py:240 generate_json_with_output_file missing Google docstring
+  - module src/llmstruct/api/routes/system.py missing Google docstring
+  - function src/llmstruct/api/routes/system.py:17 get_cli_bridge missing Google docstring
+  - module src/llmstruct/api/routes/chat.py missing Google docstring
+  - class src/llmstruct/api/routes/chat.py:29 ConnectionManager missing Google docstring
+  - method src/llmstruct/api/routes/chat.py:35 ConnectionManager.connect missing Google docstring
+  - method src/llmstruct/api/routes/chat.py:40 ConnectionManager.disconnect missing Google docstring
+  - method src/llmstruct/api/routes/chat.py:45 ConnectionManager.send_message missing Google docstring
+  - module src/llmstruct/api/routes/continue_adapter.py missing Google docstring
+  - class src/llmstruct/api/routes/continue_adapter.py:23 ContinueRequest missing Google docstring
+  - class src/llmstruct/api/routes/continue_adapter.py:37 ContinueResponse missing Google docstring
+  - module src/llmstruct/api/middleware/logging.py missing Google docstring
+  - module src/llmstruct/api/services/llm_service.py missing Google docstring
+  - class src/llmstruct/api/services/llm_service.py:21 LLMResponse missing Google docstring
+  - class src/llmstruct/api/services/llm_service.py:30 AnthropicClient missing Google docstring
+  - method src/llmstruct/api/services/llm_service.py:38 AnthropicClient.chat_completion missing Google docstring
+  - class src/llmstruct/api/services/llm_service.py:79 GrokClient missing Google docstring
+  - method src/llmstruct/api/services/llm_service.py:87 GrokClient.chat_completion missing Google docstring
+  - class src/llmstruct/api/services/llm_service.py:115 LLMService missing Google docstring
+  - method src/llmstruct/api/services/llm_service.py:143 LLMService.process_message missing Google docstring
+  - module src/llmstruct/api/services/cli_bridge.py missing Google docstring
+  - class src/llmstruct/api/services/cli_bridge.py:21 CLIBridgeError missing Google docstring
+  - class src/llmstruct/api/services/cli_bridge.py:26 CLIBridge missing Google docstring
+  - method src/llmstruct/api/services/cli_bridge.py:42 CLIBridge.scan_project missing Google docstring
+  - method src/llmstruct/api/services/cli_bridge.py:89 CLIBridge.get_context missing Google docstring
+  - method src/llmstruct/api/services/cli_bridge.py:100 CLIBridge.get_project_info missing Google docstring
+  - method src/llmstruct/api/services/cli_bridge.py:106 CLIBridge.validate_json missing Google docstring
+  - method src/llmstruct/api/services/cli_bridge.py:112 CLIBridge.health_check missing Google docstring
+  - module src/llmstruct/api/services/chat_session.py missing Google docstring
+  - class src/llmstruct/api/services/chat_session.py:16 ChatSession missing Google docstring
+  - method src/llmstruct/api/services/chat_session.py:26 ChatSession.add_message missing Google docstring
+  - method src/llmstruct/api/services/chat_session.py:38 ChatSession.get_messages missing Google docstring
+  - method src/llmstruct/api/services/chat_session.py:44 ChatSession.get_context_string missing Google docstring
+  - method src/llmstruct/api/services/chat_session.py:56 ChatSession.to_dict missing Google docstring
+  - class src/llmstruct/api/services/chat_session.py:67 ChatSessionManager missing Google docstring
+  - method src/llmstruct/api/services/chat_session.py:75 ChatSessionManager.get_or_create_session missing Google docstring
+  - method src/llmstruct/api/services/chat_session.py:89 ChatSessionManager.get_session missing Google docstring
+  - method src/llmstruct/api/services/chat_session.py:103 ChatSessionManager.add_message missing Google docstring
+  - method src/llmstruct/api/services/chat_session.py:111 ChatSessionManager.list_sessions missing Google docstring
+  - method src/llmstruct/api/services/chat_session.py:140 ChatSessionManager.delete_session missing Google docstring
+  - method src/llmstruct/api/services/chat_session.py:180 ChatSessionManager.cleanup_old_sessions missing Google docstring
+  - module src/llmstruct/api/models/requests.py missing Google docstring
+  - class src/llmstruct/api/models/requests.py:10 ContextMode missing Google docstring
+  - class src/llmstruct/api/models/requests.py:17 Priority missing Google docstring
+  - class src/llmstruct/api/models/requests.py:24 ScanRequest missing Google docstring
+  - class src/llmstruct/api/models/requests.py:41 ContextRequest missing Google docstring
+  - class src/llmstruct/api/models/requests.py:57 TaskCreateRequest missing Google docstring
+  - class src/llmstruct/api/models/requests.py:77 TaskUpdateRequest missing Google docstring
+  - class src/llmstruct/api/models/requests.py:95 QueryRequest missing Google docstring
+  - class src/llmstruct/api/models/requests.py:113 ValidationRequest missing Google docstring
+  - class src/llmstruct/api/models/requests.py:127 ChatMessage missing Google docstring
+  - module src/llmstruct/api/models/responses.py missing Google docstring
+  - class src/llmstruct/api/models/responses.py:11 TaskStatus missing Google docstring
+  - class src/llmstruct/api/models/responses.py:18 HealthStatus missing Google docstring
+  - class src/llmstruct/api/models/responses.py:24 ProjectInfo missing Google docstring
+  - class src/llmstruct/api/models/responses.py:52 ScanResponse missing Google docstring
+  - class src/llmstruct/api/models/responses.py:80 ContextResponse missing Google docstring
+  - class src/llmstruct/api/models/responses.py:103 TaskResponse missing Google docstring
+  - class src/llmstruct/api/models/responses.py:131 QueryResponse missing Google docstring
+  - class src/llmstruct/api/models/responses.py:158 ValidationResponse missing Google docstring
+  - class src/llmstruct/api/models/responses.py:178 HealthResponse missing Google docstring
+  - class src/llmstruct/api/models/responses.py:202 ErrorResponse missing Google docstring
+  - class src/llmstruct/api/models/responses.py:220 ChatResponse missing Google docstring
+  - module src/llmstruct/modules/commands/metrics.py missing Google docstring
+  - function src/llmstruct/modules/commands/metrics.py:1 metrics_status missing Google docstring
+  - function src/llmstruct/modules/commands/metrics.py:22 metrics_summary missing Google docstring
+  - function src/llmstruct/modules/commands/metrics.py:68 metrics_analytics missing Google docstring
+  - function src/llmstruct/modules/commands/metrics.py:106 metrics_report missing Google docstring
+  - function src/llmstruct/modules/commands/metrics.py:136 metrics_track missing Google docstring
+  - function src/llmstruct/modules/commands/metrics.py:147 metrics_tokens missing Google docstring
+  - module src/llmstruct/modules/commands/services.py missing Google docstring
+  - function src/llmstruct/modules/commands/services.py:10 add_api_bot_commands missing Google docstring
+  - module src/llmstruct/modules/commands/queue.py missing Google docstring
+  - module src/llmstruct/modules/cli/audit.py missing Google docstring
+  - function src/llmstruct/modules/cli/audit.py:4 audit missing Google docstring
+  - module src/llmstruct/modules/cli/utils.py missing Google docstring
+  - function src/llmstruct/modules/cli/utils.py:6 load_gitignore missing Google docstring
+  - function src/llmstruct/modules/cli/utils.py:22 load_config missing Google docstring
+  - function src/llmstruct/modules/cli/utils.py:34 read_file_content missing Google docstring
+  - function src/llmstruct/modules/cli/utils.py:45 write_to_file missing Google docstring
+  - function src/llmstruct/modules/cli/utils.py:65 parse_files_from_response missing Google docstring
+  - function src/llmstruct/modules/cli/utils.py:74 get_cache_config missing Google docstring
+  - function src/llmstruct/modules/cli/utils.py:77 get_copilot_config missing Google docstring
+  - function src/llmstruct/modules/cli/utils.py:80 get_queue_config missing Google docstring
+  - function src/llmstruct/modules/cli/utils.py:83 get_context_config missing Google docstring
+  - function src/llmstruct/modules/cli/utils.py:86 get_exclude_dirs missing Google docstring
+  - function src/llmstruct/modules/cli/utils.py:95 get_include_patterns missing Google docstring
+  - function src/llmstruct/modules/cli/utils.py:100 get_exclude_patterns missing Google docstring
+  - function src/llmstruct/modules/cli/utils.py:105 get_max_file_size missing Google docstring
+  - function src/llmstruct/modules/cli/utils.py:108 get_struct_file_path missing Google docstring
+  - function src/llmstruct/modules/cli/utils.py:111 get_context_file_path missing Google docstring
+  - function src/llmstruct/modules/cli/utils.py:114 save_config missing Google docstring
+  - module src/llmstruct/modules/cli/dogfood.py missing Google docstring
+  - function src/llmstruct/modules/cli/dogfood.py:3 dogfood missing Google docstring
+  - module src/llmstruct/modules/cli/handlers_legacy.py missing Google docstring
+  - module src/llmstruct/modules/cli/analyze_duplicates.py missing Google docstring
+  - function src/llmstruct/modules/cli/analyze_duplicates.py:1 analyze_duplicates missing Google docstring
+  - module src/llmstruct/modules/cli/review.py missing Google docstring
+  - function src/llmstruct/modules/cli/review.py:3 review missing Google docstring
+  - module src/llmstruct/modules/cli/context.py missing Google docstring
+  - function src/llmstruct/modules/cli/context.py:3 context missing Google docstring
+  - module src/llmstruct/modules/cli/query.py missing Google docstring
+  - function src/llmstruct/modules/cli/query.py:8 query missing Google docstring
+  - module src/llmstruct/modules/cli/copilot.py missing Google docstring
+  - function src/llmstruct/modules/cli/copilot.py:5 copilot missing Google docstring
+  - module src/llmstruct/modules/cli/parse.py missing Google docstring
+  - function src/llmstruct/modules/cli/parse.py:11 parse missing Google docstring
+  - module src/llmstruct/modules/cli/epic.py missing Google docstring
+  - function src/llmstruct/modules/cli/epic.py:5 load_json missing Google docstring
+  - function src/llmstruct/modules/cli/epic.py:9 show_links missing Google docstring
+  - function src/llmstruct/modules/cli/epic.py:59 add_epic_cli_subparser missing Google docstring
+  - module src/llmstruct/modules/cli/handlers.py missing Google docstring

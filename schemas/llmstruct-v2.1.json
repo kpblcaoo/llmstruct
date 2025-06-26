@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.llmstruct.org/v2.1/struct.json",
+  "title": "LLMStruct v2.1 Schema",
+  "description": "JSON Schema for LLMStruct v2.1 codebase structure format",
+  "type": "object",
+  "required": ["metadata", "toc", "modules"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["project_name", "version", "schema_version", "stats"],
+      "properties": {
+        "project_name": {"type": "string"},
+        "description": {"type": "string"},
+        "version": {"type": "string", "format": "date-time"},
+        "schema_version": {"type": "string", "pattern": "^2\\.1\\.\\d+$"},
+        "$schema": {"type": "string", "format": "uri"},
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {"type": "string"},
+              "github": {"type": "string"},
+              "email": {"type": "string", "format": "email"}
+            }
+          }
+        },
+        "instructions": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "goals": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "stats": {
+          "type": "object",
+          "required": ["modules_count", "functions_count", "classes_count", "call_edges_count"],
+          "properties": {
+            "modules_count": {"type": "integer", "minimum": 0},
+            "functions_count": {"type": "integer", "minimum": 0},
+            "classes_count": {"type": "integer", "minimum": 0},
+            "call_edges_count": {"type": "integer", "minimum": 0}
+          }
+        },
+        "artifact_id": {"type": "string", "format": "uuid"},
+        "summary": {"type": "string"},
+        "tags": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "toc": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["module_id", "path", "category", "functions", "classes"],
+        "properties": {
+          "module_id": {"type": "string"},
+          "path": {"type": "string"},
+          "category": {"type": "string", "enum": ["core", "cli", "test", "util"]},
+          "functions": {"type": "integer", "minimum": 0},
+          "classes": {"type": "integer", "minimum": 0},
+          "summary": {"type": "string"},
+          "hash": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+          "artifact_id": {"type": "string", "format": "uuid"}
+        }
+      }
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["module_id", "path", "category", "functions", "classes", "callgraph", "dependencies"],
+        "properties": {
+          "module_id": {"type": "string"},
+          "path": {"type": "string"},
+          "category": {"type": "string"},
+          "module_doc": {"type": "string"},
+          "functions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "uid", "uid_components"],
+              "properties": {
+                "name": {"type": "string"},
+                "docstring": {"type": "string"},
+                "line_range": {
+                  "type": ["array", "null"],
+                  "items": {"type": "integer"},
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "parameters": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                },
+                "decorators": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                },
+                "uid": {"type": "string"},
+                "uid_components": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                },
+                "hash": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+                "hash_source": {"type": ["string", "null"]},
+                "hash_version": {"type": ["string", "null"]},
+                "summary": {"type": "string"},
+                "summary_source": {"type": "string"},
+                "tags": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                },
+                "calls": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                },
+                "called_by": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                }
+              }
+            }
+          },
+          "classes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "uid", "uid_components", "methods"],
+              "properties": {
+                "name": {"type": "string"},
+                "docstring": {"type": "string"},
+                "line_range": {
+                  "type": ["array", "null"],
+                  "items": {"type": "integer"},
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "methods": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["name", "uid", "uid_components"],
+                    "properties": {
+                      "name": {"type": "string"},
+                      "docstring": {"type": "string"},
+                      "line_range": {
+                        "type": ["array", "null"],
+                        "items": {"type": "integer"},
+                        "minItems": 2,
+                        "maxItems": 2
+                      },
+                      "parameters": {
+                        "type": "array",
+                        "items": {"type": "string"}
+                      },
+                      "uid": {"type": "string"},
+                      "uid_components": {
+                        "type": "array",
+                        "items": {"type": "string"}
+                      },
+                      "hash": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+                      "hash_source": {"type": ["string", "null"]},
+                      "hash_version": {"type": ["string", "null"]},
+                      "summary": {"type": "string"},
+                      "summary_source": {"type": "string"},
+                      "tags": {
+                        "type": "array",
+                        "items": {"type": "string"}
+                      },
+                      "calls": {
+                        "type": "array",
+                        "items": {"type": "string"}
+                      },
+                      "called_by": {
+                        "type": "array",
+                        "items": {"type": "string"}
+                      }
+                    }
+                  }
+                },
+                "bases": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                },
+                "uid": {"type": "string"},
+                "uid_components": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                },
+                "hash": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+                "hash_source": {"type": ["string", "null"]},
+                "hash_version": {"type": ["string", "null"]},
+                "summary": {"type": "string"},
+                "summary_source": {"type": "string"},
+                "tags": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                }
+              }
+            }
+          },
+          "callgraph": {
+            "type": "object",
+            "patternProperties": {
+              "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+                "type": "array",
+                "items": {"type": "string"}
+              }
+            }
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "hash": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+          "hash_source": {"type": ["string", "null"]},
+          "hash_version": {"type": ["string", "null"]},
+          "uid": {"type": "string"},
+          "uid_components": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "summary": {"type": "string"},
+          "summary_source": {"type": "string"},
+          "tags": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "artifact_id": {"type": "string", "format": "uuid"}
+        }
+      }
+    }
+  }
+} 

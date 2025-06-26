@@ -10,7 +10,7 @@ import os
 import requests
 from pathlib import Path
 from datetime import datetime
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Optional
 import time
 
 class GitHubSyncManager:
@@ -150,7 +150,7 @@ class GitHubSyncManager:
         # Enhanced description with metadata
         body = f"{description}\n\n"
         body += "---\n"
-        body += f"**Auto-generated from llmstruct processing**\n"
+        body += "**Auto-generated from llmstruct processing**\n"
         body += f"- Category: `{item.get('processing_metadata', {}).get('category_assigned', 'unknown')}`\n"
         body += f"- Confidence: {item.get('processing_metadata', {}).get('confidence_score', 0)}%\n"
         body += f"- Team implementable: {item.get('processing_metadata', {}).get('team_implementable', 'unknown')}\n"
@@ -359,7 +359,7 @@ class GitHubSyncManager:
         total_skipped = sum(r.get('skipped', 0) for r in results.values())
         total_failed = sum(r.get('failed', 0) for r in results.values())
         
-        print(f"\n✅ Sync complete!")
+        print("\n✅ Sync complete!")
         print(f"📊 Synced: {total_synced}, Skipped: {total_skipped}, Failed: {total_failed}")
         
         return {

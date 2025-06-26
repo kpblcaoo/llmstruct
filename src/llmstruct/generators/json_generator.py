@@ -6,6 +6,8 @@ from typing import Dict, Any, List, Optional
 import uuid
 
 from ..parsers.python_parser import analyze_module
+from .index_generator import save_index_json
+from llmstruct.core.tag_inference import infer_tags
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
@@ -154,6 +156,7 @@ def build_toc_and_modules(
                         if module["module_doc"]
                         else ""
                     ),
+                    "hash": module.get("hash"),
                     "artifact_id": module["artifact_id"],
                 }
             )
@@ -190,16 +193,32 @@ def generate_json(
         "functions_count": sum(len(m["functions"]) for m in modules),
         "classes_count": sum(len(m["classes"]) for m in modules),
         "call_edges_count": sum(
-            len(set(sum((list(v) for v in m["callgraph"].values()), [])))
+            len([call for calls_list in m["callgraph"].values() for call in calls_list])
             for m in modules
         ),
     }
+
+    # NEW: Ensure every entity has tags
+    for module in modules:
+        if not module.get("tags"):
+            module["tags"] = infer_tags(code="", entity_type="module", entity_name=module["module_id"])
+        for func in module["functions"]:
+            if not func.get("tags"):
+                func["tags"] = infer_tags(code="", entity_type="function", entity_name=func["name"])
+        for cls in module["classes"]:
+            if not cls.get("tags"):
+                cls["tags"] = infer_tags(code="", entity_type="class", entity_name=cls["name"])
+            for method in cls.get("methods", []):
+                if not method.get("tags"):
+                    method["tags"] = infer_tags(code="", entity_type="method", entity_name=method["name"])
 
     return {
         "metadata": {
             "project_name": "llmstruct",
             "description": "Utility for generating structured JSON for codebases",
-            "version": datetime.datetime.utcnow().isoformat() + "Z",
+            "version": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            "schema_version": "2.1.0",
+            "$schema": "https://schemas.llmstruct.org/v2.1/struct.json",
             "authors": [
                 {
                     "name": "Mikhail Stepanov",
@@ -243,6 +262,7 @@ def generate_json_with_output_file(
     include_ranges=True,
     include_hashes=False,
     goals=None,
+    generate_index=True,
 ):
     result = generate_json(
         root_dir=root_dir,
@@ -258,4 +278,10 @@ def generate_json_with_output_file(
         import json
         with open(output_file, "w", encoding="utf-8") as f:
             json.dump(result, f, indent=2, ensure_ascii=False)
+            
+        if generate_index and include_hashes:
+            index_file = output_file.replace(".json", "_index.json") if output_file != "struct.json" else "index.json"
+            save_index_json(result, index_file)
+            print(f"Generated index file: {index_file}")
+            
     return result

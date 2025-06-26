@@ -6,12 +6,11 @@ Enhanced GitHub Sync Manager - Объединяет лучшие элемент�
 
 import json
 import os
-import sys
 import requests
 import subprocess
 from pathlib import Path
 from datetime import datetime
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Optional
 import time
 
 # Цветной вывод (из full_project_rollout.sh)
@@ -480,8 +479,8 @@ class EnhancedGitHubSyncManager:
             print()
             print_info("🚀 NEXT STEPS:")
             print(f"   1. Check GitHub issues: https://github.com/{self.repo_owner}/{self.repo_name}/issues")
-            print(f"   2. Review created items and assign to team")
-            print(f"   3. Start development workflow")
+            print("   2. Review created items and assign to team")
+            print("   3. Start development workflow")
         
         return {
             "success": True,

@@ -6,7 +6,6 @@ GitHub Issues Creator for AI-Dogfooding Project
 
 import json
 import os
-import sys
 import requests
 import subprocess
 from pathlib import Path

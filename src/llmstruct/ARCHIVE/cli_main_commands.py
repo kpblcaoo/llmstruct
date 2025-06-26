@@ -8,7 +8,6 @@
 """Main CLI command handlers for LLMStruct."""
 
 import argparse
-import asyncio
 import json
 import logging
 import os
@@ -445,13 +444,13 @@ def analyze_duplicates(args):
         else:
             # Text format
             total_functions = analysis.get('analysis', {}).get('total_unique_functions', 0)
-            print(f"📊 Analysis Results:")
+            print("📊 Analysis Results:")
             print(f"   Total unique functions: {total_functions}")
             print(f"   Duplicated functions (filtered): {len(duplicated_functions)}")
             print(f"   Filter: priority={priority_filter}, threshold>={threshold}")
             
             if duplicated_functions:
-                print(f"\n🔍 Duplicated Functions:")
+                print("\n🔍 Duplicated Functions:")
                 for func in duplicated_functions[:10]:  # Show top 10
                     func_name = func.get('function', 'unknown')
                     locations = func.get('duplicated_in', [])

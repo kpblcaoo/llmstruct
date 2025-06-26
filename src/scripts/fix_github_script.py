@@ -4,8 +4,6 @@ Quick fix for GitHub issues creation script
 Исправляет проблемы с загрузкой JSON и структурой данных
 """
 
-import json
-import os
 from pathlib import Path
 
 def fix_json_loading():

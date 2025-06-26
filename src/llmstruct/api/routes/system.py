@@ -6,7 +6,6 @@ Health checks, metrics, and system information endpoints.
 
 from fastapi import APIRouter, Depends, HTTPException
 from datetime import datetime
-import asyncio
 
 from ..models.responses import HealthResponse, HealthStatus
 from ..services.cli_bridge import CLIBridge

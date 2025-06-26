@@ -13,7 +13,6 @@ import json
 import os
 import argparse
 from datetime import datetime
-from pathlib import Path
 
 class EpicRoadmapManager:
     def __init__(self):
@@ -120,7 +119,7 @@ class EpicRoadmapManager:
             print(f"   Duration: {session.get('estimated_duration')}")
             print(f"   Issues: {', '.join(session.get('target_issues', []))}")
         
-        print(f"\n✅ SUCCESS CRITERIA:")
+        print("\n✅ SUCCESS CRITERIA:")
         for criteria in epic.get('success_criteria', []):
             print(f"   • {criteria}")
     
@@ -183,9 +182,9 @@ class EpicRoadmapManager:
         print(f"🎯 Issues: {', '.join(session.get('target_issues', []))}")
         
         # Показать рекомендации
-        print(f"\n💡 NEXT STEPS:")
+        print("\n💡 NEXT STEPS:")
         print(f"1. Create branch: git checkout -b {session.get('branch')}")
-        print(f"2. Start AI work session")
+        print("2. Start AI work session")
         print(f"3. Work on issues: {', '.join(session.get('target_issues', []))}")
     
     def complete_session(self, session_id):

@@ -1,14 +1,5 @@
 import os
 import logging
-import json
-import re
-import time
-from pathlib import Path
-from llmstruct import LLMClient
-from llmstruct.cache import JSONCache
-from llmstruct.generators.json_generator import get_folder_structure
-from llmstruct.self_run import attach_to_llm_request
-from llmstruct.modules.cli.utils import load_gitignore, read_file_content, write_to_file
 from llmstruct.modules.cli.handlers_legacy import interactive_legacy
 
 async def interactive(args):

@@ -3,6 +3,7 @@ import os
 import hashlib
 import datetime
 from typing import Dict, Any
+from llmstruct.core.tag_inference import infer_tags
 
 
 class JavaScriptParser:
@@ -107,10 +108,12 @@ class JavaScriptParser:
                         "doc": doc,
                         "internal_comments": func_comments,
                         "module_calls": [],  # Extract from node.body
+                        "tags": infer_tags(code="", entity_type="function", entity_name=node.id.name),
                     }
                 )
             # Add ClassDeclaration handling similarly
 
+        module_tags = infer_tags(code="", entity_type="module", entity_name=os.path.basename(filepath).split('.')[0])
         return {
             "path": os.path.relpath(filepath, root_dir).replace(os.sep, "/"),
             "language": "javascript",
@@ -121,4 +124,5 @@ class JavaScriptParser:
             "functions": functions,
             "classes": classes,
             "callgraph": self.callgraph,
+            "tags": module_tags,
         }

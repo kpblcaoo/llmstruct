@@ -5,7 +5,6 @@ Provides async integration between FastAPI and existing LLMStruct CLI functional
 """
 
 import asyncio
-import subprocess
 import json
 import os
 import tempfile
@@ -118,7 +117,7 @@ class CLIBridge:
             return {
                 "status": "healthy",
                 "cli_available": True,
-                "version_info": "CLI commands available: parse, query, interactive, context, dogfood, review, copilot, audit, analyze-duplicates"
+                "version_info": "CLI commands available: parse, query, context, audit, analyze-duplicates"
             }
         except Exception as e:
             return {
