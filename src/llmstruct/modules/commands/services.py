@@ -1,6 +1,5 @@
 import os
 import subprocess
-import signal
 import psutil
 import requests
 import time
@@ -60,7 +59,7 @@ async def cmd_api_management(args):
             return
         except:
             pass
-        cmd = f"source venv/bin/activate && python test_api.py"
+        cmd = "source venv/bin/activate && python test_api.py"
         if args.background:
             cmd += " &"
         process = subprocess.Popen(cmd, shell=True, cwd='.')
@@ -77,12 +76,12 @@ async def cmd_api_management(args):
                 process.terminate()
     elif args.api_action == 'status':
         try:
-            response = requests.get(f"http://localhost:8000/api/v1/system/health", timeout=2)
+            response = requests.get("http://localhost:8000/api/v1/system/health", timeout=2)
             if response.status_code == 200:
                 data = response.json()
                 print("✅ API Server Status: RUNNING")
                 print(f"🔍 Health: {data.get('status', 'unknown')}")
-                print(f"📄 Docs: http://localhost:8000/docs")
+                print("📄 Docs: http://localhost:8000/docs")
             else:
                 print(f"⚠️ API Server responding with status: {response.status_code}")
         except requests.exceptions.ConnectionError:

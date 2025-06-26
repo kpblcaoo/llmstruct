@@ -9,7 +9,7 @@ Concrete implementations of summary providers:
 
 import re
 import hashlib
-from typing import Optional, List, Dict, Any
+from typing import Optional, List, Dict
 
 from .config_manager import get_config, is_llm_enabled
 from .summary_core import SummaryProvider, CodeSummary, SummarySource

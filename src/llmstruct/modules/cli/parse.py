@@ -6,7 +6,7 @@ from llmstruct.modules.cli.utils import load_config
 from llmstruct.generators.json_generator import generate_json
 from llmstruct.generators.index_generator import save_index_json
 from llmstruct.cache import JSONCache
-from llmstruct.core.config_manager import get_config_manager, ConfigManager
+from llmstruct.core.config_manager import get_config_manager
 
 def parse(args):
     """Parse codebase and generate struct.json."""

@@ -6,7 +6,6 @@ to support incremental builds and change detection.
 """
 
 import hashlib
-import os
 from typing import Optional, Dict, Any
 from pathlib import Path
 

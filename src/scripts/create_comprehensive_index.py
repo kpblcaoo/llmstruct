@@ -9,7 +9,7 @@ import os
 import re
 import json
 from pathlib import Path
-from typing import Dict, List, Optional, Set
+from typing import Dict, List
 from dataclasses import dataclass, asdict
 from datetime import datetime
 import logging
@@ -728,11 +728,11 @@ def main():
     for item in items:
         by_strategic[item.strategic_value] = by_strategic.get(item.strategic_value, 0) + 1
     
-    print(f"\n🎯 DISCOVERY SUMMARY:")
+    print("\n🎯 DISCOVERY SUMMARY:")
     print(f"   📊 Total Items: {len(items)}")
     print(f"   🚀 Revolutionary: {by_strategic.get('revolutionary', 0)}")
     print(f"   💎 High Value: {by_strategic.get('high', 0)}")
-    print(f"   📄 Files Created: docs/COMPREHENSIVE_INDEX.json, docs/COMPREHENSIVE_ANALYSIS.md")
+    print("   📄 Files Created: docs/COMPREHENSIVE_INDEX.json, docs/COMPREHENSIVE_ANALYSIS.md")
 
 
 if __name__ == "__main__":

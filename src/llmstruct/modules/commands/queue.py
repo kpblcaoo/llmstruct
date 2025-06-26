@@ -158,7 +158,7 @@ async def process_cli_queue_enhanced(root_dir, context_path, args, cache, client
                                     f"[QUEUE] Context: {context_preference}, File: {os.path.basename(context_path_to_use)}"
                                 )
                         else:
-                            print(f"[QUEUE] ❌ LLM query failed")
+                            print("[QUEUE] ❌ LLM query failed")
                     except Exception as e:
                         print(f"[QUEUE] ❌ LLM error: {e}")
 
@@ -177,9 +177,9 @@ async def process_cli_queue_enhanced(root_dir, context_path, args, cache, client
                             print(f"[QUEUE] ✅ Validation attempted for {json_path}")
                             # Note: Actual validation would require jsonschema library
                         else:
-                            print(f"[QUEUE] ❌ Validation failed: files not found")
+                            print("[QUEUE] ❌ Validation failed: files not found")
                     else:
-                        print(f"[QUEUE] ❌ Validation failed: missing paths")
+                        print("[QUEUE] ❌ Validation failed: missing paths")
 
                 elif cmd == "analyze":
                     target_path = item.get("target_path")
@@ -192,9 +192,9 @@ async def process_cli_queue_enhanced(root_dir, context_path, args, cache, client
                                 f"[QUEUE] ✅ Analysis of {target_path} ({analysis_type})"
                             )
                         else:
-                            print(f"[QUEUE] ❌ Analysis failed: target not found")
+                            print("[QUEUE] ❌ Analysis failed: target not found")
                     else:
-                        print(f"[QUEUE] ❌ Analysis failed: no target specified")
+                        print("[QUEUE] ❌ Analysis failed: no target specified")
 
                 else:
                     print(f"[QUEUE] ❌ Unknown command: {cmd}")

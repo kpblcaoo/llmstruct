@@ -14,7 +14,7 @@ Phase 1.5 quality-assurance.
 from __future__ import annotations
 
 import re
-from enum import Enum, auto
+from enum import Enum
 from typing import List, Set
 
 __all__ = [

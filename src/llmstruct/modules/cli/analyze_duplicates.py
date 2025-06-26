@@ -25,7 +25,7 @@ def analyze_duplicates(args):
         recommendations = analysis.get('recommendations', [])
         if debug:
             print(f"🔧 [DEBUG] Processing {len(recommendations)} recommendations")
-        print(f"\n📊 Duplication Analysis Summary:")
+        print("\n📊 Duplication Analysis Summary:")
         print(f"  Total Functions: {duplication_data.get('total_unique_functions', 0)}")
         print(f"  Duplicated: {duplication_data.get('duplicated_functions', 0)}")
         print(f"  Percentage: {duplication_data.get('duplication_percentage', 0):.1f}%")
@@ -49,7 +49,7 @@ def analyze_duplicates(args):
                 if len(paths) > 3:
                     print(f"     ... and {len(paths) - 3} more")
         if recommendations:
-            print(f"\n💡 Recommendations:")
+            print("\n💡 Recommendations:")
             for rec in recommendations[:10]:
                 priority_emoji = "🔴" if rec.get('priority') == 'high' else "🟡"
                 print(f"  {priority_emoji} {rec['function']}")
@@ -63,13 +63,13 @@ def analyze_duplicates(args):
             print(f"\n💾 Detailed report saved to: {args.save_report}")
         next_steps = analysis.get('next_steps', [])
         if next_steps:
-            print(f"\n🎯 Recommended Actions:")
+            print("\n🎯 Recommended Actions:")
             for i, step in enumerate(next_steps, 1):
                 print(f"  {i}. {step}")
-        print(f"\n✅ Analysis uses existing llmstruct architecture:")
-        print(f"   - struct.json for deep codebase analysis")
-        print(f"   - CopilotContextManager for context loading")
-        print(f"   - No duplication of existing functions")
+        print("\n✅ Analysis uses existing llmstruct architecture:")
+        print("   - struct.json for deep codebase analysis")
+        print("   - LLMClient for context loading")
+        print("   - No duplication of existing functions")
         print(f"\nℹ️  Production filter: {'OFF (все дубликаты, включая архив/тесты)' if no_prod_filter else 'ON (только production-код)'}")
         if debug:
             print("🔧 [DEBUG] analyze_duplicates completed successfully")
@@ -77,5 +77,5 @@ def analyze_duplicates(args):
         print(f"❌ Failed to analyze duplicates: {e}")
         if getattr(args, 'debug', False):
             import traceback
-            print(f"🔧 [DEBUG] Full traceback:")
+            print("🔧 [DEBUG] Full traceback:")
             traceback.print_exc() 

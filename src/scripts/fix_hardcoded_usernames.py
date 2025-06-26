@@ -5,11 +5,10 @@ Automatically detects and replaces hardcoded usernames with dynamic values from 
 """
 
 import os
-import json
 import subprocess
 import re
 from pathlib import Path
-from typing import Dict, Optional, List, Tuple
+from typing import Dict, List, Tuple
 import logging
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")

@@ -74,8 +74,11 @@ def parse_files_from_response(response: str) -> List[tuple[str, str]]:
 def get_cache_config(config: dict) -> dict:
     return config.get("cache", {})
 
-def get_copilot_config(config: dict) -> dict:
-    return config.get("copilot", {})
+def get_epic_config(config: dict) -> dict:
+    return config.get("epic", {})
+
+def get_audit_config(config: dict) -> dict:
+    return config.get("audit", {})
 
 def get_queue_config(config: dict) -> dict:
     return config.get("queue", {})

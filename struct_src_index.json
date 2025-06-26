@@ -1,6 +1,6 @@
 {
   "version": "2.1.0",
-  "generated": "2025-06-26T00:09:43.085019Z",
+  "generated": "2025-06-26T01:14:49.649209Z",
   "source_file": "struct.json",
   "total_entities": 985,
   "entities_by_type": {
@@ -6634,7 +6634,7 @@
     },
     {
       "uid": "llmstruct.parsers.go_analyzer.llmstruct.parsers.go_analyzer#module",
-      "hash": "923fb543f6854ce1a1bac463656f2585ff577dd5b130532b28b617620281a8a4",
+      "hash": "cfce725f9ba181c29e23d097a6bbbf0456970cc53234f23f5ece5d5e8cdb1f5d",
       "hash_source": "file_content_v1",
       "hash_version": "2.1.0",
       "type": "module",

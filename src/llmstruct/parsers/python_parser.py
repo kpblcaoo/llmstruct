@@ -1,5 +1,4 @@
 import ast
-import hashlib
 import logging
 import os
 from pathlib import Path
@@ -9,10 +8,9 @@ from typing import Dict, Any, Optional, Set
 from ..core.uid_generator import (
     UIDType, 
     generate_uid, 
-    generate_uid_components, 
-    enhance_entity_with_uid
+    generate_uid_components
 )
-from ..core.hash_utils import hash_file, hash_entity, hash_content
+from ..core.hash_utils import hash_file, hash_entity
 from ..core.summary_providers import generate_summary
 from llmstruct.core.tag_inference import infer_tags  # local import to avoid circular deps
 

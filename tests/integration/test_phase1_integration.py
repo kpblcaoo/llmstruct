@@ -24,7 +24,7 @@ from llmstruct.core import (
     generate_summary, get_summary_system
 )
 
-def test_phase1_basic_integration():
+def test_phase1_basic_integration() -> bool:
     """Basic integration test of Phase 1 features."""
     print("🚀 LLMStruct v2.1 Phase 1 - Basic Integration Test")
     print("="*70)
@@ -124,6 +124,7 @@ def test_phase1_basic_integration():
             features_found.append(f"Summaries: {summary_count}")
         
         print(f"✅ Phase 1 features found: {', '.join(features_found)}")
+        return True
         
     except Exception as e:
         print(f"❌ Integration test failed: {e}")
@@ -131,7 +132,7 @@ def test_phase1_basic_integration():
         traceback.print_exc()
         assert False, f"Integration test failed: {e}"
 
-def test_phase1_core_functions():
+def test_phase1_core_functions() -> bool:
     """Test core Phase 1 functions directly."""
     print("\n🔧 Testing Core Phase 1 Functions")
     
@@ -151,11 +152,13 @@ def test_phase1_core_functions():
         summary_system = get_summary_system()
         print(f"✅ Summary system: {type(summary_system).__name__}")
         
+        return True
+        
     except Exception as e:
         print(f"❌ Core functions test failed: {e}")
         assert False, f"Core functions test failed: {e}"
 
-def main():
+def main() -> int:
     """Run all integration tests."""
     print("🧪 LLMStruct Phase 1 Integration Test Suite")
     print("=" * 80)

@@ -9,45 +9,15 @@
 
 import argparse
 import asyncio
-import json
 import logging
-import os
-import re
-import shutil
-import sys
-import time
-from pathlib import Path
-from typing import List, Optional
-
-import toml
-from llmstruct import LLMClient
-from llmstruct.cache import JSONCache
-from llmstruct.generators.json_generator import generate_json, get_folder_structure
-from llmstruct.self_run import attach_to_llm_request
-
-# Import modular CLI components
-try:
-    from .cli_core import create_cli_core
-    from .copilot import initialize_copilot
-
-    MODULAR_CLI_AVAILABLE = True
-except ImportError as e:
-    logging.warning(f"Modular CLI components not available: {e}")
-    MODULAR_CLI_AVAILABLE = False
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-from llmstruct.modules.cli.utils import load_gitignore, load_config, read_file_content, write_to_file, parse_files_from_response
-from llmstruct.modules.cli.handlers import interactive, interactive_modular, interactive_legacy
-from llmstruct.modules.commands.queue import process_cli_queue_enhanced
 from llmstruct.modules.cli.parse import parse
 from llmstruct.modules.cli.query import query
 from llmstruct.modules.cli.context import context
-from llmstruct.modules.cli.dogfood import dogfood
-from llmstruct.modules.cli.review import review
-from llmstruct.modules.cli.copilot import copilot
 from llmstruct.modules.cli.audit import audit
 from llmstruct.modules.cli.analyze_duplicates import analyze_duplicates
 from llmstruct.modules.cli import epic
@@ -178,69 +148,6 @@ def main():
         help="Priority directories/files",
     )
 
-    dogfood_parser = subparsers.add_parser("dogfood", help="Run dogfooding analysis")
-    dogfood_parser.add_argument(
-        "--input", default="src/llmstruct/", help="Input directory"
-    )
-    dogfood_parser.add_argument(
-        "--output", default="dogfood_report.json", help="Output report JSON"
-    )
-
-    review_parser = subparsers.add_parser("review", help="Review codebase with LLM")
-    review_parser.add_argument(
-        "--input", default="src/llmstruct/", help="Input directory"
-    )
-    review_parser.add_argument(
-        "--mode",
-        choices=["grok", "anthropic", "ollama", "hybrid"],
-        default="hybrid",
-        help="LLM mode",
-    )
-    review_parser.add_argument(
-        "--output", default="review_report.json", help="Output report JSON"
-    )
-
-    copilot_parser = subparsers.add_parser(
-        "copilot", help="Copilot integration and context management"
-    )
-    copilot_parser.add_argument("root_dir", help="Root directory of the project")
-    copilot_parser.add_argument(
-        "copilot_command",
-        choices=[
-            "init",
-            "status",
-            "load",
-            "unload",
-            "refresh",
-            "suggest",
-            "validate",
-            "export",
-        ],
-        help="Copilot command",
-    )
-    copilot_parser.add_argument("--layer", help="Layer name for load/unload commands")
-    copilot_parser.add_argument("--query", help="Query for suggest command")
-    copilot_parser.add_argument("--file-path", help="File path for validate command")
-    copilot_parser.add_argument(
-        "--change-type",
-        choices=["edit", "delete", "add"],
-        default="edit",
-        help="Change type for validate command",
-    )
-    copilot_parser.add_argument(
-        "--format",
-        choices=["json", "yaml"],
-        default="json",
-        help="Export format for export command",
-    )
-    copilot_parser.add_argument(
-        "--layers", help="Comma-separated list of layers for export command"
-    )
-    copilot_parser.add_argument("--output", help="Output file for export command")
-    copilot_parser.add_argument(
-        "--force", action="store_true", help="Force initialization for init command"
-    )
-
     # Audit command parser
     audit_parser = subparsers.add_parser(
         "audit", help="Audit project structure and check for issues"
@@ -326,12 +233,6 @@ def main():
         asyncio.run(query(args))
     elif args.command == "context":
         context(args)
-    elif args.command == "dogfood":
-        dogfood(args)
-    elif args.command == "review":
-        review(args)
-    elif args.command == "copilot":
-        copilot(args)
     elif args.command == "audit":
         audit(args)
     elif args.command == "analyze-duplicates":

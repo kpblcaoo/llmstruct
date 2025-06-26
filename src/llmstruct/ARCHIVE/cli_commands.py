@@ -10,17 +10,12 @@
 import json
 import logging
 import os
-import re
-import subprocess
-import sys
 from datetime import datetime
-from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Optional
 
 from llmstruct.cache import JSONCache
 from llmstruct.generators.json_generator import generate_json
-from llmstruct.copilot import initialize_copilot, trigger_copilot_event, get_optimized_context_for_scenario
-from llmstruct.context_orchestrator import create_context_orchestrator, get_optimized_context
+from llmstruct.context_orchestrator import get_optimized_context
 from .cli_config import CLIConfig
 from .cli_utils import CLIUtils
 from .copilot import CopilotContextManager, CopilotEvent
@@ -44,7 +39,7 @@ class CommandProcessor:
         workspace_dir = os.path.join(root_dir, "data", "workspace")
         try:
             self.workspace_manager = WorkspaceStateManager(workspace_dir)
-            print(f"✅ Workspace State Manager initialized")
+            print("✅ Workspace State Manager initialized")
         except Exception as e:
             print(f"⚠️ Warning: Could not initialize Workspace Manager: {e}")
 
@@ -304,7 +299,7 @@ Examples:
                 )
                 
                 if result.get("success"):
-                    print(f"🚨 Emergency override granted:")
+                    print("🚨 Emergency override granted:")
                     print(f"   Level: {result['level']}")
                     print(f"   Duration: {result['expires_in_minutes']} minutes")
                     print(f"   Reason: {result['reason']}")
@@ -426,7 +421,7 @@ Examples:
             
             if context_data:
                 metrics = context_data.get("metrics", {})
-                print(f"Mode test successful:")
+                print("Mode test successful:")
                 print(f"  Sources loaded: {len(context_data.get('sources', {}))}")
                 print(f"  Estimated tokens: {metrics.get('tokens_used', 'unknown')}")
                 print(f"  Load time: {metrics.get('load_time', 'unknown')}s")
@@ -707,7 +702,7 @@ Examples:
             )
             
             if success:
-                print(f"✅ Structure parsed and saved to: struct.json")
+                print("✅ Structure parsed and saved to: struct.json")
             else:
                 print("❌ Failed to parse project structure")
                 
@@ -827,7 +822,7 @@ Examples:
                 
                 if context_data:
                     metrics = context_data.get("metrics", {})
-                    print(f"✅ Context loaded:")
+                    print("✅ Context loaded:")
                     print(f"  Sources: {len(context_data.get('sources', {}))}")
                     print(f"  Tokens: {metrics.get('tokens_used', 'unknown')}")
                     print(f"  Load time: {metrics.get('load_time', 'unknown')}s")
@@ -863,7 +858,7 @@ Examples:
                 if self.workspace_manager:
                     state = self.workspace_manager.get_current_state()
                     session_id = state.get("active_session", "None")
-                    print(f"📋 Session Status:")
+                    print("📋 Session Status:")
                     print(f"  Active Session: {session_id}")
                     print(f"  Mode: {self.workspace_manager.get_mode_status()}")
                 else:

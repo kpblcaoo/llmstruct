@@ -7,7 +7,7 @@ Validates JSON files against their respective schemas.
 import json
 import sys
 from pathlib import Path
-from jsonschema import validate, ValidationError, Draft7Validator
+from jsonschema import ValidationError, Draft7Validator
 
 
 def load_json(file_path):

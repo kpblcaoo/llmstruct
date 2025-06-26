@@ -5,12 +5,10 @@ Converts official tasks.json and ideas.json to GitHub Project cards
 """
 
 import json
-import subprocess
 import sys
 import argparse
 from pathlib import Path
-from typing import Dict, List, Any, Optional, Tuple
-from datetime import datetime
+from typing import Dict, List, Any, Optional
 
 # Add src to path to import gh_view module
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
@@ -32,7 +30,7 @@ class GitHubProjectsExportScript(GitHubProjectsExporter):
             print(f"❌ GitHub CLI issue: {output}")
             return False
         
-        print(f"✅ GitHub CLI authenticated")
+        print("✅ GitHub CLI authenticated")
         return True
     
     def list_projects(self, owner: str = None, repo: str = None) -> List[Dict[str, Any]]:
@@ -51,7 +49,7 @@ class GitHubProjectsExportScript(GitHubProjectsExporter):
             projects = json.loads(output)
             return projects if isinstance(projects, list) else []
         except json.JSONDecodeError:
-            print(f"❌ Failed to parse projects list")
+            print("❌ Failed to parse projects list")
             return []
     
     def create_project_item(self, project_number: int, title: str, body: str, 
@@ -257,13 +255,13 @@ def main():
         print(f"\n💾 Saved mapping to {exporter.mapping_file}")
     
     # Summary
-    print(f"\n📊 Export Summary:")
+    print("\n📊 Export Summary:")
     print(f"   • Tasks exported: {exporter.exported_count['tasks']}")
     print(f"   • Ideas exported: {exporter.exported_count['ideas']}")
     print(f"   • Total exported: {total_exported}")
     
     if dry_run:
-        print(f"\n⚠️  This was a DRY RUN. Use --execute to perform actual export.")
+        print("\n⚠️  This was a DRY RUN. Use --execute to perform actual export.")
 
 
 if __name__ == "__main__":

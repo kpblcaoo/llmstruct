@@ -7,10 +7,8 @@ WebSocket-based real-time chat with LLM integration
 import json
 import uuid
 from datetime import datetime
-from typing import Dict, Any, Optional
+from typing import Dict
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect, Depends, HTTPException
-from fastapi.security import HTTPBearer
-import asyncio
 import logging
 
 from ..middleware.auth import get_api_key

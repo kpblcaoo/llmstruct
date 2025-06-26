@@ -154,19 +154,19 @@ def metrics_tokens():
         if not summary:
             print("❌ No token data available")
             return
-        print(f"📱 **Telegram Interactions:**")
+        print("📱 **Telegram Interactions:**")
         print(f"   • Total tokens: {summary.get('telegram_tokens', 0):,}")
         print(f"   • Interactions: {summary.get('telegram_interactions_count', 0)}")
-        print(f"\n🔌 **API Interactions:**")
+        print("\n🔌 **API Interactions:**")
         print(f"   • Total tokens: {summary.get('api_tokens', 0):,}")
         print(f"   • Interactions: {summary.get('api_interactions_count', 0)}")
-        print(f"\n💰 **Overall:**")
+        print("\n💰 **Overall:**")
         print(f"   • Total tokens: {summary.get('total_tokens', 0):,}")
         print(f"   • Estimated cost: ${summary.get('estimated_cost_usd', 0):.6f}")
         tracker = get_metrics_tracker()
         telegram_interactions = tracker.session_data.get('telegram_interactions', [])
         if telegram_interactions:
-            print(f"\n📱 **Recent Telegram Interactions:**")
+            print("\n📱 **Recent Telegram Interactions:**")
             for i, interaction in enumerate(telegram_interactions[-5:], 1):
                 print(f"   {i}. {interaction.get('total_tokens_estimate', 0)} tokens "
                       f"(user: {interaction.get('user_tokens_estimate', 0)}, "
@@ -174,7 +174,7 @@ def metrics_tokens():
                       f"context: {interaction.get('context_tokens', 0)})")
         api_interactions = tracker.session_data.get('api_interactions', [])
         if api_interactions:
-            print(f"\n🔌 **Recent API Interactions:**")
+            print("\n🔌 **Recent API Interactions:**")
             for i, interaction in enumerate(api_interactions[-5:], 1):
                 print(f"   {i}. {interaction.get('endpoint', 'unknown')} - "
                       f"{interaction.get('total_tokens', 0)} tokens "

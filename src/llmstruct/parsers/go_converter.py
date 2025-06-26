@@ -7,7 +7,7 @@ Utilities for converting Go analysis results to llmstruct JSON format.
 import datetime
 import hashlib
 import uuid
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List
 
 # Phase 1.5: unified tag inference
 from llmstruct.core.tag_inference import infer_tags

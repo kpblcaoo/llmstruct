@@ -2,7 +2,6 @@ import os
 import logging
 import json
 import re
-import time
 from pathlib import Path
 from llmstruct import LLMClient
 from llmstruct.cache import JSONCache

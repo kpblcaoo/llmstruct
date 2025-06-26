@@ -5,13 +5,11 @@ Translates Continue extension requests to LLMStruct chat API format
 """
 
 from fastapi import APIRouter, HTTPException, Depends, Request
-from typing import List, Dict, Any, Optional
+from typing import List, Dict
 import logging
 from datetime import datetime
 
 from ..middleware.auth import get_api_key
-from ..models.requests import ChatMessage
-from ..models.responses import ChatResponse
 from ..services.llm_service import LLMService
 
 logger = logging.getLogger(__name__)

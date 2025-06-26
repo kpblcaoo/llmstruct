@@ -5,16 +5,13 @@
 """
 
 import argparse
-import datetime
-import hashlib
 import json
 import logging
 import os
 import subprocess
 import tempfile
-import uuid
 from pathlib import Path
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
@@ -243,7 +240,7 @@ if __name__ == "__main__":
             print(f"✅ Output written to {args.output}")
             
             stats = result.get('metadata', {}).get('stats', {})
-            print(f"📊 Statistics:")
+            print("📊 Statistics:")
             print(f"   - Modules: {stats.get('modules_count', 0)}")
             print(f"   - Functions: {stats.get('functions_count', 0)}")
             print(f"   - Structs: {stats.get('structs_count', 0)}")

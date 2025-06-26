@@ -6,11 +6,9 @@ Implements all decisions from 926_items_processing_execution_plan.md
 """
 
 import json
-import os
 from pathlib import Path
 from datetime import datetime
-from typing import Dict, List, Any, Tuple
-import re
+from typing import Dict, List, Tuple
 
 class TaskProcessor926:
     def __init__(self):
@@ -588,12 +586,12 @@ class TaskProcessor926:
         print(f"📊 Processed: {stats['processed']}/{stats['total_items']} items")
         print(f"🎯 T-Pot duplicates handled: {stats['t_pot_duplicates']}")
         
-        print(f"\n📁 File distribution:")
+        print("\n📁 File distribution:")
         for category, count in stats['categories'].items():
             filename = self.output_files[category]
             print(f"   {filename}: {count} items")
             
-        print(f"\n📈 Confidence distribution:")
+        print("\n📈 Confidence distribution:")
         print(f"   High (≥90%): {stats['confidence_scores']['high']} items")
         print(f"   Medium (70-89%): {stats['confidence_scores']['medium']} items") 
         print(f"   Low (<70%): {stats['confidence_scores']['low']} items")

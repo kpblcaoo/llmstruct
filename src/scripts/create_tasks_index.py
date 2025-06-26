@@ -4,11 +4,10 @@ Tasks Index Creator
 Scans all documentation files and creates comprehensive index of tasks, EPICs, TODOs, and other actionable items.
 """
 
-import os
 import re
 import json
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional
 from dataclasses import dataclass, asdict
 from datetime import datetime
 import logging
@@ -493,7 +492,7 @@ def main():
         # Save files
         json_path, summary_path = generator.save_index(index, summary, args.output_dir)
         
-        print(f"\n✅ Generated task index:")
+        print("\n✅ Generated task index:")
         print(f"   📄 JSON Index: {json_path}")
         print(f"   📋 Summary: {summary_path}")
     else:
