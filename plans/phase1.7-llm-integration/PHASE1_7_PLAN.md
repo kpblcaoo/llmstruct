@@ -12,18 +12,17 @@
 
 Phase 1.7 builds on the struct/ foundation from Phase 1.6 to create powerful LLM integration capabilities. This phase establishes LLMStruct as a premier tool for AI-assisted development workflows.
 
-**Key Focus:** Transform struct/ data (modular directory, not flat struct.json) into LLM-optimized formats and provide intelligent context assembly for AI coding assistants. All new features must support multiple projects (multi-tenant) via struct_path/project_id. MCP, CLI, Proxy, and all tools must operate on a per-project (per-struct/) basis.
+**Key Focus:** Transform struct/ data (modular directory, not flat struct.json) into LLM-optimized formats and provide intelligent context assembly for AI coding assistants. Phase 1.7 focuses on single-tenant operation with architecture ready for multi-tenant expansion in Phase 1.8.
 
 ## 🎯 Success Criteria
 
-- [ ] **MCP Protocol Integration:** Working multi-tenant MCP server for struct/ navigation (struct_path/project_id)
-- [ ] **Smart Context Assembly:** Token-aware, relevance-scored context building (per struct/)
-- [ ] **Markdown Generation:** LLM-optimized code reports and summaries (per struct/)
+- [ ] **MCP Protocol Integration:** Working MCP server for struct/ navigation (single-tenant, struct_path as parameter)
+- [ ] **Smart Context Assembly:** Token-aware, relevance-scored context building
+- [ ] **Markdown Generation:** LLM-optimized code reports and summaries
 - [ ] **Performance:** < 2s markdown generation for 50-module context
 - [ ] **Token Efficiency:** 50-80% token savings vs raw code
-- [ ] **Integration Ready:** Works with Claude, GPT, and Cursor (via proxy for multi-project)
-- [ ] **Security:** Project registry (project_id → struct_path), white-list, enum for project selection
-- [ ] **All new features:** Must work with multiple struct/ (multi-tenant, per project)
+- [ ] **Integration Ready:** Works with Claude, GPT, and Cursor (single project)
+- [ ] **Architecture:** Ready for multi-tenant expansion in Phase 1.8
 
 ## 🏗️ Architecture Design
 
@@ -36,7 +35,7 @@ Phase 1.7 builds on the struct/ foundation from Phase 1.6 to create powerful LLM
                   │ MCP Protocol
 ┌─────────────────▼───────────────────────┐
 │           MCP Server                    │
-│  - Multi-tenant: struct_path/project_id │
+│  - Single-tenant (struct_path param)   │
 │  - Query interface                      │
 │  - Context assembly                     │
 │  - Markdown formatting                  │
@@ -64,89 +63,27 @@ Phase 1.7 builds on the struct/ foundation from Phase 1.6 to create powerful LLM
 ```python
 # src/llmstruct/mcp/server.py
 class LLMStructMCPServer:
-    """MCP server for struct/ navigation and context assembly (multi-tenant)"""
-    def __init__(self, struct_registry: Dict[str, Path]):
-        self.project_registry = struct_registry  # project_id → struct_path
+    """MCP server for struct/ navigation and context assembly (single-tenant, extensible)"""
+    
+    def __init__(self, struct_dir: Path):
+        self.struct_index = StructIndex(struct_dir)
         self.query_engine = StructQueryEngine(self.struct_index)
         self.context_assembler = ContextAssembler(self.struct_index)
         self.markdown_generator = MarkdownGenerator()
 ```
 
-#### **2. Query Engine (`src/llmstruct/llm/`)**
-```python
-# src/llmstruct/llm/query_engine.py
-class StructQueryEngine:
-    """Intelligent querying of struct/ data for LLM contexts"""
-    
-    def find_relevant_modules(self, query: str, max_modules: int = 10) -> List[ModuleInfo]:
-        """Find modules relevant to natural language query"""
-        
-    def build_context(self, query: str, max_tokens: int = 8000) -> ContextResult:
-        """Build token-aware context for LLM consumption"""
-```
-
-#### **3. Context Assembler (`src/llmstruct/llm/`)**
-```python
-# src/llmstruct/llm/context_assembler.py
-class ContextAssembler:
-    """Smart assembly of code context for LLM consumption"""
-    
-    def assemble_by_query(self, query: str, options: ContextOptions) -> AssembledContext:
-        """Assemble context based on natural language query"""
-        
-    def assemble_by_uids(self, uids: List[str], options: ContextOptions) -> AssembledContext:
-        """Assemble context for specific UIDs with dependencies"""
-```
-
-#### **4. Markdown Generator (`src/llmstruct/llm/`)**
-```python
-# src/llmstruct/llm/markdown_generator.py
-class MarkdownGenerator:
-    """Generate LLM-optimized markdown from struct/ data"""
-    
-    def generate_module_summary(self, module_info: ModuleInfo) -> str:
-        """Generate concise module summary for LLM"""
-        
-    def generate_code_overview(self, context: AssembledContext) -> str:
-        """Generate comprehensive code overview"""
-```
-
-## 🛠️ Implementation Plan
-
-### **Epic 1.7.1: Core LLM Integration Foundation**
-
-#### **Task 1.7.1.1: LLM Integration Package Structure**
-- [ ] Create `src/llmstruct/llm/` package
-- [ ] Create `src/llmstruct/mcp/` package  
-- [ ] Define core interfaces and data models
-- [ ] Set up logging and configuration
-
-#### **Task 1.7.1.2: StructQueryEngine Implementation**
-- [ ] Natural language query parsing
-- [ ] Relevance scoring algorithm
-- [ ] Tag-based filtering integration
-- [ ] Dependency traversal for context
-
-#### **Task 1.7.1.3: ContextAssembler Implementation**
-- [ ] Token counting and estimation
-- [ ] Priority-based module selection
-- [ ] Dependency inclusion logic
-- [ ] Context size optimization
-
-### **Epic 1.7.2: MCP Protocol Integration**
-
 #### **Task 1.7.2.1: MCP Server Foundation**
-- [ ] MCP protocol implementation (multi-tenant, struct_path/project_id)
+- [ ] MCP protocol implementation (single-tenant, struct_path as optional parameter)
 - [ ] Server lifecycle management
-- [ ] Request/response handling (per project)
+- [ ] Request/response handling
 - [ ] Error handling and logging
-- [ ] Project registry, white-list, enum for project selection
+- [ ] Architecture ready for multi-tenant expansion (Phase 1.8)
 
 #### **Task 1.7.2.2: MCP Tools Implementation**
 ```typescript
-// MCP Tools to implement (all must accept struct_path/project_id):
+// MCP Tools to implement (struct_path as optional parameter):
 mcp.fetch_modules({
-  struct_path: "/data/projects/project1/struct/",
+  struct_path?: "/path/to/struct/",  // Optional, defaults to current
   query: "authentication and security",
   max_modules: 5,
   include_dependencies: true,
@@ -154,7 +91,7 @@ mcp.fetch_modules({
 })
 
 mcp.generate_context({
-  struct_path: "/data/projects/project1/struct/",
+  struct_path?: "/path/to/struct/",  // Optional, defaults to current
   uids: ["auth.login", "auth.validate"],
   format: "markdown",
   max_tokens: 8000,
@@ -162,55 +99,21 @@ mcp.generate_context({
 })
 
 mcp.search_by_tags({
-  struct_path: "/data/projects/project1/struct/",
+  struct_path?: "/path/to/struct/",  // Optional, defaults to current
   tags: ["api", "public"],
   operator: "AND",
   max_results: 10
 })
 ```
 
-#### **Task 1.7.2.3: MCP Client Testing**
-- [ ] Integration with Claude Desktop
-- [ ] Integration with Cursor
-- [ ] Performance testing
-- [ ] Error scenario testing
-
-### **Epic 1.7.3: Markdown Generation & Templates**
-
-#### **Task 1.7.3.1: Template System**
-- [ ] Code overview template
-- [ ] Module summary template
-- [ ] API documentation template
-- [ ] Architecture analysis template
-
-#### **Task 1.7.3.2: LLM-Optimized Formatting**
-- [ ] Concise function signatures
-- [ ] Intelligent comment extraction
-- [ ] Cross-reference generation
-- [ ] Token-efficient formatting
-
-#### **Task 1.7.3.3: Report Generation**
-- [ ] Architecture overview reports
-- [ ] Module dependency reports
-- [ ] API surface analysis
-- [ ] Code quality summaries
-
-### **Epic 1.7.4: CLI Integration & Tools**
-
 #### **Task 1.7.4.1: New CLI Commands**
 ```bash
-# New commands to implement (all must support project selection):
-llmstruct llm query "authentication logic" --project project1 --max-modules 5
-llmstruct llm context auth.login auth.validate --project project1 --format markdown
-llmstruct llm generate-overview --project project1 --template architecture
-llmstruct mcp start --port 8080 --project-registry ./projects.json
+# New commands to implement (single-tenant, with struct-path option):
+llmstruct llm query "authentication logic" --struct-path ./struct --max-modules 5
+llmstruct llm context auth.login auth.validate --struct-path ./struct --format markdown
+llmstruct llm generate-overview --struct-path ./struct --template architecture
+llmstruct mcp start --port 8080 --struct-dir ./struct
 ```
-
-#### **Task 1.7.4.2: Configuration System**
-- [ ] LLM integration settings
-- [ ] MCP server configuration
-- [ ] Template customization
-- [ ] Performance tuning options
 
 ## 📊 Implementation Timeline
 
@@ -298,13 +201,14 @@ llmstruct mcp start --port 8080 --project-registry ./projects.json
 3. Build MCP server foundation
 4. Develop context assembly logic
 
-## 🧩 Multi-tenant Proxy for Cursor
+## 🔄 Phase 1.8 Transition
 
-- [ ] Implement FastAPI proxy/router for Cursor and external clients
-- [ ] Proxy receives project_token/project_id, injects struct_path for backend MCP
-- [ ] Project registry and white-list enforced in proxy
-- [ ] Enum for project selection in tool schema (no raw path)
-- [ ] All new features must work with multiple struct/ (projects)
+**Multi-tenant Proxy & Security (Phase 1.8):**
+- [ ] Node.js/TypeScript middleware/proxy for multi-tenant operation
+- [ ] Project registry (project_id → struct_path mapping)
+- [ ] Security: white-list, enum, authentication, authorization
+- [ ] Cursor integration via proxy (multi-project support)
+- [ ] Advanced security features and audit logging
 
 ---
 
