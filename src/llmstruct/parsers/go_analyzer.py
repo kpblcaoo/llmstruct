@@ -260,8 +260,4 @@ if __name__ == "__main__":
         print(f"❌ Error analyzing project: {e}", file=sys.stderr)
         import traceback
         traceback.print_exc()
-        sys.exit(1)
-
-if __name__ == '__main__':
-    import sys
-    main() 
+        sys.exit(1) 
