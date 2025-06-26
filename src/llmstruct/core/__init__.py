@@ -32,14 +32,18 @@ from .uid_generator import (
     create_legacy_artifact_id
 )
 
+from .summary_core import (
+    SummaryProvider,
+    CodeSummary,
+    SummarySource
+)
+
 from .summary_providers import (
     generate_summary,
     get_summary_system,
     SummarySystem,
     HeuristicProvider,
-    LLMProvider,
-    CodeSummary,
-    SummarySource
+    LLMProvider
 )
 
 __version__ = "2.1.0"
@@ -69,6 +73,7 @@ __all__ = [
     "generate_summary",
     "get_summary_system",
     "SummarySystem",
+    "SummaryProvider",
     "HeuristicProvider",
     "LLMProvider",
     "CodeSummary",

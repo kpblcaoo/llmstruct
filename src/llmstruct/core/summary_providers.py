@@ -1,60 +1,18 @@
 """
-Summary Providers System
+Summary Providers Implementation
 
-Provides multiple strategies for generating code summaries:
-- HeuristicProvider: Fast, offline, deterministic (default)
+Concrete implementations of summary providers:
+- HeuristicProvider: Fast, offline, deterministic (default)  
 - LLMProvider: AI-powered but optional and disabled by default
+- SummarySystem: Main orchestrator
 """
 
 import re
 import hashlib
-from abc import ABC, abstractmethod
-from dataclasses import dataclass
 from typing import Optional, List, Dict, Any
-from enum import Enum
 
 from .config_manager import get_config, is_llm_enabled
-
-
-class SummarySource(Enum):
-    """Source of the summary"""
-    DOCSTRING = "docstring"
-    HEURISTIC = "heuristic" 
-    LLM = "llm"
-    EMPTY = "empty"
-
-
-@dataclass
-class CodeSummary:
-    """Container for code summary with metadata"""
-    text: str
-    source: SummarySource
-    confidence: float  # 0.0 - 1.0
-    tags: List[str]
-    truncated: bool = False
-    
-    def is_empty(self) -> bool:
-        """Check if summary is effectively empty"""
-        return not self.text or self.text.strip() == ""
-
-
-class SummaryProvider(ABC):
-    """Abstract base class for summary providers"""
-    
-    @abstractmethod
-    def generate_summary(self, 
-                        code: str, 
-                        entity_type: str,
-                        entity_name: str,
-                        docstring: Optional[str] = None,
-                        **kwargs) -> CodeSummary:
-        """Generate summary for code entity"""
-        pass
-    
-    @abstractmethod
-    def get_provider_name(self) -> str:
-        """Get provider name"""
-        pass
+from .summary_core import SummaryProvider, CodeSummary, SummarySource
 
 
 class HeuristicProvider(SummaryProvider):
@@ -229,6 +187,7 @@ class HeuristicProvider(SummaryProvider):
         return tags
     
     def get_provider_name(self) -> str:
+        """Get provider name for identification"""
         return "heuristic"
 
 
@@ -336,6 +295,7 @@ Requirements:
         return prompt
     
     def get_provider_name(self) -> str:
+        """Get provider name for identification"""
         return "llm"
 
 

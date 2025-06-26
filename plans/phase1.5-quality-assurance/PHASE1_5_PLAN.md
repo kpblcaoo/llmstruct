@@ -6,7 +6,10 @@
 
 ## 📋 Overview
 
-Phase 1.5 focuses on fixing critical quality issues identified by external LLM analysis and implementing comprehensive test coverage for all Phase 1 features.
+Phase 1.5 addressed critical quality issues (UID collisions, tag coverage) and established a solid QA/testing foundation for дальнейшее развитие.
+
+**Current status:** ✅ All P0–P1 issues fixed, baseline тест-инфраструктура готова.  
+Дополнительные улучшения (performance-benchmarks, docstring-линтеры) вынесены в Phase 1.5-β.
 
 ## 🎯 Objectives
 
@@ -19,7 +22,7 @@ Phase 1.5 focuses on fixing critical quality issues identified by external LLM a
 
 ### ✅ **Working Well**
 - ✅ Обязательные секции (metadata, toc, modules) присутствуют
-- ✅ Сводные счётчики корректны (call_edges_count = 123 ✓)
+- ✅ Сводные счётчики корректны (call_edges_count 123 ✓)
 - ✅ artifact_id система работает
 - ✅ Callgraph ссылки присутствуют
 - ✅ line_range заполнены (0 null значений)

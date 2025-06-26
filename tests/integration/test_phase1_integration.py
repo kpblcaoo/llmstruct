@@ -125,13 +125,11 @@ def test_phase1_basic_integration():
         
         print(f"✅ Phase 1 features found: {', '.join(features_found)}")
         
-        return True
-        
     except Exception as e:
         print(f"❌ Integration test failed: {e}")
         import traceback
         traceback.print_exc()
-        return False
+        assert False, f"Integration test failed: {e}"
 
 def test_phase1_core_functions():
     """Test core Phase 1 functions directly."""
@@ -153,11 +151,9 @@ def test_phase1_core_functions():
         summary_system = get_summary_system()
         print(f"✅ Summary system: {type(summary_system).__name__}")
         
-        return True
-        
     except Exception as e:
         print(f"❌ Core functions test failed: {e}")
-        return False
+        assert False, f"Core functions test failed: {e}"
 
 def main():
     """Run all integration tests."""

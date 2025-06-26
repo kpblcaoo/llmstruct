@@ -10,8 +10,6 @@ import json
 import logging
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Union
-from dataclasses import dataclass
-from enum import Enum
 
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
@@ -20,61 +18,20 @@ try:
     from .python_parser import analyze_module as analyze_python
     from .go_analyzer import GoAnalyzer
     from .javascript_parser import JavaScriptParser
+    from .converter_config import Language, ConverterConfig, LanguageDetector
 except ImportError:
     # Fallback for standalone execution
     from python_parser import analyze_module as analyze_python
     from go_analyzer import GoAnalyzer
     from javascript_parser import JavaScriptParser
+    from converter_config import Language, ConverterConfig, LanguageDetector
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-class Language(Enum):
-    PYTHON = "python"
-    GO = "go"
-    JAVASCRIPT = "javascript"
-    TYPESCRIPT = "typescript"
-    RUST = "rust"
-    JAVA = "java"
-    CPP = "cpp"
-    CSHARP = "csharp"
-    UNKNOWN = "unknown"
-
-
-@dataclass
-class ConverterConfig:
-    """Configuration for universal converter"""
-    include_ranges: bool = True
-    include_hashes: bool = True
-    include_tests: bool = True
-    goals: List[str] = None
-    max_file_size: int = 10 * 1024 * 1024  # 10MB
-    exclude_patterns: List[str] = None
-    
-    def __post_init__(self):
-        if self.goals is None:
-            self.goals = []
-        if self.exclude_patterns is None:
-            self.exclude_patterns = [
-                "node_modules", ".git", "__pycache__", ".pytest_cache",
-                "vendor", "target", "build", "dist", ".venv", "venv"
-            ]
-
-
 class UniversalConverter:
     """Universal code converter for any programming language"""
-    
-    LANGUAGE_EXTENSIONS = {
-        Language.PYTHON: [".py", ".pyw"],
-        Language.GO: [".go"],
-        Language.JAVASCRIPT: [".js", ".jsx", ".mjs"],
-        Language.TYPESCRIPT: [".ts", ".tsx"],
-        Language.RUST: [".rs"],
-        Language.JAVA: [".java"],
-        Language.CPP: [".cpp", ".cc", ".cxx", ".c", ".h", ".hpp"],
-        Language.CSHARP: [".cs"],
-    }
     
     def __init__(self, config: ConverterConfig = None):
         self.config = config or ConverterConfig()
@@ -83,30 +40,11 @@ class UniversalConverter:
         
     def detect_language(self, file_path: str) -> Language:
         """Detect programming language from file extension"""
-        ext = Path(file_path).suffix.lower()
-        
-        for lang, extensions in self.LANGUAGE_EXTENSIONS.items():
-            if ext in extensions:
-                return lang
-                
-        return Language.UNKNOWN
+        return LanguageDetector.detect_language(file_path)
     
     def detect_project_languages(self, project_path: str) -> Dict[Language, int]:
         """Detect all languages in project and count files"""
-        languages = {}
-        
-        for root, dirs, files in os.walk(project_path):
-            # Skip excluded directories
-            dirs[:] = [d for d in dirs if not any(pattern in d for pattern in self.config.exclude_patterns)]
-            
-            for file in files:
-                file_path = os.path.join(root, file)
-                lang = self.detect_language(file_path)
-                
-                if lang != Language.UNKNOWN:
-                    languages[lang] = languages.get(lang, 0) + 1
-                    
-        return languages
+        return LanguageDetector.detect_project_languages(project_path, self.config.exclude_patterns)
     
     def get_project_files(self, project_path: str, language: Language = None) -> List[str]:
         """Get all relevant files for conversion"""
@@ -177,8 +115,8 @@ class UniversalConverter:
         try:
             analysis = self.go_analyzer.analyze_project(project_path)
             
-            # Use the existing convert_to_llmstruct_format from go_analyzer
-            from .go_analyzer import convert_to_llmstruct_format
+            # Use the existing convert_to_llmstruct_format from go_converter
+            from .go_converter import convert_to_llmstruct_format
             return convert_to_llmstruct_format(
                 analysis, 
                 self.config.include_ranges, 

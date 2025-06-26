@@ -14,6 +14,7 @@ from ..core.uid_generator import (
 )
 from ..core.hash_utils import hash_file, hash_entity, hash_content
 from ..core.summary_providers import generate_summary
+from llmstruct.core.tag_inference import infer_tags  # local import to avoid circular deps
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
@@ -136,6 +137,12 @@ def analyze_module(
         docstring=module_doc
     )
     
+    # NEW: Infer tags for module (merge with summary tags)
+    module_tags = sorted({
+        *module_summary.tags,
+        *infer_tags(code=source[:500], entity_type="module", entity_name=module_id)
+    })
+    
     functions = []
     classes = []
 
@@ -186,7 +193,10 @@ def analyze_module(
                 "markdown_anchor": f"#{module_id}-{node.name}".lower().replace("_", "-").replace(".", "-"),
                 "summary": func_summary.text,
                 "summary_source": func_summary.source.value,
-                "tags": func_summary.tags,
+                "tags": sorted({
+                    *func_summary.tags,
+                    *infer_tags(code=func_content, entity_type="function", entity_name=node.name)
+                }),
                 "calls": func_calls,
                 "called_by": func_called_by,
                 # TODO: Add tested/tested_by in future commits
@@ -262,7 +272,10 @@ def analyze_module(
                         "markdown_anchor": f"#{module_id}-{node.name}-{n.name}".lower().replace("_", "-").replace(".", "-"),
                         "summary": method_summary.text,
                         "summary_source": method_summary.source.value,
-                        "tags": method_summary.tags,
+                        "tags": sorted({
+                            *method_summary.tags,
+                            *infer_tags(code=method_content, entity_type="method", entity_name=n.name)
+                        }),
                         "calls": method_calls,
                         "called_by": method_called_by,
                     })
@@ -284,7 +297,10 @@ def analyze_module(
                 "markdown_anchor": f"#{module_id}-{node.name}".lower().replace("_", "-").replace(".", "-"),
                 "summary": class_summary.text,
                 "summary_source": class_summary.source.value,
-                "tags": class_summary.tags,
+                "tags": sorted({
+                    *class_summary.tags,
+                    *infer_tags(code=class_content, entity_type="class", entity_name=node.name)
+                }),
             })
 
     return {
@@ -304,5 +320,5 @@ def analyze_module(
         "uid_components": module_uid_components,
         "summary": module_summary.text,
         "summary_source": module_summary.source.value,
-        "tags": module_summary.tags,
+        "tags": module_tags,
     }

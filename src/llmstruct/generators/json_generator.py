@@ -7,6 +7,7 @@ import uuid
 
 from ..parsers.python_parser import analyze_module
 from .index_generator import save_index_json
+from llmstruct.core.tag_inference import infer_tags
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
@@ -197,11 +198,25 @@ def generate_json(
         ),
     }
 
+    # NEW: Ensure every entity has tags
+    for module in modules:
+        if not module.get("tags"):
+            module["tags"] = infer_tags(code="", entity_type="module", entity_name=module["module_id"])
+        for func in module["functions"]:
+            if not func.get("tags"):
+                func["tags"] = infer_tags(code="", entity_type="function", entity_name=func["name"])
+        for cls in module["classes"]:
+            if not cls.get("tags"):
+                cls["tags"] = infer_tags(code="", entity_type="class", entity_name=cls["name"])
+            for method in cls.get("methods", []):
+                if not method.get("tags"):
+                    method["tags"] = infer_tags(code="", entity_type="method", entity_name=method["name"])
+
     return {
         "metadata": {
             "project_name": "llmstruct",
             "description": "Utility for generating structured JSON for codebases",
-            "version": datetime.datetime.utcnow().isoformat() + "Z",
+            "version": datetime.datetime.now(datetime.timezone.utc).isoformat(),
             "schema_version": "2.1.0",
             "$schema": "https://schemas.llmstruct.org/v2.1/struct.json",
             "authors": [
