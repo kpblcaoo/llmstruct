@@ -1,0 +1,115 @@
+{
+  "module_info": {
+    "uid": "scripts.validate_json",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.validate_json with 2 functions",
+    "hash": "sha256:9a74b51703920167",
+    "dependencies": [
+      "json",
+      "validator"
+    ],
+    "exports": [
+      "load_json",
+      "validate_json"
+    ]
+  },
+  "functions": [
+    {
+      "name": "load_json",
+      "docstring": "Load JSON file with error handling.",
+      "line_range": [
+        13,
+        23
+      ],
+      "parameters": [
+        "file_path"
+      ],
+      "decorators": [],
+      "uid": "scripts.validate_json.load_json:13#function",
+      "uid_components": [
+        "scripts",
+        "scripts.validate_json",
+        "scripts.validate_json.load_json:13"
+      ],
+      "hash": "ea3621a9216a9b14a14e1ef6c079f372139e128ef1b4d62f8643d4c3867dcb45",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-validate-json-load-json",
+      "summary": "Load JSON file with error handling.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "open",
+        "json.load"
+      ],
+      "called_by": [
+        "validate_json"
+      ]
+    },
+    {
+      "name": "validate_json",
+      "docstring": "Validate a JSON file against a schema.",
+      "line_range": [
+        26,
+        49
+      ],
+      "parameters": [
+        "file_path",
+        "schema_path"
+      ],
+      "decorators": [],
+      "uid": "scripts.validate_json.validate_json:26#function",
+      "uid_components": [
+        "scripts",
+        "scripts.validate_json",
+        "scripts.validate_json.validate_json:26"
+      ],
+      "hash": "2e2365b34f9b92d634c897d85fcc24e0c1268567bd4dbf7584e96d6c8b9b4621",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-validate-json-validate-json",
+      "summary": "Validate a JSON file against a schema.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "str",
+        "Draft7Validator",
+        "load_json",
+        "validator.validate",
+        "Path"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "print",
+    "open",
+    "json.load",
+    "print",
+    "str",
+    "Draft7Validator",
+    "load_json",
+    "validator.validate",
+    "Path"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.777208",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:9a74b51703920167",
+    "lines_of_code": 2
+  }
+}

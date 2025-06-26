@@ -1,0 +1,1176 @@
+{
+  "module_info": {
+    "uid": "llmstruct.api.services.chat_session",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.api.services.chat_session with 14 functions and 2 classes",
+    "hash": "sha256:fcd73c2d9992c052",
+    "dependencies": [
+      "Path",
+      "context_parts",
+      "data",
+      "json",
+      "logger",
+      "self",
+      "session",
+      "session_file",
+      "sessions"
+    ],
+    "exports": [
+      "ChatSession",
+      "ChatSessionManager",
+      "add_message",
+      "add_message",
+      "cleanup_old_sessions",
+      "delete_session",
+      "get_context_string",
+      "get_messages",
+      "get_or_create_session",
+      "get_session",
+      "list_sessions",
+      "to_dict"
+    ]
+  },
+  "functions": [
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        19,
+        24
+      ],
+      "parameters": [
+        "self",
+        "session_id"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.chat_session.__init__:19#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.chat_session",
+        "llmstruct.api.services.chat_session.__init__:19"
+      ],
+      "hash": "8cd85887069519d690a45a007d676eaefbee92c54fa95d6a5d6c22183f44c466",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-chat-session---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "Path.cwd"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "add_message",
+      "docstring": "Add a message to the session",
+      "line_range": [
+        26,
+        36
+      ],
+      "parameters": [
+        "self",
+        "role",
+        "content",
+        "metadata"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.chat_session.add_message:26#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.chat_session",
+        "llmstruct.api.services.chat_session.add_message:26"
+      ],
+      "hash": "5ecf506e06c951f4aee60300243278a4d0040918955efbf8b53a7b9e550c85d5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-chat-session-add-message",
+      "summary": "Add a message to the session",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self._save_session",
+        "session.add_message",
+        "self.get_or_create_session"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_messages",
+      "docstring": "Get messages from session, optionally limited",
+      "line_range": [
+        38,
+        42
+      ],
+      "parameters": [
+        "self",
+        "limit"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.chat_session.get_messages:38#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.chat_session",
+        "llmstruct.api.services.chat_session.get_messages:38"
+      ],
+      "hash": "77c5cb2f1ac9583c14d8efaa7501322fde71d0605f9677a30864dc57a2135eed",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-chat-session-get-messages",
+      "summary": "Get messages from session, optionally limited",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "get_context_string",
+      "docstring": "Get recent messages as context string",
+      "line_range": [
+        44,
+        54
+      ],
+      "parameters": [
+        "self",
+        "limit"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.chat_session.get_context_string:44#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.chat_session",
+        "llmstruct.api.services.chat_session.get_context_string:44"
+      ],
+      "hash": "4b3d04c6a2af008ad4beb358da7eba6a0fdf8d8638552f8638b968126919023e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-chat-session-get-context-string",
+      "summary": "Get recent messages as context string",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "context_parts.append",
+        "self.get_messages"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "to_dict",
+      "docstring": "Convert session to dictionary",
+      "line_range": [
+        56,
+        65
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.chat_session.to_dict:56#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.chat_session",
+        "llmstruct.api.services.chat_session.to_dict:56"
+      ],
+      "hash": "d18aefae796ad3959e7fed0827a5414572276aac505f04df85d8afcc62a72269",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-chat-session-to-dict",
+      "summary": "Convert session to dictionary",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        70,
+        73
+      ],
+      "parameters": [
+        "self",
+        "storage_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.chat_session.__init__:70#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.chat_session",
+        "llmstruct.api.services.chat_session.__init__:70"
+      ],
+      "hash": "28b81ad5f9e061d76a08659a0f9802dbf88162b8df454c4d991c1bbf44102daf",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-chat-session---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "Path.cwd"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_or_create_session",
+      "docstring": "Get existing session or create new one",
+      "line_range": [
+        75,
+        87
+      ],
+      "parameters": [
+        "self",
+        "session_id"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.chat_session.get_or_create_session:75#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.chat_session",
+        "llmstruct.api.services.chat_session.get_or_create_session:75"
+      ],
+      "hash": "3c0d6fc1dcdb4f7b211dd269d7c46cbd8375676339caf387aa9dcd23743deb5d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-chat-session-get-or-create-session",
+      "summary": "Get existing session or create new one",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "ChatSession",
+        "session_file.exists",
+        "self._load_session"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_session",
+      "docstring": "Get session by ID",
+      "line_range": [
+        89,
+        101
+      ],
+      "parameters": [
+        "self",
+        "session_id"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.chat_session.get_session:89#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.chat_session",
+        "llmstruct.api.services.chat_session.get_session:89"
+      ],
+      "hash": "a290884a3e81f6d3cbf6c56b4c3fa94bd42e5c11a268cf06768ed8e0a49b729c",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-chat-session-get-session",
+      "summary": "Get session by ID",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "session_file.exists",
+        "self._load_session"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "add_message",
+      "docstring": "Add message to session",
+      "line_range": [
+        103,
+        109
+      ],
+      "parameters": [
+        "self",
+        "session_id",
+        "role",
+        "content",
+        "metadata"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.chat_session.add_message:103#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.chat_session",
+        "llmstruct.api.services.chat_session.add_message:103"
+      ],
+      "hash": "4478a76ded3115d8b844adea12ad86a8608357009af736b9eb9e1d3ac57e359e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-chat-session-add-message",
+      "summary": "Add message to session",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self._save_session",
+        "session.add_message",
+        "self.get_or_create_session"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "list_sessions",
+      "docstring": "List all sessions with summary info",
+      "line_range": [
+        111,
+        138
+      ],
+      "parameters": [
+        "self",
+        "limit"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.chat_session.list_sessions:111#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.chat_session",
+        "llmstruct.api.services.chat_session.list_sessions:111"
+      ],
+      "hash": "db97eb7b0825e461e4129ef303ac168105866511d811811235ac296fc3d4c785",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-chat-session-list-sessions",
+      "summary": "List all sessions with summary info",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self._load_session",
+        "logger.error",
+        "sessions.sort",
+        "len",
+        "sessions.append"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "delete_session",
+      "docstring": "Delete a session",
+      "line_range": [
+        140,
+        152
+      ],
+      "parameters": [
+        "self",
+        "session_id"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.chat_session.delete_session:140#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.chat_session",
+        "llmstruct.api.services.chat_session.delete_session:140"
+      ],
+      "hash": "4aa9c3539344f952f0b5a133090aa09bf32f08b14654ce2392d3fe5c8d10f606",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-chat-session-delete-session",
+      "summary": "Delete a session",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "session_file.exists",
+        "session_file.unlink"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_load_session",
+      "docstring": "Load session from storage",
+      "line_range": [
+        154,
+        167
+      ],
+      "parameters": [
+        "self",
+        "session_id"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.chat_session._load_session:154#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.chat_session",
+        "llmstruct.api.services.chat_session._load_session:154"
+      ],
+      "hash": "c5d11a50596522ab4d0e5a8bf66d208e7794863416c56b06465534f9e5ff7fe9",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-chat-session--load-session",
+      "summary": "Load session from storage",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "private"
+      ],
+      "calls": [
+        "ChatSession",
+        "data.get",
+        "open",
+        "json.load"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_save_session",
+      "docstring": "Save session to storage",
+      "line_range": [
+        169,
+        178
+      ],
+      "parameters": [
+        "self",
+        "session"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.chat_session._save_session:169#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.chat_session",
+        "llmstruct.api.services.chat_session._save_session:169"
+      ],
+      "hash": "0d378d6745ac922a1f3da7ebac23358ac8a91734f5dbcc5e1a687672cced4a81",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-chat-session--save-session",
+      "summary": "Save session to storage",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "private"
+      ],
+      "calls": [
+        "open",
+        "logger.error",
+        "session.to_dict",
+        "json.dump"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cleanup_old_sessions",
+      "docstring": "Clean up sessions older than specified days",
+      "line_range": [
+        180,
+        183
+      ],
+      "parameters": [
+        "self",
+        "days"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.chat_session.cleanup_old_sessions:180#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.chat_session",
+        "llmstruct.api.services.chat_session.cleanup_old_sessions:180"
+      ],
+      "hash": "3552836dd5e8b1ca3ebf54f4bdbde871a0072a8091ab31d3ab8dcb0f3dbfa657",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-chat-session-cleanup-old-sessions",
+      "summary": "Clean up sessions older than specified days",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "ChatSession",
+      "docstring": "Represents a chat session with history",
+      "line_range": [
+        16,
+        65
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            19,
+            24
+          ],
+          "parameters": [
+            "self",
+            "session_id"
+          ],
+          "uid": "llmstruct.api.services.chat_session.ChatSession.__init__:19#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.chat_session",
+            "llmstruct.api.services.chat_session.ChatSession",
+            "llmstruct.api.services.chat_session.ChatSession.__init__:19"
+          ],
+          "hash": "a6a951ae4a8988ab0a291a973af5690bfc4d4c92e603a1a7a7647990b1b68334",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-chat-session-chatsession---init--",
+          "summary": "Method for chatsession. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "Path.cwd"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "add_message",
+          "docstring": "Add a message to the session",
+          "line_range": [
+            26,
+            36
+          ],
+          "parameters": [
+            "self",
+            "role",
+            "content",
+            "metadata"
+          ],
+          "uid": "llmstruct.api.services.chat_session.ChatSession.add_message:26#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.chat_session",
+            "llmstruct.api.services.chat_session.ChatSession",
+            "llmstruct.api.services.chat_session.ChatSession.add_message:26"
+          ],
+          "hash": "5cee02a5b4983f274ffdd8c9d94b9308753b9c1abe761dcc5a3c248c27b9e2c6",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-chat-session-chatsession-add-message",
+          "summary": "Add a message to the session",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self._save_session",
+            "session.add_message",
+            "self.get_or_create_session"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_messages",
+          "docstring": "Get messages from session, optionally limited",
+          "line_range": [
+            38,
+            42
+          ],
+          "parameters": [
+            "self",
+            "limit"
+          ],
+          "uid": "llmstruct.api.services.chat_session.ChatSession.get_messages:38#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.chat_session",
+            "llmstruct.api.services.chat_session.ChatSession",
+            "llmstruct.api.services.chat_session.ChatSession.get_messages:38"
+          ],
+          "hash": "0303464ca71b180342984b5de04e3c15fbd64862212a4db01a99341c589a189b",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-chat-session-chatsession-get-messages",
+          "summary": "Get messages from session, optionally limited",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "get_context_string",
+          "docstring": "Get recent messages as context string",
+          "line_range": [
+            44,
+            54
+          ],
+          "parameters": [
+            "self",
+            "limit"
+          ],
+          "uid": "llmstruct.api.services.chat_session.ChatSession.get_context_string:44#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.chat_session",
+            "llmstruct.api.services.chat_session.ChatSession",
+            "llmstruct.api.services.chat_session.ChatSession.get_context_string:44"
+          ],
+          "hash": "cf7fdee7e77ac361cd4085b9796a3c6b6e2d08486c1173254f5a1a4517514916",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-chat-session-chatsession-get-context-string",
+          "summary": "Get recent messages as context string",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "context_parts.append",
+            "self.get_messages"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "to_dict",
+          "docstring": "Convert session to dictionary",
+          "line_range": [
+            56,
+            65
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.api.services.chat_session.ChatSession.to_dict:56#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.chat_session",
+            "llmstruct.api.services.chat_session.ChatSession",
+            "llmstruct.api.services.chat_session.ChatSession.to_dict:56"
+          ],
+          "hash": "fae71f0a6a2fb58bc9ea9613c651fe2b8b5d07727dece8222b1b6e80118bc18b",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-chat-session-chatsession-to-dict",
+          "summary": "Convert session to dictionary",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "len"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.api.services.chat_session.ChatSession:16#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.chat_session",
+        "llmstruct.api.services.chat_session.ChatSession:16"
+      ],
+      "hash": "bce36326deca3587680965da13931642b38e59b512276f4301d7b944462955c7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-chat-session-chatsession",
+      "summary": "Represents a chat session with history",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "ChatSessionManager",
+      "docstring": "Manages multiple chat sessions",
+      "line_range": [
+        67,
+        183
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            70,
+            73
+          ],
+          "parameters": [
+            "self",
+            "storage_path"
+          ],
+          "uid": "llmstruct.api.services.chat_session.ChatSessionManager.__init__:70#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.chat_session",
+            "llmstruct.api.services.chat_session.ChatSessionManager",
+            "llmstruct.api.services.chat_session.ChatSessionManager.__init__:70"
+          ],
+          "hash": "0e29e2d67e3b39d3f722cd6bd63c7134be9431ce8ed9bb7cf7d0eef10d869b43",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-chat-session-chatsessionmanager---init--",
+          "summary": "Method for chatsessionmanager. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "Path.cwd"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_or_create_session",
+          "docstring": "Get existing session or create new one",
+          "line_range": [
+            75,
+            87
+          ],
+          "parameters": [
+            "self",
+            "session_id"
+          ],
+          "uid": "llmstruct.api.services.chat_session.ChatSessionManager.get_or_create_session:75#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.chat_session",
+            "llmstruct.api.services.chat_session.ChatSessionManager",
+            "llmstruct.api.services.chat_session.ChatSessionManager.get_or_create_session:75"
+          ],
+          "hash": "422aa3c6e471563c1bd23da841b3b5c9bd0cdbd411742146749b7b1dd290bb4e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-chat-session-chatsessionmanager-get-or-create-session",
+          "summary": "Get existing session or create new one",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "ChatSession",
+            "session_file.exists",
+            "self._load_session"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_session",
+          "docstring": "Get session by ID",
+          "line_range": [
+            89,
+            101
+          ],
+          "parameters": [
+            "self",
+            "session_id"
+          ],
+          "uid": "llmstruct.api.services.chat_session.ChatSessionManager.get_session:89#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.chat_session",
+            "llmstruct.api.services.chat_session.ChatSessionManager",
+            "llmstruct.api.services.chat_session.ChatSessionManager.get_session:89"
+          ],
+          "hash": "9bf4bd7e497365f45a558ce0c091ec7ce69d207b6f1dab5e2f3cdd68a0eea0eb",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-chat-session-chatsessionmanager-get-session",
+          "summary": "Get session by ID",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "session_file.exists",
+            "self._load_session"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "add_message",
+          "docstring": "Add message to session",
+          "line_range": [
+            103,
+            109
+          ],
+          "parameters": [
+            "self",
+            "session_id",
+            "role",
+            "content",
+            "metadata"
+          ],
+          "uid": "llmstruct.api.services.chat_session.ChatSessionManager.add_message:103#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.chat_session",
+            "llmstruct.api.services.chat_session.ChatSessionManager",
+            "llmstruct.api.services.chat_session.ChatSessionManager.add_message:103"
+          ],
+          "hash": "f6267f6b41fbe7329b75ef19b0fc3ea7bdde2f2c9d582b5ab93172ba53db8bed",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-chat-session-chatsessionmanager-add-message",
+          "summary": "Add message to session",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self._save_session",
+            "session.add_message",
+            "self.get_or_create_session"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "list_sessions",
+          "docstring": "List all sessions with summary info",
+          "line_range": [
+            111,
+            138
+          ],
+          "parameters": [
+            "self",
+            "limit"
+          ],
+          "uid": "llmstruct.api.services.chat_session.ChatSessionManager.list_sessions:111#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.chat_session",
+            "llmstruct.api.services.chat_session.ChatSessionManager",
+            "llmstruct.api.services.chat_session.ChatSessionManager.list_sessions:111"
+          ],
+          "hash": "7d6d1badcb79aac3b4be97d25e98580094b16b6cee6ded3805a4335f24dfa460",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-chat-session-chatsessionmanager-list-sessions",
+          "summary": "List all sessions with summary info",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self._load_session",
+            "logger.error",
+            "sessions.sort",
+            "len",
+            "sessions.append"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "delete_session",
+          "docstring": "Delete a session",
+          "line_range": [
+            140,
+            152
+          ],
+          "parameters": [
+            "self",
+            "session_id"
+          ],
+          "uid": "llmstruct.api.services.chat_session.ChatSessionManager.delete_session:140#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.chat_session",
+            "llmstruct.api.services.chat_session.ChatSessionManager",
+            "llmstruct.api.services.chat_session.ChatSessionManager.delete_session:140"
+          ],
+          "hash": "bdefd9765e976955797ee786a26a7db6f326e42c9082efe7f626f2a0fb66f9d5",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-chat-session-chatsessionmanager-delete-session",
+          "summary": "Delete a session",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "session_file.exists",
+            "session_file.unlink"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_load_session",
+          "docstring": "Load session from storage",
+          "line_range": [
+            154,
+            167
+          ],
+          "parameters": [
+            "self",
+            "session_id"
+          ],
+          "uid": "llmstruct.api.services.chat_session.ChatSessionManager._load_session:154#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.chat_session",
+            "llmstruct.api.services.chat_session.ChatSessionManager",
+            "llmstruct.api.services.chat_session.ChatSessionManager._load_session:154"
+          ],
+          "hash": "e78d4d192a8a5cf4156474f2e2150de0b66aeca38ea98f010db0cf71f8202726",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-chat-session-chatsessionmanager--load-session",
+          "summary": "Load session from storage",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "private"
+          ],
+          "calls": [
+            "ChatSession",
+            "data.get",
+            "open",
+            "json.load"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_save_session",
+          "docstring": "Save session to storage",
+          "line_range": [
+            169,
+            178
+          ],
+          "parameters": [
+            "self",
+            "session"
+          ],
+          "uid": "llmstruct.api.services.chat_session.ChatSessionManager._save_session:169#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.chat_session",
+            "llmstruct.api.services.chat_session.ChatSessionManager",
+            "llmstruct.api.services.chat_session.ChatSessionManager._save_session:169"
+          ],
+          "hash": "1c70108976a58fc076ea0a985b1157b42065c5b4dc4463d66ac7a9cab63bb818",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-chat-session-chatsessionmanager--save-session",
+          "summary": "Save session to storage",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "private"
+          ],
+          "calls": [
+            "open",
+            "logger.error",
+            "session.to_dict",
+            "json.dump"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cleanup_old_sessions",
+          "docstring": "Clean up sessions older than specified days",
+          "line_range": [
+            180,
+            183
+          ],
+          "parameters": [
+            "self",
+            "days"
+          ],
+          "uid": "llmstruct.api.services.chat_session.ChatSessionManager.cleanup_old_sessions:180#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.chat_session",
+            "llmstruct.api.services.chat_session.ChatSessionManager",
+            "llmstruct.api.services.chat_session.ChatSessionManager.cleanup_old_sessions:180"
+          ],
+          "hash": "ec56c297cc5808754336fc95a5fb8c077c9c70d96941c5f7bf7487962711a634",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-chat-session-chatsessionmanager-cleanup-old-sessions",
+          "summary": "Clean up sessions older than specified days",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.api.services.chat_session.ChatSessionManager:67#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.chat_session",
+        "llmstruct.api.services.chat_session.ChatSessionManager:67"
+      ],
+      "hash": "04ff73db795e9c45a05067d0869633634f7849ff4692d55c142319422269dddd",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-chat-session-chatsessionmanager",
+      "summary": "Manages multiple chat sessions",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "Path.cwd",
+    "self._save_session",
+    "session.add_message",
+    "self.get_or_create_session",
+    "context_parts.append",
+    "self.get_messages",
+    "len",
+    "Path.cwd",
+    "ChatSession",
+    "session_file.exists",
+    "self._load_session",
+    "session_file.exists",
+    "self._load_session",
+    "self._save_session",
+    "session.add_message",
+    "self.get_or_create_session",
+    "self._load_session",
+    "logger.error",
+    "sessions.sort",
+    "len",
+    "sessions.append",
+    "session_file.exists",
+    "session_file.unlink",
+    "ChatSession",
+    "data.get",
+    "open",
+    "json.load",
+    "open",
+    "logger.error",
+    "session.to_dict",
+    "json.dump"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.856481",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:fcd73c2d9992c052",
+    "lines_of_code": 16
+  }
+}

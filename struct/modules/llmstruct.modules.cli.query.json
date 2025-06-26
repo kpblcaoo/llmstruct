@@ -1,0 +1,93 @@
+{
+  "module_info": {
+    "uid": "llmstruct.modules.cli.query",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.modules.cli.query with 1 functions",
+    "hash": "sha256:dc7abf22b59234d2",
+    "dependencies": [
+      "cache",
+      "client",
+      "json",
+      "logging",
+      "orchestrator"
+    ],
+    "exports": [
+      "query"
+    ]
+  },
+  "functions": [
+    {
+      "name": "query",
+      "docstring": "Query LLMs with prompt and context.",
+      "line_range": [
+        8,
+        64
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.query.query:8#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.query",
+        "llmstruct.modules.cli.query.query:8"
+      ],
+      "hash": "9e6e38c137d3ea1b0b3089faec14dbb4dbb30a9469e21b5cf2d3ad83cb04c48d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-query-query",
+      "summary": "Query LLMs with prompt and context.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "client.query_with_context",
+        "LLMClient",
+        "logging.info",
+        "JSONCache",
+        "orchestrator.get_context_for_scenario",
+        "client.query",
+        "logging.error",
+        "create_context_orchestrator",
+        "logging.warning",
+        "cache.close",
+        "json.dump",
+        "hasattr",
+        "Path"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "client.query_with_context",
+    "LLMClient",
+    "logging.info",
+    "JSONCache",
+    "orchestrator.get_context_for_scenario",
+    "client.query",
+    "logging.error",
+    "create_context_orchestrator",
+    "logging.warning",
+    "cache.close",
+    "json.dump",
+    "hasattr",
+    "Path"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.864382",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:dc7abf22b59234d2",
+    "lines_of_code": 1
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "module_info": {
+    "uid": "llmstruct.modules.cli.epic",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.modules.cli.epic with 3 functions",
+    "hash": "sha256:0259cba67876e216",
+    "dependencies": [
+      "data",
+      "epic",
+      "epic_parser",
+      "epic_path",
+      "epic_sub",
+      "item",
+      "json",
+      "link_map",
+      "results",
+      "show_links_parser",
+      "status_filter",
+      "subparsers",
+      "t"
+    ],
+    "exports": [
+      "add_epic_cli_subparser",
+      "load_json",
+      "show_links"
+    ]
+  },
+  "functions": [
+    {
+      "name": "load_json",
+      "docstring": "",
+      "line_range": [
+        5,
+        7
+      ],
+      "parameters": [
+        "path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.epic.load_json:5#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.epic",
+        "llmstruct.modules.cli.epic.load_json:5"
+      ],
+      "hash": "cdc6e2f9083b307268e25f05f5d476177bad479c9614badd5dab8af7219ff1d2",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-epic-load-json",
+      "summary": "Function for load json",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "json.load"
+      ],
+      "called_by": [
+        "show_links"
+      ]
+    },
+    {
+      "name": "show_links",
+      "docstring": "",
+      "line_range": [
+        9,
+        57
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.epic.show_links:9#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.epic",
+        "llmstruct.modules.cli.epic.show_links:9"
+      ],
+      "hash": "34a1fbe2e29c7a0f042a47d012963b273945ca444e7452ab5d73b00f9e691b0e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-epic-show-links",
+      "summary": "Function for show links",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "str",
+        "item.get",
+        "t.upper",
+        "status_filter.lower",
+        "load_json",
+        "json.dumps",
+        "link_map.items",
+        "epic_path.exists",
+        "epic.get",
+        "results.items",
+        "data.get",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "add_epic_cli_subparser",
+      "docstring": "",
+      "line_range": [
+        59,
+        67
+      ],
+      "parameters": [
+        "subparsers"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.epic.add_epic_cli_subparser:59#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.epic",
+        "llmstruct.modules.cli.epic.add_epic_cli_subparser:59"
+      ],
+      "hash": "30f0b48d030c0c37fb0ae38cf55f382d2b0ecef7aa010502beb215a345845dc2",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-epic-add-epic-cli-subparser",
+      "summary": "Function for add epic cli subparser",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "show_links_parser.add_argument",
+        "show_links_parser.set_defaults",
+        "epic_sub.add_parser",
+        "epic_parser.add_subparsers",
+        "subparsers.add_parser"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "open",
+    "json.load",
+    "print",
+    "str",
+    "item.get",
+    "t.upper",
+    "status_filter.lower",
+    "load_json",
+    "json.dumps",
+    "link_map.items",
+    "epic_path.exists",
+    "epic.get",
+    "results.items",
+    "data.get",
+    "Path",
+    "show_links_parser.add_argument",
+    "show_links_parser.set_defaults",
+    "epic_sub.add_parser",
+    "epic_parser.add_subparsers",
+    "subparsers.add_parser"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.865557",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:0259cba67876e216",
+    "lines_of_code": 3
+  }
+}

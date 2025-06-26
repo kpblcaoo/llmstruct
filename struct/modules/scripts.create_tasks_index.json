@@ -1,0 +1,1589 @@
+{
+  "module_info": {
+    "uid": "scripts.create_tasks_index",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.create_tasks_index with 18 functions and 3 classes",
+    "hash": "sha256:74500837b6222e6f",
+    "dependencies": [
+      "all_tasks",
+      "argparse",
+      "by_category",
+      "by_file",
+      "by_priority",
+      "by_status",
+      "category",
+      "content",
+      "context",
+      "datetime",
+      "docs_dir",
+      "f",
+      "file_categories",
+      "generator",
+      "json",
+      "logger",
+      "match",
+      "output_path",
+      "parser",
+      "priority",
+      "re",
+      "self",
+      "status",
+      "task_title",
+      "tasks"
+    ],
+    "exports": [
+      "Task",
+      "TaskExtractor",
+      "TaskIndexGenerator",
+      "extract_from_markdown",
+      "generate_index",
+      "generate_summary_report",
+      "main",
+      "save_index",
+      "scan_documentation"
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "docstring": "Main execution function.",
+      "line_range": [
+        469,
+        515
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index.main:469#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index.main:469"
+      ],
+      "hash": "7fa5e480ae715285b1c3f10d54322008a5486d0d03084842fa82817d18184cd5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index-main",
+      "summary": "Main execution function.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "logger.info",
+        "parser.add_argument",
+        "argparse.ArgumentParser",
+        "by_status.items",
+        "by_category.get",
+        "by_status.get",
+        "generator.save_index",
+        "TaskIndexGenerator",
+        "generator.scan_documentation",
+        "generator.generate_index",
+        "generator.generate_summary_report",
+        "by_category.items",
+        "len",
+        "sorted",
+        "parser.parse_args"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        42,
+        44
+      ],
+      "parameters": [
+        "self",
+        "project_root"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index.__init__:42#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index.__init__:42"
+      ],
+      "hash": "e73306e6d7f7d9a7e1f10ecf377d1d2eab6231541dc8ac7ee92ee867317d57e4",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "TaskExtractor",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_init_patterns",
+      "docstring": "Initialize regex patterns for task extraction.",
+      "line_range": [
+        46,
+        73
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index._init_patterns:46#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index._init_patterns:46"
+      ],
+      "hash": "101d74db9144546ec8b97ec38656013e8249c332458e53daa04ef62862cd0908",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index--init-patterns",
+      "summary": "Initialize regex patterns for task extraction.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "re.compile"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "extract_from_markdown",
+      "docstring": "Extract tasks from markdown file.",
+      "line_range": [
+        75,
+        107
+      ],
+      "parameters": [
+        "self",
+        "file_path"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index.extract_from_markdown:75#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index.extract_from_markdown:75"
+      ],
+      "hash": "832c3464e2ea9bb8b26c129d4f490d718e9ca8249a13e2d2f271dca1d366f687",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index-extract-from-markdown",
+      "summary": "Extract tasks from markdown file.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "tasks.extend",
+        "open",
+        "f.read",
+        "self._extract_checkboxes",
+        "self._extract_date",
+        "logger.error",
+        "self._extract_phases",
+        "self._extract_todos",
+        "self._extract_epics",
+        "self._extract_status",
+        "self._extract_priority",
+        "self._extract_tasks"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_status",
+      "docstring": "Extract document status.",
+      "line_range": [
+        109,
+        120
+      ],
+      "parameters": [
+        "self",
+        "content"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index._extract_status:109#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index._extract_status:109"
+      ],
+      "hash": "58b49ca7da90af26a03ed1c4f9b2af7473d17919fd330de1829bb0be7a026085",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index--extract-status",
+      "summary": "Extract document status.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "match.group"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_priority",
+      "docstring": "Extract document priority.",
+      "line_range": [
+        122,
+        135
+      ],
+      "parameters": [
+        "self",
+        "content"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index._extract_priority:122#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index._extract_priority:122"
+      ],
+      "hash": "b50b3b507420caf0930c140fbd89ef6ba4f585b3de02bfdba7128df63b8c28b2",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index--extract-priority",
+      "summary": "Extract document priority.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "match.group"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_date",
+      "docstring": "Extract document date.",
+      "line_range": [
+        137,
+        142
+      ],
+      "parameters": [
+        "self",
+        "content"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index._extract_date:137#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index._extract_date:137"
+      ],
+      "hash": "936a30c0d3047016ef704a4c0bd9273a606be38c24c27db1f0d012cee2b7ccc5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index--extract-date",
+      "summary": "Extract document date.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "match.group",
+        "datetime.now"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_epics",
+      "docstring": "Extract EPIC items.",
+      "line_range": [
+        144,
+        168
+      ],
+      "parameters": [
+        "self",
+        "content",
+        "file_path",
+        "doc_status",
+        "doc_priority",
+        "doc_date"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index._extract_epics:144#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index._extract_epics:144"
+      ],
+      "hash": "975980e082ea7565328764a21ab625a1e10c88d259bfb69320bf531ff5c0f3c7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index--extract-epics",
+      "summary": "Extract EPIC items.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "str",
+        "Task",
+        "match.group",
+        "self._extract_context",
+        "match.start",
+        "match.end",
+        "tasks.append"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_tasks",
+      "docstring": "Extract explicit task items.",
+      "line_range": [
+        170,
+        194
+      ],
+      "parameters": [
+        "self",
+        "content",
+        "file_path",
+        "doc_status",
+        "doc_priority",
+        "doc_date"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index._extract_tasks:170#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index._extract_tasks:170"
+      ],
+      "hash": "0996c7fce6808b752c9cf81d66206cb6ab2f8279652042311d8d235b68dba78e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index--extract-tasks",
+      "summary": "Extract explicit task items.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "str",
+        "Task",
+        "match.group",
+        "self._extract_context",
+        "match.start",
+        "match.end",
+        "tasks.append"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_todos",
+      "docstring": "Extract TODO items.",
+      "line_range": [
+        196,
+        219
+      ],
+      "parameters": [
+        "self",
+        "content",
+        "file_path",
+        "doc_status",
+        "doc_priority",
+        "doc_date"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index._extract_todos:196#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index._extract_todos:196"
+      ],
+      "hash": "7d563054d8233341a7c7e97610a398f4adb4cb0855c20c1f931599923584f927",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index--extract-todos",
+      "summary": "Extract TODO items.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "str",
+        "Task",
+        "match.group",
+        "match.start",
+        "tasks.append"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_phases",
+      "docstring": "Extract phase/step items.",
+      "line_range": [
+        221,
+        245
+      ],
+      "parameters": [
+        "self",
+        "content",
+        "file_path",
+        "doc_status",
+        "doc_priority",
+        "doc_date"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index._extract_phases:221#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index._extract_phases:221"
+      ],
+      "hash": "54dd8142dbd354e0296057250d2c3e94f42fa1c4b9ab37ccc377ae0fd02b8744",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index--extract-phases",
+      "summary": "Extract phase/step items.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "str",
+        "Task",
+        "match.group",
+        "self._extract_context",
+        "match.start",
+        "match.end",
+        "tasks.append"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_checkboxes",
+      "docstring": "Extract checkbox items as tasks.",
+      "line_range": [
+        247,
+        275
+      ],
+      "parameters": [
+        "self",
+        "content",
+        "file_path",
+        "doc_status",
+        "doc_priority",
+        "doc_date"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index._extract_checkboxes:247#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index._extract_checkboxes:247"
+      ],
+      "hash": "251b28242a59e58b1dee0d37dd5d9f1559911bc1bc62ca99919c852995c0f3f2",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index--extract-checkboxes",
+      "summary": "Extract checkbox items as tasks.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "str",
+        "any",
+        "Task",
+        "task_title.upper",
+        "match.group",
+        "match.start",
+        "tasks.append"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_context",
+      "docstring": "Extract surrounding context for a match.",
+      "line_range": [
+        277,
+        286
+      ],
+      "parameters": [
+        "self",
+        "content",
+        "start",
+        "end",
+        "context_lines"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index._extract_context:277#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index._extract_context:277"
+      ],
+      "hash": "451861a790f941d9554811b9eeae808cf979ba77685f4b0138c85e75eeb89022",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index--extract-context",
+      "summary": "Extract surrounding context for a match.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "min",
+        "content.split",
+        "context.strip",
+        "len",
+        "max"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        292,
+        294
+      ],
+      "parameters": [
+        "self",
+        "project_root"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index.__init__:292#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index.__init__:292"
+      ],
+      "hash": "acb0efd27f4cc652fe6a7c6123f829190fedac3f67701b9dc211611037dc191a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "TaskExtractor",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "scan_documentation",
+      "docstring": "Scan all documentation files for tasks.",
+      "line_range": [
+        296,
+        314
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index.scan_documentation:296#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index.scan_documentation:296"
+      ],
+      "hash": "f11771913fa296d7b1538e5e509b8cf24b9e63cbc7384d2f6688bc8ac01e27b1",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index-scan-documentation",
+      "summary": "Scan all documentation files for tasks.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "all_tasks.extend",
+        "docs_dir.exists",
+        "logger.info",
+        "docs_dir.glob"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "generate_index",
+      "docstring": "Generate comprehensive task index.",
+      "line_range": [
+        316,
+        367
+      ],
+      "parameters": [
+        "self",
+        "tasks"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index.generate_index:316#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index.generate_index:316"
+      ],
+      "hash": "f5f72cfc024e22c096f45636f933e1cfb83e803acd705688fe3c31755be03048",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index-generate-index",
+      "summary": "Generate comprehensive task index.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "by_file.items",
+        "asdict",
+        "by_status.items",
+        "datetime.now",
+        "by_category.items",
+        "by_priority.items",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "generate_summary_report",
+      "docstring": "Generate human-readable summary report.",
+      "line_range": [
+        369,
+        446
+      ],
+      "parameters": [
+        "self",
+        "index"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index.generate_summary_report:369#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index.generate_summary_report:369"
+      ],
+      "hash": "bf9e9f763a0b22fd3bf35f63f74dbedd2e73f7f5c90c3d04175754e75add33c3",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index-generate-summary-report",
+      "summary": "Generate human-readable summary report.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "status.upper",
+        "priority.upper",
+        "category.upper",
+        "file_categories.items",
+        "len",
+        "sorted",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "save_index",
+      "docstring": "Save index and summary to files.",
+      "line_range": [
+        448,
+        466
+      ],
+      "parameters": [
+        "self",
+        "index",
+        "summary",
+        "output_dir"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_tasks_index.save_index:448#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index.save_index:448"
+      ],
+      "hash": "64e753792fc1b22977f10ea82b23052f4fbf3d901c6a94e812569a4818267e4a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index-save-index",
+      "summary": "Save index and summary to files.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "logger.info",
+        "output_path.mkdir",
+        "json.dump",
+        "f.write",
+        "Path"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "Task",
+      "docstring": "Represents a single task or actionable item.",
+      "line_range": [
+        21,
+        36
+      ],
+      "methods": [],
+      "bases": [],
+      "uid": "scripts.create_tasks_index.Task:21#class",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index.Task:21"
+      ],
+      "hash": "897fc23382e7dc18a1e8e4861ae57b08b61ce502edc0d9366b8f04f5fb4be377",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index-task",
+      "summary": "Represents a single task or actionable item.",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "TaskExtractor",
+      "docstring": "Extract tasks from various document formats.",
+      "line_range": [
+        39,
+        286
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            42,
+            44
+          ],
+          "parameters": [
+            "self",
+            "project_root"
+          ],
+          "uid": "scripts.create_tasks_index.TaskExtractor.__init__:42#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskExtractor",
+            "scripts.create_tasks_index.TaskExtractor.__init__:42"
+          ],
+          "hash": "546fd5156f9acd2cfcc8fa1a21d90929235b3923c475734069a8fc1b6331f8bc",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskextractor---init--",
+          "summary": "Method for taskextractor. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "TaskExtractor",
+            "Path"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_init_patterns",
+          "docstring": "Initialize regex patterns for task extraction.",
+          "line_range": [
+            46,
+            73
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.create_tasks_index.TaskExtractor._init_patterns:46#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskExtractor",
+            "scripts.create_tasks_index.TaskExtractor._init_patterns:46"
+          ],
+          "hash": "9abdd5c4b445f297e416708337b9add768468788502737a82a3fd771e7b0bf5e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskextractor--init-patterns",
+          "summary": "Initialize regex patterns for task extraction.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "re.compile"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "extract_from_markdown",
+          "docstring": "Extract tasks from markdown file.",
+          "line_range": [
+            75,
+            107
+          ],
+          "parameters": [
+            "self",
+            "file_path"
+          ],
+          "uid": "scripts.create_tasks_index.TaskExtractor.extract_from_markdown:75#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskExtractor",
+            "scripts.create_tasks_index.TaskExtractor.extract_from_markdown:75"
+          ],
+          "hash": "7c5d9091bac6fb483a2844b9e9cb35a9f0de409ab8466f2419eb7a912b26a0ed",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskextractor-extract-from-markdown",
+          "summary": "Extract tasks from markdown file.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "tasks.extend",
+            "open",
+            "f.read",
+            "self._extract_checkboxes",
+            "self._extract_date",
+            "logger.error",
+            "self._extract_phases",
+            "self._extract_todos",
+            "self._extract_epics",
+            "self._extract_status",
+            "self._extract_priority",
+            "self._extract_tasks"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_status",
+          "docstring": "Extract document status.",
+          "line_range": [
+            109,
+            120
+          ],
+          "parameters": [
+            "self",
+            "content"
+          ],
+          "uid": "scripts.create_tasks_index.TaskExtractor._extract_status:109#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskExtractor",
+            "scripts.create_tasks_index.TaskExtractor._extract_status:109"
+          ],
+          "hash": "9717d15a166b45d221ef72f105f3cdd288bdb7a214ba698c86c6b03ce2d464ae",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskextractor--extract-status",
+          "summary": "Extract document status.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "match.group"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_priority",
+          "docstring": "Extract document priority.",
+          "line_range": [
+            122,
+            135
+          ],
+          "parameters": [
+            "self",
+            "content"
+          ],
+          "uid": "scripts.create_tasks_index.TaskExtractor._extract_priority:122#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskExtractor",
+            "scripts.create_tasks_index.TaskExtractor._extract_priority:122"
+          ],
+          "hash": "49f568988e7911484cac7a5a24496d3444e696c51e7ba63c26ae89ea42331949",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskextractor--extract-priority",
+          "summary": "Extract document priority.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "match.group"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_date",
+          "docstring": "Extract document date.",
+          "line_range": [
+            137,
+            142
+          ],
+          "parameters": [
+            "self",
+            "content"
+          ],
+          "uid": "scripts.create_tasks_index.TaskExtractor._extract_date:137#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskExtractor",
+            "scripts.create_tasks_index.TaskExtractor._extract_date:137"
+          ],
+          "hash": "74b5e8839d89000ba9cb2c2e76bf14a9f78034895f7ab6581a9b41c8bd807276",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskextractor--extract-date",
+          "summary": "Extract document date.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "match.group",
+            "datetime.now"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_epics",
+          "docstring": "Extract EPIC items.",
+          "line_range": [
+            144,
+            168
+          ],
+          "parameters": [
+            "self",
+            "content",
+            "file_path",
+            "doc_status",
+            "doc_priority",
+            "doc_date"
+          ],
+          "uid": "scripts.create_tasks_index.TaskExtractor._extract_epics:144#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskExtractor",
+            "scripts.create_tasks_index.TaskExtractor._extract_epics:144"
+          ],
+          "hash": "023e111e9c66bf3ff3773300929080a0419c7b737a1b81bbb237b81f617b2b27",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskextractor--extract-epics",
+          "summary": "Extract EPIC items.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "str",
+            "Task",
+            "match.group",
+            "self._extract_context",
+            "match.start",
+            "match.end",
+            "tasks.append"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_tasks",
+          "docstring": "Extract explicit task items.",
+          "line_range": [
+            170,
+            194
+          ],
+          "parameters": [
+            "self",
+            "content",
+            "file_path",
+            "doc_status",
+            "doc_priority",
+            "doc_date"
+          ],
+          "uid": "scripts.create_tasks_index.TaskExtractor._extract_tasks:170#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskExtractor",
+            "scripts.create_tasks_index.TaskExtractor._extract_tasks:170"
+          ],
+          "hash": "b0edc41b9b0282593f7bc43405fa4ace015fcb6b48b9c261d6f64397f1620a4e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskextractor--extract-tasks",
+          "summary": "Extract explicit task items.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "str",
+            "Task",
+            "match.group",
+            "self._extract_context",
+            "match.start",
+            "match.end",
+            "tasks.append"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_todos",
+          "docstring": "Extract TODO items.",
+          "line_range": [
+            196,
+            219
+          ],
+          "parameters": [
+            "self",
+            "content",
+            "file_path",
+            "doc_status",
+            "doc_priority",
+            "doc_date"
+          ],
+          "uid": "scripts.create_tasks_index.TaskExtractor._extract_todos:196#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskExtractor",
+            "scripts.create_tasks_index.TaskExtractor._extract_todos:196"
+          ],
+          "hash": "ea7328a8ec95ec0e76ed98270999210b561df37ada8e0d12375edee23eb738c6",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskextractor--extract-todos",
+          "summary": "Extract TODO items.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "str",
+            "Task",
+            "match.group",
+            "match.start",
+            "tasks.append"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_phases",
+          "docstring": "Extract phase/step items.",
+          "line_range": [
+            221,
+            245
+          ],
+          "parameters": [
+            "self",
+            "content",
+            "file_path",
+            "doc_status",
+            "doc_priority",
+            "doc_date"
+          ],
+          "uid": "scripts.create_tasks_index.TaskExtractor._extract_phases:221#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskExtractor",
+            "scripts.create_tasks_index.TaskExtractor._extract_phases:221"
+          ],
+          "hash": "eac833ef2fd57440dc0851f54a4cdf809e6a0f02726e9d2803dec5e50a75eb8a",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskextractor--extract-phases",
+          "summary": "Extract phase/step items.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "str",
+            "Task",
+            "match.group",
+            "self._extract_context",
+            "match.start",
+            "match.end",
+            "tasks.append"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_checkboxes",
+          "docstring": "Extract checkbox items as tasks.",
+          "line_range": [
+            247,
+            275
+          ],
+          "parameters": [
+            "self",
+            "content",
+            "file_path",
+            "doc_status",
+            "doc_priority",
+            "doc_date"
+          ],
+          "uid": "scripts.create_tasks_index.TaskExtractor._extract_checkboxes:247#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskExtractor",
+            "scripts.create_tasks_index.TaskExtractor._extract_checkboxes:247"
+          ],
+          "hash": "3271990352bea2cf1f31795105b026bac5f4ad80e4aef7dd801916afc5464235",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskextractor--extract-checkboxes",
+          "summary": "Extract checkbox items as tasks.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "str",
+            "any",
+            "Task",
+            "task_title.upper",
+            "match.group",
+            "match.start",
+            "tasks.append"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_context",
+          "docstring": "Extract surrounding context for a match.",
+          "line_range": [
+            277,
+            286
+          ],
+          "parameters": [
+            "self",
+            "content",
+            "start",
+            "end",
+            "context_lines"
+          ],
+          "uid": "scripts.create_tasks_index.TaskExtractor._extract_context:277#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskExtractor",
+            "scripts.create_tasks_index.TaskExtractor._extract_context:277"
+          ],
+          "hash": "6e0a74f7d595524e888e8188e9818629ef979c341d31930e66bd1d06ad8a1399",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskextractor--extract-context",
+          "summary": "Extract surrounding context for a match.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "min",
+            "content.split",
+            "context.strip",
+            "len",
+            "max"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "scripts.create_tasks_index.TaskExtractor:39#class",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index.TaskExtractor:39"
+      ],
+      "hash": "34dabde7169b81d401ffef4e371379f99e2321f514060f7d78a4970b2206d923",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index-taskextractor",
+      "summary": "Extract tasks from various document formats.",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "TaskIndexGenerator",
+      "docstring": "Generate comprehensive task index.",
+      "line_range": [
+        289,
+        466
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            292,
+            294
+          ],
+          "parameters": [
+            "self",
+            "project_root"
+          ],
+          "uid": "scripts.create_tasks_index.TaskIndexGenerator.__init__:292#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskIndexGenerator",
+            "scripts.create_tasks_index.TaskIndexGenerator.__init__:292"
+          ],
+          "hash": "0dde8a0c22f6db01153c64df150c47640eea02dd6d2224bc3fa8b369113b4c10",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskindexgenerator---init--",
+          "summary": "Method for taskindexgenerator. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "TaskExtractor",
+            "Path"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "scan_documentation",
+          "docstring": "Scan all documentation files for tasks.",
+          "line_range": [
+            296,
+            314
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.create_tasks_index.TaskIndexGenerator.scan_documentation:296#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskIndexGenerator",
+            "scripts.create_tasks_index.TaskIndexGenerator.scan_documentation:296"
+          ],
+          "hash": "8c79ad1f27251beb14825ca92d8681bcd3de32d52a7d4be3698f643d165eb689",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskindexgenerator-scan-documentation",
+          "summary": "Scan all documentation files for tasks.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "all_tasks.extend",
+            "docs_dir.exists",
+            "logger.info",
+            "docs_dir.glob"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "generate_index",
+          "docstring": "Generate comprehensive task index.",
+          "line_range": [
+            316,
+            367
+          ],
+          "parameters": [
+            "self",
+            "tasks"
+          ],
+          "uid": "scripts.create_tasks_index.TaskIndexGenerator.generate_index:316#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskIndexGenerator",
+            "scripts.create_tasks_index.TaskIndexGenerator.generate_index:316"
+          ],
+          "hash": "e2344d1d43ef4a9d50697f633e906f472f5453cbdefe49db6b7e2395052cc92f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskindexgenerator-generate-index",
+          "summary": "Generate comprehensive task index.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "by_file.items",
+            "asdict",
+            "by_status.items",
+            "datetime.now",
+            "by_category.items",
+            "by_priority.items",
+            "len"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "generate_summary_report",
+          "docstring": "Generate human-readable summary report.",
+          "line_range": [
+            369,
+            446
+          ],
+          "parameters": [
+            "self",
+            "index"
+          ],
+          "uid": "scripts.create_tasks_index.TaskIndexGenerator.generate_summary_report:369#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskIndexGenerator",
+            "scripts.create_tasks_index.TaskIndexGenerator.generate_summary_report:369"
+          ],
+          "hash": "f367a1e80b919594e7594f521314819ee5641644734f31e17859873efeb581a1",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskindexgenerator-generate-summary-report",
+          "summary": "Generate human-readable summary report.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "status.upper",
+            "priority.upper",
+            "category.upper",
+            "file_categories.items",
+            "len",
+            "sorted",
+            "Path"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "save_index",
+          "docstring": "Save index and summary to files.",
+          "line_range": [
+            448,
+            466
+          ],
+          "parameters": [
+            "self",
+            "index",
+            "summary",
+            "output_dir"
+          ],
+          "uid": "scripts.create_tasks_index.TaskIndexGenerator.save_index:448#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_tasks_index",
+            "scripts.create_tasks_index.TaskIndexGenerator",
+            "scripts.create_tasks_index.TaskIndexGenerator.save_index:448"
+          ],
+          "hash": "dcf060dd35b880b328d500ecdc7fbce2b2eec9384aa74701b0186600906f8713",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-tasks-index-taskindexgenerator-save-index",
+          "summary": "Save index and summary to files.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "open",
+            "logger.info",
+            "output_path.mkdir",
+            "json.dump",
+            "f.write",
+            "Path"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "scripts.create_tasks_index.TaskIndexGenerator:289#class",
+      "uid_components": [
+        "scripts",
+        "scripts.create_tasks_index",
+        "scripts.create_tasks_index.TaskIndexGenerator:289"
+      ],
+      "hash": "2509935a4a258966df5fa82f5c6a3ce34e0451c2eb7eb2ba4c9ea9d492426caf",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-tasks-index-taskindexgenerator",
+      "summary": "Generate comprehensive task index.",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "print",
+    "logger.info",
+    "parser.add_argument",
+    "argparse.ArgumentParser",
+    "by_status.items",
+    "by_category.get",
+    "by_status.get",
+    "generator.save_index",
+    "TaskIndexGenerator",
+    "generator.scan_documentation",
+    "generator.generate_index",
+    "generator.generate_summary_report",
+    "by_category.items",
+    "len",
+    "sorted",
+    "parser.parse_args",
+    "TaskExtractor",
+    "Path",
+    "re.compile",
+    "tasks.extend",
+    "open",
+    "f.read",
+    "self._extract_checkboxes",
+    "self._extract_date",
+    "logger.error",
+    "self._extract_phases",
+    "self._extract_todos",
+    "self._extract_epics",
+    "self._extract_status",
+    "self._extract_priority",
+    "self._extract_tasks",
+    "match.group",
+    "match.group",
+    "match.group",
+    "datetime.now",
+    "str",
+    "Task",
+    "match.group",
+    "self._extract_context",
+    "match.start",
+    "match.end",
+    "tasks.append",
+    "str",
+    "Task",
+    "match.group",
+    "self._extract_context",
+    "match.start",
+    "match.end",
+    "tasks.append",
+    "str",
+    "Task",
+    "match.group",
+    "match.start",
+    "tasks.append",
+    "str",
+    "Task",
+    "match.group",
+    "self._extract_context",
+    "match.start",
+    "match.end",
+    "tasks.append",
+    "str",
+    "any",
+    "Task",
+    "task_title.upper",
+    "match.group",
+    "match.start",
+    "tasks.append",
+    "min",
+    "content.split",
+    "context.strip",
+    "len",
+    "max",
+    "TaskExtractor",
+    "Path",
+    "all_tasks.extend",
+    "docs_dir.exists",
+    "logger.info",
+    "docs_dir.glob",
+    "by_file.items",
+    "asdict",
+    "by_status.items",
+    "datetime.now",
+    "by_category.items",
+    "by_priority.items",
+    "len",
+    "status.upper",
+    "priority.upper",
+    "category.upper",
+    "file_categories.items",
+    "len",
+    "sorted",
+    "Path",
+    "open",
+    "logger.info",
+    "output_path.mkdir",
+    "json.dump",
+    "f.write",
+    "Path"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.789091",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:74500837b6222e6f",
+    "lines_of_code": 21
+  }
+}

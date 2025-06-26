@@ -1,0 +1,339 @@
+{
+  "module_info": {
+    "uid": "llmstruct.parsers.converter_config",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.parsers.converter_config with 3 functions and 3 classes",
+    "hash": "sha256:dbaa7c4535a969b6",
+    "dependencies": [
+      "cls",
+      "languages",
+      "os"
+    ],
+    "exports": [
+      "ConverterConfig",
+      "Language",
+      "LanguageDetector",
+      "detect_language",
+      "detect_project_languages"
+    ]
+  },
+  "functions": [
+    {
+      "name": "__post_init__",
+      "docstring": "",
+      "line_range": [
+        36,
+        43
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.converter_config.__post_init__:36#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.converter_config",
+        "llmstruct.parsers.converter_config.__post_init__:36"
+      ],
+      "hash": "4b1abf4fc7ebd16b405d5e6d752cc9d6a811603eb54822de00fc1d5e268f82c0",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-converter-config---post-init--",
+      "summary": "Function for post init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "detect_language",
+      "docstring": "Detect programming language from file extension",
+      "line_range": [
+        61,
+        69
+      ],
+      "parameters": [
+        "cls",
+        "file_path"
+      ],
+      "decorators": [
+        "classmethod"
+      ],
+      "uid": "llmstruct.parsers.converter_config.detect_language:61#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.converter_config",
+        "llmstruct.parsers.converter_config.detect_language:61"
+      ],
+      "hash": "fa6c3e2ab9f84c00740b48ac532845ad4a096c9888eb96bd74cc52577e7d3be3",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-converter-config-detect-language",
+      "summary": "Detect programming language from file extension",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "detect_project_languages",
+      "docstring": "Detect all languages in project and count files",
+      "line_range": [
+        72,
+        88
+      ],
+      "parameters": [
+        "cls",
+        "project_path",
+        "exclude_patterns"
+      ],
+      "decorators": [
+        "classmethod"
+      ],
+      "uid": "llmstruct.parsers.converter_config.detect_project_languages:72#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.converter_config",
+        "llmstruct.parsers.converter_config.detect_project_languages:72"
+      ],
+      "hash": "0d70ce82518f618f076d05c4679cf9de83537d1f43673c8138f75ae72e0603f8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-converter-config-detect-project-languages",
+      "summary": "Detect all languages in project and count files",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "languages.get",
+        "cls.detect_language",
+        "any",
+        "os.walk"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "Language",
+      "docstring": "Supported programming languages",
+      "line_range": [
+        13,
+        23
+      ],
+      "methods": [],
+      "bases": [
+        "Enum"
+      ],
+      "uid": "llmstruct.parsers.converter_config.Language:13#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.converter_config",
+        "llmstruct.parsers.converter_config.Language:13"
+      ],
+      "hash": "b9d51a534a3187175b87073cbac05b1b0c7fa81a9b4e3cb902f0bd486156e4e0",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-converter-config-language",
+      "summary": "Supported programming languages",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "ConverterConfig",
+      "docstring": "Configuration for universal converter",
+      "line_range": [
+        27,
+        43
+      ],
+      "methods": [
+        {
+          "name": "__post_init__",
+          "docstring": "",
+          "line_range": [
+            36,
+            43
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.parsers.converter_config.ConverterConfig.__post_init__:36#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.converter_config",
+            "llmstruct.parsers.converter_config.ConverterConfig",
+            "llmstruct.parsers.converter_config.ConverterConfig.__post_init__:36"
+          ],
+          "hash": "5c4681fd5ba8bc4d8841677ce2809a03e8486a1f4114b1606a1aade7c997214c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-converter-config-converterconfig---post-init--",
+          "summary": "Method for converterconfig. post init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.parsers.converter_config.ConverterConfig:27#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.converter_config",
+        "llmstruct.parsers.converter_config.ConverterConfig:27"
+      ],
+      "hash": "db95f27d00cb854a231ffb0ab65cc4dda628f95db08d1a71ba67608e0adc6fea",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-converter-config-converterconfig",
+      "summary": "Configuration for universal converter",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "LanguageDetector",
+      "docstring": "Utility class for language detection",
+      "line_range": [
+        46,
+        88
+      ],
+      "methods": [
+        {
+          "name": "detect_language",
+          "docstring": "Detect programming language from file extension",
+          "line_range": [
+            61,
+            69
+          ],
+          "parameters": [
+            "cls",
+            "file_path"
+          ],
+          "uid": "llmstruct.parsers.converter_config.LanguageDetector.detect_language:61#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.converter_config",
+            "llmstruct.parsers.converter_config.LanguageDetector",
+            "llmstruct.parsers.converter_config.LanguageDetector.detect_language:61"
+          ],
+          "hash": "e787d14db6fec97ca3f15cd65f168206c7d65329622f0b39d714ea516ff8e15f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-converter-config-languagedetector-detect-language",
+          "summary": "Detect programming language from file extension",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "Path"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "detect_project_languages",
+          "docstring": "Detect all languages in project and count files",
+          "line_range": [
+            72,
+            88
+          ],
+          "parameters": [
+            "cls",
+            "project_path",
+            "exclude_patterns"
+          ],
+          "uid": "llmstruct.parsers.converter_config.LanguageDetector.detect_project_languages:72#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.converter_config",
+            "llmstruct.parsers.converter_config.LanguageDetector",
+            "llmstruct.parsers.converter_config.LanguageDetector.detect_project_languages:72"
+          ],
+          "hash": "5af8751ade4cb067ac205d6880135bcf47b2716a747d40d11d0330c3ff25f22f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-converter-config-languagedetector-detect-project-languages",
+          "summary": "Detect all languages in project and count files",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "languages.get",
+            "cls.detect_language",
+            "any",
+            "os.walk"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.parsers.converter_config.LanguageDetector:46#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.converter_config",
+        "llmstruct.parsers.converter_config.LanguageDetector:46"
+      ],
+      "hash": "4448c836642b0247d5c6fd72e150fb82c641b31d56a47c1ed292ca675bf771a4",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-converter-config-languagedetector",
+      "summary": "Utility class for language detection",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "classmethod",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "Path",
+    "languages.get",
+    "cls.detect_language",
+    "any",
+    "os.walk"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.851341",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:dbaa7c4535a969b6",
+    "lines_of_code": 6
+  }
+}

@@ -1,0 +1,990 @@
+{
+  "module_info": {
+    "uid": "scripts.fix_hardcoded_usernames",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.fix_hardcoded_usernames with 12 functions and 2 classes",
+    "hash": "sha256:93d603c2e600f84e",
+    "dependencies": [
+      "argparse",
+      "content",
+      "env_file",
+      "env_info",
+      "env_vars",
+      "f",
+      "files_with_hardcode",
+      "fixer",
+      "key",
+      "line",
+      "logger",
+      "match",
+      "parser",
+      "re",
+      "replacements",
+      "results",
+      "self",
+      "subprocess",
+      "user_info",
+      "value"
+    ],
+    "exports": [
+      "HardcodeFixer",
+      "UserInfoDetector",
+      "fix_all_files",
+      "fix_file",
+      "generate_env_template",
+      "get_user_info",
+      "main",
+      "scan_files"
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "docstring": "Main execution function.",
+      "line_range": [
+        234,
+        288
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.fix_hardcoded_usernames.main:234#function",
+      "uid_components": [
+        "scripts",
+        "scripts.fix_hardcoded_usernames",
+        "scripts.fix_hardcoded_usernames.main:234"
+      ],
+      "hash": "1da801b1ecc9a6456b1c7df9b0bc3203979cbf2679c463ac2a752d60b57f20a7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-fix-hardcoded-usernames-main",
+      "summary": "Main execution function.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "open",
+        "logger.info",
+        "fixer.generate_env_template",
+        "fixer.fix_all_files",
+        "parser.add_argument",
+        "argparse.ArgumentParser",
+        "replacements.items",
+        "len",
+        "fixer.scan_files",
+        "HardcodeFixer",
+        "results.items",
+        "f.write",
+        "Path",
+        "parser.parse_args"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        22,
+        24
+      ],
+      "parameters": [
+        "self",
+        "project_root"
+      ],
+      "decorators": [],
+      "uid": "scripts.fix_hardcoded_usernames.__init__:22#function",
+      "uid_components": [
+        "scripts",
+        "scripts.fix_hardcoded_usernames",
+        "scripts.fix_hardcoded_usernames.__init__:22"
+      ],
+      "hash": "33030a0e6dcccdcd3567c2835f15259ae9e70b3a7dc4b5863647affbe8fce96d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-fix-hardcoded-usernames---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "UserInfoDetector",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_detect_user_info",
+      "docstring": "Detect user info from .env, git config, or environment.",
+      "line_range": [
+        26,
+        62
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.fix_hardcoded_usernames._detect_user_info:26#function",
+      "uid_components": [
+        "scripts",
+        "scripts.fix_hardcoded_usernames",
+        "scripts.fix_hardcoded_usernames._detect_user_info:26"
+      ],
+      "hash": "b2fa098ca7a14d0e6961f53a1b3db498c1b82d8e73f22d5f791d9e28548dd5d4",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-fix-hardcoded-usernames--detect-user-info",
+      "summary": "Detect user info from .env, git config, or environment.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "logger.info",
+        "env_vars.items",
+        "user_info.update",
+        "user_info.get",
+        "self._load_from_environment",
+        "self._load_from_git",
+        "self._load_from_env",
+        "env_info.items"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_load_from_env",
+      "docstring": "Load user info from .env file.",
+      "line_range": [
+        64,
+        86
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.fix_hardcoded_usernames._load_from_env:64#function",
+      "uid_components": [
+        "scripts",
+        "scripts.fix_hardcoded_usernames",
+        "scripts.fix_hardcoded_usernames._load_from_env:64"
+      ],
+      "hash": "4a2f5b9c109076768fbd715266b6f690ae29c698bdf37714208d3cc63b22ec87",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-fix-hardcoded-usernames--load-from-env",
+      "summary": "Load user info from .env file.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "open",
+        "line.split",
+        "value.strip",
+        "env_file.exists",
+        "logger.error",
+        "line.startswith",
+        "line.strip",
+        "key.strip",
+        "env_vars.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_load_from_git",
+      "docstring": "Load user info from git config.",
+      "line_range": [
+        88,
+        120
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.fix_hardcoded_usernames._load_from_git:88#function",
+      "uid_components": [
+        "scripts",
+        "scripts.fix_hardcoded_usernames",
+        "scripts.fix_hardcoded_usernames._load_from_git:88"
+      ],
+      "hash": "e4252ea267654874462b7b4460833a01360a8f6ba277e85dc5582d31d9a08c08",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-fix-hardcoded-usernames--load-from-git",
+      "summary": "Load user info from git config.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "subprocess.run",
+        "re.search",
+        "match.group",
+        "logger.error"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_load_from_environment",
+      "docstring": "Load user info from environment variables.",
+      "line_range": [
+        122,
+        128
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.fix_hardcoded_usernames._load_from_environment:122#function",
+      "uid_components": [
+        "scripts",
+        "scripts.fix_hardcoded_usernames",
+        "scripts.fix_hardcoded_usernames._load_from_environment:122"
+      ],
+      "hash": "3937506acab321930ef18e6ffab5aaf2c6794ba3fc1be1a72009c390ff506bc6",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-fix-hardcoded-usernames--load-from-environment",
+      "summary": "Load user info from environment variables.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "get_user_info",
+      "docstring": "Get detected user information.",
+      "line_range": [
+        130,
+        132
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.fix_hardcoded_usernames.get_user_info:130#function",
+      "uid_components": [
+        "scripts",
+        "scripts.fix_hardcoded_usernames",
+        "scripts.fix_hardcoded_usernames.get_user_info:130"
+      ],
+      "hash": "d163dab41f6294a963e398de9691c3f37e83e8ee0fe7e398a66636d96a14af08",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-fix-hardcoded-usernames-get-user-info",
+      "summary": "Get detected user information.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        138,
+        148
+      ],
+      "parameters": [
+        "self",
+        "project_root"
+      ],
+      "decorators": [],
+      "uid": "scripts.fix_hardcoded_usernames.__init__:138#function",
+      "uid_components": [
+        "scripts",
+        "scripts.fix_hardcoded_usernames",
+        "scripts.fix_hardcoded_usernames.__init__:138"
+      ],
+      "hash": "68708c3b3fd979c4f818d3400a7642e8e59a665b88407a5bc34a5f66caa6e153",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-fix-hardcoded-usernames---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "UserInfoDetector",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "scan_files",
+      "docstring": "Scan for files containing hardcoded usernames.",
+      "line_range": [
+        150,
+        172
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.fix_hardcoded_usernames.scan_files:150#function",
+      "uid_components": [
+        "scripts",
+        "scripts.fix_hardcoded_usernames",
+        "scripts.fix_hardcoded_usernames.scan_files:150"
+      ],
+      "hash": "3072b8a15130718b3888e2e916b487ff855322a608ca688d6862cb910e23b028",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-fix-hardcoded-usernames-scan-files",
+      "summary": "Scan for files containing hardcoded usernames.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "open",
+        "f.read",
+        "any",
+        "content.count",
+        "logger.warning",
+        "files_with_hardcode.append"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "fix_file",
+      "docstring": "Fix hardcoded usernames in a single file.",
+      "line_range": [
+        174,
+        200
+      ],
+      "parameters": [
+        "self",
+        "file_path",
+        "dry_run"
+      ],
+      "decorators": [],
+      "uid": "scripts.fix_hardcoded_usernames.fix_file:174#function",
+      "uid_components": [
+        "scripts",
+        "scripts.fix_hardcoded_usernames",
+        "scripts.fix_hardcoded_usernames.fix_file:174"
+      ],
+      "hash": "1a8759ddbc692dd36db022a9bf3da19adf670b2a99072beec2eb126f99b71bf3",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-fix-hardcoded-usernames-fix-file",
+      "summary": "Fix hardcoded usernames in a single file.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "f.read",
+        "logger.info",
+        "content.replace",
+        "logger.error",
+        "content.count",
+        "f.write"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "fix_all_files",
+      "docstring": "Fix hardcoded usernames in all project files.",
+      "line_range": [
+        202,
+        214
+      ],
+      "parameters": [
+        "self",
+        "dry_run"
+      ],
+      "decorators": [],
+      "uid": "scripts.fix_hardcoded_usernames.fix_all_files:202#function",
+      "uid_components": [
+        "scripts",
+        "scripts.fix_hardcoded_usernames",
+        "scripts.fix_hardcoded_usernames.fix_all_files:202"
+      ],
+      "hash": "dee77dc9bf71077500bac150b532b665ba47163b98cb661345d0c68c553d6cb1",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-fix-hardcoded-usernames-fix-all-files",
+      "summary": "Fix hardcoded usernames in all project files.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "logger.info",
+        "self.scan_files",
+        "self.fix_file",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "generate_env_template",
+      "docstring": "Generate .env template with required variables.",
+      "line_range": [
+        216,
+        231
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.fix_hardcoded_usernames.generate_env_template:216#function",
+      "uid_components": [
+        "scripts",
+        "scripts.fix_hardcoded_usernames",
+        "scripts.fix_hardcoded_usernames.generate_env_template:216"
+      ],
+      "hash": "568cc4c4fb6d7b198618d28ddafc8b80e41ff0990c25418bdb64e193fd2a950e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-fix-hardcoded-usernames-generate-env-template",
+      "summary": "Generate .env template with required variables.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "UserInfoDetector",
+      "docstring": "Detect user information from various sources.",
+      "line_range": [
+        19,
+        132
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            22,
+            24
+          ],
+          "parameters": [
+            "self",
+            "project_root"
+          ],
+          "uid": "scripts.fix_hardcoded_usernames.UserInfoDetector.__init__:22#method",
+          "uid_components": [
+            "scripts",
+            "scripts.fix_hardcoded_usernames",
+            "scripts.fix_hardcoded_usernames.UserInfoDetector",
+            "scripts.fix_hardcoded_usernames.UserInfoDetector.__init__:22"
+          ],
+          "hash": "93f6d756b42c939a636a1e2cad540e8b5f5c95642bf5c1393f029a0712a0fc85",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-fix-hardcoded-usernames-userinfodetector---init--",
+          "summary": "Method for userinfodetector. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "UserInfoDetector",
+            "Path"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_detect_user_info",
+          "docstring": "Detect user info from .env, git config, or environment.",
+          "line_range": [
+            26,
+            62
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.fix_hardcoded_usernames.UserInfoDetector._detect_user_info:26#method",
+          "uid_components": [
+            "scripts",
+            "scripts.fix_hardcoded_usernames",
+            "scripts.fix_hardcoded_usernames.UserInfoDetector",
+            "scripts.fix_hardcoded_usernames.UserInfoDetector._detect_user_info:26"
+          ],
+          "hash": "36d2486359020426e83c130a46e96291fa29031a9f25d09ed95b8a3ebbf75474",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-fix-hardcoded-usernames-userinfodetector--detect-user-info",
+          "summary": "Detect user info from .env, git config, or environment.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "logger.info",
+            "env_vars.items",
+            "user_info.update",
+            "user_info.get",
+            "self._load_from_environment",
+            "self._load_from_git",
+            "self._load_from_env",
+            "env_info.items"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_load_from_env",
+          "docstring": "Load user info from .env file.",
+          "line_range": [
+            64,
+            86
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.fix_hardcoded_usernames.UserInfoDetector._load_from_env:64#method",
+          "uid_components": [
+            "scripts",
+            "scripts.fix_hardcoded_usernames",
+            "scripts.fix_hardcoded_usernames.UserInfoDetector",
+            "scripts.fix_hardcoded_usernames.UserInfoDetector._load_from_env:64"
+          ],
+          "hash": "55a0aa54590c20d3cedc139153a6edc508cd874996f8f84a6c6f520af7ce8619",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-fix-hardcoded-usernames-userinfodetector--load-from-env",
+          "summary": "Load user info from .env file.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "open",
+            "line.split",
+            "value.strip",
+            "env_file.exists",
+            "logger.error",
+            "line.startswith",
+            "line.strip",
+            "key.strip",
+            "env_vars.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_load_from_git",
+          "docstring": "Load user info from git config.",
+          "line_range": [
+            88,
+            120
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.fix_hardcoded_usernames.UserInfoDetector._load_from_git:88#method",
+          "uid_components": [
+            "scripts",
+            "scripts.fix_hardcoded_usernames",
+            "scripts.fix_hardcoded_usernames.UserInfoDetector",
+            "scripts.fix_hardcoded_usernames.UserInfoDetector._load_from_git:88"
+          ],
+          "hash": "afbe90f301b3475b6c6288f21aef2c5e396fd410f1324b8ce2125944ac977fb4",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-fix-hardcoded-usernames-userinfodetector--load-from-git",
+          "summary": "Load user info from git config.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "subprocess.run",
+            "re.search",
+            "match.group",
+            "logger.error"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_load_from_environment",
+          "docstring": "Load user info from environment variables.",
+          "line_range": [
+            122,
+            128
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.fix_hardcoded_usernames.UserInfoDetector._load_from_environment:122#method",
+          "uid_components": [
+            "scripts",
+            "scripts.fix_hardcoded_usernames",
+            "scripts.fix_hardcoded_usernames.UserInfoDetector",
+            "scripts.fix_hardcoded_usernames.UserInfoDetector._load_from_environment:122"
+          ],
+          "hash": "a91502c436f2f3fcd00a6f37eba3bed24eab4ca228e84869f51eecd24811aa9e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-fix-hardcoded-usernames-userinfodetector--load-from-environment",
+          "summary": "Load user info from environment variables.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "get_user_info",
+          "docstring": "Get detected user information.",
+          "line_range": [
+            130,
+            132
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.fix_hardcoded_usernames.UserInfoDetector.get_user_info:130#method",
+          "uid_components": [
+            "scripts",
+            "scripts.fix_hardcoded_usernames",
+            "scripts.fix_hardcoded_usernames.UserInfoDetector",
+            "scripts.fix_hardcoded_usernames.UserInfoDetector.get_user_info:130"
+          ],
+          "hash": "e6c50b40dba6c5b9d3982137540424ef3ec02d8602e32e8a175786aa0519dea4",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-fix-hardcoded-usernames-userinfodetector-get-user-info",
+          "summary": "Get detected user information.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "scripts.fix_hardcoded_usernames.UserInfoDetector:19#class",
+      "uid_components": [
+        "scripts",
+        "scripts.fix_hardcoded_usernames",
+        "scripts.fix_hardcoded_usernames.UserInfoDetector:19"
+      ],
+      "hash": "659135c5173aa8e7da8df054b36ee2ebeb5a92bc7ddcdc36a1aa17f87519f1f2",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-fix-hardcoded-usernames-userinfodetector",
+      "summary": "Detect user information from various sources.",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "HardcodeFixer",
+      "docstring": "Fix hardcoded usernames in project files.",
+      "line_range": [
+        135,
+        231
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            138,
+            148
+          ],
+          "parameters": [
+            "self",
+            "project_root"
+          ],
+          "uid": "scripts.fix_hardcoded_usernames.HardcodeFixer.__init__:138#method",
+          "uid_components": [
+            "scripts",
+            "scripts.fix_hardcoded_usernames",
+            "scripts.fix_hardcoded_usernames.HardcodeFixer",
+            "scripts.fix_hardcoded_usernames.HardcodeFixer.__init__:138"
+          ],
+          "hash": "7d183841459aa6257d416f8e19b73ad10b133449f1120a48c8433913114b8c24",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-fix-hardcoded-usernames-hardcodefixer---init--",
+          "summary": "Method for hardcodefixer. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "UserInfoDetector",
+            "Path"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "scan_files",
+          "docstring": "Scan for files containing hardcoded usernames.",
+          "line_range": [
+            150,
+            172
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.fix_hardcoded_usernames.HardcodeFixer.scan_files:150#method",
+          "uid_components": [
+            "scripts",
+            "scripts.fix_hardcoded_usernames",
+            "scripts.fix_hardcoded_usernames.HardcodeFixer",
+            "scripts.fix_hardcoded_usernames.HardcodeFixer.scan_files:150"
+          ],
+          "hash": "779c247595b470545e891c3783d5bc6872e1e4c2c8ca86ec4f73ca4dc8b1a1f8",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-fix-hardcoded-usernames-hardcodefixer-scan-files",
+          "summary": "Scan for files containing hardcoded usernames.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "str",
+            "open",
+            "f.read",
+            "any",
+            "content.count",
+            "logger.warning",
+            "files_with_hardcode.append"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "fix_file",
+          "docstring": "Fix hardcoded usernames in a single file.",
+          "line_range": [
+            174,
+            200
+          ],
+          "parameters": [
+            "self",
+            "file_path",
+            "dry_run"
+          ],
+          "uid": "scripts.fix_hardcoded_usernames.HardcodeFixer.fix_file:174#method",
+          "uid_components": [
+            "scripts",
+            "scripts.fix_hardcoded_usernames",
+            "scripts.fix_hardcoded_usernames.HardcodeFixer",
+            "scripts.fix_hardcoded_usernames.HardcodeFixer.fix_file:174"
+          ],
+          "hash": "7866e4450d49eb05427fcf458ba10a1db40a0f63f1ddc934454fbcea56e25148",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-fix-hardcoded-usernames-hardcodefixer-fix-file",
+          "summary": "Fix hardcoded usernames in a single file.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "open",
+            "f.read",
+            "logger.info",
+            "content.replace",
+            "logger.error",
+            "content.count",
+            "f.write"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "fix_all_files",
+          "docstring": "Fix hardcoded usernames in all project files.",
+          "line_range": [
+            202,
+            214
+          ],
+          "parameters": [
+            "self",
+            "dry_run"
+          ],
+          "uid": "scripts.fix_hardcoded_usernames.HardcodeFixer.fix_all_files:202#method",
+          "uid_components": [
+            "scripts",
+            "scripts.fix_hardcoded_usernames",
+            "scripts.fix_hardcoded_usernames.HardcodeFixer",
+            "scripts.fix_hardcoded_usernames.HardcodeFixer.fix_all_files:202"
+          ],
+          "hash": "50896427cb94b928cd48e3449178db2cd1bf4193b6492f5da9369b99cd1480c7",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-fix-hardcoded-usernames-hardcodefixer-fix-all-files",
+          "summary": "Fix hardcoded usernames in all project files.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "str",
+            "logger.info",
+            "self.scan_files",
+            "self.fix_file",
+            "len"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "generate_env_template",
+          "docstring": "Generate .env template with required variables.",
+          "line_range": [
+            216,
+            231
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.fix_hardcoded_usernames.HardcodeFixer.generate_env_template:216#method",
+          "uid_components": [
+            "scripts",
+            "scripts.fix_hardcoded_usernames",
+            "scripts.fix_hardcoded_usernames.HardcodeFixer",
+            "scripts.fix_hardcoded_usernames.HardcodeFixer.generate_env_template:216"
+          ],
+          "hash": "80875a689c805a2947c32c4f54b5a551e74682beb21db614aec5ae58af61dc9b",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-fix-hardcoded-usernames-hardcodefixer-generate-env-template",
+          "summary": "Generate .env template with required variables.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "scripts.fix_hardcoded_usernames.HardcodeFixer:135#class",
+      "uid_components": [
+        "scripts",
+        "scripts.fix_hardcoded_usernames",
+        "scripts.fix_hardcoded_usernames.HardcodeFixer:135"
+      ],
+      "hash": "86af093eb895a1c23fcac936a1a138cef3eea1e76b818d9916b036c708de592c",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-fix-hardcoded-usernames-hardcodefixer",
+      "summary": "Fix hardcoded usernames in project files.",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "print",
+    "open",
+    "logger.info",
+    "fixer.generate_env_template",
+    "fixer.fix_all_files",
+    "parser.add_argument",
+    "argparse.ArgumentParser",
+    "replacements.items",
+    "len",
+    "fixer.scan_files",
+    "HardcodeFixer",
+    "results.items",
+    "f.write",
+    "Path",
+    "parser.parse_args",
+    "UserInfoDetector",
+    "Path",
+    "logger.info",
+    "env_vars.items",
+    "user_info.update",
+    "user_info.get",
+    "self._load_from_environment",
+    "self._load_from_git",
+    "self._load_from_env",
+    "env_info.items",
+    "open",
+    "line.split",
+    "value.strip",
+    "env_file.exists",
+    "logger.error",
+    "line.startswith",
+    "line.strip",
+    "key.strip",
+    "env_vars.get",
+    "subprocess.run",
+    "re.search",
+    "match.group",
+    "logger.error",
+    "UserInfoDetector",
+    "Path",
+    "str",
+    "open",
+    "f.read",
+    "any",
+    "content.count",
+    "logger.warning",
+    "files_with_hardcode.append",
+    "open",
+    "f.read",
+    "logger.info",
+    "content.replace",
+    "logger.error",
+    "content.count",
+    "f.write",
+    "str",
+    "logger.info",
+    "self.scan_files",
+    "self.fix_file",
+    "len"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.787297",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:93d603c2e600f84e",
+    "lines_of_code": 14
+  }
+}

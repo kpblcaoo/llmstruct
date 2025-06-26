@@ -1,0 +1,65 @@
+{
+  "module_info": {
+    "uid": "llmstruct.modules.cli.review",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.modules.cli.review with 1 functions",
+    "hash": "sha256:d9f4a3b78f92b34d",
+    "dependencies": [
+      "logging"
+    ],
+    "exports": [
+      "review"
+    ]
+  },
+  "functions": [
+    {
+      "name": "review",
+      "docstring": "Review codebase with LLM.",
+      "line_range": [
+        3,
+        5
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.review.review:3#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.review",
+        "llmstruct.modules.cli.review.review:3"
+      ],
+      "hash": "ecefa9a7de23c921651c3ca2521eb84576aa734b46a1f552f49e435875a72e55",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-review-review",
+      "summary": "Review codebase with LLM.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logging.warning"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "logging.warning"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.863710",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:d9f4a3b78f92b34d",
+    "lines_of_code": 1
+  }
+}

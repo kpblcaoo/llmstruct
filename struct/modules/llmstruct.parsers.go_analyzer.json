@@ -1,0 +1,497 @@
+{
+  "module_info": {
+    "uid": "llmstruct.parsers.go_analyzer",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.parsers.go_analyzer with 5 functions and 1 classes",
+    "hash": "sha256:c0a2c25c96b8d16a",
+    "dependencies": [
+      "analyzer_file",
+      "analyzer_source",
+      "content",
+      "file_path",
+      "go_mod_path",
+      "json",
+      "line",
+      "logging",
+      "packages",
+      "self",
+      "shutil",
+      "subprocess",
+      "tempfile"
+    ],
+    "exports": [
+      "GoAnalyzer",
+      "analyze_project"
+    ]
+  },
+  "functions": [
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        24,
+        26
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.go_analyzer.__init__:24#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.go_analyzer",
+        "llmstruct.parsers.go_analyzer.__init__:24"
+      ],
+      "hash": "73289a34394d70bd49e0ef4790249c9c21dd4ffc95af85ffcbe09e98af541e92",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-go-analyzer---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "_setup_analyzer",
+      "docstring": "Настраивает временную среду для анализатора",
+      "line_range": [
+        28,
+        66
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.go_analyzer._setup_analyzer:28#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.go_analyzer",
+        "llmstruct.parsers.go_analyzer._setup_analyzer:28"
+      ],
+      "hash": "07c62b3c282b045f57e6d586abd73cf23d8aca0545d2bca7b8cd3e31034190e6",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-go-analyzer--setup-analyzer",
+      "summary": "Настраивает временную среду для анализатора",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "subprocess.run",
+        "str",
+        "analyzer_file.write_text",
+        "logging.warning",
+        "analyzer_source.read_text",
+        "tempfile.mkdtemp",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_cleanup",
+      "docstring": "Очищает временные файлы",
+      "line_range": [
+        68,
+        72
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.go_analyzer._cleanup:68#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.go_analyzer",
+        "llmstruct.parsers.go_analyzer._cleanup:68"
+      ],
+      "hash": "4d1926ca9b8732303f11a9635a56e68bf2bd0172476bbb73a771b015bc33d5e1",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-go-analyzer--cleanup",
+      "summary": "Очищает временные файлы",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "shutil.rmtree",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "analyze_project",
+      "docstring": "Анализирует Go проект",
+      "line_range": [
+        74,
+        125
+      ],
+      "parameters": [
+        "self",
+        "project_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.go_analyzer.analyze_project:74#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.go_analyzer",
+        "llmstruct.parsers.go_analyzer.analyze_project:74"
+      ],
+      "hash": "1f68bb098a115f2659701f316c2d106324c6000199a95921729b7c0eb5d894f6",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-go-analyzer-analyze-project",
+      "summary": "Анализирует Go проект",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "subprocess.run",
+        "logging.info",
+        "json.loads",
+        "self._fallback_analysis",
+        "self._cleanup",
+        "self._setup_analyzer",
+        "logging.error",
+        "logging.warning"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_fallback_analysis",
+      "docstring": "Fallback анализ через простой парсинг файлов",
+      "line_range": [
+        127,
+        201
+      ],
+      "parameters": [
+        "self",
+        "project_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.go_analyzer._fallback_analysis:127#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.go_analyzer",
+        "llmstruct.parsers.go_analyzer._fallback_analysis:127"
+      ],
+      "hash": "1e57cc4ddae332baa6731dd1a354a71095677d49cf5dad9a382d398a5e104f70",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-go-analyzer--fallback-analysis",
+      "summary": "Fallback анализ через простой парсинг файлов",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "str",
+        "logging.info",
+        "packages.add",
+        "line.split",
+        "set",
+        "go_mod_path.read_text",
+        "sorted",
+        "content.split",
+        "list",
+        "line.startswith",
+        "file_path.read_text",
+        "line.strip",
+        "logging.warning",
+        "len",
+        "go_mod_path.exists",
+        "file_path.relative_to",
+        "Path"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "GoAnalyzer",
+      "docstring": "Универсальный анализатор Go проектов",
+      "line_range": [
+        21,
+        201
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            24,
+            26
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.parsers.go_analyzer.GoAnalyzer.__init__:24#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.go_analyzer",
+            "llmstruct.parsers.go_analyzer.GoAnalyzer",
+            "llmstruct.parsers.go_analyzer.GoAnalyzer.__init__:24"
+          ],
+          "hash": "665db2cc93a062ac242dcb02c0a9fe15bb874d4f6131fd416666d9dc58017539",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-go-analyzer-goanalyzer---init--",
+          "summary": "Method for goanalyzer. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "_setup_analyzer",
+          "docstring": "Настраивает временную среду для анализатора",
+          "line_range": [
+            28,
+            66
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.parsers.go_analyzer.GoAnalyzer._setup_analyzer:28#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.go_analyzer",
+            "llmstruct.parsers.go_analyzer.GoAnalyzer",
+            "llmstruct.parsers.go_analyzer.GoAnalyzer._setup_analyzer:28"
+          ],
+          "hash": "5629fd8be9f03119e916793c2a0c7f7c3a1e0a3be40a94ff7346cef1a863d7d2",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-go-analyzer-goanalyzer--setup-analyzer",
+          "summary": "Настраивает временную среду для анализатора",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "subprocess.run",
+            "str",
+            "analyzer_file.write_text",
+            "logging.warning",
+            "analyzer_source.read_text",
+            "tempfile.mkdtemp",
+            "Path"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_cleanup",
+          "docstring": "Очищает временные файлы",
+          "line_range": [
+            68,
+            72
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.parsers.go_analyzer.GoAnalyzer._cleanup:68#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.go_analyzer",
+            "llmstruct.parsers.go_analyzer.GoAnalyzer",
+            "llmstruct.parsers.go_analyzer.GoAnalyzer._cleanup:68"
+          ],
+          "hash": "cf403ad4ba6eefb2b8442720397f69f1ee1cddf5b1d010441b686f3604274531",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-go-analyzer-goanalyzer--cleanup",
+          "summary": "Очищает временные файлы",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "shutil.rmtree",
+            "Path"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "analyze_project",
+          "docstring": "Анализирует Go проект",
+          "line_range": [
+            74,
+            125
+          ],
+          "parameters": [
+            "self",
+            "project_path"
+          ],
+          "uid": "llmstruct.parsers.go_analyzer.GoAnalyzer.analyze_project:74#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.go_analyzer",
+            "llmstruct.parsers.go_analyzer.GoAnalyzer",
+            "llmstruct.parsers.go_analyzer.GoAnalyzer.analyze_project:74"
+          ],
+          "hash": "930237fddbe938b91ce1322f9bd8dcc24e927b3b9d8ee49e913c8128d2f63ba3",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-go-analyzer-goanalyzer-analyze-project",
+          "summary": "Анализирует Go проект",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "subprocess.run",
+            "logging.info",
+            "json.loads",
+            "self._fallback_analysis",
+            "self._cleanup",
+            "self._setup_analyzer",
+            "logging.error",
+            "logging.warning"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_fallback_analysis",
+          "docstring": "Fallback анализ через простой парсинг файлов",
+          "line_range": [
+            127,
+            201
+          ],
+          "parameters": [
+            "self",
+            "project_path"
+          ],
+          "uid": "llmstruct.parsers.go_analyzer.GoAnalyzer._fallback_analysis:127#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.go_analyzer",
+            "llmstruct.parsers.go_analyzer.GoAnalyzer",
+            "llmstruct.parsers.go_analyzer.GoAnalyzer._fallback_analysis:127"
+          ],
+          "hash": "63c8d7aed1da8a3ae2b910cb14b87dd58b559051aa36a4122da4f79c736bb139",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-go-analyzer-goanalyzer--fallback-analysis",
+          "summary": "Fallback анализ через простой парсинг файлов",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "str",
+            "logging.info",
+            "packages.add",
+            "line.split",
+            "set",
+            "go_mod_path.read_text",
+            "sorted",
+            "content.split",
+            "list",
+            "line.startswith",
+            "file_path.read_text",
+            "line.strip",
+            "logging.warning",
+            "len",
+            "go_mod_path.exists",
+            "file_path.relative_to",
+            "Path"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.parsers.go_analyzer.GoAnalyzer:21#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.go_analyzer",
+        "llmstruct.parsers.go_analyzer.GoAnalyzer:21"
+      ],
+      "hash": "20a5addcbf0c936c5bcce9a06a5b784b0424036ed6a17656c87af78ba1acc242",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-go-analyzer-goanalyzer",
+      "summary": "Универсальный анализатор Go проектов",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "subprocess.run",
+    "str",
+    "analyzer_file.write_text",
+    "logging.warning",
+    "analyzer_source.read_text",
+    "tempfile.mkdtemp",
+    "Path",
+    "shutil.rmtree",
+    "Path",
+    "subprocess.run",
+    "logging.info",
+    "json.loads",
+    "self._fallback_analysis",
+    "self._cleanup",
+    "self._setup_analyzer",
+    "logging.error",
+    "logging.warning",
+    "str",
+    "logging.info",
+    "packages.add",
+    "line.split",
+    "set",
+    "go_mod_path.read_text",
+    "sorted",
+    "content.split",
+    "list",
+    "line.startswith",
+    "file_path.read_text",
+    "line.strip",
+    "logging.warning",
+    "len",
+    "go_mod_path.exists",
+    "file_path.relative_to",
+    "Path"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.850126",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:c0a2c25c96b8d16a",
+    "lines_of_code": 6
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "module_info": {
+    "uid": "llmstruct.generators.go_json_generator",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.generators.go_json_generator with 4 functions",
+    "hash": "sha256:0074c2a852a27f9b",
+    "dependencies": [
+      "content",
+      "dependencies",
+      "f",
+      "file_path",
+      "go_mod_info",
+      "go_mod_path",
+      "line",
+      "logging",
+      "m",
+      "module",
+      "modules",
+      "os",
+      "p",
+      "structure",
+      "toc",
+      "uuid"
+    ],
+    "exports": [
+      "build_go_toc_and_modules",
+      "extract_go_mod_info",
+      "generate_go_json",
+      "get_go_folder_structure"
+    ]
+  },
+  "functions": [
+    {
+      "name": "get_go_folder_structure",
+      "docstring": "Capture directory and file structure for Go projects with artifact_id, respecting .gitignore and patterns.",
+      "line_range": [
+        15,
+        85
+      ],
+      "parameters": [
+        "root_dir",
+        "gitignore_patterns",
+        "include_patterns",
+        "exclude_patterns",
+        "exclude_dirs"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.generators.go_json_generator.get_go_folder_structure:15#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.generators",
+        "llmstruct.generators.go_json_generator",
+        "llmstruct.generators.go_json_generator.get_go_folder_structure:15"
+      ],
+      "hash": "3164b468cae908bf3424dc6388b53468b3d5ca15b708e7ad4c117871010850d7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-generators-go-json-generator-get-go-folder-structure",
+      "summary": "Capture directory and file structure for Go projects with artifact_id, respecting .gitignore and patterns.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "p.rstrip",
+        "p.endswith",
+        "uuid.uuid4",
+        "set",
+        "file_path.relative_to",
+        "any",
+        "structure.append",
+        "sorted",
+        "file_path.match",
+        "os.walk",
+        "Path"
+      ],
+      "called_by": [
+        "generate_go_json"
+      ]
+    },
+    {
+      "name": "build_go_toc_and_modules",
+      "docstring": "Build TOC and modules for Go projects with artifact_id and robust filtering.",
+      "line_range": [
+        88,
+        143
+      ],
+      "parameters": [
+        "root_dir",
+        "include_patterns",
+        "exclude_patterns",
+        "gitignore_patterns",
+        "include_ranges",
+        "include_hashes",
+        "exclude_dirs"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.generators.go_json_generator.build_go_toc_and_modules:88#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.generators",
+        "llmstruct.generators.go_json_generator",
+        "llmstruct.generators.go_json_generator.build_go_toc_and_modules:88"
+      ],
+      "hash": "96c13f35dd3548f0ab2d308201e5999eb71c9be7e297d22b3272df59068d6ef9",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-generators-go-json-generator-build-go-toc-and-modules",
+      "summary": "Build TOC and modules for Go projects with artifact_id and robust filtering.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "p.rstrip",
+        "p.endswith",
+        "f.match",
+        "set",
+        "uuid.uuid4",
+        "toc.append",
+        "any",
+        "module.get",
+        "analyze_module",
+        "len",
+        "modules.append",
+        "Path"
+      ],
+      "called_by": [
+        "generate_go_json"
+      ]
+    },
+    {
+      "name": "extract_go_mod_info",
+      "docstring": "Extract information from go.mod file.",
+      "line_range": [
+        146,
+        182
+      ],
+      "parameters": [
+        "root_dir"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.generators.go_json_generator.extract_go_mod_info:146#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.generators",
+        "llmstruct.generators.go_json_generator",
+        "llmstruct.generators.go_json_generator.extract_go_mod_info:146"
+      ],
+      "hash": "73081d99831487144acbdeceb76226995a0bf9fd5bccdfa3bd1bb3bbdda3d0f0",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-generators-go-json-generator-extract-go-mod-info",
+      "summary": "Extract information from go.mod file.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "f.read",
+        "open",
+        "line.split",
+        "dependencies.append",
+        "line.startswith",
+        "line.strip",
+        "content.strip",
+        "logging.error",
+        "len",
+        "go_mod_path.exists",
+        "Path"
+      ],
+      "called_by": [
+        "generate_go_json"
+      ]
+    },
+    {
+      "name": "generate_go_json",
+      "docstring": "Generate JSON structure for Go project with artifact_id, summary, and tags.",
+      "line_range": [
+        185,
+        259
+      ],
+      "parameters": [
+        "root_dir",
+        "include_patterns",
+        "exclude_patterns",
+        "gitignore_patterns",
+        "include_ranges",
+        "include_hashes",
+        "goals",
+        "exclude_dirs"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.generators.go_json_generator.generate_go_json:185#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.generators",
+        "llmstruct.generators.go_json_generator",
+        "llmstruct.generators.go_json_generator.generate_go_json:185"
+      ],
+      "hash": "d89b0107ee87e17082b4529db9594d2e6b2d0b5491d11ebf917fded1087b7899",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-generators-go-json-generator-generate-go-json",
+      "summary": "Generate JSON structure for Go project with artifact_id, summary, and tags.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "uuid.uuid4",
+        "set",
+        "sum",
+        "list",
+        "go_mod_info.get",
+        "build_go_toc_and_modules",
+        "m.get",
+        "extract_go_mod_info",
+        "len",
+        "get_go_folder_structure",
+        "Path"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "str",
+    "p.rstrip",
+    "p.endswith",
+    "uuid.uuid4",
+    "set",
+    "file_path.relative_to",
+    "any",
+    "structure.append",
+    "sorted",
+    "file_path.match",
+    "os.walk",
+    "Path",
+    "str",
+    "p.rstrip",
+    "p.endswith",
+    "f.match",
+    "set",
+    "uuid.uuid4",
+    "toc.append",
+    "any",
+    "module.get",
+    "analyze_module",
+    "len",
+    "modules.append",
+    "Path",
+    "f.read",
+    "open",
+    "line.split",
+    "dependencies.append",
+    "line.startswith",
+    "line.strip",
+    "content.strip",
+    "logging.error",
+    "len",
+    "go_mod_path.exists",
+    "Path",
+    "str",
+    "uuid.uuid4",
+    "set",
+    "sum",
+    "list",
+    "go_mod_info.get",
+    "build_go_toc_and_modules",
+    "m.get",
+    "extract_go_mod_info",
+    "len",
+    "get_go_folder_structure",
+    "Path"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.851789",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:0074c2a852a27f9b",
+    "lines_of_code": 4
+  }
+}

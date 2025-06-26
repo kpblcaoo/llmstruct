@@ -1,0 +1,145 @@
+{
+  "module_info": {
+    "uid": "llmstruct.self_run",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.self_run with 2 functions",
+    "hash": "sha256:b5a1c6a9610bfc5c",
+    "dependencies": [
+      "cache",
+      "context_file",
+      "item",
+      "json",
+      "logging",
+      "module",
+      "prompt",
+      "struct"
+    ],
+    "exports": [
+      "attach_to_llm_request",
+      "filter_struct"
+    ]
+  },
+  "functions": [
+    {
+      "name": "filter_struct",
+      "docstring": "Filter struct.json or init.json based on prompt keywords. Supports dict or list as root.",
+      "line_range": [
+        22,
+        73
+      ],
+      "parameters": [
+        "struct",
+        "prompt"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.self_run.filter_struct:22#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.self_run",
+        "llmstruct.self_run.filter_struct:22"
+      ],
+      "hash": "645dfda135815437a2953855f0583597545a6ff13713faf3b4c9c32738c57aaf",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-self-run-filter-struct",
+      "summary": "Filter struct.json or init.json based on prompt keywords",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "item.get",
+        "filter_json",
+        "isinstance",
+        "any",
+        "module.get",
+        "struct.get",
+        "prompt.lower"
+      ],
+      "called_by": [
+        "attach_to_llm_request"
+      ]
+    },
+    {
+      "name": "attach_to_llm_request",
+      "docstring": "Attach filtered JSON to LLM prompt, using cache if available.",
+      "line_range": [
+        76,
+        116
+      ],
+      "parameters": [
+        "context_path",
+        "prompt",
+        "cache"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.self_run.attach_to_llm_request:76#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.self_run",
+        "llmstruct.self_run.attach_to_llm_request:76"
+      ],
+      "hash": "d2418f897524e93cf88f27a25f7a97cab16977e53b8cd5b1e6151ababe2d7845",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-self-run-attach-to-llm-request",
+      "summary": "Attach filtered JSON to LLM prompt, using cache if available.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logging.info",
+        "cache.get_full_json",
+        "filter_struct",
+        "filter_json",
+        "json.dumps",
+        "logging.error",
+        "context_file.exists",
+        "select_json",
+        "cache.cache_json",
+        "prompt.lower",
+        "cache.get_metadata",
+        "Path"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "str",
+    "item.get",
+    "filter_json",
+    "isinstance",
+    "any",
+    "module.get",
+    "struct.get",
+    "prompt.lower",
+    "logging.info",
+    "cache.get_full_json",
+    "filter_struct",
+    "filter_json",
+    "json.dumps",
+    "logging.error",
+    "context_file.exists",
+    "select_json",
+    "cache.cache_json",
+    "prompt.lower",
+    "cache.get_metadata",
+    "Path"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.765532",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:b5a1c6a9610bfc5c",
+    "lines_of_code": 2
+  }
+}

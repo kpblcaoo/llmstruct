@@ -1,0 +1,24 @@
+{
+  "module_info": {
+    "uid": "llmstruct.parsers.__init__",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.parsers.__init__ (empty)",
+    "hash": "sha256:15a7848c8079bd0f",
+    "dependencies": [],
+    "exports": []
+  },
+  "functions": [],
+  "classes": [],
+  "imports": [],
+  "calls": [],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.850583",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:15a7848c8079bd0f",
+    "lines_of_code": 0
+  }
+}

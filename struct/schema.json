@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LLMStruct v2.1 struct/ Directory Schema",
+  "description": "Schema for validating LLMStruct modular structure",
+  "type": "object",
+  "definitions": {
+    "module_info": {
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string"
+        },
+        "file_path": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "summary": {
+          "type": "string"
+        },
+        "hash": {
+          "type": "string"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exports": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "uid",
+        "file_path",
+        "tags",
+        "summary",
+        "hash"
+      ]
+    }
+  }
+}

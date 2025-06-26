@@ -1,0 +1,107 @@
+{
+  "module_info": {
+    "uid": "llmstruct.modules.cli.analyze_duplicates",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.modules.cli.analyze_duplicates with 1 functions",
+    "hash": "sha256:09d35cb6a7711871",
+    "dependencies": [
+      "analysis",
+      "duplicates",
+      "duplication_data",
+      "filtered_duplicates",
+      "json",
+      "orchestrator",
+      "r",
+      "rec",
+      "traceback"
+    ],
+    "exports": [
+      "analyze_duplicates"
+    ]
+  },
+  "functions": [
+    {
+      "name": "analyze_duplicates",
+      "docstring": "Analyze function duplication using struct.json deep analysis.",
+      "line_range": [
+        1,
+        81
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.analyze_duplicates.analyze_duplicates:1#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.analyze_duplicates",
+        "llmstruct.modules.cli.analyze_duplicates.analyze_duplicates:1"
+      ],
+      "hash": "fa04a3e02e210b59029b9112ff9f8874b1d358018bac09470d10b8ca0cb86937",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-analyze-duplicates-analyze-duplicates",
+      "summary": "Analyze function duplication using struct.json deep analysis.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "getattr",
+        "open",
+        "analysis.get",
+        "r.get",
+        "WorkflowOrchestrator",
+        "filtered_duplicates.items",
+        "json.dumps",
+        "enumerate",
+        "json.dump",
+        "rec.get",
+        "orchestrator.analyze_codebase_for_duplicates",
+        "sorted",
+        "duplication_data.get",
+        "traceback.print_exc",
+        "duplicates.items",
+        "hasattr",
+        "len"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "print",
+    "getattr",
+    "open",
+    "analysis.get",
+    "r.get",
+    "WorkflowOrchestrator",
+    "filtered_duplicates.items",
+    "json.dumps",
+    "enumerate",
+    "json.dump",
+    "rec.get",
+    "orchestrator.analyze_codebase_for_duplicates",
+    "sorted",
+    "duplication_data.get",
+    "traceback.print_exc",
+    "duplicates.items",
+    "hasattr",
+    "len"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.863090",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:09d35cb6a7711871",
+    "lines_of_code": 1
+  }
+}

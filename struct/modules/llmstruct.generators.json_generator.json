@@ -1,0 +1,342 @@
+{
+  "module_info": {
+    "uid": "llmstruct.generators.json_generator",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.generators.json_generator with 6 functions",
+    "hash": "sha256:a316eae806c3f8e2",
+    "dependencies": [
+      "abs_dir_path",
+      "cls",
+      "file_path",
+      "func",
+      "json",
+      "method",
+      "module",
+      "os",
+      "output_file",
+      "p",
+      "structure",
+      "uuid"
+    ],
+    "exports": [
+      "build_toc_and_modules",
+      "generate_json",
+      "generate_json_with_output_file",
+      "get_folder_structure",
+      "is_included_dir",
+      "norm_dirname"
+    ]
+  },
+  "functions": [
+    {
+      "name": "get_folder_structure",
+      "docstring": "Capture directory and file structure with artifact_id, respecting .gitignore and patterns.",
+      "line_range": [
+        17,
+        91
+      ],
+      "parameters": [
+        "root_dir",
+        "gitignore_patterns",
+        "include_patterns",
+        "exclude_patterns",
+        "exclude_dirs"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.generators.json_generator.get_folder_structure:17#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.generators",
+        "llmstruct.generators.json_generator",
+        "llmstruct.generators.json_generator.get_folder_structure:17"
+      ],
+      "hash": "aa0b0c72e55a125de7cedc95c17d644f82771d575ac6b678a92db3c3201a4f38",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-generators-json-generator-get-folder-structure",
+      "summary": "Capture directory and file structure with artifact_id, respecting .gitignore and patterns.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "abs_dir_path.relative_to",
+        "p.rstrip",
+        "p.endswith",
+        "uuid.uuid4",
+        "set",
+        "file_path.relative_to",
+        "any",
+        "abs_dir_path.joinpath",
+        "structure.append",
+        "sorted",
+        "file_path.match",
+        "os.walk",
+        "Path",
+        "abs_dir_path.match"
+      ],
+      "called_by": [
+        "generate_json"
+      ]
+    },
+    {
+      "name": "build_toc_and_modules",
+      "docstring": "Build TOC and modules with artifact_id and robust filtering. Поддержка include_dirs.",
+      "line_range": [
+        94,
+        164
+      ],
+      "parameters": [
+        "root_dir",
+        "include_patterns",
+        "exclude_patterns",
+        "gitignore_patterns",
+        "include_ranges",
+        "include_hashes",
+        "exclude_dirs",
+        "include_dirs"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.generators.json_generator.build_toc_and_modules:94#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.generators",
+        "llmstruct.generators.json_generator",
+        "llmstruct.generators.json_generator.build_toc_and_modules:94"
+      ],
+      "hash": "a81b49791194e659adcdc493472db2c82560c057484c1f6fb9133eebb8becd83",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-generators-json-generator-build-toc-and-modules",
+      "summary": "Build TOC and modules with artifact_id and robust filtering",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": [
+        "generate_json"
+      ]
+    },
+    {
+      "name": "generate_json",
+      "docstring": "Generate JSON structure for project with artifact_id, summary, and tags. Поддержка include_dirs.",
+      "line_range": [
+        167,
+        252
+      ],
+      "parameters": [
+        "root_dir",
+        "include_patterns",
+        "exclude_patterns",
+        "gitignore_patterns",
+        "include_ranges",
+        "include_hashes",
+        "goals",
+        "exclude_dirs",
+        "include_dirs"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.generators.json_generator.generate_json:167#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.generators",
+        "llmstruct.generators.json_generator",
+        "llmstruct.generators.json_generator.generate_json:167"
+      ],
+      "hash": "08ae70cc0a805dbe7df10f63a17c8db3b040f1800f8e948ecfa171352b05d309",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-generators-json-generator-generate-json",
+      "summary": "Generate JSON structure for project with artifact_id, summary, and tags",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "uuid.uuid4",
+        "cls.get",
+        "method.get",
+        "module.get",
+        "sum",
+        "get_folder_structure",
+        "build_toc_and_modules",
+        "infer_tags",
+        "len",
+        "func.get",
+        "Path"
+      ],
+      "called_by": [
+        "generate_json_with_output_file"
+      ]
+    },
+    {
+      "name": "generate_json_with_output_file",
+      "docstring": "",
+      "line_range": [
+        255,
+        287
+      ],
+      "parameters": [
+        "root_dir",
+        "output_file",
+        "gitignore_patterns",
+        "include_patterns",
+        "exclude_patterns",
+        "exclude_dirs",
+        "include_ranges",
+        "include_hashes",
+        "goals",
+        "generate_index"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.generators.json_generator.generate_json_with_output_file:255#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.generators",
+        "llmstruct.generators.json_generator",
+        "llmstruct.generators.json_generator.generate_json_with_output_file:255"
+      ],
+      "hash": "ddb1a88592d9e90dfb7b123a9c57a197759602ce7e517071f23ac1ab233a80dc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-generators-json-generator-generate-json-with-output-file",
+      "summary": "Function for generate json with output file",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "open",
+        "generate_json",
+        "save_index_json",
+        "output_file.replace",
+        "json.dump"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "norm_dirname",
+      "docstring": "",
+      "line_range": [
+        116,
+        117
+      ],
+      "parameters": [
+        "d"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.generators.json_generator.norm_dirname:116#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.generators",
+        "llmstruct.generators.json_generator",
+        "llmstruct.generators.json_generator.norm_dirname:116"
+      ],
+      "hash": "c825f2ae3487d8875bfe16d6558825e22b1d32471c89d57fc9f60a86bc9fad28",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-generators-json-generator-norm-dirname",
+      "summary": "Function for norm dirname",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": [
+        "is_included_dir"
+      ]
+    },
+    {
+      "name": "is_included_dir",
+      "docstring": "",
+      "line_range": [
+        126,
+        130
+      ],
+      "parameters": [
+        "f"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.generators.json_generator.is_included_dir:126#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.generators",
+        "llmstruct.generators.json_generator",
+        "llmstruct.generators.json_generator.is_included_dir:126"
+      ],
+      "hash": "c7576e392566d2a7b950e9f2c7966da058871fb408b2c33217c771d72dcb42c7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-generators-json-generator-is-included-dir",
+      "summary": "Checks if included dir",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "any",
+        "norm_dirname"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "str",
+    "abs_dir_path.relative_to",
+    "p.rstrip",
+    "p.endswith",
+    "uuid.uuid4",
+    "set",
+    "file_path.relative_to",
+    "any",
+    "abs_dir_path.joinpath",
+    "structure.append",
+    "sorted",
+    "file_path.match",
+    "os.walk",
+    "Path",
+    "abs_dir_path.match",
+    "str",
+    "uuid.uuid4",
+    "cls.get",
+    "method.get",
+    "module.get",
+    "sum",
+    "get_folder_structure",
+    "build_toc_and_modules",
+    "infer_tags",
+    "len",
+    "func.get",
+    "Path",
+    "print",
+    "open",
+    "generate_json",
+    "save_index_json",
+    "output_file.replace",
+    "json.dump",
+    "any",
+    "norm_dirname"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.852430",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:a316eae806c3f8e2",
+    "lines_of_code": 6
+  }
+}

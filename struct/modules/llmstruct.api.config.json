@@ -1,0 +1,56 @@
+{
+  "module_info": {
+    "uid": "llmstruct.api.config",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.api.config with 1 classes",
+    "hash": "sha256:1a0b6d3a52d664c2",
+    "dependencies": [],
+    "exports": [
+      "Settings"
+    ]
+  },
+  "functions": [],
+  "classes": [
+    {
+      "name": "Settings",
+      "docstring": "Application settings with environment variable support",
+      "line_range": [
+        12,
+        43
+      ],
+      "methods": [],
+      "bases": [
+        "BaseSettings"
+      ],
+      "uid": "llmstruct.api.config.Settings:12#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.config",
+        "llmstruct.api.config.Settings:12"
+      ],
+      "hash": "57b0137f17d174083cdb3d05f5ca0df7a6c49514a0885653c1d2251d5449f52a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-config-settings",
+      "summary": "Application settings with environment variable support",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.839011",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:1a0b6d3a52d664c2",
+    "lines_of_code": 1
+  }
+}

@@ -1,0 +1,1401 @@
+{
+  "module_info": {
+    "uid": "scripts.process_926_items",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.process_926_items with 16 functions and 1 classes",
+    "hash": "sha256:c97e2b886230226c",
+    "dependencies": [
+      "category",
+      "data",
+      "datetime",
+      "descriptions",
+      "duplicate_item_ids",
+      "duplicates",
+      "epic_groups",
+      "index_path",
+      "item",
+      "item1",
+      "item2",
+      "item_content",
+      "items",
+      "json",
+      "low_confidence_items",
+      "processed_item",
+      "seen_items",
+      "self",
+      "title",
+      "title1",
+      "title2",
+      "unique_items",
+      "value",
+      "words1"
+    ],
+    "exports": [
+      "TaskProcessor926",
+      "calculate_confidence_score",
+      "calculate_similarity",
+      "categorize_item",
+      "check_personal_vs_team_vs_business",
+      "check_t_pot_related",
+      "check_team_implementable",
+      "extract_epic_name",
+      "find_duplicates",
+      "get_category_description",
+      "identify_epic_candidates",
+      "load_comprehensive_index",
+      "process_items",
+      "run",
+      "save_results",
+      "suggest_merge_strategy"
+    ]
+  },
+  "functions": [
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        16,
+        51
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.process_926_items.__init__:16#function",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.__init__:16"
+      ],
+      "hash": "784a5e508bfa71c5606b6bd58be931c89abf4760b806d0e00d7c7d5c40fb79ff",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "datetime.now",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "load_comprehensive_index",
+      "docstring": "Load the 926 items from comprehensive index",
+      "line_range": [
+        53,
+        111
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.process_926_items.load_comprehensive_index:53#function",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.load_comprehensive_index:53"
+      ],
+      "hash": "a5226f8a120e8cff1287e4d3e98e3e4cc0ac2e19ab81a58b3b31d44107c6cb5c",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items-load-comprehensive-index",
+      "summary": "Load the 926 items from comprehensive index",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "items.extend",
+        "items.append",
+        "open",
+        "str",
+        "item.get",
+        "set",
+        "hash",
+        "isinstance",
+        "any",
+        "item_content.lower",
+        "seen_items.add",
+        "value.items",
+        "unique_items.append",
+        "json.load",
+        "index_path.exists",
+        "len",
+        "data.items"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "calculate_confidence_score",
+      "docstring": "Calculate confidence score for categorization decision",
+      "line_range": [
+        113,
+        146
+      ],
+      "parameters": [
+        "self",
+        "item",
+        "category"
+      ],
+      "decorators": [],
+      "uid": "scripts.process_926_items.calculate_confidence_score:113#function",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.calculate_confidence_score:113"
+      ],
+      "hash": "4adfe6d2823f1fc60ee59ce838b44074aced3095cdb72bf835be48860acac00a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items-calculate-confidence-score",
+      "summary": "Calculate confidence score for categorization decision",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "item.get",
+        "min",
+        "self.check_t_pot_related",
+        "sum"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "check_t_pot_related",
+      "docstring": "Enhanced T-Pot detection",
+      "line_range": [
+        148,
+        155
+      ],
+      "parameters": [
+        "self",
+        "item"
+      ],
+      "decorators": [],
+      "uid": "scripts.process_926_items.check_t_pot_related:148#function",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.check_t_pot_related:148"
+      ],
+      "hash": "c23cc147d361fc36bf9e50235aa6665eecac67a246204bccfc01e2f9b4f23ec0",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items-check-t-pot-related",
+      "summary": "Enhanced T-Pot detection",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "any"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "check_team_implementable",
+      "docstring": "Check if team can implement without architecture review",
+      "line_range": [
+        157,
+        176
+      ],
+      "parameters": [
+        "self",
+        "item"
+      ],
+      "decorators": [],
+      "uid": "scripts.process_926_items.check_team_implementable:157#function",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.check_team_implementable:157"
+      ],
+      "hash": "ffaf85cd52fce6e31033ecba89f4baef1c8ceeb794df429d9d1f7a1b5b3f5139",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items-check-team-implementable",
+      "summary": "Check if team can implement without architecture review",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "sum"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "check_personal_vs_team_vs_business",
+      "docstring": "Classify as personal/team/business",
+      "line_range": [
+        178,
+        214
+      ],
+      "parameters": [
+        "self",
+        "item"
+      ],
+      "decorators": [],
+      "uid": "scripts.process_926_items.check_personal_vs_team_vs_business:178#function",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.check_personal_vs_team_vs_business:178"
+      ],
+      "hash": "c45acd6bef1097508f7487392cd4f142d92e4ddc87613e3f25b2cfed66e5fd67",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items-check-personal-vs-team-vs-business",
+      "summary": "Classify as personal/team/business",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "sum",
+        "str",
+        "item.get",
+        "max"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "identify_epic_candidates",
+      "docstring": "Identify items that should be grouped into epics",
+      "line_range": [
+        216,
+        233
+      ],
+      "parameters": [
+        "self",
+        "items"
+      ],
+      "decorators": [],
+      "uid": "scripts.process_926_items.identify_epic_candidates:216#function",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.identify_epic_candidates:216"
+      ],
+      "hash": "1fa7284362dc241a7b213e19854d4b906128b235a548e187c39458988b6a7eb5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items-identify-epic-candidates",
+      "summary": "Identify items that should be grouped into epics",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "item.get",
+        "any",
+        "epic_groups.items",
+        "self.extract_epic_name",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "extract_epic_name",
+      "docstring": "Extract epic name from item",
+      "line_range": [
+        235,
+        241
+      ],
+      "parameters": [
+        "self",
+        "item"
+      ],
+      "decorators": [],
+      "uid": "scripts.process_926_items.extract_epic_name:235#function",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.extract_epic_name:235"
+      ],
+      "hash": "d4d9d90ef127bf0c16829b448c55c206d676877bf6dbca2c9059a49a3d584833",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items-extract-epic-name",
+      "summary": "Extract epic name from item",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "item.get",
+        "title.split"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "categorize_item",
+      "docstring": "Main categorization logic with confidence scoring",
+      "line_range": [
+        243,
+        278
+      ],
+      "parameters": [
+        "self",
+        "item"
+      ],
+      "decorators": [],
+      "uid": "scripts.process_926_items.categorize_item:243#function",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.categorize_item:243"
+      ],
+      "hash": "66252b63a24bc050aed1b44d8aec58d6cd427c23c7dee4b8485522e992742e7a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items-categorize-item",
+      "summary": "Main categorization logic with confidence scoring",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "self.check_t_pot_related",
+        "any",
+        "self.check_team_implementable",
+        "self.check_personal_vs_team_vs_business",
+        "self.calculate_confidence_score"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "find_duplicates",
+      "docstring": "Enhanced duplicate detection with T-Pot special handling",
+      "line_range": [
+        280,
+        319
+      ],
+      "parameters": [
+        "self",
+        "items"
+      ],
+      "decorators": [],
+      "uid": "scripts.process_926_items.find_duplicates:280#function",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.find_duplicates:280"
+      ],
+      "hash": "21210da965c7e5df63b92413c707ef5f5d0867cc1201c8f6307db8c7f9ccc087",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items-find-duplicates",
+      "summary": "Enhanced duplicate detection with T-Pot special handling",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "duplicates.append",
+        "seen_items.items",
+        "item.get",
+        "self.check_t_pot_related",
+        "self.suggest_merge_strategy",
+        "self.calculate_similarity"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "calculate_similarity",
+      "docstring": "Enhanced similarity calculation",
+      "line_range": [
+        321,
+        342
+      ],
+      "parameters": [
+        "self",
+        "title1",
+        "title2"
+      ],
+      "decorators": [],
+      "uid": "scripts.process_926_items.calculate_similarity:321#function",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.calculate_similarity:321"
+      ],
+      "hash": "a00ac21e6e9ac940b392d7d82431cb5a562093c155cb91c3cad39a637c69743c",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items-calculate-similarity",
+      "summary": "Enhanced similarity calculation",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "set",
+        "min",
+        "title1.split",
+        "len",
+        "title2.split",
+        "words1.union",
+        "words1.intersection"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "suggest_merge_strategy",
+      "docstring": "Enhanced merge strategy with T-Pot consideration",
+      "line_range": [
+        344,
+        359
+      ],
+      "parameters": [
+        "self",
+        "item1",
+        "item2"
+      ],
+      "decorators": [],
+      "uid": "scripts.process_926_items.suggest_merge_strategy:344#function",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.suggest_merge_strategy:344"
+      ],
+      "hash": "d9497d608ad20c59807364d3a806ad21707bbf0063e012d0bcbb5d0570e2cad3",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items-suggest-merge-strategy",
+      "summary": "Enhanced merge strategy with T-Pot consideration",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "item1.get",
+        "self.check_t_pot_related",
+        "item2.get",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "process_items",
+      "docstring": "Main processing workflow implementing execution plan",
+      "line_range": [
+        361,
+        468
+      ],
+      "parameters": [
+        "self",
+        "items"
+      ],
+      "decorators": [],
+      "uid": "scripts.process_926_items.process_items:361#function",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.process_items:361"
+      ],
+      "hash": "f12d9ea07c565cb123d8454f007ebd3aa09d31bd146b18060b44895912f05dbb",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items-process-items",
+      "summary": "Main processing workflow implementing execution plan",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "duplicate_item_ids.add",
+        "str",
+        "low_confidence_items.append",
+        "set",
+        "self.extract_epic_name",
+        "self.check_t_pot_related",
+        "any",
+        "id",
+        "datetime.now",
+        "self.check_team_implementable",
+        "self.find_duplicates",
+        "processed_item.copy",
+        "len",
+        "self.categorize_item",
+        "category.startswith"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "save_results",
+      "docstring": "Save categorized results with enhanced metadata",
+      "line_range": [
+        470,
+        546
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.process_926_items.save_results:470#function",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.save_results:470"
+      ],
+      "hash": "88c9a9827bc04c4ebbde30c5af25096506e52632ddba932fbda3ec7f55ab0574",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items-save-results",
+      "summary": "Save categorized results with enhanced metadata",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "item.get",
+        "open",
+        "sum",
+        "datetime.now",
+        "self.get_category_description",
+        "json.dump",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_category_description",
+      "docstring": "Category descriptions per execution plan",
+      "line_range": [
+        548,
+        562
+      ],
+      "parameters": [
+        "self",
+        "category"
+      ],
+      "decorators": [],
+      "uid": "scripts.process_926_items.get_category_description:548#function",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.get_category_description:548"
+      ],
+      "hash": "809047d25f9f0f68f9714a81be11a5487a420a17168930374ac801c58cb67f4b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items-get-category-description",
+      "summary": "Category descriptions per execution plan",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "descriptions.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "run",
+      "docstring": "Main execution workflow per execution plan",
+      "line_range": [
+        564,
+        606
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.process_926_items.run:564#function",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.run:564"
+      ],
+      "hash": "e9944575b60de5be0248ee99bcd8c3a0fdfe439a291cbf8b417bf669a37cfb63",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items-run",
+      "summary": "Main execution workflow per execution plan",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "self.save_results",
+        "self.load_comprehensive_index",
+        "self.process_items"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "TaskProcessor926",
+      "docstring": "",
+      "line_range": [
+        15,
+        606
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            16,
+            51
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.process_926_items.TaskProcessor926.__init__:16#method",
+          "uid_components": [
+            "scripts",
+            "scripts.process_926_items",
+            "scripts.process_926_items.TaskProcessor926",
+            "scripts.process_926_items.TaskProcessor926.__init__:16"
+          ],
+          "hash": "f37921e8f44711b661315f0355911001460bebdc90aa64822537960426695dc6",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-process-926-items-taskprocessor926---init--",
+          "summary": "Method for taskprocessor926. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "datetime.now",
+            "Path"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "load_comprehensive_index",
+          "docstring": "Load the 926 items from comprehensive index",
+          "line_range": [
+            53,
+            111
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.process_926_items.TaskProcessor926.load_comprehensive_index:53#method",
+          "uid_components": [
+            "scripts",
+            "scripts.process_926_items",
+            "scripts.process_926_items.TaskProcessor926",
+            "scripts.process_926_items.TaskProcessor926.load_comprehensive_index:53"
+          ],
+          "hash": "e5a8341a0e02f749e0ccfd08ab06eb2eeac49e3bfcc428104aad20dd6dbe345c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-process-926-items-taskprocessor926-load-comprehensive-index",
+          "summary": "Load the 926 items from comprehensive index",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "items.extend",
+            "items.append",
+            "open",
+            "str",
+            "item.get",
+            "set",
+            "hash",
+            "isinstance",
+            "any",
+            "item_content.lower",
+            "seen_items.add",
+            "value.items",
+            "unique_items.append",
+            "json.load",
+            "index_path.exists",
+            "len",
+            "data.items"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "calculate_confidence_score",
+          "docstring": "Calculate confidence score for categorization decision",
+          "line_range": [
+            113,
+            146
+          ],
+          "parameters": [
+            "self",
+            "item",
+            "category"
+          ],
+          "uid": "scripts.process_926_items.TaskProcessor926.calculate_confidence_score:113#method",
+          "uid_components": [
+            "scripts",
+            "scripts.process_926_items",
+            "scripts.process_926_items.TaskProcessor926",
+            "scripts.process_926_items.TaskProcessor926.calculate_confidence_score:113"
+          ],
+          "hash": "f8d9fad58f52480aa895e83a1b6368157e1e2d4c4d05ac69c412bf650bd161e0",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-process-926-items-taskprocessor926-calculate-confidence-score",
+          "summary": "Calculate confidence score for categorization decision",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "str",
+            "item.get",
+            "min",
+            "self.check_t_pot_related",
+            "sum"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "check_t_pot_related",
+          "docstring": "Enhanced T-Pot detection",
+          "line_range": [
+            148,
+            155
+          ],
+          "parameters": [
+            "self",
+            "item"
+          ],
+          "uid": "scripts.process_926_items.TaskProcessor926.check_t_pot_related:148#method",
+          "uid_components": [
+            "scripts",
+            "scripts.process_926_items",
+            "scripts.process_926_items.TaskProcessor926",
+            "scripts.process_926_items.TaskProcessor926.check_t_pot_related:148"
+          ],
+          "hash": "683d4d91b58a26f374fdb253c8dede3790496366a0b43794a85925471db9a71b",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-process-926-items-taskprocessor926-check-t-pot-related",
+          "summary": "Enhanced T-Pot detection",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "str",
+            "any"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "check_team_implementable",
+          "docstring": "Check if team can implement without architecture review",
+          "line_range": [
+            157,
+            176
+          ],
+          "parameters": [
+            "self",
+            "item"
+          ],
+          "uid": "scripts.process_926_items.TaskProcessor926.check_team_implementable:157#method",
+          "uid_components": [
+            "scripts",
+            "scripts.process_926_items",
+            "scripts.process_926_items.TaskProcessor926",
+            "scripts.process_926_items.TaskProcessor926.check_team_implementable:157"
+          ],
+          "hash": "70cb1a3ba0c5badb648c9f1ae0d82ab4bd2e2eeb99f982f69238e738b56f3a9f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-process-926-items-taskprocessor926-check-team-implementable",
+          "summary": "Check if team can implement without architecture review",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "str",
+            "sum"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "check_personal_vs_team_vs_business",
+          "docstring": "Classify as personal/team/business",
+          "line_range": [
+            178,
+            214
+          ],
+          "parameters": [
+            "self",
+            "item"
+          ],
+          "uid": "scripts.process_926_items.TaskProcessor926.check_personal_vs_team_vs_business:178#method",
+          "uid_components": [
+            "scripts",
+            "scripts.process_926_items",
+            "scripts.process_926_items.TaskProcessor926",
+            "scripts.process_926_items.TaskProcessor926.check_personal_vs_team_vs_business:178"
+          ],
+          "hash": "ddcea9bf77f05735b905539f7f52554c54f3ca8fdfa98c1962b0e2dbe42a345e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-process-926-items-taskprocessor926-check-personal-vs-team-vs-business",
+          "summary": "Classify as personal/team/business",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "sum",
+            "str",
+            "item.get",
+            "max"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "identify_epic_candidates",
+          "docstring": "Identify items that should be grouped into epics",
+          "line_range": [
+            216,
+            233
+          ],
+          "parameters": [
+            "self",
+            "items"
+          ],
+          "uid": "scripts.process_926_items.TaskProcessor926.identify_epic_candidates:216#method",
+          "uid_components": [
+            "scripts",
+            "scripts.process_926_items",
+            "scripts.process_926_items.TaskProcessor926",
+            "scripts.process_926_items.TaskProcessor926.identify_epic_candidates:216"
+          ],
+          "hash": "3f43d5830753303187b02b2c5cbea6b3a3d58cd44d1b7fc57ab232b20f1ee283",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-process-926-items-taskprocessor926-identify-epic-candidates",
+          "summary": "Identify items that should be grouped into epics",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "str",
+            "item.get",
+            "any",
+            "epic_groups.items",
+            "self.extract_epic_name",
+            "len"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "extract_epic_name",
+          "docstring": "Extract epic name from item",
+          "line_range": [
+            235,
+            241
+          ],
+          "parameters": [
+            "self",
+            "item"
+          ],
+          "uid": "scripts.process_926_items.TaskProcessor926.extract_epic_name:235#method",
+          "uid_components": [
+            "scripts",
+            "scripts.process_926_items",
+            "scripts.process_926_items.TaskProcessor926",
+            "scripts.process_926_items.TaskProcessor926.extract_epic_name:235"
+          ],
+          "hash": "5d5c93639d190965e88cfff70e33990232a08db29114472e793a6cc788cd42b4",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-process-926-items-taskprocessor926-extract-epic-name",
+          "summary": "Extract epic name from item",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "item.get",
+            "title.split"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "categorize_item",
+          "docstring": "Main categorization logic with confidence scoring",
+          "line_range": [
+            243,
+            278
+          ],
+          "parameters": [
+            "self",
+            "item"
+          ],
+          "uid": "scripts.process_926_items.TaskProcessor926.categorize_item:243#method",
+          "uid_components": [
+            "scripts",
+            "scripts.process_926_items",
+            "scripts.process_926_items.TaskProcessor926",
+            "scripts.process_926_items.TaskProcessor926.categorize_item:243"
+          ],
+          "hash": "5f71e0a6e2295147da6ce873ca28c3e361aafa98cf0e413669d21c2e2834bab0",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-process-926-items-taskprocessor926-categorize-item",
+          "summary": "Main categorization logic with confidence scoring",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "str",
+            "self.check_t_pot_related",
+            "any",
+            "self.check_team_implementable",
+            "self.check_personal_vs_team_vs_business",
+            "self.calculate_confidence_score"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "find_duplicates",
+          "docstring": "Enhanced duplicate detection with T-Pot special handling",
+          "line_range": [
+            280,
+            319
+          ],
+          "parameters": [
+            "self",
+            "items"
+          ],
+          "uid": "scripts.process_926_items.TaskProcessor926.find_duplicates:280#method",
+          "uid_components": [
+            "scripts",
+            "scripts.process_926_items",
+            "scripts.process_926_items.TaskProcessor926",
+            "scripts.process_926_items.TaskProcessor926.find_duplicates:280"
+          ],
+          "hash": "ef84b4db16d6b62eff7ac7bf4ad412a4e2523ed1abc881d925e093124fd70020",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-process-926-items-taskprocessor926-find-duplicates",
+          "summary": "Enhanced duplicate detection with T-Pot special handling",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "duplicates.append",
+            "seen_items.items",
+            "item.get",
+            "self.check_t_pot_related",
+            "self.suggest_merge_strategy",
+            "self.calculate_similarity"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "calculate_similarity",
+          "docstring": "Enhanced similarity calculation",
+          "line_range": [
+            321,
+            342
+          ],
+          "parameters": [
+            "self",
+            "title1",
+            "title2"
+          ],
+          "uid": "scripts.process_926_items.TaskProcessor926.calculate_similarity:321#method",
+          "uid_components": [
+            "scripts",
+            "scripts.process_926_items",
+            "scripts.process_926_items.TaskProcessor926",
+            "scripts.process_926_items.TaskProcessor926.calculate_similarity:321"
+          ],
+          "hash": "c638cba96624dddcaea746fde5c87fd329928eaede874e2f446db9220b57ed82",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-process-926-items-taskprocessor926-calculate-similarity",
+          "summary": "Enhanced similarity calculation",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "set",
+            "min",
+            "title1.split",
+            "len",
+            "title2.split",
+            "words1.union",
+            "words1.intersection"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "suggest_merge_strategy",
+          "docstring": "Enhanced merge strategy with T-Pot consideration",
+          "line_range": [
+            344,
+            359
+          ],
+          "parameters": [
+            "self",
+            "item1",
+            "item2"
+          ],
+          "uid": "scripts.process_926_items.TaskProcessor926.suggest_merge_strategy:344#method",
+          "uid_components": [
+            "scripts",
+            "scripts.process_926_items",
+            "scripts.process_926_items.TaskProcessor926",
+            "scripts.process_926_items.TaskProcessor926.suggest_merge_strategy:344"
+          ],
+          "hash": "94750ab20e834bc1111b6860c573a24cdd4f82179906abe8c5da372e3cb13be5",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-process-926-items-taskprocessor926-suggest-merge-strategy",
+          "summary": "Enhanced merge strategy with T-Pot consideration",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "str",
+            "item1.get",
+            "self.check_t_pot_related",
+            "item2.get",
+            "len"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "process_items",
+          "docstring": "Main processing workflow implementing execution plan",
+          "line_range": [
+            361,
+            468
+          ],
+          "parameters": [
+            "self",
+            "items"
+          ],
+          "uid": "scripts.process_926_items.TaskProcessor926.process_items:361#method",
+          "uid_components": [
+            "scripts",
+            "scripts.process_926_items",
+            "scripts.process_926_items.TaskProcessor926",
+            "scripts.process_926_items.TaskProcessor926.process_items:361"
+          ],
+          "hash": "04d4981ddcf51fb7e8670d0addc9675d9fa4a0c4930bd229b24a492a53fd7f0f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-process-926-items-taskprocessor926-process-items",
+          "summary": "Main processing workflow implementing execution plan",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "duplicate_item_ids.add",
+            "str",
+            "low_confidence_items.append",
+            "set",
+            "self.extract_epic_name",
+            "self.check_t_pot_related",
+            "any",
+            "id",
+            "datetime.now",
+            "self.check_team_implementable",
+            "self.find_duplicates",
+            "processed_item.copy",
+            "len",
+            "self.categorize_item",
+            "category.startswith"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "save_results",
+          "docstring": "Save categorized results with enhanced metadata",
+          "line_range": [
+            470,
+            546
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.process_926_items.TaskProcessor926.save_results:470#method",
+          "uid_components": [
+            "scripts",
+            "scripts.process_926_items",
+            "scripts.process_926_items.TaskProcessor926",
+            "scripts.process_926_items.TaskProcessor926.save_results:470"
+          ],
+          "hash": "a7281112f60f22a69255139e5ab01a5d37d04ccd0729e831a08b1ab1434953cf",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-process-926-items-taskprocessor926-save-results",
+          "summary": "Save categorized results with enhanced metadata",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "item.get",
+            "open",
+            "sum",
+            "datetime.now",
+            "self.get_category_description",
+            "json.dump",
+            "len"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_category_description",
+          "docstring": "Category descriptions per execution plan",
+          "line_range": [
+            548,
+            562
+          ],
+          "parameters": [
+            "self",
+            "category"
+          ],
+          "uid": "scripts.process_926_items.TaskProcessor926.get_category_description:548#method",
+          "uid_components": [
+            "scripts",
+            "scripts.process_926_items",
+            "scripts.process_926_items.TaskProcessor926",
+            "scripts.process_926_items.TaskProcessor926.get_category_description:548"
+          ],
+          "hash": "ddfd7d66fa092340daec171247ad8d3160d8e486eab89d3e258b62c5c168875d",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-process-926-items-taskprocessor926-get-category-description",
+          "summary": "Category descriptions per execution plan",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "descriptions.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "run",
+          "docstring": "Main execution workflow per execution plan",
+          "line_range": [
+            564,
+            606
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.process_926_items.TaskProcessor926.run:564#method",
+          "uid_components": [
+            "scripts",
+            "scripts.process_926_items",
+            "scripts.process_926_items.TaskProcessor926",
+            "scripts.process_926_items.TaskProcessor926.run:564"
+          ],
+          "hash": "d45d89563282f95f28d7a7f23f6ddff4c08e58ab1e5042d8e2ec68fb3d97bbf5",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-process-926-items-taskprocessor926-run",
+          "summary": "Main execution workflow per execution plan",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "self.save_results",
+            "self.load_comprehensive_index",
+            "self.process_items"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "scripts.process_926_items.TaskProcessor926:15#class",
+      "uid_components": [
+        "scripts",
+        "scripts.process_926_items",
+        "scripts.process_926_items.TaskProcessor926:15"
+      ],
+      "hash": "d414f60eb6942b5f016625a0fd38efedc588d507c46fb5187e50abc4ca66b161",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-process-926-items-taskprocessor926",
+      "summary": "Class for task processor",
+      "summary_source": "heuristic",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "datetime.now",
+    "Path",
+    "print",
+    "items.extend",
+    "items.append",
+    "open",
+    "str",
+    "item.get",
+    "set",
+    "hash",
+    "isinstance",
+    "any",
+    "item_content.lower",
+    "seen_items.add",
+    "value.items",
+    "unique_items.append",
+    "json.load",
+    "index_path.exists",
+    "len",
+    "data.items",
+    "str",
+    "item.get",
+    "min",
+    "self.check_t_pot_related",
+    "sum",
+    "str",
+    "any",
+    "str",
+    "sum",
+    "sum",
+    "str",
+    "item.get",
+    "max",
+    "str",
+    "item.get",
+    "any",
+    "epic_groups.items",
+    "self.extract_epic_name",
+    "len",
+    "item.get",
+    "title.split",
+    "str",
+    "self.check_t_pot_related",
+    "any",
+    "self.check_team_implementable",
+    "self.check_personal_vs_team_vs_business",
+    "self.calculate_confidence_score",
+    "duplicates.append",
+    "seen_items.items",
+    "item.get",
+    "self.check_t_pot_related",
+    "self.suggest_merge_strategy",
+    "self.calculate_similarity",
+    "set",
+    "min",
+    "title1.split",
+    "len",
+    "title2.split",
+    "words1.union",
+    "words1.intersection",
+    "str",
+    "item1.get",
+    "self.check_t_pot_related",
+    "item2.get",
+    "len",
+    "print",
+    "duplicate_item_ids.add",
+    "str",
+    "low_confidence_items.append",
+    "set",
+    "self.extract_epic_name",
+    "self.check_t_pot_related",
+    "any",
+    "id",
+    "datetime.now",
+    "self.check_team_implementable",
+    "self.find_duplicates",
+    "processed_item.copy",
+    "len",
+    "self.categorize_item",
+    "category.startswith",
+    "print",
+    "item.get",
+    "open",
+    "sum",
+    "datetime.now",
+    "self.get_category_description",
+    "json.dump",
+    "len",
+    "descriptions.get",
+    "print",
+    "self.save_results",
+    "self.load_comprehensive_index",
+    "self.process_items"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.772381",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:c97e2b886230226c",
+    "lines_of_code": 17
+  }
+}

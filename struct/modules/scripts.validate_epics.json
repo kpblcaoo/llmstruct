@@ -1,0 +1,269 @@
+{
+  "module_info": {
+    "uid": "scripts.validate_epics",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.validate_epics with 5 functions",
+    "hash": "sha256:2eb385044a99dbda",
+    "dependencies": [
+      "all_errors",
+      "data",
+      "e",
+      "epic",
+      "epics_file",
+      "errors",
+      "json",
+      "seen_ids",
+      "sys",
+      "task"
+    ],
+    "exports": [
+      "main",
+      "validate_epic_structure",
+      "validate_priorities",
+      "validate_task_ids",
+      "validate_task_structure"
+    ]
+  },
+  "functions": [
+    {
+      "name": "validate_epic_structure",
+      "docstring": "Проверить структуру эпика",
+      "line_range": [
+        12,
+        35
+      ],
+      "parameters": [
+        "epic"
+      ],
+      "decorators": [],
+      "uid": "scripts.validate_epics.validate_epic_structure:12#function",
+      "uid_components": [
+        "scripts",
+        "scripts.validate_epics",
+        "scripts.validate_epics.validate_epic_structure:12"
+      ],
+      "hash": "f3b03afbe13c0079d2bf4cdd4931e57b13c881561a999d3243bee5cf6395b838",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-validate-epics-validate-epic-structure",
+      "summary": "Проверить структуру эпика",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "errors.append",
+        "isinstance"
+      ],
+      "called_by": [
+        "main"
+      ]
+    },
+    {
+      "name": "validate_task_structure",
+      "docstring": "Проверить структуру задачи",
+      "line_range": [
+        37,
+        53
+      ],
+      "parameters": [
+        "task",
+        "epic_id"
+      ],
+      "decorators": [],
+      "uid": "scripts.validate_epics.validate_task_structure:37#function",
+      "uid_components": [
+        "scripts",
+        "scripts.validate_epics",
+        "scripts.validate_epics.validate_task_structure:37"
+      ],
+      "hash": "7fa6e75f61fb67eb77c00d06798c7f80717abcf2a912472fc27031aca672f2c1",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-validate-epics-validate-task-structure",
+      "summary": "Проверить структуру задачи",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "task.get",
+        "errors.append",
+        "isinstance"
+      ],
+      "called_by": [
+        "main"
+      ]
+    },
+    {
+      "name": "validate_priorities",
+      "docstring": "Проверить валидность приоритетов",
+      "line_range": [
+        55,
+        68
+      ],
+      "parameters": [
+        "data"
+      ],
+      "decorators": [],
+      "uid": "scripts.validate_epics.validate_priorities:55#function",
+      "uid_components": [
+        "scripts",
+        "scripts.validate_epics",
+        "scripts.validate_epics.validate_priorities:55"
+      ],
+      "hash": "06b685921bd6dd7098cb32a16533dec4e9a6a9ce7c5e50fcdf36773d01be9cc3",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-validate-epics-validate-priorities",
+      "summary": "Проверить валидность приоритетов",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "task.get",
+        "data.get",
+        "errors.append",
+        "epic.get"
+      ],
+      "called_by": [
+        "main"
+      ]
+    },
+    {
+      "name": "validate_task_ids",
+      "docstring": "Проверить уникальность ID задач",
+      "line_range": [
+        70,
+        82
+      ],
+      "parameters": [
+        "data"
+      ],
+      "decorators": [],
+      "uid": "scripts.validate_epics.validate_task_ids:70#function",
+      "uid_components": [
+        "scripts",
+        "scripts.validate_epics",
+        "scripts.validate_epics.validate_task_ids:70"
+      ],
+      "hash": "cf15c306a71c5457ff7f4afa5611846837d1858d3bf6fb8ea374e0b2d575b714",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-validate-epics-validate-task-ids",
+      "summary": "Проверить уникальность ID задач",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "errors.append",
+        "seen_ids.add",
+        "set",
+        "epic.get",
+        "task.get",
+        "data.get"
+      ],
+      "called_by": [
+        "main"
+      ]
+    },
+    {
+      "name": "main",
+      "docstring": "Основная функция валидации",
+      "line_range": [
+        84,
+        131
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.validate_epics.main:84#function",
+      "uid_components": [
+        "scripts",
+        "scripts.validate_epics",
+        "scripts.validate_epics.main:84"
+      ],
+      "hash": "4de744a9f2cd875ddfa75d083fd1cb094c4363ad39608e50ed178cbaa89cbba5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-validate-epics-main",
+      "summary": "Основная функция валидации",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "open",
+        "validate_task_structure",
+        "e.get",
+        "all_errors.append",
+        "validate_epic_structure",
+        "isinstance",
+        "sum",
+        "all_errors.extend",
+        "epics_file.exists",
+        "sys.exit",
+        "json.load",
+        "epic.get",
+        "validate_priorities",
+        "validate_task_ids",
+        "Path",
+        "len"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "errors.append",
+    "isinstance",
+    "task.get",
+    "errors.append",
+    "isinstance",
+    "task.get",
+    "data.get",
+    "errors.append",
+    "epic.get",
+    "errors.append",
+    "seen_ids.add",
+    "set",
+    "epic.get",
+    "task.get",
+    "data.get",
+    "print",
+    "open",
+    "validate_task_structure",
+    "e.get",
+    "all_errors.append",
+    "validate_epic_structure",
+    "isinstance",
+    "sum",
+    "all_errors.extend",
+    "epics_file.exists",
+    "sys.exit",
+    "json.load",
+    "epic.get",
+    "validate_priorities",
+    "validate_task_ids",
+    "Path",
+    "len"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.775359",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:2eb385044a99dbda",
+    "lines_of_code": 5
+  }
+}

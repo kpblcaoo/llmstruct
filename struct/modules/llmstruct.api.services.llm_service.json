@@ -1,0 +1,1573 @@
+{
+  "module_info": {
+    "uid": "llmstruct.api.services.llm_service",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.api.services.llm_service with 17 functions and 4 classes",
+    "hash": "sha256:537fac8fa7de329d",
+    "dependencies": [
+      "Path",
+      "client",
+      "context_info",
+      "datetime",
+      "httpx",
+      "json",
+      "logger",
+      "message",
+      "response",
+      "self",
+      "struct_data",
+      "struct_file"
+    ],
+    "exports": [
+      "AnthropicClient",
+      "GrokClient",
+      "LLMResponse",
+      "LLMService",
+      "chat_completion",
+      "chat_completion",
+      "process_message"
+    ]
+  },
+  "functions": [
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        24,
+        28
+      ],
+      "parameters": [
+        "self",
+        "content",
+        "context_info",
+        "token_usage"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service.__init__:24#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service.__init__:24"
+      ],
+      "hash": "17bff780d11bb9946204fbfefa5df46e37c448b4f7c9c941ed3f41abbb327ee3",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "self._initialize_components",
+        "AnthropicClient",
+        "Path.cwd",
+        "GrokClient"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        33,
+        36
+      ],
+      "parameters": [
+        "self",
+        "api_key"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service.__init__:33#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service.__init__:33"
+      ],
+      "hash": "2ea2cc1860184f00a7b5732988ea1eb064aed42866aca107ca19cfaa073a6823",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "self._initialize_components",
+        "AnthropicClient",
+        "Path.cwd",
+        "GrokClient"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "chat_completion",
+      "docstring": "Send chat completion request to Anthropic",
+      "line_range": [
+        38,
+        77
+      ],
+      "parameters": [
+        "self",
+        "messages",
+        "temperature"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service.chat_completion:38#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service.chat_completion:38"
+      ],
+      "hash": "92c157f655c05c4a545df568090c2747198aab939a8185dca36341651ad274e7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service-chat-completion",
+      "summary": "Send chat completion request to Anthropic",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "ValueError",
+        "httpx.AsyncClient",
+        "response.json",
+        "response.raise_for_status",
+        "client.post"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        82,
+        85
+      ],
+      "parameters": [
+        "self",
+        "api_key"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service.__init__:82#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service.__init__:82"
+      ],
+      "hash": "208f8bbb0395c2f961cd94b23bafde2457f26885c6ed593bf9678557a5975c8e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "self._initialize_components",
+        "AnthropicClient",
+        "Path.cwd",
+        "GrokClient"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "chat_completion",
+      "docstring": "Send chat completion request to Grok",
+      "line_range": [
+        87,
+        113
+      ],
+      "parameters": [
+        "self",
+        "messages",
+        "temperature"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service.chat_completion:87#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service.chat_completion:87"
+      ],
+      "hash": "581846733790b44029e50327c01d3276800a88d33cc21ad2531f47ddbfbc2973",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service-chat-completion",
+      "summary": "Send chat completion request to Grok",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "ValueError",
+        "httpx.AsyncClient",
+        "response.json",
+        "response.raise_for_status",
+        "client.post"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        118,
+        124
+      ],
+      "parameters": [
+        "self",
+        "base_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service.__init__:118#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service.__init__:118"
+      ],
+      "hash": "c95cd1d07650400611069d174b2761ee3580d4b82cff3a852b3b39a62f1efbbb",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "self._initialize_components",
+        "AnthropicClient",
+        "Path.cwd",
+        "GrokClient"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_initialize_components",
+      "docstring": "Initialize context orchestrator and copilot manager",
+      "line_range": [
+        126,
+        140
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service._initialize_components:126#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service._initialize_components:126"
+      ],
+      "hash": "49556b9156ff28e0c1f121d4fe8ad1f66f3410456490144b0136fcb0fac9fea6",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service--initialize-components",
+      "summary": "Initialize context orchestrator and copilot manager",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "str",
+        "logger.info",
+        "logger.error",
+        "CopilotContextManager",
+        "SmartContextOrchestrator"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "process_message",
+      "docstring": "Process a user message and return AI response",
+      "line_range": [
+        143,
+        168
+      ],
+      "parameters": [
+        "self",
+        "message",
+        "session_id",
+        "context_mode"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service.process_message:143#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service.process_message:143"
+      ],
+      "hash": "5748744190347b7bba9a644bf3b0f9ecf92b72c26e1b329f9751be80c1c29799",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service-process-message",
+      "summary": "Process a user message and return AI response",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "LLMResponse",
+        "self._get_context",
+        "logger.error",
+        "self._try_llm_providers"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_try_llm_providers",
+      "docstring": "Try LLM providers in order and return response",
+      "line_range": [
+        170,
+        195
+      ],
+      "parameters": [
+        "self",
+        "message",
+        "context_info"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service._try_llm_providers:170#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service._try_llm_providers:170"
+      ],
+      "hash": "1d5b1d1eb37f6200ab5819e47306775b580850ce4d079a5bd37d45ada93f0244",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service--try-llm-providers",
+      "summary": "Try LLM providers in order and return response",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "private"
+      ],
+      "calls": [
+        "logger.info",
+        "self._generate_anthropic_response",
+        "self._generate_mock_response",
+        "self._generate_grok_response",
+        "logger.warning",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_get_context",
+      "docstring": "Get relevant context for the message",
+      "line_range": [
+        197,
+        229
+      ],
+      "parameters": [
+        "self",
+        "message",
+        "context_mode"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service._get_context:197#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service._get_context:197"
+      ],
+      "hash": "85349ac39df68dee80376c119f187fda367464893a8aab9abb9de2dfc4e2eecb",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service--get-context",
+      "summary": "Get relevant context for the message",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "private"
+      ],
+      "calls": [
+        "str",
+        "self._get_focused_context",
+        "logger.error",
+        "self._get_minimal_context",
+        "context_info.update",
+        "self._get_full_context"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_get_full_context",
+      "docstring": "Get full project context",
+      "line_range": [
+        231,
+        243
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service._get_full_context:231#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service._get_full_context:231"
+      ],
+      "hash": "082903753662fa5f24783aead8fe59dda4eda6dec9b07edfe069aededa1ac1f9",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service--get-full-context",
+      "summary": "Get full project context",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "private"
+      ],
+      "calls": [
+        "struct_file.exists",
+        "open",
+        "list",
+        "struct_data.get",
+        "json.load",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_get_focused_context",
+      "docstring": "Get focused context based on message content",
+      "line_range": [
+        245,
+        260
+      ],
+      "parameters": [
+        "self",
+        "message"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service._get_focused_context:245#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service._get_focused_context:245"
+      ],
+      "hash": "a955b9a0349c56964da02be7b4759e9b5a594669fd7cf3bd69e8a607b0107543",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service--get-focused-context",
+      "summary": "Get focused context based on message content",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "private"
+      ],
+      "calls": [
+        "message.lower",
+        "any"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_get_minimal_context",
+      "docstring": "Get minimal context - basic project info",
+      "line_range": [
+        262,
+        267
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service._get_minimal_context:262#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service._get_minimal_context:262"
+      ],
+      "hash": "0157570eb5d641c94992edbb356745096a73ab3a37b5a3beba7a6ed2565c8e73",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service--get-minimal-context",
+      "summary": "Get minimal context - basic project info",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "private"
+      ],
+      "calls": [
+        "str",
+        "datetime.now"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_generate_grok_response",
+      "docstring": "Generate response using Grok API",
+      "line_range": [
+        269,
+        287
+      ],
+      "parameters": [
+        "self",
+        "message",
+        "context_info"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service._generate_grok_response:269#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service._generate_grok_response:269"
+      ],
+      "hash": "712ac53fb61f6dad55a73b47ccb1b27ec1c894c3cf9ae57523fe6f570c0dfb54",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service--generate-grok-response",
+      "summary": "Generate response using Grok API",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "private",
+        "public"
+      ],
+      "calls": [
+        "len",
+        "ValueError",
+        "self._build_system_prompt"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_generate_anthropic_response",
+      "docstring": "Generate response using Anthropic API",
+      "line_range": [
+        289,
+        307
+      ],
+      "parameters": [
+        "self",
+        "message",
+        "context_info"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service._generate_anthropic_response:289#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service._generate_anthropic_response:289"
+      ],
+      "hash": "65d4015b8484afbb1f9aca2eb1cc9306707331e590045855293e56c1fef967ec",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service--generate-anthropic-response",
+      "summary": "Generate response using Anthropic API",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "private",
+        "public"
+      ],
+      "calls": [
+        "len",
+        "ValueError",
+        "self._build_system_prompt"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_build_system_prompt",
+      "docstring": "Build system prompt with project context",
+      "line_range": [
+        309,
+        344
+      ],
+      "parameters": [
+        "self",
+        "context_info"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service._build_system_prompt:309#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service._build_system_prompt:309"
+      ],
+      "hash": "745150db274e41e0b90fdcecc308d171fb18ab09cf3d1fab65b5c364025dc4a1",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service--build-system-prompt",
+      "summary": "Build system prompt with project context",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "context_info.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_generate_mock_response",
+      "docstring": "Generate a mock AI response (placeholder for real LLM)",
+      "line_range": [
+        346,
+        380
+      ],
+      "parameters": [
+        "self",
+        "message",
+        "context_info"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.llm_service._generate_mock_response:346#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service._generate_mock_response:346"
+      ],
+      "hash": "39d733b3b8f33f11ca06299926b1de1b961676ceb22cc0b62ff2a761d702ce2c",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service--generate-mock-response",
+      "summary": "Generate a mock AI response (placeholder for real LLM)",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "private"
+      ],
+      "calls": [
+        "message.lower",
+        "context_info.get",
+        "len"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "LLMResponse",
+      "docstring": "Response from LLM processing",
+      "line_range": [
+        21,
+        28
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            24,
+            28
+          ],
+          "parameters": [
+            "self",
+            "content",
+            "context_info",
+            "token_usage"
+          ],
+          "uid": "llmstruct.api.services.llm_service.LLMResponse.__init__:24#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.LLMResponse",
+            "llmstruct.api.services.llm_service.LLMResponse.__init__:24"
+          ],
+          "hash": "7a8466dc7f0982fe21ad83f943c3f04d83c3c30274ce3122c8cf43bb38124524",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-llmresponse---init--",
+          "summary": "Method for llmresponse. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "self._initialize_components",
+            "AnthropicClient",
+            "Path.cwd",
+            "GrokClient"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.api.services.llm_service.LLMResponse:21#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service.LLMResponse:21"
+      ],
+      "hash": "0781556a187c19bc51fdd57bd6d763ec176c687e7d1359f882c9001cb233d970",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service-llmresponse",
+      "summary": "Response from LLM processing",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "AnthropicClient",
+      "docstring": "Client for Anthropic Claude API",
+      "line_range": [
+        30,
+        77
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            33,
+            36
+          ],
+          "parameters": [
+            "self",
+            "api_key"
+          ],
+          "uid": "llmstruct.api.services.llm_service.AnthropicClient.__init__:33#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.AnthropicClient",
+            "llmstruct.api.services.llm_service.AnthropicClient.__init__:33"
+          ],
+          "hash": "24c5eb8b4ab502d5375abf606163bb522ab69515b6e533fc791daca713dfa35a",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-anthropicclient---init--",
+          "summary": "Method for anthropicclient. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "self._initialize_components",
+            "AnthropicClient",
+            "Path.cwd",
+            "GrokClient"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "chat_completion",
+          "docstring": "Send chat completion request to Anthropic",
+          "line_range": [
+            38,
+            77
+          ],
+          "parameters": [
+            "self",
+            "messages",
+            "temperature"
+          ],
+          "uid": "llmstruct.api.services.llm_service.AnthropicClient.chat_completion:38#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.AnthropicClient",
+            "llmstruct.api.services.llm_service.AnthropicClient.chat_completion:38"
+          ],
+          "hash": "dcb0ee04ed46795f2ebf38b922466eddf7bfb3a34003decd9dca3fa2b2b2724e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-anthropicclient-chat-completion",
+          "summary": "Send chat completion request to Anthropic",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "ValueError",
+            "httpx.AsyncClient",
+            "response.json",
+            "response.raise_for_status",
+            "client.post"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.api.services.llm_service.AnthropicClient:30#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service.AnthropicClient:30"
+      ],
+      "hash": "51646771adcc98c89f78c86e2127c7123b5b9bc0bcbc9e64599c1aca40bf4fd8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service-anthropicclient",
+      "summary": "Client for Anthropic Claude API",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "GrokClient",
+      "docstring": "Client for Grok API integration",
+      "line_range": [
+        79,
+        113
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            82,
+            85
+          ],
+          "parameters": [
+            "self",
+            "api_key"
+          ],
+          "uid": "llmstruct.api.services.llm_service.GrokClient.__init__:82#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.GrokClient",
+            "llmstruct.api.services.llm_service.GrokClient.__init__:82"
+          ],
+          "hash": "1766a16abf0ade7730aa70cddd2682aa5d1dedb2b91c1f7f55b2ea39b28e84cb",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-grokclient---init--",
+          "summary": "Method for grokclient. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "self._initialize_components",
+            "AnthropicClient",
+            "Path.cwd",
+            "GrokClient"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "chat_completion",
+          "docstring": "Send chat completion request to Grok",
+          "line_range": [
+            87,
+            113
+          ],
+          "parameters": [
+            "self",
+            "messages",
+            "temperature"
+          ],
+          "uid": "llmstruct.api.services.llm_service.GrokClient.chat_completion:87#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.GrokClient",
+            "llmstruct.api.services.llm_service.GrokClient.chat_completion:87"
+          ],
+          "hash": "4efda3a7467cacccf0032061ef8a01dc57ca8552e022c1ebba1ab2b2ac5e222e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-grokclient-chat-completion",
+          "summary": "Send chat completion request to Grok",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "ValueError",
+            "httpx.AsyncClient",
+            "response.json",
+            "response.raise_for_status",
+            "client.post"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.api.services.llm_service.GrokClient:79#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service.GrokClient:79"
+      ],
+      "hash": "c637b5ecfe4fa466c4beb1104be4497772726c3fc0558ffb28622967cc40cb49",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service-grokclient",
+      "summary": "Client for Grok API integration",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "LLMService",
+      "docstring": "Service for LLM processing with context integration",
+      "line_range": [
+        115,
+        380
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            118,
+            124
+          ],
+          "parameters": [
+            "self",
+            "base_path"
+          ],
+          "uid": "llmstruct.api.services.llm_service.LLMService.__init__:118#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.LLMService",
+            "llmstruct.api.services.llm_service.LLMService.__init__:118"
+          ],
+          "hash": "68239e38020efff54b40270897fb48d1f03112d2c2a8cb558d402378c9cb7a83",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-llmservice---init--",
+          "summary": "Method for llmservice. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "self._initialize_components",
+            "AnthropicClient",
+            "Path.cwd",
+            "GrokClient"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_initialize_components",
+          "docstring": "Initialize context orchestrator and copilot manager",
+          "line_range": [
+            126,
+            140
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.api.services.llm_service.LLMService._initialize_components:126#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.LLMService",
+            "llmstruct.api.services.llm_service.LLMService._initialize_components:126"
+          ],
+          "hash": "c040be5a4b2046dcee97697a3dc6adf22f9f4181cec4701f486f2fc25ed392b3",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-llmservice--initialize-components",
+          "summary": "Initialize context orchestrator and copilot manager",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "str",
+            "logger.info",
+            "logger.error",
+            "CopilotContextManager",
+            "SmartContextOrchestrator"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "process_message",
+          "docstring": "Process a user message and return AI response",
+          "line_range": [
+            143,
+            168
+          ],
+          "parameters": [
+            "self",
+            "message",
+            "session_id",
+            "context_mode"
+          ],
+          "uid": "llmstruct.api.services.llm_service.LLMService.process_message:143#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.LLMService",
+            "llmstruct.api.services.llm_service.LLMService.process_message:143"
+          ],
+          "hash": "1a3ba41b99b884218aac0377df6b4cd5c248082fd303f421954583368bc70aaa",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-llmservice-process-message",
+          "summary": "Process a user message and return AI response",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "str",
+            "LLMResponse",
+            "self._get_context",
+            "logger.error",
+            "self._try_llm_providers"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_try_llm_providers",
+          "docstring": "Try LLM providers in order and return response",
+          "line_range": [
+            170,
+            195
+          ],
+          "parameters": [
+            "self",
+            "message",
+            "context_info"
+          ],
+          "uid": "llmstruct.api.services.llm_service.LLMService._try_llm_providers:170#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.LLMService",
+            "llmstruct.api.services.llm_service.LLMService._try_llm_providers:170"
+          ],
+          "hash": "f3e14bc18804f9304ed164c7f0e851c206e03583a92607eac93c1984047910d7",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-llmservice--try-llm-providers",
+          "summary": "Try LLM providers in order and return response",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "private"
+          ],
+          "calls": [
+            "logger.info",
+            "self._generate_anthropic_response",
+            "self._generate_mock_response",
+            "self._generate_grok_response",
+            "logger.warning",
+            "len"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_get_context",
+          "docstring": "Get relevant context for the message",
+          "line_range": [
+            197,
+            229
+          ],
+          "parameters": [
+            "self",
+            "message",
+            "context_mode"
+          ],
+          "uid": "llmstruct.api.services.llm_service.LLMService._get_context:197#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.LLMService",
+            "llmstruct.api.services.llm_service.LLMService._get_context:197"
+          ],
+          "hash": "a4abee5ae3a08cbbccbbe245c0de68e9285ad98ef441ece6cd98d1480b797f3c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-llmservice--get-context",
+          "summary": "Get relevant context for the message",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "private"
+          ],
+          "calls": [
+            "str",
+            "self._get_focused_context",
+            "logger.error",
+            "self._get_minimal_context",
+            "context_info.update",
+            "self._get_full_context"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_get_full_context",
+          "docstring": "Get full project context",
+          "line_range": [
+            231,
+            243
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.api.services.llm_service.LLMService._get_full_context:231#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.LLMService",
+            "llmstruct.api.services.llm_service.LLMService._get_full_context:231"
+          ],
+          "hash": "46e7fd0239f934f1c404ff4fa1a40b219417705babd2aa67ca8e399c9c00aaf2",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-llmservice--get-full-context",
+          "summary": "Get full project context",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "private"
+          ],
+          "calls": [
+            "struct_file.exists",
+            "open",
+            "list",
+            "struct_data.get",
+            "json.load",
+            "len"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_get_focused_context",
+          "docstring": "Get focused context based on message content",
+          "line_range": [
+            245,
+            260
+          ],
+          "parameters": [
+            "self",
+            "message"
+          ],
+          "uid": "llmstruct.api.services.llm_service.LLMService._get_focused_context:245#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.LLMService",
+            "llmstruct.api.services.llm_service.LLMService._get_focused_context:245"
+          ],
+          "hash": "9e856c7b070ccc439dd39cb6062bb0d7f67fd0bb4d164378415bc2358c0059d4",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-llmservice--get-focused-context",
+          "summary": "Get focused context based on message content",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "private"
+          ],
+          "calls": [
+            "message.lower",
+            "any"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_get_minimal_context",
+          "docstring": "Get minimal context - basic project info",
+          "line_range": [
+            262,
+            267
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.api.services.llm_service.LLMService._get_minimal_context:262#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.LLMService",
+            "llmstruct.api.services.llm_service.LLMService._get_minimal_context:262"
+          ],
+          "hash": "e6c214a8bdb9c0d917b99fcac07e065fbdd3b8c424184548209c6f661d104a59",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-llmservice--get-minimal-context",
+          "summary": "Get minimal context - basic project info",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "private"
+          ],
+          "calls": [
+            "str",
+            "datetime.now"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_generate_grok_response",
+          "docstring": "Generate response using Grok API",
+          "line_range": [
+            269,
+            287
+          ],
+          "parameters": [
+            "self",
+            "message",
+            "context_info"
+          ],
+          "uid": "llmstruct.api.services.llm_service.LLMService._generate_grok_response:269#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.LLMService",
+            "llmstruct.api.services.llm_service.LLMService._generate_grok_response:269"
+          ],
+          "hash": "ebc94f0982c750a3a1452dd4734aac87bb5f0a37d9abd908024b5685218bbeed",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-llmservice--generate-grok-response",
+          "summary": "Generate response using Grok API",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "len",
+            "ValueError",
+            "self._build_system_prompt"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_generate_anthropic_response",
+          "docstring": "Generate response using Anthropic API",
+          "line_range": [
+            289,
+            307
+          ],
+          "parameters": [
+            "self",
+            "message",
+            "context_info"
+          ],
+          "uid": "llmstruct.api.services.llm_service.LLMService._generate_anthropic_response:289#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.LLMService",
+            "llmstruct.api.services.llm_service.LLMService._generate_anthropic_response:289"
+          ],
+          "hash": "846af9c140e61d33f16caeade890f66301fc17875e132e6c86172fe0c891af13",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-llmservice--generate-anthropic-response",
+          "summary": "Generate response using Anthropic API",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "len",
+            "ValueError",
+            "self._build_system_prompt"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_build_system_prompt",
+          "docstring": "Build system prompt with project context",
+          "line_range": [
+            309,
+            344
+          ],
+          "parameters": [
+            "self",
+            "context_info"
+          ],
+          "uid": "llmstruct.api.services.llm_service.LLMService._build_system_prompt:309#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.LLMService",
+            "llmstruct.api.services.llm_service.LLMService._build_system_prompt:309"
+          ],
+          "hash": "e3baf5ed7f5e0d3bac7b11b0dda32f4fc66f1e4456895339d8074ee7665f6b1b",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-llmservice--build-system-prompt",
+          "summary": "Build system prompt with project context",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "context_info.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_generate_mock_response",
+          "docstring": "Generate a mock AI response (placeholder for real LLM)",
+          "line_range": [
+            346,
+            380
+          ],
+          "parameters": [
+            "self",
+            "message",
+            "context_info"
+          ],
+          "uid": "llmstruct.api.services.llm_service.LLMService._generate_mock_response:346#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.llm_service",
+            "llmstruct.api.services.llm_service.LLMService",
+            "llmstruct.api.services.llm_service.LLMService._generate_mock_response:346"
+          ],
+          "hash": "667fc23998e6b1f8e8b448d754bf5100a4f34ef2e54095c98fadc582ddeb96b0",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-llm-service-llmservice--generate-mock-response",
+          "summary": "Generate a mock AI response (placeholder for real LLM)",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "private"
+          ],
+          "calls": [
+            "message.lower",
+            "context_info.get",
+            "len"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.api.services.llm_service.LLMService:115#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.llm_service",
+        "llmstruct.api.services.llm_service.LLMService:115"
+      ],
+      "hash": "450e8b12bc163bd7e9b2a889bd45847dc4f5ff29bc6309b4f9c84b39094b78e5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-llm-service-llmservice",
+      "summary": "Service for LLM processing with context integration",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "self._initialize_components",
+    "AnthropicClient",
+    "Path.cwd",
+    "GrokClient",
+    "self._initialize_components",
+    "AnthropicClient",
+    "Path.cwd",
+    "GrokClient",
+    "ValueError",
+    "httpx.AsyncClient",
+    "response.json",
+    "response.raise_for_status",
+    "client.post",
+    "self._initialize_components",
+    "AnthropicClient",
+    "Path.cwd",
+    "GrokClient",
+    "ValueError",
+    "httpx.AsyncClient",
+    "response.json",
+    "response.raise_for_status",
+    "client.post",
+    "self._initialize_components",
+    "AnthropicClient",
+    "Path.cwd",
+    "GrokClient",
+    "str",
+    "logger.info",
+    "logger.error",
+    "CopilotContextManager",
+    "SmartContextOrchestrator",
+    "str",
+    "LLMResponse",
+    "self._get_context",
+    "logger.error",
+    "self._try_llm_providers",
+    "logger.info",
+    "self._generate_anthropic_response",
+    "self._generate_mock_response",
+    "self._generate_grok_response",
+    "logger.warning",
+    "len",
+    "str",
+    "self._get_focused_context",
+    "logger.error",
+    "self._get_minimal_context",
+    "context_info.update",
+    "self._get_full_context",
+    "struct_file.exists",
+    "open",
+    "list",
+    "struct_data.get",
+    "json.load",
+    "len",
+    "message.lower",
+    "any",
+    "str",
+    "datetime.now",
+    "len",
+    "ValueError",
+    "self._build_system_prompt",
+    "len",
+    "ValueError",
+    "self._build_system_prompt",
+    "context_info.get",
+    "message.lower",
+    "context_info.get",
+    "len"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.854384",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:537fac8fa7de329d",
+    "lines_of_code": 21
+  }
+}

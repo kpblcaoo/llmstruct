@@ -1,0 +1,258 @@
+{
+  "module_info": {
+    "uid": "llmstruct.core.tag_inference",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.core.tag_inference with 4 functions and 1 classes",
+    "hash": "sha256:b8dab8f3ab1edaea",
+    "dependencies": [
+      "_CODE_BASED_PATTERNS",
+      "_NAME_BASED_PATTERNS",
+      "re",
+      "result",
+      "tags"
+    ],
+    "exports": [
+      "Tag",
+      "infer_tags"
+    ]
+  },
+  "functions": [
+    {
+      "name": "_name_based_tags",
+      "docstring": "Infer tags from naming conventions.",
+      "line_range": [
+        61,
+        67
+      ],
+      "parameters": [
+        "name"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.tag_inference._name_based_tags:61#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.tag_inference",
+        "llmstruct.core.tag_inference._name_based_tags:61"
+      ],
+      "hash": "dfb1ce7c4852fad7240b69db4af1e2acec65be1e9dfc146b77db20db6d59debd",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-tag-inference--name-based-tags",
+      "summary": "Infer tags from naming conventions.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "_NAME_BASED_PATTERNS.items",
+        "re.search",
+        "result.add",
+        "set"
+      ],
+      "called_by": [
+        "infer_tags"
+      ]
+    },
+    {
+      "name": "_code_based_tags",
+      "docstring": "Infer tags by scanning source code for specific patterns.",
+      "line_range": [
+        70,
+        76
+      ],
+      "parameters": [
+        "code"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.tag_inference._code_based_tags:70#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.tag_inference",
+        "llmstruct.core.tag_inference._code_based_tags:70"
+      ],
+      "hash": "d88e397b897fef8ccee505694a5217b52911adffc492882b00f3dcf0e3b52b9f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-tag-inference--code-based-tags",
+      "summary": "Infer tags by scanning source code for specific patterns.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "re.search",
+        "result.add",
+        "_CODE_BASED_PATTERNS.items",
+        "set"
+      ],
+      "called_by": [
+        "infer_tags"
+      ]
+    },
+    {
+      "name": "infer_tags",
+      "docstring": "Infer a list of semantic tags for a code entity.\n\nArgs:\n    code: Raw source code snippet (may be trimmed).\n    entity_type: One of ``\"module\"``, ``\"class\"``, ``\"function\"``,\n        ``\"method\"`` – anything else will be treated as generic.\n    entity_name: Canonical name of the entity (optional).\n\nReturns:\n    Sorted list of *unique* tag strings.",
+      "line_range": [
+        79,
+        112
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "llmstruct.core.tag_inference.infer_tags:79#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.tag_inference",
+        "llmstruct.core.tag_inference.infer_tags:79"
+      ],
+      "hash": "5c9f54b28d8ee6f43b5808bae4615cb69846b56def0c234632aac812d466c811",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-tag-inference-infer-tags",
+      "summary": "Infer a list of semantic tags for a code entity",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "_name_based_tags",
+        "str",
+        "tags.add",
+        "set",
+        "_code_based_tags",
+        "Tag",
+        "sorted"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__str__",
+      "docstring": "",
+      "line_range": [
+        41,
+        42
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.tag_inference.__str__:41#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.tag_inference",
+        "llmstruct.core.tag_inference.__str__:41"
+      ],
+      "hash": "486efe1df6a4f57b8ffb28105fb13ef36cd52cb83af7636e6e1d57a0292edb67",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-tag-inference---str--",
+      "summary": "Function for str",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "Tag",
+      "docstring": "Canonical tag values used in the project.",
+      "line_range": [
+        26,
+        42
+      ],
+      "methods": [
+        {
+          "name": "__str__",
+          "docstring": "",
+          "line_range": [
+            41,
+            42
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.core.tag_inference.Tag.__str__:41#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.core",
+            "llmstruct.core.tag_inference",
+            "llmstruct.core.tag_inference.Tag",
+            "llmstruct.core.tag_inference.Tag.__str__:41"
+          ],
+          "hash": "3c258d452bed971d6a29529c2be01892aebd80dc44bde3181030993d425193ca",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-core-tag-inference-tag---str--",
+          "summary": "Method for tag. str",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        }
+      ],
+      "bases": [
+        "str",
+        "Enum"
+      ],
+      "uid": "llmstruct.core.tag_inference.Tag:26#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.tag_inference",
+        "llmstruct.core.tag_inference.Tag:26"
+      ],
+      "hash": "a7f3d9433d3cff6239a79b36c0a2cdfd49579530b7e742014cfc2e9c06690db2",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-tag-inference-tag",
+      "summary": "Canonical tag values used in the project.",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "_NAME_BASED_PATTERNS.items",
+    "re.search",
+    "result.add",
+    "set",
+    "re.search",
+    "result.add",
+    "_CODE_BASED_PATTERNS.items",
+    "set",
+    "_name_based_tags",
+    "str",
+    "tags.add",
+    "set",
+    "_code_based_tags",
+    "Tag",
+    "sorted"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.844984",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:b8dab8f3ab1edaea",
+    "lines_of_code": 5
+  }
+}

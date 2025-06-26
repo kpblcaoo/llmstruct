@@ -1,0 +1,371 @@
+{
+  "module_info": {
+    "uid": "llmstruct.modules.commands.metrics",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.modules.commands.metrics with 7 functions",
+    "hash": "sha256:e4a143b35b8d156e",
+    "dependencies": [
+      "analytics",
+      "csv",
+      "f",
+      "interaction",
+      "json",
+      "summary",
+      "time",
+      "tracker",
+      "writer"
+    ],
+    "exports": [
+      "cmd_metrics",
+      "metrics_analytics",
+      "metrics_report",
+      "metrics_status",
+      "metrics_summary",
+      "metrics_tokens",
+      "metrics_track"
+    ]
+  },
+  "functions": [
+    {
+      "name": "metrics_status",
+      "docstring": "Показать текущий статус метрик",
+      "line_range": [
+        1,
+        20
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "llmstruct.modules.commands.metrics.metrics_status:1#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.commands",
+        "llmstruct.modules.commands.metrics",
+        "llmstruct.modules.commands.metrics.metrics_status:1"
+      ],
+      "hash": "a8e8aa1abee6f37cc28128bd073aba68161abac5b0e67df78fa7d686797898c7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-commands-metrics-metrics-status",
+      "summary": "Показать текущий статус метрик",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "get_metrics_tracker",
+        "tracker.get_session_summary"
+      ],
+      "called_by": [
+        "cmd_metrics"
+      ]
+    },
+    {
+      "name": "metrics_summary",
+      "docstring": "Показать детальную сводку метрик",
+      "line_range": [
+        22,
+        66
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "llmstruct.modules.commands.metrics.metrics_summary:22#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.commands",
+        "llmstruct.modules.commands.metrics",
+        "llmstruct.modules.commands.metrics.metrics_summary:22"
+      ],
+      "hash": "a487aa55e81669cb8a7e9738213416483c6cd45e6d3c00d71753ccca7967d5aa",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-commands-metrics-metrics-summary",
+      "summary": "Показать детальную сводку метрик",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "get_metrics_tracker",
+        "max",
+        "tracker.get_session_summary"
+      ],
+      "called_by": [
+        "cmd_metrics"
+      ]
+    },
+    {
+      "name": "metrics_analytics",
+      "docstring": "Сгенерировать аналитические данные",
+      "line_range": [
+        68,
+        104
+      ],
+      "parameters": [
+        "output_file",
+        "format"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.commands.metrics.metrics_analytics:68#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.commands",
+        "llmstruct.modules.commands.metrics",
+        "llmstruct.modules.commands.metrics.metrics_analytics:68"
+      ],
+      "hash": "22669256fc52a06e7777c2b47d4ddc5da5c685f7ef281b77c4488341cbaf29aa",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-commands-metrics-metrics-analytics",
+      "summary": "Сгенерировать аналитические данные",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "open",
+        "tracker.get_session_summary",
+        "csv.writer",
+        "enumerate",
+        "json.dumps",
+        "tracker.get_analytics_data",
+        "json.dump",
+        "get_metrics_tracker",
+        "time.strftime",
+        "writer.writerow"
+      ],
+      "called_by": [
+        "cmd_metrics"
+      ]
+    },
+    {
+      "name": "metrics_report",
+      "docstring": "Создать всесторонний отчет",
+      "line_range": [
+        106,
+        134
+      ],
+      "parameters": [
+        "sessions",
+        "output_file"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.commands.metrics.metrics_report:106#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.commands",
+        "llmstruct.modules.commands.metrics",
+        "llmstruct.modules.commands.metrics.metrics_report:106"
+      ],
+      "hash": "04815663759b47971637c826ca3f53adb3d6f2909f8af91316787abeb52e78b4",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-commands-metrics-metrics-report",
+      "summary": "Создать всесторонний отчет",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "open",
+        "min",
+        "sum",
+        "analytics.get",
+        "tracker.get_analytics_data",
+        "len",
+        "get_metrics_tracker",
+        "time.strftime",
+        "f.write"
+      ],
+      "called_by": [
+        "cmd_metrics"
+      ]
+    },
+    {
+      "name": "metrics_track",
+      "docstring": "Ручное отслеживание событий",
+      "line_range": [
+        136,
+        145
+      ],
+      "parameters": [
+        "event_type",
+        "details"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.commands.metrics.metrics_track:136#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.commands",
+        "llmstruct.modules.commands.metrics",
+        "llmstruct.modules.commands.metrics.metrics_track:136"
+      ],
+      "hash": "6ff80ae3b85d0dc81f217625f1ca1139e27d8e5479bfe1acc1b1fe3cf2b9a99b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-commands-metrics-metrics-track",
+      "summary": "Ручное отслеживание событий",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "track_workflow_event"
+      ],
+      "called_by": [
+        "cmd_metrics"
+      ]
+    },
+    {
+      "name": "metrics_tokens",
+      "docstring": "Показать детальную статистику токенов",
+      "line_range": [
+        147,
+        185
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "llmstruct.modules.commands.metrics.metrics_tokens:147#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.commands",
+        "llmstruct.modules.commands.metrics",
+        "llmstruct.modules.commands.metrics.metrics_tokens:147"
+      ],
+      "hash": "7475fb266e46e8577d9d3d935b3b1be8273e54dd91152baa8a7aaba229d8cf94",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-commands-metrics-metrics-tokens",
+      "summary": "Показать детальную статистику токенов",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "get_token_summary",
+        "summary.get",
+        "interaction.get",
+        "get_metrics_tracker",
+        "enumerate"
+      ],
+      "called_by": [
+        "cmd_metrics"
+      ]
+    },
+    {
+      "name": "cmd_metrics",
+      "docstring": "Управление метриками проекта",
+      "line_range": [
+        187,
+        205
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.commands.metrics.cmd_metrics:187#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.commands",
+        "llmstruct.modules.commands.metrics",
+        "llmstruct.modules.commands.metrics.cmd_metrics:187"
+      ],
+      "hash": "e0b10c860dfe6ec367c7422114ada3c7f8063bd7b1ac2deecc4e90827783a8b9",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-commands-metrics-cmd-metrics",
+      "summary": "Управление метриками проекта",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "metrics_status",
+        "metrics_report",
+        "metrics_analytics",
+        "metrics_summary",
+        "metrics_tokens",
+        "metrics_track"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "print",
+    "get_metrics_tracker",
+    "tracker.get_session_summary",
+    "print",
+    "get_metrics_tracker",
+    "max",
+    "tracker.get_session_summary",
+    "print",
+    "open",
+    "tracker.get_session_summary",
+    "csv.writer",
+    "enumerate",
+    "json.dumps",
+    "tracker.get_analytics_data",
+    "json.dump",
+    "get_metrics_tracker",
+    "time.strftime",
+    "writer.writerow",
+    "print",
+    "open",
+    "min",
+    "sum",
+    "analytics.get",
+    "tracker.get_analytics_data",
+    "len",
+    "get_metrics_tracker",
+    "time.strftime",
+    "f.write",
+    "print",
+    "track_workflow_event",
+    "print",
+    "get_token_summary",
+    "summary.get",
+    "interaction.get",
+    "get_metrics_tracker",
+    "enumerate",
+    "print",
+    "metrics_status",
+    "metrics_report",
+    "metrics_analytics",
+    "metrics_summary",
+    "metrics_tokens",
+    "metrics_track"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.858695",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:e4a143b35b8d156e",
+    "lines_of_code": 7
+  }
+}

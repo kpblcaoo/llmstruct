@@ -1,0 +1,809 @@
+{
+  "module_info": {
+    "uid": "scripts.create_github_issues",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.create_github_issues with 11 functions and 1 classes",
+    "hash": "sha256:6b2713c3425eb16d",
+    "dependencies": [
+      "creator",
+      "env_file",
+      "epic_data",
+      "epics_data",
+      "epics_file",
+      "f",
+      "issue_url",
+      "json",
+      "key",
+      "line",
+      "metrics",
+      "os",
+      "requests",
+      "response",
+      "self",
+      "subprocess",
+      "task_data",
+      "value"
+    ],
+    "exports": [
+      "GitHubIssuesCreator",
+      "create_epic_issue",
+      "create_task_issue",
+      "load_env_file",
+      "load_epics_data",
+      "main"
+    ]
+  },
+  "functions": [
+    {
+      "name": "load_env_file",
+      "docstring": "Загрузить переменные из .env файла",
+      "line_range": [
+        16,
+        28
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.create_github_issues.load_env_file:16#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_github_issues",
+        "scripts.create_github_issues.load_env_file:16"
+      ],
+      "hash": "93aa6398a89bcb896f1c05e6fd2f55aae74f77ca2b5ee528bd839e435c2c4a92",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-github-issues-load-env-file",
+      "summary": "Загрузить переменные из .env файла",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "open",
+        "line.split",
+        "value.strip",
+        "env_file.exists",
+        "line.startswith",
+        "line.strip",
+        "key.strip",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "load_epics_data",
+      "docstring": "Загрузить данные эпиков из JSON",
+      "line_range": [
+        205,
+        213
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.create_github_issues.load_epics_data:205#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_github_issues",
+        "scripts.create_github_issues.load_epics_data:205"
+      ],
+      "hash": "b09a0f8dfd696d376f3bf2bd6c85ddd821e83181bf1d5bd48b0e64b16b72f30b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-github-issues-load-epics-data",
+      "summary": "Загрузить данные эпиков из JSON",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "open",
+        "epics_file.exists",
+        "json.load",
+        "Path"
+      ],
+      "called_by": [
+        "main"
+      ]
+    },
+    {
+      "name": "main",
+      "docstring": "Основная функция для создания issues",
+      "line_range": [
+        215,
+        252
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.create_github_issues.main:215#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_github_issues",
+        "scripts.create_github_issues.main:215"
+      ],
+      "hash": "5be49419d4da54cadc2584f18a00bf1e2d32d4b46ff126720b3b72a6df5b6dec",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-github-issues-main",
+      "summary": "Основная функция для создания issues",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "load_epics_data",
+        "epics_data.get",
+        "epic_data.get",
+        "creator.create_epic_issue",
+        "os.getenv",
+        "GitHubIssuesCreator",
+        "creator.create_task_issue",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        34,
+        43
+      ],
+      "parameters": [
+        "self",
+        "repo_owner",
+        "repo_name",
+        "token",
+        "use_cli"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_github_issues.__init__:34#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_github_issues",
+        "scripts.create_github_issues.__init__:34"
+      ],
+      "hash": "d6cc4eb12482caf6eda0d2167059ae39dffb2b72a10d136aef218293b832519a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-github-issues---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "create_epic_issue",
+      "docstring": "Создать GitHub issue для эпика",
+      "line_range": [
+        45,
+        83
+      ],
+      "parameters": [
+        "self",
+        "epic_data"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_github_issues.create_epic_issue:45#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_github_issues",
+        "scripts.create_github_issues.create_epic_issue:45"
+      ],
+      "hash": "0bdcfb4e7e47b3ad7a082eab47621794113336df026dd8b96567241749e7e342",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-github-issues-create-epic-issue",
+      "summary": "Создать GitHub issue для эпика",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "epic_data.get",
+        "self._format_criteria",
+        "self._create_issue_via_api",
+        "self._create_issue_via_cli",
+        "self._format_metrics",
+        "self._format_tasks"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "create_task_issue",
+      "docstring": "Создать GitHub issue для задачи",
+      "line_range": [
+        85,
+        128
+      ],
+      "parameters": [
+        "self",
+        "task_data",
+        "epic_number"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_github_issues.create_task_issue:85#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_github_issues",
+        "scripts.create_github_issues.create_task_issue:85"
+      ],
+      "hash": "3418d37f58293ec381a5f41585674950011de3ed846f40a45cbfc8aef2c19a48",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-github-issues-create-task-issue",
+      "summary": "Создать GitHub issue для задачи",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self._create_issue_via_cli",
+        "self._create_issue_via_api",
+        "task_data.get",
+        "self._format_criteria"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_create_issue_via_api",
+      "docstring": "Создать issue через GitHub API",
+      "line_range": [
+        130,
+        150
+      ],
+      "parameters": [
+        "self",
+        "title",
+        "body",
+        "labels"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_github_issues._create_issue_via_api:130#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_github_issues",
+        "scripts.create_github_issues._create_issue_via_api:130"
+      ],
+      "hash": "0fdd95a5353aefc5f168e1c04a3900faf481ed52d34eea6b238852bbe0bfd376",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-github-issues--create-issue-via-api",
+      "summary": "Создать issue через GitHub API",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "response.json",
+        "requests.post"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_create_issue_via_cli",
+      "docstring": "Создать issue через GitHub CLI",
+      "line_range": [
+        152,
+        186
+      ],
+      "parameters": [
+        "self",
+        "title",
+        "body",
+        "labels"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_github_issues._create_issue_via_cli:152#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_github_issues",
+        "scripts.create_github_issues._create_issue_via_cli:152"
+      ],
+      "hash": "45ade40ede597247c852def8082ef62dfaed8e18c04a5546a45d55891bf87654",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-github-issues--create-issue-via-cli",
+      "summary": "Создать issue через GitHub CLI",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "subprocess.run",
+        "print",
+        "open",
+        "os.unlink",
+        "issue_url.split",
+        "os.getpid",
+        "int",
+        "f.write"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_format_criteria",
+      "docstring": "",
+      "line_range": [
+        188,
+        189
+      ],
+      "parameters": [
+        "self",
+        "criteria"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_github_issues._format_criteria:188#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_github_issues",
+        "scripts.create_github_issues._format_criteria:188"
+      ],
+      "hash": "521a829071524cf28f70ba55d88c1abe3e2c55eb732c5302b9fdfc03b449c013",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-github-issues--format-criteria",
+      "summary": "Function for format criteria",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "_format_tasks",
+      "docstring": "",
+      "line_range": [
+        191,
+        200
+      ],
+      "parameters": [
+        "self",
+        "tasks"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_github_issues._format_tasks:191#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_github_issues",
+        "scripts.create_github_issues._format_tasks:191"
+      ],
+      "hash": "e6817df9793e85aebd51b77c942b37369d02111e604fc1f199de0f0c13a2028b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-github-issues--format-tasks",
+      "summary": "Function for format tasks",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "_format_metrics",
+      "docstring": "",
+      "line_range": [
+        202,
+        203
+      ],
+      "parameters": [
+        "self",
+        "metrics"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_github_issues._format_metrics:202#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_github_issues",
+        "scripts.create_github_issues._format_metrics:202"
+      ],
+      "hash": "8d8a1615e2c7f131759caf3dd9e32ede35f21e1fe3c02ec6e7f9b71dd1fd1be6",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-github-issues--format-metrics",
+      "summary": "Function for format metrics",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "metrics.items"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "GitHubIssuesCreator",
+      "docstring": "",
+      "line_range": [
+        33,
+        203
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            34,
+            43
+          ],
+          "parameters": [
+            "self",
+            "repo_owner",
+            "repo_name",
+            "token",
+            "use_cli"
+          ],
+          "uid": "scripts.create_github_issues.GitHubIssuesCreator.__init__:34#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_github_issues",
+            "scripts.create_github_issues.GitHubIssuesCreator",
+            "scripts.create_github_issues.GitHubIssuesCreator.__init__:34"
+          ],
+          "hash": "0f70df861a243649d359a1263a920134d551fcb44a574cf4c4ad83c68794a7c8",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-github-issues-githubissuescreator---init--",
+          "summary": "Method for githubissuescreator. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "create_epic_issue",
+          "docstring": "Создать GitHub issue для эпика",
+          "line_range": [
+            45,
+            83
+          ],
+          "parameters": [
+            "self",
+            "epic_data"
+          ],
+          "uid": "scripts.create_github_issues.GitHubIssuesCreator.create_epic_issue:45#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_github_issues",
+            "scripts.create_github_issues.GitHubIssuesCreator",
+            "scripts.create_github_issues.GitHubIssuesCreator.create_epic_issue:45"
+          ],
+          "hash": "a7acef18c4f0fd8735937a4b7a8cbf84911c26d1fea004ec13ed62489426c663",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-github-issues-githubissuescreator-create-epic-issue",
+          "summary": "Создать GitHub issue для эпика",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "epic_data.get",
+            "self._format_criteria",
+            "self._create_issue_via_api",
+            "self._create_issue_via_cli",
+            "self._format_metrics",
+            "self._format_tasks"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "create_task_issue",
+          "docstring": "Создать GitHub issue для задачи",
+          "line_range": [
+            85,
+            128
+          ],
+          "parameters": [
+            "self",
+            "task_data",
+            "epic_number"
+          ],
+          "uid": "scripts.create_github_issues.GitHubIssuesCreator.create_task_issue:85#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_github_issues",
+            "scripts.create_github_issues.GitHubIssuesCreator",
+            "scripts.create_github_issues.GitHubIssuesCreator.create_task_issue:85"
+          ],
+          "hash": "321a052b60fa856f29340b9192adae5abfa1a3c6929184ac89817cf01029d1a7",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-github-issues-githubissuescreator-create-task-issue",
+          "summary": "Создать GitHub issue для задачи",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self._create_issue_via_cli",
+            "self._create_issue_via_api",
+            "task_data.get",
+            "self._format_criteria"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_create_issue_via_api",
+          "docstring": "Создать issue через GitHub API",
+          "line_range": [
+            130,
+            150
+          ],
+          "parameters": [
+            "self",
+            "title",
+            "body",
+            "labels"
+          ],
+          "uid": "scripts.create_github_issues.GitHubIssuesCreator._create_issue_via_api:130#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_github_issues",
+            "scripts.create_github_issues.GitHubIssuesCreator",
+            "scripts.create_github_issues.GitHubIssuesCreator._create_issue_via_api:130"
+          ],
+          "hash": "64f519a216c555a467590176272209f3883fbbf96d7091a2d20b18c0d8cccd55",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-github-issues-githubissuescreator--create-issue-via-api",
+          "summary": "Создать issue через GitHub API",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "response.json",
+            "requests.post"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_create_issue_via_cli",
+          "docstring": "Создать issue через GitHub CLI",
+          "line_range": [
+            152,
+            186
+          ],
+          "parameters": [
+            "self",
+            "title",
+            "body",
+            "labels"
+          ],
+          "uid": "scripts.create_github_issues.GitHubIssuesCreator._create_issue_via_cli:152#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_github_issues",
+            "scripts.create_github_issues.GitHubIssuesCreator",
+            "scripts.create_github_issues.GitHubIssuesCreator._create_issue_via_cli:152"
+          ],
+          "hash": "e9365a5f3dde021ca5097206ff426cc6f99b3f09b365bdeec6627850c214d97d",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-github-issues-githubissuescreator--create-issue-via-cli",
+          "summary": "Создать issue через GitHub CLI",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "subprocess.run",
+            "print",
+            "open",
+            "os.unlink",
+            "issue_url.split",
+            "os.getpid",
+            "int",
+            "f.write"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_format_criteria",
+          "docstring": "",
+          "line_range": [
+            188,
+            189
+          ],
+          "parameters": [
+            "self",
+            "criteria"
+          ],
+          "uid": "scripts.create_github_issues.GitHubIssuesCreator._format_criteria:188#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_github_issues",
+            "scripts.create_github_issues.GitHubIssuesCreator",
+            "scripts.create_github_issues.GitHubIssuesCreator._format_criteria:188"
+          ],
+          "hash": "db279583f99b3a05ade3e5c1e6e18570006a1cfa5891ff032281a3af988b4b91",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-github-issues-githubissuescreator--format-criteria",
+          "summary": "Method for githubissuescreator. format criteria",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "_format_tasks",
+          "docstring": "",
+          "line_range": [
+            191,
+            200
+          ],
+          "parameters": [
+            "self",
+            "tasks"
+          ],
+          "uid": "scripts.create_github_issues.GitHubIssuesCreator._format_tasks:191#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_github_issues",
+            "scripts.create_github_issues.GitHubIssuesCreator",
+            "scripts.create_github_issues.GitHubIssuesCreator._format_tasks:191"
+          ],
+          "hash": "4121a4fa218cdbebabbad094b243e3f2b359ca4e6359f2361e3a89a2dd4c315e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-github-issues-githubissuescreator--format-tasks",
+          "summary": "Method for githubissuescreator. format tasks",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "_format_metrics",
+          "docstring": "",
+          "line_range": [
+            202,
+            203
+          ],
+          "parameters": [
+            "self",
+            "metrics"
+          ],
+          "uid": "scripts.create_github_issues.GitHubIssuesCreator._format_metrics:202#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_github_issues",
+            "scripts.create_github_issues.GitHubIssuesCreator",
+            "scripts.create_github_issues.GitHubIssuesCreator._format_metrics:202"
+          ],
+          "hash": "39b486e95d9688a653efb7b18b891636a1ab7dc31c204b5c52997d4ea3c769d6",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-github-issues-githubissuescreator--format-metrics",
+          "summary": "Method for githubissuescreator. format metrics",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "metrics.items"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "scripts.create_github_issues.GitHubIssuesCreator:33#class",
+      "uid_components": [
+        "scripts",
+        "scripts.create_github_issues",
+        "scripts.create_github_issues.GitHubIssuesCreator:33"
+      ],
+      "hash": "694704d6bb1e32a0604a1a9c569aa005fea7c54433b020bafbfe6914b81bada3",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-github-issues-githubissuescreator",
+      "summary": "Class for git hub issues creator",
+      "summary_source": "heuristic",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "print",
+    "open",
+    "line.split",
+    "value.strip",
+    "env_file.exists",
+    "line.startswith",
+    "line.strip",
+    "key.strip",
+    "Path",
+    "print",
+    "open",
+    "epics_file.exists",
+    "json.load",
+    "Path",
+    "print",
+    "load_epics_data",
+    "epics_data.get",
+    "epic_data.get",
+    "creator.create_epic_issue",
+    "os.getenv",
+    "GitHubIssuesCreator",
+    "creator.create_task_issue",
+    "len",
+    "epic_data.get",
+    "self._format_criteria",
+    "self._create_issue_via_api",
+    "self._create_issue_via_cli",
+    "self._format_metrics",
+    "self._format_tasks",
+    "self._create_issue_via_cli",
+    "self._create_issue_via_api",
+    "task_data.get",
+    "self._format_criteria",
+    "print",
+    "response.json",
+    "requests.post",
+    "subprocess.run",
+    "print",
+    "open",
+    "os.unlink",
+    "issue_url.split",
+    "os.getpid",
+    "int",
+    "f.write",
+    "metrics.items"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.770677",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:6b2713c3425eb16d",
+    "lines_of_code": 12
+  }
+}

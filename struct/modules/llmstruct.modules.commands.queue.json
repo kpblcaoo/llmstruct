@@ -1,0 +1,110 @@
+{
+  "module_info": {
+    "uid": "llmstruct.modules.commands.queue",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.modules.commands.queue with 1 functions",
+    "hash": "sha256:a3fb5a30f175028e",
+    "dependencies": [
+      "client",
+      "item",
+      "json",
+      "logging",
+      "options",
+      "time",
+      "workflow"
+    ],
+    "exports": [
+      "process_cli_queue_enhanced"
+    ]
+  },
+  "functions": [
+    {
+      "name": "process_cli_queue_enhanced",
+      "docstring": "Enhanced queue processing with workflow support, performance tracking, and safety validation.",
+      "line_range": [
+        9,
+        208
+      ],
+      "parameters": [
+        "root_dir",
+        "context_path",
+        "args",
+        "cache",
+        "client"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.commands.queue.process_cli_queue_enhanced:9#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.commands",
+        "llmstruct.modules.commands.queue",
+        "llmstruct.modules.commands.queue.process_cli_queue_enhanced:9"
+      ],
+      "hash": "d68410f894092abdca6271bf2d1b28c6f07a1467d24ff14e5d6945b34c15e214",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-commands-queue-process-cli-queue-enhanced",
+      "summary": "Enhanced queue processing with workflow support, performance tracking, and safety validation.",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "logging.info",
+        "open",
+        "item.get",
+        "load_gitignore",
+        "options.get",
+        "attach_to_llm_request",
+        "isinstance",
+        "workflow.get",
+        "time.time",
+        "write_to_file",
+        "get_folder_structure",
+        "logging.error",
+        "read_file_content",
+        "client.query",
+        "json.load",
+        "len",
+        "enumerate"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "print",
+    "logging.info",
+    "open",
+    "item.get",
+    "load_gitignore",
+    "options.get",
+    "attach_to_llm_request",
+    "isinstance",
+    "workflow.get",
+    "time.time",
+    "write_to_file",
+    "get_folder_structure",
+    "logging.error",
+    "read_file_content",
+    "client.query",
+    "json.load",
+    "len",
+    "enumerate"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.859720",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:a3fb5a30f175028e",
+    "lines_of_code": 1
+  }
+}

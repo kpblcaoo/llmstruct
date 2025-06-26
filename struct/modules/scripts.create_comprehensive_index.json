@@ -1,0 +1,2995 @@
+{
+  "module_info": {
+    "uid": "scripts.create_comprehensive_index",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.create_comprehensive_index with 37 functions and 2 classes",
+    "hash": "sha256:7a4717ba578c5d63",
+    "dependencies": [
+      "by_priority",
+      "by_source",
+      "by_status",
+      "by_strategic",
+      "by_strategic_value",
+      "by_type",
+      "content",
+      "d",
+      "datetime",
+      "dir_path",
+      "f",
+      "file_path",
+      "indexer",
+      "innovation_lines",
+      "item",
+      "json",
+      "line",
+      "logger",
+      "match",
+      "os",
+      "re",
+      "ref_type",
+      "related",
+      "result",
+      "self",
+      "source_dir",
+      "tags",
+      "text",
+      "title"
+    ],
+    "exports": [
+      "ComprehensiveIndexer",
+      "ProjectItem",
+      "generate_comprehensive_report",
+      "main",
+      "save_comprehensive_index",
+      "scan_all_directories"
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "docstring": "Main execution function.",
+      "line_range": [
+        714,
+        735
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index.main:714#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index.main:714"
+      ],
+      "hash": "7e7ca7a47660cec7bc9037f24b899ac7f63ecf08fa45272668aa9ac8bade2728",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index-main",
+      "summary": "Main execution function.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "by_strategic.get",
+        "logger.info",
+        "indexer.scan_all_directories",
+        "indexer.save_comprehensive_index",
+        "ComprehensiveIndexer",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        45,
+        58
+      ],
+      "parameters": [
+        "self",
+        "project_root"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index.__init__:45#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index.__init__:45"
+      ],
+      "hash": "55d05adfaef87c55e40848d0c4b0eb48aef0c6b633d7a45fb810cbbcd0e11bdc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "self._init_patterns",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_init_patterns",
+      "docstring": "Initialize comprehensive extraction patterns.",
+      "line_range": [
+        60,
+        92
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._init_patterns:60#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._init_patterns:60"
+      ],
+      "hash": "3bf0818966c538afa61cb59041ebabfb0464757cfcde9bfd1e0d2567d6fcccf9",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--init-patterns",
+      "summary": "Initialize comprehensive extraction patterns.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "re.compile"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "scan_all_directories",
+      "docstring": "Scan all configured directories comprehensively.",
+      "line_range": [
+        94,
+        111
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index.scan_all_directories:94#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index.scan_all_directories:94"
+      ],
+      "hash": "b4fe02ecd55020ac011997cb124636b4cce259777abc3efcedde3d40615db612",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index-scan-all-directories",
+      "summary": "Scan all configured directories comprehensively.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logger.info",
+        "self._enhance_items",
+        "self._scan_directory",
+        "self._parse_json_files",
+        "self._scan_root_files",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_scan_directory",
+      "docstring": "Scan a specific directory according to its configuration.",
+      "line_range": [
+        113,
+        127
+      ],
+      "parameters": [
+        "self",
+        "directory",
+        "config"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._scan_directory:113#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._scan_directory:113"
+      ],
+      "hash": "f5f4aace2a1c24e74fb8afd49fbd7d38c8f20a98a09ff3da5a9e1cd38f532ae3",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--scan-directory",
+      "summary": "Scan a specific directory according to its configuration.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "logger.info",
+        "dir_path.glob",
+        "file_path.is_file",
+        "self._should_scan_file",
+        "logger.warning",
+        "dir_path.exists",
+        "self._scan_file"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_scan_root_files",
+      "docstring": "Scan root-level files.",
+      "line_range": [
+        129,
+        133
+      ],
+      "parameters": [
+        "self",
+        "config"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._scan_root_files:129#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._scan_root_files:129"
+      ],
+      "hash": "b05641b55e850e631b7e93bcbda0dcbca2462236421ec789c9c6ed3caa4f2dcc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--scan-root-files",
+      "summary": "Scan root-level files.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "self._scan_file",
+        "self._should_scan_file",
+        "file_path.is_file"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_should_scan_file",
+      "docstring": "Check if file should be scanned based on extension.",
+      "line_range": [
+        135,
+        137
+      ],
+      "parameters": [
+        "self",
+        "file_path",
+        "allowed_types"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._should_scan_file:135#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._should_scan_file:135"
+      ],
+      "hash": "ffbb0f88b0c5614291dbbba469f224ce5363a7673ba16dbc87637af98ed84c2a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--should-scan-file",
+      "summary": "Check if file should be scanned based on extension.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "_scan_file",
+      "docstring": "Scan individual file for project items.",
+      "line_range": [
+        139,
+        152
+      ],
+      "parameters": [
+        "self",
+        "file_path",
+        "source_dir",
+        "priority"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._scan_file:139#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._scan_file:139"
+      ],
+      "hash": "583e6e566e3b42a595d6953c6c505ee9f79805d2f2995b413c06dd6b82a43364",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--scan-file",
+      "summary": "Scan individual file for project items.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "open",
+        "f.read",
+        "logger.error",
+        "self._extract_from_json",
+        "self._extract_from_text"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_from_text",
+      "docstring": "Extract items from text/markdown files.",
+      "line_range": [
+        154,
+        206
+      ],
+      "parameters": [
+        "self",
+        "file_path",
+        "content",
+        "source_dir",
+        "priority"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._extract_from_text:154#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._extract_from_text:154"
+      ],
+      "hash": "75fc57092148821c326bffaa13081ce5eb10c78e4fca70ed00029644f28f9e4b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--extract-from-text",
+      "summary": "Extract items from text/markdown files.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "self._is_noise_checkbox",
+        "self._create_simple_item",
+        "self._extract_innovation_concepts",
+        "match.group",
+        "self._create_checkbox_item",
+        "self._create_item_from_match",
+        "match.start"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_from_json",
+      "docstring": "Extract items from JSON files.",
+      "line_range": [
+        208,
+        225
+      ],
+      "parameters": [
+        "self",
+        "file_path",
+        "content",
+        "source_dir",
+        "priority"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._extract_from_json:208#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._extract_from_json:208"
+      ],
+      "hash": "6843da8b413b86fecc5b8f8a0810cfdf3103f56c37fd560c408eba1c8aad2ef5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--extract-from-json",
+      "summary": "Extract items from JSON files.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "json.loads",
+        "self._extract_json_tasks",
+        "isinstance",
+        "self._extract_json_sessions",
+        "logger.warning",
+        "self._extract_json_array",
+        "self._extract_json_ideas"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_create_item_from_match",
+      "docstring": "Create ProjectItem from regex match.",
+      "line_range": [
+        227,
+        249
+      ],
+      "parameters": [
+        "self",
+        "match",
+        "content",
+        "file_path",
+        "item_type",
+        "source_dir",
+        "priority"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._create_item_from_match:227#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._create_item_from_match:227"
+      ],
+      "hash": "1cd7614e19809d2d8240b98198b1459cb70730f088d8f4755d0f802e82aa5637",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--create-item-from-match",
+      "summary": "Create ProjectItem from regex match.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "str",
+        "self._assess_strategic_value",
+        "self._estimate_effort",
+        "self._detect_status",
+        "self._detect_category",
+        "datetime.now",
+        "match.group",
+        "ProjectItem",
+        "title.strip",
+        "self._extract_tags",
+        "self._extract_context",
+        "match.start",
+        "self._detect_priority"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_create_checkbox_item",
+      "docstring": "Create ProjectItem from checkbox match.",
+      "line_range": [
+        251,
+        274
+      ],
+      "parameters": [
+        "self",
+        "match",
+        "content",
+        "file_path",
+        "item_type",
+        "source_dir",
+        "priority"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._create_checkbox_item:251#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._create_checkbox_item:251"
+      ],
+      "hash": "2cad82454501c04115d0796fb6ecd75be552a5e8787f4e8d0b364258b89a2d15",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--create-checkbox-item",
+      "summary": "Create ProjectItem from checkbox match.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "str",
+        "self._assess_strategic_value",
+        "self._estimate_effort",
+        "self._detect_category",
+        "datetime.now",
+        "match.group",
+        "ProjectItem",
+        "self._extract_tags",
+        "self._extract_context",
+        "match.start",
+        "self._detect_priority"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_create_simple_item",
+      "docstring": "Create simple ProjectItem.",
+      "line_range": [
+        276,
+        297
+      ],
+      "parameters": [
+        "self",
+        "title",
+        "content",
+        "file_path",
+        "item_type",
+        "source_dir",
+        "priority",
+        "position"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._create_simple_item:276#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._create_simple_item:276"
+      ],
+      "hash": "adbff1338bc4b2cd097446b9409d7c2c8bd17c07a3ff54b12e13f458d41c1a63",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--create-simple-item",
+      "summary": "Create simple ProjectItem.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "str",
+        "datetime.now",
+        "ProjectItem",
+        "title.strip",
+        "self._extract_context"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_detect_status",
+      "docstring": "Detect item status from surrounding content.",
+      "line_range": [
+        299,
+        308
+      ],
+      "parameters": [
+        "self",
+        "content",
+        "position"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._detect_status:299#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._detect_status:299"
+      ],
+      "hash": "b77d46ff3b31992ba45ccc9ccd041c4a1386ef934355fc12777aa9c3a5cfa68e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--detect-status",
+      "summary": "Detect item status from surrounding content.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "max"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_detect_priority",
+      "docstring": "Detect item priority from surrounding content.",
+      "line_range": [
+        310,
+        319
+      ],
+      "parameters": [
+        "self",
+        "content",
+        "position",
+        "default"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._detect_priority:310#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._detect_priority:310"
+      ],
+      "hash": "87fc50ec55dbc8b5472dcc8e73fc86c63dbb8f96ca51d4404b8df73cf18fef7d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--detect-priority",
+      "summary": "Detect item priority from surrounding content.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "max"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_assess_strategic_value",
+      "docstring": "Assess strategic value of item.",
+      "line_range": [
+        321,
+        330
+      ],
+      "parameters": [
+        "self",
+        "title",
+        "content"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._assess_strategic_value:321#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._assess_strategic_value:321"
+      ],
+      "hash": "ad86c5caa295c938ce647e3b716f589459d396d2eaa8c86d6809c5172d1267ff",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--assess-strategic-value",
+      "summary": "Assess strategic value of item.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "_extract_context",
+      "docstring": "Extract context around position.",
+      "line_range": [
+        332,
+        336
+      ],
+      "parameters": [
+        "self",
+        "content",
+        "position",
+        "length"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._extract_context:332#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._extract_context:332"
+      ],
+      "hash": "0cb99948ffac42f7e6e354bca570ab74f123fa1b3251dcd2e222b798f9981711",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--extract-context",
+      "summary": "Extract context around position.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "min",
+        "max",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_detect_category",
+      "docstring": "Detect item category.",
+      "line_range": [
+        338,
+        351
+      ],
+      "parameters": [
+        "self",
+        "title",
+        "content"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._detect_category:338#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._detect_category:338"
+      ],
+      "hash": "418e2791616791eaf06d1fb54e724f88dd8839ed8ffd52247478df2e9688bb4e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--detect-category",
+      "summary": "Detect item category.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "title.lower",
+        "any"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_estimate_effort",
+      "docstring": "Estimate effort required.",
+      "line_range": [
+        353,
+        362
+      ],
+      "parameters": [
+        "self",
+        "title",
+        "content"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._estimate_effort:353#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._estimate_effort:353"
+      ],
+      "hash": "cfa317f6a91280c43801f874c307fb5d5fe578530d649be88abd2f7bcd801d3a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--estimate-effort",
+      "summary": "Estimate effort required.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "any"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_tags",
+      "docstring": "Extract relevant tags.",
+      "line_range": [
+        364,
+        378
+      ],
+      "parameters": [
+        "self",
+        "title",
+        "content",
+        "source_dir"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._extract_tags:364#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._extract_tags:364"
+      ],
+      "hash": "e99519989b0b098cd0616d02491fbcb979ee91a606c8e5801a422124e0157f53",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--extract-tags",
+      "summary": "Extract relevant tags.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "title.lower",
+        "tags.append",
+        "source_dir.replace"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_is_noise_checkbox",
+      "docstring": "Check if checkbox is noise (navigation, etc).",
+      "line_range": [
+        380,
+        384
+      ],
+      "parameters": [
+        "self",
+        "text"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._is_noise_checkbox:380#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._is_noise_checkbox:380"
+      ],
+      "hash": "75bf83fc858d27c097f2903862decf14fa2993eb7e4f91b5882b5430b0875d43",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--is-noise-checkbox",
+      "summary": "Check if checkbox is noise (navigation, etc).",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "len",
+        "any",
+        "text.strip",
+        "text.lower"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_parse_json_files",
+      "docstring": "Parse structured JSON files for existing data.",
+      "line_range": [
+        386,
+        402
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._parse_json_files:386#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._parse_json_files:386"
+      ],
+      "hash": "206ea38b45fe03e6431a4846dbafbb74b78a06728315077f6ac8e052a66558ea",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--parse-json-files",
+      "summary": "Parse structured JSON files for existing data.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "open",
+        "logger.error",
+        "file_path.exists",
+        "json.load",
+        "self._process_structured_json"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_process_structured_json",
+      "docstring": "Process structured JSON data.",
+      "line_range": [
+        404,
+        419
+      ],
+      "parameters": [
+        "self",
+        "data",
+        "file_path"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._process_structured_json:404#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._process_structured_json:404"
+      ],
+      "hash": "5d61826273ecbe617fdcaf1f88a2ad54707405b78602c3ccc8b4109b64da880b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--process-structured-json",
+      "summary": "Process structured JSON data.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "self._add_json_item",
+        "isinstance"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_add_json_item",
+      "docstring": "Add item from JSON structure.",
+      "line_range": [
+        421,
+        441
+      ],
+      "parameters": [
+        "self",
+        "item",
+        "file_path",
+        "item_type"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._add_json_item:421#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._add_json_item:421"
+      ],
+      "hash": "53ffc83d3ac698c10d62b1722d27e2f475379cadd3836141462c446f79f677de",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--add-json-item",
+      "summary": "Add item from JSON structure.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "str",
+        "item.get",
+        "datetime.now",
+        "ProjectItem",
+        "len",
+        "self._assess_json_strategic_value"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_assess_json_strategic_value",
+      "docstring": "Assess strategic value from JSON item.",
+      "line_range": [
+        443,
+        450
+      ],
+      "parameters": [
+        "self",
+        "item"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._assess_json_strategic_value:443#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._assess_json_strategic_value:443"
+      ],
+      "hash": "219b9a0938b29c6441f5c121ab650a6e564672b5b0254cd1541284216f12fdb8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--assess-json-strategic-value",
+      "summary": "Assess strategic value from JSON item.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "item.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_innovation_concepts",
+      "docstring": "Extract innovation concepts from content.",
+      "line_range": [
+        452,
+        482
+      ],
+      "parameters": [
+        "self",
+        "file_path",
+        "content",
+        "source_dir",
+        "priority"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._extract_innovation_concepts:452#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._extract_innovation_concepts:452"
+      ],
+      "hash": "52fe394c82767f2094391291bc52319a411d69c24ef851b43bcf9b261f0560e5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--extract-innovation-concepts",
+      "summary": "Extract innovation concepts from content.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "str",
+        "content.find",
+        "content.split",
+        "datetime.now",
+        "line.strip",
+        "ProjectItem",
+        "innovation_lines.append",
+        "self._extract_context",
+        "len",
+        "source_dir.replace",
+        "enumerate"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_enhance_items",
+      "docstring": "Post-process items to enhance metadata and find relationships.",
+      "line_range": [
+        484,
+        501
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._enhance_items:484#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._enhance_items:484"
+      ],
+      "hash": "675414a4118ab35e8dce2c6aaae63ac67e9e0df3f001bc35475ea34348df3aab",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--enhance-items",
+      "summary": "Post-process items to enhance metadata and find relationships.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "re.sub",
+        "logger.info",
+        "self._find_related_items"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_find_related_items",
+      "docstring": "Find related items based on content similarity.",
+      "line_range": [
+        503,
+        517
+      ],
+      "parameters": [
+        "self",
+        "item",
+        "id_map",
+        "title_map"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._find_related_items:503#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._find_related_items:503"
+      ],
+      "hash": "65679174a40053d23cbfe9c9f7cd44f6fe9096e088469a445defb94911d01b26",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--find-related-items",
+      "summary": "Find related items based on content similarity.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "ref_type.upper",
+        "re.findall",
+        "related.append"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "generate_comprehensive_report",
+      "docstring": "Generate comprehensive analysis report.",
+      "line_range": [
+        519,
+        561
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index.generate_comprehensive_report:519#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index.generate_comprehensive_report:519"
+      ],
+      "hash": "bb8961b842380b1ca46b0f03cead57e03983c7d4f0ef4b015a46f6c9c1c32ead",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index-generate-comprehensive-report",
+      "summary": "Generate comprehensive analysis report.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "by_priority.get",
+        "by_strategic_value.get",
+        "by_type.get",
+        "asdict",
+        "datetime.now",
+        "by_status.get",
+        "by_source.get",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "save_comprehensive_index",
+      "docstring": "Save comprehensive index and reports.",
+      "line_range": [
+        563,
+        582
+      ],
+      "parameters": [
+        "self",
+        "output_dir"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index.save_comprehensive_index:563#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index.save_comprehensive_index:563"
+      ],
+      "hash": "d257abb77406fb873023540400b4e84fa8d6e4c2d60660ebf01c8aa4bea68d32",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index-save-comprehensive-index",
+      "summary": "Save comprehensive index and reports.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "os.makedirs",
+        "open",
+        "logger.info",
+        "self.generate_comprehensive_report",
+        "json.dump",
+        "len",
+        "self._generate_analysis_report",
+        "f.write"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_generate_analysis_report",
+      "docstring": "Generate human-readable analysis report.",
+      "line_range": [
+        584,
+        658
+      ],
+      "parameters": [
+        "self",
+        "report"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._generate_analysis_report:584#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._generate_analysis_report:584"
+      ],
+      "hash": "becebc1a7192044a416dafe9c9e3285e9d6c3189c2e066d2332a5893a4fa0be4",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--generate-analysis-report",
+      "summary": "Generate human-readable analysis report.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "len",
+        "self._format_items_list",
+        "self._format_dict"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_format_dict",
+      "docstring": "Format dictionary for markdown display.",
+      "line_range": [
+        660,
+        662
+      ],
+      "parameters": [
+        "self",
+        "d"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._format_dict:660#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._format_dict:660"
+      ],
+      "hash": "c26861dad0591e7b24a214ded7117b449a9590e6a0726a58540cb072cd9a5cf8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--format-dict",
+      "summary": "Format dictionary for markdown display.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "sorted",
+        "d.items"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_format_items_list",
+      "docstring": "Format items list for markdown display.",
+      "line_range": [
+        664,
+        677
+      ],
+      "parameters": [
+        "self",
+        "items"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._format_items_list:664#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._format_items_list:664"
+      ],
+      "hash": "956b6d5209a280a7200f0159004fb74a377c6008d4f6f24340b6d4e6c147c479",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--format-items-list",
+      "summary": "Format items list for markdown display.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "result.append"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_json_tasks",
+      "docstring": "Extract tasks from JSON tasks array.",
+      "line_range": [
+        679,
+        684
+      ],
+      "parameters": [
+        "self",
+        "tasks_data",
+        "file_path",
+        "source_dir",
+        "priority"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._extract_json_tasks:679#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._extract_json_tasks:679"
+      ],
+      "hash": "8e38b963d4aa7d2cb97f71cbf89fef3d357b6f35a8fb87d00586728273a8956e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--extract-json-tasks",
+      "summary": "Extract tasks from JSON tasks array.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "self._add_json_item",
+        "isinstance"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_json_ideas",
+      "docstring": "Extract ideas from JSON ideas array.",
+      "line_range": [
+        686,
+        691
+      ],
+      "parameters": [
+        "self",
+        "ideas_data",
+        "file_path",
+        "source_dir",
+        "priority"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._extract_json_ideas:686#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._extract_json_ideas:686"
+      ],
+      "hash": "b0d6c2437e0321c2f8e0323c40980715b1a693915c00bbb8f00315bd37aa5507",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--extract-json-ideas",
+      "summary": "Extract ideas from JSON ideas array.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "self._add_json_item",
+        "isinstance"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_json_sessions",
+      "docstring": "Extract sessions from JSON sessions array.",
+      "line_range": [
+        693,
+        698
+      ],
+      "parameters": [
+        "self",
+        "sessions_data",
+        "file_path",
+        "source_dir",
+        "priority"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._extract_json_sessions:693#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._extract_json_sessions:693"
+      ],
+      "hash": "1b39fcbf65bdd54a9a807833b1831ad951f391975042f026f815c2154a8fdf3d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--extract-json-sessions",
+      "summary": "Extract sessions from JSON sessions array.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "self._add_json_item",
+        "isinstance"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_extract_json_array",
+      "docstring": "Extract items from JSON array.",
+      "line_range": [
+        700,
+        711
+      ],
+      "parameters": [
+        "self",
+        "array_data",
+        "file_path",
+        "source_dir",
+        "priority"
+      ],
+      "decorators": [],
+      "uid": "scripts.create_comprehensive_index._extract_json_array:700#function",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index._extract_json_array:700"
+      ],
+      "hash": "8cec2308e83a7eba35827824beac7ce0517ec16300c63dfec3a2988cb7316581",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index--extract-json-array",
+      "summary": "Extract items from JSON array.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "self._add_json_item",
+        "str",
+        "isinstance"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "ProjectItem",
+      "docstring": "Unified representation of any project item (task, idea, session, concept).",
+      "line_range": [
+        22,
+        39
+      ],
+      "methods": [],
+      "bases": [],
+      "uid": "scripts.create_comprehensive_index.ProjectItem:22#class",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index.ProjectItem:22"
+      ],
+      "hash": "3d9cbf2c0d19cc767447d21f1fc4ec09dab1010b31696fbe8cfe583cfc1c7863",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index-projectitem",
+      "summary": "Unified representation of any project item (task, idea, session, concept).",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "ComprehensiveIndexer",
+      "docstring": "Comprehensive indexer for all project content.",
+      "line_range": [
+        42,
+        711
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            45,
+            58
+          ],
+          "parameters": [
+            "self",
+            "project_root"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer.__init__:45#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer.__init__:45"
+          ],
+          "hash": "d6a7ac92e5cfb86bdba400f37148238a230f090e5999b2b0e4d00ac49771f3f9",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer---init--",
+          "summary": "Method for comprehensiveindexer. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "self._init_patterns",
+            "Path"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_init_patterns",
+          "docstring": "Initialize comprehensive extraction patterns.",
+          "line_range": [
+            60,
+            92
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._init_patterns:60#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._init_patterns:60"
+          ],
+          "hash": "cca82add88d0d4fa4c9b18763c2a1d0d2079f2385b80edf4418b3c7045209c5e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--init-patterns",
+          "summary": "Initialize comprehensive extraction patterns.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "re.compile"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "scan_all_directories",
+          "docstring": "Scan all configured directories comprehensively.",
+          "line_range": [
+            94,
+            111
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer.scan_all_directories:94#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer.scan_all_directories:94"
+          ],
+          "hash": "4b2f338c67e78f6ab6cffcea73e3dd9659d53604fed68d03f13925f69286e4c1",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer-scan-all-directories",
+          "summary": "Scan all configured directories comprehensively.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "logger.info",
+            "self._enhance_items",
+            "self._scan_directory",
+            "self._parse_json_files",
+            "self._scan_root_files",
+            "len"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_scan_directory",
+          "docstring": "Scan a specific directory according to its configuration.",
+          "line_range": [
+            113,
+            127
+          ],
+          "parameters": [
+            "self",
+            "directory",
+            "config"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._scan_directory:113#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._scan_directory:113"
+          ],
+          "hash": "6da5638fcffe0089d4ca33d2427566afb7efa8a27b51307ddda3edb03122c625",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--scan-directory",
+          "summary": "Scan a specific directory according to its configuration.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "logger.info",
+            "dir_path.glob",
+            "file_path.is_file",
+            "self._should_scan_file",
+            "logger.warning",
+            "dir_path.exists",
+            "self._scan_file"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_scan_root_files",
+          "docstring": "Scan root-level files.",
+          "line_range": [
+            129,
+            133
+          ],
+          "parameters": [
+            "self",
+            "config"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._scan_root_files:129#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._scan_root_files:129"
+          ],
+          "hash": "8a6d62761ec859753bbe46e43c29be8675759a35e2384b1b191b4af9e7eb179a",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--scan-root-files",
+          "summary": "Scan root-level files.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "self._scan_file",
+            "self._should_scan_file",
+            "file_path.is_file"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_should_scan_file",
+          "docstring": "Check if file should be scanned based on extension.",
+          "line_range": [
+            135,
+            137
+          ],
+          "parameters": [
+            "self",
+            "file_path",
+            "allowed_types"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._should_scan_file:135#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._should_scan_file:135"
+          ],
+          "hash": "b585a128a82601b277b41feced8eb5d7f65bd5801db3479ffede9d8c2c958c8f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--should-scan-file",
+          "summary": "Check if file should be scanned based on extension.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "_scan_file",
+          "docstring": "Scan individual file for project items.",
+          "line_range": [
+            139,
+            152
+          ],
+          "parameters": [
+            "self",
+            "file_path",
+            "source_dir",
+            "priority"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._scan_file:139#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._scan_file:139"
+          ],
+          "hash": "0d1fae66138e36a9b1e3e47b5a634acd3514a24019c8ea522946a0a13aa139ab",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--scan-file",
+          "summary": "Scan individual file for project items.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "open",
+            "f.read",
+            "logger.error",
+            "self._extract_from_json",
+            "self._extract_from_text"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_from_text",
+          "docstring": "Extract items from text/markdown files.",
+          "line_range": [
+            154,
+            206
+          ],
+          "parameters": [
+            "self",
+            "file_path",
+            "content",
+            "source_dir",
+            "priority"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_from_text:154#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_from_text:154"
+          ],
+          "hash": "044ec011ef822b711faf2c09efbd29cef76fd705475bac4186bd0083bf778842",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--extract-from-text",
+          "summary": "Extract items from text/markdown files.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "self._is_noise_checkbox",
+            "self._create_simple_item",
+            "self._extract_innovation_concepts",
+            "match.group",
+            "self._create_checkbox_item",
+            "self._create_item_from_match",
+            "match.start"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_from_json",
+          "docstring": "Extract items from JSON files.",
+          "line_range": [
+            208,
+            225
+          ],
+          "parameters": [
+            "self",
+            "file_path",
+            "content",
+            "source_dir",
+            "priority"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_from_json:208#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_from_json:208"
+          ],
+          "hash": "bc42f688bb0f4727ac82cdea8662752963d34ff76ebdba153e037ff9bd144f7d",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--extract-from-json",
+          "summary": "Extract items from JSON files.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "json.loads",
+            "self._extract_json_tasks",
+            "isinstance",
+            "self._extract_json_sessions",
+            "logger.warning",
+            "self._extract_json_array",
+            "self._extract_json_ideas"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_create_item_from_match",
+          "docstring": "Create ProjectItem from regex match.",
+          "line_range": [
+            227,
+            249
+          ],
+          "parameters": [
+            "self",
+            "match",
+            "content",
+            "file_path",
+            "item_type",
+            "source_dir",
+            "priority"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._create_item_from_match:227#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._create_item_from_match:227"
+          ],
+          "hash": "27a321c5f8fc3284c4875630e2eb993e1cf04a0a0cb576787b779d684b185715",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--create-item-from-match",
+          "summary": "Create ProjectItem from regex match.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "str",
+            "self._assess_strategic_value",
+            "self._estimate_effort",
+            "self._detect_status",
+            "self._detect_category",
+            "datetime.now",
+            "match.group",
+            "ProjectItem",
+            "title.strip",
+            "self._extract_tags",
+            "self._extract_context",
+            "match.start",
+            "self._detect_priority"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_create_checkbox_item",
+          "docstring": "Create ProjectItem from checkbox match.",
+          "line_range": [
+            251,
+            274
+          ],
+          "parameters": [
+            "self",
+            "match",
+            "content",
+            "file_path",
+            "item_type",
+            "source_dir",
+            "priority"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._create_checkbox_item:251#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._create_checkbox_item:251"
+          ],
+          "hash": "3ee01ba282d0c1e9695c549bcb4ca8aa9bd3f9e9510e978c196c79abec25f21d",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--create-checkbox-item",
+          "summary": "Create ProjectItem from checkbox match.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "str",
+            "self._assess_strategic_value",
+            "self._estimate_effort",
+            "self._detect_category",
+            "datetime.now",
+            "match.group",
+            "ProjectItem",
+            "self._extract_tags",
+            "self._extract_context",
+            "match.start",
+            "self._detect_priority"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_create_simple_item",
+          "docstring": "Create simple ProjectItem.",
+          "line_range": [
+            276,
+            297
+          ],
+          "parameters": [
+            "self",
+            "title",
+            "content",
+            "file_path",
+            "item_type",
+            "source_dir",
+            "priority",
+            "position"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._create_simple_item:276#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._create_simple_item:276"
+          ],
+          "hash": "a50ef4dcb299f7ab2eeb31e0a88e68efe7b11a5e02a4fd7aa3b36ca3c1c1d431",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--create-simple-item",
+          "summary": "Create simple ProjectItem.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "str",
+            "datetime.now",
+            "ProjectItem",
+            "title.strip",
+            "self._extract_context"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_detect_status",
+          "docstring": "Detect item status from surrounding content.",
+          "line_range": [
+            299,
+            308
+          ],
+          "parameters": [
+            "self",
+            "content",
+            "position"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._detect_status:299#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._detect_status:299"
+          ],
+          "hash": "7adfd7189a62380a6167b7a0ea9c6d1d858b8fffffd1a9157b5c294372967945",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--detect-status",
+          "summary": "Detect item status from surrounding content.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "max"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_detect_priority",
+          "docstring": "Detect item priority from surrounding content.",
+          "line_range": [
+            310,
+            319
+          ],
+          "parameters": [
+            "self",
+            "content",
+            "position",
+            "default"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._detect_priority:310#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._detect_priority:310"
+          ],
+          "hash": "745aa1901c16526c097849785a906d94387abd7db61a22354ef7272584c042e7",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--detect-priority",
+          "summary": "Detect item priority from surrounding content.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "max"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_assess_strategic_value",
+          "docstring": "Assess strategic value of item.",
+          "line_range": [
+            321,
+            330
+          ],
+          "parameters": [
+            "self",
+            "title",
+            "content"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._assess_strategic_value:321#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._assess_strategic_value:321"
+          ],
+          "hash": "3b048e4373a490091dbea4d3e639a0b9db8651818be6be9c100afb348a1609a4",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--assess-strategic-value",
+          "summary": "Assess strategic value of item.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "_extract_context",
+          "docstring": "Extract context around position.",
+          "line_range": [
+            332,
+            336
+          ],
+          "parameters": [
+            "self",
+            "content",
+            "position",
+            "length"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_context:332#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_context:332"
+          ],
+          "hash": "b23c3036049d645b934bff8c98808b478a92833ed5a012e978fd0ba2f04a10e6",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--extract-context",
+          "summary": "Extract context around position.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "min",
+            "max",
+            "len"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_detect_category",
+          "docstring": "Detect item category.",
+          "line_range": [
+            338,
+            351
+          ],
+          "parameters": [
+            "self",
+            "title",
+            "content"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._detect_category:338#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._detect_category:338"
+          ],
+          "hash": "a2c71e7d75b0d9f3900aff84960082d7bbed38951eab9aee399391d9d9a93088",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--detect-category",
+          "summary": "Detect item category.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "title.lower",
+            "any"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_estimate_effort",
+          "docstring": "Estimate effort required.",
+          "line_range": [
+            353,
+            362
+          ],
+          "parameters": [
+            "self",
+            "title",
+            "content"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._estimate_effort:353#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._estimate_effort:353"
+          ],
+          "hash": "406fcf15b12f4bd6dbc252ee0acc9ac1c720db2926e758d81c1007e2633af7f2",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--estimate-effort",
+          "summary": "Estimate effort required.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "any"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_tags",
+          "docstring": "Extract relevant tags.",
+          "line_range": [
+            364,
+            378
+          ],
+          "parameters": [
+            "self",
+            "title",
+            "content",
+            "source_dir"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_tags:364#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_tags:364"
+          ],
+          "hash": "05d0983b5c3e2fd919e0406f0db8c1067f8d678822c0ea2c719cc689a547407a",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--extract-tags",
+          "summary": "Extract relevant tags.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "title.lower",
+            "tags.append",
+            "source_dir.replace"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_is_noise_checkbox",
+          "docstring": "Check if checkbox is noise (navigation, etc).",
+          "line_range": [
+            380,
+            384
+          ],
+          "parameters": [
+            "self",
+            "text"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._is_noise_checkbox:380#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._is_noise_checkbox:380"
+          ],
+          "hash": "837951a838c6df07ca8adf3aa9d73dcd60e4a7edaa30335656e8728f8153d6d1",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--is-noise-checkbox",
+          "summary": "Check if checkbox is noise (navigation, etc).",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "len",
+            "any",
+            "text.strip",
+            "text.lower"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_parse_json_files",
+          "docstring": "Parse structured JSON files for existing data.",
+          "line_range": [
+            386,
+            402
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._parse_json_files:386#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._parse_json_files:386"
+          ],
+          "hash": "5b1602914d1d09bf0bb965df5228cdba765450c7c3571cb8990690e5997d09e1",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--parse-json-files",
+          "summary": "Parse structured JSON files for existing data.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "open",
+            "logger.error",
+            "file_path.exists",
+            "json.load",
+            "self._process_structured_json"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_process_structured_json",
+          "docstring": "Process structured JSON data.",
+          "line_range": [
+            404,
+            419
+          ],
+          "parameters": [
+            "self",
+            "data",
+            "file_path"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._process_structured_json:404#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._process_structured_json:404"
+          ],
+          "hash": "4ef096a1511d963d35cea3812f6ac45aaffebcfbd34e75a2a94ff79c700870a9",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--process-structured-json",
+          "summary": "Process structured JSON data.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "self._add_json_item",
+            "isinstance"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_add_json_item",
+          "docstring": "Add item from JSON structure.",
+          "line_range": [
+            421,
+            441
+          ],
+          "parameters": [
+            "self",
+            "item",
+            "file_path",
+            "item_type"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._add_json_item:421#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._add_json_item:421"
+          ],
+          "hash": "7a91490d143bb796cb28cabd29043840087afddc8f6861a804c4ebfff9f3b44c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--add-json-item",
+          "summary": "Add item from JSON structure.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "str",
+            "item.get",
+            "datetime.now",
+            "ProjectItem",
+            "len",
+            "self._assess_json_strategic_value"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_assess_json_strategic_value",
+          "docstring": "Assess strategic value from JSON item.",
+          "line_range": [
+            443,
+            450
+          ],
+          "parameters": [
+            "self",
+            "item"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._assess_json_strategic_value:443#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._assess_json_strategic_value:443"
+          ],
+          "hash": "a82e1ef2ba958914f34895784d3de319a521729c93bf9c1d6ca83e256668e20e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--assess-json-strategic-value",
+          "summary": "Assess strategic value from JSON item.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "item.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_innovation_concepts",
+          "docstring": "Extract innovation concepts from content.",
+          "line_range": [
+            452,
+            482
+          ],
+          "parameters": [
+            "self",
+            "file_path",
+            "content",
+            "source_dir",
+            "priority"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_innovation_concepts:452#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_innovation_concepts:452"
+          ],
+          "hash": "c29a0ebf8eeb43135409fcf25431f1967c3a3875bbb4f17f4ff482f212b4e9ea",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--extract-innovation-concepts",
+          "summary": "Extract innovation concepts from content.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "str",
+            "content.find",
+            "content.split",
+            "datetime.now",
+            "line.strip",
+            "ProjectItem",
+            "innovation_lines.append",
+            "self._extract_context",
+            "len",
+            "source_dir.replace",
+            "enumerate"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_enhance_items",
+          "docstring": "Post-process items to enhance metadata and find relationships.",
+          "line_range": [
+            484,
+            501
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._enhance_items:484#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._enhance_items:484"
+          ],
+          "hash": "fa04535a5c84915588ef8aa27f31c777f698d05007d26802022d573abb2e69b2",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--enhance-items",
+          "summary": "Post-process items to enhance metadata and find relationships.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "re.sub",
+            "logger.info",
+            "self._find_related_items"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_find_related_items",
+          "docstring": "Find related items based on content similarity.",
+          "line_range": [
+            503,
+            517
+          ],
+          "parameters": [
+            "self",
+            "item",
+            "id_map",
+            "title_map"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._find_related_items:503#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._find_related_items:503"
+          ],
+          "hash": "cae016ba2afcf0df55bd3ae9f17fab8a1d1bccf51eef1966e40d44b9784b4d15",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--find-related-items",
+          "summary": "Find related items based on content similarity.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "ref_type.upper",
+            "re.findall",
+            "related.append"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "generate_comprehensive_report",
+          "docstring": "Generate comprehensive analysis report.",
+          "line_range": [
+            519,
+            561
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer.generate_comprehensive_report:519#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer.generate_comprehensive_report:519"
+          ],
+          "hash": "6aff7e44b21d894b1111f984810405ae889b09e9978c750059a75164234a4b5a",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer-generate-comprehensive-report",
+          "summary": "Generate comprehensive analysis report.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "by_priority.get",
+            "by_strategic_value.get",
+            "by_type.get",
+            "asdict",
+            "datetime.now",
+            "by_status.get",
+            "by_source.get",
+            "len"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "save_comprehensive_index",
+          "docstring": "Save comprehensive index and reports.",
+          "line_range": [
+            563,
+            582
+          ],
+          "parameters": [
+            "self",
+            "output_dir"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer.save_comprehensive_index:563#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer.save_comprehensive_index:563"
+          ],
+          "hash": "2fffa99d5bec457abd5cb6fd0b9dd966822cc182b5232faf2f26f6e536ab40b3",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer-save-comprehensive-index",
+          "summary": "Save comprehensive index and reports.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "os.makedirs",
+            "open",
+            "logger.info",
+            "self.generate_comprehensive_report",
+            "json.dump",
+            "len",
+            "self._generate_analysis_report",
+            "f.write"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_generate_analysis_report",
+          "docstring": "Generate human-readable analysis report.",
+          "line_range": [
+            584,
+            658
+          ],
+          "parameters": [
+            "self",
+            "report"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._generate_analysis_report:584#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._generate_analysis_report:584"
+          ],
+          "hash": "76a6130372710973cdbb630508779f6b27bbf155db43a8a7453960040fe174b7",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--generate-analysis-report",
+          "summary": "Generate human-readable analysis report.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "len",
+            "self._format_items_list",
+            "self._format_dict"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_format_dict",
+          "docstring": "Format dictionary for markdown display.",
+          "line_range": [
+            660,
+            662
+          ],
+          "parameters": [
+            "self",
+            "d"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._format_dict:660#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._format_dict:660"
+          ],
+          "hash": "70451ea988a043126feb169f2472419cf18f5ee8d38c409cee42842061d03b06",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--format-dict",
+          "summary": "Format dictionary for markdown display.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "sorted",
+            "d.items"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_format_items_list",
+          "docstring": "Format items list for markdown display.",
+          "line_range": [
+            664,
+            677
+          ],
+          "parameters": [
+            "self",
+            "items"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._format_items_list:664#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._format_items_list:664"
+          ],
+          "hash": "80bd116e893b23c07cba1b2c747882f39abd04a29a67fd000fe9f66a41d286f8",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--format-items-list",
+          "summary": "Format items list for markdown display.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "result.append"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_json_tasks",
+          "docstring": "Extract tasks from JSON tasks array.",
+          "line_range": [
+            679,
+            684
+          ],
+          "parameters": [
+            "self",
+            "tasks_data",
+            "file_path",
+            "source_dir",
+            "priority"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_json_tasks:679#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_json_tasks:679"
+          ],
+          "hash": "816a1ecb06903eddf24062fccaeb2e0fdeaa866fb9ed748746af78dc7f3a694e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--extract-json-tasks",
+          "summary": "Extract tasks from JSON tasks array.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "self._add_json_item",
+            "isinstance"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_json_ideas",
+          "docstring": "Extract ideas from JSON ideas array.",
+          "line_range": [
+            686,
+            691
+          ],
+          "parameters": [
+            "self",
+            "ideas_data",
+            "file_path",
+            "source_dir",
+            "priority"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_json_ideas:686#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_json_ideas:686"
+          ],
+          "hash": "6cbcd8020e9ebbbfc3b038f0ff21ec14a27a0a7c2549c70dd08b48fa56738e0f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--extract-json-ideas",
+          "summary": "Extract ideas from JSON ideas array.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "self._add_json_item",
+            "isinstance"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_json_sessions",
+          "docstring": "Extract sessions from JSON sessions array.",
+          "line_range": [
+            693,
+            698
+          ],
+          "parameters": [
+            "self",
+            "sessions_data",
+            "file_path",
+            "source_dir",
+            "priority"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_json_sessions:693#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_json_sessions:693"
+          ],
+          "hash": "c0605904fb20097e2a7f9622779d082657dd3d027dba0f257adee929b1ba0e11",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--extract-json-sessions",
+          "summary": "Extract sessions from JSON sessions array.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "self._add_json_item",
+            "isinstance"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_extract_json_array",
+          "docstring": "Extract items from JSON array.",
+          "line_range": [
+            700,
+            711
+          ],
+          "parameters": [
+            "self",
+            "array_data",
+            "file_path",
+            "source_dir",
+            "priority"
+          ],
+          "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_json_array:700#method",
+          "uid_components": [
+            "scripts",
+            "scripts.create_comprehensive_index",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer",
+            "scripts.create_comprehensive_index.ComprehensiveIndexer._extract_json_array:700"
+          ],
+          "hash": "be2abee13ac65ba171202df0b8a8e72a65d48f34d4f43da514907547b075a9a1",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer--extract-json-array",
+          "summary": "Extract items from JSON array.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "self._add_json_item",
+            "str",
+            "isinstance"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "scripts.create_comprehensive_index.ComprehensiveIndexer:42#class",
+      "uid_components": [
+        "scripts",
+        "scripts.create_comprehensive_index",
+        "scripts.create_comprehensive_index.ComprehensiveIndexer:42"
+      ],
+      "hash": "48d230a09e12c2e6240a2b30b2574deddfc6bbb6178fdb4458374261c95b698f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-create-comprehensive-index-comprehensiveindexer",
+      "summary": "Comprehensive indexer for all project content.",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "print",
+    "by_strategic.get",
+    "logger.info",
+    "indexer.scan_all_directories",
+    "indexer.save_comprehensive_index",
+    "ComprehensiveIndexer",
+    "len",
+    "self._init_patterns",
+    "Path",
+    "re.compile",
+    "logger.info",
+    "self._enhance_items",
+    "self._scan_directory",
+    "self._parse_json_files",
+    "self._scan_root_files",
+    "len",
+    "logger.info",
+    "dir_path.glob",
+    "file_path.is_file",
+    "self._should_scan_file",
+    "logger.warning",
+    "dir_path.exists",
+    "self._scan_file",
+    "self._scan_file",
+    "self._should_scan_file",
+    "file_path.is_file",
+    "open",
+    "f.read",
+    "logger.error",
+    "self._extract_from_json",
+    "self._extract_from_text",
+    "self._is_noise_checkbox",
+    "self._create_simple_item",
+    "self._extract_innovation_concepts",
+    "match.group",
+    "self._create_checkbox_item",
+    "self._create_item_from_match",
+    "match.start",
+    "json.loads",
+    "self._extract_json_tasks",
+    "isinstance",
+    "self._extract_json_sessions",
+    "logger.warning",
+    "self._extract_json_array",
+    "self._extract_json_ideas",
+    "str",
+    "self._assess_strategic_value",
+    "self._estimate_effort",
+    "self._detect_status",
+    "self._detect_category",
+    "datetime.now",
+    "match.group",
+    "ProjectItem",
+    "title.strip",
+    "self._extract_tags",
+    "self._extract_context",
+    "match.start",
+    "self._detect_priority",
+    "str",
+    "self._assess_strategic_value",
+    "self._estimate_effort",
+    "self._detect_category",
+    "datetime.now",
+    "match.group",
+    "ProjectItem",
+    "self._extract_tags",
+    "self._extract_context",
+    "match.start",
+    "self._detect_priority",
+    "str",
+    "datetime.now",
+    "ProjectItem",
+    "title.strip",
+    "self._extract_context",
+    "max",
+    "max",
+    "min",
+    "max",
+    "len",
+    "title.lower",
+    "any",
+    "any",
+    "title.lower",
+    "tags.append",
+    "source_dir.replace",
+    "len",
+    "any",
+    "text.strip",
+    "text.lower",
+    "open",
+    "logger.error",
+    "file_path.exists",
+    "json.load",
+    "self._process_structured_json",
+    "self._add_json_item",
+    "isinstance",
+    "str",
+    "item.get",
+    "datetime.now",
+    "ProjectItem",
+    "len",
+    "self._assess_json_strategic_value",
+    "item.get",
+    "str",
+    "content.find",
+    "content.split",
+    "datetime.now",
+    "line.strip",
+    "ProjectItem",
+    "innovation_lines.append",
+    "self._extract_context",
+    "len",
+    "source_dir.replace",
+    "enumerate",
+    "re.sub",
+    "logger.info",
+    "self._find_related_items",
+    "ref_type.upper",
+    "re.findall",
+    "related.append",
+    "by_priority.get",
+    "by_strategic_value.get",
+    "by_type.get",
+    "asdict",
+    "datetime.now",
+    "by_status.get",
+    "by_source.get",
+    "len",
+    "os.makedirs",
+    "open",
+    "logger.info",
+    "self.generate_comprehensive_report",
+    "json.dump",
+    "len",
+    "self._generate_analysis_report",
+    "f.write",
+    "len",
+    "self._format_items_list",
+    "self._format_dict",
+    "sorted",
+    "d.items",
+    "result.append",
+    "self._add_json_item",
+    "isinstance",
+    "self._add_json_item",
+    "isinstance",
+    "self._add_json_item",
+    "isinstance",
+    "self._add_json_item",
+    "str",
+    "isinstance"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.777660",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:7a4717ba578c5d63",
+    "lines_of_code": 39
+  }
+}

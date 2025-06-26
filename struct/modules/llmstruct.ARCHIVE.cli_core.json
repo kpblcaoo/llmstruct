@@ -1,0 +1,494 @@
+{
+  "module_info": {
+    "uid": "llmstruct.ARCHIVE.cli_core",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.ARCHIVE.cli_core with 6 functions and 1 classes",
+    "hash": "sha256:47115d94dd5bfdf3",
+    "dependencies": [
+      "cache_config",
+      "cache_path",
+      "copilot_config",
+      "logging",
+      "self",
+      "user_input"
+    ],
+    "exports": [
+      "CLICore",
+      "cleanup",
+      "create_cli_core",
+      "run_interactive_mode",
+      "setup_cache",
+      "setup_copilot"
+    ]
+  },
+  "functions": [
+    {
+      "name": "create_cli_core",
+      "docstring": "Factory function to create CLI core instance.",
+      "line_range": [
+        110,
+        112
+      ],
+      "parameters": [
+        "root_dir"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_core.create_cli_core:110#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_core",
+        "llmstruct.ARCHIVE.cli_core.create_cli_core:110"
+      ],
+      "hash": "a90be231359eeda7a69fe75a2c020a3f50d9b5a01d7eaf47b52cbab838994134",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-core-create-cli-core",
+      "summary": "Factory function to create CLI core instance.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "CLICore"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "Initialize CLI core with root directory.",
+      "line_range": [
+        28,
+        35
+      ],
+      "parameters": [
+        "self",
+        "root_dir"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_core.__init__:28#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_core",
+        "llmstruct.ARCHIVE.cli_core.__init__:28"
+      ],
+      "hash": "830976c0c8a035ce0e372e4267a8208343343b39994d803ece09ed4883554e8f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-core---init--",
+      "summary": "Initialize CLI core with root directory.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "CLIConfig",
+        "CLIUtils",
+        "CommandProcessor"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "setup_cache",
+      "docstring": "Initialize cache if enabled in config.",
+      "line_range": [
+        37,
+        53
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_core.setup_cache:37#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_core",
+        "llmstruct.ARCHIVE.cli_core.setup_cache:37"
+      ],
+      "hash": "1aa6e7d3906dcfff56ef0a147a6aefdad469f40b0702963c0d2579f20446cb7e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-core-setup-cache",
+      "summary": "Initialize cache if enabled in config.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "logging.info",
+        "JSONCache",
+        "cache_path.mkdir",
+        "cache_config.get",
+        "logging.warning",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "setup_copilot",
+      "docstring": "Initialize Copilot integration if enabled.",
+      "line_range": [
+        55,
+        63
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_core.setup_copilot:55#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_core",
+        "llmstruct.ARCHIVE.cli_core.setup_copilot:55"
+      ],
+      "hash": "c1d63d453200f07cd2da5eb1ea4092660f7b5ad5ed3b59d99d16413e5b51b3a3",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-core-setup-copilot",
+      "summary": "Initialize Copilot integration if enabled.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "copilot_config.get",
+        "logging.info",
+        "initialize_copilot",
+        "logging.warning"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "run_interactive_mode",
+      "docstring": "Run the interactive CLI mode.",
+      "line_range": [
+        65,
+        97
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_core.run_interactive_mode:65#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_core",
+        "llmstruct.ARCHIVE.cli_core.run_interactive_mode:65"
+      ],
+      "hash": "572fdbe0db6c885ccd13b6335f0cdfc384a6eb766f9016129719799d3683f5bc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-core-run-interactive-mode",
+      "summary": "Run the interactive CLI mode.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "self.setup_cache",
+        "user_input.lower",
+        "self.cleanup",
+        "user_input.startswith",
+        "logging.error",
+        "self.setup_copilot",
+        "input"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cleanup",
+      "docstring": "Clean up resources.",
+      "line_range": [
+        99,
+        107
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_core.cleanup:99#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_core",
+        "llmstruct.ARCHIVE.cli_core.cleanup:99"
+      ],
+      "hash": "07b8748250b4d91351ebf1aa31aa0c71e03eebe19b18641e76fd8dc17605280f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-core-cleanup",
+      "summary": "Clean up resources.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logging.info"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "CLICore",
+      "docstring": "Core CLI class handling main loop and coordination.",
+      "line_range": [
+        25,
+        107
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "Initialize CLI core with root directory.",
+          "line_range": [
+            28,
+            35
+          ],
+          "parameters": [
+            "self",
+            "root_dir"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_core.CLICore.__init__:28#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_core",
+            "llmstruct.ARCHIVE.cli_core.CLICore",
+            "llmstruct.ARCHIVE.cli_core.CLICore.__init__:28"
+          ],
+          "hash": "4aba432ef153112ff2c2609d28a5c4257f55fa2ba4cc1e3b2fa89d3e88292cee",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-core-clicore---init--",
+          "summary": "Initialize CLI core with root directory.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "CLIConfig",
+            "CLIUtils",
+            "CommandProcessor"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "setup_cache",
+          "docstring": "Initialize cache if enabled in config.",
+          "line_range": [
+            37,
+            53
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_core.CLICore.setup_cache:37#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_core",
+            "llmstruct.ARCHIVE.cli_core.CLICore",
+            "llmstruct.ARCHIVE.cli_core.CLICore.setup_cache:37"
+          ],
+          "hash": "00b8b074d92cd4bfd2afb63a29ac0c5c3cade112d02d2ce911a5fc328ad1ab7c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-core-clicore-setup-cache",
+          "summary": "Initialize cache if enabled in config.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "str",
+            "logging.info",
+            "JSONCache",
+            "cache_path.mkdir",
+            "cache_config.get",
+            "logging.warning",
+            "Path"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "setup_copilot",
+          "docstring": "Initialize Copilot integration if enabled.",
+          "line_range": [
+            55,
+            63
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_core.CLICore.setup_copilot:55#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_core",
+            "llmstruct.ARCHIVE.cli_core.CLICore",
+            "llmstruct.ARCHIVE.cli_core.CLICore.setup_copilot:55"
+          ],
+          "hash": "7cce3d8a3dbc2dd54c1ad1ac4fd3240ff54cc7701d32d83be4ee1847b5239406",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-core-clicore-setup-copilot",
+          "summary": "Initialize Copilot integration if enabled.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "copilot_config.get",
+            "logging.info",
+            "initialize_copilot",
+            "logging.warning"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "run_interactive_mode",
+          "docstring": "Run the interactive CLI mode.",
+          "line_range": [
+            65,
+            97
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_core.CLICore.run_interactive_mode:65#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_core",
+            "llmstruct.ARCHIVE.cli_core.CLICore",
+            "llmstruct.ARCHIVE.cli_core.CLICore.run_interactive_mode:65"
+          ],
+          "hash": "b5bca6399b61ad70a9a46dc5c2eb3fbab5263db8163f541bbb228ca2a0233136",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-core-clicore-run-interactive-mode",
+          "summary": "Run the interactive CLI mode.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "self.setup_cache",
+            "user_input.lower",
+            "self.cleanup",
+            "user_input.startswith",
+            "logging.error",
+            "self.setup_copilot",
+            "input"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cleanup",
+          "docstring": "Clean up resources.",
+          "line_range": [
+            99,
+            107
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_core.CLICore.cleanup:99#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_core",
+            "llmstruct.ARCHIVE.cli_core.CLICore",
+            "llmstruct.ARCHIVE.cli_core.CLICore.cleanup:99"
+          ],
+          "hash": "c16045388935076f9899277b2de3629b95cdc90424d27c689e89af1e2d19db61",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-core-clicore-cleanup",
+          "summary": "Clean up resources.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "logging.info"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.ARCHIVE.cli_core.CLICore:25#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_core",
+        "llmstruct.ARCHIVE.cli_core.CLICore:25"
+      ],
+      "hash": "0f57113de26c40818665dc65437a8fde3d7cf358e1c21fddb397ea16249ded83",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-core-clicore",
+      "summary": "Core CLI class handling main loop and coordination.",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "CLICore",
+    "CLIConfig",
+    "CLIUtils",
+    "CommandProcessor",
+    "str",
+    "logging.info",
+    "JSONCache",
+    "cache_path.mkdir",
+    "cache_config.get",
+    "logging.warning",
+    "Path",
+    "copilot_config.get",
+    "logging.info",
+    "initialize_copilot",
+    "logging.warning",
+    "print",
+    "self.setup_cache",
+    "user_input.lower",
+    "self.cleanup",
+    "user_input.startswith",
+    "logging.error",
+    "self.setup_copilot",
+    "input",
+    "logging.info"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.791009",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:47115d94dd5bfdf3",
+    "lines_of_code": 7
+  }
+}

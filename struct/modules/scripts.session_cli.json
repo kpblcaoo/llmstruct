@@ -1,0 +1,477 @@
+{
+  "module_info": {
+    "uid": "scripts.session_cli",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.session_cli with 10 functions and 1 classes",
+    "hash": "sha256:cd9a2cf14da4d940",
+    "dependencies": [
+      "current_session",
+      "datetime",
+      "json",
+      "os",
+      "subprocess"
+    ],
+    "exports": [
+      "Colors",
+      "get_current_branch",
+      "get_current_timestamp",
+      "list_sessions",
+      "load_json_file",
+      "log_event",
+      "main",
+      "save_json_file",
+      "show_current_session",
+      "show_worklog",
+      "switch_session"
+    ]
+  },
+  "functions": [
+    {
+      "name": "get_current_branch",
+      "docstring": "Get current git branch.",
+      "line_range": [
+        24,
+        31
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.session_cli.get_current_branch:24#function",
+      "uid_components": [
+        "scripts",
+        "scripts.session_cli",
+        "scripts.session_cli.get_current_branch:24"
+      ],
+      "hash": "6b6946d58d8dbafb14f4f31e35c35f148115190214898cd3751cbbd5db31e8a7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-session-cli-get-current-branch",
+      "summary": "Get current git branch.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "subprocess.run"
+      ],
+      "called_by": [
+        "log_event",
+        "switch_session"
+      ]
+    },
+    {
+      "name": "load_json_file",
+      "docstring": "Load JSON file with error handling.",
+      "line_range": [
+        33,
+        40
+      ],
+      "parameters": [
+        "file_path"
+      ],
+      "decorators": [],
+      "uid": "scripts.session_cli.load_json_file:33#function",
+      "uid_components": [
+        "scripts",
+        "scripts.session_cli",
+        "scripts.session_cli.load_json_file:33"
+      ],
+      "hash": "bf8ffba884014cc0217338f43b7d9802e019b28c0bdcee3a08ed5e3491b1993d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-session-cli-load-json-file",
+      "summary": "Load JSON file with error handling.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "open",
+        "json.load"
+      ],
+      "called_by": [
+        "switch_session",
+        "log_event",
+        "show_worklog",
+        "show_current_session",
+        "list_sessions"
+      ]
+    },
+    {
+      "name": "save_json_file",
+      "docstring": "Save JSON file with error handling.",
+      "line_range": [
+        42,
+        51
+      ],
+      "parameters": [
+        "file_path",
+        "data"
+      ],
+      "decorators": [],
+      "uid": "scripts.session_cli.save_json_file:42#function",
+      "uid_components": [
+        "scripts",
+        "scripts.session_cli",
+        "scripts.session_cli.save_json_file:42"
+      ],
+      "hash": "fbed88581f75e27fffd53429bbe091f3e31d0f799664d8ab21295497ad7edadf",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-session-cli-save-json-file",
+      "summary": "Save JSON file with error handling.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "os.makedirs",
+        "json.dump",
+        "open"
+      ],
+      "called_by": [
+        "log_event",
+        "switch_session"
+      ]
+    },
+    {
+      "name": "get_current_timestamp",
+      "docstring": "Get current timestamp in ISO format.",
+      "line_range": [
+        53,
+        55
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.session_cli.get_current_timestamp:53#function",
+      "uid_components": [
+        "scripts",
+        "scripts.session_cli",
+        "scripts.session_cli.get_current_timestamp:53"
+      ],
+      "hash": "b485c698e28737b1c95534127089facafcada2df8841a9123ef76605e52db501",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-session-cli-get-current-timestamp",
+      "summary": "Get current timestamp in ISO format.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "datetime.now"
+      ],
+      "called_by": [
+        "log_event",
+        "switch_session"
+      ]
+    },
+    {
+      "name": "log_event",
+      "docstring": "Log an event to worklog.json.",
+      "line_range": [
+        57,
+        88
+      ],
+      "parameters": [
+        "event_message",
+        "author"
+      ],
+      "decorators": [],
+      "uid": "scripts.session_cli.log_event:57#function",
+      "uid_components": [
+        "scripts",
+        "scripts.session_cli",
+        "scripts.session_cli.log_event:57"
+      ],
+      "hash": "7308c7f5c5dfa4f9ad74490e8ffc8de7fdd5289d8fc78e7e7e7d7d5ab5815ff9",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-session-cli-log-event",
+      "summary": "Log an event to worklog.json.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "load_json_file",
+        "get_current_branch",
+        "get_current_timestamp",
+        "current_session.get",
+        "save_json_file"
+      ],
+      "called_by": [
+        "switch_session",
+        "main"
+      ]
+    },
+    {
+      "name": "switch_session",
+      "docstring": "Switch to a different session or create new one.",
+      "line_range": [
+        90,
+        141
+      ],
+      "parameters": [
+        "session_id"
+      ],
+      "decorators": [],
+      "uid": "scripts.session_cli.switch_session:90#function",
+      "uid_components": [
+        "scripts",
+        "scripts.session_cli",
+        "scripts.session_cli.switch_session:90"
+      ],
+      "hash": "ed401ea43186ea7070887a0b9f44f7b7199c4e6b0c482865b8cf6c5242a43a6e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-session-cli-switch-session",
+      "summary": "Switch to a different session or create new one.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "load_json_file",
+        "get_current_branch",
+        "log_event",
+        "get_current_timestamp",
+        "save_json_file"
+      ],
+      "called_by": [
+        "main"
+      ]
+    },
+    {
+      "name": "list_sessions",
+      "docstring": "List all available sessions.",
+      "line_range": [
+        143,
+        166
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.session_cli.list_sessions:143#function",
+      "uid_components": [
+        "scripts",
+        "scripts.session_cli",
+        "scripts.session_cli.list_sessions:143"
+      ],
+      "hash": "f8ce03c177a1c64f416dacaf78629ca5841b333de5779c833e3839e41fb4a5bd",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-session-cli-list-sessions",
+      "summary": "List all available sessions.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "load_json_file",
+        "current_session.get"
+      ],
+      "called_by": [
+        "main"
+      ]
+    },
+    {
+      "name": "show_current_session",
+      "docstring": "Show current session details.",
+      "line_range": [
+        168,
+        183
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.session_cli.show_current_session:168#function",
+      "uid_components": [
+        "scripts",
+        "scripts.session_cli",
+        "scripts.session_cli.show_current_session:168"
+      ],
+      "hash": "f2f2442c3da41d5ab58de7534c68890bc34571f9e1828f5775d67f04719b9873",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-session-cli-show-current-session",
+      "summary": "Show current session details.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "load_json_file",
+        "current_session.get"
+      ],
+      "called_by": [
+        "main"
+      ]
+    },
+    {
+      "name": "show_worklog",
+      "docstring": "Show recent worklog entries.",
+      "line_range": [
+        185,
+        203
+      ],
+      "parameters": [
+        "limit"
+      ],
+      "decorators": [],
+      "uid": "scripts.session_cli.show_worklog:185#function",
+      "uid_components": [
+        "scripts",
+        "scripts.session_cli",
+        "scripts.session_cli.show_worklog:185"
+      ],
+      "hash": "513c988a1c7e15159fc274e1589e629e9611c0c7b31420c51cf1c8eb3fd34ab2",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-session-cli-show-worklog",
+      "summary": "Show recent worklog entries.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "load_json_file",
+        "reversed",
+        "len"
+      ],
+      "called_by": [
+        "main"
+      ]
+    },
+    {
+      "name": "main",
+      "docstring": "Main CLI interface.",
+      "line_range": [
+        205,
+        244
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.session_cli.main:205#function",
+      "uid_components": [
+        "scripts",
+        "scripts.session_cli",
+        "scripts.session_cli.main:205"
+      ],
+      "hash": "327674efac8f7c517256cb7541d8d0a6a0ff11e9235fc61c19f8f546ac439d25",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-session-cli-main",
+      "summary": "Main CLI interface.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "switch_session",
+        "log_event",
+        "show_worklog",
+        "show_current_session",
+        "list_sessions",
+        "int",
+        "len"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "Colors",
+      "docstring": "",
+      "line_range": [
+        16,
+        22
+      ],
+      "methods": [],
+      "bases": [],
+      "uid": "scripts.session_cli.Colors:16#class",
+      "uid_components": [
+        "scripts",
+        "scripts.session_cli",
+        "scripts.session_cli.Colors:16"
+      ],
+      "hash": "10d3da2b3c01a62d2ef32fc5070e23980f9167b32f2d7df6b0f3bf5e0f69a1d8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-session-cli-colors",
+      "summary": "Class for colors",
+      "summary_source": "heuristic",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "subprocess.run",
+    "print",
+    "open",
+    "json.load",
+    "print",
+    "os.makedirs",
+    "json.dump",
+    "open",
+    "datetime.now",
+    "print",
+    "load_json_file",
+    "get_current_branch",
+    "get_current_timestamp",
+    "current_session.get",
+    "save_json_file",
+    "print",
+    "load_json_file",
+    "get_current_branch",
+    "log_event",
+    "get_current_timestamp",
+    "save_json_file",
+    "print",
+    "load_json_file",
+    "current_session.get",
+    "print",
+    "load_json_file",
+    "current_session.get",
+    "print",
+    "load_json_file",
+    "reversed",
+    "len",
+    "print",
+    "switch_session",
+    "log_event",
+    "show_worklog",
+    "show_current_session",
+    "list_sessions",
+    "int",
+    "len"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.774425",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:cd9a2cf14da4d940",
+    "lines_of_code": 11
+  }
+}

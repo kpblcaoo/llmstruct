@@ -1,0 +1,212 @@
+{
+  "module_info": {
+    "uid": "scripts.deploy_embedded_files",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.deploy_embedded_files with 4 functions",
+    "hash": "sha256:de122a40ec2a8588",
+    "dependencies": [
+      "EMBEDDED_FILES",
+      "Path",
+      "datetime",
+      "f",
+      "json",
+      "logger",
+      "shutil",
+      "target_dir",
+      "target_path"
+    ],
+    "exports": [
+      "backup_files",
+      "deploy_embedded_files",
+      "main",
+      "validate_json"
+    ]
+  },
+  "functions": [
+    {
+      "name": "validate_json",
+      "docstring": "",
+      "line_range": [
+        931,
+        941
+      ],
+      "parameters": [
+        "data",
+        "schema",
+        "base_path"
+      ],
+      "decorators": [],
+      "uid": "scripts.deploy_embedded_files.validate_json:931#function",
+      "uid_components": [
+        "scripts",
+        "scripts.deploy_embedded_files",
+        "scripts.deploy_embedded_files.validate_json:931"
+      ],
+      "hash": "631b9a91e2d01bfc71ee5753c6ec30ca56f04dbe8546f13486c2c9cbeefc197a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-deploy-embedded-files-validate-json",
+      "summary": "Validates json",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logger.warning",
+        "RefResolver",
+        "validate",
+        "logger.error"
+      ],
+      "called_by": [
+        "deploy_embedded_files"
+      ]
+    },
+    {
+      "name": "backup_files",
+      "docstring": "",
+      "line_range": [
+        944,
+        950
+      ],
+      "parameters": [
+        "target_dir",
+        "backup_root"
+      ],
+      "decorators": [],
+      "uid": "scripts.deploy_embedded_files.backup_files:944#function",
+      "uid_components": [
+        "scripts",
+        "scripts.deploy_embedded_files",
+        "scripts.deploy_embedded_files.backup_files:944"
+      ],
+      "hash": "dd8366118a4b1b53ecfe6575a256765632fe41509dafcdccdb5810f8b138abdf",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-deploy-embedded-files-backup-files",
+      "summary": "Function for backup files",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "shutil.copytree",
+        "logger.info",
+        "datetime.now",
+        "target_dir.exists"
+      ],
+      "called_by": [
+        "deploy_embedded_files"
+      ]
+    },
+    {
+      "name": "deploy_embedded_files",
+      "docstring": "",
+      "line_range": [
+        953,
+        1007
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.deploy_embedded_files.deploy_embedded_files:953#function",
+      "uid_components": [
+        "scripts",
+        "scripts.deploy_embedded_files",
+        "scripts.deploy_embedded_files.deploy_embedded_files:953"
+      ],
+      "hash": "450983531b61566fa2ca91488e1316c1a59932c0f1374a93fe9bb7fed38316ec",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-deploy-embedded-files-deploy-embedded-files",
+      "summary": "Function for deploy embedded files",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logger.info",
+        "validate_json",
+        "logger.error",
+        "target_path.open",
+        "backup_files",
+        "logger.warning",
+        "EMBEDDED_FILES.get",
+        "Path.cwd",
+        "json.dump",
+        "target_path.exists",
+        "f.write",
+        "Path"
+      ],
+      "called_by": [
+        "main"
+      ]
+    },
+    {
+      "name": "main",
+      "docstring": "",
+      "line_range": [
+        1010,
+        1011
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.deploy_embedded_files.main:1010#function",
+      "uid_components": [
+        "scripts",
+        "scripts.deploy_embedded_files",
+        "scripts.deploy_embedded_files.main:1010"
+      ],
+      "hash": "be0d4f7ad71467f492f9efe553a9b7de980d0e325b799529adeddf25bbfcf430",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-deploy-embedded-files-main",
+      "summary": "Function for main",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "deploy_embedded_files"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "logger.warning",
+    "RefResolver",
+    "validate",
+    "logger.error",
+    "shutil.copytree",
+    "logger.info",
+    "datetime.now",
+    "target_dir.exists",
+    "logger.info",
+    "validate_json",
+    "logger.error",
+    "target_path.open",
+    "backup_files",
+    "logger.warning",
+    "EMBEDDED_FILES.get",
+    "Path.cwd",
+    "json.dump",
+    "target_path.exists",
+    "f.write",
+    "Path",
+    "deploy_embedded_files"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.786790",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:de122a40ec2a8588",
+    "lines_of_code": 4
+  }
+}

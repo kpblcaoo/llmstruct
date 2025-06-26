@@ -1,0 +1,318 @@
+{
+  "module_info": {
+    "uid": "llmstruct.core.summary_core",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.core.summary_core with 3 functions and 3 classes",
+    "hash": "sha256:06824555edb072e5",
+    "dependencies": [],
+    "exports": [
+      "CodeSummary",
+      "SummaryProvider",
+      "SummarySource",
+      "generate_summary",
+      "get_provider_name",
+      "is_empty"
+    ]
+  },
+  "functions": [
+    {
+      "name": "is_empty",
+      "docstring": "Check if summary is effectively empty",
+      "line_range": [
+        30,
+        32
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.summary_core.is_empty:30#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.summary_core",
+        "llmstruct.core.summary_core.is_empty:30"
+      ],
+      "hash": "bce618d90757bb6d789a8ee0723408594d3fa28a61feae442d1409f3956aaf39",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-summary-core-is-empty",
+      "summary": "Check if summary is effectively empty",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "generate_summary",
+      "docstring": "Generate summary for code entity",
+      "line_range": [
+        39,
+        46
+      ],
+      "parameters": [
+        "self",
+        "code",
+        "entity_type",
+        "entity_name",
+        "docstring"
+      ],
+      "decorators": [
+        "abstractmethod"
+      ],
+      "uid": "llmstruct.core.summary_core.generate_summary:39#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.summary_core",
+        "llmstruct.core.summary_core.generate_summary:39"
+      ],
+      "hash": "0ddc7dd82cb0672f6e09c88018d76c9e7352c3129675d93bb7b123ba437b9bc4",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-summary-core-generate-summary",
+      "summary": "Generate summary for code entity",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "get_provider_name",
+      "docstring": "Get provider name",
+      "line_range": [
+        49,
+        51
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [
+        "abstractmethod"
+      ],
+      "uid": "llmstruct.core.summary_core.get_provider_name:49#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.summary_core",
+        "llmstruct.core.summary_core.get_provider_name:49"
+      ],
+      "hash": "f03830d0d1bf4599f6d186048da62cb046aac0abe52999ede0456508e3b8d0f8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-summary-core-get-provider-name",
+      "summary": "Get provider name",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "SummarySource",
+      "docstring": "Source of the summary",
+      "line_range": [
+        13,
+        18
+      ],
+      "methods": [],
+      "bases": [
+        "Enum"
+      ],
+      "uid": "llmstruct.core.summary_core.SummarySource:13#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.summary_core",
+        "llmstruct.core.summary_core.SummarySource:13"
+      ],
+      "hash": "a497862f1fdfdb34a252badec55ea034d4ca706b22f442a5671f064f1f57d801",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-summary-core-summarysource",
+      "summary": "Source of the summary",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "CodeSummary",
+      "docstring": "Container for code summary with metadata",
+      "line_range": [
+        22,
+        32
+      ],
+      "methods": [
+        {
+          "name": "is_empty",
+          "docstring": "Check if summary is effectively empty",
+          "line_range": [
+            30,
+            32
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.core.summary_core.CodeSummary.is_empty:30#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.core",
+            "llmstruct.core.summary_core",
+            "llmstruct.core.summary_core.CodeSummary",
+            "llmstruct.core.summary_core.CodeSummary.is_empty:30"
+          ],
+          "hash": "7f9af407be92d4979ef19fbe28ab4001ed0f87e1d4bd5633e3476068d1e76014",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-core-summary-core-codesummary-is-empty",
+          "summary": "Check if summary is effectively empty",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.core.summary_core.CodeSummary:22#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.summary_core",
+        "llmstruct.core.summary_core.CodeSummary:22"
+      ],
+      "hash": "75cf2d3c41c0c6500344d9b8795dee1d260b5472ae48b120c757021101942b10",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-summary-core-codesummary",
+      "summary": "Container for code summary with metadata",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "SummaryProvider",
+      "docstring": "Abstract base class for summary providers",
+      "line_range": [
+        35,
+        51
+      ],
+      "methods": [
+        {
+          "name": "generate_summary",
+          "docstring": "Generate summary for code entity",
+          "line_range": [
+            39,
+            46
+          ],
+          "parameters": [
+            "self",
+            "code",
+            "entity_type",
+            "entity_name",
+            "docstring"
+          ],
+          "uid": "llmstruct.core.summary_core.SummaryProvider.generate_summary:39#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.core",
+            "llmstruct.core.summary_core",
+            "llmstruct.core.summary_core.SummaryProvider",
+            "llmstruct.core.summary_core.SummaryProvider.generate_summary:39"
+          ],
+          "hash": "879fdf5907f47e0e942751d170e4ceb33c2e9e9ab86d5857fef970fb565490da",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-core-summary-core-summaryprovider-generate-summary",
+          "summary": "Generate summary for code entity",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "get_provider_name",
+          "docstring": "Get provider name",
+          "line_range": [
+            49,
+            51
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.core.summary_core.SummaryProvider.get_provider_name:49#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.core",
+            "llmstruct.core.summary_core",
+            "llmstruct.core.summary_core.SummaryProvider",
+            "llmstruct.core.summary_core.SummaryProvider.get_provider_name:49"
+          ],
+          "hash": "f737b16e1d80939818aef4b674b2cf5aa67218025f64cc39ecc2d6bad0162423",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-core-summary-core-summaryprovider-get-provider-name",
+          "summary": "Get provider name",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        }
+      ],
+      "bases": [
+        "ABC"
+      ],
+      "uid": "llmstruct.core.summary_core.SummaryProvider:35#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.summary_core",
+        "llmstruct.core.summary_core.SummaryProvider:35"
+      ],
+      "hash": "5c0b966ddf115c20b97a297926c54c0c28de9bbe0c154a20346527a39f2de96b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-summary-core-summaryprovider",
+      "summary": "Abstract base class for summary providers",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.839533",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:06824555edb072e5",
+    "lines_of_code": 6
+  }
+}

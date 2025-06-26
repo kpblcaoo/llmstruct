@@ -1,0 +1,624 @@
+{
+  "module_info": {
+    "uid": "llmstruct.ARCHIVE.cli_main_commands",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.ARCHIVE.cli_main_commands with 12 functions",
+    "hash": "sha256:0463a90755bd73c1",
+    "dependencies": [
+      "analysis",
+      "cache",
+      "cli_core",
+      "client",
+      "config_path",
+      "f",
+      "file_path",
+      "func",
+      "json",
+      "layers",
+      "logging",
+      "manager",
+      "orchestrator",
+      "shutil",
+      "template_path",
+      "user_input"
+    ],
+    "exports": [
+      "analyze_duplicates",
+      "audit",
+      "basic_interactive_processing",
+      "context",
+      "copilot",
+      "dogfood",
+      "interactive",
+      "interactive_legacy",
+      "interactive_modular",
+      "parse",
+      "query",
+      "review"
+    ]
+  },
+  "functions": [
+    {
+      "name": "parse",
+      "docstring": "Parse codebase and generate struct.json.",
+      "line_range": [
+        33,
+        68
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_main_commands.parse:33#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_main_commands",
+        "llmstruct.ARCHIVE.cli_main_commands.parse:33"
+      ],
+      "hash": "a93bd8b15cc09ad8234c35d727a12a0c0b588b91975b4dca288d3fc9b0dde0b5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-main-commands-parse",
+      "summary": "Parse codebase and generate struct.json.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logging.info",
+        "JSONCache",
+        "generate_json",
+        "attach_to_llm_request",
+        "logging.error",
+        "cache.close",
+        "load_gitignore"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "query",
+      "docstring": "Query LLMs with prompt and context.",
+      "line_range": [
+        71,
+        127
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_main_commands.query:71#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_main_commands",
+        "llmstruct.ARCHIVE.cli_main_commands.query:71"
+      ],
+      "hash": "afaea5ae510d51f3c4c1041a8d447203c821436284656c4bd60a78aad4dc2a1c",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-main-commands-query",
+      "summary": "Query LLMs with prompt and context.",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "client.query_with_context",
+        "LLMClient",
+        "logging.info",
+        "JSONCache",
+        "orchestrator.get_context_for_scenario",
+        "client.query",
+        "logging.error",
+        "create_context_orchestrator",
+        "logging.warning",
+        "cache.close",
+        "json.dump",
+        "hasattr",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "interactive",
+      "docstring": "Run interactive CLI with modular structure if available, fallback to legacy.",
+      "line_range": [
+        130,
+        136
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_main_commands.interactive:130#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_main_commands",
+        "llmstruct.ARCHIVE.cli_main_commands.interactive:130"
+      ],
+      "hash": "5293b899a1902f2f86a13c950f86dec75df5b630c3006e2198b6110a1088a968",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-main-commands-interactive",
+      "summary": "Run interactive CLI with modular structure if available, fallback to legacy.",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "interactive_modular",
+        "logging.warning",
+        "interactive_legacy"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "interactive_modular",
+      "docstring": "Run interactive CLI with modular structure.",
+      "line_range": [
+        139,
+        146
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_main_commands.interactive_modular:139#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_main_commands",
+        "llmstruct.ARCHIVE.cli_main_commands.interactive_modular:139"
+      ],
+      "hash": "216a589df376b3e776928ff0f88b88db015d9593706dff0003fe3a912add4cfd",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-main-commands-interactive-modular",
+      "summary": "Run interactive CLI with modular structure.",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "cli_core.run_interactive_mode",
+        "interactive_legacy",
+        "logging.error",
+        "create_cli_core"
+      ],
+      "called_by": [
+        "interactive"
+      ]
+    },
+    {
+      "name": "interactive_legacy",
+      "docstring": "Run interactive CLI with LLM, supporting file/folder viewing and writing.",
+      "line_range": [
+        149,
+        175
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_main_commands.interactive_legacy:149#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_main_commands",
+        "llmstruct.ARCHIVE.cli_main_commands.interactive_legacy:149"
+      ],
+      "hash": "d04fbd294612f21c2ea9a1d3730b824b94617c571a7ce9bc9f78b7aafa5bdfaa",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-main-commands-interactive-legacy",
+      "summary": "Run interactive CLI with LLM, supporting file/folder viewing and writing.",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "LLMClient",
+        "JSONCache",
+        "basic_interactive_processing",
+        "logging.error",
+        "process_cli_queue_enhanced",
+        "cache.close",
+        "Path"
+      ],
+      "called_by": [
+        "interactive_modular",
+        "interactive"
+      ]
+    },
+    {
+      "name": "basic_interactive_processing",
+      "docstring": "Basic interactive processing without enhanced features.",
+      "line_range": [
+        178,
+        230
+      ],
+      "parameters": [
+        "args",
+        "cache",
+        "client"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_main_commands.basic_interactive_processing:178#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_main_commands",
+        "llmstruct.ARCHIVE.cli_main_commands.basic_interactive_processing:178"
+      ],
+      "hash": "7990abacfd140abea1127f580492a8aef2545c1782fd654e4659a56b58850c43",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-main-commands-basic-interactive-processing",
+      "summary": "Basic interactive processing without enhanced features.",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "f.read",
+        "user_input.lower",
+        "open",
+        "client.query",
+        "user_input.startswith",
+        "input"
+      ],
+      "called_by": [
+        "interactive_legacy"
+      ]
+    },
+    {
+      "name": "context",
+      "docstring": "Generate context.json from input JSON.",
+      "line_range": [
+        233,
+        235
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_main_commands.context:233#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_main_commands",
+        "llmstruct.ARCHIVE.cli_main_commands.context:233"
+      ],
+      "hash": "47892e5184afb07903e2ff67f3d0847b1b4268ff91f147b408158ce1e50275b2",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-main-commands-context",
+      "summary": "Generate context.json from input JSON.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logging.warning"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "dogfood",
+      "docstring": "Run dogfooding analysis.",
+      "line_range": [
+        238,
+        240
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_main_commands.dogfood:238#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_main_commands",
+        "llmstruct.ARCHIVE.cli_main_commands.dogfood:238"
+      ],
+      "hash": "fc8bede20e59fb938cbba48298a2034a7f0c84bd11f7a20959a965bd91563f69",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-main-commands-dogfood",
+      "summary": "Run dogfooding analysis.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logging.warning"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "review",
+      "docstring": "Review codebase with LLM.",
+      "line_range": [
+        243,
+        245
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_main_commands.review:243#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_main_commands",
+        "llmstruct.ARCHIVE.cli_main_commands.review:243"
+      ],
+      "hash": "80cea308d5ad291f8e465f8da5af88c8dcabc057b6dae4b49e568021da26422d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-main-commands-review",
+      "summary": "Review codebase with LLM.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logging.warning"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "copilot",
+      "docstring": "Copilot integration and context management.",
+      "line_range": [
+        248,
+        366
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_main_commands.copilot:248#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_main_commands",
+        "llmstruct.ARCHIVE.cli_main_commands.copilot:248"
+      ],
+      "hash": "5b159d5d0fec2180653f221fca3c89b5a40b746ad03975dac88c41647f048db1",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-main-commands-copilot",
+      "summary": "Copilot integration and context management.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "logging.info",
+        "getattr",
+        "manager.validate_change",
+        "initialize_copilot",
+        "config_path.exists",
+        "layers.split",
+        "manager.load_context_layer",
+        "manager.get_context_status",
+        "Path",
+        "f.write",
+        "open",
+        "manager.close",
+        "hasattr",
+        "manager.unload_context_layer",
+        "smart_suggest",
+        "logging.error",
+        "manager.refresh_all_contexts",
+        "shutil.copy",
+        "template_path.exists",
+        "manager.export_context",
+        "enumerate"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "audit",
+      "docstring": "Audit project structure and generate reports.",
+      "line_range": [
+        369,
+        387
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_main_commands.audit:369#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_main_commands",
+        "llmstruct.ARCHIVE.cli_main_commands.audit:369"
+      ],
+      "hash": "e831ffd4a5b798511e8638016002a1f055531474aecb84ec790c16c158351f38",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-main-commands-audit",
+      "summary": "Audit project structure and generate reports.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "analyze_duplicates",
+        "file_path.exists",
+        "hasattr",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "analyze_duplicates",
+      "docstring": "Analyze function duplication using struct.json deep analysis.",
+      "line_range": [
+        390,
+        495
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_main_commands.analyze_duplicates:390#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_main_commands",
+        "llmstruct.ARCHIVE.cli_main_commands.analyze_duplicates:390"
+      ],
+      "hash": "75f8e553a75951d871b7831de1a81f554f394828cc3f58a5d05485f2a0c0f7e5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-main-commands-analyze-duplicates",
+      "summary": "Analyze function duplication using struct.json deep analysis.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "getattr",
+        "f.get",
+        "open",
+        "analysis.get",
+        "WorkflowOrchestrator",
+        "json.dumps",
+        "logging.error",
+        "json.dump",
+        "orchestrator.analyze_codebase_for_duplicates",
+        "func.get",
+        "len"
+      ],
+      "called_by": [
+        "audit"
+      ]
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "logging.info",
+    "JSONCache",
+    "generate_json",
+    "attach_to_llm_request",
+    "logging.error",
+    "cache.close",
+    "load_gitignore",
+    "client.query_with_context",
+    "LLMClient",
+    "logging.info",
+    "JSONCache",
+    "orchestrator.get_context_for_scenario",
+    "client.query",
+    "logging.error",
+    "create_context_orchestrator",
+    "logging.warning",
+    "cache.close",
+    "json.dump",
+    "hasattr",
+    "Path",
+    "interactive_modular",
+    "logging.warning",
+    "interactive_legacy",
+    "cli_core.run_interactive_mode",
+    "interactive_legacy",
+    "logging.error",
+    "create_cli_core",
+    "print",
+    "LLMClient",
+    "JSONCache",
+    "basic_interactive_processing",
+    "logging.error",
+    "process_cli_queue_enhanced",
+    "cache.close",
+    "Path",
+    "print",
+    "f.read",
+    "user_input.lower",
+    "open",
+    "client.query",
+    "user_input.startswith",
+    "input",
+    "logging.warning",
+    "logging.warning",
+    "logging.warning",
+    "print",
+    "logging.info",
+    "getattr",
+    "manager.validate_change",
+    "initialize_copilot",
+    "config_path.exists",
+    "layers.split",
+    "manager.load_context_layer",
+    "manager.get_context_status",
+    "Path",
+    "f.write",
+    "open",
+    "manager.close",
+    "hasattr",
+    "manager.unload_context_layer",
+    "smart_suggest",
+    "logging.error",
+    "manager.refresh_all_contexts",
+    "shutil.copy",
+    "template_path.exists",
+    "manager.export_context",
+    "enumerate",
+    "print",
+    "analyze_duplicates",
+    "file_path.exists",
+    "hasattr",
+    "Path",
+    "print",
+    "getattr",
+    "f.get",
+    "open",
+    "analysis.get",
+    "WorkflowOrchestrator",
+    "json.dumps",
+    "logging.error",
+    "json.dump",
+    "orchestrator.analyze_codebase_for_duplicates",
+    "func.get",
+    "len"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.792308",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:0463a90755bd73c1",
+    "lines_of_code": 12
+  }
+}

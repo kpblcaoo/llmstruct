@@ -1,0 +1,437 @@
+{
+  "module_info": {
+    "uid": "llmstruct.api.routes.continue_adapter",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.api.routes.continue_adapter with 5 functions and 2 classes",
+    "hash": "sha256:d9a23385fbed0931",
+    "dependencies": [
+      "content",
+      "datetime",
+      "input_text",
+      "llm_service",
+      "logger",
+      "msg",
+      "request",
+      "request_data",
+      "router"
+    ],
+    "exports": [
+      "ContinueRequest",
+      "ContinueResponse",
+      "continue_chat_completion",
+      "continue_embeddings",
+      "continue_models"
+    ]
+  },
+  "functions": [
+    {
+      "name": "continue_chat_completion",
+      "docstring": "Continue-compatible chat completion endpoint\nTranslates Continue requests to our LLMStruct format",
+      "line_range": [
+        59,
+        129
+      ],
+      "parameters": [
+        "request",
+        "api_key"
+      ],
+      "decorators": [
+        "router.post('/v1/chat/completions')"
+      ],
+      "uid": "llmstruct.api.routes.continue_adapter.continue_chat_completion:59#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.continue_adapter",
+        "llmstruct.api.routes.continue_adapter.continue_chat_completion:59"
+      ],
+      "hash": "e7bfe22ecfff52a9b01e03c102c4e24b92eaebc044c8d66b4b8116e419841957",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-continue-adapter-continue-chat-completion",
+      "summary": "Continue-compatible chat completion endpoint\nTranslates Continue requests to our LLMStruct format",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "logger.info",
+        "ContinueResponse",
+        "HTTPException",
+        "router.post",
+        "logger.error",
+        "request_data.get",
+        "datetime.now",
+        "reversed",
+        "request.json",
+        "msg.get",
+        "len",
+        "llm_service.process_message",
+        "Depends"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "continue_models",
+      "docstring": "List available models for Continue",
+      "line_range": [
+        132,
+        158
+      ],
+      "parameters": [
+        "api_key"
+      ],
+      "decorators": [
+        "router.get('/v1/models')"
+      ],
+      "uid": "llmstruct.api.routes.continue_adapter.continue_models:132#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.continue_adapter",
+        "llmstruct.api.routes.continue_adapter.continue_models:132"
+      ],
+      "hash": "2ab3b5eef578885b577d1d13bb919d08ab1ddb4df08cb1729a61527c6187d733",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-continue-adapter-continue-models",
+      "summary": "List available models for Continue",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "int",
+        "datetime.now",
+        "Depends",
+        "router.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "continue_embeddings",
+      "docstring": "Embeddings endpoint for Continue (placeholder)",
+      "line_range": [
+        161,
+        193
+      ],
+      "parameters": [
+        "request",
+        "api_key"
+      ],
+      "decorators": [
+        "router.post('/v1/embeddings')"
+      ],
+      "uid": "llmstruct.api.routes.continue_adapter.continue_embeddings:161#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.continue_adapter",
+        "llmstruct.api.routes.continue_adapter.continue_embeddings:161"
+      ],
+      "hash": "b00ae91abe5b959e19f8e38a243035629f60b27ec3568cd991353ac17acdf4c0",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-continue-adapter-continue-embeddings",
+      "summary": "Embeddings endpoint for Continue (placeholder)",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "HTTPException",
+        "router.post",
+        "input_text.split",
+        "logger.error",
+        "request_data.get",
+        "request.json",
+        "len",
+        "Depends"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        25,
+        35
+      ],
+      "parameters": [
+        "self",
+        "messages",
+        "model",
+        "temperature",
+        "max_tokens",
+        "stream"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.routes.continue_adapter.__init__:25#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.continue_adapter",
+        "llmstruct.api.routes.continue_adapter.__init__:25"
+      ],
+      "hash": "0dfe53a092f985580f1a1720da44888cc1f4ff913957075045bd2b02c3da674d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-continue-adapter---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "len",
+        "content.split",
+        "int",
+        "datetime.now"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        39,
+        56
+      ],
+      "parameters": [
+        "self",
+        "content",
+        "model"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.routes.continue_adapter.__init__:39#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.continue_adapter",
+        "llmstruct.api.routes.continue_adapter.__init__:39"
+      ],
+      "hash": "2d986922429a1fde40c89276c139e162ec76aca43d2416d9be8294ee38bba627",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-continue-adapter---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "len",
+        "content.split",
+        "int",
+        "datetime.now"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "ContinueRequest",
+      "docstring": "Continue API request format",
+      "line_range": [
+        23,
+        35
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            25,
+            35
+          ],
+          "parameters": [
+            "self",
+            "messages",
+            "model",
+            "temperature",
+            "max_tokens",
+            "stream"
+          ],
+          "uid": "llmstruct.api.routes.continue_adapter.ContinueRequest.__init__:25#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.routes",
+            "llmstruct.api.routes.continue_adapter",
+            "llmstruct.api.routes.continue_adapter.ContinueRequest",
+            "llmstruct.api.routes.continue_adapter.ContinueRequest.__init__:25"
+          ],
+          "hash": "23cc85d9260151e5465b54527705b6bea865c26aee9dd770294cc36d1446eb17",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-routes-continue-adapter-continuerequest---init--",
+          "summary": "Method for continuerequest. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "len",
+            "content.split",
+            "int",
+            "datetime.now"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.api.routes.continue_adapter.ContinueRequest:23#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.continue_adapter",
+        "llmstruct.api.routes.continue_adapter.ContinueRequest:23"
+      ],
+      "hash": "7550da31412ca55276c8010a1f8d3f16dbed6ca10b983a0bea4710cbfebbd11b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-continue-adapter-continuerequest",
+      "summary": "Continue API request format",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "ContinueResponse",
+      "docstring": "Continue API response format (OpenAI-compatible)",
+      "line_range": [
+        37,
+        56
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            39,
+            56
+          ],
+          "parameters": [
+            "self",
+            "content",
+            "model"
+          ],
+          "uid": "llmstruct.api.routes.continue_adapter.ContinueResponse.__init__:39#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.routes",
+            "llmstruct.api.routes.continue_adapter",
+            "llmstruct.api.routes.continue_adapter.ContinueResponse",
+            "llmstruct.api.routes.continue_adapter.ContinueResponse.__init__:39"
+          ],
+          "hash": "ed3c9f8f01cfb61e39bc597714e337e2b1bd16fa7eca7d61b3b29cbe67f3e565",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-routes-continue-adapter-continueresponse---init--",
+          "summary": "Method for continueresponse. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "len",
+            "content.split",
+            "int",
+            "datetime.now"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.api.routes.continue_adapter.ContinueResponse:37#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.continue_adapter",
+        "llmstruct.api.routes.continue_adapter.ContinueResponse:37"
+      ],
+      "hash": "30c957fa131d1d01b2ebf9208ed899c787226772740a2327e8d642d2f3f51c04",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-continue-adapter-continueresponse",
+      "summary": "Continue API response format (OpenAI-compatible)",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "str",
+    "logger.info",
+    "ContinueResponse",
+    "HTTPException",
+    "router.post",
+    "logger.error",
+    "request_data.get",
+    "datetime.now",
+    "reversed",
+    "request.json",
+    "msg.get",
+    "len",
+    "llm_service.process_message",
+    "Depends",
+    "int",
+    "datetime.now",
+    "Depends",
+    "router.get",
+    "str",
+    "HTTPException",
+    "router.post",
+    "input_text.split",
+    "logger.error",
+    "request_data.get",
+    "request.json",
+    "len",
+    "Depends",
+    "len",
+    "content.split",
+    "int",
+    "datetime.now",
+    "len",
+    "content.split",
+    "int",
+    "datetime.now"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.853683",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:d9a23385fbed0931",
+    "lines_of_code": 7
+  }
+}

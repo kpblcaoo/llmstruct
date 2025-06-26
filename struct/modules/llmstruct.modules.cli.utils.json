@@ -1,0 +1,695 @@
+{
+  "module_info": {
+    "uid": "llmstruct.modules.cli.utils",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.modules.cli.utils with 16 functions",
+    "hash": "sha256:ce16b4008cacda66",
+    "dependencies": [
+      "base_path",
+      "cli_config",
+      "config",
+      "config_path",
+      "content",
+      "f",
+      "file_path",
+      "filename",
+      "files",
+      "gitignore_path",
+      "line",
+      "logging",
+      "parsing_config",
+      "path",
+      "re",
+      "toml"
+    ],
+    "exports": [
+      "get_cache_config",
+      "get_context_config",
+      "get_context_file_path",
+      "get_copilot_config",
+      "get_exclude_dirs",
+      "get_exclude_patterns",
+      "get_include_patterns",
+      "get_max_file_size",
+      "get_queue_config",
+      "get_struct_file_path",
+      "load_config",
+      "load_gitignore",
+      "parse_files_from_response",
+      "read_file_content",
+      "save_config",
+      "write_to_file"
+    ]
+  },
+  "functions": [
+    {
+      "name": "load_gitignore",
+      "docstring": "Load and normalize patterns from .gitignore.",
+      "line_range": [
+        6,
+        20
+      ],
+      "parameters": [
+        "root_dir"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.utils.load_gitignore:6#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.utils",
+        "llmstruct.modules.cli.utils.load_gitignore:6"
+      ],
+      "hash": "91a11d72c8a7d9754d0424746dbf2e7feec0369d23bdd8ad42251d5ba24490f3",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-utils-load-gitignore",
+      "summary": "Load and normalize patterns from .gitignore.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "gitignore_path.open",
+        "line.startswith",
+        "line.strip",
+        "logging.error",
+        "Path",
+        "gitignore_path.exists"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "load_config",
+      "docstring": "Load settings from llmstruct.toml or return empty dict.",
+      "line_range": [
+        22,
+        32
+      ],
+      "parameters": [
+        "root_dir"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.utils.load_config:22#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.utils",
+        "llmstruct.modules.cli.utils.load_config:22"
+      ],
+      "hash": "7c0d27e637a8fa6eea95576359b17f4d56086ed958863ab46cb2b5f9272d9a32",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-utils-load-config",
+      "summary": "Load settings from llmstruct.toml or return empty dict.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "toml.load",
+        "config_path.open",
+        "logging.error",
+        "config_path.exists",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "read_file_content",
+      "docstring": "Read content of a file if it exists and is a text file.",
+      "line_range": [
+        34,
+        43
+      ],
+      "parameters": [
+        "file_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.utils.read_file_content:34#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.utils",
+        "llmstruct.modules.cli.utils.read_file_content:34"
+      ],
+      "hash": "6c4641deb205e047f72d068ad72b782f0d5a9d7c737b3016ccf2f5f89e008bf8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-utils-read-file-content",
+      "summary": "Read content of a file if it exists and is a text file.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "f.read",
+        "path.open",
+        "logging.error",
+        "path.is_file",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "write_to_file",
+      "docstring": "Write content to a file in base_dir (default ./tmp) and return the path.",
+      "line_range": [
+        45,
+        63
+      ],
+      "parameters": [
+        "content",
+        "filename",
+        "base_dir"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.utils.write_to_file:45#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.utils",
+        "llmstruct.modules.cli.utils.write_to_file:45"
+      ],
+      "hash": "b4c03140917f22d8a4346b485e4dc8c8e6c5367ebdbfba4bfb32bc1f2f70d4e7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-utils-write-to-file",
+      "summary": "Write content to a file in base_dir (default ./tmp) and return the path.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "logging.info",
+        "file_path.open",
+        "base_path.mkdir",
+        "re.sub",
+        "logging.error",
+        "logging.warning",
+        "file_path.exists",
+        "f.write",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "parse_files_from_response",
+      "docstring": "Extract filenames and content from LLM response (e.g., ```filename\ncontent```).",
+      "line_range": [
+        65,
+        72
+      ],
+      "parameters": [
+        "response"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.utils.parse_files_from_response:65#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.utils",
+        "llmstruct.modules.cli.utils.parse_files_from_response:65"
+      ],
+      "hash": "f8120a3475717915bffe8458bcb097596608dff960675060358ceb732e546a31",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-utils-parse-files-from-response",
+      "summary": "Extract filenames and content from LLM response (e.g., ```filename\ncontent```).",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "content.strip",
+        "filename.strip",
+        "files.append",
+        "re.findall"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_cache_config",
+      "docstring": "",
+      "line_range": [
+        74,
+        75
+      ],
+      "parameters": [
+        "config"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.utils.get_cache_config:74#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.utils",
+        "llmstruct.modules.cli.utils.get_cache_config:74"
+      ],
+      "hash": "46c8bf1e5b78fe7ce20a8b40db0fb751e5eac29134dcd83edf6520c1cac57636",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-utils-get-cache-config",
+      "summary": "Retrieves cache config",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "config.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_copilot_config",
+      "docstring": "",
+      "line_range": [
+        77,
+        78
+      ],
+      "parameters": [
+        "config"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.utils.get_copilot_config:77#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.utils",
+        "llmstruct.modules.cli.utils.get_copilot_config:77"
+      ],
+      "hash": "35b5aa8d776b457fe142ff4a93b313b5e91997815f784b31f8a6b4e0f9cf3f24",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-utils-get-copilot-config",
+      "summary": "Retrieves copilot config",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "config.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_queue_config",
+      "docstring": "",
+      "line_range": [
+        80,
+        81
+      ],
+      "parameters": [
+        "config"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.utils.get_queue_config:80#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.utils",
+        "llmstruct.modules.cli.utils.get_queue_config:80"
+      ],
+      "hash": "b0ff60708c2dbc4d7dc6b7d6c547235390412c90efa8f86f76680f4a1285b500",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-utils-get-queue-config",
+      "summary": "Retrieves queue config",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "config.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_context_config",
+      "docstring": "",
+      "line_range": [
+        83,
+        84
+      ],
+      "parameters": [
+        "config"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.utils.get_context_config:83#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.utils",
+        "llmstruct.modules.cli.utils.get_context_config:83"
+      ],
+      "hash": "7bb42335281eec0728765ac20f5d904209a72048ecf68d9bc05b9829707e50de",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-utils-get-context-config",
+      "summary": "Retrieves context config",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "config.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_exclude_dirs",
+      "docstring": "",
+      "line_range": [
+        86,
+        93
+      ],
+      "parameters": [
+        "config"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.utils.get_exclude_dirs:86#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.utils",
+        "llmstruct.modules.cli.utils.get_exclude_dirs:86"
+      ],
+      "hash": "224f24cad41c7f27dbadb8fa28036fe3e39d9c2b3093e4ebd92501749bf0db92",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-utils-get-exclude-dirs",
+      "summary": "Retrieves exclude dirs",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "set",
+        "config.get",
+        "list",
+        "parsing_config.get",
+        "cli_config.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_include_patterns",
+      "docstring": "",
+      "line_range": [
+        95,
+        98
+      ],
+      "parameters": [
+        "config"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.utils.get_include_patterns:95#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.utils",
+        "llmstruct.modules.cli.utils.get_include_patterns:95"
+      ],
+      "hash": "46964f5605ef89a96a3e5b4e4ca5f60e477abd59faef374bdfee9e3af39c8753",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-utils-get-include-patterns",
+      "summary": "Retrieves include patterns",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "cli_config.get",
+        "parsing_config.get",
+        "config.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_exclude_patterns",
+      "docstring": "",
+      "line_range": [
+        100,
+        103
+      ],
+      "parameters": [
+        "config"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.utils.get_exclude_patterns:100#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.utils",
+        "llmstruct.modules.cli.utils.get_exclude_patterns:100"
+      ],
+      "hash": "7ef78a95773da2e8fc2d470184f2ac6ef3879d91269e5d2dbc4e97b809be3942",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-utils-get-exclude-patterns",
+      "summary": "Retrieves exclude patterns",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "cli_config.get",
+        "parsing_config.get",
+        "config.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_max_file_size",
+      "docstring": "",
+      "line_range": [
+        105,
+        106
+      ],
+      "parameters": [
+        "config"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.utils.get_max_file_size:105#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.utils",
+        "llmstruct.modules.cli.utils.get_max_file_size:105"
+      ],
+      "hash": "0251d4cb63f805d76cd8d4ae8180ab1cc721e5d6f05730d908a242e364bc940c",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-utils-get-max-file-size",
+      "summary": "Retrieves max file size",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "config.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_struct_file_path",
+      "docstring": "",
+      "line_range": [
+        108,
+        109
+      ],
+      "parameters": [
+        "config"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.utils.get_struct_file_path:108#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.utils",
+        "llmstruct.modules.cli.utils.get_struct_file_path:108"
+      ],
+      "hash": "da9a84a4c3d8820bba7916bb3bedebd1f3a0726212696af4f631bc9cb8d1497e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-utils-get-struct-file-path",
+      "summary": "Retrieves struct file path",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "config.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_context_file_path",
+      "docstring": "",
+      "line_range": [
+        111,
+        112
+      ],
+      "parameters": [
+        "config"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.utils.get_context_file_path:111#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.utils",
+        "llmstruct.modules.cli.utils.get_context_file_path:111"
+      ],
+      "hash": "5d538c8d61cd6a4fdd8ef9fc0ff3129095b1222de7f523fb4ce4cca501617825",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-utils-get-context-file-path",
+      "summary": "Retrieves context file path",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "config.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "save_config",
+      "docstring": "",
+      "line_range": [
+        114,
+        121
+      ],
+      "parameters": [
+        "config",
+        "root_dir"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.utils.save_config:114#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.utils",
+        "llmstruct.modules.cli.utils.save_config:114"
+      ],
+      "hash": "67382b859eb9301c7a271df794891c97c0548f9869bcdd0f0725de26be4de700",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-utils-save-config",
+      "summary": "Function for save config",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logging.error",
+        "config_path.open",
+        "toml.dump",
+        "Path"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "gitignore_path.open",
+    "line.startswith",
+    "line.strip",
+    "logging.error",
+    "Path",
+    "gitignore_path.exists",
+    "toml.load",
+    "config_path.open",
+    "logging.error",
+    "config_path.exists",
+    "Path",
+    "f.read",
+    "path.open",
+    "logging.error",
+    "path.is_file",
+    "Path",
+    "str",
+    "logging.info",
+    "file_path.open",
+    "base_path.mkdir",
+    "re.sub",
+    "logging.error",
+    "logging.warning",
+    "file_path.exists",
+    "f.write",
+    "Path",
+    "content.strip",
+    "filename.strip",
+    "files.append",
+    "re.findall",
+    "config.get",
+    "config.get",
+    "config.get",
+    "config.get",
+    "set",
+    "config.get",
+    "list",
+    "parsing_config.get",
+    "cli_config.get",
+    "cli_config.get",
+    "parsing_config.get",
+    "config.get",
+    "cli_config.get",
+    "parsing_config.get",
+    "config.get",
+    "config.get",
+    "config.get",
+    "config.get",
+    "logging.error",
+    "config_path.open",
+    "toml.dump",
+    "Path"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.860810",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:ce16b4008cacda66",
+    "lines_of_code": 16
+  }
+}

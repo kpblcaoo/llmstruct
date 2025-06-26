@@ -1,0 +1,383 @@
+{
+  "module_info": {
+    "uid": "scripts.auto_update_struct",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.auto_update_struct with 8 functions",
+    "hash": "sha256:0ad200aa08560a51",
+    "dependencies": [
+      "argparse",
+      "cli_config",
+      "config",
+      "datetime",
+      "file_path",
+      "json",
+      "logger",
+      "logging",
+      "os",
+      "parser",
+      "subprocess",
+      "sys"
+    ],
+    "exports": [
+      "backup_struct_json",
+      "detect_project_changes",
+      "generate_json",
+      "load_config",
+      "load_gitignore",
+      "main",
+      "update_struct_json",
+      "validate_struct_json"
+    ]
+  },
+  "functions": [
+    {
+      "name": "detect_project_changes",
+      "docstring": "Detect if project files have changed since last struct.json generation.\nUses git status to check for modifications.",
+      "line_range": [
+        44,
+        81
+      ],
+      "parameters": [
+        "root_dir",
+        "struct_path"
+      ],
+      "decorators": [],
+      "uid": "scripts.auto_update_struct.detect_project_changes:44#function",
+      "uid_components": [
+        "scripts",
+        "scripts.auto_update_struct",
+        "scripts.auto_update_struct.detect_project_changes:44"
+      ],
+      "hash": "9f6e85e1a52f62faebd5aba13e841a158257dfa1538ccad56c5a1dfb2ee87af7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-auto-update-struct-detect-project-changes",
+      "summary": "Detect if project files have changed since last struct.json generation",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "subprocess.run",
+        "logger.info",
+        "file_path.stat",
+        "logger.warning",
+        "Path"
+      ],
+      "called_by": [
+        "update_struct_json",
+        "main"
+      ]
+    },
+    {
+      "name": "backup_struct_json",
+      "docstring": "Create a backup of existing struct.json.",
+      "line_range": [
+        84,
+        97
+      ],
+      "parameters": [
+        "struct_path"
+      ],
+      "decorators": [],
+      "uid": "scripts.auto_update_struct.backup_struct_json:84#function",
+      "uid_components": [
+        "scripts",
+        "scripts.auto_update_struct",
+        "scripts.auto_update_struct.backup_struct_json:84"
+      ],
+      "hash": "d6d347934dc78d7513bb58c3336f97cea118ac4a71d561367b81b73142f39f4e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-auto-update-struct-backup-struct-json",
+      "summary": "Create a backup of existing struct.json.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "subprocess.run",
+        "logger.info",
+        "logger.error",
+        "datetime.now",
+        "Path"
+      ],
+      "called_by": [
+        "update_struct_json"
+      ]
+    },
+    {
+      "name": "validate_struct_json",
+      "docstring": "Validate generated struct.json for basic structure.",
+      "line_range": [
+        100,
+        128
+      ],
+      "parameters": [
+        "struct_path"
+      ],
+      "decorators": [],
+      "uid": "scripts.auto_update_struct.validate_struct_json:100#function",
+      "uid_components": [
+        "scripts",
+        "scripts.auto_update_struct",
+        "scripts.auto_update_struct.validate_struct_json:100"
+      ],
+      "hash": "92b44273e12fe4ad14132b74de6558f983a0ed600968171c3d2c338b8f1d1667",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-auto-update-struct-validate-struct-json",
+      "summary": "Validate generated struct.json for basic structure.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "logger.error",
+        "logger.info",
+        "json.load"
+      ],
+      "called_by": [
+        "update_struct_json"
+      ]
+    },
+    {
+      "name": "update_struct_json",
+      "docstring": "Main function to update struct.json automatically.\n\nArgs:\n    root_dir: Project root directory (default: current directory)\n    struct_path: Path to struct.json (default: ./struct.json)\n    force: Force regeneration even if no changes detected\n    config_override: Override default configuration\n\nReturns:\n    bool: True if update was successful",
+      "line_range": [
+        131,
+        225
+      ],
+      "parameters": [
+        "root_dir",
+        "struct_path",
+        "force",
+        "config_override"
+      ],
+      "decorators": [],
+      "uid": "scripts.auto_update_struct.update_struct_json:131#function",
+      "uid_components": [
+        "scripts",
+        "scripts.auto_update_struct",
+        "scripts.auto_update_struct.update_struct_json:131"
+      ],
+      "hash": "7e097a478d6fa879db45e230a929b99891e2275f2142edec220105848bd94501",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-auto-update-struct-update-struct-json",
+      "summary": "Main function to update struct.json automatically",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "subprocess.run",
+        "logger.info",
+        "open",
+        "config.get",
+        "load_gitignore",
+        "generate_json",
+        "load_config",
+        "logger.error",
+        "os.getcwd",
+        "detect_project_changes",
+        "backup_struct_json",
+        "cli_config.get",
+        "json.dump",
+        "config.update",
+        "validate_struct_json"
+      ],
+      "called_by": [
+        "main"
+      ]
+    },
+    {
+      "name": "main",
+      "docstring": "Command-line interface for auto-update script.",
+      "line_range": [
+        228,
+        286
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.auto_update_struct.main:228#function",
+      "uid_components": [
+        "scripts",
+        "scripts.auto_update_struct",
+        "scripts.auto_update_struct.main:228"
+      ],
+      "hash": "af51f7b11b8702f1d0ce05df8405da8b1a5d40b0e0eca7efa9eacd44041e5864",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-auto-update-struct-main",
+      "summary": "Command-line interface for auto-update script.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "update_struct_json",
+        "parser.add_argument",
+        "argparse.ArgumentParser",
+        "os.getcwd",
+        "detect_project_changes",
+        "sys.exit",
+        "logging.getLogger",
+        "parser.parse_args"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "load_config",
+      "docstring": "",
+      "line_range": [
+        24,
+        25
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.auto_update_struct.load_config:24#function",
+      "uid_components": [
+        "scripts",
+        "scripts.auto_update_struct",
+        "scripts.auto_update_struct.load_config:24"
+      ],
+      "hash": "d6a83ff77fb242443f0f40a8e4135dda61232a21c38f920856e4cf882c4b5934",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-auto-update-struct-load-config",
+      "summary": "Function for load config",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": [
+        "update_struct_json"
+      ]
+    },
+    {
+      "name": "load_gitignore",
+      "docstring": "",
+      "line_range": [
+        26,
+        27
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.auto_update_struct.load_gitignore:26#function",
+      "uid_components": [
+        "scripts",
+        "scripts.auto_update_struct",
+        "scripts.auto_update_struct.load_gitignore:26"
+      ],
+      "hash": "7e33c8179f15d77ea1522e91020211c1811e3d25e504afceb8537bb23a92b875",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-auto-update-struct-load-gitignore",
+      "summary": "Function for load gitignore",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": [
+        "update_struct_json"
+      ]
+    },
+    {
+      "name": "generate_json",
+      "docstring": "",
+      "line_range": [
+        28,
+        29
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.auto_update_struct.generate_json:28#function",
+      "uid_components": [
+        "scripts",
+        "scripts.auto_update_struct",
+        "scripts.auto_update_struct.generate_json:28"
+      ],
+      "hash": "e443f1c7d7c940de095a2e085b9d75cf92cd4a20ffa77bc34a55b9749717373f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-auto-update-struct-generate-json",
+      "summary": "Function for generate json",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "ImportError"
+      ],
+      "called_by": [
+        "update_struct_json"
+      ]
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "subprocess.run",
+    "logger.info",
+    "file_path.stat",
+    "logger.warning",
+    "Path",
+    "subprocess.run",
+    "logger.info",
+    "logger.error",
+    "datetime.now",
+    "Path",
+    "open",
+    "logger.error",
+    "logger.info",
+    "json.load",
+    "subprocess.run",
+    "logger.info",
+    "open",
+    "config.get",
+    "load_gitignore",
+    "generate_json",
+    "load_config",
+    "logger.error",
+    "os.getcwd",
+    "detect_project_changes",
+    "backup_struct_json",
+    "cli_config.get",
+    "json.dump",
+    "config.update",
+    "validate_struct_json",
+    "print",
+    "update_struct_json",
+    "parser.add_argument",
+    "argparse.ArgumentParser",
+    "os.getcwd",
+    "detect_project_changes",
+    "sys.exit",
+    "logging.getLogger",
+    "parser.parse_args",
+    "ImportError"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.767338",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:0ad200aa08560a51",
+    "lines_of_code": 8
+  }
+}

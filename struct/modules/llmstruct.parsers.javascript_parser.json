@@ -1,0 +1,411 @@
+{
+  "module_info": {
+    "uid": "llmstruct.parsers.javascript_parser",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.parsers.javascript_parser with 5 functions and 1 classes",
+    "hash": "sha256:4074a87eac265c49",
+    "dependencies": [
+      "esprima",
+      "f",
+      "hashlib",
+      "os",
+      "self"
+    ],
+    "exports": [
+      "JavaScriptParser",
+      "compute_file_metadata",
+      "extract_signature",
+      "file_hash",
+      "parse_module"
+    ]
+  },
+  "functions": [
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        10,
+        14
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.javascript_parser.__init__:10#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.javascript_parser",
+        "llmstruct.parsers.javascript_parser.__init__:10"
+      ],
+      "hash": "762cabed76f63a744cf9a908c0b9837c98785f00c6d72afaa237516fcebfaa2d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-javascript-parser---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "set"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "file_hash",
+      "docstring": "",
+      "line_range": [
+        16,
+        21
+      ],
+      "parameters": [
+        "self",
+        "filepath"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.javascript_parser.file_hash:16#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.javascript_parser",
+        "llmstruct.parsers.javascript_parser.file_hash:16"
+      ],
+      "hash": "3c082f86791d67acc2f6e933cde5020857a82c7cdf76d5305715646b266910e1",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-javascript-parser-file-hash",
+      "summary": "Function for file hash",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "f.read",
+        "hashlib.sha256"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "compute_file_metadata",
+      "docstring": "",
+      "line_range": [
+        23,
+        42
+      ],
+      "parameters": [
+        "self",
+        "filepath",
+        "include_hashes"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.javascript_parser.compute_file_metadata:23#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.javascript_parser",
+        "llmstruct.parsers.javascript_parser.compute_file_metadata:23"
+      ],
+      "hash": "1cd1bbdaae1c8bcfd3b1247f73ccab5236d15d29671e72cfc0e42037f07388df",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-javascript-parser-compute-file-metadata",
+      "summary": "Function for compute file metadata",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "sum",
+        "os.stat",
+        "open",
+        "self.file_hash"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "parse_module",
+      "docstring": "",
+      "line_range": [
+        44,
+        128
+      ],
+      "parameters": [
+        "self",
+        "filepath",
+        "root_dir",
+        "include_ranges",
+        "include_hashes"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.javascript_parser.parse_module:44#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.javascript_parser",
+        "llmstruct.parsers.javascript_parser.parse_module:44"
+      ],
+      "hash": "c37772ef1d536efd59349137025d6db2e068b87d2296b5a74747379b62fd4c6e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-javascript-parser-parse-module",
+      "summary": "Parses module",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "open",
+        "f.read",
+        "self.compute_file_metadata",
+        "esprima.parseModule"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "extract_signature",
+      "docstring": "",
+      "line_range": [
+        79,
+        81
+      ],
+      "parameters": [
+        "node"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.javascript_parser.extract_signature:79#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.javascript_parser",
+        "llmstruct.parsers.javascript_parser.extract_signature:79"
+      ],
+      "hash": "b6cf590b77cbb7534d0ad4718649c5b5795550dbce83274a5d98d520c1feca21",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-javascript-parser-extract-signature",
+      "summary": "Function for extract signature",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "hasattr"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "JavaScriptParser",
+      "docstring": "",
+      "line_range": [
+        9,
+        128
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            10,
+            14
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.parsers.javascript_parser.JavaScriptParser.__init__:10#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.javascript_parser",
+            "llmstruct.parsers.javascript_parser.JavaScriptParser",
+            "llmstruct.parsers.javascript_parser.JavaScriptParser.__init__:10"
+          ],
+          "hash": "a8f8e880938f2355f36774163a149162e7c41f5b37b046fb7dd410eb57f6f207",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-javascript-parser-javascriptparser---init--",
+          "summary": "Method for javascriptparser. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "set"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "file_hash",
+          "docstring": "",
+          "line_range": [
+            16,
+            21
+          ],
+          "parameters": [
+            "self",
+            "filepath"
+          ],
+          "uid": "llmstruct.parsers.javascript_parser.JavaScriptParser.file_hash:16#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.javascript_parser",
+            "llmstruct.parsers.javascript_parser.JavaScriptParser",
+            "llmstruct.parsers.javascript_parser.JavaScriptParser.file_hash:16"
+          ],
+          "hash": "6d81a19156536d23b0e56bbc4feba77000d091b3bf82ee1aa67e8e2ab074994b",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-javascript-parser-javascriptparser-file-hash",
+          "summary": "Method for javascriptparser.file hash",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "open",
+            "f.read",
+            "hashlib.sha256"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "compute_file_metadata",
+          "docstring": "",
+          "line_range": [
+            23,
+            42
+          ],
+          "parameters": [
+            "self",
+            "filepath",
+            "include_hashes"
+          ],
+          "uid": "llmstruct.parsers.javascript_parser.JavaScriptParser.compute_file_metadata:23#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.javascript_parser",
+            "llmstruct.parsers.javascript_parser.JavaScriptParser",
+            "llmstruct.parsers.javascript_parser.JavaScriptParser.compute_file_metadata:23"
+          ],
+          "hash": "11293964e3e3bd270371bd80bd9283d77f07aab0255ca8d630fdd8f571549321",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-javascript-parser-javascriptparser-compute-file-metadata",
+          "summary": "Method for javascriptparser.compute file metadata",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "sum",
+            "os.stat",
+            "open",
+            "self.file_hash"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "parse_module",
+          "docstring": "",
+          "line_range": [
+            44,
+            128
+          ],
+          "parameters": [
+            "self",
+            "filepath",
+            "root_dir",
+            "include_ranges",
+            "include_hashes"
+          ],
+          "uid": "llmstruct.parsers.javascript_parser.JavaScriptParser.parse_module:44#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.javascript_parser",
+            "llmstruct.parsers.javascript_parser.JavaScriptParser",
+            "llmstruct.parsers.javascript_parser.JavaScriptParser.parse_module:44"
+          ],
+          "hash": "6fb8c915ba29e6fc18b6107296ad9e27b05804f96b709dfe6d19406714d34a7f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-javascript-parser-javascriptparser-parse-module",
+          "summary": "Method for javascriptparser.parse module",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "str",
+            "open",
+            "f.read",
+            "self.compute_file_metadata",
+            "esprima.parseModule"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.parsers.javascript_parser.JavaScriptParser:9#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.javascript_parser",
+        "llmstruct.parsers.javascript_parser.JavaScriptParser:9"
+      ],
+      "hash": "3b8dd4b47d2d59a9ee50387cfb4aaa6e51e3b0f9958574840e2878f290c3fddc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-javascript-parser-javascriptparser",
+      "summary": "Parses java script",
+      "summary_source": "heuristic",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "set",
+    "open",
+    "f.read",
+    "hashlib.sha256",
+    "sum",
+    "os.stat",
+    "open",
+    "self.file_hash",
+    "str",
+    "open",
+    "f.read",
+    "self.compute_file_metadata",
+    "esprima.parseModule",
+    "hasattr"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.850932",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:4074a87eac265c49",
+    "lines_of_code": 6
+  }
+}

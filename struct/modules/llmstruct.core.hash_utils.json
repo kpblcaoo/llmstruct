@@ -1,0 +1,542 @@
+{
+  "module_info": {
+    "uid": "llmstruct.core.hash_utils",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.core.hash_utils with 12 functions",
+    "hash": "sha256:ac630975de8d9c12",
+    "dependencies": [
+      "base_path",
+      "content",
+      "f",
+      "file_path",
+      "hash_parts",
+      "hasher",
+      "hashlib",
+      "line",
+      "lines",
+      "modified",
+      "new_db",
+      "old_db",
+      "p",
+      "path"
+    ],
+    "exports": [
+      "compare_hash_databases",
+      "create_file_hash_map",
+      "create_incremental_hash_database",
+      "has_file_changed",
+      "hash_content",
+      "hash_entity",
+      "hash_file",
+      "hash_source",
+      "normalize_source_for_hashing",
+      "quick_content_hash",
+      "quick_file_hash",
+      "quick_source_hash"
+    ]
+  },
+  "functions": [
+    {
+      "name": "hash_content",
+      "docstring": "Generate hash for string content.\n\nArgs:\n    content: String content to hash\n    algorithm: Hash algorithm (sha256, md5, sha1)\n    \nReturns:\n    Hex digest of the hash",
+      "line_range": [
+        14,
+        30
+      ],
+      "parameters": [
+        "content",
+        "algorithm"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.hash_utils.hash_content:14#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.hash_utils",
+        "llmstruct.core.hash_utils.hash_content:14"
+      ],
+      "hash": "fec4da722ef311003ac0c59137e980d83ecbc8daeb022d2b4841e235226c74b8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-hash-utils-hash-content",
+      "summary": "Generate hash for string content",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "hasher.update",
+        "hashlib.new",
+        "content.encode",
+        "hasher.hexdigest"
+      ],
+      "called_by": [
+        "hash_entity",
+        "quick_content_hash",
+        "hash_source"
+      ]
+    },
+    {
+      "name": "hash_file",
+      "docstring": "Generate hash for file content.\n\nArgs:\n    file_path: Path to file\n    algorithm: Hash algorithm\n    \nReturns:\n    Hex digest of file hash, None if file doesn't exist",
+      "line_range": [
+        33,
+        56
+      ],
+      "parameters": [
+        "file_path",
+        "algorithm"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.hash_utils.hash_file:33#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.hash_utils",
+        "llmstruct.core.hash_utils.hash_file:33"
+      ],
+      "hash": "fa1b8c8680c3ad1b715764a1e407adf0b40e814ada9cb931d5fbca6b2e0c7720",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-hash-utils-hash-file",
+      "summary": "Generate hash for file content",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "hasher.update",
+        "hasher.hexdigest",
+        "open",
+        "f.read",
+        "hashlib.new",
+        "path.exists",
+        "path.is_file",
+        "iter",
+        "Path"
+      ],
+      "called_by": [
+        "create_incremental_hash_database",
+        "has_file_changed",
+        "create_file_hash_map",
+        "quick_file_hash"
+      ]
+    },
+    {
+      "name": "hash_source",
+      "docstring": "Generate hash for source code content.\n\nNormalizes whitespace and removes comments for consistent hashing.\n\nArgs:\n    content: Source code content\n    algorithm: Hash algorithm\n    \nReturns:\n    Hex digest of normalized source hash",
+      "line_range": [
+        59,
+        77
+      ],
+      "parameters": [
+        "content",
+        "algorithm"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.hash_utils.hash_source:59#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.hash_utils",
+        "llmstruct.core.hash_utils.hash_source:59"
+      ],
+      "hash": "047feb051edaf01138da6efab3faee059413a02616891be861964083a92ca1dc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-hash-utils-hash-source",
+      "summary": "Generate hash for source code content",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "hash_content",
+        "normalize_source_for_hashing"
+      ],
+      "called_by": [
+        "quick_source_hash"
+      ]
+    },
+    {
+      "name": "normalize_source_for_hashing",
+      "docstring": "Normalize source code for consistent hashing.\n\n- Removes leading/trailing whitespace\n- Normalizes line endings\n- Removes empty lines\n- Strips inline comments (# comments)\n\nArgs:\n    content: Source code content\n    \nReturns:\n    Normalized content",
+      "line_range": [
+        80,
+        127
+      ],
+      "parameters": [
+        "content"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.hash_utils.normalize_source_for_hashing:80#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.hash_utils",
+        "llmstruct.core.hash_utils.normalize_source_for_hashing:80"
+      ],
+      "hash": "6e9c92d688035487ec44b7e81ac537a1c4c5edaab0cf0ccbe04c4a7b1360bba1",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-hash-utils-normalize-source-for-hashing",
+      "summary": "Normalize source code for consistent hashing",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "line.strip",
+        "lines.append",
+        "enumerate",
+        "content.splitlines"
+      ],
+      "called_by": [
+        "hash_entity",
+        "hash_source"
+      ]
+    },
+    {
+      "name": "hash_entity",
+      "docstring": "Generate hash for a code entity (function, class, etc.).\n\nUses entity content and metadata for hashing.\n\nArgs:\n    entity: Entity dictionary with 'content', 'name', 'type' keys\n    algorithm: Hash algorithm\n    \nReturns:\n    Hex digest of entity hash",
+      "line_range": [
+        130,
+        171
+      ],
+      "parameters": [
+        "entity",
+        "algorithm"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.hash_utils.hash_entity:130#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.hash_utils",
+        "llmstruct.core.hash_utils.hash_entity:130"
+      ],
+      "hash": "0ae6671255d0a6bfeb5cc7bbe210074c7e1537cc64c2a6aaa289169302104bfe",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-hash-utils-hash-entity",
+      "summary": "Generate hash for a code entity (function, class, etc.)",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "p.get",
+        "normalize_source_for_hashing",
+        "hash_content",
+        "hash_parts.append"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "create_file_hash_map",
+      "docstring": "Create hash map for multiple files.\n\nArgs:\n    file_paths: List of file paths\n    algorithm: Hash algorithm\n    \nReturns:\n    Dictionary mapping file paths to their hashes",
+      "line_range": [
+        174,
+        188
+      ],
+      "parameters": [
+        "file_paths",
+        "algorithm"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.hash_utils.create_file_hash_map:174#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.hash_utils",
+        "llmstruct.core.hash_utils.create_file_hash_map:174"
+      ],
+      "hash": "7393e9bdfc51dec6f8bdb42bd005f95e80e88249e98cdb1749fde1809365572f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-hash-utils-create-file-hash-map",
+      "summary": "Create hash map for multiple files",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "hash_file"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "has_file_changed",
+      "docstring": "Check if file has changed since previous hash.\n\nArgs:\n    file_path: Path to file\n    previous_hash: Previously computed hash\n    algorithm: Hash algorithm\n    \nReturns:\n    True if file has changed, False otherwise",
+      "line_range": [
+        191,
+        204
+      ],
+      "parameters": [
+        "file_path",
+        "previous_hash",
+        "algorithm"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.hash_utils.has_file_changed:191#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.hash_utils",
+        "llmstruct.core.hash_utils.has_file_changed:191"
+      ],
+      "hash": "67beb5e3aa78c4a9f9680f408b29e42664bed96d36b6a2b16e29e45dda87927b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-hash-utils-has-file-changed",
+      "summary": "Check if file has changed since previous hash",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "hash_file"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "create_incremental_hash_database",
+      "docstring": "Create hash database for incremental builds.\n\nArgs:\n    base_path: Base directory to scan\n    file_patterns: List of glob patterns for files to include\n    algorithm: Hash algorithm\n    \nReturns:\n    Dictionary mapping file paths to hashes",
+      "line_range": [
+        207,
+        235
+      ],
+      "parameters": [
+        "base_path",
+        "file_patterns",
+        "algorithm"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.hash_utils.create_incremental_hash_database:207#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.hash_utils",
+        "llmstruct.core.hash_utils.create_incremental_hash_database:207"
+      ],
+      "hash": "4bd873231de2b77df775209fd8485fe1613dc7f6b29de94b3680450b0df3b2dc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-hash-utils-create-incremental-hash-database",
+      "summary": "Create hash database for incremental builds",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "file_path.is_file",
+        "hash_file",
+        "base_path.glob",
+        "file_path.relative_to",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "compare_hash_databases",
+      "docstring": "Compare two hash databases to find changes.\n\nArgs:\n    old_db: Previous hash database\n    new_db: Current hash database\n    \nReturns:\n    Dictionary with 'added', 'modified', 'deleted' file lists",
+      "line_range": [
+        238,
+        265
+      ],
+      "parameters": [
+        "old_db",
+        "new_db"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.hash_utils.compare_hash_databases:238#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.hash_utils",
+        "llmstruct.core.hash_utils.compare_hash_databases:238"
+      ],
+      "hash": "24f3070c7d80788c96b28a6fbba953592f95683a1a0f269d4402bef08a99e4b7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-hash-utils-compare-hash-databases",
+      "summary": "Compare two hash databases to find changes",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "set",
+        "list",
+        "old_db.keys",
+        "new_db.keys",
+        "modified.append",
+        "sorted"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "quick_file_hash",
+      "docstring": "Quick SHA-256 hash of a file",
+      "line_range": [
+        270,
+        272
+      ],
+      "parameters": [
+        "file_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.hash_utils.quick_file_hash:270#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.hash_utils",
+        "llmstruct.core.hash_utils.quick_file_hash:270"
+      ],
+      "hash": "33ae6f768b288b556e0ae2bb14700e9f8c00b446c1e43747757d23ad4bcd4652",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-hash-utils-quick-file-hash",
+      "summary": "Quick SHA-256 hash of a file",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "hash_file"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "quick_content_hash",
+      "docstring": "Quick SHA-256 hash of content",
+      "line_range": [
+        275,
+        277
+      ],
+      "parameters": [
+        "content"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.hash_utils.quick_content_hash:275#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.hash_utils",
+        "llmstruct.core.hash_utils.quick_content_hash:275"
+      ],
+      "hash": "93b10947b0b5caae4297b8476f326dc784a5f9961625402f05f2a4dc0da4a17d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-hash-utils-quick-content-hash",
+      "summary": "Quick SHA-256 hash of content",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "hash_content"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "quick_source_hash",
+      "docstring": "Quick SHA-256 hash of normalized source code",
+      "line_range": [
+        280,
+        282
+      ],
+      "parameters": [
+        "source_code"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.hash_utils.quick_source_hash:280#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.hash_utils",
+        "llmstruct.core.hash_utils.quick_source_hash:280"
+      ],
+      "hash": "0f5d8085a445868b9c8f42276d2850ade224a908e296ece8042fe7580acd07d2",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-hash-utils-quick-source-hash",
+      "summary": "Quick SHA-256 hash of normalized source code",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "hash_source"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "hasher.update",
+    "hashlib.new",
+    "content.encode",
+    "hasher.hexdigest",
+    "hasher.update",
+    "hasher.hexdigest",
+    "open",
+    "f.read",
+    "hashlib.new",
+    "path.exists",
+    "path.is_file",
+    "iter",
+    "Path",
+    "hash_content",
+    "normalize_source_for_hashing",
+    "line.strip",
+    "lines.append",
+    "enumerate",
+    "content.splitlines",
+    "p.get",
+    "normalize_source_for_hashing",
+    "hash_content",
+    "hash_parts.append",
+    "hash_file",
+    "hash_file",
+    "str",
+    "file_path.is_file",
+    "hash_file",
+    "base_path.glob",
+    "file_path.relative_to",
+    "Path",
+    "set",
+    "list",
+    "old_db.keys",
+    "new_db.keys",
+    "modified.append",
+    "sorted",
+    "hash_file",
+    "hash_content",
+    "hash_source"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.840265",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:ac630975de8d9c12",
+    "lines_of_code": 12
+  }
+}

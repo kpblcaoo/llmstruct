@@ -1,0 +1,24 @@
+{
+  "module_info": {
+    "uid": "scripts.validate_schemas",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.validate_schemas (empty)",
+    "hash": "sha256:15a7848c8079bd0f",
+    "dependencies": [],
+    "exports": []
+  },
+  "functions": [],
+  "classes": [],
+  "imports": [],
+  "calls": [],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.768065",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:15a7848c8079bd0f",
+    "lines_of_code": 0
+  }
+}

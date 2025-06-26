@@ -1,0 +1,120 @@
+{
+  "module_info": {
+    "uid": "scripts.validate_refs",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.validate_refs with 2 functions",
+    "hash": "sha256:c8877bdf983235e9",
+    "dependencies": [
+      "broken_links",
+      "idea",
+      "json",
+      "logger",
+      "source_file",
+      "target_file"
+    ],
+    "exports": [
+      "main",
+      "validate_references"
+    ]
+  },
+  "functions": [
+    {
+      "name": "validate_references",
+      "docstring": "",
+      "line_range": [
+        11,
+        43
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.validate_refs.validate_references:11#function",
+      "uid_components": [
+        "scripts",
+        "scripts.validate_refs",
+        "scripts.validate_refs.validate_references:11"
+      ],
+      "hash": "915612e1a579a88a9e4311c4401c91a1626972506917f1380ba3629754cb2691",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-validate-refs-validate-references",
+      "summary": "Validates references",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logger.info",
+        "broken_links.append",
+        "logger.error",
+        "logger.warning",
+        "json.load",
+        "source_file.exists",
+        "idea.get",
+        "target_file.exists",
+        "json.dump",
+        "Path",
+        "enumerate"
+      ],
+      "called_by": [
+        "main"
+      ]
+    },
+    {
+      "name": "main",
+      "docstring": "",
+      "line_range": [
+        46,
+        47
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.validate_refs.main:46#function",
+      "uid_components": [
+        "scripts",
+        "scripts.validate_refs",
+        "scripts.validate_refs.main:46"
+      ],
+      "hash": "7e7738fca8d97b39c213db51a64f9a5bf2ab0a1832c5b093ea8c7a3cd1ea28cd",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-validate-refs-main",
+      "summary": "Function for main",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "validate_references"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "logger.info",
+    "broken_links.append",
+    "logger.error",
+    "logger.warning",
+    "json.load",
+    "source_file.exists",
+    "idea.get",
+    "target_file.exists",
+    "json.dump",
+    "Path",
+    "enumerate",
+    "validate_references"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.771576",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:c8877bdf983235e9",
+    "lines_of_code": 2
+  }
+}

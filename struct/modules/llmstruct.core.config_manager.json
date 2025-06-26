@@ -1,0 +1,917 @@
+{
+  "module_info": {
+    "uid": "llmstruct.core.config_manager",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.core.config_manager with 12 functions and 6 classes",
+    "hash": "sha256:2a4cd7a2ffb3e301",
+    "dependencies": [
+      "data",
+      "llm_data",
+      "os",
+      "security_data",
+      "self",
+      "summary_data",
+      "yaml"
+    ],
+    "exports": [
+      "ConfigManager",
+      "LLMConfig",
+      "LLMStructConfig",
+      "MetricsConfig",
+      "SecurityConfig",
+      "SummaryConfig",
+      "get_config",
+      "get_config",
+      "get_config_manager",
+      "get_summary_provider",
+      "get_summary_provider",
+      "is_llm_enabled",
+      "is_llm_enabled",
+      "load_config",
+      "save_config_template"
+    ]
+  },
+  "functions": [
+    {
+      "name": "get_config_manager",
+      "docstring": "Get global configuration manager instance",
+      "line_range": [
+        199,
+        204
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "llmstruct.core.config_manager.get_config_manager:199#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.get_config_manager:199"
+      ],
+      "hash": "ccae3172baaba1b476f2fb699935ac2a0702bd04c672819b224c0948a6eb7577",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager-get-config-manager",
+      "summary": "Get global configuration manager instance",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "ConfigManager"
+      ],
+      "called_by": [
+        "get_summary_provider",
+        "get_config",
+        "is_llm_enabled"
+      ]
+    },
+    {
+      "name": "get_config",
+      "docstring": "Get current configuration",
+      "line_range": [
+        207,
+        209
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "llmstruct.core.config_manager.get_config:207#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.get_config:207"
+      ],
+      "hash": "ed17b278584474c6655dda7eefd3c2aad18d87e1dba68a0bae6fc1a99e94240e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager-get-config",
+      "summary": "Get current configuration",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "get_config_manager"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "is_llm_enabled",
+      "docstring": "Check if LLM functionality is globally enabled",
+      "line_range": [
+        212,
+        214
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "llmstruct.core.config_manager.is_llm_enabled:212#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.is_llm_enabled:212"
+      ],
+      "hash": "d04719dca42512d3de6f533a5a31654ba0b336c51ebab188a983a9cb9fe26757",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager-is-llm-enabled",
+      "summary": "Check if LLM functionality is globally enabled",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "get_config_manager"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_summary_provider",
+      "docstring": "Get active summary provider (heuristic or llm)",
+      "line_range": [
+        217,
+        219
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "llmstruct.core.config_manager.get_summary_provider:217#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.get_summary_provider:217"
+      ],
+      "hash": "d3cb348364e32d70ca393e59f2f4569c999bc911f649ff6aaa82ec407f7c537a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager-get-summary-provider",
+      "summary": "Get active summary provider (heuristic or llm)",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "get_config_manager"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__post_init__",
+      "docstring": "Apply environment variable overrides",
+      "line_range": [
+        66,
+        82
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.config_manager.__post_init__:66#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.__post_init__:66"
+      ],
+      "hash": "2f773667c86d9024f5cb251efe5d7697d5132f4cfef6f2e1c468d47e2e0238dc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager---post-init--",
+      "summary": "Apply environment variable overrides",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "os.getenv"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        88,
+        90
+      ],
+      "parameters": [
+        "self",
+        "config_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.config_manager.__init__:88#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.__init__:88"
+      ],
+      "hash": "855afcfcbc26d17ef511908f0c094ea503fb719ebcd842e3a4572368ab03aa45",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "load_config",
+      "docstring": "Load configuration from file or create default",
+      "line_range": [
+        92,
+        110
+      ],
+      "parameters": [
+        "self",
+        "config_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.config_manager.load_config:92#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.load_config:92"
+      ],
+      "hash": "ffb910fd55457ea8cd9a08da9f80453251c457253bed7fa3569758a6ace4abb4",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager-load-config",
+      "summary": "Load configuration from file or create default",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "LLMStructConfig",
+        "open",
+        "yaml.safe_load",
+        "self._create_config_from_dict",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_create_config_from_dict",
+      "docstring": "Create configuration from dictionary",
+      "line_range": [
+        112,
+        138
+      ],
+      "parameters": [
+        "self",
+        "data"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.config_manager._create_config_from_dict:112#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager._create_config_from_dict:112"
+      ],
+      "hash": "7cf478596b1c294a686be49624494c6b3308075a5bb5cf7baedc7bd559289ab4",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager--create-config-from-dict",
+      "summary": "Create configuration from dictionary",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "LLMStructConfig",
+        "security_data.get",
+        "llm_data.get",
+        "data.get",
+        "summary_data.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_config",
+      "docstring": "Get current configuration, loading if necessary",
+      "line_range": [
+        140,
+        144
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.config_manager.get_config:140#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.get_config:140"
+      ],
+      "hash": "f769160fe21295fe8360a36dbd35a1b833546756a475c4c7dbb554aa77bdf6d7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager-get-config",
+      "summary": "Get current configuration, loading if necessary",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "get_config_manager"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "is_llm_enabled",
+      "docstring": "Check if LLM functionality is enabled",
+      "line_range": [
+        146,
+        154
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.config_manager.is_llm_enabled:146#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.is_llm_enabled:146"
+      ],
+      "hash": "8f2063e7efcdf584bd4e344f1bba49e8690b7719bb342b8d4272d5f6c42d248a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager-is-llm-enabled",
+      "summary": "Check if LLM functionality is enabled",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "get_config_manager"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_summary_provider",
+      "docstring": "Get active summary provider",
+      "line_range": [
+        156,
+        161
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.config_manager.get_summary_provider:156#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.get_summary_provider:156"
+      ],
+      "hash": "704ac3974e12a3ee15241d1a1891786d1291237f86579a29dfa119bef86fe137",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager-get-summary-provider",
+      "summary": "Get active summary provider",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "get_config_manager"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "save_config_template",
+      "docstring": "Save configuration template file",
+      "line_range": [
+        163,
+        192
+      ],
+      "parameters": [
+        "self",
+        "path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.config_manager.save_config_template:163#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.save_config_template:163"
+      ],
+      "hash": "a266d91ce9fcf07a18787a6a3f54be5e1be60b4867b4379cb2da6210a17e282e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager-save-config-template",
+      "summary": "Save configuration template file",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "yaml.dump"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "LLMConfig",
+      "docstring": "LLM-specific configuration",
+      "line_range": [
+        16,
+        25
+      ],
+      "methods": [],
+      "bases": [],
+      "uid": "llmstruct.core.config_manager.LLMConfig:16#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.LLMConfig:16"
+      ],
+      "hash": "345da16afa7f698468b6412179fcf8d85c15636fc6518f8f5713c3309f329cc1",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager-llmconfig",
+      "summary": "LLM-specific configuration",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "SummaryConfig",
+      "docstring": "Summary generation configuration",
+      "line_range": [
+        29,
+        35
+      ],
+      "methods": [],
+      "bases": [],
+      "uid": "llmstruct.core.config_manager.SummaryConfig:29#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.SummaryConfig:29"
+      ],
+      "hash": "41cbf67f60932cf431b8f2b0a4a41e86998bf99521ffcf02d53a4183e8fdec32",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager-summaryconfig",
+      "summary": "Summary generation configuration",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "MetricsConfig",
+      "docstring": "Code metrics configuration",
+      "line_range": [
+        39,
+        45
+      ],
+      "methods": [],
+      "bases": [],
+      "uid": "llmstruct.core.config_manager.MetricsConfig:39#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.MetricsConfig:39"
+      ],
+      "hash": "4f6f72a899c52ac892adf9e6bb19d4ffdf1ec9101894e0530ec07ead0e911848",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager-metricsconfig",
+      "summary": "Code metrics configuration",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "SecurityConfig",
+      "docstring": "Security and privacy configuration",
+      "line_range": [
+        49,
+        54
+      ],
+      "methods": [],
+      "bases": [],
+      "uid": "llmstruct.core.config_manager.SecurityConfig:49#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.SecurityConfig:49"
+      ],
+      "hash": "870a74b18097d10ea0d4d2c21a439a4fb086f108ceddd0aa63c1b294499a4b22",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager-securityconfig",
+      "summary": "Security and privacy configuration",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "LLMStructConfig",
+      "docstring": "Main LLMStruct configuration",
+      "line_range": [
+        58,
+        82
+      ],
+      "methods": [
+        {
+          "name": "__post_init__",
+          "docstring": "Apply environment variable overrides",
+          "line_range": [
+            66,
+            82
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.core.config_manager.LLMStructConfig.__post_init__:66#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.core",
+            "llmstruct.core.config_manager",
+            "llmstruct.core.config_manager.LLMStructConfig",
+            "llmstruct.core.config_manager.LLMStructConfig.__post_init__:66"
+          ],
+          "hash": "37ddc37c92ba219fc4827c5f59f0e3bf3407acc0f88cf0433cb0f9d2dc925bc8",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-core-config-manager-llmstructconfig---post-init--",
+          "summary": "Apply environment variable overrides",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "os.getenv"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.core.config_manager.LLMStructConfig:58#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.LLMStructConfig:58"
+      ],
+      "hash": "c3bfbc6f8a5a448cfcdb6227a1d1a037e6a9a16e5f9b67943d2bd0ba1d2213df",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager-llmstructconfig",
+      "summary": "Main LLMStruct configuration",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "ConfigManager",
+      "docstring": "Manages LLMStruct configuration with security-first defaults",
+      "line_range": [
+        85,
+        192
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            88,
+            90
+          ],
+          "parameters": [
+            "self",
+            "config_path"
+          ],
+          "uid": "llmstruct.core.config_manager.ConfigManager.__init__:88#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.core",
+            "llmstruct.core.config_manager",
+            "llmstruct.core.config_manager.ConfigManager",
+            "llmstruct.core.config_manager.ConfigManager.__init__:88"
+          ],
+          "hash": "70f9c367d4ec7f136214aa9a2b09e04e8cd417386ec746414fdb8a9b3336bb2b",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-core-config-manager-configmanager---init--",
+          "summary": "Method for configmanager. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "load_config",
+          "docstring": "Load configuration from file or create default",
+          "line_range": [
+            92,
+            110
+          ],
+          "parameters": [
+            "self",
+            "config_path"
+          ],
+          "uid": "llmstruct.core.config_manager.ConfigManager.load_config:92#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.core",
+            "llmstruct.core.config_manager",
+            "llmstruct.core.config_manager.ConfigManager",
+            "llmstruct.core.config_manager.ConfigManager.load_config:92"
+          ],
+          "hash": "bb860c91210bb8536df45ee96eacea69c89877af4a62917276a9ec1efa664ba7",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-core-config-manager-configmanager-load-config",
+          "summary": "Load configuration from file or create default",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "LLMStructConfig",
+            "open",
+            "yaml.safe_load",
+            "self._create_config_from_dict",
+            "Path"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_create_config_from_dict",
+          "docstring": "Create configuration from dictionary",
+          "line_range": [
+            112,
+            138
+          ],
+          "parameters": [
+            "self",
+            "data"
+          ],
+          "uid": "llmstruct.core.config_manager.ConfigManager._create_config_from_dict:112#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.core",
+            "llmstruct.core.config_manager",
+            "llmstruct.core.config_manager.ConfigManager",
+            "llmstruct.core.config_manager.ConfigManager._create_config_from_dict:112"
+          ],
+          "hash": "ec82f9ac1623deb2ca2336e5c0f6c54f97f6eae66d265102a022b87781a42b3a",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-core-config-manager-configmanager--create-config-from-dict",
+          "summary": "Create configuration from dictionary",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "LLMStructConfig",
+            "security_data.get",
+            "llm_data.get",
+            "data.get",
+            "summary_data.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_config",
+          "docstring": "Get current configuration, loading if necessary",
+          "line_range": [
+            140,
+            144
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.core.config_manager.ConfigManager.get_config:140#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.core",
+            "llmstruct.core.config_manager",
+            "llmstruct.core.config_manager.ConfigManager",
+            "llmstruct.core.config_manager.ConfigManager.get_config:140"
+          ],
+          "hash": "878ab43c973cc22087da6c340079262bca60eae6c2c30c0d91e0f3463f7f2146",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-core-config-manager-configmanager-get-config",
+          "summary": "Get current configuration, loading if necessary",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "get_config_manager"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "is_llm_enabled",
+          "docstring": "Check if LLM functionality is enabled",
+          "line_range": [
+            146,
+            154
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.core.config_manager.ConfigManager.is_llm_enabled:146#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.core",
+            "llmstruct.core.config_manager",
+            "llmstruct.core.config_manager.ConfigManager",
+            "llmstruct.core.config_manager.ConfigManager.is_llm_enabled:146"
+          ],
+          "hash": "0c53b0efcd962ac528480eff59c52fd83d96be386850e4f36be958f31e1dcffe",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-core-config-manager-configmanager-is-llm-enabled",
+          "summary": "Check if LLM functionality is enabled",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "get_config_manager"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_summary_provider",
+          "docstring": "Get active summary provider",
+          "line_range": [
+            156,
+            161
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.core.config_manager.ConfigManager.get_summary_provider:156#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.core",
+            "llmstruct.core.config_manager",
+            "llmstruct.core.config_manager.ConfigManager",
+            "llmstruct.core.config_manager.ConfigManager.get_summary_provider:156"
+          ],
+          "hash": "ab50e501bedc9c0420d5e35e345f8380cc2d20ae507e84dce76bec9c6fccc8bb",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-core-config-manager-configmanager-get-summary-provider",
+          "summary": "Get active summary provider",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "get_config_manager"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "save_config_template",
+          "docstring": "Save configuration template file",
+          "line_range": [
+            163,
+            192
+          ],
+          "parameters": [
+            "self",
+            "path"
+          ],
+          "uid": "llmstruct.core.config_manager.ConfigManager.save_config_template:163#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.core",
+            "llmstruct.core.config_manager",
+            "llmstruct.core.config_manager.ConfigManager",
+            "llmstruct.core.config_manager.ConfigManager.save_config_template:163"
+          ],
+          "hash": "9d56cddc3439f18f39ef37b0eb6f04cab0e354b061fa75266a95cb6cef21d6b4",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-core-config-manager-configmanager-save-config-template",
+          "summary": "Save configuration template file",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "open",
+            "yaml.dump"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.core.config_manager.ConfigManager:85#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.config_manager",
+        "llmstruct.core.config_manager.ConfigManager:85"
+      ],
+      "hash": "4fc310574a57eff742c940e502817a66ddfa5c60b44b2b66173206fcd134c6f5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-config-manager-configmanager",
+      "summary": "Manages LLMStruct configuration with security-first defaults",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "ConfigManager",
+    "get_config_manager",
+    "get_config_manager",
+    "get_config_manager",
+    "os.getenv",
+    "print",
+    "LLMStructConfig",
+    "open",
+    "yaml.safe_load",
+    "self._create_config_from_dict",
+    "Path",
+    "LLMStructConfig",
+    "security_data.get",
+    "llm_data.get",
+    "data.get",
+    "summary_data.get",
+    "get_config_manager",
+    "get_config_manager",
+    "get_config_manager",
+    "open",
+    "yaml.dump"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.845557",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:2a4cd7a2ffb3e301",
+    "lines_of_code": 18
+  }
+}

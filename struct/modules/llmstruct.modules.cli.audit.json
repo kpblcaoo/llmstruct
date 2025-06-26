@@ -1,0 +1,73 @@
+{
+  "module_info": {
+    "uid": "llmstruct.modules.cli.audit",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.modules.cli.audit with 1 functions",
+    "hash": "sha256:e2410973a8488b7c",
+    "dependencies": [
+      "file_path"
+    ],
+    "exports": [
+      "audit"
+    ]
+  },
+  "functions": [
+    {
+      "name": "audit",
+      "docstring": "Audit project structure and generate reports.",
+      "line_range": [
+        4,
+        17
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.audit.audit:4#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.audit",
+        "llmstruct.modules.cli.audit.audit:4"
+      ],
+      "hash": "89c5abf97d178a5a83171733e515eaadd8c0555b2c8f41f58e4998084bb9a110",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-audit-audit",
+      "summary": "Audit project structure and generate reports.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "analyze_duplicates",
+        "file_path.exists",
+        "hasattr",
+        "Path"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "print",
+    "analyze_duplicates",
+    "file_path.exists",
+    "hasattr",
+    "Path"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.860329",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:e2410973a8488b7c",
+    "lines_of_code": 1
+  }
+}

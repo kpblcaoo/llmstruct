@@ -1,0 +1,481 @@
+{
+  "module_info": {
+    "uid": "llmstruct.api.models.requests",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.api.models.requests with 15 classes",
+    "hash": "sha256:71199b0deb03f398",
+    "dependencies": [],
+    "exports": [
+      "ChatMessage",
+      "Config",
+      "Config",
+      "Config",
+      "Config",
+      "Config",
+      "Config",
+      "ContextMode",
+      "ContextRequest",
+      "Priority",
+      "QueryRequest",
+      "ScanRequest",
+      "TaskCreateRequest",
+      "TaskUpdateRequest",
+      "ValidationRequest"
+    ]
+  },
+  "functions": [],
+  "classes": [
+    {
+      "name": "ContextMode",
+      "docstring": "",
+      "line_range": [
+        10,
+        14
+      ],
+      "methods": [],
+      "bases": [
+        "str",
+        "Enum"
+      ],
+      "uid": "llmstruct.api.models.requests.ContextMode:10#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.models",
+        "llmstruct.api.models.requests",
+        "llmstruct.api.models.requests.ContextMode:10"
+      ],
+      "hash": "9964f1c753f8b3676bb89be57fd0fdf8c06fa4c3fe44a2211379d4dde19d14aa",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-models-requests-contextmode",
+      "summary": "Class for context mode",
+      "summary_source": "heuristic",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "Priority",
+      "docstring": "",
+      "line_range": [
+        17,
+        21
+      ],
+      "methods": [],
+      "bases": [
+        "str",
+        "Enum"
+      ],
+      "uid": "llmstruct.api.models.requests.Priority:17#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.models",
+        "llmstruct.api.models.requests",
+        "llmstruct.api.models.requests.Priority:17"
+      ],
+      "hash": "1be14261c1503d0b4eebfa992703453f53f7b49cd9baf266b1ef34a3670f325a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-models-requests-priority",
+      "summary": "Class for priority",
+      "summary_source": "heuristic",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "ScanRequest",
+      "docstring": "Request model for project scanning",
+      "line_range": [
+        24,
+        38
+      ],
+      "methods": [],
+      "bases": [
+        "BaseModel"
+      ],
+      "uid": "llmstruct.api.models.requests.ScanRequest:24#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.models",
+        "llmstruct.api.models.requests",
+        "llmstruct.api.models.requests.ScanRequest:24"
+      ],
+      "hash": "16593c9e5e570ce4ab28e253d31dbf959e8fd1b563be0521af43c2df444ab35e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-models-requests-scanrequest",
+      "summary": "Request model for project scanning",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "ContextRequest",
+      "docstring": "Request model for context generation",
+      "line_range": [
+        41,
+        54
+      ],
+      "methods": [],
+      "bases": [
+        "BaseModel"
+      ],
+      "uid": "llmstruct.api.models.requests.ContextRequest:41#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.models",
+        "llmstruct.api.models.requests",
+        "llmstruct.api.models.requests.ContextRequest:41"
+      ],
+      "hash": "40109f74b473762b782ef4ad6291f57a7ebcfa5aadcc085d321c4e00185a0f4e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-models-requests-contextrequest",
+      "summary": "Request model for context generation",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "TaskCreateRequest",
+      "docstring": "Request model for creating tasks",
+      "line_range": [
+        57,
+        74
+      ],
+      "methods": [],
+      "bases": [
+        "BaseModel"
+      ],
+      "uid": "llmstruct.api.models.requests.TaskCreateRequest:57#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.models",
+        "llmstruct.api.models.requests",
+        "llmstruct.api.models.requests.TaskCreateRequest:57"
+      ],
+      "hash": "3859ed31e6ad259100e229a5dbc9316132aaa2c670b84f1d00ad9941140a4426",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-models-requests-taskcreaterequest",
+      "summary": "Request model for creating tasks",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "TaskUpdateRequest",
+      "docstring": "Request model for updating tasks",
+      "line_range": [
+        77,
+        92
+      ],
+      "methods": [],
+      "bases": [
+        "BaseModel"
+      ],
+      "uid": "llmstruct.api.models.requests.TaskUpdateRequest:77#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.models",
+        "llmstruct.api.models.requests",
+        "llmstruct.api.models.requests.TaskUpdateRequest:77"
+      ],
+      "hash": "ef4dfa8b14b1c07f88e680947de4b07fb069d9ad27409c103f6a8f2cf58a6347",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-models-requests-taskupdaterequest",
+      "summary": "Request model for updating tasks",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "QueryRequest",
+      "docstring": "Request model for LLM queries",
+      "line_range": [
+        95,
+        110
+      ],
+      "methods": [],
+      "bases": [
+        "BaseModel"
+      ],
+      "uid": "llmstruct.api.models.requests.QueryRequest:95#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.models",
+        "llmstruct.api.models.requests",
+        "llmstruct.api.models.requests.QueryRequest:95"
+      ],
+      "hash": "b5bc9616fc4ef90532ddb23dcde6643928ea5383301c1167b6ee6b589e3ed126",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-models-requests-queryrequest",
+      "summary": "Request model for LLM queries",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "ValidationRequest",
+      "docstring": "Request model for JSON validation",
+      "line_range": [
+        113,
+        124
+      ],
+      "methods": [],
+      "bases": [
+        "BaseModel"
+      ],
+      "uid": "llmstruct.api.models.requests.ValidationRequest:113#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.models",
+        "llmstruct.api.models.requests",
+        "llmstruct.api.models.requests.ValidationRequest:113"
+      ],
+      "hash": "ac475d5a4763caf6d96426b8973c521948e8f668762e1f0d3144a3a98bbc26de",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-models-requests-validationrequest",
+      "summary": "Request model for JSON validation",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "ChatMessage",
+      "docstring": "Chat message request",
+      "line_range": [
+        127,
+        132
+      ],
+      "methods": [],
+      "bases": [
+        "BaseModel"
+      ],
+      "uid": "llmstruct.api.models.requests.ChatMessage:127#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.models",
+        "llmstruct.api.models.requests",
+        "llmstruct.api.models.requests.ChatMessage:127"
+      ],
+      "hash": "decb1bcde2739e1d98a6ccd7212e7ba82b4ac9bec5849f3d367efc7ea7ca4894",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-models-requests-chatmessage",
+      "summary": "Chat message request",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "Config",
+      "docstring": "",
+      "line_range": [
+        31,
+        38
+      ],
+      "methods": [],
+      "bases": [],
+      "uid": "llmstruct.api.models.requests.Config:31#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.models",
+        "llmstruct.api.models.requests",
+        "llmstruct.api.models.requests.Config:31"
+      ],
+      "hash": "dea8fcd07edd00b2a846a227c12c59ff832fdac23e4bd376f9929f6ee3507b33",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-models-requests-config",
+      "summary": "Class for config",
+      "summary_source": "heuristic",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "Config",
+      "docstring": "",
+      "line_range": [
+        47,
+        54
+      ],
+      "methods": [],
+      "bases": [],
+      "uid": "llmstruct.api.models.requests.Config:47#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.models",
+        "llmstruct.api.models.requests",
+        "llmstruct.api.models.requests.Config:47"
+      ],
+      "hash": "33bcda245bdb6e4199f2b1e7d588b856b6995ea563a43151827eb8975f7939e7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-models-requests-config",
+      "summary": "Class for config",
+      "summary_source": "heuristic",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "Config",
+      "docstring": "",
+      "line_range": [
+        65,
+        74
+      ],
+      "methods": [],
+      "bases": [],
+      "uid": "llmstruct.api.models.requests.Config:65#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.models",
+        "llmstruct.api.models.requests",
+        "llmstruct.api.models.requests.Config:65"
+      ],
+      "hash": "8f334722174489d808c2183bb06c3e551a396b56e910bb76ad1a79d1157943d9",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-models-requests-config",
+      "summary": "Class for config",
+      "summary_source": "heuristic",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "Config",
+      "docstring": "",
+      "line_range": [
+        86,
+        92
+      ],
+      "methods": [],
+      "bases": [],
+      "uid": "llmstruct.api.models.requests.Config:86#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.models",
+        "llmstruct.api.models.requests",
+        "llmstruct.api.models.requests.Config:86"
+      ],
+      "hash": "e34e5ce52f6e48630cb43f378c244c590b5b17eb12ab59fbde7df66465e9dc26",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-models-requests-config",
+      "summary": "Class for config",
+      "summary_source": "heuristic",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "Config",
+      "docstring": "",
+      "line_range": [
+        102,
+        110
+      ],
+      "methods": [],
+      "bases": [],
+      "uid": "llmstruct.api.models.requests.Config:102#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.models",
+        "llmstruct.api.models.requests",
+        "llmstruct.api.models.requests.Config:102"
+      ],
+      "hash": "5a630b5fceb77910fb90e6f33ba19d919332a80a7717b501c85b76b5fa6f11cf",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-models-requests-config",
+      "summary": "Class for config",
+      "summary_source": "heuristic",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "Config",
+      "docstring": "",
+      "line_range": [
+        118,
+        124
+      ],
+      "methods": [],
+      "bases": [],
+      "uid": "llmstruct.api.models.requests.Config:118#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.models",
+        "llmstruct.api.models.requests",
+        "llmstruct.api.models.requests.Config:118"
+      ],
+      "hash": "415e80e4b25fc388598ca61bd61ca44c974d05fadee92afe05764962633ffe79",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-models-requests-config",
+      "summary": "Class for config",
+      "summary_source": "heuristic",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.857392",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:71199b0deb03f398",
+    "lines_of_code": 15
+  }
+}

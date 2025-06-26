@@ -1,0 +1,254 @@
+{
+  "module_info": {
+    "uid": "llmstruct.api.routes.system",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.api.routes.system with 5 functions",
+    "hash": "sha256:447f0a0f2851fbea",
+    "dependencies": [
+      "cli",
+      "cli_health",
+      "datetime",
+      "router"
+    ],
+    "exports": [
+      "get_cli_bridge",
+      "get_system_status",
+      "get_version",
+      "health_check",
+      "ping"
+    ]
+  },
+  "functions": [
+    {
+      "name": "get_cli_bridge",
+      "docstring": "Dependency to get CLI bridge instance",
+      "line_range": [
+        17,
+        19
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "llmstruct.api.routes.system.get_cli_bridge:17#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.system",
+        "llmstruct.api.routes.system.get_cli_bridge:17"
+      ],
+      "hash": "a82b79e634a4a2a6e7e7c81bae5751d13f26edf957ea2e2800d578c94882b9a6",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-system-get-cli-bridge",
+      "summary": "Dependency to get CLI bridge instance",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "CLIBridge"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "health_check",
+      "docstring": "Health check endpoint\n\nReturns the health status of the API and its dependencies.\nThis endpoint does not require authentication.",
+      "line_range": [
+        23,
+        61
+      ],
+      "parameters": [
+        "cli"
+      ],
+      "decorators": [
+        "router.get('/health', response_model=HealthResponse)"
+      ],
+      "uid": "llmstruct.api.routes.system.health_check:23#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.system",
+        "llmstruct.api.routes.system.health_check:23"
+      ],
+      "hash": "4a31af2024c7fbe4896be1ad64ca37eb3da3e1c0a507b8e64201e3bb9c978fe5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-system-health-check",
+      "summary": "Health check endpoint\n\nReturns the health status of the API and its dependencies",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "cli_health.get",
+        "HealthResponse",
+        "datetime.utcnow",
+        "cli.health_check",
+        "Depends",
+        "router.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_system_status",
+      "docstring": "Get detailed system status\n\nReturns detailed system information including:\n- API version and configuration\n- CLI status and version\n- Resource usage (if available)",
+      "line_range": [
+        65,
+        97
+      ],
+      "parameters": [],
+      "decorators": [
+        "router.get('/status')"
+      ],
+      "uid": "llmstruct.api.routes.system.get_system_status:65#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.system",
+        "llmstruct.api.routes.system.get_system_status:65"
+      ],
+      "hash": "7badf3944f45f8fedcf92531e9716dd6008792f6ad3b61512b4093eafe0f1319",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-system-get-system-status",
+      "summary": "Get detailed system status\n\nReturns detailed system information including:\n- API version and configuration\n- CLI stat...",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "HTTPException",
+        "CLIBridge",
+        "cli_health.get",
+        "datetime.utcnow",
+        "cli.health_check",
+        "router.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_version",
+      "docstring": "Get API version information\n\nReturns version information for the API and underlying components.",
+      "line_range": [
+        101,
+        123
+      ],
+      "parameters": [],
+      "decorators": [
+        "router.get('/version')"
+      ],
+      "uid": "llmstruct.api.routes.system.get_version:101#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.system",
+        "llmstruct.api.routes.system.get_version:101"
+      ],
+      "hash": "f4562b61bc6b83b5ffb6ef40a5a3ebec06b3c821e8a334893fb3cdbe94f65acc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-system-get-version",
+      "summary": "Get API version information\n\nReturns version information for the API and underlying components.",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "HTTPException",
+        "CLIBridge",
+        "cli_health.get",
+        "datetime.utcnow",
+        "cli.health_check",
+        "router.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "ping",
+      "docstring": "Simple ping endpoint for basic connectivity testing",
+      "line_range": [
+        127,
+        134
+      ],
+      "parameters": [],
+      "decorators": [
+        "router.get('/ping')"
+      ],
+      "uid": "llmstruct.api.routes.system.ping:127#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.system",
+        "llmstruct.api.routes.system.ping:127"
+      ],
+      "hash": "eddcafe4d803c82775be31890024d0255c663ddb1efaaf2ee5b05849450c9a37",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-system-ping",
+      "summary": "Simple ping endpoint for basic connectivity testing",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "router.get",
+        "datetime.utcnow"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "CLIBridge",
+    "str",
+    "cli_health.get",
+    "HealthResponse",
+    "datetime.utcnow",
+    "cli.health_check",
+    "Depends",
+    "router.get",
+    "str",
+    "HTTPException",
+    "CLIBridge",
+    "cli_health.get",
+    "datetime.utcnow",
+    "cli.health_check",
+    "router.get",
+    "str",
+    "HTTPException",
+    "CLIBridge",
+    "cli_health.get",
+    "datetime.utcnow",
+    "cli.health_check",
+    "router.get",
+    "router.get",
+    "datetime.utcnow"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.852749",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:447f0a0f2851fbea",
+    "lines_of_code": 5
+  }
+}

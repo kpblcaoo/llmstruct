@@ -5,6 +5,7 @@ from pathlib import Path
 from llmstruct.modules.cli.utils import load_config
 from llmstruct.generators.json_generator import generate_json
 from llmstruct.generators.index_generator import save_index_json
+from llmstruct.generators.struct_generator import StructDirectoryGenerator
 from llmstruct.cache import JSONCache
 from llmstruct.core.config_manager import get_config_manager
 
@@ -80,16 +81,32 @@ def parse(args):
             exclude_dirs=exclude_dirs,
             include_dirs=include_dirs,
         )
-        with Path(args.output).open("w", encoding="utf-8") as f:
-            json.dump(struct_data, f, indent=2)
-        logging.info(f"Generated {args.output}")
         
-        # NEW: Generate index.json for Phase 1 completion
-        if include_hashes:
-            index_file = args.output.replace(".json", "_index.json") if args.output != "struct.json" else "index.json"
-            save_index_json(struct_data, index_file)
-            logging.info(f"Generated index file: {index_file}")
+        # Determine output format
+        output_format = getattr(args, 'format', 'struct')  # Default to struct/ format
+        
+        if output_format in ['legacy', 'both']:
+            # Generate legacy JSON format
+            with Path(args.output).open("w", encoding="utf-8") as f:
+                json.dump(struct_data, f, indent=2)
+            logging.info(f"Generated legacy format: {args.output}")
             
+            # Generate index for legacy
+            if include_hashes:
+                index_file = args.output.replace(".json", "_index.json") if args.output != "struct.json" else "index.json"
+                save_index_json(struct_data, index_file)
+                logging.info(f"Generated legacy index file: {index_file}")
+        
+        if output_format in ['struct', 'both']:
+            # Generate new struct/ directory format
+            output_dir = Path(args.output).parent if args.output != "struct.json" else Path(".")
+            struct_generator = StructDirectoryGenerator(output_dir, struct_data)
+            struct_generator.generate()
+            logging.info(f"Generated struct/ directory format at {output_dir}/struct/")
+            
+            if output_format == 'struct':
+                logging.info("🚀 Using new struct/ format - better performance and LLM integration!")
+                
         # Cache the generated JSON
         if args.use_cache:
             cache = JSONCache()

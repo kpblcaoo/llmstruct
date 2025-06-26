@@ -1,0 +1,1236 @@
+{
+  "module_info": {
+    "uid": "scripts.github_sync_manager",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.github_sync_manager with 15 functions and 1 classes",
+    "hash": "sha256:5f501b7b7254346a",
+    "dependencies": [
+      "argparse",
+      "core_limit",
+      "data",
+      "datetime",
+      "existing",
+      "file_path",
+      "issues",
+      "item",
+      "json",
+      "labels",
+      "manager",
+      "method",
+      "os",
+      "parser",
+      "processing_meta",
+      "r",
+      "rate_limit",
+      "repo_info",
+      "requests",
+      "response",
+      "result",
+      "results",
+      "self",
+      "time",
+      "title",
+      "user_info"
+    ],
+    "exports": [
+      "GitHubSyncManager",
+      "api_request",
+      "create_github_discussion",
+      "create_github_epic",
+      "create_github_issue",
+      "find_existing_by_title",
+      "get_existing_discussions",
+      "get_existing_issues",
+      "item_already_synced",
+      "load_sync_log",
+      "main",
+      "run_sync",
+      "save_sync_log",
+      "sync_category",
+      "validate_before_sync"
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "docstring": "CLI interface",
+      "line_range": [
+        375,
+        408
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager.main:375#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager",
+        "scripts.github_sync_manager.main:375"
+      ],
+      "hash": "7e0c922da0525e185c347419f1e0afddb191d58bc543e3e5ba76fb2d180ed869",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-main",
+      "summary": "CLI interface",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "result.get",
+        "parser.add_argument",
+        "argparse.ArgumentParser",
+        "len",
+        "manager.run_sync",
+        "GitHubSyncManager",
+        "parser.parse_args"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        17,
+        48
+      ],
+      "parameters": [
+        "self",
+        "repo_owner",
+        "repo_name",
+        "dry_run"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager.__init__:17#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager",
+        "scripts.github_sync_manager.__init__:17"
+      ],
+      "hash": "78f009dd6b1790430523e9ccc933693fb986bb3d55964f13c54f9d957005a7e8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "print",
+        "self.load_sync_log",
+        "Path",
+        "os.getenv"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "load_sync_log",
+      "docstring": "Load previous sync results for idempotency",
+      "line_range": [
+        50,
+        60
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager.load_sync_log:50#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager",
+        "scripts.github_sync_manager.load_sync_log:50"
+      ],
+      "hash": "7258d99792fe273cc10f2e09d45918c4dbade92c54d997ef73fe02d7f59161e7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-load-sync-log",
+      "summary": "Load previous sync results for idempotency",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "json.load"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "save_sync_log",
+      "docstring": "Save sync log for future idempotency",
+      "line_range": [
+        62,
+        65
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager.save_sync_log:62#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager",
+        "scripts.github_sync_manager.save_sync_log:62"
+      ],
+      "hash": "4be4684787e2479e71b2be443f1f57e467a6ca5a87c5273f165a4bccb68b94ff",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-save-sync-log",
+      "summary": "Save sync log for future idempotency",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "json.dump"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "api_request",
+      "docstring": "Safe GitHub API request with rate limiting",
+      "line_range": [
+        67,
+        94
+      ],
+      "parameters": [
+        "self",
+        "method",
+        "endpoint",
+        "data"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager.api_request:67#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager",
+        "scripts.github_sync_manager.api_request:67"
+      ],
+      "hash": "d9565488a58924d611de7953133ddb32c71702db9f8481ae8bc34e865990da68",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-api-request",
+      "summary": "Safe GitHub API request with rate limiting",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "requests.patch",
+        "ValueError",
+        "method.upper",
+        "response.json",
+        "requests.get",
+        "time.sleep",
+        "requests.post",
+        "int",
+        "response.raise_for_status"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_existing_issues",
+      "docstring": "Get existing GitHub issues for collision detection",
+      "line_range": [
+        96,
+        112
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager.get_existing_issues:96#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager",
+        "scripts.github_sync_manager.get_existing_issues:96"
+      ],
+      "hash": "e628d394d15334c5b1eab6832298c267735b7a74427e64abbaf339c3de0772a6",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-get-existing-issues",
+      "summary": "Get existing GitHub issues for collision detection",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "len",
+        "self.api_request",
+        "issues.extend"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_existing_discussions",
+      "docstring": "Get existing GitHub discussions",
+      "line_range": [
+        114,
+        118
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager.get_existing_discussions:114#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager",
+        "scripts.github_sync_manager.get_existing_discussions:114"
+      ],
+      "hash": "3fb21af6733ba07a0fc1d3f4a23cb74ac8d501624ac4dba7d95cbba3b19d2eb3",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-get-existing-discussions",
+      "summary": "Get existing GitHub discussions",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "item_already_synced",
+      "docstring": "Check if item was already synced (idempotency)",
+      "line_range": [
+        120,
+        125
+      ],
+      "parameters": [
+        "self",
+        "item",
+        "category"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager.item_already_synced:120#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager",
+        "scripts.github_sync_manager.item_already_synced:120"
+      ],
+      "hash": "7fc28670c071de9c04f1732d22ade674b512202286f6d111012f538687936c66",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-item-already-synced",
+      "summary": "Check if item was already synced (idempotency)",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "item.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "find_existing_by_title",
+      "docstring": "Find existing GitHub item by title similarity",
+      "line_range": [
+        127,
+        143
+      ],
+      "parameters": [
+        "self",
+        "title",
+        "existing_items"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager.find_existing_by_title:127#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager",
+        "scripts.github_sync_manager.find_existing_by_title:127"
+      ],
+      "hash": "61c05801f751bc09f6b05bfd5e12f66f03d8b3d2aa361b4e60aeb14b7779844b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-find-existing-by-title",
+      "summary": "Find existing GitHub item by title similarity",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "len",
+        "title.lower",
+        "item.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "create_github_issue",
+      "docstring": "Create GitHub issue from processed item",
+      "line_range": [
+        145,
+        182
+      ],
+      "parameters": [
+        "self",
+        "item"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager.create_github_issue:145#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager",
+        "scripts.github_sync_manager.create_github_issue:145"
+      ],
+      "hash": "db93199a635a5b4f9ccf3d1fe92c6499bbe364aea6a3fe5af6de9a042cb5cbbe",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-create-github-issue",
+      "summary": "Create GitHub issue from processed item",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "self.api_request",
+        "item.get",
+        "processing_meta.get",
+        "labels.append"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "create_github_discussion",
+      "docstring": "Create GitHub discussion from processed item",
+      "line_range": [
+        184,
+        194
+      ],
+      "parameters": [
+        "self",
+        "item"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager.create_github_discussion:184#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager",
+        "scripts.github_sync_manager.create_github_discussion:184"
+      ],
+      "hash": "7de4bf52fa6b55c3ea077696f45f5b98fba86f0cf2d7b8482ba902046bf73105",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-create-github-discussion",
+      "summary": "Create GitHub discussion from processed item",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "item.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "create_github_epic",
+      "docstring": "Create GitHub epic (as Project or enhanced Issue)",
+      "line_range": [
+        196,
+        214
+      ],
+      "parameters": [
+        "self",
+        "item"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager.create_github_epic:196#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager",
+        "scripts.github_sync_manager.create_github_epic:196"
+      ],
+      "hash": "ad9ce2e0417bdf87744ea01c37f7c4a36bb622a1b962f23ed59a733519c3c826",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-create-github-epic",
+      "summary": "Create GitHub epic (as Project or enhanced Issue)",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "self.api_request",
+        "item.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "sync_category",
+      "docstring": "Sync specific category with GitHub",
+      "line_range": [
+        216,
+        290
+      ],
+      "parameters": [
+        "self",
+        "category",
+        "filename"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager.sync_category:216#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager",
+        "scripts.github_sync_manager.sync_category:216"
+      ],
+      "hash": "1037127e2e18fda21c9001eada84ae6d0224e2e10877465a7b68dad58de74a55",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-sync-category",
+      "summary": "Sync specific category with GitHub",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "open",
+        "item.get",
+        "self.get_existing_discussions",
+        "result.get",
+        "self.create_github_discussion",
+        "self.create_github_epic",
+        "self.item_already_synced",
+        "datetime.now",
+        "existing.get",
+        "file_path.exists",
+        "json.load",
+        "self.get_existing_issues",
+        "self.find_existing_by_title",
+        "data.get",
+        "self.create_github_issue"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "validate_before_sync",
+      "docstring": "Pre-sync validation checks",
+      "line_range": [
+        292,
+        322
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager.validate_before_sync:292#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager",
+        "scripts.github_sync_manager.validate_before_sync:292"
+      ],
+      "hash": "2b206d2c381e3b18eb8e07891b62c2cad7238c8753eb1fe81a3632cd86d65ecb",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-validate-before-sync",
+      "summary": "Pre-sync validation checks",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "self.api_request",
+        "user_info.get",
+        "repo_info.get",
+        "core_limit.get",
+        "rate_limit.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "run_sync",
+      "docstring": "Main sync execution",
+      "line_range": [
+        324,
+        373
+      ],
+      "parameters": [
+        "self",
+        "categories"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager.run_sync:324#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager",
+        "scripts.github_sync_manager.run_sync:324"
+      ],
+      "hash": "8f84ff5254f19e6886ca84f396ccffd4d5f8e147bcc36360e30be1ceadd216cb",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-run-sync",
+      "summary": "Main sync execution",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "r.get",
+        "sum",
+        "datetime.now",
+        "self.validate_before_sync",
+        "results.values",
+        "self.save_sync_log",
+        "self.sync_category"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "GitHubSyncManager",
+      "docstring": "",
+      "line_range": [
+        16,
+        373
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            17,
+            48
+          ],
+          "parameters": [
+            "self",
+            "repo_owner",
+            "repo_name",
+            "dry_run"
+          ],
+          "uid": "scripts.github_sync_manager.GitHubSyncManager.__init__:17#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager",
+            "scripts.github_sync_manager.GitHubSyncManager",
+            "scripts.github_sync_manager.GitHubSyncManager.__init__:17"
+          ],
+          "hash": "8518800fb4fdb61302cac2d00249d441520437d0e397fff6eb948c0581e3b738",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-githubsyncmanager---init--",
+          "summary": "Method for githubsyncmanager. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "self.load_sync_log",
+            "Path",
+            "os.getenv"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "load_sync_log",
+          "docstring": "Load previous sync results for idempotency",
+          "line_range": [
+            50,
+            60
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.github_sync_manager.GitHubSyncManager.load_sync_log:50#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager",
+            "scripts.github_sync_manager.GitHubSyncManager",
+            "scripts.github_sync_manager.GitHubSyncManager.load_sync_log:50"
+          ],
+          "hash": "27067fe8923a2a726342937c9117f3bcf76e1e714a4ac66b6b68e188c61f6e9d",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-githubsyncmanager-load-sync-log",
+          "summary": "Load previous sync results for idempotency",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "open",
+            "json.load"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "save_sync_log",
+          "docstring": "Save sync log for future idempotency",
+          "line_range": [
+            62,
+            65
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.github_sync_manager.GitHubSyncManager.save_sync_log:62#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager",
+            "scripts.github_sync_manager.GitHubSyncManager",
+            "scripts.github_sync_manager.GitHubSyncManager.save_sync_log:62"
+          ],
+          "hash": "4b6e0056536813dd529d799c72af062fb85824d0c02607838c79c644cef73f6f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-githubsyncmanager-save-sync-log",
+          "summary": "Save sync log for future idempotency",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "open",
+            "json.dump"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "api_request",
+          "docstring": "Safe GitHub API request with rate limiting",
+          "line_range": [
+            67,
+            94
+          ],
+          "parameters": [
+            "self",
+            "method",
+            "endpoint",
+            "data"
+          ],
+          "uid": "scripts.github_sync_manager.GitHubSyncManager.api_request:67#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager",
+            "scripts.github_sync_manager.GitHubSyncManager",
+            "scripts.github_sync_manager.GitHubSyncManager.api_request:67"
+          ],
+          "hash": "4454b131993d19773e1b231665f25988e38c3d9d0e02def9e9a30e1afa730261",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-githubsyncmanager-api-request",
+          "summary": "Safe GitHub API request with rate limiting",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "requests.patch",
+            "ValueError",
+            "method.upper",
+            "response.json",
+            "requests.get",
+            "time.sleep",
+            "requests.post",
+            "int",
+            "response.raise_for_status"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_existing_issues",
+          "docstring": "Get existing GitHub issues for collision detection",
+          "line_range": [
+            96,
+            112
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.github_sync_manager.GitHubSyncManager.get_existing_issues:96#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager",
+            "scripts.github_sync_manager.GitHubSyncManager",
+            "scripts.github_sync_manager.GitHubSyncManager.get_existing_issues:96"
+          ],
+          "hash": "0f5d74feec2ae0e95c6b179d4200f92c037cc1878d0cc066b6681fc5da21d316",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-githubsyncmanager-get-existing-issues",
+          "summary": "Get existing GitHub issues for collision detection",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "len",
+            "self.api_request",
+            "issues.extend"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_existing_discussions",
+          "docstring": "Get existing GitHub discussions",
+          "line_range": [
+            114,
+            118
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.github_sync_manager.GitHubSyncManager.get_existing_discussions:114#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager",
+            "scripts.github_sync_manager.GitHubSyncManager",
+            "scripts.github_sync_manager.GitHubSyncManager.get_existing_discussions:114"
+          ],
+          "hash": "64b45eb2077fe9e89291f84822b27bb7e297921a4a049f00c439796da46eccfe",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-githubsyncmanager-get-existing-discussions",
+          "summary": "Get existing GitHub discussions",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "item_already_synced",
+          "docstring": "Check if item was already synced (idempotency)",
+          "line_range": [
+            120,
+            125
+          ],
+          "parameters": [
+            "self",
+            "item",
+            "category"
+          ],
+          "uid": "scripts.github_sync_manager.GitHubSyncManager.item_already_synced:120#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager",
+            "scripts.github_sync_manager.GitHubSyncManager",
+            "scripts.github_sync_manager.GitHubSyncManager.item_already_synced:120"
+          ],
+          "hash": "7a94dd51942b4be91f03e1e7872543d11ef1a277f73f6a2e6dfa4d0728865c6f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-githubsyncmanager-item-already-synced",
+          "summary": "Check if item was already synced (idempotency)",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "item.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "find_existing_by_title",
+          "docstring": "Find existing GitHub item by title similarity",
+          "line_range": [
+            127,
+            143
+          ],
+          "parameters": [
+            "self",
+            "title",
+            "existing_items"
+          ],
+          "uid": "scripts.github_sync_manager.GitHubSyncManager.find_existing_by_title:127#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager",
+            "scripts.github_sync_manager.GitHubSyncManager",
+            "scripts.github_sync_manager.GitHubSyncManager.find_existing_by_title:127"
+          ],
+          "hash": "d076fc5de66dca5796f821e67d7548163e630fc05bf51fd65a2096cead189a53",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-githubsyncmanager-find-existing-by-title",
+          "summary": "Find existing GitHub item by title similarity",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "len",
+            "title.lower",
+            "item.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "create_github_issue",
+          "docstring": "Create GitHub issue from processed item",
+          "line_range": [
+            145,
+            182
+          ],
+          "parameters": [
+            "self",
+            "item"
+          ],
+          "uid": "scripts.github_sync_manager.GitHubSyncManager.create_github_issue:145#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager",
+            "scripts.github_sync_manager.GitHubSyncManager",
+            "scripts.github_sync_manager.GitHubSyncManager.create_github_issue:145"
+          ],
+          "hash": "799a110577d024160b95e271a2cd7a4a55e82350301a2fcfc987a3c223e5bf71",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-githubsyncmanager-create-github-issue",
+          "summary": "Create GitHub issue from processed item",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "self.api_request",
+            "item.get",
+            "processing_meta.get",
+            "labels.append"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "create_github_discussion",
+          "docstring": "Create GitHub discussion from processed item",
+          "line_range": [
+            184,
+            194
+          ],
+          "parameters": [
+            "self",
+            "item"
+          ],
+          "uid": "scripts.github_sync_manager.GitHubSyncManager.create_github_discussion:184#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager",
+            "scripts.github_sync_manager.GitHubSyncManager",
+            "scripts.github_sync_manager.GitHubSyncManager.create_github_discussion:184"
+          ],
+          "hash": "afda26648d0502315113b1f80947615bb62956c553daeede1912f0419d281f25",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-githubsyncmanager-create-github-discussion",
+          "summary": "Create GitHub discussion from processed item",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "item.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "create_github_epic",
+          "docstring": "Create GitHub epic (as Project or enhanced Issue)",
+          "line_range": [
+            196,
+            214
+          ],
+          "parameters": [
+            "self",
+            "item"
+          ],
+          "uid": "scripts.github_sync_manager.GitHubSyncManager.create_github_epic:196#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager",
+            "scripts.github_sync_manager.GitHubSyncManager",
+            "scripts.github_sync_manager.GitHubSyncManager.create_github_epic:196"
+          ],
+          "hash": "b5263cebc14f08657b55ad29b453fc98f5dbd5883b3856641b120f241976ce94",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-githubsyncmanager-create-github-epic",
+          "summary": "Create GitHub epic (as Project or enhanced Issue)",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "self.api_request",
+            "item.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "sync_category",
+          "docstring": "Sync specific category with GitHub",
+          "line_range": [
+            216,
+            290
+          ],
+          "parameters": [
+            "self",
+            "category",
+            "filename"
+          ],
+          "uid": "scripts.github_sync_manager.GitHubSyncManager.sync_category:216#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager",
+            "scripts.github_sync_manager.GitHubSyncManager",
+            "scripts.github_sync_manager.GitHubSyncManager.sync_category:216"
+          ],
+          "hash": "7d512e33f04ac37ce4fbb19e47fab5e6f5c1ec3c1216754e22b4e5e5fda6f18a",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-githubsyncmanager-sync-category",
+          "summary": "Sync specific category with GitHub",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "open",
+            "item.get",
+            "self.get_existing_discussions",
+            "result.get",
+            "self.create_github_discussion",
+            "self.create_github_epic",
+            "self.item_already_synced",
+            "datetime.now",
+            "existing.get",
+            "file_path.exists",
+            "json.load",
+            "self.get_existing_issues",
+            "self.find_existing_by_title",
+            "data.get",
+            "self.create_github_issue"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "validate_before_sync",
+          "docstring": "Pre-sync validation checks",
+          "line_range": [
+            292,
+            322
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.github_sync_manager.GitHubSyncManager.validate_before_sync:292#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager",
+            "scripts.github_sync_manager.GitHubSyncManager",
+            "scripts.github_sync_manager.GitHubSyncManager.validate_before_sync:292"
+          ],
+          "hash": "be0994ced39bb8be88e6b786c0d9867527e388c0396023060a49348b9326319f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-githubsyncmanager-validate-before-sync",
+          "summary": "Pre-sync validation checks",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "self.api_request",
+            "user_info.get",
+            "repo_info.get",
+            "core_limit.get",
+            "rate_limit.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "run_sync",
+          "docstring": "Main sync execution",
+          "line_range": [
+            324,
+            373
+          ],
+          "parameters": [
+            "self",
+            "categories"
+          ],
+          "uid": "scripts.github_sync_manager.GitHubSyncManager.run_sync:324#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager",
+            "scripts.github_sync_manager.GitHubSyncManager",
+            "scripts.github_sync_manager.GitHubSyncManager.run_sync:324"
+          ],
+          "hash": "30b9558f23f47f39786ed7515647d5f00b852d34cba30ea12dca8231ed903569",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-githubsyncmanager-run-sync",
+          "summary": "Main sync execution",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "r.get",
+            "sum",
+            "datetime.now",
+            "self.validate_before_sync",
+            "results.values",
+            "self.save_sync_log",
+            "self.sync_category"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "scripts.github_sync_manager.GitHubSyncManager:16#class",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager",
+        "scripts.github_sync_manager.GitHubSyncManager:16"
+      ],
+      "hash": "470a9c71b45ea8f5f190752d38445c062e3636b3afcb097203da55a0cccd4e6a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-githubsyncmanager",
+      "summary": "Manages git hub sync",
+      "summary_source": "heuristic",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "print",
+    "result.get",
+    "parser.add_argument",
+    "argparse.ArgumentParser",
+    "len",
+    "manager.run_sync",
+    "GitHubSyncManager",
+    "parser.parse_args",
+    "print",
+    "self.load_sync_log",
+    "Path",
+    "os.getenv",
+    "open",
+    "json.load",
+    "open",
+    "json.dump",
+    "print",
+    "requests.patch",
+    "ValueError",
+    "method.upper",
+    "response.json",
+    "requests.get",
+    "time.sleep",
+    "requests.post",
+    "int",
+    "response.raise_for_status",
+    "len",
+    "self.api_request",
+    "issues.extend",
+    "item.get",
+    "len",
+    "title.lower",
+    "item.get",
+    "print",
+    "self.api_request",
+    "item.get",
+    "processing_meta.get",
+    "labels.append",
+    "print",
+    "item.get",
+    "print",
+    "self.api_request",
+    "item.get",
+    "print",
+    "open",
+    "item.get",
+    "self.get_existing_discussions",
+    "result.get",
+    "self.create_github_discussion",
+    "self.create_github_epic",
+    "self.item_already_synced",
+    "datetime.now",
+    "existing.get",
+    "file_path.exists",
+    "json.load",
+    "self.get_existing_issues",
+    "self.find_existing_by_title",
+    "data.get",
+    "self.create_github_issue",
+    "print",
+    "self.api_request",
+    "user_info.get",
+    "repo_info.get",
+    "core_limit.get",
+    "rate_limit.get",
+    "print",
+    "r.get",
+    "sum",
+    "datetime.now",
+    "self.validate_before_sync",
+    "results.values",
+    "self.save_sync_log",
+    "self.sync_category"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.768316",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:5f501b7b7254346a",
+    "lines_of_code": 16
+  }
+}

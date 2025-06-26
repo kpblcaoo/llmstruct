@@ -1,0 +1,306 @@
+{
+  "module_info": {
+    "uid": "llmstruct.modules.commands.services",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.modules.commands.services with 4 functions",
+    "hash": "sha256:81ac5dbd66deafcc",
+    "dependencies": [
+      "active_bots",
+      "api_parser",
+      "api_start",
+      "api_subparsers",
+      "bot_parser",
+      "bot_scripts",
+      "bot_start",
+      "bot_subparsers",
+      "data",
+      "f",
+      "metrics_analytics",
+      "metrics_parser",
+      "metrics_report",
+      "metrics_subparsers",
+      "metrics_track",
+      "os",
+      "pid_file",
+      "process",
+      "psutil",
+      "requests",
+      "response",
+      "services_parser",
+      "services_subparsers",
+      "subparsers",
+      "subprocess",
+      "time",
+      "venv_path"
+    ],
+    "exports": [
+      "add_api_bot_commands",
+      "cmd_api_management",
+      "cmd_bot_management",
+      "cmd_services"
+    ]
+  },
+  "functions": [
+    {
+      "name": "add_api_bot_commands",
+      "docstring": "Добавить команды для управления API и Bot сервисами",
+      "line_range": [
+        10,
+        47
+      ],
+      "parameters": [
+        "subparsers"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.commands.services.add_api_bot_commands:10#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.commands",
+        "llmstruct.modules.commands.services",
+        "llmstruct.modules.commands.services.add_api_bot_commands:10"
+      ],
+      "hash": "7aa7e28cd7de580c480438271b0f10c524dad6448bf7adbcdf9748611d427ed1",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-commands-services-add-api-bot-commands",
+      "summary": "Добавить команды для управления API и Bot сервисами",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "bot_parser.add_subparsers",
+        "metrics_report.add_argument",
+        "metrics_analytics.add_argument",
+        "bot_start.add_argument",
+        "metrics_track.add_argument",
+        "api_parser.add_subparsers",
+        "api_subparsers.add_parser",
+        "api_start.add_argument",
+        "services_parser.add_subparsers",
+        "metrics_parser.add_subparsers",
+        "metrics_subparsers.add_parser",
+        "services_subparsers.add_parser",
+        "bot_subparsers.add_parser",
+        "subparsers.add_parser"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cmd_api_management",
+      "docstring": "Управление API сервером",
+      "line_range": [
+        49,
+        111
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.commands.services.cmd_api_management:49#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.commands",
+        "llmstruct.modules.commands.services",
+        "llmstruct.modules.commands.services.cmd_api_management:49"
+      ],
+      "hash": "b5dc8634e481dc1bac4861d3020cfc12f669abe523751af5ab92dbd32ec95b1a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-commands-services-cmd-api-management",
+      "summary": "Управление API сервером",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "str",
+        "pid_file.unlink",
+        "open",
+        "f.read",
+        "response.json",
+        "pid_file.exists",
+        "requests.get",
+        "venv_path.exists",
+        "process.wait",
+        "psutil.Process",
+        "requests.post",
+        "int",
+        "subprocess.Popen",
+        "data.get",
+        "process.terminate",
+        "f.write",
+        "Path"
+      ],
+      "called_by": [
+        "cmd_services"
+      ]
+    },
+    {
+      "name": "cmd_bot_management",
+      "docstring": "Управление Telegram ботами",
+      "line_range": [
+        113,
+        190
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.commands.services.cmd_bot_management:113#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.commands",
+        "llmstruct.modules.commands.services",
+        "llmstruct.modules.commands.services.cmd_bot_management:113"
+      ],
+      "hash": "cdf14e241859567316755fafc2b0baf4eb9545964b3d2d8fcbbf4c235e7348e3",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-commands-services-cmd-bot-management",
+      "summary": "Управление Telegram ботами",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "bot_scripts.get",
+        "str",
+        "open",
+        "f.read",
+        "active_bots.append",
+        "pid_file.exists",
+        "os.getenv",
+        "process.wait",
+        "psutil.Process",
+        "int",
+        "process.is_running",
+        "subprocess.Popen",
+        "pid_file.unlink",
+        "process.terminate",
+        "f.write",
+        "Path"
+      ],
+      "called_by": [
+        "cmd_services"
+      ]
+    },
+    {
+      "name": "cmd_services",
+      "docstring": "Управление всеми сервисами (API + Bots)",
+      "line_range": [
+        192,
+        233
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.commands.services.cmd_services:192#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.commands",
+        "llmstruct.modules.commands.services",
+        "llmstruct.modules.commands.services.cmd_services:192"
+      ],
+      "hash": "df56eef293e4f407c6914b4e3a4e01a79a4010d3b84677224986b3d59c7318b8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-commands-services-cmd-services",
+      "summary": "Управление всеми сервисами (API + Bots)",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "cmd_bot_management",
+        "time.sleep",
+        "cmd_api_management",
+        "type"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "bot_parser.add_subparsers",
+    "metrics_report.add_argument",
+    "metrics_analytics.add_argument",
+    "bot_start.add_argument",
+    "metrics_track.add_argument",
+    "api_parser.add_subparsers",
+    "api_subparsers.add_parser",
+    "api_start.add_argument",
+    "services_parser.add_subparsers",
+    "metrics_parser.add_subparsers",
+    "metrics_subparsers.add_parser",
+    "services_subparsers.add_parser",
+    "bot_subparsers.add_parser",
+    "subparsers.add_parser",
+    "print",
+    "str",
+    "pid_file.unlink",
+    "open",
+    "f.read",
+    "response.json",
+    "pid_file.exists",
+    "requests.get",
+    "venv_path.exists",
+    "process.wait",
+    "psutil.Process",
+    "requests.post",
+    "int",
+    "subprocess.Popen",
+    "data.get",
+    "process.terminate",
+    "f.write",
+    "Path",
+    "print",
+    "bot_scripts.get",
+    "str",
+    "open",
+    "f.read",
+    "active_bots.append",
+    "pid_file.exists",
+    "os.getenv",
+    "process.wait",
+    "psutil.Process",
+    "int",
+    "process.is_running",
+    "subprocess.Popen",
+    "pid_file.unlink",
+    "process.terminate",
+    "f.write",
+    "Path",
+    "print",
+    "cmd_bot_management",
+    "time.sleep",
+    "cmd_api_management",
+    "type"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.859138",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:81ac5dbd66deafcc",
+    "lines_of_code": 4
+  }
+}

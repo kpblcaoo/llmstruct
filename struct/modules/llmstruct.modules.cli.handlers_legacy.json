@@ -1,0 +1,118 @@
+{
+  "module_info": {
+    "uid": "llmstruct.modules.cli.handlers_legacy",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.modules.cli.handlers_legacy with 1 functions",
+    "hash": "sha256:b412f0530fb11485",
+    "dependencies": [
+      "args_str",
+      "cache",
+      "client",
+      "json",
+      "logging",
+      "m",
+      "os",
+      "re",
+      "user_input"
+    ],
+    "exports": [
+      "interactive_legacy"
+    ]
+  },
+  "functions": [
+    {
+      "name": "interactive_legacy",
+      "docstring": "Run interactive CLI with LLM, supporting file/folder viewing and writing.",
+      "line_range": [
+        14,
+        149
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.handlers_legacy.interactive_legacy:14#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.handlers_legacy",
+        "llmstruct.modules.cli.handlers_legacy.interactive_legacy:14"
+      ],
+      "hash": "79be658d073b50f1203cbc344c19320604022f883583fbfae492037a645140c3",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-handlers-legacy-interactive-legacy",
+      "summary": "Run interactive CLI with LLM, supporting file/folder viewing and writing.",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "user_input.startswith",
+        "logging.warning",
+        "args_str.strip",
+        "os.listdir",
+        "re.match",
+        "LLMClient",
+        "attach_to_llm_request",
+        "client.query",
+        "write_to_file",
+        "read_file_content",
+        "parse",
+        "Path",
+        "user_input.lower",
+        "m.group",
+        "input",
+        "sorted",
+        "JSONCache",
+        "get_folder_structure",
+        "json.dumps",
+        "logging.error",
+        "cache.close",
+        "load_gitignore"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "print",
+    "user_input.startswith",
+    "logging.warning",
+    "args_str.strip",
+    "os.listdir",
+    "re.match",
+    "LLMClient",
+    "attach_to_llm_request",
+    "client.query",
+    "write_to_file",
+    "read_file_content",
+    "parse",
+    "Path",
+    "user_input.lower",
+    "m.group",
+    "input",
+    "sorted",
+    "JSONCache",
+    "get_folder_structure",
+    "json.dumps",
+    "logging.error",
+    "cache.close",
+    "load_gitignore"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.862701",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:b412f0530fb11485",
+    "lines_of_code": 1
+  }
+}

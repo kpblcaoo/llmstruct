@@ -1,0 +1,81 @@
+{
+  "module_info": {
+    "uid": "llmstruct.api.middleware.logging",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.api.middleware.logging with 1 functions",
+    "hash": "sha256:e8e150c42b60e60c",
+    "dependencies": [
+      "logger",
+      "time",
+      "uuid"
+    ],
+    "exports": [
+      "request_logging_middleware"
+    ]
+  },
+  "functions": [
+    {
+      "name": "request_logging_middleware",
+      "docstring": "Request and response logging middleware",
+      "line_range": [
+        14,
+        72
+      ],
+      "parameters": [
+        "request",
+        "call_next"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.middleware.logging.request_logging_middleware:14#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.middleware",
+        "llmstruct.api.middleware.logging",
+        "llmstruct.api.middleware.logging.request_logging_middleware:14"
+      ],
+      "hash": "9628e62e8b7ae84dc6ff34ed09df1cda3e5f148cd0e2f9b3410c1dbd67f8f3b6",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-middleware-logging-request-logging-middleware",
+      "summary": "Request and response logging middleware",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "getattr",
+        "logger.info",
+        "uuid.uuid4",
+        "call_next",
+        "time.time",
+        "logger.error"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "str",
+    "getattr",
+    "logger.info",
+    "uuid.uuid4",
+    "call_next",
+    "time.time",
+    "logger.error"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.854185",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:e8e150c42b60e60c",
+    "lines_of_code": 1
+  }
+}

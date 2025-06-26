@@ -1,0 +1,668 @@
+{
+  "module_info": {
+    "uid": "llmstruct.parsers.python_parser",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.parsers.python_parser with 9 functions and 1 classes",
+    "hash": "sha256:7ebf5a6782331cb3",
+    "dependencies": [
+      "ast",
+      "classes",
+      "f",
+      "functions",
+      "logging",
+      "methods",
+      "self",
+      "visitor"
+    ],
+    "exports": [
+      "CallVisitor",
+      "analyze_module",
+      "compute_file_hash",
+      "infer_category",
+      "visit_AsyncFunctionDef",
+      "visit_Call",
+      "visit_FunctionDef",
+      "visit_Import",
+      "visit_ImportFrom"
+    ]
+  },
+  "functions": [
+    {
+      "name": "infer_category",
+      "docstring": "Infer module category based on its path.",
+      "line_range": [
+        24,
+        31
+      ],
+      "parameters": [
+        "file_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.python_parser.infer_category:24#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.python_parser",
+        "llmstruct.parsers.python_parser.infer_category:24"
+      ],
+      "hash": "df0f0386752c4aea7395ed7fe6c06e60cabf1e92a29ee771c6b54a0266dbf026",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-python-parser-infer-category",
+      "summary": "Infer module category based on its path.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "Path"
+      ],
+      "called_by": [
+        "analyze_module"
+      ]
+    },
+    {
+      "name": "compute_file_hash",
+      "docstring": "Compute SHA-256 hash of file content using new hash system.",
+      "line_range": [
+        95,
+        101
+      ],
+      "parameters": [
+        "file_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.python_parser.compute_file_hash:95#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.python_parser",
+        "llmstruct.parsers.python_parser.compute_file_hash:95"
+      ],
+      "hash": "688a6c306eee4e77f11f0305ca8ccdf3aea95f9688ee5d4d6856d8d8ffd901a8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-python-parser-compute-file-hash",
+      "summary": "Compute SHA-256 hash of file content using new hash system.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logging.error",
+        "hash_file"
+      ],
+      "called_by": [
+        "analyze_module"
+      ]
+    },
+    {
+      "name": "analyze_module",
+      "docstring": "Analyze Python module and return structured data with Phase 1 enhancements.",
+      "line_range": [
+        104,
+        324
+      ],
+      "parameters": [
+        "file_path",
+        "root_dir",
+        "include_ranges",
+        "include_hashes"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.python_parser.analyze_module:104#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.python_parser",
+        "llmstruct.parsers.python_parser.analyze_module:104"
+      ],
+      "hash": "e1479f669828f127c3cf127aad81acf970c16598e72a9e8dcb745237c6c2011d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-python-parser-analyze-module",
+      "summary": "Analyze Python module and return structured data with Phase 1 enhancements.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "generate_summary",
+        "getattr",
+        "set",
+        "ast.unparse",
+        "ast.get_docstring",
+        "ast.get_source_segment",
+        "visitor.visit",
+        "infer_tags",
+        "ast.walk",
+        "Path",
+        "open",
+        "f.read",
+        "ast.parse",
+        "functions.append",
+        "methods.append",
+        "isinstance",
+        "list",
+        "generate_uid_components",
+        "sorted",
+        "classes.append",
+        "hasattr",
+        "generate_uid",
+        "str",
+        "infer_category",
+        "CallVisitor",
+        "hash_entity",
+        "logging.error",
+        "compute_file_hash"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        37,
+        41
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.python_parser.__init__:37#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.python_parser",
+        "llmstruct.parsers.python_parser.__init__:37"
+      ],
+      "hash": "8ad385724c65e3c67595c783cfa689bd42fa81dda6652545b65b1c3ff6aeba46",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-python-parser---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "set"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "visit_Import",
+      "docstring": "Capture import statements.",
+      "line_range": [
+        43,
+        47
+      ],
+      "parameters": [
+        "self",
+        "node"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.python_parser.visit_Import:43#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.python_parser",
+        "llmstruct.parsers.python_parser.visit_Import:43"
+      ],
+      "hash": "ab69ee6a266a9da94401702b101e07111ba02f77eebe9c558c42b413a82f2cd1",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-python-parser-visit-import",
+      "summary": "Capture import statements.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self.generic_visit"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "visit_ImportFrom",
+      "docstring": "Capture from-import statements.",
+      "line_range": [
+        49,
+        55
+      ],
+      "parameters": [
+        "self",
+        "node"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.python_parser.visit_ImportFrom:49#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.python_parser",
+        "llmstruct.parsers.python_parser.visit_ImportFrom:49"
+      ],
+      "hash": "121c38e0aac956b69bf6b035839aa81da9b1cebd3d8f4ed011c2eabdb11fc3d8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-python-parser-visit-importfrom",
+      "summary": "Capture from-import statements.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self.generic_visit"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "visit_FunctionDef",
+      "docstring": "Track function definitions and their calls.",
+      "line_range": [
+        57,
+        64
+      ],
+      "parameters": [
+        "self",
+        "node"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.python_parser.visit_FunctionDef:57#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.python_parser",
+        "llmstruct.parsers.python_parser.visit_FunctionDef:57"
+      ],
+      "hash": "85813e45714f1274788061abe4ea0e222fd9b7ff26b45162e4c507fd194f7ee7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-python-parser-visit-functiondef",
+      "summary": "Track function definitions and their calls.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self.generic_visit",
+        "set"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "visit_AsyncFunctionDef",
+      "docstring": "Track async function definitions and their calls.",
+      "line_range": [
+        66,
+        73
+      ],
+      "parameters": [
+        "self",
+        "node"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.python_parser.visit_AsyncFunctionDef:66#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.python_parser",
+        "llmstruct.parsers.python_parser.visit_AsyncFunctionDef:66"
+      ],
+      "hash": "bccc675c99c3960e5316a0527b315108c08ef3eb324253b5703091a03f19c4e1",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-python-parser-visit-asyncfunctiondef",
+      "summary": "Track async function definitions and their calls.",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self.generic_visit",
+        "set"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "visit_Call",
+      "docstring": "Capture function calls.",
+      "line_range": [
+        75,
+        92
+      ],
+      "parameters": [
+        "self",
+        "node"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.python_parser.visit_Call:75#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.python_parser",
+        "llmstruct.parsers.python_parser.visit_Call:75"
+      ],
+      "hash": "2983d602553f68c0f5b3ed8f3e67301b85d159ad0b7781b886d04b85e1a405b6",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-python-parser-visit-call",
+      "summary": "Capture function calls.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self.generic_visit",
+        "isinstance",
+        "set"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "CallVisitor",
+      "docstring": "AST visitor to collect function calls and dependencies.",
+      "line_range": [
+        34,
+        92
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            37,
+            41
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.parsers.python_parser.CallVisitor.__init__:37#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.python_parser",
+            "llmstruct.parsers.python_parser.CallVisitor",
+            "llmstruct.parsers.python_parser.CallVisitor.__init__:37"
+          ],
+          "hash": "321dff657958c0076f39048930bff47d562e95ec91e0a707404d00668ba05da1",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-python-parser-callvisitor---init--",
+          "summary": "Method for callvisitor. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "set"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "visit_Import",
+          "docstring": "Capture import statements.",
+          "line_range": [
+            43,
+            47
+          ],
+          "parameters": [
+            "self",
+            "node"
+          ],
+          "uid": "llmstruct.parsers.python_parser.CallVisitor.visit_Import:43#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.python_parser",
+            "llmstruct.parsers.python_parser.CallVisitor",
+            "llmstruct.parsers.python_parser.CallVisitor.visit_Import:43"
+          ],
+          "hash": "5ded0f67ba185e14d6f7467014420dee417cc7cf5843a58a93e2976f08999ae9",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-python-parser-callvisitor-visit-import",
+          "summary": "Capture import statements.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self.generic_visit"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "visit_ImportFrom",
+          "docstring": "Capture from-import statements.",
+          "line_range": [
+            49,
+            55
+          ],
+          "parameters": [
+            "self",
+            "node"
+          ],
+          "uid": "llmstruct.parsers.python_parser.CallVisitor.visit_ImportFrom:49#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.python_parser",
+            "llmstruct.parsers.python_parser.CallVisitor",
+            "llmstruct.parsers.python_parser.CallVisitor.visit_ImportFrom:49"
+          ],
+          "hash": "8514065421eb9d4f0fa385ac614f3ac4649058fa8addcb489dc9a04f8237f2db",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-python-parser-callvisitor-visit-importfrom",
+          "summary": "Capture from-import statements.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self.generic_visit"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "visit_FunctionDef",
+          "docstring": "Track function definitions and their calls.",
+          "line_range": [
+            57,
+            64
+          ],
+          "parameters": [
+            "self",
+            "node"
+          ],
+          "uid": "llmstruct.parsers.python_parser.CallVisitor.visit_FunctionDef:57#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.python_parser",
+            "llmstruct.parsers.python_parser.CallVisitor",
+            "llmstruct.parsers.python_parser.CallVisitor.visit_FunctionDef:57"
+          ],
+          "hash": "96cfdffbcaa16342a112234cf3e7149e9a508c8e3c06ecb203d6d0bf420ee12b",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-python-parser-callvisitor-visit-functiondef",
+          "summary": "Track function definitions and their calls.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self.generic_visit",
+            "set"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "visit_AsyncFunctionDef",
+          "docstring": "Track async function definitions and their calls.",
+          "line_range": [
+            66,
+            73
+          ],
+          "parameters": [
+            "self",
+            "node"
+          ],
+          "uid": "llmstruct.parsers.python_parser.CallVisitor.visit_AsyncFunctionDef:66#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.python_parser",
+            "llmstruct.parsers.python_parser.CallVisitor",
+            "llmstruct.parsers.python_parser.CallVisitor.visit_AsyncFunctionDef:66"
+          ],
+          "hash": "2ce93d493bb568cd599bdaaf37d8188ddb259441935310f4329c2f61336d5c1e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-python-parser-callvisitor-visit-asyncfunctiondef",
+          "summary": "Track async function definitions and their calls.",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self.generic_visit",
+            "set"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "visit_Call",
+          "docstring": "Capture function calls.",
+          "line_range": [
+            75,
+            92
+          ],
+          "parameters": [
+            "self",
+            "node"
+          ],
+          "uid": "llmstruct.parsers.python_parser.CallVisitor.visit_Call:75#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.python_parser",
+            "llmstruct.parsers.python_parser.CallVisitor",
+            "llmstruct.parsers.python_parser.CallVisitor.visit_Call:75"
+          ],
+          "hash": "49383b46e1602248b721376640948d58e3dfabd59d619604db74f5507220cf8e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-python-parser-callvisitor-visit-call",
+          "summary": "Capture function calls.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self.generic_visit",
+            "isinstance",
+            "set"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [
+        "ast.NodeVisitor"
+      ],
+      "uid": "llmstruct.parsers.python_parser.CallVisitor:34#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.python_parser",
+        "llmstruct.parsers.python_parser.CallVisitor:34"
+      ],
+      "hash": "08bf9974965a822fdb737bada8082bb6bf6e14d66e0002c267d9a66204b2e07b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-python-parser-callvisitor",
+      "summary": "AST visitor to collect function calls and dependencies.",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "Path",
+    "logging.error",
+    "hash_file",
+    "generate_summary",
+    "getattr",
+    "set",
+    "ast.unparse",
+    "ast.get_docstring",
+    "ast.get_source_segment",
+    "visitor.visit",
+    "infer_tags",
+    "ast.walk",
+    "Path",
+    "open",
+    "f.read",
+    "ast.parse",
+    "functions.append",
+    "methods.append",
+    "isinstance",
+    "list",
+    "generate_uid_components",
+    "sorted",
+    "classes.append",
+    "hasattr",
+    "generate_uid",
+    "str",
+    "infer_category",
+    "CallVisitor",
+    "hash_entity",
+    "logging.error",
+    "compute_file_hash",
+    "set",
+    "self.generic_visit",
+    "self.generic_visit",
+    "self.generic_visit",
+    "set",
+    "self.generic_visit",
+    "set",
+    "self.generic_visit",
+    "isinstance",
+    "set"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.849378",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:7ebf5a6782331cb3",
+    "lines_of_code": 10
+  }
+}

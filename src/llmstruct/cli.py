@@ -98,6 +98,12 @@ def main():
         action="store_true",
         help="Force offline mode - no network calls (overrides LLMSTRUCT_OFFLINE env var)"
     )
+    parse_parser.add_argument(
+        "--format",
+        choices=["struct", "legacy", "both"],
+        default="struct",
+        help="Output format: 'struct' (new modular struct/ directory), 'legacy' (single JSON), 'both' (generate both formats)"
+    )
 
     query_parser = subparsers.add_parser(
         "query", help="Query LLMs with prompt and context"
