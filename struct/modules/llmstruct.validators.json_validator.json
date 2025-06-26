@@ -1,0 +1,132 @@
+{
+  "module_info": {
+    "uid": "llmstruct.validators.json_validator",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.validators.json_validator with 2 functions",
+    "hash": "sha256:5fb8729776e1d70b",
+    "dependencies": [
+      "json",
+      "json_file",
+      "logging",
+      "schema_file"
+    ],
+    "exports": [
+      "validate_directory",
+      "validate_struct_json"
+    ]
+  },
+  "functions": [
+    {
+      "name": "validate_struct_json",
+      "docstring": "Validate a single JSON file against a schema.",
+      "line_range": [
+        12,
+        40
+      ],
+      "parameters": [
+        "json_path",
+        "schema_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.validators.json_validator.validate_struct_json:12#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.validators",
+        "llmstruct.validators.json_validator",
+        "llmstruct.validators.json_validator.validate_struct_json:12"
+      ],
+      "hash": "319d835a59daa400ecf67979fb92bff6b583cf4efb2ad355f51b6f0e68f610d9",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-validators-json-validator-validate-struct-json",
+      "summary": "Validate a single JSON file against a schema.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "logging.info",
+        "open",
+        "json_file.exists",
+        "schema_file.exists",
+        "logging.error",
+        "validate",
+        "json.load",
+        "Path"
+      ],
+      "called_by": [
+        "validate_directory"
+      ]
+    },
+    {
+      "name": "validate_directory",
+      "docstring": "Validate all JSON files in a directory against a schema.",
+      "line_range": [
+        43,
+        61
+      ],
+      "parameters": [
+        "directory",
+        "schema_path",
+        "include_patterns",
+        "exclude_patterns"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.validators.json_validator.validate_directory:43#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.validators",
+        "llmstruct.validators.json_validator",
+        "llmstruct.validators.json_validator.validate_directory:43"
+      ],
+      "hash": "eac33611d1ef053c58c1ad711fed261fccad6559a5252ba9a07f567b3e693576",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-validators-json-validator-validate-directory",
+      "summary": "Validate all JSON files in a directory against a schema.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "json_file.match",
+        "any",
+        "validate_struct_json",
+        "Path"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "str",
+    "logging.info",
+    "open",
+    "json_file.exists",
+    "schema_file.exists",
+    "logging.error",
+    "validate",
+    "json.load",
+    "Path",
+    "str",
+    "json_file.match",
+    "any",
+    "validate_struct_json",
+    "Path"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.847355",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:5fb8729776e1d70b",
+    "lines_of_code": 2
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "module_info": {
+    "uid": "llmstruct.modules.cli.handlers",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.modules.cli.handlers with 2 functions",
+    "hash": "sha256:068318251879b128",
+    "dependencies": [
+      "cli_core",
+      "logging"
+    ],
+    "exports": [
+      "interactive",
+      "interactive_modular"
+    ]
+  },
+  "functions": [
+    {
+      "name": "interactive",
+      "docstring": "Run interactive CLI with modular structure if available, fallback to legacy.",
+      "line_range": [
+        14,
+        21
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.handlers.interactive:14#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.handlers",
+        "llmstruct.modules.cli.handlers.interactive:14"
+      ],
+      "hash": "3502188e2b46336a3975c12a2a886739f176cd9f50dec057b5916ff0c03c513e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-handlers-interactive",
+      "summary": "Run interactive CLI with modular structure if available, fallback to legacy.",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "interactive_modular",
+        "logging.warning",
+        "interactive_legacy"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "interactive_modular",
+      "docstring": "Run interactive CLI with modular structure.",
+      "line_range": [
+        23,
+        32
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.handlers.interactive_modular:23#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.handlers",
+        "llmstruct.modules.cli.handlers.interactive_modular:23"
+      ],
+      "hash": "3388997c90098e4891ecfbefa684aa81d8c25278022ee7c8f2b545430eeebc44",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-handlers-interactive-modular",
+      "summary": "Run interactive CLI with modular structure.",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "cli_core.run_interactive_mode",
+        "logging.info",
+        "hasattr",
+        "create_cli_core"
+      ],
+      "called_by": [
+        "interactive"
+      ]
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "interactive_modular",
+    "logging.warning",
+    "interactive_legacy",
+    "cli_core.run_interactive_mode",
+    "logging.info",
+    "hasattr",
+    "create_cli_core"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.866093",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:068318251879b128",
+    "lines_of_code": 2
+  }
+}

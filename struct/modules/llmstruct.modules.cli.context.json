@@ -1,0 +1,65 @@
+{
+  "module_info": {
+    "uid": "llmstruct.modules.cli.context",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.modules.cli.context with 1 functions",
+    "hash": "sha256:240c050f7d03735a",
+    "dependencies": [
+      "logging"
+    ],
+    "exports": [
+      "context"
+    ]
+  },
+  "functions": [
+    {
+      "name": "context",
+      "docstring": "Generate context.json from input JSON.",
+      "line_range": [
+        3,
+        5
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.context.context:3#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.context",
+        "llmstruct.modules.cli.context.context:3"
+      ],
+      "hash": "623bfaa393d7cc1c8fb6ddf6b686d26e007b50e4d60a5639629885b852fce82a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-context-context",
+      "summary": "Generate context.json from input JSON.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logging.warning"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "logging.warning"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.864037",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:240c050f7d03735a",
+    "lines_of_code": 1
+  }
+}

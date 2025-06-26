@@ -1,0 +1,65 @@
+{
+  "module_info": {
+    "uid": "llmstruct.modules.cli.dogfood",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.modules.cli.dogfood with 1 functions",
+    "hash": "sha256:7ec2642d5ef8f177",
+    "dependencies": [
+      "logging"
+    ],
+    "exports": [
+      "dogfood"
+    ]
+  },
+  "functions": [
+    {
+      "name": "dogfood",
+      "docstring": "Run dogfooding analysis.",
+      "line_range": [
+        3,
+        5
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.dogfood.dogfood:3#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.dogfood",
+        "llmstruct.modules.cli.dogfood.dogfood:3"
+      ],
+      "hash": "74c8fc056be0a33122d1c1276bec0b7406e6e81a504455620b59d9ad65f7d1ee",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-dogfood-dogfood",
+      "summary": "Run dogfooding analysis.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logging.warning"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "logging.warning"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.862340",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:7ec2642d5ef8f177",
+    "lines_of_code": 1
+  }
+}

@@ -1,0 +1,1294 @@
+{
+  "module_info": {
+    "uid": "llmstruct.ARCHIVE.cli_config",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.ARCHIVE.cli_config with 18 functions and 1 classes",
+    "hash": "sha256:07c5033077757f1b",
+    "dependencies": [
+      "cli_config",
+      "gitignore_path",
+      "line",
+      "logging",
+      "parsing_config",
+      "self",
+      "toml"
+    ],
+    "exports": [
+      "CLIConfig",
+      "get_auto_update_config",
+      "get_cache_config",
+      "get_context_config",
+      "get_context_file_path",
+      "get_copilot_config",
+      "get_exclude_dirs",
+      "get_exclude_patterns",
+      "get_gitignore_patterns",
+      "get_include_patterns",
+      "get_max_file_size",
+      "get_queue_config",
+      "get_struct_file_path",
+      "is_auto_update_enabled",
+      "reload_config",
+      "save_config",
+      "update_config"
+    ]
+  },
+  "functions": [
+    {
+      "name": "__init__",
+      "docstring": "Initialize configuration manager.",
+      "line_range": [
+        20,
+        24
+      ],
+      "parameters": [
+        "self",
+        "root_dir"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.__init__:20#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.__init__:20"
+      ],
+      "hash": "909438f302c64df7b360401f3900680681b14432536b09901489ae8c83c36a13",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config---init--",
+      "summary": "Initialize configuration manager.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "Path",
+        "self._load_config"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_load_config",
+      "docstring": "Load configuration from llmstruct.toml.",
+      "line_range": [
+        26,
+        34
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config._load_config:26#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config._load_config:26"
+      ],
+      "hash": "87d00793e42c8c57744acb3738c5ea1565678568c6fd770296ebdff5802e93bc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config--load-config",
+      "summary": "Load configuration from llmstruct.toml.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "logging.error",
+        "toml.load"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_cache_config",
+      "docstring": "Get cache configuration section.",
+      "line_range": [
+        36,
+        38
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.get_cache_config:36#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.get_cache_config:36"
+      ],
+      "hash": "ac2ab73da745a70d0180b361c989422ba1b7cf6e40a48b56766e2519cda8ebe7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-get-cache-config",
+      "summary": "Get cache configuration section.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "get_copilot_config",
+      "docstring": "Get Copilot configuration section.",
+      "line_range": [
+        40,
+        42
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.get_copilot_config:40#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.get_copilot_config:40"
+      ],
+      "hash": "a94ea01f6bbfdaa9a15521bedd4a4629daa8748bbff29c7948832a75c613e7d0",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-get-copilot-config",
+      "summary": "Get Copilot configuration section.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "get_queue_config",
+      "docstring": "Get queue configuration section.",
+      "line_range": [
+        44,
+        46
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.get_queue_config:44#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.get_queue_config:44"
+      ],
+      "hash": "885d551df2e9798e34406a020b0aea4863edc5a3c6ea7614238ec0d0d0b4fbae",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-get-queue-config",
+      "summary": "Get queue configuration section.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "get_context_config",
+      "docstring": "Get context configuration section.",
+      "line_range": [
+        48,
+        50
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.get_context_config:48#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.get_context_config:48"
+      ],
+      "hash": "b9e18f83398b40e37b193a6e89715fd45e2a4d956339f81dfc17f9d0976636a0",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-get-context-config",
+      "summary": "Get context configuration section.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "get_gitignore_patterns",
+      "docstring": "Load and normalize patterns from .gitignore.",
+      "line_range": [
+        52,
+        66
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.get_gitignore_patterns:52#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.get_gitignore_patterns:52"
+      ],
+      "hash": "97408c64d34564d88870d47456f29d5f920854a73f90f6e8b12e0b2a2f4d290e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-get-gitignore-patterns",
+      "summary": "Load and normalize patterns from .gitignore.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "gitignore_path.open",
+        "line.startswith",
+        "line.strip",
+        "logging.error",
+        "Path",
+        "gitignore_path.exists"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_exclude_dirs",
+      "docstring": "Get directories to exclude from scanning.",
+      "line_range": [
+        68,
+        82
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.get_exclude_dirs:68#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.get_exclude_dirs:68"
+      ],
+      "hash": "c57a8bce9eee1c7e46606bdaaf303ea49d38c9a8873890ccc1053bf9c8999140",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-get-exclude-dirs",
+      "summary": "Get directories to exclude from scanning.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "list",
+        "cli_config.get",
+        "set",
+        "parsing_config.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_include_patterns",
+      "docstring": "Get file patterns to include.",
+      "line_range": [
+        84,
+        89
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.get_include_patterns:84#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.get_include_patterns:84"
+      ],
+      "hash": "be64dcd7ccf8ec9bda6a57c5b693b226e8f454780d8174d64ee2f70724db480b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-get-include-patterns",
+      "summary": "Get file patterns to include.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "cli_config.get",
+        "parsing_config.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_exclude_patterns",
+      "docstring": "Get file patterns to exclude.",
+      "line_range": [
+        91,
+        96
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.get_exclude_patterns:91#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.get_exclude_patterns:91"
+      ],
+      "hash": "6f5c6a579bd7e7d79efd45f64b2e9a983b4049ded8579a4ff9144c5f5c987b5b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-get-exclude-patterns",
+      "summary": "Get file patterns to exclude.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "cli_config.get",
+        "parsing_config.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_max_file_size",
+      "docstring": "Get maximum file size for processing (in bytes).",
+      "line_range": [
+        98,
+        100
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.get_max_file_size:98#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.get_max_file_size:98"
+      ],
+      "hash": "0de7874805ffa07c3b78d77851d2e395b58c8bad5d8d349a17646e2f797c4988",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-get-max-file-size",
+      "summary": "Get maximum file size for processing (in bytes).",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "get_auto_update_config",
+      "docstring": "Get auto-update configuration.",
+      "line_range": [
+        102,
+        104
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.get_auto_update_config:102#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.get_auto_update_config:102"
+      ],
+      "hash": "7cc7c3a61ef638a390acf6e9ddc083cfee252866d10b6f09ecdb41602955a9e5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-get-auto-update-config",
+      "summary": "Get auto-update configuration.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "is_auto_update_enabled",
+      "docstring": "Check if auto-update is enabled.",
+      "line_range": [
+        106,
+        108
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.is_auto_update_enabled:106#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.is_auto_update_enabled:106"
+      ],
+      "hash": "fa7b49214f2e66e069e41f1988649895f5932435fd4ea615c427e9488c618991",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-is-auto-update-enabled",
+      "summary": "Check if auto-update is enabled.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self.get_auto_update_config"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_struct_file_path",
+      "docstring": "Get path to struct.json file.",
+      "line_range": [
+        110,
+        112
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.get_struct_file_path:110#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.get_struct_file_path:110"
+      ],
+      "hash": "e70f386e444b7329381eab5a43b38114aced94e9f63ee1ff62f7e5b2761e1827",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-get-struct-file-path",
+      "summary": "Get path to struct.json file.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "get_context_file_path",
+      "docstring": "Get path to context file.",
+      "line_range": [
+        114,
+        116
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.get_context_file_path:114#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.get_context_file_path:114"
+      ],
+      "hash": "6a06a4537d35027b744ad7dcf9dd0bbded90f7ec3aaacfcd919fc4cbc3bc5caa",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-get-context-file-path",
+      "summary": "Get path to context file.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "save_config",
+      "docstring": "Save current configuration to file.",
+      "line_range": [
+        118,
+        124
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.save_config:118#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.save_config:118"
+      ],
+      "hash": "0791684a866565c2ed84325fe9c021142fb2c56b22bc26c3a9d5f3ec5223517d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-save-config",
+      "summary": "Save current configuration to file.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logging.error",
+        "toml.dump"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "update_config",
+      "docstring": "Update configuration value.",
+      "line_range": [
+        126,
+        131
+      ],
+      "parameters": [
+        "self",
+        "section",
+        "key",
+        "value"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.update_config:126#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.update_config:126"
+      ],
+      "hash": "617b915be28900bb115194f1fa947acc20ec86f77348ef32d9d8aeb98f066e33",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-update-config",
+      "summary": "Update configuration value.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self.save_config"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "reload_config",
+      "docstring": "Reload configuration from file.",
+      "line_range": [
+        133,
+        135
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.reload_config:133#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.reload_config:133"
+      ],
+      "hash": "678356fe0f1b9e2e573116386a13bb0e7f0cfacfd05944f03a1b5ec99debb701",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-reload-config",
+      "summary": "Reload configuration from file.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self._load_config"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "CLIConfig",
+      "docstring": "Manages CLI configuration from llmstruct.toml and other sources.",
+      "line_range": [
+        17,
+        135
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "Initialize configuration manager.",
+          "line_range": [
+            20,
+            24
+          ],
+          "parameters": [
+            "self",
+            "root_dir"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.__init__:20#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.__init__:20"
+          ],
+          "hash": "bf97d73bb1ad648c8aeb96689b75ff6bd480e65d09dabd3063672f72c268cb9e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig---init--",
+          "summary": "Initialize configuration manager.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "Path",
+            "self._load_config"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_load_config",
+          "docstring": "Load configuration from llmstruct.toml.",
+          "line_range": [
+            26,
+            34
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig._load_config:26#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig._load_config:26"
+          ],
+          "hash": "84ba1f45fa0b2c27eb49454ad2b4fd04206138f8d6230a3841b72c9ca3e60bc5",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig--load-config",
+          "summary": "Load configuration from llmstruct.toml.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "logging.error",
+            "toml.load"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_cache_config",
+          "docstring": "Get cache configuration section.",
+          "line_range": [
+            36,
+            38
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.get_cache_config:36#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.get_cache_config:36"
+          ],
+          "hash": "dff303b39d6f13b9e2ba1086402fb3e25902d09b633edc2ec40c04e5ea995023",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig-get-cache-config",
+          "summary": "Get cache configuration section.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "get_copilot_config",
+          "docstring": "Get Copilot configuration section.",
+          "line_range": [
+            40,
+            42
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.get_copilot_config:40#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.get_copilot_config:40"
+          ],
+          "hash": "f65ccb1dc1a62ecda0246f28ed01da632c6d148b5751879863c3cca466a08837",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig-get-copilot-config",
+          "summary": "Get Copilot configuration section.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "get_queue_config",
+          "docstring": "Get queue configuration section.",
+          "line_range": [
+            44,
+            46
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.get_queue_config:44#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.get_queue_config:44"
+          ],
+          "hash": "a4a7e611c95440703cd3e0805d64fdebfbb047abcbd9e4b0cbb73b22841cc1fe",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig-get-queue-config",
+          "summary": "Get queue configuration section.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "get_context_config",
+          "docstring": "Get context configuration section.",
+          "line_range": [
+            48,
+            50
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.get_context_config:48#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.get_context_config:48"
+          ],
+          "hash": "544bdf4144751517839424fd04b843c87212dab135d986cfe7e8a15a002b10b9",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig-get-context-config",
+          "summary": "Get context configuration section.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "get_gitignore_patterns",
+          "docstring": "Load and normalize patterns from .gitignore.",
+          "line_range": [
+            52,
+            66
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.get_gitignore_patterns:52#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.get_gitignore_patterns:52"
+          ],
+          "hash": "a93f535cbf2fded35a5d0a3e5d47ba31ad8f89a0e2b9137182e9312c9fb012c1",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig-get-gitignore-patterns",
+          "summary": "Load and normalize patterns from .gitignore.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "gitignore_path.open",
+            "line.startswith",
+            "line.strip",
+            "logging.error",
+            "Path",
+            "gitignore_path.exists"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_exclude_dirs",
+          "docstring": "Get directories to exclude from scanning.",
+          "line_range": [
+            68,
+            82
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.get_exclude_dirs:68#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.get_exclude_dirs:68"
+          ],
+          "hash": "0135081391bf2da254dcab02f14a6b7ebc9af1373bb7c85824e3ec1eb07ce716",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig-get-exclude-dirs",
+          "summary": "Get directories to exclude from scanning.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "list",
+            "cli_config.get",
+            "set",
+            "parsing_config.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_include_patterns",
+          "docstring": "Get file patterns to include.",
+          "line_range": [
+            84,
+            89
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.get_include_patterns:84#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.get_include_patterns:84"
+          ],
+          "hash": "7d9cd972bb5b65ab496c31ca4e699856df1adb7b2b818e2ddd8f295c0f7e23ac",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig-get-include-patterns",
+          "summary": "Get file patterns to include.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "cli_config.get",
+            "parsing_config.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_exclude_patterns",
+          "docstring": "Get file patterns to exclude.",
+          "line_range": [
+            91,
+            96
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.get_exclude_patterns:91#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.get_exclude_patterns:91"
+          ],
+          "hash": "ca9ee32e73ea52465e40c73984c5e754d33066d1e934aa16a83e17283857963b",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig-get-exclude-patterns",
+          "summary": "Get file patterns to exclude.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "cli_config.get",
+            "parsing_config.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_max_file_size",
+          "docstring": "Get maximum file size for processing (in bytes).",
+          "line_range": [
+            98,
+            100
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.get_max_file_size:98#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.get_max_file_size:98"
+          ],
+          "hash": "279cdb8f33ff8181ef544cbfcfd77074b8e09590d50be622dbaf39d3cd11a88b",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig-get-max-file-size",
+          "summary": "Get maximum file size for processing (in bytes).",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "get_auto_update_config",
+          "docstring": "Get auto-update configuration.",
+          "line_range": [
+            102,
+            104
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.get_auto_update_config:102#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.get_auto_update_config:102"
+          ],
+          "hash": "4cb2e762f4d10ae334f6b595fadc3f26d1fc059dce26a0699cda84d94cb56f55",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig-get-auto-update-config",
+          "summary": "Get auto-update configuration.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "is_auto_update_enabled",
+          "docstring": "Check if auto-update is enabled.",
+          "line_range": [
+            106,
+            108
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.is_auto_update_enabled:106#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.is_auto_update_enabled:106"
+          ],
+          "hash": "c012c8fd31bdb401452a8bac7d19044358b4c2d25d89fb7a94e136c4a71ddc92",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig-is-auto-update-enabled",
+          "summary": "Check if auto-update is enabled.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self.get_auto_update_config"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_struct_file_path",
+          "docstring": "Get path to struct.json file.",
+          "line_range": [
+            110,
+            112
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.get_struct_file_path:110#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.get_struct_file_path:110"
+          ],
+          "hash": "68297fd7990b48ddc1c1bd0c7a6767d0d645cfa02a13ac369edf63fa64d0eb97",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig-get-struct-file-path",
+          "summary": "Get path to struct.json file.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "get_context_file_path",
+          "docstring": "Get path to context file.",
+          "line_range": [
+            114,
+            116
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.get_context_file_path:114#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.get_context_file_path:114"
+          ],
+          "hash": "3267a2f85eccaa24e9a5be162d1936956cb48c18f8846c5f5a682e48f5d1e4a2",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig-get-context-file-path",
+          "summary": "Get path to context file.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "save_config",
+          "docstring": "Save current configuration to file.",
+          "line_range": [
+            118,
+            124
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.save_config:118#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.save_config:118"
+          ],
+          "hash": "2c0912d0355399b64c7b3a64ede938fbeb34bb9508f6b8f1bb67acbace3b94f0",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig-save-config",
+          "summary": "Save current configuration to file.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "logging.error",
+            "toml.dump"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "update_config",
+          "docstring": "Update configuration value.",
+          "line_range": [
+            126,
+            131
+          ],
+          "parameters": [
+            "self",
+            "section",
+            "key",
+            "value"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.update_config:126#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.update_config:126"
+          ],
+          "hash": "480282aa76c8c8abda339a41be0fa104836ef478cfeb615cb397bfea124790e1",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig-update-config",
+          "summary": "Update configuration value.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self.save_config"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "reload_config",
+          "docstring": "Reload configuration from file.",
+          "line_range": [
+            133,
+            135
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig.reload_config:133#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_config",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig",
+            "llmstruct.ARCHIVE.cli_config.CLIConfig.reload_config:133"
+          ],
+          "hash": "cce60698addd57cfe13f11410fdd3341fb7154e8a1a5942efa1d0c9737dcea0c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig-reload-config",
+          "summary": "Reload configuration from file.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self._load_config"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.ARCHIVE.cli_config.CLIConfig:17#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_config",
+        "llmstruct.ARCHIVE.cli_config.CLIConfig:17"
+      ],
+      "hash": "229d3669a4b5ce459ef93d2dcb911c46d35e0f7087fc86a4d31f71a91444db9e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-config-cliconfig",
+      "summary": "Manages CLI configuration from llmstruct.toml and other sources.",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "Path",
+    "self._load_config",
+    "logging.error",
+    "toml.load",
+    "gitignore_path.open",
+    "line.startswith",
+    "line.strip",
+    "logging.error",
+    "Path",
+    "gitignore_path.exists",
+    "list",
+    "cli_config.get",
+    "set",
+    "parsing_config.get",
+    "cli_config.get",
+    "parsing_config.get",
+    "cli_config.get",
+    "parsing_config.get",
+    "self.get_auto_update_config",
+    "logging.error",
+    "toml.dump",
+    "self.save_config",
+    "self._load_config"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.833310",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:07c5033077757f1b",
+    "lines_of_code": 19
+  }
+}

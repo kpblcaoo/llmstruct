@@ -1,0 +1,1092 @@
+{
+  "module_info": {
+    "uid": "llmstruct.ARCHIVE.cli_utils",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.ARCHIVE.cli_utils with 13 functions and 1 classes",
+    "hash": "sha256:11e794793e012599",
+    "dependencies": [
+      "backups",
+      "dst",
+      "f",
+      "filename",
+      "json",
+      "logging",
+      "os",
+      "resolved_path",
+      "self",
+      "src",
+      "time",
+      "uuid"
+    ],
+    "exports": [
+      "CLIUtils",
+      "backup_file",
+      "cleanup_old_backups",
+      "dir_exists",
+      "file_exists",
+      "format_json",
+      "generate_unique_id",
+      "get_directory_structure",
+      "get_file_size",
+      "read_file_content",
+      "safe_path_join",
+      "validate_json",
+      "write_file_content"
+    ]
+  },
+  "functions": [
+    {
+      "name": "__init__",
+      "docstring": "Initialize utils with root directory.",
+      "line_range": [
+        24,
+        26
+      ],
+      "parameters": [
+        "self",
+        "root_dir"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_utils.__init__:24#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_utils",
+        "llmstruct.ARCHIVE.cli_utils.__init__:24"
+      ],
+      "hash": "a5ef1260925a702f06990a487419e975cb062bfd7da7fb7ec05f65a29be1dca9",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-utils---init--",
+      "summary": "Initialize utils with root directory.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "read_file_content",
+      "docstring": "Read file content with size limit.",
+      "line_range": [
+        28,
+        50
+      ],
+      "parameters": [
+        "self",
+        "file_path",
+        "max_size"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_utils.read_file_content:28#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_utils",
+        "llmstruct.ARCHIVE.cli_utils.read_file_content:28"
+      ],
+      "hash": "ac908f82c5071b1dce87c4d9c3b9e54f11bbf350285a4876821b7616f93ed971",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-utils-read-file-content",
+      "summary": "Read file content with size limit.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "f.read",
+        "logging.error",
+        "logging.warning",
+        "os.stat"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "write_file_content",
+      "docstring": "Write content to file.",
+      "line_range": [
+        52,
+        70
+      ],
+      "parameters": [
+        "self",
+        "file_path",
+        "content"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_utils.write_file_content:52#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_utils",
+        "llmstruct.ARCHIVE.cli_utils.write_file_content:52"
+      ],
+      "hash": "dd0c4885982b5ec2f3b563ee52db025092e8c6b2b3390258d53dd31fa0ea7d31",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-utils-write-file-content",
+      "summary": "Write content to file.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "Path",
+        "logging.info",
+        "open",
+        "logging.error",
+        "f.write"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_directory_structure",
+      "docstring": "Get directory structure using folder generator.",
+      "line_range": [
+        72,
+        115
+      ],
+      "parameters": [
+        "self",
+        "path",
+        "gitignore_patterns",
+        "include_patterns",
+        "exclude_patterns",
+        "exclude_dirs"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_utils.get_directory_structure:72#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_utils",
+        "llmstruct.ARCHIVE.cli_utils.get_directory_structure:72"
+      ],
+      "hash": "79fc829e35ff409bb589f3878808da94313ea29e2ec3b72f5bfd9238b263c369",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-utils-get-directory-structure",
+      "summary": "Get directory structure using folder generator.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "generator",
+        "public"
+      ],
+      "calls": [
+        "logging.error",
+        "sorted",
+        "os.listdir",
+        "get_folder_structure"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "validate_json",
+      "docstring": "Validate JSON content.",
+      "line_range": [
+        117,
+        123
+      ],
+      "parameters": [
+        "self",
+        "content"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_utils.validate_json:117#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_utils",
+        "llmstruct.ARCHIVE.cli_utils.validate_json:117"
+      ],
+      "hash": "195acaf2945158e0dcc7ce8b698e54380d30bff7868ceaeb51084234bc425f0a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-utils-validate-json",
+      "summary": "Validate JSON content.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "json.loads"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "format_json",
+      "docstring": "Format data as JSON string.",
+      "line_range": [
+        125,
+        131
+      ],
+      "parameters": [
+        "self",
+        "data",
+        "indent"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_utils.format_json:125#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_utils",
+        "llmstruct.ARCHIVE.cli_utils.format_json:125"
+      ],
+      "hash": "d17b516f915483063bd38169d3811cebc88375a57ec752ae9395c8fe15ed6de9",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-utils-format-json",
+      "summary": "Format data as JSON string.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logging.error",
+        "str",
+        "json.dumps"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "generate_unique_id",
+      "docstring": "Generate unique ID for commands, queues, etc.",
+      "line_range": [
+        133,
+        137
+      ],
+      "parameters": [
+        "self",
+        "prefix"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_utils.generate_unique_id:133#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_utils",
+        "llmstruct.ARCHIVE.cli_utils.generate_unique_id:133"
+      ],
+      "hash": "55115475f7c729bc87ced188c45fac5895c94dc090a44d352ae89858919f509b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-utils-generate-unique-id",
+      "summary": "Generate unique ID for commands, queues, etc.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "uuid.uuid4",
+        "int",
+        "time.time"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "safe_path_join",
+      "docstring": "Safely join path parts, preventing directory traversal.",
+      "line_range": [
+        139,
+        149
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_utils.safe_path_join:139#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_utils",
+        "llmstruct.ARCHIVE.cli_utils.safe_path_join:139"
+      ],
+      "hash": "d779f331cb7d0f083b9463b16bbf5b36cdb2a8ec7f1d21e136874c9569035e82",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-utils-safe-path-join",
+      "summary": "Safely join path parts, preventing directory traversal.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "resolved_path.startswith",
+        "ValueError"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "file_exists",
+      "docstring": "Check if file exists.",
+      "line_range": [
+        151,
+        157
+      ],
+      "parameters": [
+        "self",
+        "file_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_utils.file_exists:151#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_utils",
+        "llmstruct.ARCHIVE.cli_utils.file_exists:151"
+      ],
+      "hash": "726bff5ab4ccd705611aa02bfe6415dd8f4cb668a704681c9086ea780d0f5b7d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-utils-file-exists",
+      "summary": "Check if file exists.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self.safe_path_join"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "dir_exists",
+      "docstring": "Check if directory exists.",
+      "line_range": [
+        159,
+        165
+      ],
+      "parameters": [
+        "self",
+        "dir_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_utils.dir_exists:159#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_utils",
+        "llmstruct.ARCHIVE.cli_utils.dir_exists:159"
+      ],
+      "hash": "52577d28ca24723f97580451e23b1ac9d514e259dd86b306b4f3c4ec1d3be4ad",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-utils-dir-exists",
+      "summary": "Check if directory exists.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self.safe_path_join"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_file_size",
+      "docstring": "Get file size in bytes.",
+      "line_range": [
+        167,
+        173
+      ],
+      "parameters": [
+        "self",
+        "file_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_utils.get_file_size:167#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_utils",
+        "llmstruct.ARCHIVE.cli_utils.get_file_size:167"
+      ],
+      "hash": "22dcec3dc9b6aecd0838aa57388f7cd15fd01333f54faa7573c242b5f3b3e111",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-utils-get-file-size",
+      "summary": "Get file size in bytes.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self.safe_path_join"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "backup_file",
+      "docstring": "Create backup of file with timestamp.",
+      "line_range": [
+        175,
+        191
+      ],
+      "parameters": [
+        "self",
+        "file_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_utils.backup_file:175#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_utils",
+        "llmstruct.ARCHIVE.cli_utils.backup_file:175"
+      ],
+      "hash": "9cba5b1bd7f8c42497ea884b0f8ea5bdde869e5fb9d67cabf5812e4a1a238e07",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-utils-backup-file",
+      "summary": "Create backup of file with timestamp.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "time.time",
+        "src.read",
+        "logging.error",
+        "self.safe_path_join",
+        "int",
+        "dst.write"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cleanup_old_backups",
+      "docstring": "Clean up old backup files, keeping only the most recent ones.",
+      "line_range": [
+        193,
+        222
+      ],
+      "parameters": [
+        "self",
+        "file_path",
+        "keep_count"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_utils.cleanup_old_backups:193#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_utils",
+        "llmstruct.ARCHIVE.cli_utils.cleanup_old_backups:193"
+      ],
+      "hash": "faba391d7a0c5962fad5e279736fc98e6b449baee6ab07e5ea5faf9022b96d41",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-utils-cleanup-old-backups",
+      "summary": "Clean up old backup files, keeping only the most recent ones.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "os.remove",
+        "logging.info",
+        "backups.sort",
+        "filename.split",
+        "filename.startswith",
+        "backups.append",
+        "logging.warning",
+        "self.safe_path_join",
+        "int",
+        "logging.error",
+        "os.listdir"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "CLIUtils",
+      "docstring": "Utility functions for CLI operations.",
+      "line_range": [
+        21,
+        222
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "Initialize utils with root directory.",
+          "line_range": [
+            24,
+            26
+          ],
+          "parameters": [
+            "self",
+            "root_dir"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_utils.CLIUtils.__init__:24#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_utils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils.__init__:24"
+          ],
+          "hash": "5870892ee817c59b3278b42dea382dd30e4117252c43a8ca2d55360e25290e6a",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-utils-cliutils---init--",
+          "summary": "Initialize utils with root directory.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "read_file_content",
+          "docstring": "Read file content with size limit.",
+          "line_range": [
+            28,
+            50
+          ],
+          "parameters": [
+            "self",
+            "file_path",
+            "max_size"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_utils.CLIUtils.read_file_content:28#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_utils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils.read_file_content:28"
+          ],
+          "hash": "12c7f0bf6408c0b13c0f0327d97977913ee7225e50e74496bcb6385cc55c563c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-utils-cliutils-read-file-content",
+          "summary": "Read file content with size limit.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "open",
+            "f.read",
+            "logging.error",
+            "logging.warning",
+            "os.stat"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "write_file_content",
+          "docstring": "Write content to file.",
+          "line_range": [
+            52,
+            70
+          ],
+          "parameters": [
+            "self",
+            "file_path",
+            "content"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_utils.CLIUtils.write_file_content:52#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_utils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils.write_file_content:52"
+          ],
+          "hash": "de5fc9bba66fed78e5bc611e03e5f16ad106ecaae01236b2fc543448818bd9e4",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-utils-cliutils-write-file-content",
+          "summary": "Write content to file.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "Path",
+            "logging.info",
+            "open",
+            "logging.error",
+            "f.write"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_directory_structure",
+          "docstring": "Get directory structure using folder generator.",
+          "line_range": [
+            72,
+            115
+          ],
+          "parameters": [
+            "self",
+            "path",
+            "gitignore_patterns",
+            "include_patterns",
+            "exclude_patterns",
+            "exclude_dirs"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_utils.CLIUtils.get_directory_structure:72#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_utils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils.get_directory_structure:72"
+          ],
+          "hash": "24e0a97bfd91e7589750a8fef42df63984d426bb78b1c45e0c6cac692201aba4",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-utils-cliutils-get-directory-structure",
+          "summary": "Get directory structure using folder generator.",
+          "summary_source": "docstring",
+          "tags": [
+            "generator",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "logging.error",
+            "sorted",
+            "os.listdir",
+            "get_folder_structure"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "validate_json",
+          "docstring": "Validate JSON content.",
+          "line_range": [
+            117,
+            123
+          ],
+          "parameters": [
+            "self",
+            "content"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_utils.CLIUtils.validate_json:117#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_utils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils.validate_json:117"
+          ],
+          "hash": "5a257413cbdee3ee9eabb31d4ea85ac908355ad22cfaa174529382c473414a6d",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-utils-cliutils-validate-json",
+          "summary": "Validate JSON content.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "str",
+            "json.loads"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "format_json",
+          "docstring": "Format data as JSON string.",
+          "line_range": [
+            125,
+            131
+          ],
+          "parameters": [
+            "self",
+            "data",
+            "indent"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_utils.CLIUtils.format_json:125#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_utils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils.format_json:125"
+          ],
+          "hash": "d9bdda18564fc386b8c7cf72d813923e708049ce53c796d6661b0a454ee20e05",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-utils-cliutils-format-json",
+          "summary": "Format data as JSON string.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "logging.error",
+            "str",
+            "json.dumps"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "generate_unique_id",
+          "docstring": "Generate unique ID for commands, queues, etc.",
+          "line_range": [
+            133,
+            137
+          ],
+          "parameters": [
+            "self",
+            "prefix"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_utils.CLIUtils.generate_unique_id:133#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_utils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils.generate_unique_id:133"
+          ],
+          "hash": "88373fbaa02c3afbf8c5085c990845939e12a25fb177221537f8982e49b2058e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-utils-cliutils-generate-unique-id",
+          "summary": "Generate unique ID for commands, queues, etc.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "str",
+            "uuid.uuid4",
+            "int",
+            "time.time"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "safe_path_join",
+          "docstring": "Safely join path parts, preventing directory traversal.",
+          "line_range": [
+            139,
+            149
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_utils.CLIUtils.safe_path_join:139#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_utils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils.safe_path_join:139"
+          ],
+          "hash": "1fd495cce83b114ed710797dbab5333cb8b0e1ca15486e38576d94041001ad60",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-utils-cliutils-safe-path-join",
+          "summary": "Safely join path parts, preventing directory traversal.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "resolved_path.startswith",
+            "ValueError"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "file_exists",
+          "docstring": "Check if file exists.",
+          "line_range": [
+            151,
+            157
+          ],
+          "parameters": [
+            "self",
+            "file_path"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_utils.CLIUtils.file_exists:151#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_utils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils.file_exists:151"
+          ],
+          "hash": "6346437744a89a395cecdf4a1412ae8125af6b59bea17266c0a6d1372744cb7f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-utils-cliutils-file-exists",
+          "summary": "Check if file exists.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self.safe_path_join"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "dir_exists",
+          "docstring": "Check if directory exists.",
+          "line_range": [
+            159,
+            165
+          ],
+          "parameters": [
+            "self",
+            "dir_path"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_utils.CLIUtils.dir_exists:159#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_utils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils.dir_exists:159"
+          ],
+          "hash": "b8cf95a46cfe270fa54ed1b42491181f642f2014588621e025a7d9246824f3c4",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-utils-cliutils-dir-exists",
+          "summary": "Check if directory exists.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self.safe_path_join"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_file_size",
+          "docstring": "Get file size in bytes.",
+          "line_range": [
+            167,
+            173
+          ],
+          "parameters": [
+            "self",
+            "file_path"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_utils.CLIUtils.get_file_size:167#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_utils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils.get_file_size:167"
+          ],
+          "hash": "42a9c5b78726818f2b3b159b89164e68f5f93e2c2abcc24857b2b00d049bb44c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-utils-cliutils-get-file-size",
+          "summary": "Get file size in bytes.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self.safe_path_join"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "backup_file",
+          "docstring": "Create backup of file with timestamp.",
+          "line_range": [
+            175,
+            191
+          ],
+          "parameters": [
+            "self",
+            "file_path"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_utils.CLIUtils.backup_file:175#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_utils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils.backup_file:175"
+          ],
+          "hash": "a090cc21b1b4a7100a11ba4ed02508e4aa73efcd95cc16d2d41fa43a51380a5b",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-utils-cliutils-backup-file",
+          "summary": "Create backup of file with timestamp.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "open",
+            "time.time",
+            "src.read",
+            "logging.error",
+            "self.safe_path_join",
+            "int",
+            "dst.write"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cleanup_old_backups",
+          "docstring": "Clean up old backup files, keeping only the most recent ones.",
+          "line_range": [
+            193,
+            222
+          ],
+          "parameters": [
+            "self",
+            "file_path",
+            "keep_count"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_utils.CLIUtils.cleanup_old_backups:193#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_utils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils",
+            "llmstruct.ARCHIVE.cli_utils.CLIUtils.cleanup_old_backups:193"
+          ],
+          "hash": "d670d9d01cda5a33b4cf7e128d67150b6eb0e30b339186afcc8efc55f706b436",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-utils-cliutils-cleanup-old-backups",
+          "summary": "Clean up old backup files, keeping only the most recent ones.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "os.remove",
+            "logging.info",
+            "backups.sort",
+            "filename.split",
+            "filename.startswith",
+            "backups.append",
+            "logging.warning",
+            "self.safe_path_join",
+            "int",
+            "logging.error",
+            "os.listdir"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.ARCHIVE.cli_utils.CLIUtils:21#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_utils",
+        "llmstruct.ARCHIVE.cli_utils.CLIUtils:21"
+      ],
+      "hash": "f56dd77924f853b70d904f1b086d94c0fe493a5410bdb213e990bd9d0c7aa5bc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-utils-cliutils",
+      "summary": "Utility functions for CLI operations.",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "open",
+    "f.read",
+    "logging.error",
+    "logging.warning",
+    "os.stat",
+    "Path",
+    "logging.info",
+    "open",
+    "logging.error",
+    "f.write",
+    "logging.error",
+    "sorted",
+    "os.listdir",
+    "get_folder_structure",
+    "str",
+    "json.loads",
+    "logging.error",
+    "str",
+    "json.dumps",
+    "str",
+    "uuid.uuid4",
+    "int",
+    "time.time",
+    "resolved_path.startswith",
+    "ValueError",
+    "self.safe_path_join",
+    "self.safe_path_join",
+    "self.safe_path_join",
+    "open",
+    "time.time",
+    "src.read",
+    "logging.error",
+    "self.safe_path_join",
+    "int",
+    "dst.write",
+    "os.remove",
+    "logging.info",
+    "backups.sort",
+    "filename.split",
+    "filename.startswith",
+    "backups.append",
+    "logging.warning",
+    "self.safe_path_join",
+    "int",
+    "logging.error",
+    "os.listdir"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.791474",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:11e794793e012599",
+    "lines_of_code": 14
+  }
+}

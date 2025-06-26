@@ -1,0 +1,141 @@
+{
+  "module_info": {
+    "uid": "llmstruct.cli",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.cli with 2 functions",
+    "hash": "sha256:bf77bf4bde7d0e3d",
+    "dependencies": [
+      "argparse",
+      "audit_parser",
+      "context_parser",
+      "copilot_parser",
+      "dogfood_parser",
+      "duplicates_parser",
+      "epic",
+      "item",
+      "p",
+      "parse_parser",
+      "parser",
+      "query_parser",
+      "result",
+      "review_parser",
+      "subparsers"
+    ],
+    "exports": [
+      "main",
+      "normalize_patterns"
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "docstring": "Command-line interface for LLMstruct.",
+      "line_range": [
+        55,
+        338
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "llmstruct.cli.main:55#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.cli",
+        "llmstruct.cli.main:55"
+      ],
+      "hash": "3cfbc3c18f4a06fdb1ee0d688b4bb243756bfc4eb79b7653cfd106593bc68d64",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-cli-main",
+      "summary": "Command-line interface for LLMstruct.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "copilot_parser.add_argument",
+        "parser.add_subparsers",
+        "query_parser.add_argument",
+        "epic.add_epic_cli_subparser",
+        "parser.parse_args",
+        "review_parser.add_argument",
+        "context_parser.add_argument",
+        "audit_parser.add_argument",
+        "dogfood_parser.add_argument",
+        "duplicates_parser.add_argument",
+        "parse_parser.add_argument",
+        "subparsers.add_parser",
+        "argparse.ArgumentParser"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "normalize_patterns",
+      "docstring": "",
+      "line_range": [
+        301,
+        312
+      ],
+      "parameters": [
+        "arglist"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.cli.normalize_patterns:301#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.cli",
+        "llmstruct.cli.normalize_patterns:301"
+      ],
+      "hash": "ee175712a0159687349dbcbbd228c56aab65872a6ba0c735664ad6e55cd8faf6",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-cli-normalize-patterns",
+      "summary": "Function for normalize patterns",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "item.strip",
+        "result.append",
+        "item.split",
+        "result.extend",
+        "p.strip"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "copilot_parser.add_argument",
+    "parser.add_subparsers",
+    "query_parser.add_argument",
+    "epic.add_epic_cli_subparser",
+    "parser.parse_args",
+    "review_parser.add_argument",
+    "context_parser.add_argument",
+    "audit_parser.add_argument",
+    "dogfood_parser.add_argument",
+    "duplicates_parser.add_argument",
+    "parse_parser.add_argument",
+    "subparsers.add_parser",
+    "argparse.ArgumentParser",
+    "item.strip",
+    "result.append",
+    "item.split",
+    "result.extend",
+    "p.strip"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.766953",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:bf77bf4bde7d0e3d",
+    "lines_of_code": 2
+  }
+}

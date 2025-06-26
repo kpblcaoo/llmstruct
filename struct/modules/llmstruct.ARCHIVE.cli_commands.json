@@ -1,0 +1,1851 @@
+{
+  "module_info": {
+    "uid": "llmstruct.ARCHIVE.cli_commands",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.ARCHIVE.cli_commands with 22 functions and 1 classes",
+    "hash": "sha256:4c83812425ef2bef",
+    "dependencies": [
+      "action_args",
+      "args",
+      "boundaries",
+      "cmd",
+      "command_line",
+      "content",
+      "context_data",
+      "context_info",
+      "datetime",
+      "entry",
+      "json",
+      "logging",
+      "metrics",
+      "os",
+      "override",
+      "permissions",
+      "prompt",
+      "queue_data",
+      "re",
+      "result",
+      "state",
+      "stats",
+      "struct_data"
+    ],
+    "exports": [
+      "CommandProcessor",
+      "cmd_audit",
+      "cmd_backup",
+      "cmd_cache",
+      "cmd_config",
+      "cmd_context",
+      "cmd_copilot",
+      "cmd_help",
+      "cmd_mode",
+      "cmd_parse",
+      "cmd_queue",
+      "cmd_session",
+      "cmd_status",
+      "cmd_view",
+      "cmd_workspace",
+      "cmd_write",
+      "handle_auto_update",
+      "handle_struct_status",
+      "process_command",
+      "process_prompt",
+      "set_cache",
+      "set_copilot"
+    ]
+  },
+  "functions": [
+    {
+      "name": "__init__",
+      "docstring": "Initialize command processor.",
+      "line_range": [
+        33,
+        72
+      ],
+      "parameters": [
+        "self",
+        "root_dir",
+        "config",
+        "utils"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.__init__:33#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.__init__:33"
+      ],
+      "hash": "63979f6972e7264004c197de7eced1f0947db7629d354f204446ad4dcb806d67",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands---init--",
+      "summary": "Initialize command processor.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "print",
+        "WorkspaceStateManager"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "set_cache",
+      "docstring": "Set cache instance.",
+      "line_range": [
+        74,
+        76
+      ],
+      "parameters": [
+        "self",
+        "cache"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.set_cache:74#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.set_cache:74"
+      ],
+      "hash": "1e6890db585bdfcde0ab548d230f3421b4ef00a5ce1b3cf63c108483530f6298",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-set-cache",
+      "summary": "Set cache instance.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "set_copilot",
+      "docstring": "Set Copilot manager instance.",
+      "line_range": [
+        78,
+        80
+      ],
+      "parameters": [
+        "self",
+        "copilot_manager"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.set_copilot:78#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.set_copilot:78"
+      ],
+      "hash": "1a7fae2bcbd37219c82a9229f8ac0cd9780dba27bc2dbf44791985c643cb6657",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-set-copilot",
+      "summary": "Set Copilot manager instance.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "process_command",
+      "docstring": "Process a command starting with /.",
+      "line_range": [
+        82,
+        98
+      ],
+      "parameters": [
+        "self",
+        "command_line"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.process_command:82#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.process_command:82"
+      ],
+      "hash": "bb29d07bb48c1414a08b36c656089d3c51c293fd42d73d11a07327a3c2a5d877",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-process-command",
+      "summary": "Process a command starting with /.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "command_line.strip",
+        "logging.error",
+        "command_line.split",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "process_prompt",
+      "docstring": "Process a regular user prompt (not a command).",
+      "line_range": [
+        100,
+        152
+      ],
+      "parameters": [
+        "self",
+        "prompt"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.process_prompt:100#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.process_prompt:100"
+      ],
+      "hash": "3c44245198ddd7c64bdcac20cd3a671ca00cc78f924a409961626b69c5f7297a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-process-prompt",
+      "summary": "Process a regular user prompt (not a command).",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "logging.info",
+        "get_optimized_context",
+        "context_data.get",
+        "CopilotEvent",
+        "logging.error",
+        "logging.warning",
+        "prompt.strip",
+        "context_info.get",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cmd_help",
+      "docstring": "Show help information.",
+      "line_range": [
+        154,
+        217
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.cmd_help:154#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.cmd_help:154"
+      ],
+      "hash": "6012a9083de90b77869b7fe87dbe0859d00a149bf08b58e880306a28ea79796c",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-cmd-help",
+      "summary": "Show help information.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cmd_workspace",
+      "docstring": "Handle workspace state and permissions management.",
+      "line_range": [
+        219,
+        334
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.cmd_workspace:219#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.cmd_workspace:219"
+      ],
+      "hash": "a6377a20384058ea6a69c9e35f6d1e015a5c06bffa52419bf5bae5bf708c7327",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-cmd-workspace",
+      "summary": "Handle workspace state and permissions management.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "action_args.split",
+        "boundaries.get",
+        "result.get",
+        "entry.get",
+        "permissions.get",
+        "override.get",
+        "logging.error",
+        "int",
+        "args.strip",
+        "len",
+        "state.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cmd_mode",
+      "docstring": "Handle context mode operations with workspace integration.",
+      "line_range": [
+        336,
+        437
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.cmd_mode:336#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.cmd_mode:336"
+      ],
+      "hash": "e471be8f37f7a38a86038bb1c733248b6bf917df0eac424534d220a19f99032a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-cmd-mode",
+      "summary": "Handle context mode operations with workspace integration.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "result.get",
+        "args.lower",
+        "get_optimized_context",
+        "context_data.get",
+        "permissions.get",
+        "metrics.get",
+        "args.strip",
+        "args.upper",
+        "len",
+        "re.findall"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cmd_view",
+      "docstring": "View file or directory contents.",
+      "line_range": [
+        439,
+        478
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.cmd_view:439#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.cmd_view:439"
+      ],
+      "hash": "1deee22a4cf8827589541fd577e2380d71b39c2b11b23b0b03f540a8fac62c55",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-cmd-view",
+      "summary": "View file or directory contents.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "sorted",
+        "args.strip",
+        "os.listdir"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cmd_write",
+      "docstring": "Write content to a file.",
+      "line_range": [
+        480,
+        505
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.cmd_write:480#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.cmd_write:480"
+      ],
+      "hash": "ea45fa5f03580e2fd42ac8e0c0b4b71bb4f1cf33be045e40bade44e570ba3503",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-cmd-write",
+      "summary": "Write content to a file.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "args.split",
+        "content.startswith",
+        "len",
+        "content.endswith"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cmd_queue",
+      "docstring": "Handle queue operations.",
+      "line_range": [
+        507,
+        549
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.cmd_queue:507#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.cmd_queue:507"
+      ],
+      "hash": "d6bda3db417490e85c87a2be46236dbe69149ca1894caec6371322ee553902b0",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-cmd-queue",
+      "summary": "Handle queue operations.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "os.remove",
+        "open",
+        "queue_data.get",
+        "cmd.get",
+        "args.strip",
+        "json.load",
+        "len",
+        "enumerate"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cmd_cache",
+      "docstring": "Handle cache operations.",
+      "line_range": [
+        551,
+        590
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.cmd_cache:551#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.cmd_cache:551"
+      ],
+      "hash": "14fb6fe86b8ce2fc73abeec3e2f54491c0b72b45369c7af323a75d6d7fdbe1b8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-cmd-cache",
+      "summary": "Handle cache operations.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "stats.get",
+        "args.strip",
+        "os.listdir",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cmd_copilot",
+      "docstring": "Handle Copilot operations.",
+      "line_range": [
+        592,
+        626
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.cmd_copilot:592#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.cmd_copilot:592"
+      ],
+      "hash": "4fb5205cdec45b543f4cfd1c85f50654942a56e352d6ca1a7cbb735695833adc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-cmd-copilot",
+      "summary": "Handle Copilot operations.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "open",
+        "json.dumps",
+        "args.strip",
+        "json.load"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cmd_config",
+      "docstring": "Handle configuration operations.",
+      "line_range": [
+        628,
+        660
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.cmd_config:628#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.cmd_config:628"
+      ],
+      "hash": "5ae937855221c184dc0283e9f6932dde08243cf7a2d27ca7164ac55e21371057",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-cmd-config",
+      "summary": "Handle configuration operations.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "args.strip",
+        "json.dumps"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cmd_status",
+      "docstring": "Show system status.",
+      "line_range": [
+        662,
+        676
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.cmd_status:662#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.cmd_status:662"
+      ],
+      "hash": "258fe91ca5977153ca1654f0a5242b7e36a58db8f8c761ce72272e1c66a5e909",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-cmd-status",
+      "summary": "Show system status.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cmd_backup",
+      "docstring": "Create backup of a file.",
+      "line_range": [
+        678,
+        693
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.cmd_backup:678#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.cmd_backup:678"
+      ],
+      "hash": "9ca7f02a4ecf65621f63c43f22a37aad18a77b8be8031c174431274f16304eeb",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-cmd-backup",
+      "summary": "Create backup of a file.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "args.strip"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cmd_parse",
+      "docstring": "Parse project structure.",
+      "line_range": [
+        695,
+        715
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.cmd_parse:695#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.cmd_parse:695"
+      ],
+      "hash": "92065faf40ff682bf6f774c5706c08f05abbe5a4efa409f0de3e93c526eeed68",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-cmd-parse",
+      "summary": "Parse project structure.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "generate_json"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cmd_audit",
+      "docstring": "Handle audit operations.",
+      "line_range": [
+        717,
+        743
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.cmd_audit:717#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.cmd_audit:717"
+      ],
+      "hash": "6923dc15085241e31140c62c40d65a59b972da87caad02b045e8309bbcbfeb65",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-cmd-audit",
+      "summary": "Handle audit operations.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "args.strip"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "handle_auto_update",
+      "docstring": "Handle auto-update operations.",
+      "line_range": [
+        745,
+        765
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.handle_auto_update:745#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.handle_auto_update:745"
+      ],
+      "hash": "1a434bb1022c21726206e1cb6a47378c6f751f6126a6cdd33b9218dfffa08f98",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-handle-auto-update",
+      "summary": "Handle auto-update operations.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "generate_json"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "handle_struct_status",
+      "docstring": "Handle struct status operations.",
+      "line_range": [
+        767,
+        791
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.handle_struct_status:767#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.handle_struct_status:767"
+      ],
+      "hash": "31eb3122009a3115e7187d2fbf94aca25a4310fdcfa0a9afa3f8fd3c6ff20df6",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-handle-struct-status",
+      "summary": "Handle struct status operations.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "open",
+        "struct_data.get",
+        "json.load",
+        "datetime.fromtimestamp",
+        "len",
+        "os.stat"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cmd_context",
+      "docstring": "Handle context operations.",
+      "line_range": [
+        793,
+        849
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.cmd_context:793#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.cmd_context:793"
+      ],
+      "hash": "ea4930f004f390ae4cdb08b84d1eeaa085615e257fe310547590bef0b52e23ba",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-cmd-context",
+      "summary": "Handle context operations.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "get_optimized_context",
+        "context_data.get",
+        "metrics.get",
+        "args.strip",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "cmd_session",
+      "docstring": "Handle session operations.",
+      "line_range": [
+        851,
+        902
+      ],
+      "parameters": [
+        "self",
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.cmd_session:851#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.cmd_session:851"
+      ],
+      "hash": "e730ba1b3720fa165f346eb490a52bbb56bed16c7f93cbdb46b264177be509f0",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-cmd-session",
+      "summary": "Handle session operations.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "datetime.now",
+        "args.strip",
+        "len",
+        "state.get"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "CommandProcessor",
+      "docstring": "Processes CLI commands and user prompts.",
+      "line_range": [
+        30,
+        902
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "Initialize command processor.",
+          "line_range": [
+            33,
+            72
+          ],
+          "parameters": [
+            "self",
+            "root_dir",
+            "config",
+            "utils"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.__init__:33#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.__init__:33"
+          ],
+          "hash": "394a47edc78660ad77056f316201365990e542bb55e7b7faa007ef1926228635",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor---init--",
+          "summary": "Initialize command processor.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "print",
+            "WorkspaceStateManager"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "set_cache",
+          "docstring": "Set cache instance.",
+          "line_range": [
+            74,
+            76
+          ],
+          "parameters": [
+            "self",
+            "cache"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.set_cache:74#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.set_cache:74"
+          ],
+          "hash": "436c159d9b94704c01bb6fa162dee7d94bcd85304060ef6f92174238c74fd02b",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-set-cache",
+          "summary": "Set cache instance.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "set_copilot",
+          "docstring": "Set Copilot manager instance.",
+          "line_range": [
+            78,
+            80
+          ],
+          "parameters": [
+            "self",
+            "copilot_manager"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.set_copilot:78#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.set_copilot:78"
+          ],
+          "hash": "b8768ce4f296b39d8e9f4c925211e6e09beb5675961138781c2cbb15fd90152c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-set-copilot",
+          "summary": "Set Copilot manager instance.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "process_command",
+          "docstring": "Process a command starting with /.",
+          "line_range": [
+            82,
+            98
+          ],
+          "parameters": [
+            "self",
+            "command_line"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.process_command:82#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.process_command:82"
+          ],
+          "hash": "6ded44564cdb490c6915f62557f6e46bcd4256d33567c00bff4b9a3b05f52833",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-process-command",
+          "summary": "Process a command starting with /.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "command_line.strip",
+            "logging.error",
+            "command_line.split",
+            "len"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "process_prompt",
+          "docstring": "Process a regular user prompt (not a command).",
+          "line_range": [
+            100,
+            152
+          ],
+          "parameters": [
+            "self",
+            "prompt"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.process_prompt:100#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.process_prompt:100"
+          ],
+          "hash": "b0b84b8e3eb9945e8574c3a44852b8fb5cc035e97fb9fee45ad2debd814c08bf",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-process-prompt",
+          "summary": "Process a regular user prompt (not a command).",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "logging.info",
+            "get_optimized_context",
+            "context_data.get",
+            "CopilotEvent",
+            "logging.error",
+            "logging.warning",
+            "prompt.strip",
+            "context_info.get",
+            "len"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cmd_help",
+          "docstring": "Show help information.",
+          "line_range": [
+            154,
+            217
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_help:154#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_help:154"
+          ],
+          "hash": "16bc2108d7fe2dea5a659c5738119baddc54a21e653e0404074de92415f4884c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-cmd-help",
+          "summary": "Show help information.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cmd_workspace",
+          "docstring": "Handle workspace state and permissions management.",
+          "line_range": [
+            219,
+            334
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_workspace:219#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_workspace:219"
+          ],
+          "hash": "f1e337a868c7cde5b4405ca314e859fe024a4c5d3d3a2c431392682abbf8ee5f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-cmd-workspace",
+          "summary": "Handle workspace state and permissions management.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "action_args.split",
+            "boundaries.get",
+            "result.get",
+            "entry.get",
+            "permissions.get",
+            "override.get",
+            "logging.error",
+            "int",
+            "args.strip",
+            "len",
+            "state.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cmd_mode",
+          "docstring": "Handle context mode operations with workspace integration.",
+          "line_range": [
+            336,
+            437
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_mode:336#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_mode:336"
+          ],
+          "hash": "d274e919b7e439d6bdeea54f5300e2352c3c05f7a15349a0a35a2432be0cdb08",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-cmd-mode",
+          "summary": "Handle context mode operations with workspace integration.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "result.get",
+            "args.lower",
+            "get_optimized_context",
+            "context_data.get",
+            "permissions.get",
+            "metrics.get",
+            "args.strip",
+            "args.upper",
+            "len",
+            "re.findall"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cmd_view",
+          "docstring": "View file or directory contents.",
+          "line_range": [
+            439,
+            478
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_view:439#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_view:439"
+          ],
+          "hash": "59cb10eefd4843edfc9900ccc442cfc0e9033bc0d9dcbf90e03d022604bf51af",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-cmd-view",
+          "summary": "View file or directory contents.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "sorted",
+            "args.strip",
+            "os.listdir"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cmd_write",
+          "docstring": "Write content to a file.",
+          "line_range": [
+            480,
+            505
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_write:480#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_write:480"
+          ],
+          "hash": "c902f47b41b54bcfd0e5b627dc1c2ca33daee100a57044e8c657201bae8a32d1",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-cmd-write",
+          "summary": "Write content to a file.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "args.split",
+            "content.startswith",
+            "len",
+            "content.endswith"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cmd_queue",
+          "docstring": "Handle queue operations.",
+          "line_range": [
+            507,
+            549
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_queue:507#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_queue:507"
+          ],
+          "hash": "5134981737bcf7a2332d738df91afb75063321ab0060f4803f94edaf5bb1845c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-cmd-queue",
+          "summary": "Handle queue operations.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "os.remove",
+            "open",
+            "queue_data.get",
+            "cmd.get",
+            "args.strip",
+            "json.load",
+            "len",
+            "enumerate"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cmd_cache",
+          "docstring": "Handle cache operations.",
+          "line_range": [
+            551,
+            590
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_cache:551#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_cache:551"
+          ],
+          "hash": "306cb6ae173e87a95a95c0c7be44fc600ed383098f1b0cbe08e9d54692fbcd76",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-cmd-cache",
+          "summary": "Handle cache operations.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "stats.get",
+            "args.strip",
+            "os.listdir",
+            "len"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cmd_copilot",
+          "docstring": "Handle Copilot operations.",
+          "line_range": [
+            592,
+            626
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_copilot:592#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_copilot:592"
+          ],
+          "hash": "45f40f53101e24c0d351e45171daef1df47a791969584b816ed47319117b2b5b",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-cmd-copilot",
+          "summary": "Handle Copilot operations.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "open",
+            "json.dumps",
+            "args.strip",
+            "json.load"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cmd_config",
+          "docstring": "Handle configuration operations.",
+          "line_range": [
+            628,
+            660
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_config:628#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_config:628"
+          ],
+          "hash": "136c75b88b7782486cdd364a540f58f859d6516c8ac85b934203b947984538c5",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-cmd-config",
+          "summary": "Handle configuration operations.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "args.strip",
+            "json.dumps"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cmd_status",
+          "docstring": "Show system status.",
+          "line_range": [
+            662,
+            676
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_status:662#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_status:662"
+          ],
+          "hash": "9e7216db178900d3708900712fe187af02ef9330547a54766356fff39f7814c3",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-cmd-status",
+          "summary": "Show system status.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cmd_backup",
+          "docstring": "Create backup of a file.",
+          "line_range": [
+            678,
+            693
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_backup:678#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_backup:678"
+          ],
+          "hash": "14fdec161beb40bf0a93bbacfe7242a1eb8a3abfc582b109cc717dd3bc5ab351",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-cmd-backup",
+          "summary": "Create backup of a file.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "args.strip"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cmd_parse",
+          "docstring": "Parse project structure.",
+          "line_range": [
+            695,
+            715
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_parse:695#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_parse:695"
+          ],
+          "hash": "ff966d50960bbc0bccaa55dccd993cc5815248b3c693f873f597b8c781117940",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-cmd-parse",
+          "summary": "Parse project structure.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "generate_json"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cmd_audit",
+          "docstring": "Handle audit operations.",
+          "line_range": [
+            717,
+            743
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_audit:717#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_audit:717"
+          ],
+          "hash": "e57b90a6f0dee5cded047a92a029dfebfb707943e405bb01d1553dc7afaceeaf",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-cmd-audit",
+          "summary": "Handle audit operations.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "args.strip"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "handle_auto_update",
+          "docstring": "Handle auto-update operations.",
+          "line_range": [
+            745,
+            765
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.handle_auto_update:745#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.handle_auto_update:745"
+          ],
+          "hash": "256303cd303ef81871b2c55c84617fdb77d3fa261d394d9709e65345e8bed16f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-handle-auto-update",
+          "summary": "Handle auto-update operations.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "generate_json"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "handle_struct_status",
+          "docstring": "Handle struct status operations.",
+          "line_range": [
+            767,
+            791
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.handle_struct_status:767#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.handle_struct_status:767"
+          ],
+          "hash": "d2cf83e544c39332a5ef3145b9537fbb0e3092b2d65af41cd41425315207c5db",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-handle-struct-status",
+          "summary": "Handle struct status operations.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "open",
+            "struct_data.get",
+            "json.load",
+            "datetime.fromtimestamp",
+            "len",
+            "os.stat"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cmd_context",
+          "docstring": "Handle context operations.",
+          "line_range": [
+            793,
+            849
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_context:793#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_context:793"
+          ],
+          "hash": "372ed3d1b517787c19c9093c6f754852e80bd5ebbe5f3bc8006748e084cfdaf7",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-cmd-context",
+          "summary": "Handle context operations.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "get_optimized_context",
+            "context_data.get",
+            "metrics.get",
+            "args.strip",
+            "len"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "cmd_session",
+          "docstring": "Handle session operations.",
+          "line_range": [
+            851,
+            902
+          ],
+          "parameters": [
+            "self",
+            "args"
+          ],
+          "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_session:851#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.ARCHIVE",
+            "llmstruct.ARCHIVE.cli_commands",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor",
+            "llmstruct.ARCHIVE.cli_commands.CommandProcessor.cmd_session:851"
+          ],
+          "hash": "c189c552ce1c62006c33cbfdaae296d9178b6600517ae746b02dc78e4003b029",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor-cmd-session",
+          "summary": "Handle session operations.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "datetime.now",
+            "args.strip",
+            "len",
+            "state.get"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.ARCHIVE.cli_commands.CommandProcessor:30#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_commands",
+        "llmstruct.ARCHIVE.cli_commands.CommandProcessor:30"
+      ],
+      "hash": "953fcf30aea94a6fe43f250e65493c239fc78e4ee066df2f818aee847d6ebb35",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-commands-commandprocessor",
+      "summary": "Processes CLI commands and user prompts.",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "print",
+    "WorkspaceStateManager",
+    "print",
+    "command_line.strip",
+    "logging.error",
+    "command_line.split",
+    "len",
+    "print",
+    "logging.info",
+    "get_optimized_context",
+    "context_data.get",
+    "CopilotEvent",
+    "logging.error",
+    "logging.warning",
+    "prompt.strip",
+    "context_info.get",
+    "len",
+    "print",
+    "print",
+    "action_args.split",
+    "boundaries.get",
+    "result.get",
+    "entry.get",
+    "permissions.get",
+    "override.get",
+    "logging.error",
+    "int",
+    "args.strip",
+    "len",
+    "state.get",
+    "print",
+    "result.get",
+    "args.lower",
+    "get_optimized_context",
+    "context_data.get",
+    "permissions.get",
+    "metrics.get",
+    "args.strip",
+    "args.upper",
+    "len",
+    "re.findall",
+    "print",
+    "sorted",
+    "args.strip",
+    "os.listdir",
+    "print",
+    "args.split",
+    "content.startswith",
+    "len",
+    "content.endswith",
+    "print",
+    "os.remove",
+    "open",
+    "queue_data.get",
+    "cmd.get",
+    "args.strip",
+    "json.load",
+    "len",
+    "enumerate",
+    "print",
+    "stats.get",
+    "args.strip",
+    "os.listdir",
+    "len",
+    "print",
+    "open",
+    "json.dumps",
+    "args.strip",
+    "json.load",
+    "print",
+    "args.strip",
+    "json.dumps",
+    "print",
+    "print",
+    "args.strip",
+    "print",
+    "generate_json",
+    "print",
+    "args.strip",
+    "print",
+    "generate_json",
+    "print",
+    "open",
+    "struct_data.get",
+    "json.load",
+    "datetime.fromtimestamp",
+    "len",
+    "os.stat",
+    "print",
+    "get_optimized_context",
+    "context_data.get",
+    "metrics.get",
+    "args.strip",
+    "len",
+    "print",
+    "datetime.now",
+    "args.strip",
+    "len",
+    "state.get"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.835472",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:4c83812425ef2bef",
+    "lines_of_code": 23
+  }
+}

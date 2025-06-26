@@ -1,0 +1,2164 @@
+{
+  "module_info": {
+    "uid": "scripts.github_sync_manager_enhanced",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.github_sync_manager_enhanced with 28 functions and 3 classes",
+    "hash": "sha256:87c5a7094ea7956b",
+    "dependencies": [
+      "argparse",
+      "cmd",
+      "criteria",
+      "data",
+      "datetime",
+      "env_file",
+      "file_path",
+      "item",
+      "json",
+      "key",
+      "labels",
+      "line",
+      "manager",
+      "method",
+      "notes",
+      "os",
+      "parser",
+      "path",
+      "processing_meta",
+      "repo_info",
+      "requests",
+      "response",
+      "result",
+      "self",
+      "subprocess",
+      "time",
+      "url",
+      "user_info",
+      "value"
+    ],
+    "exports": [
+      "Colors",
+      "EnhancedGitHubSyncManager",
+      "GitHubTokenManager",
+      "api_request",
+      "check_gh_cli",
+      "create_github_discussion_enhanced",
+      "create_github_epic_enhanced",
+      "create_github_issue_enhanced",
+      "detect_repo_from_git",
+      "get_github_token",
+      "get_token_from_gh_cli",
+      "item_already_synced",
+      "load_env_file",
+      "load_sync_log",
+      "main",
+      "print_error",
+      "print_info",
+      "print_step",
+      "print_success",
+      "print_warning",
+      "run_enhanced_sync",
+      "save_sync_log",
+      "sync_category_enhanced",
+      "test_github_token",
+      "validate_before_sync"
+    ]
+  },
+  "functions": [
+    {
+      "name": "print_info",
+      "docstring": "",
+      "line_range": [
+        25,
+        26
+      ],
+      "parameters": [
+        "msg"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.print_info:25#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.print_info:25"
+      ],
+      "hash": "14d0a7b4cc50f7215d38fdd61f466d6041c87950025c900ee470e4f637b669a5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-print-info",
+      "summary": "Function for print info",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print"
+      ],
+      "called_by": [
+        "__init__",
+        "create_github_epic_enhanced",
+        "run_enhanced_sync",
+        "create_github_discussion_enhanced",
+        "create_github_issue_enhanced",
+        "sync_category_enhanced",
+        "detect_repo_from_git"
+      ]
+    },
+    {
+      "name": "print_success",
+      "docstring": "",
+      "line_range": [
+        28,
+        29
+      ],
+      "parameters": [
+        "msg"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.print_success:28#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.print_success:28"
+      ],
+      "hash": "a6c70b7d361c8990f3b2e016038adc133b1504d6f794277e58384bfef1203981",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-print-success",
+      "summary": "Function for print success",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print"
+      ],
+      "called_by": [
+        "create_github_epic_enhanced",
+        "run_enhanced_sync",
+        "validate_before_sync",
+        "create_github_issue_enhanced",
+        "main"
+      ]
+    },
+    {
+      "name": "print_warning",
+      "docstring": "",
+      "line_range": [
+        31,
+        32
+      ],
+      "parameters": [
+        "msg"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.print_warning:31#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.print_warning:31"
+      ],
+      "hash": "d79803354ae7d7aa43992934af4bd4e64a8052f2e0c4187e9e0539631e794a48",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-print-warning",
+      "summary": "Function for print warning",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print"
+      ],
+      "called_by": [
+        "_api_request_direct",
+        "create_github_discussion_enhanced",
+        "_api_request_via_cli",
+        "get_github_token",
+        "sync_category_enhanced",
+        "detect_repo_from_git"
+      ]
+    },
+    {
+      "name": "print_error",
+      "docstring": "",
+      "line_range": [
+        34,
+        35
+      ],
+      "parameters": [
+        "msg"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.print_error:34#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.print_error:34"
+      ],
+      "hash": "24e97c2d8259ec49bfeff7329a80cccc1c4cba3061b45475cd7eb03b2eb8f625",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-print-error",
+      "summary": "Function for print error",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print"
+      ],
+      "called_by": [
+        "api_request",
+        "_api_request_direct",
+        "validate_before_sync",
+        "_api_request_via_cli",
+        "main",
+        "sync_category_enhanced"
+      ]
+    },
+    {
+      "name": "print_step",
+      "docstring": "",
+      "line_range": [
+        37,
+        38
+      ],
+      "parameters": [
+        "step",
+        "total",
+        "msg"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.print_step:37#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.print_step:37"
+      ],
+      "hash": "18ba28c320176babe9948d1dda6af979b181ca0d91ab9c9ed9c309006577b0a8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-print-step",
+      "summary": "Function for print step",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print"
+      ],
+      "called_by": [
+        "run_enhanced_sync",
+        "validate_before_sync"
+      ]
+    },
+    {
+      "name": "main",
+      "docstring": "Enhanced CLI interface",
+      "line_range": [
+        620,
+        655
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.main:620#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.main:620"
+      ],
+      "hash": "8867e1872506be22632483739e8d48c74ca0209ac0010c127da5b5c1ab23c0b9",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-main",
+      "summary": "Enhanced CLI interface",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "result.get",
+        "parser.add_argument",
+        "print_error",
+        "argparse.ArgumentParser",
+        "EnhancedGitHubSyncManager",
+        "print_success",
+        "manager.run_enhanced_sync",
+        "len",
+        "parser.parse_args"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        43,
+        44
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.__init__:43#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.__init__:43"
+      ],
+      "hash": "8063a809daa37710bbdacfd7a28f631eca19f103476b7d4918f797630e8c8e9c",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "self.load_sync_log",
+        "GitHubTokenManager",
+        "print_info",
+        "self.detect_repo_from_git",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "load_env_file",
+      "docstring": "Загрузить переменные из .env файла",
+      "line_range": [
+        46,
+        57
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.load_env_file:46#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.load_env_file:46"
+      ],
+      "hash": "27205d7a64c1a290be54445376cc4e8addf52f0c39d9d1b6846c92212c5443ba",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-load-env-file",
+      "summary": "Загрузить переменные из .env файла",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "line.split",
+        "value.strip",
+        "env_file.exists",
+        "line.startswith",
+        "line.strip",
+        "key.strip",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "test_github_token",
+      "docstring": "Проверка работоспособности токена",
+      "line_range": [
+        59,
+        73
+      ],
+      "parameters": [
+        "self",
+        "token"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.test_github_token:59#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.test_github_token:59"
+      ],
+      "hash": "5d4306cd8a9e9dac3ca31340d03cc3e095cfdd8a2d2c76609b569b6ade91a55c",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-test-github-token",
+      "summary": "Проверка работоспособности токена",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "response.json",
+        "requests.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "check_gh_cli",
+      "docstring": "Проверка доступности GitHub CLI",
+      "line_range": [
+        75,
+        82
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.check_gh_cli:75#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.check_gh_cli:75"
+      ],
+      "hash": "d6837f2c885559f0876324ede9a689ad561a712e9019c2dd8d302aa0f8d93f64",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-check-gh-cli",
+      "summary": "Проверка доступности GitHub CLI",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "subprocess.run"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_token_from_gh_cli",
+      "docstring": "Получение токена из GitHub CLI",
+      "line_range": [
+        84,
+        93
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.get_token_from_gh_cli:84#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.get_token_from_gh_cli:84"
+      ],
+      "hash": "dc2c5c8d82769e9df3a3691d9297664845bf16202da8ae18fc5970852e49b74e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-get-token-from-gh-cli",
+      "summary": "Получение токена из GitHub CLI",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "subprocess.run"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_github_token",
+      "docstring": "Получить GitHub токен с multiple fallbacks\n\nReturns:\n    (token, method) где method = 'env' | 'cli' | 'none'",
+      "line_range": [
+        95,
+        117
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.get_github_token:95#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.get_github_token:95"
+      ],
+      "hash": "88497990aa3891985202b3c54ecbbd5c55c9cfcafad471d03db68707ad4e4f38",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-get-github-token",
+      "summary": "Получить GitHub токен с multiple fallbacks\n\nReturns:\n    (token, method) где method = 'env' | 'cli' | 'none'",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self.check_gh_cli",
+        "print_warning",
+        "self.get_token_from_gh_cli",
+        "os.getenv",
+        "self.test_github_token"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        122,
+        164
+      ],
+      "parameters": [
+        "self",
+        "repo_owner",
+        "repo_name",
+        "dry_run"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.__init__:122#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.__init__:122"
+      ],
+      "hash": "617c04e2a1ef3f06ec1c8fb2b83dfd3874ea06eea81b7c0ab00b39a54444f1cc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "self.load_sync_log",
+        "GitHubTokenManager",
+        "print_info",
+        "self.detect_repo_from_git",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "detect_repo_from_git",
+      "docstring": "Автоопределение owner/repo из git remote",
+      "line_range": [
+        166,
+        198
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.detect_repo_from_git:166#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.detect_repo_from_git:166"
+      ],
+      "hash": "fb98e36f5d9d9af5462dd4f9babd5a6337d97d6655af719a1835303c03a4cc5f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-detect-repo-from-git",
+      "summary": "Автоопределение owner/repo из git remote",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "subprocess.run",
+        "url.startswith",
+        "url.split",
+        "path.split",
+        "print_warning",
+        "print_info",
+        "url.replace",
+        "len",
+        "url.endswith"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "load_sync_log",
+      "docstring": "Load previous sync results",
+      "line_range": [
+        200,
+        211
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.load_sync_log:200#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.load_sync_log:200"
+      ],
+      "hash": "97e0d71d371bca9623e23f101b297f99084324754c06cd1fd97e9852f98e98f2",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-load-sync-log",
+      "summary": "Load previous sync results",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "json.load"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "save_sync_log",
+      "docstring": "Save sync log",
+      "line_range": [
+        213,
+        216
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.save_sync_log:213#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.save_sync_log:213"
+      ],
+      "hash": "96dc122d99d530b77dd962de8bbbd6c0bae72a2bfdc53f0d45e28e7c42c07369",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-save-sync-log",
+      "summary": "Save sync log",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "json.dump"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "api_request",
+      "docstring": "Enhanced API request with CLI fallback",
+      "line_range": [
+        218,
+        231
+      ],
+      "parameters": [
+        "self",
+        "method",
+        "endpoint",
+        "data"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.api_request:218#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.api_request:218"
+      ],
+      "hash": "661d311b83ffc175f259f0057173d5e85402b52a3fe40a002ddffcac9db1848c",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-api-request",
+      "summary": "Enhanced API request with CLI fallback",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print_error",
+        "self._api_request_direct",
+        "self._api_request_via_cli",
+        "time.sleep"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_api_request_direct",
+      "docstring": "Direct API request",
+      "line_range": [
+        233,
+        261
+      ],
+      "parameters": [
+        "self",
+        "method",
+        "endpoint",
+        "data"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced._api_request_direct:233#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced._api_request_direct:233"
+      ],
+      "hash": "9d8de219f08af882b606cb29cd48a7d7d346087cbfd3b4b4cdba48c578eb0e76",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced--api-request-direct",
+      "summary": "Direct API request",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private",
+        "public"
+      ],
+      "calls": [
+        "ValueError",
+        "requests.patch",
+        "method.upper",
+        "print_error",
+        "print_warning",
+        "response.json",
+        "requests.get",
+        "requests.post",
+        "int",
+        "response.raise_for_status"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_api_request_via_cli",
+      "docstring": "API request via GitHub CLI",
+      "line_range": [
+        263,
+        293
+      ],
+      "parameters": [
+        "self",
+        "method",
+        "endpoint",
+        "data"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced._api_request_via_cli:263#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced._api_request_via_cli:263"
+      ],
+      "hash": "7948d36db4c5d43f42dec4841de235b479c08e7affd842ab079be83de441f6b5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced--api-request-via-cli",
+      "summary": "API request via GitHub CLI",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private",
+        "public"
+      ],
+      "calls": [
+        "subprocess.run",
+        "json.loads",
+        "method.upper",
+        "cmd.extend",
+        "print_warning",
+        "print_error",
+        "json.dumps"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "create_github_issue_enhanced",
+      "docstring": "Enhanced issue creation (из create_github_issues.py)",
+      "line_range": [
+        295,
+        359
+      ],
+      "parameters": [
+        "self",
+        "item"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.create_github_issue_enhanced:295#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.create_github_issue_enhanced:295"
+      ],
+      "hash": "afcf3b655e830f17273b1c376b1d40ff39b7cf5c5fe2b6b443ce462c46f9f5bd",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-create-github-issue-enhanced",
+      "summary": "Enhanced issue creation (из create_github_issues.py)",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self.api_request",
+        "item.get",
+        "processing_meta.get",
+        "self._format_implementation_notes",
+        "print_info",
+        "print_success",
+        "labels.append",
+        "self._format_acceptance_criteria"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_format_acceptance_criteria",
+      "docstring": "Format acceptance criteria from item metadata",
+      "line_range": [
+        361,
+        380
+      ],
+      "parameters": [
+        "self",
+        "item"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced._format_acceptance_criteria:361#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced._format_acceptance_criteria:361"
+      ],
+      "hash": "0c956157fc1e1f5651cc3122d981b4df0892956133cf23b4f82a8d15a7b7c726",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced--format-acceptance-criteria",
+      "summary": "Format acceptance criteria from item metadata",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "criteria.append",
+        "item.get",
+        "criteria.extend"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_format_implementation_notes",
+      "docstring": "Format implementation notes",
+      "line_range": [
+        382,
+        397
+      ],
+      "parameters": [
+        "self",
+        "item"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced._format_implementation_notes:382#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced._format_implementation_notes:382"
+      ],
+      "hash": "b1768e37072085e6c2c81bf1c5abdb025a1e75c0353585e9767a963371ca49fd",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced--format-implementation-notes",
+      "summary": "Format implementation notes",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "notes.append",
+        "item.get",
+        "processing_meta.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "validate_before_sync",
+      "docstring": "Enhanced validation",
+      "line_range": [
+        399,
+        434
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.validate_before_sync:399#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.validate_before_sync:399"
+      ],
+      "hash": "94e8dc7d321373910a0cd3552dbd6ac9ce8c226630468f89023279374050cec7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-validate-before-sync",
+      "summary": "Enhanced validation",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self.api_request",
+        "print_error",
+        "user_info.get",
+        "repo_info.get",
+        "print_success",
+        "file_path.exists",
+        "print_step"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "run_enhanced_sync",
+      "docstring": "Enhanced sync with full project rollout integration",
+      "line_range": [
+        436,
+        494
+      ],
+      "parameters": [
+        "self",
+        "categories"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.run_enhanced_sync:436#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.run_enhanced_sync:436"
+      ],
+      "hash": "64dd791589163a9bb725da6629d484c11a4f32fa0ca199b19321671d64d07a30",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-run-enhanced-sync",
+      "summary": "Enhanced sync with full project rollout integration",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "result.get",
+        "print_info",
+        "datetime.now",
+        "self.validate_before_sync",
+        "print_success",
+        "print_step",
+        "self.sync_category_enhanced",
+        "self.save_sync_log",
+        "enumerate"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "sync_category_enhanced",
+      "docstring": "Enhanced category sync",
+      "line_range": [
+        496,
+        554
+      ],
+      "parameters": [
+        "self",
+        "category"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.sync_category_enhanced:496#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.sync_category_enhanced:496"
+      ],
+      "hash": "f543b576f5e24f9a74e29d4decbf28c0280948886cb27f556ee58307ba6da7af",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-sync-category-enhanced",
+      "summary": "Enhanced category sync",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "item.get",
+        "result.get",
+        "self.create_github_epic_enhanced",
+        "print_error",
+        "print_warning",
+        "self.create_github_issue_enhanced",
+        "self.item_already_synced",
+        "print_info",
+        "datetime.now",
+        "self.create_github_discussion_enhanced",
+        "file_path.exists",
+        "json.load",
+        "data.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "item_already_synced",
+      "docstring": "Check if item was already synced",
+      "line_range": [
+        556,
+        560
+      ],
+      "parameters": [
+        "self",
+        "item",
+        "category"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.item_already_synced:556#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.item_already_synced:556"
+      ],
+      "hash": "e8c66112f14870d72461eb03d4f277675cd08de326ad6db9a79876f21149a976",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-item-already-synced",
+      "summary": "Check if item was already synced",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "item.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "create_github_epic_enhanced",
+      "docstring": "Enhanced epic creation",
+      "line_range": [
+        562,
+        607
+      ],
+      "parameters": [
+        "self",
+        "item"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.create_github_epic_enhanced:562#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.create_github_epic_enhanced:562"
+      ],
+      "hash": "33b5a4a728f5ec7b6729dfb3f6da2cc45f76be86adf4c30369e010c71579edd8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-create-github-epic-enhanced",
+      "summary": "Enhanced epic creation",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self.api_request",
+        "item.get",
+        "print_success",
+        "print_info"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "create_github_discussion_enhanced",
+      "docstring": "Enhanced discussion creation (placeholder - requires GraphQL)",
+      "line_range": [
+        609,
+        618
+      ],
+      "parameters": [
+        "self",
+        "item"
+      ],
+      "decorators": [],
+      "uid": "scripts.github_sync_manager_enhanced.create_github_discussion_enhanced:609#function",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.create_github_discussion_enhanced:609"
+      ],
+      "hash": "cf88933083291e1dcf0768d399601117d4c6a5a19251dea1cdb8f7ba8b7c755e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-create-github-discussion-enhanced",
+      "summary": "Enhanced discussion creation (placeholder - requires GraphQL)",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print_warning",
+        "item.get",
+        "print_info"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "Colors",
+      "docstring": "",
+      "line_range": [
+        18,
+        23
+      ],
+      "methods": [],
+      "bases": [],
+      "uid": "scripts.github_sync_manager_enhanced.Colors:18#class",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.Colors:18"
+      ],
+      "hash": "d8792eeb7a225947376c101718d32b84225e1d84cc68e05880a7dc1942648a1c",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-colors",
+      "summary": "Class for colors",
+      "summary_source": "heuristic",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "GitHubTokenManager",
+      "docstring": "Управление GitHub токенами (из setup_github_token.sh)",
+      "line_range": [
+        40,
+        117
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            43,
+            44
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.GitHubTokenManager.__init__:43#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.GitHubTokenManager",
+            "scripts.github_sync_manager_enhanced.GitHubTokenManager.__init__:43"
+          ],
+          "hash": "5eab8fcd51d3cd9614a0d391408d2d603386276a12aca2ba96688a7dbac6f04c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-githubtokenmanager---init--",
+          "summary": "Method for githubtokenmanager. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "self.load_sync_log",
+            "GitHubTokenManager",
+            "print_info",
+            "self.detect_repo_from_git",
+            "Path"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "load_env_file",
+          "docstring": "Загрузить переменные из .env файла",
+          "line_range": [
+            46,
+            57
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.GitHubTokenManager.load_env_file:46#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.GitHubTokenManager",
+            "scripts.github_sync_manager_enhanced.GitHubTokenManager.load_env_file:46"
+          ],
+          "hash": "b9951f3e09960daa04fa4e49a573776cf896ac21bcc0d87319bd83cba2132d87",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-githubtokenmanager-load-env-file",
+          "summary": "Загрузить переменные из .env файла",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "open",
+            "line.split",
+            "value.strip",
+            "env_file.exists",
+            "line.startswith",
+            "line.strip",
+            "key.strip",
+            "Path"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "test_github_token",
+          "docstring": "Проверка работоспособности токена",
+          "line_range": [
+            59,
+            73
+          ],
+          "parameters": [
+            "self",
+            "token"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.GitHubTokenManager.test_github_token:59#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.GitHubTokenManager",
+            "scripts.github_sync_manager_enhanced.GitHubTokenManager.test_github_token:59"
+          ],
+          "hash": "2ce69a4e39eea63774c2436033cc1fb297313044cf82bfac0d0b3bb64a3ebf5d",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-githubtokenmanager-test-github-token",
+          "summary": "Проверка работоспособности токена",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "response.json",
+            "requests.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "check_gh_cli",
+          "docstring": "Проверка доступности GitHub CLI",
+          "line_range": [
+            75,
+            82
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.GitHubTokenManager.check_gh_cli:75#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.GitHubTokenManager",
+            "scripts.github_sync_manager_enhanced.GitHubTokenManager.check_gh_cli:75"
+          ],
+          "hash": "243340954a468d567905cf32ca393cf2590d8d136fb753dfd8d9cda181eae6d5",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-githubtokenmanager-check-gh-cli",
+          "summary": "Проверка доступности GitHub CLI",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "subprocess.run"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_token_from_gh_cli",
+          "docstring": "Получение токена из GitHub CLI",
+          "line_range": [
+            84,
+            93
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.GitHubTokenManager.get_token_from_gh_cli:84#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.GitHubTokenManager",
+            "scripts.github_sync_manager_enhanced.GitHubTokenManager.get_token_from_gh_cli:84"
+          ],
+          "hash": "e42b5e32454fcdc10c0dd9b3ecc078989b9a9d86ba6b101b951aae9175f5ad9d",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-githubtokenmanager-get-token-from-gh-cli",
+          "summary": "Получение токена из GitHub CLI",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "subprocess.run"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_github_token",
+          "docstring": "Получить GitHub токен с multiple fallbacks\n\nReturns:\n    (token, method) где method = 'env' | 'cli' | 'none'",
+          "line_range": [
+            95,
+            117
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.GitHubTokenManager.get_github_token:95#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.GitHubTokenManager",
+            "scripts.github_sync_manager_enhanced.GitHubTokenManager.get_github_token:95"
+          ],
+          "hash": "bdd59d1a9d9344bd0d6180c7b051e736338a86eadff29e1d8cb41efd7097e30a",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-githubtokenmanager-get-github-token",
+          "summary": "Получить GitHub токен с multiple fallbacks\n\nReturns:\n    (token, method) где method = 'env' | 'cli' | 'none'",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self.check_gh_cli",
+            "print_warning",
+            "self.get_token_from_gh_cli",
+            "os.getenv",
+            "self.test_github_token"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "scripts.github_sync_manager_enhanced.GitHubTokenManager:40#class",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.GitHubTokenManager:40"
+      ],
+      "hash": "6f8355725dccb91c5553f8e9e1834f3b878fcd0e593cee92e5979a5f7095491f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-githubtokenmanager",
+      "summary": "Управление GitHub токенами (из setup_github_token.sh)",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "EnhancedGitHubSyncManager",
+      "docstring": "Улучшенный GitHub Sync Manager с интеграцией всех лучших практик",
+      "line_range": [
+        119,
+        618
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            122,
+            164
+          ],
+          "parameters": [
+            "self",
+            "repo_owner",
+            "repo_name",
+            "dry_run"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.__init__:122#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.__init__:122"
+          ],
+          "hash": "16117d66f37c971b0d4a7ff41278ba10af5080ed4ebd51572332a87bb8a8eb30",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager---init--",
+          "summary": "Method for enhancedgithubsyncmanager. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "self.load_sync_log",
+            "GitHubTokenManager",
+            "print_info",
+            "self.detect_repo_from_git",
+            "Path"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "detect_repo_from_git",
+          "docstring": "Автоопределение owner/repo из git remote",
+          "line_range": [
+            166,
+            198
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.detect_repo_from_git:166#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.detect_repo_from_git:166"
+          ],
+          "hash": "e1f680b713922df96da7d0d328aa7ef9e55bcd88e8d44da017aa5383320f3e2c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager-detect-repo-from-git",
+          "summary": "Автоопределение owner/repo из git remote",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "subprocess.run",
+            "url.startswith",
+            "url.split",
+            "path.split",
+            "print_warning",
+            "print_info",
+            "url.replace",
+            "len",
+            "url.endswith"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "load_sync_log",
+          "docstring": "Load previous sync results",
+          "line_range": [
+            200,
+            211
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.load_sync_log:200#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.load_sync_log:200"
+          ],
+          "hash": "69525e58c0f74a247b62fed9f07f733c4904c036f7b8c84781d1168b93ec980e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager-load-sync-log",
+          "summary": "Load previous sync results",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "open",
+            "json.load"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "save_sync_log",
+          "docstring": "Save sync log",
+          "line_range": [
+            213,
+            216
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.save_sync_log:213#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.save_sync_log:213"
+          ],
+          "hash": "fea7039ce7b1a2ec3d05067417cc727ab69b51493dcf32a3b97b4fc2ef1c9014",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager-save-sync-log",
+          "summary": "Save sync log",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "open",
+            "json.dump"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "api_request",
+          "docstring": "Enhanced API request with CLI fallback",
+          "line_range": [
+            218,
+            231
+          ],
+          "parameters": [
+            "self",
+            "method",
+            "endpoint",
+            "data"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.api_request:218#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.api_request:218"
+          ],
+          "hash": "f62640e2377d9144eba218e3ef99e6f7a81255f678ff5acb006c18d63741442a",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager-api-request",
+          "summary": "Enhanced API request with CLI fallback",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print_error",
+            "self._api_request_direct",
+            "self._api_request_via_cli",
+            "time.sleep"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_api_request_direct",
+          "docstring": "Direct API request",
+          "line_range": [
+            233,
+            261
+          ],
+          "parameters": [
+            "self",
+            "method",
+            "endpoint",
+            "data"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager._api_request_direct:233#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager._api_request_direct:233"
+          ],
+          "hash": "7902296db61d33698edd032f63166158ffb0b5f7feb6541bab1edcf27adb598f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager--api-request-direct",
+          "summary": "Direct API request",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "ValueError",
+            "requests.patch",
+            "method.upper",
+            "print_error",
+            "print_warning",
+            "response.json",
+            "requests.get",
+            "requests.post",
+            "int",
+            "response.raise_for_status"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_api_request_via_cli",
+          "docstring": "API request via GitHub CLI",
+          "line_range": [
+            263,
+            293
+          ],
+          "parameters": [
+            "self",
+            "method",
+            "endpoint",
+            "data"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager._api_request_via_cli:263#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager._api_request_via_cli:263"
+          ],
+          "hash": "d6911612f561fc1056fda4280e72ee536efc0a47de6e06f40572c30b488b68ce",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager--api-request-via-cli",
+          "summary": "API request via GitHub CLI",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "subprocess.run",
+            "json.loads",
+            "method.upper",
+            "cmd.extend",
+            "print_warning",
+            "print_error",
+            "json.dumps"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "create_github_issue_enhanced",
+          "docstring": "Enhanced issue creation (из create_github_issues.py)",
+          "line_range": [
+            295,
+            359
+          ],
+          "parameters": [
+            "self",
+            "item"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.create_github_issue_enhanced:295#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.create_github_issue_enhanced:295"
+          ],
+          "hash": "a86aabf85e91410f8e30e20cca7cdf77b8f027ed472f2c531b669d2f91abf54e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager-create-github-issue-enhanced",
+          "summary": "Enhanced issue creation (из create_github_issues.py)",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self.api_request",
+            "item.get",
+            "processing_meta.get",
+            "self._format_implementation_notes",
+            "print_info",
+            "print_success",
+            "labels.append",
+            "self._format_acceptance_criteria"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_format_acceptance_criteria",
+          "docstring": "Format acceptance criteria from item metadata",
+          "line_range": [
+            361,
+            380
+          ],
+          "parameters": [
+            "self",
+            "item"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager._format_acceptance_criteria:361#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager._format_acceptance_criteria:361"
+          ],
+          "hash": "aadd725ea1d9d103a265a493c5b6b8e62e370350c159753f4ce95cf6d6f1eff5",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager--format-acceptance-criteria",
+          "summary": "Format acceptance criteria from item metadata",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "criteria.append",
+            "item.get",
+            "criteria.extend"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_format_implementation_notes",
+          "docstring": "Format implementation notes",
+          "line_range": [
+            382,
+            397
+          ],
+          "parameters": [
+            "self",
+            "item"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager._format_implementation_notes:382#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager._format_implementation_notes:382"
+          ],
+          "hash": "6f7bcb9e3555a80685dbc8f5eb33d5cb571f9e558ae6f46ad3620d8e13c0d749",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager--format-implementation-notes",
+          "summary": "Format implementation notes",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "notes.append",
+            "item.get",
+            "processing_meta.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "validate_before_sync",
+          "docstring": "Enhanced validation",
+          "line_range": [
+            399,
+            434
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.validate_before_sync:399#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.validate_before_sync:399"
+          ],
+          "hash": "2742a209a65264118e2d8179da7461d6ff286c2cacafc8052e978c63f80e058b",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager-validate-before-sync",
+          "summary": "Enhanced validation",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self.api_request",
+            "print_error",
+            "user_info.get",
+            "repo_info.get",
+            "print_success",
+            "file_path.exists",
+            "print_step"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "run_enhanced_sync",
+          "docstring": "Enhanced sync with full project rollout integration",
+          "line_range": [
+            436,
+            494
+          ],
+          "parameters": [
+            "self",
+            "categories"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.run_enhanced_sync:436#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.run_enhanced_sync:436"
+          ],
+          "hash": "cdad02f15f346019ff05b5b42ff7ba0126d96de7eaa457e24378b11a93164982",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager-run-enhanced-sync",
+          "summary": "Enhanced sync with full project rollout integration",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "result.get",
+            "print_info",
+            "datetime.now",
+            "self.validate_before_sync",
+            "print_success",
+            "print_step",
+            "self.sync_category_enhanced",
+            "self.save_sync_log",
+            "enumerate"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "sync_category_enhanced",
+          "docstring": "Enhanced category sync",
+          "line_range": [
+            496,
+            554
+          ],
+          "parameters": [
+            "self",
+            "category"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.sync_category_enhanced:496#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.sync_category_enhanced:496"
+          ],
+          "hash": "8a347c354fbbf3c57a1219d326f8adf857c8fe2cde6abdbcaf58a03a5fefcb73",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager-sync-category-enhanced",
+          "summary": "Enhanced category sync",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "open",
+            "item.get",
+            "result.get",
+            "self.create_github_epic_enhanced",
+            "print_error",
+            "print_warning",
+            "self.create_github_issue_enhanced",
+            "self.item_already_synced",
+            "print_info",
+            "datetime.now",
+            "self.create_github_discussion_enhanced",
+            "file_path.exists",
+            "json.load",
+            "data.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "item_already_synced",
+          "docstring": "Check if item was already synced",
+          "line_range": [
+            556,
+            560
+          ],
+          "parameters": [
+            "self",
+            "item",
+            "category"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.item_already_synced:556#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.item_already_synced:556"
+          ],
+          "hash": "1882e7ec1174fec3066c68164dc298e09dc53ceb03d349d089b1801435840b0f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager-item-already-synced",
+          "summary": "Check if item was already synced",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "item.get"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "create_github_epic_enhanced",
+          "docstring": "Enhanced epic creation",
+          "line_range": [
+            562,
+            607
+          ],
+          "parameters": [
+            "self",
+            "item"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.create_github_epic_enhanced:562#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.create_github_epic_enhanced:562"
+          ],
+          "hash": "09286d0e1e7a9b23bef65e663e7c65c75feeefb2eb8ab17d97c6df2d8dd0040c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager-create-github-epic-enhanced",
+          "summary": "Enhanced epic creation",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self.api_request",
+            "item.get",
+            "print_success",
+            "print_info"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "create_github_discussion_enhanced",
+          "docstring": "Enhanced discussion creation (placeholder - requires GraphQL)",
+          "line_range": [
+            609,
+            618
+          ],
+          "parameters": [
+            "self",
+            "item"
+          ],
+          "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.create_github_discussion_enhanced:609#method",
+          "uid_components": [
+            "scripts",
+            "scripts.github_sync_manager_enhanced",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager",
+            "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager.create_github_discussion_enhanced:609"
+          ],
+          "hash": "98fe714e937e759d32f935128019d42d2fabbaf2c0d90cccd4e91300db20f246",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager-create-github-discussion-enhanced",
+          "summary": "Enhanced discussion creation (placeholder - requires GraphQL)",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print_warning",
+            "item.get",
+            "print_info"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager:119#class",
+      "uid_components": [
+        "scripts",
+        "scripts.github_sync_manager_enhanced",
+        "scripts.github_sync_manager_enhanced.EnhancedGitHubSyncManager:119"
+      ],
+      "hash": "d17c20065299e8df72f0d24cb409d6b524cfca8fd31c3c0e8076ef99219abf83",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-github-sync-manager-enhanced-enhancedgithubsyncmanager",
+      "summary": "Улучшенный GitHub Sync Manager с интеграцией всех лучших практик",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "print",
+    "print",
+    "print",
+    "print",
+    "print",
+    "result.get",
+    "parser.add_argument",
+    "print_error",
+    "argparse.ArgumentParser",
+    "EnhancedGitHubSyncManager",
+    "print_success",
+    "manager.run_enhanced_sync",
+    "len",
+    "parser.parse_args",
+    "self.load_sync_log",
+    "GitHubTokenManager",
+    "print_info",
+    "self.detect_repo_from_git",
+    "Path",
+    "open",
+    "line.split",
+    "value.strip",
+    "env_file.exists",
+    "line.startswith",
+    "line.strip",
+    "key.strip",
+    "Path",
+    "response.json",
+    "requests.get",
+    "subprocess.run",
+    "subprocess.run",
+    "self.check_gh_cli",
+    "print_warning",
+    "self.get_token_from_gh_cli",
+    "os.getenv",
+    "self.test_github_token",
+    "self.load_sync_log",
+    "GitHubTokenManager",
+    "print_info",
+    "self.detect_repo_from_git",
+    "Path",
+    "subprocess.run",
+    "url.startswith",
+    "url.split",
+    "path.split",
+    "print_warning",
+    "print_info",
+    "url.replace",
+    "len",
+    "url.endswith",
+    "open",
+    "json.load",
+    "open",
+    "json.dump",
+    "print_error",
+    "self._api_request_direct",
+    "self._api_request_via_cli",
+    "time.sleep",
+    "ValueError",
+    "requests.patch",
+    "method.upper",
+    "print_error",
+    "print_warning",
+    "response.json",
+    "requests.get",
+    "requests.post",
+    "int",
+    "response.raise_for_status",
+    "subprocess.run",
+    "json.loads",
+    "method.upper",
+    "cmd.extend",
+    "print_warning",
+    "print_error",
+    "json.dumps",
+    "self.api_request",
+    "item.get",
+    "processing_meta.get",
+    "self._format_implementation_notes",
+    "print_info",
+    "print_success",
+    "labels.append",
+    "self._format_acceptance_criteria",
+    "criteria.append",
+    "item.get",
+    "criteria.extend",
+    "notes.append",
+    "item.get",
+    "processing_meta.get",
+    "self.api_request",
+    "print_error",
+    "user_info.get",
+    "repo_info.get",
+    "print_success",
+    "file_path.exists",
+    "print_step",
+    "print",
+    "result.get",
+    "print_info",
+    "datetime.now",
+    "self.validate_before_sync",
+    "print_success",
+    "print_step",
+    "self.sync_category_enhanced",
+    "self.save_sync_log",
+    "enumerate",
+    "open",
+    "item.get",
+    "result.get",
+    "self.create_github_epic_enhanced",
+    "print_error",
+    "print_warning",
+    "self.create_github_issue_enhanced",
+    "self.item_already_synced",
+    "print_info",
+    "datetime.now",
+    "self.create_github_discussion_enhanced",
+    "file_path.exists",
+    "json.load",
+    "data.get",
+    "item.get",
+    "self.api_request",
+    "item.get",
+    "print_success",
+    "print_info",
+    "print_warning",
+    "item.get",
+    "print_info"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.782997",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:87c5a7094ea7956b",
+    "lines_of_code": 31
+  }
+}

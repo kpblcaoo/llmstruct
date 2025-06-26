@@ -1,0 +1,113 @@
+{
+  "module_info": {
+    "uid": "llmstruct.modules.cli.copilot",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.modules.cli.copilot with 1 functions",
+    "hash": "sha256:ad607a2302a9617a",
+    "dependencies": [
+      "config_path",
+      "f",
+      "layers",
+      "logging",
+      "manager",
+      "shutil",
+      "template_path"
+    ],
+    "exports": [
+      "copilot"
+    ]
+  },
+  "functions": [
+    {
+      "name": "copilot",
+      "docstring": "Copilot integration and context management.",
+      "line_range": [
+        5,
+        113
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.copilot.copilot:5#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.copilot",
+        "llmstruct.modules.cli.copilot.copilot:5"
+      ],
+      "hash": "5dd7c89f49f08508f5dbb6e1164d86e79026a09d907896c772e50a54872ac543",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-copilot-copilot",
+      "summary": "Copilot integration and context management.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "logging.info",
+        "getattr",
+        "manager.validate_change",
+        "initialize_copilot",
+        "config_path.exists",
+        "layers.split",
+        "manager.load_context_layer",
+        "manager.get_context_status",
+        "Path",
+        "f.write",
+        "open",
+        "manager.close",
+        "hasattr",
+        "manager.unload_context_layer",
+        "smart_suggest",
+        "logging.error",
+        "manager.refresh_all_contexts",
+        "shutil.copy",
+        "template_path.exists",
+        "manager.export_context",
+        "enumerate"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "print",
+    "logging.info",
+    "getattr",
+    "manager.validate_change",
+    "initialize_copilot",
+    "config_path.exists",
+    "layers.split",
+    "manager.load_context_layer",
+    "manager.get_context_status",
+    "Path",
+    "f.write",
+    "open",
+    "manager.close",
+    "hasattr",
+    "manager.unload_context_layer",
+    "smart_suggest",
+    "logging.error",
+    "manager.refresh_all_contexts",
+    "shutil.copy",
+    "template_path.exists",
+    "manager.export_context",
+    "enumerate"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.864752",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:ad607a2302a9617a",
+    "lines_of_code": 1
+  }
+}

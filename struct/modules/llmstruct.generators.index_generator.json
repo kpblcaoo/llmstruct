@@ -1,0 +1,186 @@
+{
+  "module_info": {
+    "uid": "llmstruct.generators.index_generator",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.generators.index_generator with 3 functions",
+    "hash": "sha256:64936efb153100c7",
+    "dependencies": [
+      "added",
+      "cls",
+      "deleted",
+      "e",
+      "entities",
+      "func",
+      "json",
+      "method",
+      "modified",
+      "module",
+      "new_entities",
+      "old_entities",
+      "struct_data"
+    ],
+    "exports": [
+      "diff_by_hash",
+      "generate_index_json",
+      "save_index_json"
+    ]
+  },
+  "functions": [
+    {
+      "name": "generate_index_json",
+      "docstring": "Generate index.json manifest from struct data.\n\nArgs:\n    struct_data: Full struct.json data\n    \nReturns:\n    Dict containing index manifest with uid → hash mappings",
+      "line_range": [
+        11,
+        88
+      ],
+      "parameters": [
+        "struct_data"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.generators.index_generator.generate_index_json:11#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.generators",
+        "llmstruct.generators.index_generator",
+        "llmstruct.generators.index_generator.generate_index_json:11"
+      ],
+      "hash": "97e4b13ed0f79cf6c0a87c1ec363f711d073f8d06dcebe828e9c8f10e36635a5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-generators-index-generator-generate-index-json",
+      "summary": "Generate index.json manifest from struct data",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "e.get",
+        "set",
+        "entities.append",
+        "cls.get",
+        "method.get",
+        "module.get",
+        "struct_data.get",
+        "list",
+        "len",
+        "func.get"
+      ],
+      "called_by": [
+        "save_index_json"
+      ]
+    },
+    {
+      "name": "save_index_json",
+      "docstring": "Save index.json to file.\n\nArgs:\n    struct_data: Full struct.json data\n    output_path: Path to save index.json",
+      "line_range": [
+        91,
+        103
+      ],
+      "parameters": [
+        "struct_data",
+        "output_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.generators.index_generator.save_index_json:91#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.generators",
+        "llmstruct.generators.index_generator",
+        "llmstruct.generators.index_generator.save_index_json:91"
+      ],
+      "hash": "bb67555ab5325d97048b733453acb0c4e52c1a387bc588764564a19a1f47ed2d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-generators-index-generator-save-index-json",
+      "summary": "Save index.json to file",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "generate_index_json",
+        "json.dump"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "diff_by_hash",
+      "docstring": "Compare two index.json files and return differences.\n\nArgs:\n    old_index_path: Path to old index.json\n    new_index_path: Path to new index.json\n    \nReturns:\n    Dict with added, modified, deleted entities",
+      "line_range": [
+        106,
+        163
+      ],
+      "parameters": [
+        "old_index_path",
+        "new_index_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.generators.index_generator.diff_by_hash:106#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.generators",
+        "llmstruct.generators.index_generator",
+        "llmstruct.generators.index_generator.diff_by_hash:106"
+      ],
+      "hash": "beea2d513084c9ad30b02c6921011cf799c4126b889762ba275aacbeda586560",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-generators-index-generator-diff-by-hash",
+      "summary": "Compare two index.json files and return differences",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "deleted.append",
+        "open",
+        "old_entities.items",
+        "json.load",
+        "new_entities.items",
+        "len",
+        "modified.append",
+        "added.append"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "e.get",
+    "set",
+    "entities.append",
+    "cls.get",
+    "method.get",
+    "module.get",
+    "struct_data.get",
+    "list",
+    "len",
+    "func.get",
+    "open",
+    "generate_index_json",
+    "json.dump",
+    "deleted.append",
+    "open",
+    "old_entities.items",
+    "json.load",
+    "new_entities.items",
+    "len",
+    "modified.append",
+    "added.append"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.852186",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:64936efb153100c7",
+    "lines_of_code": 3
+  }
+}

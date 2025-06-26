@@ -1,0 +1,1143 @@
+{
+  "module_info": {
+    "uid": "llmstruct.parsers.universal_converter",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.parsers.universal_converter with 13 functions and 1 classes",
+    "hash": "sha256:e9cd143995835578",
+    "dependencies": [
+      "LanguageDetector",
+      "all_modules",
+      "all_toc",
+      "argparse",
+      "converter",
+      "f",
+      "files",
+      "json",
+      "language",
+      "language_results",
+      "languages",
+      "logger",
+      "m",
+      "module_data",
+      "modules",
+      "os",
+      "parser",
+      "result",
+      "self",
+      "stats",
+      "toc",
+      "traceback"
+    ],
+    "exports": [
+      "UniversalConverter",
+      "convert_go_project",
+      "convert_javascript_project",
+      "convert_multi_language_project",
+      "convert_project",
+      "convert_python_project",
+      "detect_language",
+      "detect_project_languages",
+      "get_project_files",
+      "main"
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "docstring": "CLI interface for universal converter",
+      "line_range": [
+        313,
+        366
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "llmstruct.parsers.universal_converter.main:313#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.universal_converter",
+        "llmstruct.parsers.universal_converter.main:313"
+      ],
+      "hash": "fe3ede5a83e750e6391b8f84d2c5df8772aa76f9c676f685703e2179f3f9e9a6",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-universal-converter-main",
+      "summary": "CLI interface for universal converter",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "exit",
+        "open",
+        "result.get",
+        "parser.add_argument",
+        "argparse.ArgumentParser",
+        "ConverterConfig",
+        "logger.error",
+        "UniversalConverter",
+        "json.dumps",
+        "stats.get",
+        "converter.convert_multi_language_project",
+        "converter.convert_project",
+        "traceback.print_exc",
+        "Language",
+        "f.write",
+        "parser.parse_args"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        36,
+        39
+      ],
+      "parameters": [
+        "self",
+        "config"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.universal_converter.__init__:36#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.universal_converter",
+        "llmstruct.parsers.universal_converter.__init__:36"
+      ],
+      "hash": "92a4ada9933ceea2efe34a7dfb288dc2b2b3119ef0f52f0fd657d9f376ad6954",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-universal-converter---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "GoAnalyzer",
+        "ConverterConfig",
+        "JavaScriptParser"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "detect_language",
+      "docstring": "Detect programming language from file extension",
+      "line_range": [
+        41,
+        43
+      ],
+      "parameters": [
+        "self",
+        "file_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.universal_converter.detect_language:41#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.universal_converter",
+        "llmstruct.parsers.universal_converter.detect_language:41"
+      ],
+      "hash": "323e4f3d27acb83d96a2a5a011bbaafe9b2ffea6515245b1f6159fb12e90dd34",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-universal-converter-detect-language",
+      "summary": "Detect programming language from file extension",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "LanguageDetector.detect_language"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "detect_project_languages",
+      "docstring": "Detect all languages in project and count files",
+      "line_range": [
+        45,
+        47
+      ],
+      "parameters": [
+        "self",
+        "project_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.universal_converter.detect_project_languages:45#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.universal_converter",
+        "llmstruct.parsers.universal_converter.detect_project_languages:45"
+      ],
+      "hash": "a7c6830c0e61e75b3c8e147cf36c0498be21923370128e30b2587ce61299abd2",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-universal-converter-detect-project-languages",
+      "summary": "Detect all languages in project and count files",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "LanguageDetector.detect_project_languages"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_project_files",
+      "docstring": "Get all relevant files for conversion",
+      "line_range": [
+        49,
+        76
+      ],
+      "parameters": [
+        "self",
+        "project_path",
+        "language"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.universal_converter.get_project_files:49#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.universal_converter",
+        "llmstruct.parsers.universal_converter.get_project_files:49"
+      ],
+      "hash": "fede24ffe5e655175df930c9760219b1f199c01ccf672558a64f1d31e8b5865e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-universal-converter-get-project-files",
+      "summary": "Get all relevant files for conversion",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "files.append",
+        "any",
+        "os.walk",
+        "self.detect_language"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "convert_python_project",
+      "docstring": "Convert Python project to llmstruct format",
+      "line_range": [
+        78,
+        109
+      ],
+      "parameters": [
+        "self",
+        "project_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.universal_converter.convert_python_project:78#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.universal_converter",
+        "llmstruct.parsers.universal_converter.convert_python_project:78"
+      ],
+      "hash": "eeebe9086503522655aa89041dd49f2863bb4c37009b5916c0217b03332a4de4",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-universal-converter-convert-python-project",
+      "summary": "Convert Python project to llmstruct format",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logger.info",
+        "self._build_project_structure",
+        "analyze_python",
+        "toc.append",
+        "self.get_project_files",
+        "logger.warning",
+        "len",
+        "module_data.get",
+        "modules.append"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "convert_go_project",
+      "docstring": "Convert Go project to llmstruct format",
+      "line_range": [
+        111,
+        128
+      ],
+      "parameters": [
+        "self",
+        "project_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.universal_converter.convert_go_project:111#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.universal_converter",
+        "llmstruct.parsers.universal_converter.convert_go_project:111"
+      ],
+      "hash": "3b55f91cc1169a0c2f15f2d1212d209780b68551b554384e8f8f4be0a7604c14",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-universal-converter-convert-go-project",
+      "summary": "Convert Go project to llmstruct format",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "self._build_empty_project_structure",
+        "logger.info",
+        "convert_to_llmstruct_format",
+        "logger.error"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "convert_javascript_project",
+      "docstring": "Convert JavaScript project to llmstruct format",
+      "line_range": [
+        130,
+        161
+      ],
+      "parameters": [
+        "self",
+        "project_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.universal_converter.convert_javascript_project:130#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.universal_converter",
+        "llmstruct.parsers.universal_converter.convert_javascript_project:130"
+      ],
+      "hash": "15797be0ac26b8ccf6ca6b1ea79fcf8a4b7d0dfb04dbb0ef3dc94b5bc9a82164",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-universal-converter-convert-javascript-project",
+      "summary": "Convert JavaScript project to llmstruct format",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logger.info",
+        "self._build_project_structure",
+        "toc.append",
+        "self.get_project_files",
+        "logger.warning",
+        "len",
+        "module_data.get",
+        "modules.append"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "convert_project",
+      "docstring": "Convert any project to llmstruct format",
+      "line_range": [
+        163,
+        188
+      ],
+      "parameters": [
+        "self",
+        "project_path",
+        "language"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.universal_converter.convert_project:163#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.universal_converter",
+        "llmstruct.parsers.universal_converter.convert_project:163"
+      ],
+      "hash": "a91fc4fa793193a3478bb6e07d39635671c4c7ea8d59de8f8e0dadf02318f21b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-universal-converter-convert-project",
+      "summary": "Convert any project to llmstruct format",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "ValueError",
+        "logger.info",
+        "self.convert_go_project",
+        "self.detect_project_languages",
+        "self.convert_python_project",
+        "languages.keys",
+        "NotImplementedError",
+        "max",
+        "self.convert_javascript_project"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "convert_multi_language_project",
+      "docstring": "Convert multi-language project with separate sections per language",
+      "line_range": [
+        190,
+        220
+      ],
+      "parameters": [
+        "self",
+        "project_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.universal_converter.convert_multi_language_project:190#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.universal_converter",
+        "llmstruct.parsers.universal_converter.convert_multi_language_project:190"
+      ],
+      "hash": "6fc8040d78d1c780ccd95fb20dc605fb97c7c47f7ac4c01fca89ea6c5dade735",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-universal-converter-convert-multi-language-project",
+      "summary": "Convert multi-language project with separate sections per language",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "ValueError",
+        "logger.info",
+        "self.convert_go_project",
+        "self.detect_project_languages",
+        "logger.error",
+        "self.convert_python_project",
+        "logger.warning",
+        "languages.keys",
+        "self._merge_language_results",
+        "self.convert_javascript_project"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_build_project_structure",
+      "docstring": "Build standard llmstruct project structure",
+      "line_range": [
+        222,
+        250
+      ],
+      "parameters": [
+        "self",
+        "language",
+        "project_path",
+        "modules",
+        "toc"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.universal_converter._build_project_structure:222#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.universal_converter",
+        "llmstruct.parsers.universal_converter._build_project_structure:222"
+      ],
+      "hash": "d1f9263af0ea948b3097a2badb09575388efb3a55178d02205d28f4f9ff9bba0",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-universal-converter--build-project-structure",
+      "summary": "Build standard llmstruct project structure",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "len",
+        "m.get",
+        "sum",
+        "language.title"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_build_empty_project_structure",
+      "docstring": "Build empty structure when conversion fails",
+      "line_range": [
+        252,
+        267
+      ],
+      "parameters": [
+        "self",
+        "language",
+        "project_path",
+        "error"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.universal_converter._build_empty_project_structure:252#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.universal_converter",
+        "llmstruct.parsers.universal_converter._build_empty_project_structure:252"
+      ],
+      "hash": "183a30cd4a7f4a468c2af98e9f7076d028ac1c2e17eba10346b7287bcbe660c0",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-universal-converter--build-empty-project-structure",
+      "summary": "Build empty structure when conversion fails",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "_merge_language_results",
+      "docstring": "Merge multiple language results into unified structure",
+      "line_range": [
+        269,
+        310
+      ],
+      "parameters": [
+        "self",
+        "project_path",
+        "language_results"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.universal_converter._merge_language_results:269#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.universal_converter",
+        "llmstruct.parsers.universal_converter._merge_language_results:269"
+      ],
+      "hash": "632fab77b6aa0544e722ef2a2a6550b7d32088729a96c4adf4f59df77172c8f1",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-universal-converter--merge-language-results",
+      "summary": "Merge multiple language results into unified structure",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "result.get",
+        "list",
+        "all_toc.append",
+        "language_results.items",
+        "stats.get",
+        "all_modules.append",
+        "language_results.keys"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "UniversalConverter",
+      "docstring": "Universal code converter for any programming language",
+      "line_range": [
+        33,
+        310
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            36,
+            39
+          ],
+          "parameters": [
+            "self",
+            "config"
+          ],
+          "uid": "llmstruct.parsers.universal_converter.UniversalConverter.__init__:36#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.universal_converter",
+            "llmstruct.parsers.universal_converter.UniversalConverter",
+            "llmstruct.parsers.universal_converter.UniversalConverter.__init__:36"
+          ],
+          "hash": "72ab193439b8d6339c00a4855a7a366dc8e40203b3f25b500009c0649c7a9127",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-universal-converter-universalconverter---init--",
+          "summary": "Method for universalconverter. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "GoAnalyzer",
+            "ConverterConfig",
+            "JavaScriptParser"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "detect_language",
+          "docstring": "Detect programming language from file extension",
+          "line_range": [
+            41,
+            43
+          ],
+          "parameters": [
+            "self",
+            "file_path"
+          ],
+          "uid": "llmstruct.parsers.universal_converter.UniversalConverter.detect_language:41#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.universal_converter",
+            "llmstruct.parsers.universal_converter.UniversalConverter",
+            "llmstruct.parsers.universal_converter.UniversalConverter.detect_language:41"
+          ],
+          "hash": "e82e4983ec7bf9ced4143f6552313b3f0adf3282e462902308f80182fe881087",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-universal-converter-universalconverter-detect-language",
+          "summary": "Detect programming language from file extension",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "LanguageDetector.detect_language"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "detect_project_languages",
+          "docstring": "Detect all languages in project and count files",
+          "line_range": [
+            45,
+            47
+          ],
+          "parameters": [
+            "self",
+            "project_path"
+          ],
+          "uid": "llmstruct.parsers.universal_converter.UniversalConverter.detect_project_languages:45#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.universal_converter",
+            "llmstruct.parsers.universal_converter.UniversalConverter",
+            "llmstruct.parsers.universal_converter.UniversalConverter.detect_project_languages:45"
+          ],
+          "hash": "27ce302c47aa78ceb3a19209855a7f210a028be108c9006a5b98db5a6cf122c5",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-universal-converter-universalconverter-detect-project-languages",
+          "summary": "Detect all languages in project and count files",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "LanguageDetector.detect_project_languages"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_project_files",
+          "docstring": "Get all relevant files for conversion",
+          "line_range": [
+            49,
+            76
+          ],
+          "parameters": [
+            "self",
+            "project_path",
+            "language"
+          ],
+          "uid": "llmstruct.parsers.universal_converter.UniversalConverter.get_project_files:49#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.universal_converter",
+            "llmstruct.parsers.universal_converter.UniversalConverter",
+            "llmstruct.parsers.universal_converter.UniversalConverter.get_project_files:49"
+          ],
+          "hash": "d0714393b90e5f25e5bd435201db2593db681567b2df43418391c063390c25f5",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-universal-converter-universalconverter-get-project-files",
+          "summary": "Get all relevant files for conversion",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "files.append",
+            "any",
+            "os.walk",
+            "self.detect_language"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "convert_python_project",
+          "docstring": "Convert Python project to llmstruct format",
+          "line_range": [
+            78,
+            109
+          ],
+          "parameters": [
+            "self",
+            "project_path"
+          ],
+          "uid": "llmstruct.parsers.universal_converter.UniversalConverter.convert_python_project:78#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.universal_converter",
+            "llmstruct.parsers.universal_converter.UniversalConverter",
+            "llmstruct.parsers.universal_converter.UniversalConverter.convert_python_project:78"
+          ],
+          "hash": "4a2ddfea868ef9b6a2e74c378b51be23e8b99065a8e5005cd8700fe733ff4736",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-universal-converter-universalconverter-convert-python-project",
+          "summary": "Convert Python project to llmstruct format",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "logger.info",
+            "self._build_project_structure",
+            "analyze_python",
+            "toc.append",
+            "self.get_project_files",
+            "logger.warning",
+            "len",
+            "module_data.get",
+            "modules.append"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "convert_go_project",
+          "docstring": "Convert Go project to llmstruct format",
+          "line_range": [
+            111,
+            128
+          ],
+          "parameters": [
+            "self",
+            "project_path"
+          ],
+          "uid": "llmstruct.parsers.universal_converter.UniversalConverter.convert_go_project:111#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.universal_converter",
+            "llmstruct.parsers.universal_converter.UniversalConverter",
+            "llmstruct.parsers.universal_converter.UniversalConverter.convert_go_project:111"
+          ],
+          "hash": "feaee83d710076a2867506d0a7e5b413842a86111598911d946e0989192355cc",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-universal-converter-universalconverter-convert-go-project",
+          "summary": "Convert Go project to llmstruct format",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "str",
+            "self._build_empty_project_structure",
+            "logger.info",
+            "convert_to_llmstruct_format",
+            "logger.error"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "convert_javascript_project",
+          "docstring": "Convert JavaScript project to llmstruct format",
+          "line_range": [
+            130,
+            161
+          ],
+          "parameters": [
+            "self",
+            "project_path"
+          ],
+          "uid": "llmstruct.parsers.universal_converter.UniversalConverter.convert_javascript_project:130#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.universal_converter",
+            "llmstruct.parsers.universal_converter.UniversalConverter",
+            "llmstruct.parsers.universal_converter.UniversalConverter.convert_javascript_project:130"
+          ],
+          "hash": "c2f6ad4d34ae616c6bbcdc32f62218d541c4df6591c5183ec328e1e9680c80c1",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-universal-converter-universalconverter-convert-javascript-project",
+          "summary": "Convert JavaScript project to llmstruct format",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "logger.info",
+            "self._build_project_structure",
+            "toc.append",
+            "self.get_project_files",
+            "logger.warning",
+            "len",
+            "module_data.get",
+            "modules.append"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "convert_project",
+          "docstring": "Convert any project to llmstruct format",
+          "line_range": [
+            163,
+            188
+          ],
+          "parameters": [
+            "self",
+            "project_path",
+            "language"
+          ],
+          "uid": "llmstruct.parsers.universal_converter.UniversalConverter.convert_project:163#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.universal_converter",
+            "llmstruct.parsers.universal_converter.UniversalConverter",
+            "llmstruct.parsers.universal_converter.UniversalConverter.convert_project:163"
+          ],
+          "hash": "1d49f3ac2e6821673a48ac87e9f801c55bd1e41e5f51bd2217841dc4793aca61",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-universal-converter-universalconverter-convert-project",
+          "summary": "Convert any project to llmstruct format",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "ValueError",
+            "logger.info",
+            "self.convert_go_project",
+            "self.detect_project_languages",
+            "self.convert_python_project",
+            "languages.keys",
+            "NotImplementedError",
+            "max",
+            "self.convert_javascript_project"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "convert_multi_language_project",
+          "docstring": "Convert multi-language project with separate sections per language",
+          "line_range": [
+            190,
+            220
+          ],
+          "parameters": [
+            "self",
+            "project_path"
+          ],
+          "uid": "llmstruct.parsers.universal_converter.UniversalConverter.convert_multi_language_project:190#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.universal_converter",
+            "llmstruct.parsers.universal_converter.UniversalConverter",
+            "llmstruct.parsers.universal_converter.UniversalConverter.convert_multi_language_project:190"
+          ],
+          "hash": "b26de1066705771520d5c523ebb57d5c652a34534b416188445ffabd7924d3d0",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-universal-converter-universalconverter-convert-multi-language-project",
+          "summary": "Convert multi-language project with separate sections per language",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "ValueError",
+            "logger.info",
+            "self.convert_go_project",
+            "self.detect_project_languages",
+            "logger.error",
+            "self.convert_python_project",
+            "logger.warning",
+            "languages.keys",
+            "self._merge_language_results",
+            "self.convert_javascript_project"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_build_project_structure",
+          "docstring": "Build standard llmstruct project structure",
+          "line_range": [
+            222,
+            250
+          ],
+          "parameters": [
+            "self",
+            "language",
+            "project_path",
+            "modules",
+            "toc"
+          ],
+          "uid": "llmstruct.parsers.universal_converter.UniversalConverter._build_project_structure:222#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.universal_converter",
+            "llmstruct.parsers.universal_converter.UniversalConverter",
+            "llmstruct.parsers.universal_converter.UniversalConverter._build_project_structure:222"
+          ],
+          "hash": "8ab72a9ef1dbcbacce2808575787f6878a5aef452d3e2db3f08007df5546b6ea",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-universal-converter-universalconverter--build-project-structure",
+          "summary": "Build standard llmstruct project structure",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "len",
+            "m.get",
+            "sum",
+            "language.title"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_build_empty_project_structure",
+          "docstring": "Build empty structure when conversion fails",
+          "line_range": [
+            252,
+            267
+          ],
+          "parameters": [
+            "self",
+            "language",
+            "project_path",
+            "error"
+          ],
+          "uid": "llmstruct.parsers.universal_converter.UniversalConverter._build_empty_project_structure:252#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.universal_converter",
+            "llmstruct.parsers.universal_converter.UniversalConverter",
+            "llmstruct.parsers.universal_converter.UniversalConverter._build_empty_project_structure:252"
+          ],
+          "hash": "f4e08305f0d98c66a950aeef1538e6d45344f48e18f525e4373c1a8756663697",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-universal-converter-universalconverter--build-empty-project-structure",
+          "summary": "Build empty structure when conversion fails",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "_merge_language_results",
+          "docstring": "Merge multiple language results into unified structure",
+          "line_range": [
+            269,
+            310
+          ],
+          "parameters": [
+            "self",
+            "project_path",
+            "language_results"
+          ],
+          "uid": "llmstruct.parsers.universal_converter.UniversalConverter._merge_language_results:269#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.parsers",
+            "llmstruct.parsers.universal_converter",
+            "llmstruct.parsers.universal_converter.UniversalConverter",
+            "llmstruct.parsers.universal_converter.UniversalConverter._merge_language_results:269"
+          ],
+          "hash": "67d9d2b57113fc7bde1fe75013fd47598ec8cb159aba787bdab55b5825646fc2",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-parsers-universal-converter-universalconverter--merge-language-results",
+          "summary": "Merge multiple language results into unified structure",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "result.get",
+            "list",
+            "all_toc.append",
+            "language_results.items",
+            "stats.get",
+            "all_modules.append",
+            "language_results.keys"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.parsers.universal_converter.UniversalConverter:33#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.universal_converter",
+        "llmstruct.parsers.universal_converter.UniversalConverter:33"
+      ],
+      "hash": "30c9b53ce0d527167956398eb6af62dbefea2df555025dc32053de77a0af13e9",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-universal-converter-universalconverter",
+      "summary": "Universal code converter for any programming language",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "print",
+    "exit",
+    "open",
+    "result.get",
+    "parser.add_argument",
+    "argparse.ArgumentParser",
+    "ConverterConfig",
+    "logger.error",
+    "UniversalConverter",
+    "json.dumps",
+    "stats.get",
+    "converter.convert_multi_language_project",
+    "converter.convert_project",
+    "traceback.print_exc",
+    "Language",
+    "f.write",
+    "parser.parse_args",
+    "GoAnalyzer",
+    "ConverterConfig",
+    "JavaScriptParser",
+    "LanguageDetector.detect_language",
+    "LanguageDetector.detect_project_languages",
+    "files.append",
+    "any",
+    "os.walk",
+    "self.detect_language",
+    "logger.info",
+    "self._build_project_structure",
+    "analyze_python",
+    "toc.append",
+    "self.get_project_files",
+    "logger.warning",
+    "len",
+    "module_data.get",
+    "modules.append",
+    "str",
+    "self._build_empty_project_structure",
+    "logger.info",
+    "convert_to_llmstruct_format",
+    "logger.error",
+    "logger.info",
+    "self._build_project_structure",
+    "toc.append",
+    "self.get_project_files",
+    "logger.warning",
+    "len",
+    "module_data.get",
+    "modules.append",
+    "ValueError",
+    "logger.info",
+    "self.convert_go_project",
+    "self.detect_project_languages",
+    "self.convert_python_project",
+    "languages.keys",
+    "NotImplementedError",
+    "max",
+    "self.convert_javascript_project",
+    "ValueError",
+    "logger.info",
+    "self.convert_go_project",
+    "self.detect_project_languages",
+    "logger.error",
+    "self.convert_python_project",
+    "logger.warning",
+    "languages.keys",
+    "self._merge_language_results",
+    "self.convert_javascript_project",
+    "len",
+    "m.get",
+    "sum",
+    "language.title",
+    "result.get",
+    "list",
+    "all_toc.append",
+    "language_results.items",
+    "stats.get",
+    "all_modules.append",
+    "language_results.keys"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.847579",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:e9cd143995835578",
+    "lines_of_code": 14
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "module_info": {
+    "uid": "scripts.fix_github_script",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.fix_github_script with 1 functions",
+    "hash": "sha256:440c6fb3d09b4278",
+    "dependencies": [
+      "content",
+      "f"
+    ],
+    "exports": [
+      "fix_json_loading"
+    ]
+  },
+  "functions": [
+    {
+      "name": "fix_json_loading",
+      "docstring": "Исправить загрузку JSON данных",
+      "line_range": [
+        11,
+        42
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.fix_github_script.fix_json_loading:11#function",
+      "uid_components": [
+        "scripts",
+        "scripts.fix_github_script",
+        "scripts.fix_github_script.fix_json_loading:11"
+      ],
+      "hash": "c1d4029f0dd43b68bfc75a2b6f9c96983e67fb7a14292a87802def8bce6d11ab",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-fix-github-script-fix-json-loading",
+      "summary": "Исправить загрузку JSON данных",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "f.read",
+        "open",
+        "content.replace",
+        "f.write",
+        "Path"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "print",
+    "f.read",
+    "open",
+    "content.replace",
+    "f.write",
+    "Path"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.770449",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:440c6fb3d09b4278",
+    "lines_of_code": 1
+  }
+}

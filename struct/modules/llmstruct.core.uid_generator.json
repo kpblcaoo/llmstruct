@@ -1,0 +1,540 @@
+{
+  "module_info": {
+    "uid": "llmstruct.core.uid_generator",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.core.uid_generator with 11 functions and 1 classes",
+    "hash": "sha256:8b874ccd981cdc8b",
+    "dependencies": [
+      "combined",
+      "components",
+      "content",
+      "current_path",
+      "duplicates",
+      "entity",
+      "entity_name",
+      "existing",
+      "fqname_parts",
+      "hashlib",
+      "id_components",
+      "normalized",
+      "normalized_module",
+      "p",
+      "parent_name",
+      "part",
+      "seen",
+      "unique_components"
+    ],
+    "exports": [
+      "UIDType",
+      "create_class_uid",
+      "create_function_uid",
+      "create_legacy_artifact_id",
+      "create_method_uid",
+      "create_module_uid",
+      "create_stable_uid",
+      "enhance_entity_with_uid",
+      "generate_uid",
+      "generate_uid_components",
+      "normalize_path",
+      "validate_uid_uniqueness"
+    ]
+  },
+  "functions": [
+    {
+      "name": "normalize_path",
+      "docstring": "Normalize file path for consistent UID generation",
+      "line_range": [
+        25,
+        45
+      ],
+      "parameters": [
+        "path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.uid_generator.normalize_path:25#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.uid_generator",
+        "llmstruct.core.uid_generator.normalize_path:25"
+      ],
+      "hash": "780d3d1173a3d2e89e5d88af4d1c72d03d40358f9d4ed5637e808d14c9374349",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-uid-generator-normalize-path",
+      "summary": "Normalize file path for consistent UID generation",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "normalized.endswith",
+        "list",
+        "Path"
+      ],
+      "called_by": [
+        "generate_uid_components",
+        "create_legacy_artifact_id",
+        "generate_uid"
+      ]
+    },
+    {
+      "name": "generate_uid",
+      "docstring": "Generate stable UID using FQNAME approach.\n\nArgs:\n    entity_type: Type of entity\n    module_path: Path to module (e.g., 'src/llmstruct/core/uid_generator.py')\n    entity_name: Name of entity\n    parent_name: Parent entity name (for methods, nested classes)\n    \nReturns:\n    Stable UID string",
+      "line_range": [
+        48,
+        85
+      ],
+      "parameters": [
+        "entity_type",
+        "module_path",
+        "entity_name",
+        "parent_name"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.uid_generator.generate_uid:48#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.uid_generator",
+        "llmstruct.core.uid_generator.generate_uid:48"
+      ],
+      "hash": "f281a627dcaa4f09161bce0306ff50f5df9caf0827e2de58f308b9ffa9d6b125",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-uid-generator-generate-uid",
+      "summary": "Generate stable UID using FQNAME approach",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "generator",
+        "public"
+      ],
+      "calls": [
+        "fqname_parts.append",
+        "normalize_path"
+      ],
+      "called_by": [
+        "create_function_uid",
+        "enhance_entity_with_uid",
+        "create_class_uid",
+        "create_module_uid",
+        "create_method_uid"
+      ]
+    },
+    {
+      "name": "generate_uid_components",
+      "docstring": "Generate hierarchical UID components for navigation.\n\nFIXED: Removes duplicates and ensures each level is unique.\n\nArgs:\n    entity_type: Type of entity\n    module_path: Path to module\n    entity_name: Name of entity  \n    parent_name: Parent entity name\n    \nReturns:\n    List of hierarchical components without duplicates",
+      "line_range": [
+        88,
+        147
+      ],
+      "parameters": [
+        "entity_type",
+        "module_path",
+        "entity_name",
+        "parent_name"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.uid_generator.generate_uid_components:88#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.uid_generator",
+        "llmstruct.core.uid_generator.generate_uid_components:88"
+      ],
+      "hash": "3311e00d1d33a1f3da8da5e51c1a9193a31251e7c13549f83afe33f7c0dabc5f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-uid-generator-generate-uid-components",
+      "summary": "Generate hierarchical UID components for navigation",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "seen.add",
+        "entity_name.strip",
+        "set",
+        "unique_components.append",
+        "normalized_module.split",
+        "current_path.append",
+        "components.append",
+        "normalize_path",
+        "parent_name.strip",
+        "part.strip"
+      ],
+      "called_by": [
+        "enhance_entity_with_uid"
+      ]
+    },
+    {
+      "name": "create_stable_uid",
+      "docstring": "Create stable UID based on content hash (fallback method).\n\nArgs:\n    content: Entity content\n    entity_type: Type of entity\n    \nReturns:\n    Stable hash-based UID",
+      "line_range": [
+        150,
+        167
+      ],
+      "parameters": [
+        "content",
+        "entity_type"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.uid_generator.create_stable_uid:150#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.uid_generator",
+        "llmstruct.core.uid_generator.create_stable_uid:150"
+      ],
+      "hash": "a7e0745164214a65706526aa7511d758bfa17e216b636cd6bd6f8e2b4fdc9256",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-uid-generator-create-stable-uid",
+      "summary": "Create stable UID based on content hash (fallback method)",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "content.encode",
+        "hashlib.sha256"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "create_legacy_artifact_id",
+      "docstring": "Create legacy artifact_id for backward compatibility.\n\nArgs:\n    entity: Entity dictionary\n    \nReturns:\n    Legacy artifact ID",
+      "line_range": [
+        170,
+        205
+      ],
+      "parameters": [
+        "entity"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.uid_generator.create_legacy_artifact_id:170#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.uid_generator",
+        "llmstruct.core.uid_generator.create_legacy_artifact_id:170"
+      ],
+      "hash": "977e7a007125799bc8e2ec7bb6fb5ed80b5e263d50cc8925c4f3dc2b273927fe",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-uid-generator-create-legacy-artifact-id",
+      "summary": "Create legacy artifact_id for backward compatibility",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "p.get",
+        "entity.get",
+        "id_components.append",
+        "hashlib.md5",
+        "normalize_path",
+        "combined.encode"
+      ],
+      "called_by": [
+        "enhance_entity_with_uid"
+      ]
+    },
+    {
+      "name": "enhance_entity_with_uid",
+      "docstring": "Enhance entity with UID system components.\n\nArgs:\n    entity: Entity dictionary\n    \nReturns:\n    Enhanced entity with uid, uid_components, and artifact_id",
+      "line_range": [
+        208,
+        243
+      ],
+      "parameters": [
+        "entity"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.uid_generator.enhance_entity_with_uid:208#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.uid_generator",
+        "llmstruct.core.uid_generator.enhance_entity_with_uid:208"
+      ],
+      "hash": "54df053bb8b064f3fb3d6efe69c48184ba4fc41683c174286753620d96a256e8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-uid-generator-enhance-entity-with-uid",
+      "summary": "Enhance entity with UID system components",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "entity.get",
+        "entity.copy",
+        "generate_uid_components",
+        "create_legacy_artifact_id",
+        "UIDType",
+        "generate_uid"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "validate_uid_uniqueness",
+      "docstring": "Validate UID uniqueness across entities.\n\nArgs:\n    entities: List of entities with UIDs\n    \nReturns:\n    Dictionary with 'duplicates' and 'conflicts' lists",
+      "line_range": [
+        246,
+        276
+      ],
+      "parameters": [
+        "entities"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.uid_generator.validate_uid_uniqueness:246#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.uid_generator",
+        "llmstruct.core.uid_generator.validate_uid_uniqueness:246"
+      ],
+      "hash": "08634b357cc86766e0e0107635f13bfa1b557cc43051a79e3cb712ed328b2d1a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-uid-generator-validate-uid-uniqueness",
+      "summary": "Validate UID uniqueness across entities",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "entity.get",
+        "existing.get",
+        "duplicates.append"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "create_module_uid",
+      "docstring": "Create UID for module",
+      "line_range": [
+        281,
+        283
+      ],
+      "parameters": [
+        "module_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.uid_generator.create_module_uid:281#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.uid_generator",
+        "llmstruct.core.uid_generator.create_module_uid:281"
+      ],
+      "hash": "78a6139201fb016110552a2f16a1b676eb4df0982379bfa7b626e2c875032d6d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-uid-generator-create-module-uid",
+      "summary": "Create UID for module",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "Path",
+        "generate_uid"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "create_function_uid",
+      "docstring": "Create UID for function",
+      "line_range": [
+        286,
+        288
+      ],
+      "parameters": [
+        "module_path",
+        "function_name"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.uid_generator.create_function_uid:286#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.uid_generator",
+        "llmstruct.core.uid_generator.create_function_uid:286"
+      ],
+      "hash": "1bad93a530f99de51e1a76acc227e19d2b284812586e671a704819ad92959c91",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-uid-generator-create-function-uid",
+      "summary": "Create UID for function",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "generate_uid"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "create_class_uid",
+      "docstring": "Create UID for class",
+      "line_range": [
+        291,
+        293
+      ],
+      "parameters": [
+        "module_path",
+        "class_name"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.uid_generator.create_class_uid:291#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.uid_generator",
+        "llmstruct.core.uid_generator.create_class_uid:291"
+      ],
+      "hash": "9e9a260bd9100a255e8a16c9a392584a8c531373e3df55b5c211ae2e2e30b62e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-uid-generator-create-class-uid",
+      "summary": "Create UID for class",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "generate_uid"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "create_method_uid",
+      "docstring": "Create UID for method",
+      "line_range": [
+        296,
+        298
+      ],
+      "parameters": [
+        "module_path",
+        "class_name",
+        "method_name"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.core.uid_generator.create_method_uid:296#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.uid_generator",
+        "llmstruct.core.uid_generator.create_method_uid:296"
+      ],
+      "hash": "8e968c8f148a680dff56fb64b9cf3c15f77138b3325d257b17e477e9f33c5b99",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-uid-generator-create-method-uid",
+      "summary": "Create UID for method",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "generate_uid"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "UIDType",
+      "docstring": "Types of entities that can have UIDs",
+      "line_range": [
+        14,
+        22
+      ],
+      "methods": [],
+      "bases": [
+        "Enum"
+      ],
+      "uid": "llmstruct.core.uid_generator.UIDType:14#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.core",
+        "llmstruct.core.uid_generator",
+        "llmstruct.core.uid_generator.UIDType:14"
+      ],
+      "hash": "f6ef36a90761b4842e608007476e6fc2561aedace6e12a22b2fb557db990d671",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-core-uid-generator-uidtype",
+      "summary": "Types of entities that can have UIDs",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "normalized.endswith",
+    "list",
+    "Path",
+    "fqname_parts.append",
+    "normalize_path",
+    "seen.add",
+    "entity_name.strip",
+    "set",
+    "unique_components.append",
+    "normalized_module.split",
+    "current_path.append",
+    "components.append",
+    "normalize_path",
+    "parent_name.strip",
+    "part.strip",
+    "content.encode",
+    "hashlib.sha256",
+    "p.get",
+    "entity.get",
+    "id_components.append",
+    "hashlib.md5",
+    "normalize_path",
+    "combined.encode",
+    "entity.get",
+    "entity.copy",
+    "generate_uid_components",
+    "create_legacy_artifact_id",
+    "UIDType",
+    "generate_uid",
+    "entity.get",
+    "existing.get",
+    "duplicates.append",
+    "Path",
+    "generate_uid",
+    "generate_uid",
+    "generate_uid",
+    "generate_uid"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.843855",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:8b874ccd981cdc8b",
+    "lines_of_code": 12
+  }
+}

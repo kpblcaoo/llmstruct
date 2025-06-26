@@ -1,0 +1,154 @@
+{
+  "module_info": {
+    "uid": "llmstruct.parsers.go_converter",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.parsers.go_converter with 2 functions",
+    "hash": "sha256:916f965ad6d2f410",
+    "dependencies": [
+      "analysis",
+      "classes",
+      "f",
+      "file_data",
+      "fn",
+      "functions",
+      "hashlib",
+      "iface",
+      "module",
+      "modules",
+      "path",
+      "struct",
+      "toc",
+      "uuid"
+    ],
+    "exports": [
+      "compute_file_hash",
+      "convert_to_llmstruct_format"
+    ]
+  },
+  "functions": [
+    {
+      "name": "convert_to_llmstruct_format",
+      "docstring": "Конвертирует результат анализа в формат llmstruct",
+      "line_range": [
+        16,
+        158
+      ],
+      "parameters": [
+        "analysis",
+        "include_ranges",
+        "goals"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.go_converter.convert_to_llmstruct_format:16#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.go_converter",
+        "llmstruct.parsers.go_converter.convert_to_llmstruct_format:16"
+      ],
+      "hash": "b83d228873310f00b5f078579d36bb6fdbba0375577d737182c636f9b734a38a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-go-converter-convert-to-llmstruct-format",
+      "summary": "Конвертирует результат анализа в формат llmstruct",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "compute_file_hash",
+        "functions.append",
+        "analysis.get",
+        "uuid.uuid4",
+        "path.endswith",
+        "toc.append",
+        "module.get",
+        "path.replace",
+        "struct.get",
+        "file_data.get",
+        "sum",
+        "iface.get",
+        "infer_tags",
+        "fn.get",
+        "len",
+        "classes.append",
+        "modules.append"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "compute_file_hash",
+      "docstring": "Вычисляет SHA-256 хэш файла",
+      "line_range": [
+        161,
+        167
+      ],
+      "parameters": [
+        "file_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.parsers.go_converter.compute_file_hash:161#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.parsers",
+        "llmstruct.parsers.go_converter",
+        "llmstruct.parsers.go_converter.compute_file_hash:161"
+      ],
+      "hash": "b84ba51534a735a772dce34fa1052266dc82a307c1a15c6205fda86e0946c647",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-parsers-go-converter-compute-file-hash",
+      "summary": "Вычисляет SHA-256 хэш файла",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "f.read",
+        "hashlib.sha256"
+      ],
+      "called_by": [
+        "convert_to_llmstruct_format"
+      ]
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "str",
+    "compute_file_hash",
+    "functions.append",
+    "analysis.get",
+    "uuid.uuid4",
+    "path.endswith",
+    "toc.append",
+    "module.get",
+    "path.replace",
+    "struct.get",
+    "file_data.get",
+    "sum",
+    "iface.get",
+    "infer_tags",
+    "fn.get",
+    "len",
+    "classes.append",
+    "modules.append",
+    "open",
+    "f.read",
+    "hashlib.sha256"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.850725",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:916f965ad6d2f410",
+    "lines_of_code": 2
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "module_info": {
+    "uid": "llmstruct.json_selector",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.json_selector with 2 functions",
+    "hash": "sha256:8c52fa3ea2c212af",
+    "dependencies": [
+      "current_item",
+      "data",
+      "f",
+      "filtered",
+      "ijson",
+      "item",
+      "json",
+      "json_file",
+      "logging",
+      "path",
+      "prefix"
+    ],
+    "exports": [
+      "filter_json",
+      "select_json"
+    ]
+  },
+  "functions": [
+    {
+      "name": "filter_json",
+      "docstring": "Filter JSON data by key-value pair and select fields.",
+      "line_range": [
+        20,
+        46
+      ],
+      "parameters": [
+        "data",
+        "filter_key",
+        "filter_value",
+        "fields"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.json_selector.filter_json:20#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.json_selector",
+        "llmstruct.json_selector.filter_json:20"
+      ],
+      "hash": "f552ecdd10853e5da4b30c8c18745039fddfe4b29245953a2f324b651b7386e7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-json-selector-filter-json",
+      "summary": "Filter JSON data by key-value pair and select fields.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "item.get",
+        "data.get",
+        "isinstance",
+        "filtered.append"
+      ],
+      "called_by": [
+        "select_json"
+      ]
+    },
+    {
+      "name": "select_json",
+      "docstring": "Load and filter JSON file, optionally parsing partially.",
+      "line_range": [
+        49,
+        116
+      ],
+      "parameters": [
+        "json_path",
+        "filter_key",
+        "filter_value",
+        "fields",
+        "partial"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.json_selector.select_json:49#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.json_selector",
+        "llmstruct.json_selector.select_json:49"
+      ],
+      "hash": "ffa3de090fda1f4759f5b9fa724dd5759d7c5cc850afc1dd08a917fefcb0028f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-json-selector-select-json",
+      "summary": "Load and filter JSON file, optionally parsing partially.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "prefix.startswith",
+        "filtered.append",
+        "json_file.exists",
+        "filter_json",
+        "f.seek",
+        "logging.error",
+        "ijson.parse",
+        "current_item.get",
+        "json.load",
+        "path.append",
+        "Path"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "item.get",
+    "data.get",
+    "isinstance",
+    "filtered.append",
+    "open",
+    "prefix.startswith",
+    "filtered.append",
+    "json_file.exists",
+    "filter_json",
+    "f.seek",
+    "logging.error",
+    "ijson.parse",
+    "current_item.get",
+    "json.load",
+    "path.append",
+    "Path"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.764119",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:8c52fa3ea2c212af",
+    "lines_of_code": 2
+  }
+}

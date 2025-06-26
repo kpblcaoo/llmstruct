@@ -1,0 +1,838 @@
+{
+  "module_info": {
+    "uid": "llmstruct.api.services.cli_bridge",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.api.services.cli_bridge with 9 functions and 2 classes",
+    "hash": "sha256:d1e868242d5befcb",
+    "dependencies": [
+      "Path",
+      "asyncio",
+      "cmd",
+      "json",
+      "logger",
+      "options",
+      "os",
+      "output",
+      "process",
+      "self",
+      "stderr",
+      "stdout",
+      "tempfile",
+      "venv_python"
+    ],
+    "exports": [
+      "CLIBridge",
+      "CLIBridgeError",
+      "get_context",
+      "get_project_info",
+      "health_check",
+      "scan_project",
+      "validate_json"
+    ]
+  },
+  "functions": [
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        29,
+        33
+      ],
+      "parameters": [
+        "self",
+        "base_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.cli_bridge.__init__:29#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.cli_bridge",
+        "llmstruct.api.services.cli_bridge.__init__:29"
+      ],
+      "hash": "1adbeaa43a3de00a07fa8ecc5a76f77dfe72deda2f48bfd4c416184e7cecfb1d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-cli-bridge---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "self._get_python_command",
+        "Path.cwd"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_get_python_command",
+      "docstring": "Determine the best Python command to use",
+      "line_range": [
+        35,
+        40
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.cli_bridge._get_python_command:35#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.cli_bridge",
+        "llmstruct.api.services.cli_bridge._get_python_command:35"
+      ],
+      "hash": "4c1174a76df96465f7c593c8d03a3c024b97d5d461f00b11fe0f0f767258754b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-cli-bridge--get-python-command",
+      "summary": "Determine the best Python command to use",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "str",
+        "venv_python.exists"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "scan_project",
+      "docstring": "Execute project scan via CLI",
+      "line_range": [
+        42,
+        87
+      ],
+      "parameters": [
+        "self",
+        "options"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.cli_bridge.scan_project:42#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.cli_bridge",
+        "llmstruct.api.services.cli_bridge.scan_project:42"
+      ],
+      "hash": "d8315d85c9905272142b680ca00eb3023cb1b2b6182f3758e8bf53b128240216",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-cli-bridge-scan-project",
+      "summary": "Execute project scan via CLI",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "open",
+        "options.get",
+        "cmd.extend",
+        "os.unlink",
+        "logger.error",
+        "os.close",
+        "self._run_command",
+        "json.load",
+        "self._parse_cli_output",
+        "tempfile.mkstemp",
+        "cmd.append"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_context",
+      "docstring": "Get project context in specified mode",
+      "line_range": [
+        89,
+        98
+      ],
+      "parameters": [
+        "self",
+        "mode",
+        "include_files"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.cli_bridge.get_context:89#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.cli_bridge",
+        "llmstruct.api.services.cli_bridge.get_context:89"
+      ],
+      "hash": "92656855b5092f4c5745ab85d1e37b00198e9ef9d78364b9c263581f8116ce20",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-cli-bridge-get-context",
+      "summary": "Get project context in specified mode",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "cmd.extend",
+        "self._run_command",
+        "self._parse_cli_output"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_project_info",
+      "docstring": "Get basic project information",
+      "line_range": [
+        100,
+        104
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.cli_bridge.get_project_info:100#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.cli_bridge",
+        "llmstruct.api.services.cli_bridge.get_project_info:100"
+      ],
+      "hash": "d17b6c42ea4c7c3b34a6837d3c50ef0fe6beb6a3c8c4d3beced6ea6ff08bd7f0",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-cli-bridge-get-project-info",
+      "summary": "Get basic project information",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self._run_command",
+        "self._parse_cli_output"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "validate_json",
+      "docstring": "Validate JSON structure",
+      "line_range": [
+        106,
+        110
+      ],
+      "parameters": [
+        "self",
+        "json_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.cli_bridge.validate_json:106#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.cli_bridge",
+        "llmstruct.api.services.cli_bridge.validate_json:106"
+      ],
+      "hash": "b25b52fd25bc734eb4db31ee5f4fe61368063809c4e8729206b4f6f60d78b753",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-cli-bridge-validate-json",
+      "summary": "Validate JSON structure",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self._run_command",
+        "self._parse_cli_output"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "health_check",
+      "docstring": "Check CLI health and availability",
+      "line_range": [
+        112,
+        128
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.cli_bridge.health_check:112#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.cli_bridge",
+        "llmstruct.api.services.cli_bridge.health_check:112"
+      ],
+      "hash": "435711a1a2ff6bcad7f8f4c8f99ffa297d0c1f075f341daaf9b7addb0d11c7cf",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-cli-bridge-health-check",
+      "summary": "Check CLI health and availability",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "self._run_command",
+        "str"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_run_command",
+      "docstring": "Run CLI command asynchronously",
+      "line_range": [
+        130,
+        161
+      ],
+      "parameters": [
+        "self",
+        "cmd",
+        "timeout"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.cli_bridge._run_command:130#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.cli_bridge",
+        "llmstruct.api.services.cli_bridge._run_command:130"
+      ],
+      "hash": "6f7e78750b3cd7a902ae1588903109e0682aebe4c13ae5b03efd8d2d3406e2b2",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-cli-bridge--run-command",
+      "summary": "Run CLI command asynchronously",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "private"
+      ],
+      "calls": [
+        "str",
+        "process.communicate",
+        "logger.info",
+        "asyncio.create_subprocess_exec",
+        "asyncio.wait_for",
+        "CLIBridgeError",
+        "stdout.decode",
+        "stderr.decode",
+        "logger.error"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "_parse_cli_output",
+      "docstring": "Parse CLI JSON output",
+      "line_range": [
+        163,
+        176
+      ],
+      "parameters": [
+        "self",
+        "output"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.services.cli_bridge._parse_cli_output:163#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.cli_bridge",
+        "llmstruct.api.services.cli_bridge._parse_cli_output:163"
+      ],
+      "hash": "bb123f1fd67db65b8da0db72c12d91655f0fa8c6758f7fe1846a2640c92b0a75",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-cli-bridge--parse-cli-output",
+      "summary": "Parse CLI JSON output",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "json.loads",
+        "output.strip"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "CLIBridgeError",
+      "docstring": "CLI Bridge specific errors",
+      "line_range": [
+        21,
+        23
+      ],
+      "methods": [],
+      "bases": [
+        "Exception"
+      ],
+      "uid": "llmstruct.api.services.cli_bridge.CLIBridgeError:21#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.cli_bridge",
+        "llmstruct.api.services.cli_bridge.CLIBridgeError:21"
+      ],
+      "hash": "f2e139322bae3b81a8ae85d1d961d601b928ab6a74e5d00980195779dc31654e",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-cli-bridge-clibridgeerror",
+      "summary": "CLI Bridge specific errors",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "name": "CLIBridge",
+      "docstring": "Bridge between FastAPI and existing CLI functionality",
+      "line_range": [
+        26,
+        176
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            29,
+            33
+          ],
+          "parameters": [
+            "self",
+            "base_path"
+          ],
+          "uid": "llmstruct.api.services.cli_bridge.CLIBridge.__init__:29#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.cli_bridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge.__init__:29"
+          ],
+          "hash": "a542c0d24785a0452ea1b1f260e79aa0655d17e77765c921bacaa9fef2c95242",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-cli-bridge-clibridge---init--",
+          "summary": "Method for clibridge. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "self._get_python_command",
+            "Path.cwd"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_get_python_command",
+          "docstring": "Determine the best Python command to use",
+          "line_range": [
+            35,
+            40
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.api.services.cli_bridge.CLIBridge._get_python_command:35#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.cli_bridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge._get_python_command:35"
+          ],
+          "hash": "5bf9a065ba319854243ea6c78f1eda7fb83ccaf1edfa2494bf1cc35b3d4ae0b0",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-cli-bridge-clibridge--get-python-command",
+          "summary": "Determine the best Python command to use",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "str",
+            "venv_python.exists"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "scan_project",
+          "docstring": "Execute project scan via CLI",
+          "line_range": [
+            42,
+            87
+          ],
+          "parameters": [
+            "self",
+            "options"
+          ],
+          "uid": "llmstruct.api.services.cli_bridge.CLIBridge.scan_project:42#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.cli_bridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge.scan_project:42"
+          ],
+          "hash": "2f5260c11deca435248b2bd6c395f5335b51b5739663272871c70825362eb816",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-cli-bridge-clibridge-scan-project",
+          "summary": "Execute project scan via CLI",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "open",
+            "options.get",
+            "cmd.extend",
+            "os.unlink",
+            "logger.error",
+            "os.close",
+            "self._run_command",
+            "json.load",
+            "self._parse_cli_output",
+            "tempfile.mkstemp",
+            "cmd.append"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_context",
+          "docstring": "Get project context in specified mode",
+          "line_range": [
+            89,
+            98
+          ],
+          "parameters": [
+            "self",
+            "mode",
+            "include_files"
+          ],
+          "uid": "llmstruct.api.services.cli_bridge.CLIBridge.get_context:89#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.cli_bridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge.get_context:89"
+          ],
+          "hash": "2bae5f0828f16e5c2bd836a17ab034e8932762d3f306306a526f879d6b144d2d",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-cli-bridge-clibridge-get-context",
+          "summary": "Get project context in specified mode",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "cmd.extend",
+            "self._run_command",
+            "self._parse_cli_output"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_project_info",
+          "docstring": "Get basic project information",
+          "line_range": [
+            100,
+            104
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.api.services.cli_bridge.CLIBridge.get_project_info:100#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.cli_bridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge.get_project_info:100"
+          ],
+          "hash": "12fc98f5d0e79d15920a721573f0973f8179b1f9e71aec76da96b12732156509",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-cli-bridge-clibridge-get-project-info",
+          "summary": "Get basic project information",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self._run_command",
+            "self._parse_cli_output"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "validate_json",
+          "docstring": "Validate JSON structure",
+          "line_range": [
+            106,
+            110
+          ],
+          "parameters": [
+            "self",
+            "json_path"
+          ],
+          "uid": "llmstruct.api.services.cli_bridge.CLIBridge.validate_json:106#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.cli_bridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge.validate_json:106"
+          ],
+          "hash": "63abf625ff7b25f21b25cbeb77f9fda4c3481002e746b56ebc9e9a4274bcdad9",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-cli-bridge-clibridge-validate-json",
+          "summary": "Validate JSON structure",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self._run_command",
+            "self._parse_cli_output"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "health_check",
+          "docstring": "Check CLI health and availability",
+          "line_range": [
+            112,
+            128
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.api.services.cli_bridge.CLIBridge.health_check:112#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.cli_bridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge.health_check:112"
+          ],
+          "hash": "d9503e6bde350b0c39161382ff1f7a50c724c8caadf78e46db3c314d95928d56",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-cli-bridge-clibridge-health-check",
+          "summary": "Check CLI health and availability",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "self._run_command",
+            "str"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_run_command",
+          "docstring": "Run CLI command asynchronously",
+          "line_range": [
+            130,
+            161
+          ],
+          "parameters": [
+            "self",
+            "cmd",
+            "timeout"
+          ],
+          "uid": "llmstruct.api.services.cli_bridge.CLIBridge._run_command:130#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.cli_bridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge._run_command:130"
+          ],
+          "hash": "a5cf586bb95c63abf5d5f0dcdb1be8190e55d2ff8a6febd6c0b82399b95ca3e6",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-cli-bridge-clibridge--run-command",
+          "summary": "Run CLI command asynchronously",
+          "summary_source": "docstring",
+          "tags": [
+            "async",
+            "method",
+            "private"
+          ],
+          "calls": [
+            "str",
+            "process.communicate",
+            "logger.info",
+            "asyncio.create_subprocess_exec",
+            "asyncio.wait_for",
+            "CLIBridgeError",
+            "stdout.decode",
+            "stderr.decode",
+            "logger.error"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "_parse_cli_output",
+          "docstring": "Parse CLI JSON output",
+          "line_range": [
+            163,
+            176
+          ],
+          "parameters": [
+            "self",
+            "output"
+          ],
+          "uid": "llmstruct.api.services.cli_bridge.CLIBridge._parse_cli_output:163#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.services",
+            "llmstruct.api.services.cli_bridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge",
+            "llmstruct.api.services.cli_bridge.CLIBridge._parse_cli_output:163"
+          ],
+          "hash": "895faae32b02c8856db283c828d8c16fad2fe048a0bc1727e02f962baaea475f",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-services-cli-bridge-clibridge--parse-cli-output",
+          "summary": "Parse CLI JSON output",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "json.loads",
+            "output.strip"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.api.services.cli_bridge.CLIBridge:26#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.services",
+        "llmstruct.api.services.cli_bridge",
+        "llmstruct.api.services.cli_bridge.CLIBridge:26"
+      ],
+      "hash": "766223e49df69d829e487546a802e55071d03fc426521d9a4d9ebb6332b69dfe",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-services-cli-bridge-clibridge",
+      "summary": "Bridge between FastAPI and existing CLI functionality",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "self._get_python_command",
+    "Path.cwd",
+    "str",
+    "venv_python.exists",
+    "open",
+    "options.get",
+    "cmd.extend",
+    "os.unlink",
+    "logger.error",
+    "os.close",
+    "self._run_command",
+    "json.load",
+    "self._parse_cli_output",
+    "tempfile.mkstemp",
+    "cmd.append",
+    "cmd.extend",
+    "self._run_command",
+    "self._parse_cli_output",
+    "self._run_command",
+    "self._parse_cli_output",
+    "self._run_command",
+    "self._parse_cli_output",
+    "self._run_command",
+    "str",
+    "str",
+    "process.communicate",
+    "logger.info",
+    "asyncio.create_subprocess_exec",
+    "asyncio.wait_for",
+    "CLIBridgeError",
+    "stdout.decode",
+    "stderr.decode",
+    "logger.error",
+    "json.loads",
+    "output.strip"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.855722",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:d1e868242d5befcb",
+    "lines_of_code": 11
+  }
+}

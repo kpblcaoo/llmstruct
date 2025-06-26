@@ -1,0 +1,21 @@
+{
+  "generation": {
+    "timestamp": "2025-06-26T11:45:18.898784",
+    "generator_version": "2.1.0",
+    "source_format": "v2.1",
+    "target_format": "struct/"
+  },
+  "statistics": {
+    "name": "llmstruct",
+    "version": "2.1.0",
+    "total_modules": 86,
+    "total_functions": 497,
+    "total_classes": 89,
+    "total_lines": 586
+  },
+  "performance": {
+    "generation_time_ms": 0,
+    "memory_usage_mb": 0,
+    "file_count": 91
+  }
+}

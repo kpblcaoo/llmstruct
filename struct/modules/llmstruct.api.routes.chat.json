@@ -1,0 +1,638 @@
+{
+  "module_info": {
+    "uid": "llmstruct.api.routes.chat",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.api.routes.chat with 9 functions and 1 classes",
+    "hash": "sha256:867e8a79e91c3d5d",
+    "dependencies": [
+      "datetime",
+      "json",
+      "llm_service",
+      "logger",
+      "manager",
+      "message_data",
+      "router",
+      "session_manager",
+      "uuid",
+      "websocket"
+    ],
+    "exports": [
+      "ConnectionManager",
+      "connect",
+      "delete_session",
+      "disconnect",
+      "get_session",
+      "list_sessions",
+      "send_message",
+      "send_message",
+      "websocket_chat"
+    ]
+  },
+  "functions": [
+    {
+      "name": "websocket_chat",
+      "docstring": "WebSocket endpoint for real-time chat",
+      "line_range": [
+        52,
+        131
+      ],
+      "parameters": [
+        "websocket",
+        "session_id",
+        "api_key"
+      ],
+      "decorators": [
+        "router.websocket('/chat/ws')"
+      ],
+      "uid": "llmstruct.api.routes.chat.websocket_chat:52#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.chat",
+        "llmstruct.api.routes.chat.websocket_chat:52"
+      ],
+      "hash": "a85a3a9f1351b8b916f9c824ea02cd0810e268d9344ce9bb7b8f5f6c9683e738",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-chat-websocket-chat",
+      "summary": "WebSocket endpoint for real-time chat",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "session_manager.add_message",
+        "json.loads",
+        "uuid.uuid4",
+        "logger.info",
+        "websocket.receive_text",
+        "manager.connect",
+        "logger.error",
+        "datetime.now",
+        "websocket.close",
+        "router.websocket",
+        "message_data.get",
+        "llm_service.process_message",
+        "session_manager.get_or_create_session",
+        "manager.send_message",
+        "manager.disconnect"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "list_sessions",
+      "docstring": "List active chat sessions",
+      "line_range": [
+        134,
+        137
+      ],
+      "parameters": [],
+      "decorators": [
+        "router.get('/chat/sessions', dependencies=[Depends(get_api_key)])"
+      ],
+      "uid": "llmstruct.api.routes.chat.list_sessions:134#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.chat",
+        "llmstruct.api.routes.chat.list_sessions:134"
+      ],
+      "hash": "da92180005f74c68d1d9374d2330f3bfc2fd29f9e3e6fe73c620d59ef8b2dd35",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-chat-list-sessions",
+      "summary": "List active chat sessions",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "session_manager.list_sessions",
+        "Depends",
+        "router.get"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_session",
+      "docstring": "Get session details and history",
+      "line_range": [
+        140,
+        145
+      ],
+      "parameters": [
+        "session_id"
+      ],
+      "decorators": [
+        "router.get('/chat/sessions/{session_id}', dependencies=[Depends(get_api_key)])"
+      ],
+      "uid": "llmstruct.api.routes.chat.get_session:140#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.chat",
+        "llmstruct.api.routes.chat.get_session:140"
+      ],
+      "hash": "4db411d85c4b8c4f98e57c2fdbcf041240fd9034070419b3266b571116913fd5",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-chat-get-session",
+      "summary": "Get session details and history",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "router.get",
+        "session_manager.get_session",
+        "Depends",
+        "HTTPException"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "delete_session",
+      "docstring": "Delete a chat session",
+      "line_range": [
+        148,
+        153
+      ],
+      "parameters": [
+        "session_id"
+      ],
+      "decorators": [
+        "router.delete('/chat/sessions/{session_id}', dependencies=[Depends(get_api_key)])"
+      ],
+      "uid": "llmstruct.api.routes.chat.delete_session:148#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.chat",
+        "llmstruct.api.routes.chat.delete_session:148"
+      ],
+      "hash": "3f2b31eb29dd7666e9d3f0d6b01b396f3376cfb51d89c16a746eb0823e2a5b25",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-chat-delete-session",
+      "summary": "Delete a chat session",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "router.delete",
+        "session_manager.delete_session",
+        "Depends",
+        "HTTPException"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "send_message",
+      "docstring": "Send a message via HTTP (alternative to WebSocket)",
+      "line_range": [
+        156,
+        179
+      ],
+      "parameters": [
+        "message"
+      ],
+      "decorators": [
+        "router.post('/chat/message', dependencies=[Depends(get_api_key)])"
+      ],
+      "uid": "llmstruct.api.routes.chat.send_message:156#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.chat",
+        "llmstruct.api.routes.chat.send_message:156"
+      ],
+      "hash": "281431b8593f67021bb6bfeefd113912db742df9a603944f708570cd59ab27cd",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-chat-send-message",
+      "summary": "Send a message via HTTP (alternative to WebSocket)",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "session_manager.add_message",
+        "str",
+        "HTTPException",
+        "router.post",
+        "logger.error",
+        "ChatResponse",
+        "llm_service.process_message",
+        "Depends"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        32,
+        33
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.routes.chat.__init__:32#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.chat",
+        "llmstruct.api.routes.chat.__init__:32"
+      ],
+      "hash": "ccb0d82db36d7566e64269cbf68a1b0c879ab5183a5845e2e1c66a4a9c2befaf",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-chat---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "connect",
+      "docstring": "",
+      "line_range": [
+        35,
+        38
+      ],
+      "parameters": [
+        "self",
+        "websocket",
+        "session_id"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.routes.chat.connect:35#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.chat",
+        "llmstruct.api.routes.chat.connect:35"
+      ],
+      "hash": "19f9c5d0629f829578da234c029234449d78cb1cbccc6402d3302a5f9721ba10",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-chat-connect",
+      "summary": "Function for connect",
+      "summary_source": "heuristic",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "websocket.accept",
+        "logger.info"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "disconnect",
+      "docstring": "",
+      "line_range": [
+        40,
+        43
+      ],
+      "parameters": [
+        "self",
+        "session_id"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.routes.chat.disconnect:40#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.chat",
+        "llmstruct.api.routes.chat.disconnect:40"
+      ],
+      "hash": "7cbff4ac918f757b8d3f83fb16e4c30f31f9dcf7cfc6cf8875651eab88f999a6",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-chat-disconnect",
+      "summary": "Function for disconnect",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logger.info"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "send_message",
+      "docstring": "",
+      "line_range": [
+        45,
+        47
+      ],
+      "parameters": [
+        "self",
+        "session_id",
+        "message"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.api.routes.chat.send_message:45#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.chat",
+        "llmstruct.api.routes.chat.send_message:45"
+      ],
+      "hash": "95071c104f45396b3a82a2b3f7cde3d802899beef908c9e9196d5f7254205dbd",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-chat-send-message",
+      "summary": "Function for send message",
+      "summary_source": "heuristic",
+      "tags": [
+        "async",
+        "function",
+        "public"
+      ],
+      "calls": [
+        "session_manager.add_message",
+        "str",
+        "HTTPException",
+        "router.post",
+        "logger.error",
+        "ChatResponse",
+        "llm_service.process_message",
+        "Depends"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "ConnectionManager",
+      "docstring": "Manages WebSocket connections",
+      "line_range": [
+        29,
+        47
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            32,
+            33
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.api.routes.chat.ConnectionManager.__init__:32#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.routes",
+            "llmstruct.api.routes.chat",
+            "llmstruct.api.routes.chat.ConnectionManager",
+            "llmstruct.api.routes.chat.ConnectionManager.__init__:32"
+          ],
+          "hash": "48ee2bea369ebb46f2f199c06d5ef90e491a2e88c92fbb2bf1460e5a5cecd6e0",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-routes-chat-connectionmanager---init--",
+          "summary": "Method for connectionmanager. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "connect",
+          "docstring": "",
+          "line_range": [
+            35,
+            38
+          ],
+          "parameters": [
+            "self",
+            "websocket",
+            "session_id"
+          ],
+          "uid": "llmstruct.api.routes.chat.ConnectionManager.connect:35#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.routes",
+            "llmstruct.api.routes.chat",
+            "llmstruct.api.routes.chat.ConnectionManager",
+            "llmstruct.api.routes.chat.ConnectionManager.connect:35"
+          ],
+          "hash": "6569527d4c75cf3bbba78d1b289c117fef5f0bc0f6516bbe916416ac22589320",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-routes-chat-connectionmanager-connect",
+          "summary": "Method for connection manager connect",
+          "summary_source": "heuristic",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "websocket.accept",
+            "logger.info"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "disconnect",
+          "docstring": "",
+          "line_range": [
+            40,
+            43
+          ],
+          "parameters": [
+            "self",
+            "session_id"
+          ],
+          "uid": "llmstruct.api.routes.chat.ConnectionManager.disconnect:40#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.routes",
+            "llmstruct.api.routes.chat",
+            "llmstruct.api.routes.chat.ConnectionManager",
+            "llmstruct.api.routes.chat.ConnectionManager.disconnect:40"
+          ],
+          "hash": "3ca18d55eacedac9f4180960cb33124316a7f7f734c7f00530f09a8f9cdbf926",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-routes-chat-connectionmanager-disconnect",
+          "summary": "Method for connection manager disconnect",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "logger.info"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "send_message",
+          "docstring": "",
+          "line_range": [
+            45,
+            47
+          ],
+          "parameters": [
+            "self",
+            "session_id",
+            "message"
+          ],
+          "uid": "llmstruct.api.routes.chat.ConnectionManager.send_message:45#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.api",
+            "llmstruct.api.routes",
+            "llmstruct.api.routes.chat",
+            "llmstruct.api.routes.chat.ConnectionManager",
+            "llmstruct.api.routes.chat.ConnectionManager.send_message:45"
+          ],
+          "hash": "270e122d7969a62a5fc24f237ab22bf3f9bf2f4ffa428ed131df51b022c2637a",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-api-routes-chat-connectionmanager-send-message",
+          "summary": "Method for connectionmanager.send message",
+          "summary_source": "heuristic",
+          "tags": [
+            "async",
+            "method",
+            "public"
+          ],
+          "calls": [
+            "session_manager.add_message",
+            "str",
+            "HTTPException",
+            "router.post",
+            "logger.error",
+            "ChatResponse",
+            "llm_service.process_message",
+            "Depends"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.api.routes.chat.ConnectionManager:29#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.api",
+        "llmstruct.api.routes",
+        "llmstruct.api.routes.chat",
+        "llmstruct.api.routes.chat.ConnectionManager:29"
+      ],
+      "hash": "0ba999bf36c8e0dbeaa6132961a5b55d432cdad0a52f58c6f49789d2084f8feb",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-api-routes-chat-connectionmanager",
+      "summary": "Manages WebSocket connections",
+      "summary_source": "docstring",
+      "tags": [
+        "async",
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "str",
+    "session_manager.add_message",
+    "json.loads",
+    "uuid.uuid4",
+    "logger.info",
+    "websocket.receive_text",
+    "manager.connect",
+    "logger.error",
+    "datetime.now",
+    "websocket.close",
+    "router.websocket",
+    "message_data.get",
+    "llm_service.process_message",
+    "session_manager.get_or_create_session",
+    "manager.send_message",
+    "manager.disconnect",
+    "session_manager.list_sessions",
+    "Depends",
+    "router.get",
+    "router.get",
+    "session_manager.get_session",
+    "Depends",
+    "HTTPException",
+    "router.delete",
+    "session_manager.delete_session",
+    "Depends",
+    "HTTPException",
+    "session_manager.add_message",
+    "str",
+    "HTTPException",
+    "router.post",
+    "logger.error",
+    "ChatResponse",
+    "llm_service.process_message",
+    "Depends",
+    "websocket.accept",
+    "logger.info",
+    "logger.info",
+    "session_manager.add_message",
+    "str",
+    "HTTPException",
+    "router.post",
+    "logger.error",
+    "ChatResponse",
+    "llm_service.process_message",
+    "Depends"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.853153",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:867e8a79e91c3d5d",
+    "lines_of_code": 10
+  }
+}

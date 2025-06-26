@@ -1,0 +1,670 @@
+{
+  "module_info": {
+    "uid": "scripts.export_to_github_projects",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.export_to_github_projects with 8 functions and 1 classes",
+    "hash": "sha256:35c910acbc91a15d",
+    "dependencies": [
+      "argparse",
+      "exporter",
+      "idea",
+      "item",
+      "json",
+      "output",
+      "parser",
+      "self",
+      "sys",
+      "task"
+    ],
+    "exports": [
+      "GitHubProjectsExportScript",
+      "check_github_cli",
+      "create_project_item",
+      "export_ideas_to_project",
+      "export_tasks_to_project",
+      "filter_data",
+      "list_projects",
+      "main"
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "docstring": "",
+      "line_range": [
+        183,
+        266
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.export_to_github_projects.main:183#function",
+      "uid_components": [
+        "scripts",
+        "scripts.export_to_github_projects",
+        "scripts.export_to_github_projects.main:183"
+      ],
+      "hash": "b5a8f11aed36452944bf2fa7d5b98de5a6c45b7bd35659404afd55d8e090bee1",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-export-to-github-projects-main",
+      "summary": "Function for main",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "GitHubProjectsExportScript",
+        "exporter.check_github_cli",
+        "parser.add_argument",
+        "exporter.load_official_data",
+        "argparse.ArgumentParser",
+        "exporter._save_mapping",
+        "exporter.export_tasks_to_project",
+        "exporter.export_ideas_to_project",
+        "sys.exit",
+        "exporter.filter_data",
+        "parser.parse_args"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        23,
+        26
+      ],
+      "parameters": [
+        "self",
+        "config_path",
+        "dry_run"
+      ],
+      "decorators": [],
+      "uid": "scripts.export_to_github_projects.__init__:23#function",
+      "uid_components": [
+        "scripts",
+        "scripts.export_to_github_projects",
+        "scripts.export_to_github_projects.__init__:23"
+      ],
+      "hash": "34330419ccc1faae7094d33b9fd1a225eabeb98d088242de46c86b119d99d368",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-export-to-github-projects---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "super"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "check_github_cli",
+      "docstring": "Check if GitHub CLI is installed and authenticated",
+      "line_range": [
+        28,
+        36
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.export_to_github_projects.check_github_cli:28#function",
+      "uid_components": [
+        "scripts",
+        "scripts.export_to_github_projects",
+        "scripts.export_to_github_projects.check_github_cli:28"
+      ],
+      "hash": "679aed9c3132e18a51000fed4be58da984c771bbf271f5746d49c0126407870d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-export-to-github-projects-check-github-cli",
+      "summary": "Check if GitHub CLI is installed and authenticated",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "self._run_gh_command"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "list_projects",
+      "docstring": "List available GitHub Projects (via gh-projects extension)",
+      "line_range": [
+        38,
+        55
+      ],
+      "parameters": [
+        "self",
+        "owner",
+        "repo"
+      ],
+      "decorators": [],
+      "uid": "scripts.export_to_github_projects.list_projects:38#function",
+      "uid_components": [
+        "scripts",
+        "scripts.export_to_github_projects",
+        "scripts.export_to_github_projects.list_projects:38"
+      ],
+      "hash": "5b56038ca7fc2c65b4c745ac2491135f24c8d1ed5240c274643ff024856384a2",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-export-to-github-projects-list-projects",
+      "summary": "List available GitHub Projects (via gh-projects extension)",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "isinstance",
+        "json.loads",
+        "self._run_gh_command"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "create_project_item",
+      "docstring": "Create a new item in GitHub Project (via gh-projects extension)\nTODO: заменить на GraphQL API или собственную реализацию в будущем",
+      "line_range": [
+        57,
+        82
+      ],
+      "parameters": [
+        "self",
+        "project_number",
+        "title",
+        "body",
+        "owner",
+        "repo"
+      ],
+      "decorators": [],
+      "uid": "scripts.export_to_github_projects.create_project_item:57#function",
+      "uid_components": [
+        "scripts",
+        "scripts.export_to_github_projects",
+        "scripts.export_to_github_projects.create_project_item:57"
+      ],
+      "hash": "ba0f8a67fb83048a582d2c9837b399110f00b548ebf7148fe6e3fd75817b977a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-export-to-github-projects-create-project-item",
+      "summary": "Create a new item in GitHub Project (via gh-projects extension)\nTODO: заменить на GraphQL API или собственную реализа...",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "str",
+        "output.strip",
+        "self._run_gh_command"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "export_tasks_to_project",
+      "docstring": "Export tasks to GitHub Project",
+      "line_range": [
+        84,
+        123
+      ],
+      "parameters": [
+        "self",
+        "tasks",
+        "project_number",
+        "owner",
+        "repo"
+      ],
+      "decorators": [],
+      "uid": "scripts.export_to_github_projects.export_tasks_to_project:84#function",
+      "uid_components": [
+        "scripts",
+        "scripts.export_to_github_projects",
+        "scripts.export_to_github_projects.export_tasks_to_project:84"
+      ],
+      "hash": "9b49ffbe2d722cbfd5cedf24b49fe0b5744d41cfca6cf35dd6b34ba65fe52fb9",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-export-to-github-projects-export-tasks-to-project",
+      "summary": "Export tasks to GitHub Project",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "self.create_project_item",
+        "task.get",
+        "self.format_task_for_github",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "export_ideas_to_project",
+      "docstring": "Export ideas to GitHub Project",
+      "line_range": [
+        125,
+        164
+      ],
+      "parameters": [
+        "self",
+        "ideas",
+        "project_number",
+        "owner",
+        "repo"
+      ],
+      "decorators": [],
+      "uid": "scripts.export_to_github_projects.export_ideas_to_project:125#function",
+      "uid_components": [
+        "scripts",
+        "scripts.export_to_github_projects",
+        "scripts.export_to_github_projects.export_ideas_to_project:125"
+      ],
+      "hash": "bc898280f39e9147976349c94f9069e60d524313869466113eda8cf73110580b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-export-to-github-projects-export-ideas-to-project",
+      "summary": "Export ideas to GitHub Project",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "self.format_idea_for_github",
+        "self.create_project_item",
+        "idea.get",
+        "len"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "filter_data",
+      "docstring": "Filter data by status and priority",
+      "line_range": [
+        166,
+        180
+      ],
+      "parameters": [
+        "self",
+        "data",
+        "status_filter",
+        "priority_filter"
+      ],
+      "decorators": [],
+      "uid": "scripts.export_to_github_projects.filter_data:166#function",
+      "uid_components": [
+        "scripts",
+        "scripts.export_to_github_projects",
+        "scripts.export_to_github_projects.filter_data:166"
+      ],
+      "hash": "0919ef842235aef6e2147a6599318056f9fea1b66703896ee643cffbd0535ba3",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-export-to-github-projects-filter-data",
+      "summary": "Filter data by status and priority",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "item.get"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "GitHubProjectsExportScript",
+      "docstring": "Extended exporter with command-line interface and GitHub CLI integration",
+      "line_range": [
+        20,
+        180
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            23,
+            26
+          ],
+          "parameters": [
+            "self",
+            "config_path",
+            "dry_run"
+          ],
+          "uid": "scripts.export_to_github_projects.GitHubProjectsExportScript.__init__:23#method",
+          "uid_components": [
+            "scripts",
+            "scripts.export_to_github_projects",
+            "scripts.export_to_github_projects.GitHubProjectsExportScript",
+            "scripts.export_to_github_projects.GitHubProjectsExportScript.__init__:23"
+          ],
+          "hash": "56b732719272da24d732a7d45a4aef77420102c9428fd308aa335815c41a4a5c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-export-to-github-projects-githubprojectsexportscript---init--",
+          "summary": "Method for githubprojectsexportscript. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [
+            "super"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "check_github_cli",
+          "docstring": "Check if GitHub CLI is installed and authenticated",
+          "line_range": [
+            28,
+            36
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.export_to_github_projects.GitHubProjectsExportScript.check_github_cli:28#method",
+          "uid_components": [
+            "scripts",
+            "scripts.export_to_github_projects",
+            "scripts.export_to_github_projects.GitHubProjectsExportScript",
+            "scripts.export_to_github_projects.GitHubProjectsExportScript.check_github_cli:28"
+          ],
+          "hash": "ed8fa6e086df206144b0e69a6521d7f19135c8ca10646a2a682bcc77f42a54fa",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-export-to-github-projects-githubprojectsexportscript-check-github-cli",
+          "summary": "Check if GitHub CLI is installed and authenticated",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "self._run_gh_command"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "list_projects",
+          "docstring": "List available GitHub Projects (via gh-projects extension)",
+          "line_range": [
+            38,
+            55
+          ],
+          "parameters": [
+            "self",
+            "owner",
+            "repo"
+          ],
+          "uid": "scripts.export_to_github_projects.GitHubProjectsExportScript.list_projects:38#method",
+          "uid_components": [
+            "scripts",
+            "scripts.export_to_github_projects",
+            "scripts.export_to_github_projects.GitHubProjectsExportScript",
+            "scripts.export_to_github_projects.GitHubProjectsExportScript.list_projects:38"
+          ],
+          "hash": "99322b4f789c0d4bf55058a15e7cabb5d5166f8aaeb173b80ebb8e02a4fd1f03",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-export-to-github-projects-githubprojectsexportscript-list-projects",
+          "summary": "List available GitHub Projects (via gh-projects extension)",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "isinstance",
+            "json.loads",
+            "self._run_gh_command"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "create_project_item",
+          "docstring": "Create a new item in GitHub Project (via gh-projects extension)\nTODO: заменить на GraphQL API или собственную реализацию в будущем",
+          "line_range": [
+            57,
+            82
+          ],
+          "parameters": [
+            "self",
+            "project_number",
+            "title",
+            "body",
+            "owner",
+            "repo"
+          ],
+          "uid": "scripts.export_to_github_projects.GitHubProjectsExportScript.create_project_item:57#method",
+          "uid_components": [
+            "scripts",
+            "scripts.export_to_github_projects",
+            "scripts.export_to_github_projects.GitHubProjectsExportScript",
+            "scripts.export_to_github_projects.GitHubProjectsExportScript.create_project_item:57"
+          ],
+          "hash": "4aa5c7d61d324b0c9112dae647588ddfb8b58e7186aa20097f3b8cd2bd896357",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-export-to-github-projects-githubprojectsexportscript-create-project-item",
+          "summary": "Create a new item in GitHub Project (via gh-projects extension)\nTODO: заменить на GraphQL API или собственную реализа...",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "str",
+            "output.strip",
+            "self._run_gh_command"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "export_tasks_to_project",
+          "docstring": "Export tasks to GitHub Project",
+          "line_range": [
+            84,
+            123
+          ],
+          "parameters": [
+            "self",
+            "tasks",
+            "project_number",
+            "owner",
+            "repo"
+          ],
+          "uid": "scripts.export_to_github_projects.GitHubProjectsExportScript.export_tasks_to_project:84#method",
+          "uid_components": [
+            "scripts",
+            "scripts.export_to_github_projects",
+            "scripts.export_to_github_projects.GitHubProjectsExportScript",
+            "scripts.export_to_github_projects.GitHubProjectsExportScript.export_tasks_to_project:84"
+          ],
+          "hash": "29d4feef7061bc631a24be85d579d8d06e2ec6eeed6a2616cfe4d3739804519c",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-export-to-github-projects-githubprojectsexportscript-export-tasks-to-project",
+          "summary": "Export tasks to GitHub Project",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "self.create_project_item",
+            "task.get",
+            "self.format_task_for_github",
+            "len"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "export_ideas_to_project",
+          "docstring": "Export ideas to GitHub Project",
+          "line_range": [
+            125,
+            164
+          ],
+          "parameters": [
+            "self",
+            "ideas",
+            "project_number",
+            "owner",
+            "repo"
+          ],
+          "uid": "scripts.export_to_github_projects.GitHubProjectsExportScript.export_ideas_to_project:125#method",
+          "uid_components": [
+            "scripts",
+            "scripts.export_to_github_projects",
+            "scripts.export_to_github_projects.GitHubProjectsExportScript",
+            "scripts.export_to_github_projects.GitHubProjectsExportScript.export_ideas_to_project:125"
+          ],
+          "hash": "3f96415528ba66efff766243b3a3fca5ff07231292034b915c8d506cf509be6d",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-export-to-github-projects-githubprojectsexportscript-export-ideas-to-project",
+          "summary": "Export ideas to GitHub Project",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "self.format_idea_for_github",
+            "self.create_project_item",
+            "idea.get",
+            "len"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "filter_data",
+          "docstring": "Filter data by status and priority",
+          "line_range": [
+            166,
+            180
+          ],
+          "parameters": [
+            "self",
+            "data",
+            "status_filter",
+            "priority_filter"
+          ],
+          "uid": "scripts.export_to_github_projects.GitHubProjectsExportScript.filter_data:166#method",
+          "uid_components": [
+            "scripts",
+            "scripts.export_to_github_projects",
+            "scripts.export_to_github_projects.GitHubProjectsExportScript",
+            "scripts.export_to_github_projects.GitHubProjectsExportScript.filter_data:166"
+          ],
+          "hash": "01bbf5652d94fec688b84c89cb1ebc3341bd7d4a554bb2efe553a7251154fa86",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-export-to-github-projects-githubprojectsexportscript-filter-data",
+          "summary": "Filter data by status and priority",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "item.get"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [
+        "GitHubProjectsExporter"
+      ],
+      "uid": "scripts.export_to_github_projects.GitHubProjectsExportScript:20#class",
+      "uid_components": [
+        "scripts",
+        "scripts.export_to_github_projects",
+        "scripts.export_to_github_projects.GitHubProjectsExportScript:20"
+      ],
+      "hash": "25052efa95c4ee52fb80a7f28b4a33ce5cbe7d29868bed5e97d35d3b40c3f93c",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-export-to-github-projects-githubprojectsexportscript",
+      "summary": "Extended exporter with command-line interface and GitHub CLI integration",
+      "summary_source": "docstring",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "print",
+    "GitHubProjectsExportScript",
+    "exporter.check_github_cli",
+    "parser.add_argument",
+    "exporter.load_official_data",
+    "argparse.ArgumentParser",
+    "exporter._save_mapping",
+    "exporter.export_tasks_to_project",
+    "exporter.export_ideas_to_project",
+    "sys.exit",
+    "exporter.filter_data",
+    "parser.parse_args",
+    "super",
+    "print",
+    "self._run_gh_command",
+    "print",
+    "isinstance",
+    "json.loads",
+    "self._run_gh_command",
+    "print",
+    "str",
+    "output.strip",
+    "self._run_gh_command",
+    "print",
+    "self.create_project_item",
+    "task.get",
+    "self.format_task_for_github",
+    "len",
+    "print",
+    "self.format_idea_for_github",
+    "self.create_project_item",
+    "idea.get",
+    "len",
+    "item.get"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.775928",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:35c910acbc91a15d",
+    "lines_of_code": 9
+  }
+}

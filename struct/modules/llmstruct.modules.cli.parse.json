@@ -1,0 +1,125 @@
+{
+  "module_info": {
+    "uid": "llmstruct.modules.cli.parse",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.modules.cli.parse with 1 functions",
+    "hash": "sha256:7ff783d7637184a1",
+    "dependencies": [
+      "ast_path",
+      "cache",
+      "cli_config",
+      "config",
+      "config_manager",
+      "func",
+      "json",
+      "logging",
+      "mod_dir",
+      "module",
+      "parsing_config",
+      "struct_data",
+      "struct_path"
+    ],
+    "exports": [
+      "parse"
+    ]
+  },
+  "functions": [
+    {
+      "name": "parse",
+      "docstring": "Parse codebase and generate struct.json.",
+      "line_range": [
+        11,
+        134
+      ],
+      "parameters": [
+        "args"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.modules.cli.parse.parse:11#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.modules",
+        "llmstruct.modules.cli",
+        "llmstruct.modules.cli.parse",
+        "llmstruct.modules.cli.parse.parse:11"
+      ],
+      "hash": "c08334fca9e4c5b4918363db3ef75881806bf5ac88846a675c46a73ae56d6922",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-modules-cli-parse-parse",
+      "summary": "Parse codebase and generate struct.json.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logging.info",
+        "getattr",
+        "generate_json",
+        "struct_path.open",
+        "config_manager.load_config",
+        "load_config",
+        "config_manager.get_config",
+        "save_index_json",
+        "struct_data.get",
+        "logging.warning",
+        "func.get",
+        "config.get",
+        "parsing_config.get",
+        "cli_config.get",
+        "json.dump",
+        "Path",
+        "ast_path.open",
+        "cache.cache_json",
+        "get_config_manager",
+        "hasattr",
+        "mod_dir.mkdir",
+        "JSONCache",
+        "module.get",
+        "logging.error",
+        "cache.close"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "logging.info",
+    "getattr",
+    "generate_json",
+    "struct_path.open",
+    "config_manager.load_config",
+    "load_config",
+    "config_manager.get_config",
+    "save_index_json",
+    "struct_data.get",
+    "logging.warning",
+    "func.get",
+    "config.get",
+    "parsing_config.get",
+    "cli_config.get",
+    "json.dump",
+    "Path",
+    "ast_path.open",
+    "cache.cache_json",
+    "get_config_manager",
+    "hasattr",
+    "mod_dir.mkdir",
+    "JSONCache",
+    "module.get",
+    "logging.error",
+    "cache.close"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.865143",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:7ff783d7637184a1",
+    "lines_of_code": 1
+  }
+}

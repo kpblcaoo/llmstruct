@@ -1,0 +1,507 @@
+{
+  "module_info": {
+    "uid": "llmstruct.cache",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.cache with 6 functions and 1 classes",
+    "hash": "sha256:528ee0529b10ce28",
+    "dependencies": [
+      "content",
+      "cursor",
+      "f",
+      "hashlib",
+      "json",
+      "json_file",
+      "logging",
+      "self",
+      "sqlite3"
+    ],
+    "exports": [
+      "JSONCache",
+      "cache_json",
+      "close",
+      "create_tables",
+      "get_full_json",
+      "get_metadata"
+    ]
+  },
+  "functions": [
+    {
+      "name": "__init__",
+      "docstring": "Initialize SQLite cache for JSON files.",
+      "line_range": [
+        21,
+        25
+      ],
+      "parameters": [
+        "self",
+        "db_path"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.cache.__init__:21#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.cache",
+        "llmstruct.cache.__init__:21"
+      ],
+      "hash": "bee238120520ca2f4e6fae676d9bd92c57b8ad33db48515dfe120ba59fae9b90",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-cache---init--",
+      "summary": "Initialize SQLite cache for JSON files.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [
+        "self.create_tables",
+        "sqlite3.connect"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "create_tables",
+      "docstring": "Create tables for metadata and file paths.",
+      "line_range": [
+        27,
+        49
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.cache.create_tables:27#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.cache",
+        "llmstruct.cache.create_tables:27"
+      ],
+      "hash": "b6692508b5fae5317eba82aa545001bf64aed7670d7e9e88b10a4eab75813ba7",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-cache-create-tables",
+      "summary": "Create tables for metadata and file paths.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "cache_json",
+      "docstring": "Cache JSON metadata and store full file path.",
+      "line_range": [
+        51,
+        90
+      ],
+      "parameters": [
+        "self",
+        "json_path",
+        "artifact_id",
+        "summary",
+        "tags"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.cache.cache_json:51#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.cache",
+        "llmstruct.cache.cache_json:51"
+      ],
+      "hash": "4747f4dcd10fb903f30e47e083637793228d9401f59bd08263048fabcb799b2f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-cache-cache-json",
+      "summary": "Cache JSON metadata and store full file path.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "logging.info",
+        "f.read",
+        "open",
+        "content.encode",
+        "json_file.exists",
+        "json.dumps",
+        "logging.error",
+        "hashlib.sha256",
+        "Path"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_metadata",
+      "docstring": "Retrieve metadata by artifact_id.",
+      "line_range": [
+        92,
+        108
+      ],
+      "parameters": [
+        "self",
+        "artifact_id"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.cache.get_metadata:92#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.cache",
+        "llmstruct.cache.get_metadata:92"
+      ],
+      "hash": "a0143f31604d16738b597a1c8f64703c1cf74f94a0ab95c284a716674c1f12e8",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-cache-get-metadata",
+      "summary": "Retrieve metadata by artifact_id.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "json.loads",
+        "cursor.fetchone"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "get_full_json",
+      "docstring": "Load full JSON by artifact_id.",
+      "line_range": [
+        110,
+        126
+      ],
+      "parameters": [
+        "self",
+        "artifact_id"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.cache.get_full_json:110#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.cache",
+        "llmstruct.cache.get_full_json:110"
+      ],
+      "hash": "ca5d7b19dfe079fe52a9d503f2af607db7864ec31108cd0359b0c133e3192ca2",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-cache-get-full-json",
+      "summary": "Load full JSON by artifact_id.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "logging.error",
+        "open",
+        "cursor.fetchone",
+        "json.load"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "close",
+      "docstring": "Close database connection.",
+      "line_range": [
+        128,
+        130
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.cache.close:128#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.cache",
+        "llmstruct.cache.close:128"
+      ],
+      "hash": "4b33c4037ac6631ce81f44a25b2fb65a193b52a71dcd044f2c8f5418038a2e98",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-cache-close",
+      "summary": "Close database connection.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "JSONCache",
+      "docstring": "",
+      "line_range": [
+        20,
+        130
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "Initialize SQLite cache for JSON files.",
+          "line_range": [
+            21,
+            25
+          ],
+          "parameters": [
+            "self",
+            "db_path"
+          ],
+          "uid": "llmstruct.cache.JSONCache.__init__:21#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.cache",
+            "llmstruct.cache.JSONCache",
+            "llmstruct.cache.JSONCache.__init__:21"
+          ],
+          "hash": "3a8ec837a9a5c89cb246f4bdd72f3d80f8db87deb9ba41f864fed919b7858439",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-cache-jsoncache---init--",
+          "summary": "Initialize SQLite cache for JSON files.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "private"
+          ],
+          "calls": [
+            "self.create_tables",
+            "sqlite3.connect"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "create_tables",
+          "docstring": "Create tables for metadata and file paths.",
+          "line_range": [
+            27,
+            49
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.cache.JSONCache.create_tables:27#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.cache",
+            "llmstruct.cache.JSONCache",
+            "llmstruct.cache.JSONCache.create_tables:27"
+          ],
+          "hash": "c2132cccef709b810b2ee91046f5eb1ffea8ce53ea7e6dc00c20392fc5a48e74",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-cache-jsoncache-create-tables",
+          "summary": "Create tables for metadata and file paths.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "cache_json",
+          "docstring": "Cache JSON metadata and store full file path.",
+          "line_range": [
+            51,
+            90
+          ],
+          "parameters": [
+            "self",
+            "json_path",
+            "artifact_id",
+            "summary",
+            "tags"
+          ],
+          "uid": "llmstruct.cache.JSONCache.cache_json:51#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.cache",
+            "llmstruct.cache.JSONCache",
+            "llmstruct.cache.JSONCache.cache_json:51"
+          ],
+          "hash": "ddf70aa0c81d7e09be92fe4412f63567048028d49958cb0ad32515af792aa9d3",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-cache-jsoncache-cache-json",
+          "summary": "Cache JSON metadata and store full file path.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "str",
+            "logging.info",
+            "f.read",
+            "open",
+            "content.encode",
+            "json_file.exists",
+            "json.dumps",
+            "logging.error",
+            "hashlib.sha256",
+            "Path"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_metadata",
+          "docstring": "Retrieve metadata by artifact_id.",
+          "line_range": [
+            92,
+            108
+          ],
+          "parameters": [
+            "self",
+            "artifact_id"
+          ],
+          "uid": "llmstruct.cache.JSONCache.get_metadata:92#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.cache",
+            "llmstruct.cache.JSONCache",
+            "llmstruct.cache.JSONCache.get_metadata:92"
+          ],
+          "hash": "5f7105bcb69058e6e5a6ee9c7da0b1728e23a525b8f7f99c1e593089b053cd54",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-cache-jsoncache-get-metadata",
+          "summary": "Retrieve metadata by artifact_id.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "json.loads",
+            "cursor.fetchone"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "get_full_json",
+          "docstring": "Load full JSON by artifact_id.",
+          "line_range": [
+            110,
+            126
+          ],
+          "parameters": [
+            "self",
+            "artifact_id"
+          ],
+          "uid": "llmstruct.cache.JSONCache.get_full_json:110#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.cache",
+            "llmstruct.cache.JSONCache",
+            "llmstruct.cache.JSONCache.get_full_json:110"
+          ],
+          "hash": "d114a627bf2f4293ef945e632ad38fb34bfbdb74ebaf474a6a36ed304ff144fe",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-cache-jsoncache-get-full-json",
+          "summary": "Load full JSON by artifact_id.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "logging.error",
+            "open",
+            "cursor.fetchone",
+            "json.load"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "close",
+          "docstring": "Close database connection.",
+          "line_range": [
+            128,
+            130
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "llmstruct.cache.JSONCache.close:128#method",
+          "uid_components": [
+            "llmstruct",
+            "llmstruct.cache",
+            "llmstruct.cache.JSONCache",
+            "llmstruct.cache.JSONCache.close:128"
+          ],
+          "hash": "587ae5da879fbc0ce1f57752189b567a4257797de92c6186cbd75ff372b29539",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#llmstruct-cache-jsoncache-close",
+          "summary": "Close database connection.",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "llmstruct.cache.JSONCache:20#class",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.cache",
+        "llmstruct.cache.JSONCache:20"
+      ],
+      "hash": "52bb13435c2e40ad8182a2112bd32c66d4b7c6c1841fd870b76fc1a6673b6fee",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-cache-jsoncache",
+      "summary": "Class for json cache",
+      "summary_source": "heuristic",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "self.create_tables",
+    "sqlite3.connect",
+    "str",
+    "logging.info",
+    "f.read",
+    "open",
+    "content.encode",
+    "json_file.exists",
+    "json.dumps",
+    "logging.error",
+    "hashlib.sha256",
+    "Path",
+    "json.loads",
+    "cursor.fetchone",
+    "logging.error",
+    "open",
+    "cursor.fetchone",
+    "json.load"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.764916",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:528ee0529b10ce28",
+    "lines_of_code": 7
+  }
+}

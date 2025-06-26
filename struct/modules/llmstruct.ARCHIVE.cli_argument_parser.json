@@ -1,0 +1,171 @@
+{
+  "module_info": {
+    "uid": "llmstruct.ARCHIVE.cli_argument_parser",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module llmstruct.ARCHIVE.cli_argument_parser with 3 functions",
+    "hash": "sha256:ad3644d59fd87663",
+    "dependencies": [
+      "argparse",
+      "audit_parser",
+      "context_parser",
+      "copilot_parser",
+      "dogfood_parser",
+      "duplicates_parser",
+      "interactive_parser",
+      "parse_parser",
+      "parser",
+      "query_parser",
+      "review_parser",
+      "subparsers"
+    ],
+    "exports": [
+      "add_api_bot_commands",
+      "create_argument_parser",
+      "create_full_argument_parser"
+    ]
+  },
+  "functions": [
+    {
+      "name": "create_argument_parser",
+      "docstring": "Create and configure the main argument parser.",
+      "line_range": [
+        14,
+        113
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_argument_parser.create_argument_parser:14#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_argument_parser",
+        "llmstruct.ARCHIVE.cli_argument_parser.create_argument_parser:14"
+      ],
+      "hash": "7617f984aea08c4768393f1073fb9f9b2b51c2416c460f8da2442e287cc97d34",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-argument-parser-create-argument-parser",
+      "summary": "Create and configure the main argument parser.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "copilot_parser.add_argument",
+        "parser.add_subparsers",
+        "query_parser.add_argument",
+        "review_parser.add_argument",
+        "context_parser.add_argument",
+        "audit_parser.add_argument",
+        "dogfood_parser.add_argument",
+        "duplicates_parser.add_argument",
+        "parse_parser.add_argument",
+        "interactive_parser.add_argument",
+        "subparsers.add_parser",
+        "argparse.ArgumentParser"
+      ],
+      "called_by": [
+        "create_full_argument_parser"
+      ]
+    },
+    {
+      "name": "add_api_bot_commands",
+      "docstring": "Add API and bot management commands to the parser.",
+      "line_range": [
+        116,
+        126
+      ],
+      "parameters": [
+        "subparsers"
+      ],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_argument_parser.add_api_bot_commands:116#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_argument_parser",
+        "llmstruct.ARCHIVE.cli_argument_parser.add_api_bot_commands:116"
+      ],
+      "hash": "8bc8a0c6c922705ada148e5381a78a900194f32d56cdb424bce6d5c7348fe3c9",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-argument-parser-add-api-bot-commands",
+      "summary": "Add API and bot management commands to the parser.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "add_bot_commands",
+        "add_api_commands"
+      ],
+      "called_by": [
+        "create_full_argument_parser"
+      ]
+    },
+    {
+      "name": "create_full_argument_parser",
+      "docstring": "Create the full argument parser with all commands.",
+      "line_range": [
+        129,
+        137
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "llmstruct.ARCHIVE.cli_argument_parser.create_full_argument_parser:129#function",
+      "uid_components": [
+        "llmstruct",
+        "llmstruct.ARCHIVE",
+        "llmstruct.ARCHIVE.cli_argument_parser",
+        "llmstruct.ARCHIVE.cli_argument_parser.create_full_argument_parser:129"
+      ],
+      "hash": "0f796591c0b06bd2c804416fd4686f50e00dabf92081a18a9d5639d62abc2069",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#llmstruct-archive-cli-argument-parser-create-full-argument-parser",
+      "summary": "Create the full argument parser with all commands.",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "add_api_bot_commands",
+        "create_argument_parser"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "copilot_parser.add_argument",
+    "parser.add_subparsers",
+    "query_parser.add_argument",
+    "review_parser.add_argument",
+    "context_parser.add_argument",
+    "audit_parser.add_argument",
+    "dogfood_parser.add_argument",
+    "duplicates_parser.add_argument",
+    "parse_parser.add_argument",
+    "interactive_parser.add_argument",
+    "subparsers.add_parser",
+    "argparse.ArgumentParser",
+    "add_bot_commands",
+    "add_api_commands",
+    "add_api_bot_commands",
+    "create_argument_parser"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.790774",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:ad3644d59fd87663",
+    "lines_of_code": 3
+  }
+}

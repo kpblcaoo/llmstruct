@@ -1,0 +1,714 @@
+{
+  "module_info": {
+    "uid": "scripts.epic_roadmap_manager",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.epic_roadmap_manager with 8 functions and 1 classes",
+    "hash": "sha256:256f313c3a7e2ead",
+    "dependencies": [
+      "argparse",
+      "current_session",
+      "datetime",
+      "epic",
+      "epic_data",
+      "epics",
+      "json",
+      "manager",
+      "os",
+      "parser",
+      "roadmap",
+      "self",
+      "sess",
+      "session",
+      "sessions_log",
+      "stats"
+    ],
+    "exports": [
+      "EpicRoadmapManager",
+      "complete_session",
+      "load_roadmap",
+      "main",
+      "save_roadmap",
+      "show_epic_details",
+      "show_overview",
+      "start_session"
+    ]
+  },
+  "functions": [
+    {
+      "name": "main",
+      "docstring": "",
+      "line_range": [
+        259,
+        291
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.epic_roadmap_manager.main:259#function",
+      "uid_components": [
+        "scripts",
+        "scripts.epic_roadmap_manager",
+        "scripts.epic_roadmap_manager.main:259"
+      ],
+      "hash": "0255073d1d4f667d506c844a767cebd9caffbde8ff5923aed73aa3c5c71babdd",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-epic-roadmap-manager-main",
+      "summary": "Function for main",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "manager.complete_session",
+        "manager.show_epic_details",
+        "parser.add_argument",
+        "argparse.ArgumentParser",
+        "manager.start_session",
+        "EpicRoadmapManager",
+        "manager.show_overview",
+        "parser.parse_args"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "__init__",
+      "docstring": "",
+      "line_range": [
+        19,
+        22
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.epic_roadmap_manager.__init__:19#function",
+      "uid_components": [
+        "scripts",
+        "scripts.epic_roadmap_manager",
+        "scripts.epic_roadmap_manager.__init__:19"
+      ],
+      "hash": "f024389a237c4787bb976f4de6692cb7a9e7c5f800d174b2b93d1582ae18c75a",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-epic-roadmap-manager---init--",
+      "summary": "Function for init",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "private"
+      ],
+      "calls": [],
+      "called_by": []
+    },
+    {
+      "name": "load_roadmap",
+      "docstring": "Загрузить roadmap из файла",
+      "line_range": [
+        24,
+        31
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.epic_roadmap_manager.load_roadmap:24#function",
+      "uid_components": [
+        "scripts",
+        "scripts.epic_roadmap_manager",
+        "scripts.epic_roadmap_manager.load_roadmap:24"
+      ],
+      "hash": "befeebb1471baa2e83154e4bcc66dfc7d937a5b860ed138daf052a5eb363c4bc",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-epic-roadmap-manager-load-roadmap",
+      "summary": "Загрузить roadmap из файла",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "open",
+        "json.load"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "save_roadmap",
+      "docstring": "Сохранить roadmap в файл",
+      "line_range": [
+        33,
+        40
+      ],
+      "parameters": [
+        "self",
+        "roadmap"
+      ],
+      "decorators": [],
+      "uid": "scripts.epic_roadmap_manager.save_roadmap:33#function",
+      "uid_components": [
+        "scripts",
+        "scripts.epic_roadmap_manager",
+        "scripts.epic_roadmap_manager.save_roadmap:33"
+      ],
+      "hash": "5f9941dde1152a75bc53bd426cd9ab10fed4263c17bb1d09e60c8cd81bbf80f4",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-epic-roadmap-manager-save-roadmap",
+      "summary": "Сохранить roadmap в файл",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "open",
+        "json.dump",
+        "datetime.now"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "show_overview",
+      "docstring": "Показать обзор roadmap",
+      "line_range": [
+        42,
+        80
+      ],
+      "parameters": [
+        "self"
+      ],
+      "decorators": [],
+      "uid": "scripts.epic_roadmap_manager.show_overview:42#function",
+      "uid_components": [
+        "scripts",
+        "scripts.epic_roadmap_manager",
+        "scripts.epic_roadmap_manager.show_overview:42"
+      ],
+      "hash": "f453805b5817ccae4329e73dcabe1436f619fe688c5e07b27df93898915e847f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-epic-roadmap-manager-show-overview",
+      "summary": "Показать обзор roadmap",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "epics.items",
+        "stats.get",
+        "epic.get",
+        "roadmap.get",
+        "self.load_roadmap"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "show_epic_details",
+      "docstring": "Показать детали конкретного эпика",
+      "line_range": [
+        82,
+        125
+      ],
+      "parameters": [
+        "self",
+        "epic_id"
+      ],
+      "decorators": [],
+      "uid": "scripts.epic_roadmap_manager.show_epic_details:82#function",
+      "uid_components": [
+        "scripts",
+        "scripts.epic_roadmap_manager",
+        "scripts.epic_roadmap_manager.show_epic_details:82"
+      ],
+      "hash": "dae8a1962366293a5ce87c2da69355f667009d1fe7b93da26a7103315cec0d36",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-epic-roadmap-manager-show-epic-details",
+      "summary": "Показать детали конкретного эпика",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "session.get",
+        "epic_data.get",
+        "epic.get",
+        "len",
+        "roadmap.get",
+        "self.load_roadmap"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "start_session",
+      "docstring": "Начать работу над сессией",
+      "line_range": [
+        127,
+        189
+      ],
+      "parameters": [
+        "self",
+        "epic_id",
+        "session_id"
+      ],
+      "decorators": [],
+      "uid": "scripts.epic_roadmap_manager.start_session:127#function",
+      "uid_components": [
+        "scripts",
+        "scripts.epic_roadmap_manager",
+        "scripts.epic_roadmap_manager.start_session:127"
+      ],
+      "hash": "aa8531d9f89faf5f38f1dc522d983ffa3f1270b4261caba7ee094c5985da6b00",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-epic-roadmap-manager-start-session",
+      "summary": "Начать работу над сессией",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "self.save_roadmap",
+        "session.get",
+        "os.makedirs",
+        "open",
+        "epic_data.get",
+        "sess.get",
+        "datetime.now",
+        "json.dump",
+        "epic.get",
+        "roadmap.get",
+        "self.load_roadmap"
+      ],
+      "called_by": []
+    },
+    {
+      "name": "complete_session",
+      "docstring": "Завершить текущую сессию",
+      "line_range": [
+        191,
+        257
+      ],
+      "parameters": [
+        "self",
+        "session_id"
+      ],
+      "decorators": [],
+      "uid": "scripts.epic_roadmap_manager.complete_session:191#function",
+      "uid_components": [
+        "scripts",
+        "scripts.epic_roadmap_manager",
+        "scripts.epic_roadmap_manager.complete_session:191"
+      ],
+      "hash": "7c65880162ba045fd3d3c0fb6ecf3d8b1b0aecd6457a16fdf7bb596dd0003f54",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-epic-roadmap-manager-complete-session",
+      "summary": "Завершить текущую сессию",
+      "summary_source": "docstring",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "print",
+        "session.get",
+        "self.save_roadmap",
+        "open",
+        "os.makedirs",
+        "os.remove",
+        "sess.get",
+        "current_session.get",
+        "datetime.now",
+        "all",
+        "json.load",
+        "epic.get",
+        "sessions_log.append",
+        "json.dump",
+        "roadmap.get",
+        "self.load_roadmap"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [
+    {
+      "name": "EpicRoadmapManager",
+      "docstring": "",
+      "line_range": [
+        18,
+        257
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "docstring": "",
+          "line_range": [
+            19,
+            22
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.epic_roadmap_manager.EpicRoadmapManager.__init__:19#method",
+          "uid_components": [
+            "scripts",
+            "scripts.epic_roadmap_manager",
+            "scripts.epic_roadmap_manager.EpicRoadmapManager",
+            "scripts.epic_roadmap_manager.EpicRoadmapManager.__init__:19"
+          ],
+          "hash": "c925b74fe81cdc612411f2b990c35ce9751e835e376d60b7a13f43d2d4d44af4",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-epic-roadmap-manager-epicroadmapmanager---init--",
+          "summary": "Method for epicroadmapmanager. init",
+          "summary_source": "heuristic",
+          "tags": [
+            "method",
+            "private",
+            "public"
+          ],
+          "calls": [],
+          "called_by": []
+        },
+        {
+          "name": "load_roadmap",
+          "docstring": "Загрузить roadmap из файла",
+          "line_range": [
+            24,
+            31
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.epic_roadmap_manager.EpicRoadmapManager.load_roadmap:24#method",
+          "uid_components": [
+            "scripts",
+            "scripts.epic_roadmap_manager",
+            "scripts.epic_roadmap_manager.EpicRoadmapManager",
+            "scripts.epic_roadmap_manager.EpicRoadmapManager.load_roadmap:24"
+          ],
+          "hash": "e03f59b0acf158de1ac5762a493c735b465b1c2a364e0886c2796fae6fbc6ae3",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-epic-roadmap-manager-epicroadmapmanager-load-roadmap",
+          "summary": "Загрузить roadmap из файла",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "open",
+            "json.load"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "save_roadmap",
+          "docstring": "Сохранить roadmap в файл",
+          "line_range": [
+            33,
+            40
+          ],
+          "parameters": [
+            "self",
+            "roadmap"
+          ],
+          "uid": "scripts.epic_roadmap_manager.EpicRoadmapManager.save_roadmap:33#method",
+          "uid_components": [
+            "scripts",
+            "scripts.epic_roadmap_manager",
+            "scripts.epic_roadmap_manager.EpicRoadmapManager",
+            "scripts.epic_roadmap_manager.EpicRoadmapManager.save_roadmap:33"
+          ],
+          "hash": "7e12d47932ab33d8d87cb1e6d32c102078e5aa45dfd5c089ef1a1beaeabdc5ba",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-epic-roadmap-manager-epicroadmapmanager-save-roadmap",
+          "summary": "Сохранить roadmap в файл",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "open",
+            "json.dump",
+            "datetime.now"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "show_overview",
+          "docstring": "Показать обзор roadmap",
+          "line_range": [
+            42,
+            80
+          ],
+          "parameters": [
+            "self"
+          ],
+          "uid": "scripts.epic_roadmap_manager.EpicRoadmapManager.show_overview:42#method",
+          "uid_components": [
+            "scripts",
+            "scripts.epic_roadmap_manager",
+            "scripts.epic_roadmap_manager.EpicRoadmapManager",
+            "scripts.epic_roadmap_manager.EpicRoadmapManager.show_overview:42"
+          ],
+          "hash": "2ea7c0ea667ba50bfaafc00586df1a1672a59e12353712119731673fbfb1d9bf",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-epic-roadmap-manager-epicroadmapmanager-show-overview",
+          "summary": "Показать обзор roadmap",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "epics.items",
+            "stats.get",
+            "epic.get",
+            "roadmap.get",
+            "self.load_roadmap"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "show_epic_details",
+          "docstring": "Показать детали конкретного эпика",
+          "line_range": [
+            82,
+            125
+          ],
+          "parameters": [
+            "self",
+            "epic_id"
+          ],
+          "uid": "scripts.epic_roadmap_manager.EpicRoadmapManager.show_epic_details:82#method",
+          "uid_components": [
+            "scripts",
+            "scripts.epic_roadmap_manager",
+            "scripts.epic_roadmap_manager.EpicRoadmapManager",
+            "scripts.epic_roadmap_manager.EpicRoadmapManager.show_epic_details:82"
+          ],
+          "hash": "cb6c21163a79eda1323accf0b82aaad8ff995c1234f9bf68d8abb834c2f1b83e",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-epic-roadmap-manager-epicroadmapmanager-show-epic-details",
+          "summary": "Показать детали конкретного эпика",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "session.get",
+            "epic_data.get",
+            "epic.get",
+            "len",
+            "roadmap.get",
+            "self.load_roadmap"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "start_session",
+          "docstring": "Начать работу над сессией",
+          "line_range": [
+            127,
+            189
+          ],
+          "parameters": [
+            "self",
+            "epic_id",
+            "session_id"
+          ],
+          "uid": "scripts.epic_roadmap_manager.EpicRoadmapManager.start_session:127#method",
+          "uid_components": [
+            "scripts",
+            "scripts.epic_roadmap_manager",
+            "scripts.epic_roadmap_manager.EpicRoadmapManager",
+            "scripts.epic_roadmap_manager.EpicRoadmapManager.start_session:127"
+          ],
+          "hash": "65f431abd86b4b4269acea35155f29063c4037885b080371245d3efed1ff5b71",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-epic-roadmap-manager-epicroadmapmanager-start-session",
+          "summary": "Начать работу над сессией",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "self.save_roadmap",
+            "session.get",
+            "os.makedirs",
+            "open",
+            "epic_data.get",
+            "sess.get",
+            "datetime.now",
+            "json.dump",
+            "epic.get",
+            "roadmap.get",
+            "self.load_roadmap"
+          ],
+          "called_by": []
+        },
+        {
+          "name": "complete_session",
+          "docstring": "Завершить текущую сессию",
+          "line_range": [
+            191,
+            257
+          ],
+          "parameters": [
+            "self",
+            "session_id"
+          ],
+          "uid": "scripts.epic_roadmap_manager.EpicRoadmapManager.complete_session:191#method",
+          "uid_components": [
+            "scripts",
+            "scripts.epic_roadmap_manager",
+            "scripts.epic_roadmap_manager.EpicRoadmapManager",
+            "scripts.epic_roadmap_manager.EpicRoadmapManager.complete_session:191"
+          ],
+          "hash": "6c1187f12a5d1335fbfb9eb126c364c2a9019cd9a5ecef2201c83ace14d83206",
+          "hash_source": "code_ast_v1",
+          "hash_version": "2.1.0",
+          "markdown_anchor": "#scripts-epic-roadmap-manager-epicroadmapmanager-complete-session",
+          "summary": "Завершить текущую сессию",
+          "summary_source": "docstring",
+          "tags": [
+            "method",
+            "public"
+          ],
+          "calls": [
+            "print",
+            "session.get",
+            "self.save_roadmap",
+            "open",
+            "os.makedirs",
+            "os.remove",
+            "sess.get",
+            "current_session.get",
+            "datetime.now",
+            "all",
+            "json.load",
+            "epic.get",
+            "sessions_log.append",
+            "json.dump",
+            "roadmap.get",
+            "self.load_roadmap"
+          ],
+          "called_by": []
+        }
+      ],
+      "bases": [],
+      "uid": "scripts.epic_roadmap_manager.EpicRoadmapManager:18#class",
+      "uid_components": [
+        "scripts",
+        "scripts.epic_roadmap_manager",
+        "scripts.epic_roadmap_manager.EpicRoadmapManager:18"
+      ],
+      "hash": "dc37fb8cb69e71d204408b5cc2c1aa45c8314d0dc81bfb603fa86985d223d62f",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-epic-roadmap-manager-epicroadmapmanager",
+      "summary": "Manages epic roadmap",
+      "summary_source": "heuristic",
+      "tags": [
+        "class",
+        "public"
+      ]
+    }
+  ],
+  "imports": [],
+  "calls": [
+    "print",
+    "manager.complete_session",
+    "manager.show_epic_details",
+    "parser.add_argument",
+    "argparse.ArgumentParser",
+    "manager.start_session",
+    "EpicRoadmapManager",
+    "manager.show_overview",
+    "parser.parse_args",
+    "print",
+    "open",
+    "json.load",
+    "print",
+    "open",
+    "json.dump",
+    "datetime.now",
+    "print",
+    "epics.items",
+    "stats.get",
+    "epic.get",
+    "roadmap.get",
+    "self.load_roadmap",
+    "print",
+    "session.get",
+    "epic_data.get",
+    "epic.get",
+    "len",
+    "roadmap.get",
+    "self.load_roadmap",
+    "print",
+    "self.save_roadmap",
+    "session.get",
+    "os.makedirs",
+    "open",
+    "epic_data.get",
+    "sess.get",
+    "datetime.now",
+    "json.dump",
+    "epic.get",
+    "roadmap.get",
+    "self.load_roadmap",
+    "print",
+    "session.get",
+    "self.save_roadmap",
+    "open",
+    "os.makedirs",
+    "os.remove",
+    "sess.get",
+    "current_session.get",
+    "datetime.now",
+    "all",
+    "json.load",
+    "epic.get",
+    "sessions_log.append",
+    "json.dump",
+    "roadmap.get",
+    "self.load_roadmap"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.771781",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:256f313c3a7e2ead",
+    "lines_of_code": 9
+  }
+}

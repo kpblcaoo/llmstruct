@@ -1,0 +1,216 @@
+{
+  "module_info": {
+    "uid": "scripts.collector",
+    "file_path": "",
+    "tags": [
+      "module",
+      "public"
+    ],
+    "summary": "Module scripts.collector with 4 functions",
+    "hash": "sha256:585bc1e049de4756",
+    "dependencies": [
+      "existing",
+      "files",
+      "filtered",
+      "fnmatch",
+      "json",
+      "logger",
+      "output_path",
+      "path",
+      "pattern",
+      "root_dir",
+      "uuid"
+    ],
+    "exports": [
+      "apply_filters",
+      "collect_files",
+      "generate_struct",
+      "main"
+    ]
+  },
+  "functions": [
+    {
+      "name": "apply_filters",
+      "docstring": "",
+      "line_range": [
+        13,
+        29
+      ],
+      "parameters": [
+        "files",
+        "filters"
+      ],
+      "decorators": [],
+      "uid": "scripts.collector.apply_filters:13#function",
+      "uid_components": [
+        "scripts",
+        "scripts.collector",
+        "scripts.collector.apply_filters:13"
+      ],
+      "hash": "4885fb263549878ebc2290608e12f23e22a9120e004214a3f9044700cbcc964d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-collector-apply-filters",
+      "summary": "Function for apply filters",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "fnmatch.fnmatch",
+        "pattern.startswith",
+        "filtered.append"
+      ],
+      "called_by": [
+        "collect_files"
+      ]
+    },
+    {
+      "name": "collect_files",
+      "docstring": "",
+      "line_range": [
+        32,
+        38
+      ],
+      "parameters": [
+        "root_dir",
+        "filters"
+      ],
+      "decorators": [],
+      "uid": "scripts.collector.collect_files:32#function",
+      "uid_components": [
+        "scripts",
+        "scripts.collector",
+        "scripts.collector.collect_files:32"
+      ],
+      "hash": "cbd907f6212c9174e34fcd5dd1b2ccbec5c0089ed20fc0da11a76a577b06188d",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-collector-collect-files",
+      "summary": "Function for collect files",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "path.relative_to",
+        "str",
+        "apply_filters",
+        "path.is_file",
+        "root_dir.rglob",
+        "files.append"
+      ],
+      "called_by": [
+        "generate_struct"
+      ]
+    },
+    {
+      "name": "generate_struct",
+      "docstring": "",
+      "line_range": [
+        41,
+        88
+      ],
+      "parameters": [
+        "root_dir",
+        "output"
+      ],
+      "decorators": [],
+      "uid": "scripts.collector.generate_struct:41#function",
+      "uid_components": [
+        "scripts",
+        "scripts.collector",
+        "scripts.collector.generate_struct:41"
+      ],
+      "hash": "d87129f0c6c55aa187a46b8304b947b43c160d9571ccfe96f57044b9e7b66e6b",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-collector-generate-struct",
+      "summary": "Function for generate struct",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "str",
+        "logger.info",
+        "uuid.uuid4",
+        "collect_files",
+        "output_path.open",
+        "output_path.exists",
+        "existing.get",
+        "json.load",
+        "json.dump",
+        "len",
+        "Path"
+      ],
+      "called_by": [
+        "main"
+      ]
+    },
+    {
+      "name": "main",
+      "docstring": "",
+      "line_range": [
+        91,
+        92
+      ],
+      "parameters": [],
+      "decorators": [],
+      "uid": "scripts.collector.main:91#function",
+      "uid_components": [
+        "scripts",
+        "scripts.collector",
+        "scripts.collector.main:91"
+      ],
+      "hash": "327e97823a739cfdeeeeb5b9c34aa780d80d14788e5f11c5bf2c3395813d28bb",
+      "hash_source": "code_ast_v1",
+      "hash_version": "2.1.0",
+      "markdown_anchor": "#scripts-collector-main",
+      "summary": "Function for main",
+      "summary_source": "heuristic",
+      "tags": [
+        "function",
+        "public"
+      ],
+      "calls": [
+        "generate_struct"
+      ],
+      "called_by": []
+    }
+  ],
+  "classes": [],
+  "imports": [],
+  "calls": [
+    "fnmatch.fnmatch",
+    "pattern.startswith",
+    "filtered.append",
+    "path.relative_to",
+    "str",
+    "apply_filters",
+    "path.is_file",
+    "root_dir.rglob",
+    "files.append",
+    "str",
+    "logger.info",
+    "uuid.uuid4",
+    "collect_files",
+    "output_path.open",
+    "output_path.exists",
+    "existing.get",
+    "json.load",
+    "json.dump",
+    "len",
+    "Path",
+    "generate_struct"
+  ],
+  "metadata": {
+    "generated_at": "2025-06-26T11:45:18.771332",
+    "generator_version": "2.1.0",
+    "source_hash": "sha256:585bc1e049de4756",
+    "lines_of_code": 4
+  }
+}
